@@ -1,0 +1,24 @@
+984-                return;
+985-            }
+986-            LogUtils.i(TAG, "Download status is succeed, load log! Update interface!");
+987-            refreshUI(DownloadControllerView.DownloadControllerStatus.TO_INSTALL, DownloadIndicatorView.DownloadIndicatorStatus.DOWNLOAD_SUCCEED);
+988-        }
+989-    }
+990-
+991-    @RxBus.a(a = RxBus.RunningThreadType.mainThread)
+992:    private void onCheckEvent(CheckEvent checkEvent) {
+993-        if (checkEvent == null || checkEvent.isBackGround()) {
+994-            LogUtils.i(TAG, "check event from background download.");
+995-            return;
+996-        }
+997-        int eventId = checkEvent.getEventId();
+998-        LogUtils.i(TAG, "Get check event : " + eventId);
+999-        if (eventId == 1) {
+1000-            m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.CHECKING);
+1001-            return;
+1002-        }
+1003-        if (eventId == 2) {
+1004-            m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.ERROR_SERVER_RESPONSE);
+1005-            return;
+1006-        }
+1007-        if (eventId == 4) {

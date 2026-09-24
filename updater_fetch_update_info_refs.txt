@@ -1,0 +1,65 @@
+322-            } else if (com.bbk.vgc.a.a.a().a(this.mContext)) {
+323-                m10getMvpView().showOneDialog(1013);
+324-                m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_ROAMING_FORBID_UPDATE);
+325-                return;
+326-            }
+327-            refreshLogContent(this.mFotaUpdateInfo, this.mVgcUpdateInfo);
+328-            refreshUI(DownloadControllerView.DownloadControllerStatus.TO_DOWNLOAD, DownloadIndicatorView.DownloadIndicatorStatus.TO_DOWNLOAD);
+329-        } else {
+330:            fetchUpdateInfo();
+331-        }
+332-        int i4 = Settings.Global.getInt(this.mContext.getContentResolver(), ConstantsUtils.INTELLIGENT_INSTALLATION_KEY_IN_DATABASE, -999);
+333-        LogUtils.i(TAG, "Intelligent install switch value : " + i4);
+334-        long j = PrefsUtils.getLong(this.mContext, PrefsUtils.Other.KEY_LAST_POP_SMART_INSTALL_INDUCE_TIME, 0L);
+335-        LogUtils.d(TAG, "last sii time : " + j + ", current " + System.currentTimeMillis());
+336-        if (i4 == -999 || i4 == -1 || (i4 == 0 && Math.abs(System.currentTimeMillis() - j) > 5184000000L)) {
+337-            m10getMvpView().showOneDialog(1004);
+338-            if (i4 == -999 || i4 == -1) {
+339-                com.bbk.updater.codemanagement.a.b(this.mContext);
+340-            }
+341-        }
+342-    }
+--
+893-            this.mDownloadProgress = downloadEvent.getProgress();
+894-            m10getMvpView().refreshProgress(this.mDownloadProgress);
+895-        } else {
+896-            if (eventId != 2) {
+897-                if (eventId != 4) {
+898-                    if (eventId != 8) {
+899-                        return;
+900-                    }
+901:                    fetchUpdateInfo();
+902-                    m10getMvpView().changeToNoVersion();
+903-                    return;
+904-                }
+905-                com.bbk.updater.download.a aVar = this.sDownloadInfoManager;
+906-                if (aVar == null || !aVar.d(downloadEvent.getFotaStatus(), downloadEvent.getVgcStatus())) {
+907-                    refreshUI(DownloadControllerView.DownloadControllerStatus.PREPARING_DOWNLOAD, DownloadIndicatorView.DownloadIndicatorStatus.DOWNLOAD_PREPARING);
+908-                    return;
+909-                }
+910-                return;
+911-            }
+912-            this.mDownloadProgress = downloadEvent.getProgress();
+913-            LogUtils.i(TAG, "Download progress : " + this.mDownloadProgress);
+--
+1102-        m10getMvpView().showUpdateLog(WebHelper.getInstance(this.mContext).getLogHtmlPathAndCacheIt(updateInfo, vgcUpdateInfo));
+1103-        m10getMvpView().recordIsFullPackage(isNeedToShowBrokenTips(updateInfo, vgcUpdateInfo));
+1104-    }
+1105-
+1106-    public long getTotalLength() {
+1107-        return CommonUtils.getTotalPackageLength(this.mFotaUpdateInfo, this.mVgcUpdateInfo).longValue();
+1108-    }
+1109-
+1110:    private void fetchUpdateInfo() {
+1111-        LogUtils.i(TAG, "Fetch update info!");
+1112-        int i = AnonymousClass12.$SwitchMap$com$bbk$updater$utils$ConstantsUtils$NetWorkType[this.mPreNetworkType.ordinal()];
+1113-        if (i != 1) {
+1114-            if (i == 2) {
+1115-                m10getMvpView().showOneDialog(1001);
+1116-                m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_DISABLED);
+1117-                return;
+1118-            }
+1119-        } else if (com.bbk.vgc.a.a.a().a(this.mContext)) {
+1120-            m10getMvpView().showOneDialog(1013);
+1121-            m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_ROAMING_FORBID_UPDATE);
+1122-            return;

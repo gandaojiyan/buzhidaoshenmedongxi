@@ -1,0 +1,12 @@
+19:import com.bbk.updater.rx.event.CheckEvent;
+103:    public void onResume() {
+104:        super.onResume();
+132:                checkUpdate();
+330:            fetchUpdateInfo();
+901:                    fetchUpdateInfo();
+992:    private void onCheckEvent(CheckEvent checkEvent) {
+1031:            LogUtils.i(TAG, "CheckEvent: CHECKED_LOG_LOAD_SUCCEED");
+1053:        LogUtils.i(TAG, "onCheckEvent isNetChecked = " + zIsDataNetTypeCheck);
+1110:    private void fetchUpdateInfo() {
+1124:        checkUpdate();
+1176:    private void checkUpdate() {

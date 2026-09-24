@@ -1,0 +1,191 @@
+        long j = PrefsUtils.getLong(this.mContext, PrefsUtils.Check.KEY_LAST_SHOW_OPEN_AUTO_UPGRADE_PACKAGE_TIME, -1L);
+        if (j == -1) {
+            PrefsUtils.putLong(this.mContext, PrefsUtils.Check.KEY_LAST_SHOW_OPEN_AUTO_UPGRADE_PACKAGE_TIME, System.currentTimeMillis());
+        } else if (CommonUtils.checkTimeOutSevenDay(j)) {
+            PrefsUtils.removePrefs(this.mContext, PrefsUtils.Check.KEY_LAST_SHOW_OPEN_AUTO_UPGRADE_PACKAGE_TIME);
+        } else {
+            PrefsUtils.putLong(this.mContext, PrefsUtils.Check.KEY_LAST_SHOW_OPEN_AUTO_UPGRADE_PACKAGE_TIME, System.currentTimeMillis());
+        }
+    }
+
+    private void init() {
+        this.isPreNetRoamingForbid = com.bbk.vgc.a.a.a().a(this.mContext);
+        UpdateInfo availableFotaInfo = CommonUtils.getAvailableFotaInfo(this.mContext, true);
+        VgcUpdateInfo availableVgcInfo = CommonUtils.getAvailableVgcInfo(this.mContext, true);
+        int iC = this.sDownloadInfoManager.c();
+        int iD = this.sDownloadInfoManager.d();
+        StringBuilder sb = new StringBuilder();
+        sb.append("fota info: ");
+        sb.append(availableFotaInfo == null ? "null" : availableFotaInfo.getVersion());
+        sb.append("; vgc info: ");
+        sb.append(availableVgcInfo != null ? availableVgcInfo.getVersion() : "null");
+        LogUtils.i(TAG, sb.toString());
+        int iCheckShowInfoType = checkShowInfoType(availableFotaInfo, availableVgcInfo);
+        if (iCheckShowInfoType != 0) {
+            if (iCheckShowInfoType == 1) {
+                LogUtils.i(TAG, "Exist update info, and download started!");
+                if (!com.bbk.updater.download.b.a.b(iC)) {
+                    availableFotaInfo = null;
+                }
+                if (!com.bbk.updater.download.b.a.b(iD)) {
+                    availableVgcInfo = null;
+                }
+                refreshUpdateInfo(availableFotaInfo, availableVgcInfo);
+                refreshLogContent(this.mFotaUpdateInfo, this.mVgcUpdateInfo);
+                m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.LOAD_SUCCEED);
+                if (checkIfDownloadSucceed(availableFotaInfo, availableVgcInfo, iC, iD)) {
+                    boolean zIsOnInstallorPreInstall = UpdateStatusManager.getInstance().isOnInstallorPreInstall();
+                    LogUtils.d(TAG, "init checkIfDownloadSucceed = " + this.sAbUpdateManager.g() + ", isOnInstallPre=" + zIsOnInstallorPreInstall);
+                    if (com.bbk.updater.install.a.a.a(this.mFotaUpdateInfo, this.mVgcUpdateInfo) && this.sAbUpdateManager.d() && BaseFrameUtils.PackageType.OTA_FOTA.toString().equals(this.sAbUpdateManager.e())) {
+                        int iF = this.sAbUpdateManager.f();
+                        LogUtils.d(TAG, "installStatus=" + iF);
+                        if (6 == iF || 5 == iF) {
+                            refreshUI(DownloadControllerView.DownloadControllerStatus.INSTALL_SUCCEED, DownloadIndicatorView.DownloadIndicatorStatus.INSTALL_SUCCEED);
+                        } else if (3 == iF) {
+                            refreshUI(DownloadControllerView.DownloadControllerStatus.INSTALL_PAUSED, DownloadIndicatorView.DownloadIndicatorStatus.INSTALL_PAUSED);
+                        } else if (7 == iF) {
+                            refreshUI(DownloadControllerView.DownloadControllerStatus.VERIFYING_PAUSED, DownloadIndicatorView.DownloadIndicatorStatus.VERIFYING_PAUSED);
+                        } else if (2 == iF) {
+                            refreshUI(DownloadControllerView.DownloadControllerStatus.ON_INSTALL, DownloadIndicatorView.DownloadIndicatorStatus.ON_INSTALL);
+                            m10getMvpView().refreshProgress(this.sAbUpdateManager.h());
+                        } else if (4 == iF) {
+                            refreshUI(DownloadControllerView.DownloadControllerStatus.ON_AB_INSTALL_VERIFYING, DownloadIndicatorView.DownloadIndicatorStatus.ON_AB_FINALIZING);
+                            m10getMvpView().refreshProgress(this.sAbUpdateManager.h());
+                        }
+                    } else if (com.bbk.updater.install.a.a.a(this.mFotaUpdateInfo, this.mVgcUpdateInfo) && zIsOnInstallorPreInstall) {
+                        refreshUI(DownloadControllerView.DownloadControllerStatus.ON_INSTALL, DownloadIndicatorView.DownloadIndicatorStatus.ON_INSTALL);
+                        m10getMvpView().refreshProgress(0.0f);
+                    } else {
+                        refreshUI(DownloadControllerView.DownloadControllerStatus.TO_INSTALL, DownloadIndicatorView.DownloadIndicatorStatus.DOWNLOAD_SUCCEED);
+                    }
+                } else {
+                    if (this.sDownloadInfoManager.b(iC) || this.sDownloadInfoManager.b(iD)) {
+                        refreshUI(DownloadControllerView.DownloadControllerStatus.PAUSED, DownloadIndicatorView.DownloadIndicatorStatus.DOWNLOAD_PAUSED);
+                    } else if (this.sDownloadInfoManager.c(iC) || this.sDownloadInfoManager.c(iD)) {
+                        refreshUI(DownloadControllerView.DownloadControllerStatus.RUNNING, DownloadIndicatorView.DownloadIndicatorStatus.DOWNLOAD_RUNNING);
+                    }
+                    if (this.sDownloadInfoManager.a(iC) && !this.sDownloadInfoManager.d(iC)) {
+                        this.sDownloadInfoManager.c("ota_pacakge");
+                    }
+                    if (this.sDownloadInfoManager.a(iD) && !this.sDownloadInfoManager.d(iD)) {
+                        this.sDownloadInfoManager.c("vgc_package");
+                    }
+                }
+            } else if (iCheckShowInfoType == 2) {
+                m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.LOAD_SUCCEED);
+                if (availableVgcInfo != null && !availableVgcInfo.isEnhance() && !com.vivo.updaterassistant.a.a(availableVgcInfo) && availableFotaInfo != null && (availableFotaInfo.isEnhancedDownload() || com.vivo.updaterassistant.a.a(availableFotaInfo))) {
+                    LogUtils.i(TAG, "Exist update info,fota is f and on download, show fota only");
+                    availableVgcInfo = null;
+                }
+                int i = AnonymousClass12.$SwitchMap$com$bbk$updater$utils$ConstantsUtils$NetWorkType[this.mPreNetworkType.ordinal()];
+                if (i != 1) {
+                    if (i == 2) {
+                        m10getMvpView().showOneDialog(1001);
+                        m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_DISABLED);
+                        return;
+                    }
+                } else if (com.bbk.vgc.a.a.a().a(this.mContext)) {
+                    m10getMvpView().showOneDialog(1013);
+                    m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_ROAMING_FORBID_UPDATE);
+                    return;
+                }
+                refreshUpdateInfo(availableFotaInfo, availableVgcInfo);
+                refreshLogContent(this.mFotaUpdateInfo, this.mVgcUpdateInfo);
+                refreshUI(DownloadControllerView.DownloadControllerStatus.TO_DOWNLOAD, DownloadIndicatorView.DownloadIndicatorStatus.TO_DOWNLOAD);
+            } else if (iCheckShowInfoType == 3) {
+                m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.LOAD_SUCCEED);
+                if (availableFotaInfo != null && !availableFotaInfo.isEnhancedDownload() && !com.vivo.updaterassistant.a.a(availableFotaInfo) && availableVgcInfo != null && (availableVgcInfo.isEnhance() || com.vivo.updaterassistant.a.a(availableVgcInfo))) {
+                    LogUtils.i(TAG, "Exist update info,vgc is f and on download, show vgc only");
+                    availableFotaInfo = null;
+                }
+                int i2 = AnonymousClass12.$SwitchMap$com$bbk$updater$utils$ConstantsUtils$NetWorkType[this.mPreNetworkType.ordinal()];
+                if (i2 != 1) {
+                    if (i2 == 2) {
+                        m10getMvpView().showOneDialog(1001);
+                        m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_DISABLED);
+                        return;
+                    }
+                } else if (com.bbk.vgc.a.a.a().a(this.mContext)) {
+                    m10getMvpView().showOneDialog(1013);
+                    m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_ROAMING_FORBID_UPDATE);
+                    return;
+                }
+                refreshUpdateInfo(availableFotaInfo, availableVgcInfo);
+                refreshLogContent(this.mFotaUpdateInfo, this.mVgcUpdateInfo);
+                refreshUI(DownloadControllerView.DownloadControllerStatus.TO_DOWNLOAD, DownloadIndicatorView.DownloadIndicatorStatus.TO_DOWNLOAD);
+            }
+        } else if (this.mFromNotice && (availableFotaInfo != null || availableVgcInfo != null)) {
+            LogUtils.i(TAG, "Exist update info, and start from Notification!");
+            int iCheckPackageAvailableType = CommonUtils.checkPackageAvailableType(availableFotaInfo, availableVgcInfo);
+            if (iCheckPackageAvailableType == 1) {
+                availableVgcInfo = null;
+            } else if (iCheckPackageAvailableType == 2) {
+                availableFotaInfo = null;
+            }
+            refreshUpdateInfo(availableFotaInfo, availableVgcInfo);
+            int i3 = AnonymousClass12.$SwitchMap$com$bbk$updater$utils$ConstantsUtils$NetWorkType[this.mPreNetworkType.ordinal()];
+            if (i3 != 1) {
+                if (i3 == 2) {
+                    m10getMvpView().showOneDialog(1001);
+                    m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_DISABLED);
+                    return;
+                }
+            } else if (com.bbk.vgc.a.a.a().a(this.mContext)) {
+                m10getMvpView().showOneDialog(1013);
+                m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_ROAMING_FORBID_UPDATE);
+                return;
+            }
+            refreshLogContent(this.mFotaUpdateInfo, this.mVgcUpdateInfo);
+            refreshUI(DownloadControllerView.DownloadControllerStatus.TO_DOWNLOAD, DownloadIndicatorView.DownloadIndicatorStatus.TO_DOWNLOAD);
+        } else {
+            fetchUpdateInfo();
+        }
+        int i4 = Settings.Global.getInt(this.mContext.getContentResolver(), ConstantsUtils.INTELLIGENT_INSTALLATION_KEY_IN_DATABASE, -999);
+        LogUtils.i(TAG, "Intelligent install switch value : " + i4);
+        long j = PrefsUtils.getLong(this.mContext, PrefsUtils.Other.KEY_LAST_POP_SMART_INSTALL_INDUCE_TIME, 0L);
+        LogUtils.d(TAG, "last sii time : " + j + ", current " + System.currentTimeMillis());
+        if (i4 == -999 || i4 == -1 || (i4 == 0 && Math.abs(System.currentTimeMillis() - j) > 5184000000L)) {
+            m10getMvpView().showOneDialog(1004);
+            if (i4 == -999 || i4 == -1) {
+                com.bbk.updater.codemanagement.a.b(this.mContext);
+            }
+        }
+    }
+
+    /* JADX INFO: renamed from: com.bbk.updater.ui.UpdatePresenter$12, reason: invalid class name */
+    static /* synthetic */ class AnonymousClass12 {
+        static final /* synthetic */ int[] $SwitchMap$com$bbk$updater$utils$ConstantsUtils$NetWorkType;
+
+        static {
+            int[] iArr = new int[ConstantsUtils.NetWorkType.values().length];
+            $SwitchMap$com$bbk$updater$utils$ConstantsUtils$NetWorkType = iArr;
+            try {
+                iArr[ConstantsUtils.NetWorkType.MOBILE.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                $SwitchMap$com$bbk$updater$utils$ConstantsUtils$NetWorkType[ConstantsUtils.NetWorkType.NULL.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                $SwitchMap$com$bbk$updater$utils$ConstantsUtils$NetWorkType[ConstantsUtils.NetWorkType.BLUETOOTH.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                $SwitchMap$com$bbk$updater$utils$ConstantsUtils$NetWorkType[ConstantsUtils.NetWorkType.WIFI.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void refreshUI(DownloadControllerView.DownloadControllerStatus downloadControllerStatus, DownloadIndicatorView.DownloadIndicatorStatus downloadIndicatorStatus) {
+        this.mDcStatus = downloadControllerStatus;
+        if (downloadControllerStatus == DownloadControllerView.DownloadControllerStatus.ON_INSTALL) {
+            UpdateStatusManager.getInstance().setOnInstallorPreInstall(true);
+        } else {
+            UpdateStatusManager.getInstance().setOnInstallorPreInstall(false);
+        }
+        m10getMvpView().setDownloadControllerStatus(downloadControllerStatus);
+        if (downloadIndicatorStatus == DownloadIndicatorView.DownloadIndicatorStatus.NTEGRITY_CHECK_SUCCEED && com.bbk.updater.install.a.a.a(this.mFotaUpdateInfo, this.mVgcUpdateInfo)) {
+            m10getMvpView().setDownloadIndicatorStatus(DownloadIndicatorView.DownloadIndicatorStatus.NTEGRITY_CHECK_SUCCEED_AB);
