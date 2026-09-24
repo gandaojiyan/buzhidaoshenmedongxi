@@ -1,0 +1,140 @@
+===== SecurityKeyCipher: init / mode / key =====
+86:    public static synchronized SecurityKeyCipher getInstance(Context context, String str) {
+91:            k.d("SecurityKey", "getInstance context inputed is null");
+155:                setCipherModeByClientToken(securityKeyCipher, i3);
+164:    private static void setCipherModeByClientToken(SecurityKeyCipher securityKeyCipher, int i) {
+166:            securityKeyCipher.setCipherMode(i);
+171:                    k.d("SecurityKey", "setCipherModeByC failed to " + i + ", try SDK. msg: " + e.getMessage());
+173:                        securityKeyCipher.setCipherMode(4);
+177:                        k.a("SecurityKey", "setCipherModeByC failed to SDK", e2);
+181:                k.a("SecurityKey", "setCipherModeByC failed to ".concat(String.valueOf(i)), e);
+184:            k.d("SecurityKey", "setCipherModeByC failed to TEE, try soft. msg: " + e.getMessage());
+186:                securityKeyCipher.setCipherMode(3);
+189:                k.d("SecurityKey", "setCipherModeByC failed to Soft, try sdk. msg: " + e3.getMessage());
+191:                    securityKeyCipher.setCipherMode(4);
+194:                    k.a("SecurityKey", "setCipherModeByC failed to SDK", e4);
+200:    protected boolean needSwitchSdkCipher(byte[] bArr) {
+244:    public String aesEncryptData(byte[] bArr) throws SecurityKeyException {
+245:        return Base64.encodeToString(aesEncryptByFixed(bArr), 11);
+248:    public byte[] aesDecryptData(String str) throws SecurityKeyException {
+250:            return aesDecryptByFixed(Base64.decode(str, 11));
+258:    public byte[] aesEncryptByFixed(byte[] bArr) throws SecurityKeyException {
+276:    public byte[] aesDecryptByFixed(byte[] bArr) throws SecurityKeyException {
+294:    public String aesEncryptToString(byte[] bArr) throws SecurityKeyException {
+295:        return Base64.encodeToString(aesEncrypt(bArr), 11);
+298:    public byte[] aesEncrypt(byte[] bArr) throws SecurityKeyException {
+308:                    if (!this.needSwitchSdkCipher(null) && (aVar == this.mCipher || !(this.mCipher instanceof f))) {
+320:                h.a(this.mContext, getCurCipherMode(), 99, 21312, 0);
+326:    public byte[] aesEncrypt(byte[] bArr, int i) throws SecurityKeyException {
+330:    public byte[] aesDecryptString(String str) throws SecurityKeyException {
+332:            return aesDecrypt(Base64.decode(str, 11));
+340:    public byte[] aesDecrypt(byte[] bArr) throws SecurityKeyException {
+344:                return getProperCipher(ProtocolPackage.buildProtocolPackage(bArr), 1, "aesDecrypt").b(bArr);
+346:                if ((e.getErrorCode() != 152 && this.isSoftMode(bArr)) || this.needSwitchSdkCipher(bArr)) {
+359:                h.a(this.mContext, this.getCurCipherMode(), 0, bArr);
+379:                    if (!this.needSwitchSdkCipher(null) && (aVar == this.mCipher || !(this.mCipher instanceof f))) {
+391:                h.a(this.mContext, getCurCipherMode(), 99, 21314, 0);
+417:                if ((e.getErrorCode() != 152 && this.isSoftMode(bArr)) || this.needSwitchSdkCipher(bArr)) {
+430:                h.a(this.mContext, this.getCurCipherMode(), 99, 21315, 0);
+450:                    if (!this.needSwitchSdkCipher(null) && (aVar == this.mCipher || !(this.mCipher instanceof f))) {
+462:                h.a(this.mContext, getCurCipherMode(), 99, 21316, 0);
+482:                    if (!this.needSwitchSdkCipher(null) && (aVar == this.mCipher || !(this.mCipher instanceof f))) {
+494:                h.a(this.mContext, getCurCipherMode(), 99, 21321, 0);
+532:            int r8 = r8.getCurCipherMode()
+537:            int r8 = r8.getCurCipherMode()
+551:            boolean r6 = r8.needSwitchSdkCipher(r10)     // Catch: java.lang.Throwable -> L2f
+570:            int r8 = r8.getCurCipherMode()
+575:            int r8 = r8.getCurCipherMode()
+589:                if ((e.getErrorCode() != 152 && this.isSoftMode(bArr2)) || this.needSwitchSdkCipher(bArr2)) {
+602:                h.a(this.mContext, this.getCurCipherMode(), 99, 21317, 0);
+623:    public byte[] aesEncrypt(byte[] bArr, String str) throws Throwable {
+640:                                    k.c("SecurityKey", "aesEncrypt securityLevelProtocol Switch to sdk cipher");
+757:    private String toSecurityUrlCommon(String str, int i, boolean z) throws Throwable {
+772:                byte[] bArrAesEncrypt = aesEncrypt(com.vivo.seckeysdk.utils.c.a(mapB, false, z).getBytes("utf-8"));
+785:                byte[] bArrAesEncrypt2 = aesEncrypt(com.vivo.seckeysdk.utils.c.a(mapA, true, z).getBytes("utf-8"));
+798:                byte[] bArrAesEncrypt3 = aesEncrypt(com.vivo.seckeysdk.utils.c.a(mapA2, true, z).getBytes("utf-8"));
+812:        return toSecurityUrlCommon(str, i, false);
+816:        return toSecurityUrlCommon(str, i, true);
+826:                byte[] bArrAesEncrypt = aesEncrypt(com.vivo.seckeysdk.utils.c.a(map, false, z).getBytes("utf-8"));
+841:                byte[] bArrAesEncrypt2 = aesEncrypt(com.vivo.seckeysdk.utils.c.a(mapA, true, z).getBytes("utf-8"));
+852:                        byte[] bArrAesEncrypt3 = aesEncrypt(com.vivo.seckeysdk.utils.c.a(mapA2, true, z).getBytes("utf-8"));
+925:                byte[] bArrAesEncrypt = aesEncrypt(str.getBytes("utf-8"));
+939:                byte[] bArrAesEncrypt2 = aesEncrypt(str.getBytes("utf-8"));
+949:                        byte[] bArrAesEncrypt3 = aesEncrypt(str.getBytes("utf-8"));
+1002:    public String decryptResponse(String str) throws SecurityKeyException {
+1008:            byte[] bArrAesDecrypt = aesDecrypt(b.a(str));
+1037:        if (getCurCipherMode() != 2 && getCurCipherMode() != 3) {
+1051:        if ((getCurCipherMode() != 2 && getCurCipherMode() != 3) || this.mCipherMode != 1) {
+1058:    public int getCurCipherMode() {
+1062:    public boolean setCipherMode(int i) throws SecurityKeyException {
+1103:        if (getCurCipherMode() != 2) {
+1166:        if (getCurCipherMode() != 2 && getCurCipherMode() != 1) {
+1173:        return "ukparam=" + Base64.encodeToString(aesEncryptByFixed(strE.getBytes(Charset.forName("UTF-8"))), 11);
+1220:        if (getCurCipherMode() != 2) {
+1283:            SecurityKeyCipher securityKeyCipher = SecurityKeyCipher.getInstance(this.mContext, this.securityLevelProtocol);
+
+===== platform/c.java: key update / encrypt / decrypt =====
+358:            k.d("SecurityKey", "updateKey network is not Available");
+495:                vivoSecurityKeyResultA = this.f924a.a().a(protocolPackageBuildProtocolPackage.getCipherMode(), protocolPackageBuildProtocolPackage.getKeyVersion(), protocolPackageBuildProtocolPackage.getData());
+610:                vivoSecurityKeyResultB = this.f924a.a().b(protocolPackageBuildProtocolPackage.getCipherMode(), protocolPackageBuildProtocolPackage.getKeyVersion(), protocolPackageBuildProtocolPackage.getData());
+802:                vivoSecurityKeyResultC = this.f924a.a().c(protocolPackageBuildProtocolPackage.getCipherMode(), protocolPackageBuildProtocolPackage.getKeyVersion(), bArr3);
+911:        if (protocolPackage.getCipherMode() == 2 && protocolPackage.getCipherMode() == 2 && protocolPackage.getKeyVersion() != a(this.g, i2)) {
+912:            k.c("SecurityKey", this.f924a, str + " key version is not match current:" + this.f924a.b(i2) + " target:" + protocolPackage.getKeyVersion());
+913:            k.c("SecurityKey", this.f924a, str + " Please check env info. machine's env:" + ProtocolPackage.kv2EnvStr(this.f924a.b(i2)) + ". but cipher's env:" + ProtocolPackage.kv2EnvStr(protocolPackage.getKeyVersion()));
+921:            if (protocolPackage.getKeyVersion() == a(this.g, i2)) {
+965:            k.d("SecurityKey", this.f924a, "updateKeyV2 error: " + vivoSecurityKeyResultD.f927a);
+969:        k.d("SecurityKey", this.f924a, "updateKeyV2 return null");
+1076:            k.d("SecurityKey", "updateKeyFromBusinessServer url4GET is empty");
+1084:            k.d("SecurityKey", "updateKeyFromBusinessServer network is not Available");
+1087:        k.b("SecurityKey", this.f924a, "Platform.updateKeyFromBusinessServer enter");
+
+===== SecurityKeyProxy =====
+18:public final class SecurityKeyProxy implements com.vivo.seckeysdk.platform.b {
+37:        ENCRYPT,
+38:        DECRYPT,
+39:        SIGN,
+40:        VERIFY,
+41:        UPDATE,
+42:        UPDATE_WITH_NAME,
+43:        GET_UNIQUE_ID,
+46:        EXPORT_KEY,
+68:    public SecurityKeyProxy() {
+79:        this.d = "com.vivo.services.cipher.utils.SecurityKeyProxy";
+80:        this.c = e.a("com.vivo.services.cipher.utils.SecurityKeyProxy");
+105:            k.d("SecurityKeyProxy", "SecurityKeyContext is null");
+117:                k.a("SecurityKeyProxy", "NameNotFoundException", e);
+119:                k.a("SecurityKeyProxy", "Exception", e2);
+139:            k.d("SecurityKeyProxy", "input data error");
+142:        return a(i, OperateType.ENCRYPT.ordinal(), i2, i3, strC, 0, strD, bArr);
+159:            k.d("SecurityKeyProxy", "input data error");
+162:        return a(i, OperateType.DECRYPT.ordinal(), i2, i3, strC, i4, strD, bArr);
+170:            k.d("SecurityKeyProxy", "input data error");
+173:        return a(i, OperateType.SIGN.ordinal(), 0, KeyType.SK.ordinal(), strC, 0, strD, bArr);
+181:            k.d("SecurityKeyProxy", "input data error");
+184:        return a(i, OperateType.VERIFY.ordinal(), 0, KeyType.VK.ordinal(), strC, i2, strD, bArr);
+192:            k.d("SecurityKeyProxy", "input data error");
+195:        return a(i, OperateType.UPDATE.ordinal(), 0, i2, strC, 0, strD, bArr);
+201:        return a(i, OperateType.GET_UNIQUE_ID.ordinal(), 0, 0, c(), 0, strD, null);
+207:        return a(i, OperateType.EXPORT_KEY.ordinal(), 0, i2, c(), 0, strD, null);
+246:            k.a("SecurityKeyProxy", "Error: " + e.getMessage(), e);
+249:            k.a("SecurityKeyProxy", "Error: " + e2.getMessage(), e2);
+257:            objA = e.a("android.security.IKeystoreService", "vivoSecurityKeyOperate", this.f, new Class[]{Integer.TYPE, Integer.TYPE, Integer.TYPE, Integer.TYPE, String.class, Integer.TYPE, String.class, String.class, byte[].class}, new Object[]{Integer.valueOf(i), Integer.valueOf(i2), Integer.valueOf(i3), Integer.valueOf(i4), str, Integer.valueOf(i5), null, str2, bArr});
+259:            objA = e.a(this.d, "vivoSecurityKeyOperate", this.c, new Class[]{Integer.TYPE, Integer.TYPE, Integer.TYPE, Integer.TYPE, String.class, Integer.TYPE, String.class, String.class, byte[].class}, new Object[]{Integer.valueOf(i), Integer.valueOf(i2), Integer.valueOf(i3), Integer.valueOf(i4), str, Integer.valueOf(i5), null, str2, bArr});
+
+===== SecurityServerHandler =====
+27:    private final String e = "seckey_cache";
+48:        k.b("SecurityKey", Thread.currentThread().getName() + " start UpdateKeyTask!");
+66:                k.d("SecurityKey", this.d, "Update key build request data fail");
+67:                throw new SecurityKeyException("update key device init data error", 160);
+73:            k.a("SecurityKey", this.d, "countryCode:".concat(String.valueOf(strA)));
+75:                str = "https://vmd.vivo.com.cn/api/tkdist";
+77:                str = "https://in-vmd.vivoglobal.com/api/tkdist";
+79:                str = "RU".equals(strA) ? "https://ru-vmd.vivoglobal.com/api/tkdist" : "https://asia-vmd.vivoglobal.com/api/tkdist";
+101:        k.a("SecurityKey", "countryCode:".concat(String.valueOf(strB)));
+116:            if (jSONObject.has("status")) {
+117:                int i = jSONObject.getInt("status");
+124:                        k.d("SecurityKey", this.d, "security server return data is empty,response:".concat(String.valueOf(str)));
+127:                    k.d("SecurityKey", this.d, "security server return has no data item,response:".concat(String.valueOf(str)));
+133:            k.d("SecurityKey", this.d, "security server response no status info:".concat(String.valueOf(str)));
+175:        String string = this.d.c().getSharedPreferences("seckey_cache", 0).getString(str, "");
+187:            k.b("SecurityKey", this.d, "get response data from cache...");
