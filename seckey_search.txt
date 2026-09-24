@@ -1,0 +1,722 @@
+/data/data/com.termux/files/home/updater_src/sources/android/security/keymaster/SecurityKeyException.java:7:public class SecurityKeyException extends Exception {
+/data/data/com.termux/files/home/updater_src/sources/android/security/keymaster/SecurityKeyException.java:86:    public SecurityKeyException(int i) {
+/data/data/com.termux/files/home/updater_src/sources/android/security/keymaster/SecurityKeyException.java:90:    public SecurityKeyException(String str, int i) {
+/data/data/com.termux/files/home/updater_src/sources/android/security/keymaster/SecurityKeyException.java:95:    public SecurityKeyException(Throwable th, int i) {
+/data/data/com.termux/files/home/updater_src/sources/android/security/keymaster/SecurityKeyException.java:100:    public SecurityKeyException(String str, Throwable th, int i) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/account/base/utils/SecurityWrap.java:5:import com.vivo.seckeysdk.SecurityKeyCipher;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/account/base/utils/SecurityWrap.java:13:    private static SecurityKeyCipher mSecurityKeyCipher;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/account/base/utils/SecurityWrap.java:18:                if (mSecurityKeyCipher == null) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/account/base/utils/SecurityWrap.java:19:                    SecurityKeyCipher securityKeyCipher = SecurityKeyCipher.getInstance(context.getApplicationContext());
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/account/base/utils/SecurityWrap.java:20:                    mSecurityKeyCipher = securityKeyCipher;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/account/base/utils/SecurityWrap.java:21:                    securityKeyCipher.setCipherMode(4);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/account/base/utils/SecurityWrap.java:49:        return (HashMap) mSecurityKeyCipher.toSecurityMap(map, 1);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/account/base/utils/SecurityWrap.java:58:        return mSecurityKeyCipher.decryptResponse(str);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/download/UpdateDownloadManager.java:37:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/download/UpdateDownloadManager.java:372:        this.mDownloadManagerImpl.init(new DownloadConfig.Builder(CommonUtils.getUpdatePackageDirectory(this.mContext, "ota_pacakge")).setAllowDownloadInMobile(true).setAutoStartDownload(true).setConcurrentNum(5).setDownloadNotification(this.mNotifier).setDownloadIntercepter(new NetDealerDownloadInterceptor()).setDownloadProgressGapMs(SecurityKeyException.SK_ERROR_KEY_ENV_ISSUE).setConnectTimeoutMs(Constants.NOTI_ID_DOWNLOAD_COMPLETED).setReadTimeoutMs(Constants.NOTI_ID_DOWNLOAD_COMPLETED).build());
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:6:import com.vivo.seckeysdk.SecurityKeyCipher;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:7:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:15:    private static SecurityKeyCipher sSecurityKeyCipher;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:17:    public static SecurityKeyCipher getSecurityKeyCipher(Context context) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:18:        if (sSecurityKeyCipher == null) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:19:            sSecurityKeyCipher = SecurityKeyCipher.getInstance(context, CLIENT_TOKEN);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:21:        return sSecurityKeyCipher;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:26:            return getSecurityKeyCipher(context).toSecurityUrl(str, 1);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:27:        } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:38:            return Base64.encodeToString(getSecurityKeyCipher(context).aesEncrypt(str.getBytes("UTF-8")), 10);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:39:        } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:49:            return getSecurityKeyCipher(AppFeature.a()).decryptResponse(str);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:50:        } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:61:            return getSecurityKeyCipher(context).aesEncryptToString(str.getBytes("UTF-8"));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:62:        } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:73:            return new String(getSecurityKeyCipher(context).aesDecryptString(str), "UTF-8");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:74:        } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:85:            return Base64.encodeToString(getSecurityKeyCipher(context).aesEncryptByFixed(str.getBytes()), 11);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:94:            return new String(getSecurityKeyCipher(context).aesDecryptByFixed(Base64.decode(str, 11)));
+/data/data/com.termux/files/home/updater_src/sources/com/google/android/exoplayer2/extractor/mp4/AtomParsers.java:13:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/google/android/exoplayer2/extractor/mp4/AtomParsers.java:189:            i2 = SecurityKeyException.SK_ERROR_UNSUPPORTED_PROTOCOL_VERSION;
+/data/data/com.termux/files/home/updater_src/sources/com/google/android/exoplayer2/extractor/mkv/MatroskaExtractor.java:22:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/google/android/exoplayer2/extractor/mkv/MatroskaExtractor.java:912:                case SecurityKeyException.SK_ERROR_UNSUPPORTED_DECRYPT_KEYVERION_VERSION /* 183 */:
+/data/data/com.termux/files/home/updater_src/sources/com/google/android/exoplayer2/extractor/mkv/MatroskaExtractor.java:941:                case SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED /* 181 */:
+/data/data/com.termux/files/home/updater_src/sources/com/google/android/exoplayer2/text/a/a.java:19:import com.vivo.seckeysdk.SecurityKeyCipher;
+/data/data/com.termux/files/home/updater_src/sources/com/google/android/exoplayer2/text/a/a.java:35:    private static final int[] g = {Downloads.Impl.STATUS_WAITING_FOR_NETWORK, 227, 205, VivoDpmUtils.VIVO_RESTRICTION_POLICY_NETWORK_IP_ADDR_BWLIST, 236, CheckResultUtils.CHECK_RESULT_CODE_ALREAD_NEWEST, 242, 213, SecurityKeyCipher.RSA_ENCRYPT_DATA_SIZE_MAX, 123, 125, 92, 94, 95, 124, 126, Downloads.Impl.STATUS_QUEUED_FOR_WIFI, 228, 214, 246, 223, 165, 164, 9474, 197, 229, 216, 248, 9484, 9488, 9492, 9496};
+/data/data/com.termux/files/home/updater_src/sources/com/google/android/exoplayer2/text/a/c.java:15:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/google/android/exoplayer2/text/a/c.java:314:            case SecurityKeyException.KS_ERROR_FAST_VERIFY_FAIL /* 143 */:
+/data/data/com.termux/files/home/updater_src/sources/com/google/protobuf/DescriptorProtos.java:8:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/google/protobuf/DescriptorProtos.java:11583:                                case SecurityKeyException.SK_ERROR_BASE64_DECODE_FAIL /* 184 */:
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/BuildConfig.java:1:package com.vivo.seckeysdk;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/BuildConfig.java:5:    public static final String APPLICATION_ID = "com.vivo.seckeysdk";
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/BuildConfig.java:10:    public static final String VERSION_NAME = "seckeysdk-V3.1.6-a820cf4";
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/b.java:1:package com.vivo.seckeysdk.a;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/i.java:1:package com.vivo.seckeysdk.a;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/a.java:1:package com.vivo.seckeysdk.a;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/a.java:3:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/a.java:30:    byte[] h() throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/h.java:1:package com.vivo.seckeysdk.a;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/h.java:14:    @Override // com.vivo.seckeysdk.a.b
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/h.java:19:    @Override // com.vivo.seckeysdk.a.b
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/h.java:24:    @Override // com.vivo.seckeysdk.a.b
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/g.java:1:package com.vivo.seckeysdk.a;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/g.java:3:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/g.java:16:    public static int a(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/g.java:18:            throw new SecurityKeyException("Data received  must have value", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/g.java:21:            throw new SecurityKeyException("Size of data received  must less than 4", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/g.java:30:    public static long b(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:1:package com.vivo.seckeysdk.a;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:3:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:19:    protected abstract void k() throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:30:    public c(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:33:            throw new SecurityKeyException("Entry body must not be empty", SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:41:            throw new SecurityKeyException("Illegal header length:".concat(String.valueOf(iA)), SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:60:        throw new SecurityKeyException("Header length great than entry length,entry length:" + this.b.length + ",header length:" + iA, SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:63:    @Override // com.vivo.seckeysdk.a.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:68:    @Override // com.vivo.seckeysdk.a.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:73:    public boolean i() throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:79:            throw new SecurityKeyException("The haeder bytes must not be empty", SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:93:        throw new SecurityKeyException("头数据校验不成功，头部校验和为：" + jB + ",计算校验和为：" + value, SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:96:    @Override // com.vivo.seckeysdk.a.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:101:    protected final int j() throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:107:    @Override // com.vivo.seckeysdk.a.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:112:    @Override // com.vivo.seckeysdk.a.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:117:    @Override // com.vivo.seckeysdk.a.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:122:    @Override // com.vivo.seckeysdk.a.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:127:    @Override // com.vivo.seckeysdk.a.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:132:    @Override // com.vivo.seckeysdk.a.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:137:    @Override // com.vivo.seckeysdk.a.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/c.java:142:    @Override // com.vivo.seckeysdk.a.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/e.java:1:package com.vivo.seckeysdk.a;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/e.java:3:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/e.java:4:import com.vivo.seckeysdk.utils.k;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/e.java:22:    public e(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/e.java:26:    @Override // com.vivo.seckeysdk.a.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/e.java:27:    public final byte[] h() throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/e.java:32:            throw new SecurityKeyException("keyToken must have value", SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/e.java:70:    @Override // com.vivo.seckeysdk.a.c
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/e.java:71:    protected final void k() throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/e.java:74:            throw new SecurityKeyException("Unsupported version of:" + iJ + " for this Header + " + getClass(), SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/e.java:78:            throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/e.java:83:            throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/e.java:93:            throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/e.java:99:            throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:1:package com.vivo.seckeysdk.a;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:3:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:4:import com.vivo.seckeysdk.utils.k;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:28:    public f(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:56:    @Override // com.vivo.seckeysdk.a.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:57:    public final byte[] h() throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:62:            throw new SecurityKeyException("keyToken must have value", SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:85:            throw new SecurityKeyException("extend1.length cannot >=256", SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:89:            throw new SecurityKeyException("extend2.length cannot >=256", SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:93:            throw new SecurityKeyException("extend3.length cannot >=256", SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:133:    @Override // com.vivo.seckeysdk.a.c
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:134:    protected final void k() throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:137:            throw new SecurityKeyException("Unsupported version of:" + iJ + " for this Header + " + getClass(), SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:141:            throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:146:            throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:156:            throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:162:            throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:169:            throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:176:            throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/f.java:183:            throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/d.java:1:package com.vivo.seckeysdk.a;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/d.java:3:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/d.java:8:    public static a a(int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/d.java:15:        throw new SecurityKeyException("Unsupported protocol version for CryptoEntry:" + i + ": (This data is illegal ciphertext, please check!)", SecurityKeyException.SK_ERROR_UNSUPPORTED_PROTOCOL_VERSION);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/d.java:18:    public static a a(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/d.java:21:            throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/d.java:31:        throw new SecurityKeyException("Unsupported protocol version for CryptoEntry:" + iA + ": (This data is illegal ciphertext, please check!)", SecurityKeyException.SK_ERROR_UNSUPPORTED_PROTOCOL_VERSION);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/VivoSecurityKeyResult.java:1:package com.vivo.seckeysdk.platform.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/VivoSecurityKeyResult.java:8:    public static final Parcelable.Creator<VivoSecurityKeyResult> CREATOR = new Parcelable.Creator<VivoSecurityKeyResult>() { // from class: com.vivo.seckeysdk.platform.utils.VivoSecurityKeyResult.1
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/c.java:1:package com.vivo.seckeysdk.platform.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/c.java:3:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/c.java:12:    private SecurityKeyException c;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/c.java:17:    public c(boolean z, byte[] bArr, SecurityKeyException securityKeyException) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/c.java:20:        this.c = securityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/c.java:31:    public final SecurityKeyException c() {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:1:package com.vivo.seckeysdk.platform.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:10:import com.vivo.seckeysdk.utils.e;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:11:import com.vivo.seckeysdk.utils.k;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:18:public final class SecurityKeyProxy implements com.vivo.seckeysdk.platform.b {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:83:    @Override // com.vivo.seckeysdk.platform.b
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:125:    @Override // com.vivo.seckeysdk.platform.b
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:130:    @Override // com.vivo.seckeysdk.platform.b
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:145:    @Override // com.vivo.seckeysdk.platform.b
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:150:    @Override // com.vivo.seckeysdk.platform.b
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:165:    @Override // com.vivo.seckeysdk.platform.b
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:176:    @Override // com.vivo.seckeysdk.platform.b
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:187:    @Override // com.vivo.seckeysdk.platform.b
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:198:    @Override // com.vivo.seckeysdk.platform.b
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:204:    @Override // com.vivo.seckeysdk.platform.b
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:210:    @Override // com.vivo.seckeysdk.platform.b
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:228:    @Override // com.vivo.seckeysdk.platform.b
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:244:            return com.vivo.seckeysdk.utils.b.a(messageDigest.digest());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/a.java:1:package com.vivo.seckeysdk.platform.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/a.java:25:    private com.vivo.seckeysdk.platform.b n = new SecurityKeyProxy();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/a.java:27:    public final com.vivo.seckeysdk.platform.b a() {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:1:package com.vivo.seckeysdk.platform.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:8:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:9:import com.vivo.seckeysdk.utils.k;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:57:                throw new SecurityKeyException("update key network connection deny", 158);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:62:                throw new SecurityKeyException("update key network connection deny", 158);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:67:                throw new SecurityKeyException("update key device init data error", 160);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:86:            throw new SecurityKeyException("update key fail", 165);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:87:        } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:92:            return new c(false, null, new SecurityKeyException("update key fail", 1000));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:113:    private byte[] a(String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:122:                            return com.vivo.seckeysdk.utils.b.a(string);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:125:                        throw new SecurityKeyException("update key fail", 162);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:128:                    throw new SecurityKeyException("update key fail", 163);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:131:                throw new SecurityKeyException("Server return Status:".concat(String.valueOf(i)), i);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:134:            throw new SecurityKeyException("update key fail", 156);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:137:            throw new SecurityKeyException("update key fail", 156);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:246:        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.platform.utils.b.a(java.lang.String, byte[], boolean):java.lang.String");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/a.java:1:package com.vivo.seckeysdk.platform;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/a.java:3:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/a.java:7:public interface a extends com.vivo.seckeysdk.utils.a {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/a.java:12:    boolean a(String str) throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/b.java:1:package com.vivo.seckeysdk.platform;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/b.java:4:import com.vivo.seckeysdk.platform.utils.VivoSecurityKeyResult;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:1:package com.vivo.seckeysdk.platform;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:6:import com.vivo.seckeysdk.platform.utils.VivoSecurityKeyResult;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:7:import com.vivo.seckeysdk.utils.ProtocolPackage;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:8:import com.vivo.seckeysdk.utils.SDKCipherConfig;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:9:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:10:import com.vivo.seckeysdk.utils.g;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:11:import com.vivo.seckeysdk.utils.h;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:12:import com.vivo.seckeysdk.utils.k;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:30:    protected com.vivo.seckeysdk.platform.utils.a f924a;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:59:        com.vivo.seckeysdk.platform.utils.a aVar = new com.vivo.seckeysdk.platform.utils.a();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:120:    private synchronized boolean g(int i2) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:144:            } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:159:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:160:    public boolean c(int i2) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:180:        } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:186:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:192:        } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:199:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:205:        } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:227:    private synchronized boolean b(boolean r8) throws com.vivo.seckeysdk.utils.SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:232:        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.platform.c.b(boolean):boolean");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:265:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:274:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:275:    public boolean d() throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:280:    private byte[] a(int i2, String str, boolean z) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:289:            } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:305:                throw new SecurityKeyException("update key fail", 171);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:313:        throw new SecurityKeyException("update key fail", 172);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:316:    private byte[] b(int i2, String str, boolean z) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:317:        FutureTask futureTask = new FutureTask(new com.vivo.seckeysdk.platform.utils.b(this.f924a, k(i2), str, z, SDKCipherConfig.cacheUpdateKeyResponse, SDKCipherConfig.cacheResponseMaxTime));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:320:            com.vivo.seckeysdk.platform.utils.c cVar = (com.vivo.seckeysdk.platform.utils.c) futureTask.get(LightCountDownLatch.TIME_OUT, TimeUnit.MILLISECONDS);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:323:                throw new SecurityKeyException("update key fail", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:331:                throw new SecurityKeyException("update key fail", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:337:            throw new SecurityKeyException("update key fail", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:340:            throw new SecurityKeyException("update key time out", 161);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:343:            throw new SecurityKeyException("update key fail", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:347:    private synchronized boolean a(int i2, boolean z) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:349:        if (!com.vivo.seckeysdk.platform.utils.b.a(this.f924a.c())) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:359:            throw new SecurityKeyException("network is not Available", 157);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:364:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:365:    public byte[] a(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:369:        } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:379:    @Override // com.vivo.seckeysdk.platform.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:384:    @Override // com.vivo.seckeysdk.platform.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:389:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:390:    public byte[] a(byte[] bArr, String str) throws SecurityKeyException, JSONException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:407:        } catch (SecurityKeyException e3) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:416:    private void g(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:420:            throw new SecurityKeyException("not available!", 101);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:431:            throw new SecurityKeyException("invalid input params!", 102);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:437:        throw new SecurityKeyException("input length > 200k", 120);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:440:    private byte[] a(byte[] bArr, int i2, int i3) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:458:                throw new SecurityKeyException("aes encrypt error", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:461:            throw new SecurityKeyException("aes encrypt error", vivoSecurityKeyResultA.f927a);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:464:        throw new SecurityKeyException("aes encrypt error", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:467:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:468:    public byte[] b(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:473:            throw new SecurityKeyException("invalid input params!", 102);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:477:            throw new SecurityKeyException("not available!", 101);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:489:            throw new SecurityKeyException("input length > 200k + 16", 121);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:507:                    throw new SecurityKeyException("aes decrypt error", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:510:                throw new SecurityKeyException("aes decrypt error", vivoSecurityKeyResultA.f927a);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:513:            throw new SecurityKeyException("aes decrypt error", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:516:        throw new SecurityKeyException("encrypt type of data is not supported", 154);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:519:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:520:    public byte[] c(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:523:        } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:532:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:533:    public byte[] b(byte[] bArr, String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:542:        } catch (SecurityKeyException e3) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:551:    private byte[] a(byte[] bArr, int i2) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:557:            throw new SecurityKeyException("invalid input params!", 102);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:561:            throw new SecurityKeyException("input length > 245", 130);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:565:            throw new SecurityKeyException("not available!", 101);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:580:                throw new SecurityKeyException("rsa encrypt error", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:583:            throw new SecurityKeyException("rsa encrypt error", vivoSecurityKeyResultB.f927a);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:586:        throw new SecurityKeyException("rsa encrypt error", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:589:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:590:    public byte[] d(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:595:            throw new SecurityKeyException("invalid input params!", 102);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:599:            throw new SecurityKeyException("not available!", 101);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:604:            throw new SecurityKeyException("input length > 256", 131);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:621:                    throw new SecurityKeyException("rsa decrypt error", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:624:                throw new SecurityKeyException("rsa decrypt error", vivoSecurityKeyResultB.f927a);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:627:            throw new SecurityKeyException("rsa decrypt error", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:630:        throw new SecurityKeyException("encrypt type of data is not supported", 154);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:633:    private byte[] b(byte[] bArr, int i2, int i3) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:651:                throw new SecurityKeyException("aes encrypt error", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:654:            throw new SecurityKeyException("aes encrypt error", vivoSecurityKeyResultA.f927a);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:657:        throw new SecurityKeyException("aes encrypt error", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:660:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:661:    public byte[] e(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:665:        } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:675:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:676:    public boolean a(byte[] bArr, byte[] bArr2) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:681:        } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:694:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:695:    public byte[] f(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:698:        } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:707:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:708:    public byte[] c(byte[] bArr, String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:717:        } catch (SecurityKeyException e3) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:736:    private byte[] b(byte[] bArr, int i2) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:742:            throw new SecurityKeyException("invalid input params!", 102);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:746:            throw new SecurityKeyException("input length > 200k", 140);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:750:            throw new SecurityKeyException("not available!", 101);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:765:                throw new SecurityKeyException("sk sign error:", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:768:            throw new SecurityKeyException("sk sign error:", vivoSecurityKeyResultC.f927a);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:771:        throw new SecurityKeyException("sk sign error:", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:774:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:775:    public boolean b(byte[] bArr, byte[] bArr2) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:780:            throw new SecurityKeyException("invalid input params!", 102);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:784:            throw new SecurityKeyException("input length > 200k", 141);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:788:            throw new SecurityKeyException("not available!", 101);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:793:            throw new SecurityKeyException("sign length != 256", 142);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:808:                    throw new SecurityKeyException("sign verify error ", vivoSecurityKeyResultC.f927a);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:814:            throw new SecurityKeyException("unknown error!", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:817:        throw new SecurityKeyException("encrypt type of data is not supported", 154);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:822:            Class.forName("com.vivo.services.cipher.SecurityKeyCipher").getDeclaredMethod("exportKey", Integer.TYPE).setAccessible(true);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:829:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:830:    public byte[] e(int i2) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:840:            throw new SecurityKeyException("not available!", 101);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:844:            throw new SecurityKeyException("not available!", 101);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:857:                    throw new SecurityKeyException("security storage read error", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:862:                    throw new SecurityKeyException("security storage read error", vivoSecurityKeyResultA.f927a);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:869:        throw new SecurityKeyException("security storage read error", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:873:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:878:    public byte[] f(int r4) throws com.vivo.seckeysdk.utils.SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:899:            com.vivo.seckeysdk.utils.ProtocolPackage r1 = new com.vivo.seckeysdk.utils.ProtocolPackage
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:900:            com.vivo.seckeysdk.platform.utils.a r3 = r3.f924a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:907:        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.platform.c.f(int):byte[]");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:910:    private void a(ProtocolPackage protocolPackage, int i2, String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:915:                throw new SecurityKeyException("security key not match", 153);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:919:                throw new SecurityKeyException("update key fail", 155);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:925:            throw new SecurityKeyException("security key not match", 153);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:929:    private void a(VivoSecurityKeyResult vivoSecurityKeyResult, ProtocolPackage protocolPackage, int i2, String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:937:        if (SecurityKeyException.keyVersionNotMatched(i3)) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:947:    private boolean h(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:951:            throw new SecurityKeyException("update key fail", 103);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:967:            throw new SecurityKeyException("update key fail", vivoSecurityKeyResultD.f927a);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:970:        throw new SecurityKeyException("update key fail", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:973:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:974:    public boolean b(String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:978:        return h(com.vivo.seckeysdk.utils.b.a(str));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:981:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:994:                map.put("cc", com.vivo.seckeysdk.platform.utils.b.b(this.f924a.c()));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:1015:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:1022:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:1043:            Class.forName("com.vivo.services.cipher.SecurityKeyCipher");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:1051:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:1073:    @Override // com.vivo.seckeysdk.platform.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:1074:    public boolean a(String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:1077:            throw new SecurityKeyException("Invalied url", 602);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:1085:            throw new SecurityKeyException("network is not Available", 157);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:1091:    @Override // com.vivo.seckeysdk.platform.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/d.java:1:package com.vivo.seckeysdk.platform;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/d.java:4:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/d.java:5:import com.vivo.seckeysdk.utils.k;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/d.java:25:    public final Object invoke(Object obj, Method method, Object[] objArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/d.java:41:            throw new SecurityKeyException("target is null", -1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/d.java:51:            if (th instanceof SecurityKeyException) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/d.java:52:                throw ((SecurityKeyException) th);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/d.java:54:            throw new SecurityKeyException(th, -1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/NativeRequest.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SDKCipherConfig.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:3:/* JADX INFO: compiled from: ISecurityKeyCipher.java */
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:8:    boolean a(byte[] bArr, byte[] bArr2) throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:10:    byte[] a(byte[] bArr) throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:12:    byte[] a(byte[] bArr, String str) throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:16:    boolean b(String str) throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:18:    boolean b(byte[] bArr, byte[] bArr2) throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:20:    byte[] b(byte[] bArr) throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:22:    byte[] b(byte[] bArr, String str) throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:26:    boolean c(int i) throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:28:    byte[] c(byte[] bArr) throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:30:    byte[] c(byte[] bArr, String str) throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:34:    boolean d() throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:36:    byte[] d(byte[] bArr) throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:38:    String e() throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:40:    byte[] e(int i) throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:42:    byte[] e(byte[] bArr) throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:46:    byte[] f(int i) throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/a.java:48:    byte[] f(byte[] bArr) throws SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/i.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityKeyException.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityKeyException.java:7:public class SecurityKeyException extends Exception {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityKeyException.java:108:    public SecurityKeyException(int i) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityKeyException.java:112:    public SecurityKeyException(String str, int i) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityKeyException.java:116:    public SecurityKeyException(Throwable th, int i) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityKeyException.java:120:    public SecurityKeyException(String str, Throwable th, int i) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityKeyException.java:125:    public SecurityKeyException(com.vivo.services.cipher.utils.SecurityKeyException securityKeyException) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityKeyException.java:126:        this(securityKeyException.getMessage(), securityKeyException.getCause(), securityKeyException.getErrorCode());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityKeyException.java:129:    public SecurityKeyException(android.security.keymaster.SecurityKeyException securityKeyException) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityKeyException.java:130:        this(securityKeyException.getMessage(), securityKeyException.getCause(), securityKeyException.getErrorCode());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityKeyException.java:133:    public SecurityKeyException(Exception exc) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/k.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/k.java:30:    public static void a(String str, com.vivo.seckeysdk.platform.utils.a aVar, String str2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/k.java:34:    public static void b(String str, com.vivo.seckeysdk.platform.utils.a aVar, String str2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/k.java:38:    public static void c(String str, com.vivo.seckeysdk.platform.utils.a aVar, String str2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/k.java:42:    public static void d(String str, com.vivo.seckeysdk.platform.utils.a aVar, String str2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/k.java:46:    public static void a(String str, com.vivo.seckeysdk.platform.utils.a aVar, String str2, Throwable th) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/e.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/NativeResponse.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/j.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/j.java:32:    private final Handler l = new Handler(Looper.getMainLooper()) { // from class: com.vivo.seckeysdk.utils.j.2
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/j.java:122:            Runnable runnable = new Runnable() { // from class: com.vivo.seckeysdk.utils.j.1
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/b.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/b.java:62:    public static byte[] a(java.lang.String r9) throws com.vivo.seckeysdk.utils.SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/b.java:67:        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.utils.b.a(java.lang.String):byte[]");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/c.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/c.java:89:                            throw new SecurityKeyException("bad parameter", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/c.java:94:                            throw new SecurityKeyException("contain same key", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/h.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/h.java:24:    public static void a(com.vivo.seckeysdk.platform.utils.a aVar, int i, int i2, int i3) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/h.java:28:    public static void a(com.vivo.seckeysdk.platform.utils.a aVar, int i, int i2, String str) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/h.java:76:        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.utils.h.a(android.content.Context, int, int, int, int, java.lang.String):void");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/g.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/g.java:38:            h.a((Context) objA, 7, 0, 21310, SecurityKeyException.SK_ERROR_LOAD_SO_FAILED, str);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:69:    public byte[] getbytes() throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:70:        com.vivo.seckeysdk.a.a aVarA = com.vivo.seckeysdk.a.d.a(1);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:79:    public byte[] getHeaderbytes() throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:80:        com.vivo.seckeysdk.a.a aVarA = com.vivo.seckeysdk.a.d.a(1);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:92:    public static ProtocolPackage buildProtocolPackage(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:93:        com.vivo.seckeysdk.a.a aVarA = com.vivo.seckeysdk.a.d.a(bArr);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:94:        com.vivo.seckeysdk.a.b bVarC = aVarA.c();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:97:            throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:102:            throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:107:            throw new SecurityKeyException("crypto body problem", 151);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SDKCipherNative.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SDKCipherNative.java:70:        new Thread(new Runnable() { // from class: com.vivo.seckeysdk.utils.SDKCipherNative.1
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:5:import com.vivo.seckeysdk.SecurityKeyCipher;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:49:            k.b("SecurityKey", "resetVivoCipher buildProtocolPackageForMethod cipherMode=" + i + ",mode=" + SecurityKeyCipher.modeToString(i));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:51:        } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:57:    public static SecurityLevelProtocolPackage b(Context context, String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:62:            throw new SecurityKeyException(e.getMessage(), -1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:66:    private static SecurityLevelProtocolPackage c(Context context, String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:71:            throw new SecurityKeyException(e.getMessage(), -1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:75:    private static SecurityLevelProtocolPackage a(Context context, byte[] bArr, String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:79:    private SecurityLevelProtocolPackage(Context context, byte[] bArr, String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:89:            throw new SecurityKeyException("Entry body must not be empty", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:96:        int iA = com.vivo.seckeysdk.a.g.a(bArr2);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:98:            throw new SecurityKeyException("Illegal header length:".concat(String.valueOf(iA)), SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:102:            throw new SecurityKeyException("Header length great than entry length,entry length:" + this.e.length + ",header length:" + iA, SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:106:                throw new SecurityKeyException("The haeder bytes must not be empty", SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:113:            long jB = com.vivo.seckeysdk.a.g.b(bArr4);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:118:                throw new SecurityKeyException("头数据校验不成功，头部校验和为：" + jB + ",计算校验和为：" + value, 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:124:            int iA2 = com.vivo.seckeysdk.a.g.a(bArr7);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:126:                throw new SecurityKeyException("Unsupported version of:" + iA2 + " for this Header + " + getClass(), SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:131:                throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:135:            this.h = Integer.valueOf(com.vivo.seckeysdk.a.g.a(bArr9)).intValue();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:136:            Integer numValueOf = Integer.valueOf(com.vivo.seckeysdk.a.g.a(new byte[]{bArr8[18]}));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:139:                throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:144:                throw new SecurityKeyException("Unsupported tag=" + str2 + " for this Header + " + getClass(), SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:147:            Integer numValueOf2 = Integer.valueOf(com.vivo.seckeysdk.a.g.a(new byte[]{bArr8[numValueOf.intValue() + 19]}));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:150:                throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:156:                throw new SecurityKeyException("Unsupported protocol_packageName of:" + str3 + " for this Header + " + getClass() + ",expected to be app_packageName=" + packageName + ", but " + str3, SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:159:            Integer numValueOf3 = Integer.valueOf(com.vivo.seckeysdk.a.g.a(new byte[]{bArr8[numValueOf.intValue() + 20 + numValueOf2.intValue()]}));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:162:                throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:168:                Integer numValueOf4 = Integer.valueOf(com.vivo.seckeysdk.a.g.a(new byte[]{bArr8[iIntValue]}));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:171:                    throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:177:                    Integer numValueOf5 = Integer.valueOf(com.vivo.seckeysdk.a.g.a(new byte[]{bArr8[iIntValue2]}));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:180:                        throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:185:                        Integer numValueOf6 = Integer.valueOf(com.vivo.seckeysdk.a.g.a(new byte[]{bArr8[numValueOf.intValue() + 23 + numValueOf2.intValue() + numValueOf3.intValue() + numValueOf4.intValue() + numValueOf5.intValue()]}));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityLevelProtocolPackage.java:188:                            throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/d.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/d.java:53:    public final byte[] d() throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/d.java:54:        com.vivo.seckeysdk.a.f fVar = (com.vivo.seckeysdk.a.f) com.vivo.seckeysdk.a.d.a(3);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/d.java:75:    public final byte[] e() throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/d.java:76:        com.vivo.seckeysdk.a.f fVar = (com.vivo.seckeysdk.a.f) com.vivo.seckeysdk.a.d.a(3);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/d.java:96:    public static d b(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/d.java:97:        com.vivo.seckeysdk.a.f fVar = (com.vivo.seckeysdk.a.f) com.vivo.seckeysdk.a.d.a(bArr);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/d.java:98:        com.vivo.seckeysdk.a.b bVarC = fVar.c();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/d.java:101:            throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/d.java:106:            throw new SecurityKeyException("crypto header problem", 150);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/d.java:111:            throw new SecurityKeyException("crypto body problem", 151);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:1:package com.vivo.seckeysdk.utils;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:3:import com.vivo.seckeysdk.utils.SDKCipherNative;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:17:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:22:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:23:    public final boolean d() throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:27:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:41:    public static synchronized com.vivo.seckeysdk.utils.f a(android.content.Context r6) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:46:        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.utils.f.a(android.content.Context):com.vivo.seckeysdk.utils.f");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:77:        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.utils.f.g():java.lang.String");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:98:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:99:    public final byte[] a(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:103:    public final byte[] a(byte[] bArr, int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:107:    private byte[] a(byte[] bArr, int i, int i2) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:122:            throw new SecurityKeyException(nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:126:            throw new SecurityKeyException("unknown error!", -1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:131:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:132:    public final byte[] a(byte[] bArr, String str) throws JSONException, SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:145:    private static void i() throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:150:        throw new SecurityKeyException("libvivoseckey.so is load failed,please check!", SecurityKeyException.SK_ERROR_LOAD_SO_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:159:    public final byte[] g(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:177:            throw new SecurityKeyException(nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:181:            throw new SecurityKeyException("unknown error!", -1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:188:    public final byte[] h(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:195:            throw new SecurityKeyException("aes decrypt error", -10);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:213:            throw new SecurityKeyException(nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:217:            throw new SecurityKeyException("unknown error!", -1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:222:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:223:    public final byte[] b(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:230:            throw new SecurityKeyException("encrypt type of data is not supported", 154);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:235:            throw new SecurityKeyException("decrypt  keyversion  of the data is greater than the currently supported version", SecurityKeyException.SK_ERROR_UNSUPPORTED_DECRYPT_KEYVERION_VERSION);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:249:            throw new SecurityKeyException(nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:253:            throw new SecurityKeyException("unknown error!", -1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:258:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:259:    public final byte[] c(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:263:    public final byte[] b(byte[] bArr, int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:278:            throw new SecurityKeyException(nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:282:            throw new SecurityKeyException("unknown error!", -1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:287:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:288:    public final byte[] b(byte[] bArr, String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:292:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:293:    public final byte[] d(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:300:            throw new SecurityKeyException("decrypt  keyversion  of the data is greater than the currently supported version", SecurityKeyException.SK_ERROR_UNSUPPORTED_DECRYPT_KEYVERION_VERSION);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:314:            throw new SecurityKeyException(nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:318:            throw new SecurityKeyException("unknown error!", -1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:323:    private byte[] b(byte[] bArr, int i, int i2) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:338:            throw new SecurityKeyException(nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:342:            throw new SecurityKeyException("unknown error!", -1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:347:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:348:    public final byte[] e(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:352:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:353:    public final boolean a(byte[] bArr, byte[] bArr2) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:360:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:361:    public final byte[] f(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:365:    public final byte[] c(byte[] bArr, int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:380:            throw new SecurityKeyException(nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:384:            throw new SecurityKeyException("unknown error!", -1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:389:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:390:    public final byte[] c(byte[] bArr, String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:394:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:395:    public final boolean b(byte[] bArr, byte[] bArr2) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:402:            throw new SecurityKeyException("decrypt  keyversion  of the data is greater than the currently supported version", SecurityKeyException.SK_ERROR_UNSUPPORTED_DECRYPT_KEYVERION_VERSION);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:424:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:429:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:434:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:439:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:449:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:450:    public final byte[] f(int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:481:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:482:    public final byte[] e(int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:484:        throw new SecurityKeyException("operate mode not match", 152);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:487:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:492:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:493:    public final String e() throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:494:        throw new SecurityKeyException("Not Supported.", 601);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:497:    @Override // com.vivo.seckeysdk.utils.a
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:498:    public final boolean b(String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:499:        throw new SecurityKeyException("Not Supported.", 601);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1:package com.vivo.seckeysdk;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:7:import com.vivo.seckeysdk.platform.c;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:8:import com.vivo.seckeysdk.platform.d;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:9:import com.vivo.seckeysdk.utils.ProtocolPackage;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:10:import com.vivo.seckeysdk.utils.SDKCipherConfig;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:11:import com.vivo.seckeysdk.utils.SDKCipherNative;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:12:import com.vivo.seckeysdk.utils.SecurityKeyException;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:13:import com.vivo.seckeysdk.utils.SecurityLevelProtocolPackage;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:14:import com.vivo.seckeysdk.utils.a;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:15:import com.vivo.seckeysdk.utils.b;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:16:import com.vivo.seckeysdk.utils.f;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:17:import com.vivo.seckeysdk.utils.g;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:18:import com.vivo.seckeysdk.utils.h;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:19:import com.vivo.seckeysdk.utils.k;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:31:public class SecurityKeyCipher {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:54:    public static final String SDK_VERSION = "seckeysdk-V3.1.6-a820cf4";
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:65:    protected static volatile Map<String, SecurityKeyCipher> ciphers = new HashMap();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:69:    protected com.vivo.seckeysdk.platform.a mPlatformCipher = null;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:77:        return "seckeysdk-V3.1.6-a820cf4";
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:80:    protected SecurityKeyCipher(Context context) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:83:        k.a("SecurityKey", "Create new securityKeyCipher. version: seckeysdk-V3.1.6-a820cf4");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:86:    public static synchronized SecurityKeyCipher getInstance(Context context, String str) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:107:        SecurityKeyCipher securityKeyCipher = new SecurityKeyCipher(applicationContext);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:139:            } catch (SecurityKeyException e3) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:144:        securityKeyCipher.mSdkCipher = f.a(applicationContext);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:145:        securityKeyCipher.mPlatformCipher = d.a(applicationContext);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:148:            securityKeyCipher.mCipher = securityKeyCipher.mPlatformCipher;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:151:            securityKeyCipher.mCipher = securityKeyCipher.mSdkCipher;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:153:        if (securityKeyCipher.mCipher != null && securityKeyCipher.mSdkCipher != null) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:155:                setCipherModeByClientToken(securityKeyCipher, i3);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:157:            ciphers.put(packageName, securityKeyCipher);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:158:            return securityKeyCipher;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:164:    private static void setCipherModeByClientToken(SecurityKeyCipher securityKeyCipher, int i) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:166:            securityKeyCipher.setCipherMode(i);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:168:        } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:173:                        securityKeyCipher.setCipherMode(4);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:176:                    } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:186:                securityKeyCipher.setCipherMode(3);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:188:            } catch (SecurityKeyException e3) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:191:                    securityKeyCipher.setCipherMode(4);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:193:                } catch (SecurityKeyException e4) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:209:            } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:223:        return aVar instanceof com.vivo.seckeysdk.platform.a;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:238:        } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:244:    public String aesEncryptData(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:248:    public byte[] aesDecryptData(String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:252:            h.a(this.mContext, 6, 99, 21313, SecurityKeyException.SK_ERROR_BASE64_DECODE_FAIL, new String(g.b(str.getBytes())));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:254:            throw new SecurityKeyException(e.getMessage(), -10);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:258:    public byte[] aesEncryptByFixed(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:264:            } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:276:    public byte[] aesDecryptByFixed(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:282:            } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:294:    public String aesEncryptToString(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:298:    public byte[] aesEncrypt(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:306:                } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:314:            } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:326:    public byte[] aesEncrypt(byte[] bArr, int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:330:    public byte[] aesDecryptString(String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:334:            h.a(this.mContext, 7, 99, 21313, SecurityKeyException.SK_ERROR_BASE64_DECODE_FAIL, new String(g.b(str.getBytes())));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:336:            throw new SecurityKeyException(e.getMessage(), -10);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:340:    public byte[] aesDecrypt(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:345:            } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:349:                    } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:365:    public String rsaEncryptToString(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:369:    public byte[] rsaEncrypt(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:377:                } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:385:            } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:397:    public byte[] rsaEncrypt(byte[] bArr, int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:401:    public byte[] rsaDecryptString(String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:405:            h.a(this.mContext, 7, 99, 21315, SecurityKeyException.SK_ERROR_BASE64_DECODE_FAIL);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:407:            throw new SecurityKeyException(e.getMessage(), -12);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:411:    public byte[] rsaDecrypt(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:416:            } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:420:                    } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:436:    public String signToString(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:440:    public byte[] sign(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:448:                } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:456:            } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:468:    public byte[] sign(byte[] bArr, int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:472:    public byte[] signFast(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:480:                } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:488:            } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:500:    public boolean signatureVerifyString(byte[] bArr, String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:504:            h.a(this.mContext, 7, 99, 21317, SecurityKeyException.SK_ERROR_BASE64_DECODE_FAIL);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:506:            throw new SecurityKeyException(e.getMessage(), -12);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:516:    public boolean signatureVerifyFast(byte[] r9, byte[] r10) throws com.vivo.seckeysdk.utils.SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:524:            r8.preWork(r9)     // Catch: java.lang.Throwable -> L2f com.vivo.seckeysdk.utils.SecurityKeyException -> L31
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:525:            com.vivo.seckeysdk.utils.ProtocolPackage r5 = com.vivo.seckeysdk.utils.ProtocolPackage.buildProtocolPackage(r10)     // Catch: java.lang.Throwable -> L2f com.vivo.seckeysdk.utils.SecurityKeyException -> L31
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:527:            com.vivo.seckeysdk.utils.a r5 = r8.getProperCipher(r5, r1, r6)     // Catch: java.lang.Throwable -> L2f com.vivo.seckeysdk.utils.SecurityKeyException -> L31
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:528:            boolean r9 = r5.a(r9, r10)     // Catch: java.lang.Throwable -> L2f com.vivo.seckeysdk.utils.SecurityKeyException -> L31
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:533:            com.vivo.seckeysdk.utils.h.a(r10, r8, r1, r4, r2)
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:538:            com.vivo.seckeysdk.utils.h.a(r10, r8, r3, r4, r0)
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:554:            com.vivo.seckeysdk.utils.f r5 = r8.mSdkCipher     // Catch: java.lang.Throwable -> L2f com.vivo.seckeysdk.utils.SecurityKeyException -> L50
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:555:            boolean r9 = r5.a(r9, r10)     // Catch: java.lang.Throwable -> L2f com.vivo.seckeysdk.utils.SecurityKeyException -> L50
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:571:            com.vivo.seckeysdk.utils.h.a(r10, r8, r3, r4, r0)
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:576:            com.vivo.seckeysdk.utils.h.a(r10, r8, r3, r4, r2)
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:580:        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.SecurityKeyCipher.signatureVerifyFast(byte[], byte[]):boolean");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:583:    public boolean signatureVerify(byte[] bArr, byte[] bArr2) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:588:            } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:592:                    } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:608:    private a getProperCipher(ProtocolPackage protocolPackage, int i, String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:610:            com.vivo.seckeysdk.platform.a aVar = this.mPlatformCipher;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:615:            throw new SecurityKeyException("init failed!", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:637:                            } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:655:                    } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:658:                } catch (SecurityKeyException e3) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:684:                            } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:702:                    } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:705:                } catch (SecurityKeyException e3) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:732:                    } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:742:            } catch (SecurityKeyException e2) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:759:            throw new SecurityKeyException("invalid input params!", 102);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:761:        String strA = com.vivo.seckeysdk.utils.c.a(str);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:763:            throw new SecurityKeyException("input url is invalid! Not include parameters?", 103);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:765:        Map<String, String> mapB = com.vivo.seckeysdk.utils.c.b(str);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:767:            throw new SecurityKeyException("invalid request params!", 103);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:772:                byte[] bArrAesEncrypt = aesEncrypt(com.vivo.seckeysdk.utils.c.a(mapB, false, z).getBytes("utf-8"));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:777:                String strA2 = com.vivo.seckeysdk.utils.c.a(com.vivo.seckeysdk.utils.c.a(mapB), true, false);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:783:                Map<String, String> mapA = com.vivo.seckeysdk.utils.c.a(mapB);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:784:                byte[] bArrSign2 = sign(com.vivo.seckeysdk.utils.c.a(mapA, true, false).getBytes("utf-8"));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:785:                byte[] bArrAesEncrypt2 = aesEncrypt(com.vivo.seckeysdk.utils.c.a(mapA, true, z).getBytes("utf-8"));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:790:                String strA3 = com.vivo.seckeysdk.utils.c.a(com.vivo.seckeysdk.utils.c.a(mapB), true, false);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:796:                Map<String, String> mapA2 = com.vivo.seckeysdk.utils.c.a(mapB);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:797:                byte[] bArrSignFast2 = signFast(com.vivo.seckeysdk.utils.c.a(mapA2, true, false).getBytes("utf-8"));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:798:                byte[] bArrAesEncrypt3 = aesEncrypt(com.vivo.seckeysdk.utils.c.a(mapA2, true, z).getBytes("utf-8"));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:806:            throw new SecurityKeyException("unknown error!", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:811:    public String toSecurityUrl(String str, int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:815:    public String toSecurityUrlV2(String str, int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:819:    private Map<String, String> toSecurityMapCommon(Map<String, String> map, int i, boolean z) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:821:            throw new SecurityKeyException("invalid input params!", 103);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:826:                byte[] bArrAesEncrypt = aesEncrypt(com.vivo.seckeysdk.utils.c.a(map, false, z).getBytes("utf-8"));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:832:                String strA = com.vivo.seckeysdk.utils.c.a(com.vivo.seckeysdk.utils.c.a(map), true, false);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:839:                Map<String, String> mapA = com.vivo.seckeysdk.utils.c.a(map);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:840:                byte[] bArrSign2 = sign(com.vivo.seckeysdk.utils.c.a(mapA, true, false).getBytes("utf-8"));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:841:                byte[] bArrAesEncrypt2 = aesEncrypt(com.vivo.seckeysdk.utils.c.a(mapA, true, z).getBytes("utf-8"));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:850:                        Map<String, String> mapA2 = com.vivo.seckeysdk.utils.c.a(map);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:851:                        byte[] bArrSignFast = signFast(com.vivo.seckeysdk.utils.c.a(mapA2, true, false).getBytes("utf-8"));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:852:                        byte[] bArrAesEncrypt3 = aesEncrypt(com.vivo.seckeysdk.utils.c.a(mapA2, true, z).getBytes("utf-8"));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:861:                String strA2 = com.vivo.seckeysdk.utils.c.a(com.vivo.seckeysdk.utils.c.a(map), true, false);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:871:            throw new SecurityKeyException("unknown error!", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:876:    public Map<String, String> toSecurityMap(Map<String, String> map, int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:880:    public Map<String, String> toSecurityMapV2(Map<String, String> map, int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:918:    public Map<String, String> toSecurityJson(String str, int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:920:            throw new SecurityKeyException("invalid input params!", 103);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:968:            throw new SecurityKeyException("unknown error!", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:972:    private byte[] toSecurityBytesCommon(Map<String, String> map, int i, boolean z) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:975:            throw new SecurityKeyException("invalid input params!", 103);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:986:            return com.vivo.seckeysdk.utils.c.a(securityMap, false, false).getBytes();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:994:    public byte[] toSecurityBytes(Map<String, String> map, int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:998:    public byte[] toSecurityBytesV2(Map<String, String> map, int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1002:    public String decryptResponse(String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1005:            throw new SecurityKeyException("invalid input params!", 103);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1013:        } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1015:                h.a(this.mContext, this.mCipher.b(), 99, 21313, SecurityKeyException.SK_ERROR_BASE64_DECODE_FAIL, new String(g.b(str.getBytes())));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1020:            throw new SecurityKeyException("unknown error!", 1000);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1028:    public byte[] vivoBase64Decode(String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1062:    public boolean setCipherMode(int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1064:            throw new SecurityKeyException("invalid input mode!", 103);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1074:        } catch (SecurityKeyException e) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1084:    public boolean updateKey() throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1089:    public byte[] getDataOfPackage(byte[] bArr) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1092:            throw new SecurityKeyException("invalid input params!", 103);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1102:    public byte[] exportKey(int i) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1104:            throw new SecurityKeyException("operate mode not match", 152);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1143:            com.vivo.seckeysdk.utils.a r3 = r3.mCipher     // Catch: com.vivo.seckeysdk.utils.SecurityKeyException -> L21
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1144:            byte[] r3 = r3.f(r4)     // Catch: com.vivo.seckeysdk.utils.SecurityKeyException -> L21
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1155:            com.vivo.seckeysdk.utils.k.d(r4, r3)
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1158:        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.SecurityKeyCipher.getProtocolHeader(int):byte[]");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1165:    public String getUpdateKeyParamsString() throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1167:            throw new SecurityKeyException("operate mode not match", 152);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1176:    public boolean storeKey(String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1179:            throw new SecurityKeyException("update key fail", 103);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1183:            throw new SecurityKeyException("operate mode not match", 152);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1203:    public boolean needUpdateKey(SecurityKeyException securityKeyException) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1204:        return securityKeyException != null && securityKeyException.needUpdateKey();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1208:        com.vivo.seckeysdk.platform.a aVar = this.mPlatformCipher;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1215:    public boolean updateKeyFromBusinessServer(String str) throws SecurityKeyException {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1218:            throw new SecurityKeyException("Invalied url:".concat(String.valueOf(str)), 602);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1221:            throw new SecurityKeyException("operate mode not match", 152);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1257:        com.vivo.seckeysdk.platform.a aVar = this.mPlatformCipher;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1268:        private SecurityKeyCipher instance = null;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1281:        public SecurityKeyCipher build() {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1283:            SecurityKeyCipher securityKeyCipher = SecurityKeyCipher.getInstance(this.mContext, this.securityLevelProtocol);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1284:            this.instance = securityKeyCipher;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1287:                securityKeyCipher.setAutoUpdateKey(bool.booleanValue());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/services/cipher/utils/SecurityKeyException.java:7:public class SecurityKeyException extends Exception {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/services/cipher/utils/SecurityKeyException.java:86:    public SecurityKeyException(int i) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/services/cipher/utils/SecurityKeyException.java:90:    public SecurityKeyException(String str, int i) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/services/cipher/utils/SecurityKeyException.java:95:    public SecurityKeyException(Throwable th, int i) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/services/cipher/utils/SecurityKeyException.java:100:    public SecurityKeyException(String str, Throwable th, int i) {
