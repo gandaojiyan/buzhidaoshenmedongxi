@@ -1,14 +1,14 @@
 WINDOW MANAGER WINDOWS (dumpsys window windows)
-  Window #0 Window{com.omarea.vtools:df95d6d u0 com.omarea.vtools}:
-    mDisplayId=0 rootTaskId=1 mSession=Session{bcabd2d 8614:u0a10270} mClient=android.os.BinderProxy@2619184
+  Window #0 Window{com.omarea.vtools:a8311a3 u0 com.omarea.vtools}:
+    mDisplayId=0 rootTaskId=1 mSession=Session{bcabd2d 8614:u0a10270} mClient=android.os.BinderProxy@c293cd2
     mOwnerUid=10270 showForAllUsers=false package=com.omarea.vtools appop=NONE
     mAttrs={(0,0)(0x0) sim={adjust=pan} layoutInDisplayCutoutMode=shortEdges ty=2032 fmt=TRANSLUCENT
       fl=NOT_FOCUSABLE NOT_TOUCHABLE NOT_TOUCH_MODAL HARDWARE_ACCELERATED
       pfl=USE_BLAST INSET_PARENT_FRAME_BY_IME
       bhv=DEFAULT
       fitTypes=STATUS_BARS NAVIGATION_BARS CAPTION_BAR homeIndicatorState=-1 keepFullScreen=0 internalFlag=0x0 preferedDisplay=0}
-    Requested w=0 h=0 mLayoutSeq=65158
-    mBaseLayer=311000 mSubLayer=0    mToken=WindowToken{69b4fd8 android.os.Binder@d216ebb 2032}
+    Requested w=0 h=0 mLayoutSeq=65460
+    mBaseLayer=311000 mSubLayer=0    mToken=WindowToken{2a0bc07 android.os.Binder@58b4246 2032}
     mViewVisibility=0x0 mHaveFrame=true mObscured=false
     mGivenContentInsets=[0,0][0,0] mGivenVisibleInsets=[0,0][0,0]
     mFullConfiguration={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8694 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
@@ -17,8 +17,8 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
     Frames: containing=[0,0][720,1600] parent=[0,0][720,1600] display=[0,0][720,1600]
     mFrame=[360,800][360,800] last=[360,800][360,800]
      surface=[0,0][0,0]
-    WindowStateAnimator{89cf636 }:
-      mSurface=Surface(name=)/@0xa50fa33
+    WindowStateAnimator{68423dd }:
+      mSurface=Surface(name=)/@0x33a541e
       Surface: shown=true layer=0 alpha=1.0 rect=(0.0,0.0)  transform=(1.0, 0.0, 0.0, 1.0)
       mDrawState=HAS_DRAWN       mLastHidden=false
       mEnterAnimationPending=false      mSystemDecorRect=[0,0][0,0]
@@ -34,7 +34,7 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
       bhv=DEFAULT
       fitTypes=STATUS_BARS NAVIGATION_BARS CAPTION_BAR
       fitSides= homeIndicatorState=-1 keepFullScreen=0 internalFlag=0x0 preferedDisplay=0}
-    Requested w=720 h=28 mLayoutSeq=65158
+    Requested w=720 h=28 mLayoutSeq=65460
     mBaseLayer=251000 mSubLayer=0    mToken=WindowToken{49058b7 android.os.BinderProxy@919a3b6 2024}
     mViewVisibility=0x0 mHaveFrame=true mObscured=false
     mGivenContentInsets=[0,0][0,0] mGivenVisibleInsets=[0,0][0,0]
@@ -61,7 +61,7 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
       bhv=DEFAULT
       fitTypes=STATUS_BARS NAVIGATION_BARS CAPTION_BAR
       fitSides= homeIndicatorState=-1 keepFullScreen=0 internalFlag=0x0 preferedDisplay=0}
-    Requested w=64 h=1506 mLayoutSeq=65158
+    Requested w=64 h=1506 mLayoutSeq=65460
     mBaseLayer=251000 mSubLayer=0    mToken=WindowToken{71710bf android.os.BinderProxy@f796de 2024}
     mViewVisibility=0x0 mHaveFrame=true mObscured=false
     mGivenContentInsets=[0,0][0,0] mGivenVisibleInsets=[0,0][0,0]
@@ -88,7 +88,7 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
       bhv=DEFAULT
       fitTypes=STATUS_BARS NAVIGATION_BARS CAPTION_BAR
       fitSides= homeIndicatorState=-1 keepFullScreen=0 internalFlag=0x0 preferedDisplay=0}
-    Requested w=64 h=1506 mLayoutSeq=65158
+    Requested w=64 h=1506 mLayoutSeq=65460
     mBaseLayer=251000 mSubLayer=0    mToken=WindowToken{99be9f4 android.os.BinderProxy@11efc7 2024}
     mViewVisibility=0x0 mHaveFrame=true mObscured=false
     mGivenContentInsets=[0,0][0,0] mGivenVisibleInsets=[0,0][0,0]
@@ -114,7 +114,7 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
       pfl=FORCE_HARDWARE_ACCELERATED NO_MOVE_ANIMATION USE_BLAST
       vsysui=LAYOUT_HIDE_NAVIGATION
       bhv=DEFAULT homeIndicatorState=-1 keepFullScreen=0 internalFlag=0x0 preferedDisplay=0}
-    Requested w=720 h=1600 mLayoutSeq=65065
+    Requested w=720 h=1600 mLayoutSeq=65172
     mBaseLayer=251000 mSubLayer=0    mToken=WindowToken{f540755 android.os.BinderProxy@dc6920c 2024}
     mViewVisibility=0x8 mHaveFrame=true mObscured=false
     mGivenContentInsets=[0,0][0,0] mGivenVisibleInsets=[0,0][0,0]
@@ -208,7 +208,7 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
     mDisplayId=0 rootTaskId=1 mSession=Session{2d929a1 4623:u0a10136} mClient=android.os.BinderProxy@e240950
     mOwnerUid=10136 showForAllUsers=true package=com.vivo.musicwidgetmix appop=NONE
     mAttrs={(0,0)(fillxfill) gr=BOTTOM CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=shortEdges ty=KEYGUARD_DIALOG fmt=TRANSLUCENT
-      fl=NOT_FOCUSABLE NOT_TOUCH_MODAL LAYOUT_IN_SCREEN SPLIT_TOUCH HARDWARE_ACCELERATED
+      fl=NOT_TOUCH_MODAL LAYOUT_IN_SCREEN SPLIT_TOUCH
       pfl=USE_BLAST
       vsysui=HIDE_NAVIGATION LAYOUT_HIDE_NAVIGATION IMMERSIVE IMMERSIVE_STICKY
       bhv=SHOW_TRANSIENT_BARS_BY_SWIPE homeIndicatorState=-1 keepFullScreen=0 internalFlag=0x0 preferedDisplay=0}
@@ -289,7 +289,7 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
       fl=NOT_FOCUSABLE SPLIT_TOUCH HARDWARE_ACCELERATED DRAWS_SYSTEM_BAR_BACKGROUNDS
       pfl=COLOR_SPACE_AGNOSTIC USE_BLAST FIT_INSETS_CONTROLLED
       bhv=DEFAULT homeIndicatorState=-1 keepFullScreen=0 internalFlag=0x0 preferedDisplay=0}
-    Requested w=720 h=58 mLayoutSeq=65158
+    Requested w=720 h=58 mLayoutSeq=65460
     mBaseLayer=171000 mSubLayer=0    mToken=WindowToken{8602f0 android.os.BinderProxy@abfc6a2 2000}
     mViewVisibility=0x0 mHaveFrame=true mObscured=false
     mGivenContentInsets=[0,0][0,0] mGivenVisibleInsets=[0,0][0,0]
@@ -300,9 +300,9 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
     mFrame=[0,0][720,58] last=[0,0][720,58]
      surface=[0,0][0,0]
     ContainerAnimator:
-      mLeash=Surface(name=Surface(name=3949069 StatusBar)/@0xd025ea6 - animation-leash of insets_animation)/@0x2858ea4 mAnimationType=insets_animation
-      Animation: com.android.server.wm.InsetsSourceProvider$ControlAdapter@b2be40d
-        ControlAdapter mCapturedLeash=Surface(name=Surface(name=3949069 StatusBar)/@0xd025ea6 - animation-leash of insets_animation)/@0x2858ea4
+      mLeash=Surface(name=Surface(name=3949069 StatusBar)/@0xd025ea6 - animation-leash of insets_animation)/@0x31ecb52 mAnimationType=insets_animation
+      Animation: com.android.server.wm.InsetsSourceProvider$ControlAdapter@97bbe23
+        ControlAdapter mCapturedLeash=Surface(name=Surface(name=3949069 StatusBar)/@0xd025ea6 - animation-leash of insets_animation)/@0x31ecb52
     WindowStateAnimator{faaa990 StatusBar}:
        mAnimationIsEntrance=true      mSurface=Surface(name=StatusBar)/@0x39ce87a
       Surface: shown=true layer=0 alpha=1.0 rect=(0.0,0.0)  transform=(1.0, 0.0, 0.0, 1.0)
@@ -370,7 +370,7 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
       pfl=SHOW_FOR_ALL_USERS USE_BLAST TRUSTED_OVERLAY
       bhv=DEFAULT
       fitTypes=NAVIGATION_BARS CAPTION_BAR homeIndicatorState=-1 keepFullScreen=0 internalFlag=0x0 preferedDisplay=0}
-    Requested w=0 h=0 mLayoutSeq=65158
+    Requested w=0 h=0 mLayoutSeq=65460
     mBaseLayer=121000 mSubLayer=0    mToken=WindowToken{210556d android.view.ViewRootImpl$W@99c7731 2999}
     mViewVisibility=0x8 mHaveFrame=false mObscured=false
     mGivenContentInsets=[0,0][0,0] mGivenVisibleInsets=[0,0][0,0]
@@ -398,13 +398,13 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
       bhv=DEFAULT
       fitTypes=STATUS_BARS NAVIGATION_BARS
       fitSides=LEFT TOP RIGHT homeIndicatorState=0 keepFullScreen=2 internalFlag=0x0 preferedDisplay=0}
-    Requested w=720 h=1534 mLayoutSeq=65158
+    Requested w=720 h=1534 mLayoutSeq=65460
     mIsImWindow=true mIsWallpaper=false mIsFloatingLayer=true
     mBaseLayer=151000 mSubLayer=0    mToken=WindowToken{9922b8b android.os.Binder@28e6d5a 2011}
     mViewVisibility=0x0 mHaveFrame=true mObscured=false
     mGivenContentInsets=[0,1534][0,0] mGivenVisibleInsets=[0,1534][0,0]
     mTouchableInsets=3 mGivenInsetsPending=false
-    touchable region=SkRegion((187,377,395,497)(11,497,571,985))
+    touchable region=SkRegion((211,179,419,299)(35,299,595,787))
     mFullConfiguration={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8694 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
     mLastReportedConfiguration={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8694 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
     mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false
@@ -412,9 +412,9 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
     mFrame=[0,66][720,1600] last=[0,66][720,1600]
      surface=[0,0][0,0]
     ContainerAnimator:
-      mLeash=Surface(name=Surface(name=5adc234 InputMethod)/@0xbdc05d2 - animation-leash of insets_animation)/@0x3a3fc2 mAnimationType=insets_animation
-      Animation: com.android.server.wm.InsetsSourceProvider$ControlAdapter@a4671d3
-        ControlAdapter mCapturedLeash=Surface(name=Surface(name=5adc234 InputMethod)/@0xbdc05d2 - animation-leash of insets_animation)/@0x3a3fc2
+      mLeash=Surface(name=Surface(name=5adc234 InputMethod)/@0xbdc05d2 - animation-leash of insets_animation)/@0xfb0cf20 mAnimationType=insets_animation
+      Animation: com.android.server.wm.InsetsSourceProvider$ControlAdapter@2420d9
+        ControlAdapter mCapturedLeash=Surface(name=Surface(name=5adc234 InputMethod)/@0xbdc05d2 - animation-leash of insets_animation)/@0xfb0cf20
     WindowStateAnimator{427ceba InputMethod}:
        mAnimationIsEntrance=true      mSurface=Surface(name=InputMethod)/@0x2def110
       Surface: shown=true layer=0 alpha=1.0 rect=(0.0,0.0)  transform=(1.0, 0.0, 0.0, 1.0)
@@ -424,8 +424,8 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
     mForceSeamlesslyRotate=false seamlesslyRotate: pending=null finishedFrameNumber=0
     isOnScreen=true
     isVisible=false
-  Window #16 Window{243dd7f u0 com.bbk.updater/com.bbk.updater.ui.UpdateActivity}:
-    mDisplayId=0 rootTaskId=5945 mSession=Session{e4a0320 16184:u0a10128} mClient=android.os.BinderProxy@589e9e
+  Window #16 Window{b4b6c5c u0 com.bbk.updater/com.bbk.updater.ui.UpdateActivity}:
+    mDisplayId=0 rootTaskId=5946 mSession=Session{abe8da9 16776:u0a10128} mClient=android.os.BinderProxy@42ddacf
     mOwnerUid=10128 showForAllUsers=false package=com.bbk.updater appop=NONE
     mAttrs={(0,0)(fillxfill) sim={adjust=pan forwardNavigation} ty=BASE_APPLICATION wanim=0x1030001
       fl=LAYOUT_IN_SCREEN LAYOUT_INSET_DECOR SPLIT_TOUCH HARDWARE_ACCELERATED DRAWS_SYSTEM_BAR_BACKGROUNDS
@@ -434,9 +434,9 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
       apr=LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS
       bhv=DEFAULT
       fitSides= homeIndicatorState=-1 keepFullScreen=2 internalFlag=0x0 preferedDisplay=0}
-    Requested w=720 h=1600 mLayoutSeq=65158
-    mBaseLayer=21000 mSubLayer=0    mToken=ActivityRecord{c0fa63 u0 com.bbk.updater/.ui.UpdateActivity t5945 d0}
-    mActivityRecord=ActivityRecord{c0fa63 u0 com.bbk.updater/.ui.UpdateActivity t5945 d0}
+    Requested w=720 h=1600 mLayoutSeq=65460
+    mBaseLayer=21000 mSubLayer=0    mToken=ActivityRecord{efa297a u0 com.bbk.updater/.ui.UpdateActivity t5946 d0}
+    mActivityRecord=ActivityRecord{efa297a u0 com.bbk.updater/.ui.UpdateActivity t5946 d0}
     mAppDied=false    drawnStateEvaluated=true    mightAffectAllDrawn=true
     mViewVisibility=0x0 mHaveFrame=true mObscured=false
     mGivenContentInsets=[0,0][0,0] mGivenVisibleInsets=[0,0][0,0]
@@ -446,8 +446,8 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
     Frames: containing=[0,0][720,1600] parent=[0,0][720,1600] display=[0,0][720,1600]
     mFrame=[0,0][720,1600] last=[0,0][720,1600]
      surface=[0,0][0,0]
-    WindowStateAnimator{8bfb409 com.bbk.updater/com.bbk.updater.ui.UpdateActivity}:
-      mSurface=Surface(name=com.bbk.updater/com.bbk.updater.ui.UpdateActivity)/@0x5b54581
+    WindowStateAnimator{23a4a9e com.bbk.updater/com.bbk.updater.ui.UpdateActivity}:
+      mSurface=Surface(name=com.bbk.updater/com.bbk.updater.ui.UpdateActivity)/@0xe552c51
       Surface: shown=true layer=0 alpha=1.0 rect=(0.0,0.0)  transform=(1.0, 0.0, 0.0, 1.0)
       mDrawState=HAS_DRAWN       mLastHidden=false
       mEnterAnimationPending=false      mSystemDecorRect=[0,0][0,0]
@@ -463,7 +463,7 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
       vsysui=LAYOUT_STABLE LAYOUT_HIDE_NAVIGATION LAYOUT_FULLSCREEN
       bhv=SHOW_TRANSIENT_BARS_BY_SWIPE
       fitSides= homeIndicatorState=-1 keepFullScreen=0 internalFlag=0x0 preferedDisplay=0}
-    Requested w=720 h=1600 mLayoutSeq=65146
+    Requested w=720 h=1600 mLayoutSeq=65447
     mBaseLayer=21000 mSubLayer=0    mToken=ActivityRecord{636ab32 u0 com.termux/.app.TermuxActivity t5936 d0}
     mActivityRecord=ActivityRecord{636ab32 u0 com.termux/.app.TermuxActivity t5936 d0}
     mAppDied=false    drawnStateEvaluated=true    mightAffectAllDrawn=true
@@ -491,7 +491,7 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
       vsysui=LAYOUT_STABLE LAYOUT_HIDE_NAVIGATION LAYOUT_FULLSCREEN
       bhv=DEFAULT
       fitSides= homeIndicatorState=1 keepFullScreen=2 internalFlag=0x0 preferedDisplay=0}
-    Requested w=720 h=1600 mLayoutSeq=65114
+    Requested w=720 h=1600 mLayoutSeq=65417
     mBaseLayer=21000 mSubLayer=0    mToken=ActivityRecord{97c9bb4 u0 com.bbk.launcher2/.Launcher t7 d0}
     mActivityRecord=ActivityRecord{97c9bb4 u0 com.bbk.launcher2/.Launcher t7 d0}
     mAppDied=false    drawnStateEvaluated=true    mightAffectAllDrawn=true
@@ -521,7 +521,7 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
       vsysui=LAYOUT_STABLE
       bhv=DEFAULT
       fitSides= homeIndicatorState=-1 keepFullScreen=0 internalFlag=0x0 preferedDisplay=0}
-    Requested w=720 h=1600 mLayoutSeq=65098
+    Requested w=720 h=1600 mLayoutSeq=65397
     mBaseLayer=21000 mSubLayer=0    mToken=ActivityRecord{46dd25c u0 com.openai.chatgpt/.MainActivity t5935 d0}
     mActivityRecord=ActivityRecord{46dd25c u0 com.openai.chatgpt/.MainActivity t5935 d0}
     mAppDied=false    drawnStateEvaluated=true    mightAffectAllDrawn=true
@@ -633,7 +633,7 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
       fl=NOT_FOCUSABLE NOT_TOUCHABLE LAYOUT_IN_SCREEN LAYOUT_NO_LIMITS SCALED LAYOUT_INSET_DECOR
       pfl=WANTS_OFFSET_NOTIFICATIONS USE_BLAST
       bhv=DEFAULT homeIndicatorState=-1 keepFullScreen=0 internalFlag=0x0 preferedDisplay=0}
-    Requested w=947 h=1600 mLayoutSeq=65126
+    Requested w=947 h=1600 mLayoutSeq=65427
     mIsImWindow=false mIsWallpaper=true mIsFloatingLayer=true
     mBaseLayer=11000 mSubLayer=0    mToken=WallpaperWindowToken{49bcf23 token=android.os.Binder@f608052}
     mViewVisibility=0x0 mHaveFrame=true mObscured=true
@@ -683,9 +683,9 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
   mGlobalConfiguration={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8694 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
   mHasPermanentDpad=false
   mTopFocusedDisplayId=0
-  imeLayeringTarget in display# 0 Window{243dd7f u0 com.bbk.updater/com.bbk.updater.ui.UpdateActivity}
-  imeInputTarget in display# 0 Window{243dd7f u0 com.bbk.updater/com.bbk.updater.ui.UpdateActivity}
-  imeControlTarget in display# 0 Window{243dd7f u0 com.bbk.updater/com.bbk.updater.ui.UpdateActivity}
+  imeLayeringTarget in display# 0 Window{b4b6c5c u0 com.bbk.updater/com.bbk.updater.ui.UpdateActivity}
+  imeInputTarget in display# 0 Window{b4b6c5c u0 com.bbk.updater/com.bbk.updater.ui.UpdateActivity}
+  imeControlTarget in display# 0 Window{b4b6c5c u0 com.bbk.updater/com.bbk.updater.ui.UpdateActivity}
   mInTouchMode=true
   mBlurEnabled=false
   mLastDisplayFreezeDuration=+1s607ms due to Window{com.vivo.upslide:a7e4d0c u0 SideSlideGestureBar-Left}
@@ -695,11 +695,11 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
     Entry taskId=5936
     FromSplit=false
       topApp=ActivityRecord{636ab32 u0 com.termux/.app.TermuxActivity t5936 d0}
-      snapshot=TaskSnapshot{ mId=1790257130786 mTopActivityComponent=com.termux/.app.TermuxActivity mSnapshot=android.hardware.HardwareBuffer@a70960e (720x1600) mColorSpace=sRGB IEC61966-2.1 (id=0, model=RGB) mOrientation=1 mRotation=0 mTaskSize=Point(720, 1600) mContentInsets=[0,66][0,0] mIsLowResolution=false mIsRealSnapshot=true mWindowingMode=1 mAppearance=0 mVivoBarAppearance=0 mIsTranslucent=true mHasImeSurface=true
+      snapshot=TaskSnapshot{ mId=1790257173173 mTopActivityComponent=com.termux/.app.TermuxActivity mSnapshot=android.hardware.HardwareBuffer@9c2197f (720x1600) mColorSpace=sRGB IEC61966-2.1 (id=0, model=RGB) mOrientation=1 mRotation=0 mTaskSize=Point(720, 1600) mContentInsets=[0,66][0,0] mIsLowResolution=false mIsRealSnapshot=true mWindowingMode=1 mAppearance=0 mVivoBarAppearance=0 mIsTranslucent=true mHasImeSurface=true
     Entry taskId=5935
     FromSplit=false
       topApp=ActivityRecord{46dd25c u0 com.openai.chatgpt/.MainActivity t5935 d0}
-      snapshot=TaskSnapshot{ mId=1790257123932 mTopActivityComponent=com.openai.chatgpt/.MainActivity mSnapshot=android.hardware.HardwareBuffer@c7c582f (720x1600) mColorSpace=sRGB IEC61966-2.1 (id=0, model=RGB) mOrientation=1 mRotation=0 mTaskSize=Point(720, 1600) mContentInsets=[0,66][0,0] mIsLowResolution=false mIsRealSnapshot=true mWindowingMode=1 mAppearance=0 mVivoBarAppearance=0 mIsTranslucent=false mHasImeSurface=false
+      snapshot=TaskSnapshot{ mId=1790257167941 mTopActivityComponent=com.openai.chatgpt/.MainActivity mSnapshot=android.hardware.HardwareBuffer@2a3bd4c (720x1600) mColorSpace=sRGB IEC61966-2.1 (id=0, model=RGB) mOrientation=1 mRotation=0 mTaskSize=Point(720, 1600) mContentInsets=[0,66][0,0] mIsLowResolution=false mIsRealSnapshot=true mWindowingMode=1 mAppearance=0 mVivoBarAppearance=16 mIsTranslucent=false mHasImeSurface=true
     Entry taskId=5933
     FromSplit=false
       topApp=ActivityRecord{444a8c6 u0 com.follow.clash/.MainActivity t5933 d0}
@@ -724,10 +724,9 @@ WINDOW MANAGER WINDOWS (dumpsys window windows)
   mInputMethodWindow=Window{com.vivo.ai.ime:5adc234 u0 InputMethod}
   mTraversalScheduled=false
   mHoldScreenWindow=null
-  mObscuringWindow=Window{243dd7f u0 com.bbk.updater/com.bbk.updater.ui.UpdateActivity}
+  mObscuringWindow=Window{b4b6c5c u0 com.bbk.updater/com.bbk.updater.ui.UpdateActivity}
   mSystemBooted=true mDisplayEnabled=true
-  mLayoutNeeded on displays=0
-  mTransactionSequence=81786
+  mTransactionSequence=82130
   mDisplayFrozen=false windows=0 client=false apps=0  mRotation=0  mLastOrientation=1
  waitingForConfig=false
   Animation settings: disabled=false window=1.0 transition=1.0 animator=1.0

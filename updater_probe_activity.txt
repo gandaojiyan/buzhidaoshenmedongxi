@@ -68,7 +68,7 @@ TASK 10254:com.tencent.mobileqq id=5922 userId=0
         
     Choreographer:
       mFrameScheduled=false
-      mLastFrameTime=41996452 (8526 ms ago)
+      mLastFrameTime=41996452 (51281 ms ago)
     InsetsController:
       InsetsState
         mDisplayFrame=Rect(0, 0 - 720, 1600)
@@ -1014,9 +1014,9 @@ TASK 10254:com.tencent.mobileqq id=5922 userId=0
               androidx.fragment.app.FragmentContainerView{cae26 V.E...... ........ 0,0-720,1600 #7f0a270c app:id/r0c}
     Looper (main, tid 2) {fdfddeb}
       Now dispatching: null
-      Message 0: { id=631583 when=+42s964ms callback=com.tencent.mobileqq.guild.setting.mute.a@ce6cfb6 target=android.os.Handler }
-      Message 1: { id=623431 when=+48s467ms what=16 target=com.tencent.util.WeakReferenceHandler }
-      Message 2: { id=614775 when=+3m14s480ms callback=com.tencent.richframework.thread.RFWThreadManager$DelayRunnable@6540cfe target=android.os.Handler }
+      Message 0: { id=631583 when=+235ms callback=com.tencent.mobileqq.guild.setting.mute.a@ce6cfb6 target=android.os.Handler }
+      Message 1: { id=623431 when=+5s738ms what=16 target=com.tencent.util.WeakReferenceHandler }
+      Message 2: { id=614775 when=+2m31s751ms callback=com.tencent.richframework.thread.RFWThreadManager$DelayRunnable@6540cfe target=android.os.Handler }
       (Total messages: 3, polling=false, quitting=false)
     AutofillManager:
       sessionId: 2147483647
@@ -1177,7 +1177,7 @@ TASK 1000:com.vivo.smartmultiwindow id=5808 userId=0
         
     Choreographer:
       mFrameScheduled=false
-      mLastFrameTime=41312077 (692950 ms ago)
+      mLastFrameTime=41312077 (735674 ms ago)
     InsetsController:
       InsetsState
         mDisplayFrame=Rect(0, 0 - 720, 1600)
@@ -1616,7 +1616,7 @@ TASK 10258:com.follow.clash id=5933 userId=0
         
     Choreographer:
       mFrameScheduled=false
-      mLastFrameTime=41447943 (557110 ms ago)
+      mLastFrameTime=41447943 (599814 ms ago)
     InsetsController:
       InsetsState
         mDisplayFrame=Rect(0, 0 - 720, 1600)
@@ -1743,7 +1743,7 @@ TASK 10301:com.openai.chatgpt id=5935 userId=0
         
     Choreographer:
       mFrameScheduled=false
-      mLastFrameTime=42000210 (4848 ms ago)
+      mLastFrameTime=42042381 (5381 ms ago)
     InsetsController:
       InsetsState
         mDisplayFrame=Rect(0, 0 - 720, 1600)
@@ -1759,7 +1759,7 @@ TASK 10301:com.openai.chatgpt id=5935 userId=0
           InsetsSource type=ITYPE_RIGHT_DISPLAY_CUTOUT frame=[2147483647,0][720,1600] visible=true
           InsetsSource type=ITYPE_BOTTOM_DISPLAY_CUTOUT frame=[0,2147483647][720,1600] visible=true
           InsetsSource type=ITYPE_TOP_TAPPABLE_ELEMENT frame=[0,0][720,66] visible=true
-          InsetsSource type=ITYPE_IME frame=[0,0][0,0] visibleFrame=[0,1600][720,1600] visible=false
+          InsetsSource type=ITYPE_IME frame=[0,1600][720,1600] visibleFrame=[0,1600][720,1600] visible=true
     View Hierarchy:
       DecorView@632edb8[MainActivity]
         android.widget.LinearLayout{6052d64 V.E...... .......D 0,0-720,1600}
@@ -1770,7 +1770,7 @@ TASK 10301:com.openai.chatgpt id=5935 userId=0
               androidx.appcompat.widget.ContentFrameLayout{c6d7791 V.E...... .......D 0,0-720,1600 #1020002 android:id/content}
                 android.widget.FrameLayout{4a99552 V.E...... .......D 0,0-720,1600}
                   androidx.compose.ui.platform.ComposeView{3b3d5dd V.E...... .......D 0,0-720,1600}
-                    androidx.compose.ui.platform.AndroidComposeView{95f12c6 VFED..... ......ID 0,0-720,1600 aid=1073741830}
+                    androidx.compose.ui.platform.AndroidComposeView{95f12c6 VFED..... .F....ID 0,0-720,1600 aid=1073741830}
                       hz1{53e3187 V.E...... ......ID 0,0-720,1600}
                       swd0{e35a7bb V.E...... ......I. 0,0-0,0}
                         twd0{5ece20e V.ED..... ......I. 0,0-63,63}
@@ -1779,8 +1779,12 @@ TASK 10301:com.openai.chatgpt id=5935 userId=0
         bnr{b9594d8 G.E...... ......I. 0,0-0,0}
     Looper (main, tid 2) {1b2088a}
       Now dispatching: null
-      Message 0: { id=29708 when=+53s64ms callback=vrk0(timeMillis=60000){Active}@6ee1d03 target=android.os.Handler }
-      (Total messages: 1, polling=false, quitting=false)
+      Message 0: { id=29815 when=+11s971ms callback=b40@d422ce2 target=android.os.Handler }
+      Message 1: { id=29838 when=+12s32ms callback=b40@7a62873 target=android.os.Handler }
+      Message 2: { id=30923 when=+20s520ms callback=b40@e047330 target=android.os.Handler }
+      Message 3: { id=30939 when=+20s557ms callback=b40@a1ddba9 target=android.os.Handler }
+      Message 4: { id=31180 when=+54s609ms callback=vrk0(timeMillis=60000){Active}@55a352e target=android.os.Handler }
+      (Total messages: 5, polling=false, quitting=false)
     AutofillManager:
       sessionId: 2147483647
       state: FINISHED
@@ -1869,7 +1873,7 @@ TASK null id=7 userId=0
         
     Choreographer:
       mFrameScheduled=false
-      mLastFrameTime=41999509 (5557 ms ago)
+      mLastFrameTime=42042832 (4934 ms ago)
     InsetsController:
       InsetsState
         mDisplayFrame=Rect(0, 0 - 720, 1600)
@@ -1885,7 +1889,7 @@ TASK null id=7 userId=0
           InsetsSource type=ITYPE_RIGHT_DISPLAY_CUTOUT frame=[2147483647,0][720,1600] visible=true
           InsetsSource type=ITYPE_BOTTOM_DISPLAY_CUTOUT frame=[0,2147483647][720,1600] visible=true
           InsetsSource type=ITYPE_TOP_TAPPABLE_ELEMENT frame=[0,0][720,66] visible=true
-          InsetsSource type=ITYPE_IME frame=[0,0][0,0] visibleFrame=[0,1600][720,1600] visible=false
+          InsetsSource type=ITYPE_IME frame=[0,1600][720,1600] visibleFrame=[0,1600][720,1600] visible=false
     View Hierarchy:
       DecorView@3d82bc5[Launcher]
         android.widget.LinearLayout{55f49b1 V.E...... .......D 0,0-720,1600}
@@ -2450,9 +2454,9 @@ TASK null id=7 userId=0
               com.android.quickstep.vivo.gesture.otheractivity.AppWindowSimulator{ea92df G.E...... ......I. 0,0-0,0}
                 com.android.quickstep.views.TaskThumbnailView{41aab2c V.ED..... ......I. 0,0-0,0}
     Looper (main, tid 2) {6104235}
-      Now dispatching: { id=428503 when=-24ms what=136 obj=android.app.ActivityThread$DumpComponentInfo@7805e92 target=android.app.ActivityThread$H }
-      Message 0: { id=428471 when=+109ms callback=com.android.quickstep.recents.views.RecentsView$8@20fed48 target=android.os.Handler }
-      Message 1: { id=428502 when=+777ms what=131 obj=android.app.ActivityThread$ProviderRefCount@564f063 target=android.app.ActivityThread$H }
+      Now dispatching: { id=429460 when=-7ms what=136 obj=android.app.ActivityThread$DumpComponentInfo@affaf40 target=android.app.ActivityThread$H }
+      Message 0: { id=429459 when=+626ms what=131 obj=android.app.ActivityThread$ProviderRefCount@1c34e79 target=android.app.ActivityThread$H }
+      Message 1: { id=429430 when=+748ms callback=com.android.quickstep.recents.views.RecentsView$8@20fed48 target=android.os.Handler }
       (Total messages: 2, polling=false, quitting=false)
     AutofillManager:
       sessionId: 2147483647
@@ -2553,7 +2557,7 @@ TASK 10321:com.termux id=5936 userId=0
         
     Choreographer:
       mFrameScheduled=false
-      mLastFrameTime=42005020 (74 ms ago)
+      mLastFrameTime=42047408 (368 ms ago)
     InsetsController:
       InsetsState
         mDisplayFrame=Rect(0, 0 - 720, 1600)
@@ -3453,7 +3457,7 @@ TASK 10321:com.termux id=5936 userId=0
     No UiTranslationController
     ResourcesManager:
       total apks: 2
-      resources: 6
+      resources: 10
       resource impls: 5
     Local FragmentActivity 75afdea State:
       mCreated=true mResumed=false mStopped=true    Active Fragments:
@@ -3482,7 +3486,7 @@ TASK 10321:com.termux id=5936 userId=0
         mFragmentManager=FragmentManager{73e0013 in HostCallbacks{e2294bb}}}
         mHost=androidx.fragment.app.FragmentActivity$HostCallbacks@e2294bb
         mArguments=Bundle[{fileStartPath=/data/data/com.termux/files/}]
-        mSavedViewState={2131297666=android.view.AbsSavedState$1@7e82706, 2131297667=android.view.AbsSavedState$1@7e82706, 2131297669=androidx.recyclerview.widget.RecyclerView$SavedState@31c8530, 2131297671=androidx.recyclerview.widget.RecyclerView$SavedState@6d985a9, 2131297672=androidx.swiperefreshlayout.widget.SwipeRefreshLayout$SavedState@b0d972e, 2131297673=androidx.appcompat.widget.Toolbar$SavedState@46d92cf, 2131297674=com.google.android.material.button.MaterialButton$SavedState@7cc45c}
+        mSavedViewState={2131297666=android.view.AbsSavedState$1@7e82706, 2131297667=android.view.AbsSavedState$1@7e82706, 2131297669=androidx.recyclerview.widget.RecyclerView$SavedState@540edfb, 2131297671=androidx.recyclerview.widget.RecyclerView$SavedState@49fe18, 2131297672=androidx.swiperefreshlayout.widget.SwipeRefreshLayout$SavedState@97cb071, 2131297673=androidx.appcompat.widget.Toolbar$SavedState@3fbe56, 2131297674=com.google.android.material.button.MaterialButton$SavedState@3a66ed7}
         mPopDirection=false
         mContainer=android.widget.FrameLayout{c8df5b9 V.E...... ......ID 0,0-525,1335 #7f09021d app:id/frame_file}
         mView=android.widget.LinearLayout{9f24b87 V.E...... ......ID 0,0-525,1335}
@@ -3502,37 +3506,37 @@ TASK 10321:com.termux id=5936 userId=0
       mContainer=androidx.fragment.app.FragmentActivity$HostCallbacks@e2294bb
       mCurState=4 mStateSaved=true mStopped=true mDestroyed=false
 
-TASK 10128:com.bbk.updater id=5945 userId=0
-  ACTIVITY com.bbk.updater/.ui.UpdateActivity c0fa63 pid=16184
-    Local Activity f0d9aba State:
+TASK 10128:com.bbk.updater id=5946 userId=0
+  ACTIVITY com.bbk.updater/.ui.UpdateActivity efa297a pid=16776
+    Local Activity 6486fe5 State:
       mResumed=true mStopped=false mFinished=false
       mIsInMultiWindowMode=false mIsInPictureInPictureMode=false
       mChangingConfigurations=false
       mCurrentConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0} s.1 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
       mLoadersStarted=true
-      Active Fragments in 3cbbd6b:
-        #0: UpdateFragment13{d3870c8 #0 id=0x7f09014d}
+      Active Fragments in f0d9aba:
+        #0: UpdateFragment13{3cbbd6b #0 id=0x7f09014d}
           mFragmentId=#7f09014d mContainerId=#7f09014d mTag=null
           mState=5 mIndex=0 mWho=android:fragment:0 mBackStackNesting=0
           mAdded=true mRemoving=false mFromLayout=false mInLayout=false
           mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
           mRetainInstance=false mRetaining=false mUserVisibleHint=true
-          mFragmentManager=FragmentManager{3cbbd6b in HostCallbacks{6152561}}
-          mHost=android.app.Activity$HostCallbacks@6152561
+          mFragmentManager=FragmentManager{f0d9aba in HostCallbacks{d3870c8}}
+          mHost=android.app.Activity$HostCallbacks@d3870c8
           mArguments=Bundle[{}]
-          mContainer=android.widget.FrameLayout{4a6701 V.E...... ........ 0,0-720,1600 #7f09014d app:id/main_frame}
-          mView=android.widget.RelativeLayout{41934e8 V.E...... ........ 0,0-720,1600}
-          Child FragmentManager{26aa886 in UpdateFragment13{d3870c8}}:
+          mContainer=android.widget.FrameLayout{41934e8 V.E...... ........ 0,0-720,1600 #7f09014d app:id/main_frame}
+          mView=android.widget.RelativeLayout{9a27e0b V.E...... ........ 0,0-720,1600}
+          Child FragmentManager{6152561 in UpdateFragment13{3cbbd6b}}:
             FragmentManager misc state:
-              mHost=android.app.Activity$HostCallbacks@6152561
-              mContainer=android.app.Fragment$1@466c547
-              mParent=UpdateFragment13{d3870c8 #0 id=0x7f09014d}
+              mHost=android.app.Activity$HostCallbacks@d3870c8
+              mContainer=android.app.Fragment$1@26aa886
+              mParent=UpdateFragment13{3cbbd6b #0 id=0x7f09014d}
               mCurState=5 mStateSaved=false mDestroyed=false
       Added Fragments:
-        #0: UpdateFragment13{d3870c8 #0 id=0x7f09014d}
+        #0: UpdateFragment13{3cbbd6b #0 id=0x7f09014d}
       FragmentManager misc state:
-        mHost=android.app.Activity$HostCallbacks@6152561
-        mContainer=android.app.Activity$HostCallbacks@6152561
+        mHost=android.app.Activity$HostCallbacks@d3870c8
+        mContainer=android.app.Activity$HostCallbacks@d3870c8
         mCurState=5 mStateSaved=false mDestroyed=false
     ViewRoot:
       mAdded=true
@@ -3555,12 +3559,12 @@ TASK 10128:com.bbk.updater id=5945 userId=0
       android.view.ViewRootImpl$ImeInputStage: mQueueLength=0
       android.view.ViewRootImpl$NativePostImeInputStage: mQueueLength=0
       android.view.ViewRootImpl$WindowInputEventReceiver
-       mInputChannel: 243dd7f com.bbk.updater/com.bbk.updater.ui.UpdateActivity (client)
+       mInputChannel: b4b6c5c com.bbk.updater/com.bbk.updater.ui.UpdateActivity (client)
        mSeqMap: {}
        mReceiverPtr:
         mInputConsumer:
           mResampleTouch = true
-          mChannel = 243dd7f com.bbk.updater/com.bbk.updater.ui.UpdateActivity (client)
+          mChannel = b4b6c5c com.bbk.updater/com.bbk.updater.ui.UpdateActivity (client)
           mMsgDeferred: false
           Batches:
               <empty>
@@ -3575,7 +3579,7 @@ TASK 10128:com.bbk.updater id=5945 userId=0
         
     Choreographer:
       mFrameScheduled=true
-      mLastFrameTime=42005104 (11 ms ago)
+      mLastFrameTime=42047792 (7 ms ago)
     InsetsController:
       InsetsState
         mDisplayFrame=Rect(0, 0 - 720, 1600)
@@ -3593,70 +3597,66 @@ TASK 10128:com.bbk.updater id=5945 userId=0
           InsetsSource type=ITYPE_TOP_TAPPABLE_ELEMENT frame=[0,0][720,66] visible=true
           InsetsSource type=ITYPE_IME frame=[0,1600][720,1600] visibleFrame=[0,1600][720,1600] visible=false
     View Hierarchy:
-      DecorView@a91dc82[UpdateActivity]
-        android.widget.LinearLayout{360fbcd V.E...... ........ 0,0-720,1600}
-          android.view.ViewStub{bc7d174 G.E...... ......I. 0,0-0,0 #10201b0 android:id/action_mode_bar_stub}
-          android.widget.FrameLayout{6052d64 V.E...... ........ 0,0-720,1600 #1020002 android:id/content}
-            android.widget.RelativeLayout{2715af7 V.E...... ........ 0,0-720,1600 #7f090031 app:id/acitvity_main_layout}
-              android.widget.FrameLayout{4a6701 V.E...... ........ 0,0-720,1600 #7f09014d app:id/main_frame}
-                android.widget.RelativeLayout{41934e8 V.E...... ........ 0,0-720,1600}
-                  android.view.ViewStub{99db69d G.E...... ......I. 0,0-0,0 #7f09011f app:id/info_layout}
-                  android.widget.RelativeLayout{9a27e0b V.E...... ........ 0,0-720,1600}
-                    android.widget.RelativeLayout{33a79da V.E...... ........ 76,240-644,1164 #7f090283 app:id/wallpaper_layout_parent}
-                      android.widget.RelativeLayout{aeed785 V.E...... ........ 0,0-568,924 #7f090282 app:id/wallpaper_layout}
-                        android.widget.ImageView{1a6c4fc V.ED..... ........ 0,0-568,924 #7f090281 app:id/wallpaper}
-                        com.vivo.playersdk.ui.VivoPlayerView{ac0b794 V.E...... ........ 0,0-568,924 #7f09013a app:id/live_wallpaper}
-                          com.vivo.playersdk.ui.AspectRatioFrameLayout{4f8efe7 V.E...... ........ 0,0-568,924 #7f0901bc app:id/player_content_frame}
-                            com.vivo.playersdk.ui.a{6d659a6 V.ED..... ........ 0,0-568,924}
-                          android.widget.FrameLayout{c75723d V.E...... ........ 0,0-568,924 #7f090074 app:id/capture_layout}
-                          android.widget.FrameLayout{efe6a32 V.E...... ........ 0,0-568,924 #7f0901be app:id/player_overlay}
-                        android.widget.ImageView{38c712 G.ED..... ......ID 0,0-0,0 #7f0901a2 app:id/origin_design}
-                        android.widget.ImageView{ec06ee3 G.ED..... ......ID 0,0-0,0 #7f090116 app:id/ic_alias_ocean}
-                        android.widget.TextView{b5aa383 V.ED..... ........ 194,787-498,864 #7f0901cc app:id/product_market_name}
-                      com.bbk.updater.ui.widget.RectView13{dbbb900 V.ED..... ........ 32,32-536,892 #7f0901d9 app:id/rect_view}
-                    android.widget.TextView{14bf539 VFED..C.. ........ 331,1214-389,1254 #7f0900f6 app:id/explore}
-                    android.widget.RelativeLayout{86dabf5 V.E...... ........ 0,1314-720,1412}
-                      com.bbk.updater.ui.widget.CheckIndicatorView{6a3652c V.E...... ........ 0,0-720,98 #7f090086 app:id/check_indicator_view}
-                        android.widget.LinearLayout{d99f4df V.E...... ........ 44,0-676,98 #7f090085 app:id/check_indicator_layout}
-                          android.widget.ProgressBar{da6e992 V.ED..... ........ 292,0-340,48 #7f09008c app:id/checking_progressbar}
-                          android.widget.TextView{524f77e V.ED..... ........ 232,64-400,98 #7f09008a app:id/checking_hint}
-                      android.widget.TextView{63fff7b V.ED..... ........ 40,0-680,43 #7f090052 app:id/already_newest}
-                      com.bbk.updater.ui.widget.CoolTextView{5950d8a VFED..C.. ........ 40,57-680,90 #7f0900b0 app:id/current_version_text_view}
-                        android.widget.RelativeLayout{3b0dbb0 V.E...... ........ 0,0-640,33 #7f090194 app:id/new_version_text_view}
-                          android.widget.TextView{d18e2f3 VFED..C.. ........ 208,0-431,33 #7f090279 app:id/version}
-                          android.widget.TextView{4a90e0 G..D..... ......ID 0,0-0,0 #7f09027c app:id/version_size}
-                  com.bbk.updater.cota.CotaView{5241f99 G.E...... ......I. 0,0-0,0 #7f0900a8 app:id/cota_view}
-                    android.widget.RelativeLayout{b58425e VFE...C.. ......I. 0,0-0,0 #7f0900a9 app:id/cota_view_layout}
-                      android.view.View{b81163f V.ED..... ......ID 0,0-0,0 #7f090069 app:id/bg_view}
-                      android.widget.RelativeLayout{e77db0c V.E...... ......ID 0,0-0,0}
-                        android.widget.TextView{50e1c55 V.ED..... ......I. 0,0-0,0 #7f090248 app:id/text_name}
-                        android.widget.TextView{262266a V.ED..... ......ID 0,0-0,0 #7f090249 app:id/text_version_and_size}
-                      android.view.View{b7ad75b V.ED..... ......I. 0,0-0,0 #7f09027e app:id/view_red}
-              com.vivo.common.BbkTitleView{3046f6 V.ED..... ........ 0,0-720,228 #7f090062 app:id/bbk_title_view}
-                android.widget.LinearLayout{c6d7791 V.E...... ........ 0,30-720,198}
-                  android.widget.FrameLayout{632edb8 V.E...... ........ 0,2-720,168}
-                    android.widget.TextView{fd6af93 GFED..C.. ......I. 0,0-0,0 #30d0119 vivo:id/secondary}
-                    android.widget.TextView{8bf581b VFED..C.. ........ 0,0-720,166 #30d00cd vivo:id/main}
-                com.vivo.common.widget.TitleView$AverageLinearLayout{c4d9bf8 V.E...... ......ID 0,114-0,114}
-                  android.widget.Button{7d30460 GFED..C.. ......I. 0,0-0,0}
-                com.vivo.common.widget.TitleView$AverageLinearLayout{c6128d1 V.E...... ......ID 720,114-720,114}
-                  android.widget.Button{26e4d19 GFED..C.. ......I. 0,0-0,0 #5}
-                android.widget.ImageView{d52fffb VFED..C.. ........ 54,108-138,192}
-                android.widget.ImageView{d77a818 VFED..C.. ........ 584,104-666,188}
-    Looper (main, tid 2) {2743f36}
+      DecorView@360fbcd[UpdateActivity]
+        android.widget.LinearLayout{6052d64 V.E...... ........ 0,0-720,1600}
+          android.view.ViewStub{466c547 G.E...... ......I. 0,0-0,0 #10201b0 android:id/action_mode_bar_stub}
+          android.widget.FrameLayout{2715af7 V.E...... ........ 0,0-720,1600 #1020002 android:id/content}
+            android.widget.RelativeLayout{3046f6 V.E...... ........ 0,0-720,1600 #7f090031 app:id/acitvity_main_layout}
+              android.widget.FrameLayout{41934e8 V.E...... ........ 0,0-720,1600 #7f09014d app:id/main_frame}
+                android.widget.RelativeLayout{9a27e0b V.E...... ........ 0,0-720,1600}
+                  android.view.ViewStub{bc7d174 G.E...... ......I. 0,0-0,0 #7f09011f app:id/info_layout}
+                  android.widget.RelativeLayout{33a79da V.E...... ........ 0,0-720,1600}
+                    android.widget.RelativeLayout{aeed785 V.E...... ........ 76,240-644,1164 #7f090283 app:id/wallpaper_layout_parent}
+                      android.widget.RelativeLayout{1a6c4fc V.E...... ........ 0,0-568,924 #7f090282 app:id/wallpaper_layout}
+                        android.widget.ImageView{c32b1ef V.ED..... ........ 0,0-568,924 #7f090281 app:id/wallpaper}
+                        com.vivo.playersdk.ui.VivoPlayerView{4f8efe7 V.E...... ........ 0,0-568,924 #7f09013a app:id/live_wallpaper}
+                          com.vivo.playersdk.ui.AspectRatioFrameLayout{6d659a6 V.E...... ........ 0,0-568,924 #7f0901bc app:id/player_content_frame}
+                            com.vivo.playersdk.ui.a{4a6701 V.ED..... ........ 0,0-568,924}
+                          android.widget.FrameLayout{ac0b794 V.E...... ........ 0,0-568,924 #7f090074 app:id/capture_layout}
+                          android.widget.FrameLayout{c75723d V.E...... ........ 0,0-568,924 #7f0901be app:id/player_overlay}
+                        android.widget.ImageView{99db69d G.ED..... ......ID 0,0-0,0 #7f0901a2 app:id/origin_design}
+                        android.widget.ImageView{38c712 G.ED..... ......ID 0,0-0,0 #7f090116 app:id/ic_alias_ocean}
+                        android.widget.TextView{efe6a32 V.ED..... ........ 194,787-498,864 #7f0901cc app:id/product_market_name}
+                      com.bbk.updater.ui.widget.RectView13{b5aa383 V.ED..... ........ 32,32-536,892 #7f0901d9 app:id/rect_view}
+                    android.widget.TextView{dbbb900 VFED..C.. ........ 331,1214-389,1254 #7f0900f6 app:id/explore}
+                    android.widget.RelativeLayout{6a3652c V.E...... ........ 0,1314-720,1404}
+                      com.bbk.updater.ui.widget.CheckIndicatorView{d99f4df G.E...... ......ID 0,0-720,98 #7f090086 app:id/check_indicator_view}
+                        android.widget.LinearLayout{524f77e V.E...... ......ID 44,0-676,98 #7f090085 app:id/check_indicator_layout}
+                          android.widget.ProgressBar{303a306 V.ED..... ......ID 292,0-340,48 #7f09008c app:id/checking_progressbar}
+                          android.widget.TextView{14bf539 V.ED..... ......ID 232,64-400,98 #7f09008a app:id/checking_hint}
+                      android.widget.TextView{407bf75 V.ED..... ........ 40,0-680,43 #7f090052 app:id/already_newest}
+                      com.bbk.updater.ui.widget.CoolTextView{86dabf5 VFED..C.. ........ 40,57-680,90 #7f0900b0 app:id/current_version_text_view}
+                        android.widget.RelativeLayout{b394162 V.E...... ........ 0,0-640,33 #7f090194 app:id/new_version_text_view}
+                          android.widget.TextView{4e5682d VFED..C.. ........ 208,0-431,33 #7f090279 app:id/version}
+                          android.widget.TextView{ec06ee3 G..D..... ......ID 0,0-0,0 #7f09027c app:id/version_size}
+                  com.bbk.updater.cota.CotaView{4a90e0 G.E...... ......I. 0,0-0,0 #7f0900a8 app:id/cota_view}
+                    android.widget.RelativeLayout{5241f99 VFE...C.. ......I. 0,0-0,0 #7f0900a9 app:id/cota_view_layout}
+                      android.view.View{b58425e V.ED..... ......ID 0,0-0,0 #7f090069 app:id/bg_view}
+                      android.widget.RelativeLayout{b81163f V.E...... ......ID 0,0-0,0}
+                        android.widget.TextView{e77db0c V.ED..... ......I. 0,0-0,0 #7f090248 app:id/text_name}
+                        android.widget.TextView{50e1c55 V.ED..... ......ID 0,0-0,0 #7f090249 app:id/text_version_and_size}
+                      android.view.View{262266a V.ED..... ......I. 0,0-0,0 #7f09027e app:id/view_red}
+              com.vivo.common.BbkTitleView{c6d7791 V.ED..... ........ 0,0-720,228 #7f090062 app:id/bbk_title_view}
+                android.widget.LinearLayout{632edb8 V.E...... ........ 0,30-720,198}
+                  android.widget.FrameLayout{8bf581b V.E...... ........ 0,2-720,168}
+                    android.widget.TextView{a91dc82 GFED..C.. ......I. 0,0-0,0 #30d0119 vivo:id/secondary}
+                    android.widget.TextView{b59322a VFED..C.. ........ 0,0-720,166 #30d00cd vivo:id/main}
+                com.vivo.common.widget.TitleView$AverageLinearLayout{b7ad75b V.E...... ......ID 0,114-0,114}
+                  android.widget.Button{1d80c1d GFED..C.. ......I. 0,0-0,0}
+                com.vivo.common.widget.TitleView$AverageLinearLayout{c4d9bf8 V.E...... ......ID 720,114-720,114}
+                  android.widget.Button{81c2e92 GFED..C.. ......I. 0,0-0,0 #5}
+                android.widget.ImageView{5950d8a VFED..C.. ........ 54,108-138,192}
+                android.widget.ImageView{d52fffb VFED..C.. ........ 584,104-666,188}
+    Looper (main, tid 2) {c6128d1}
       Now dispatching: null
-      Message 0: { id=190 when=-2ms what=0 target=android.graphics.SurfaceTexture$1 }
-      Message 1: { id=184 when=+39ms callback=android.view.ViewRootImpl$SendWindowContentChangedAccessibilityEvent@858e37 target=android.view.ViewRootImpl$ViewRootHandler }
-      Message 2: { id=46 when=+68ms what=131 obj=android.app.ActivityThread$ProviderRefCount@fbc7fa4 target=android.app.ActivityThread$H }
-      Message 3: { id=54 when=+89ms what=131 obj=android.app.ActivityThread$ProviderRefCount@efe810d target=android.app.ActivityThread$H }
-      Message 4: { id=30 when=+28s912ms what=2 target=android.os.Handler }
-      (Total messages: 5, polling=false, quitting=false)
+      Message 0: { id=31 when=+28s868ms what=2 target=android.os.Handler }
+      (Total messages: 1, polling=false, quitting=false)
     AutofillManager:
       sessionId: 2147483647
       state: UNKNOWN
-      context: com.bbk.updater.ui.UpdateActivity@f0d9aba
+      context: com.bbk.updater.ui.UpdateActivity@6486fe5
       service client: null
-      client: com.bbk.updater.ui.UpdateActivity@f0d9aba (android.os.BinderProxy@6402b3d)
+      client: com.bbk.updater.ui.UpdateActivity@6486fe5 (android.os.BinderProxy@9b162ef)
       enabled: false
       enabledAugmentedOnly: false
       hasService: true
