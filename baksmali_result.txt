@@ -1,0 +1,9 @@
+===== baksmali version =====
+Error: Invalid or corrupt jarfile baksmali.jar
+
+===== smali count =====
+0
+
+===== target classes =====
+
+===== relevant grep =====
