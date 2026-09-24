@@ -1,0 +1,53 @@
+Name:	com.bbk.updater
+Umask:	0077
+State:	S (sleeping)
+Tgid:	25038
+Ngid:	0
+Pid:	25038
+PPid:	616
+TracerPid:	0
+Uid:	10128	10128	10128	10128
+Gid:	10128	10128	10128	10128
+FDSize:	512
+Groups:	1077 2001 3002 3003 3006 3007 9997 20128 50128 99909997 
+NStgid:	25038
+NSpid:	25038
+NSpgid:	616
+NSsid:	0
+VmPeak:	16436992 kB
+VmSize:	16064840 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  190752 kB
+VmRSS:	  169668 kB
+RssAnon:	   57076 kB
+RssFile:	  111400 kB
+RssShmem:	    1192 kB
+VmData:	 1337044 kB
+VmStk:	    8192 kB
+VmExe:	      16 kB
+VmLib:	  165876 kB
+VmPTE:	    1516 kB
+VmPMD:	      84 kB
+VmSwap:	   25052 kB
+Threads:	71
+SigQ:	0/22423
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000080001204
+SigIgn:	0000000000000001
+SigCgt:	0000006e400084f8
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	0000000000000000
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Speculation_Store_Bypass:	thread vulnerable
+Cpus_allowed:	0f
+Cpus_allowed_list:	0-3
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	1088
+nonvoluntary_ctxt_switches:	381

@@ -1,0 +1,934 @@
+ACTIVITY MANAGER ACTIVITIES (dumpsys activity activities)
+Display #0 (activities from top to bottom):
+  RootTask #5936: type=standard mode=fullscreen
+  isSleeping=false
+  mBounds=Rect(0, 0 - 0, 0)
+  mCreatedByOrganizer=false
+    mResumedActivity: ActivityRecord{636ab32 u0 com.termux/.app.TermuxActivity t5936 d0}
+    mLastPausedActivity: ActivityRecord{636ab32 u0 com.termux/.app.TermuxActivity t5936 d0}
+    * Task{cb6d77a #5936 type=standard A=10321:com.termux U=0 displayId=0 visible=true mode=fullscreen translucent=false sz=1}
+      mBounds=Rect(0, 0 - 0, 0)
+      mMinWidth=-1 mMinHeight=-1
+      userId=0 effectiveUid=u0a321 mCallingUid=u0a144 mUserSetupComplete=true mCallingPackage=com.bbk.launcher2 mCallingFeatureId=null
+      affinity=10321:com.termux
+      intent={act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x30200000 cmp=com.termux/.zerocore.guide.TermuxGuideActivity}
+      mActivityComponent=com.termux/.zerocore.guide.TermuxGuideActivity
+      autoRemoveRecents=false isPersistable=true activityType=1
+      rootWasReset=true mNeverRelinquishIdentity=true mReuseTask=false mLockTaskAuth=LOCK_TASK_AUTH_PINNABLE
+      Activities=[ActivityRecord{636ab32 u0 com.termux/.app.TermuxActivity t5936 d0}]
+      askedCompatMode=false inRecents=true isAvailable=true
+      mRootProcess=ProcessRecord{b13b05b 13194:com.termux/u0a321}
+      taskId=5936 rootTaskId=5936
+      hasChildPipActivity=false
+      mHasBeenVisible=true
+      mResizeMode=RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION mSupportsPictureInPicture=false isResizeable=true
+      lastActiveTime=79578406 (inactive for 0s)
+      * Hist #0: ActivityRecord{636ab32 u0 com.termux/.app.TermuxActivity t5936 d0}
+          packageName=com.termux processName=com.termux
+          launchedFromUid=10321 launchedFromPackage=com.termux launchedFromFeature=null userId=0
+          app=ProcessRecord{b13b05b 13194:com.termux/u0a321}
+          Intent { flg=0x10000000 cmp=com.termux/.app.TermuxActivity }
+          rootOfTask=true task=Task{cb6d77a #5936 type=standard A=10321:com.termux U=0 displayId=0 visible=true mode=fullscreen translucent=false sz=1}
+          taskAffinity=10321:com.termux
+          mActivityComponent=com.termux/.app.TermuxActivity
+          baseDir=/data/app/~~uiJpragoG4ZKsJGzq9vbcA==/com.termux-_qntSz2XUi-GOS8U16whuA==/base.apk
+          dataDir=/data/user/0/com.termux
+          stateNotNeeded=false componentSpecified=false mActivityType=standard
+          compat={280dpi} labelRes=0x7f1200a3 icon=0x7f0f0040 theme=0x7f1302c5
+          mLastReportedConfigurations:
+            mGlobalConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8361 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+            mOverrideConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0} s.1 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+          CurrentConfiguration={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0} s.5 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+          taskDescription: label="null" icon=null iconResource=/0 iconFilename=null primaryColor=ff000000
+            backgroundColor=ffffffff statusBarColor=19000000 navigationBarColor=19000000
+           backgroundColorFloating=ffffffff
+          launchFailed=false launchCount=0 lastLaunchTime=-42m25s206ms
+          mHaveState=false mIcicle=null
+          state=RESUMED stopped=false delayedResume=false finishing=false
+          keysPaused=false inHistory=true idle=true mStartingWindowState=STARTING_WINDOW_REMOVED
+          occludesParent=true noDisplay=false immersive=false launchMode=2
+          frozenBeforeDestroy=false forceNewConfig=false
+          mActivityType=standard
+          windows=[Window{d376aeb u0 com.termux/com.termux.app.TermuxActivity}]
+          windowType=2 hasVisible=true
+          mOccludesParent=true
+          mOrientation=SCREEN_ORIENTATION_UNSPECIFIED
+          mVisibleRequested=true mVisible=true mClientVisible=true reportedDrawn=true reportedVisible=false
+          mNumInterestingWindows=1 mNumDrawnWindows=1 allDrawn=true lastAllDrawn=true)
+          startingData=null firstWindowDrawn=true mIsExiting=false
+          nowVisible=false lastVisibleTime=-1m41s540ms
+          connections={ConnectionRecord{a8786c4 u0 com.termux/.app.TermuxService:@849bdd7}}
+          resizeMode=RESIZE_MODE_RESIZEABLE
+          mLastReportedMultiWindowMode=false mLastReportedPictureInPictureMode=false
+          supportsSizeChanges=SIZE_CHANGES_UNSUPPORTED_METADATA
+          configChanges=0x1ff3
+          neverSandboxDisplayApis=false
+          alwaysSandboxDisplayApis=false
+          areBoundsLetterboxed=false
+
+  RootTask #5950: type=standard mode=fullscreen
+  isSleeping=false
+  mBounds=Rect(0, 0 - 0, 0)
+  mCreatedByOrganizer=false
+    mLastPausedActivity: ActivityRecord{8696ed9 u0 com.bbk.updater/.ui.UpdateActivity t5950 d0 f}}
+    * Task{2352a8d #5950 type=standard A=10128:com.bbk.updater U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+      mBounds=Rect(0, 0 - 0, 0)
+      mMinWidth=-1 mMinHeight=-1
+      userId=0 effectiveUid=u0a128 mCallingUid=2000 mUserSetupComplete=true mCallingPackage=com.android.shell mCallingFeatureId=null
+      affinity=10128:com.bbk.updater
+      intent={act=com.vivo.action.ACTION_SYSTEM_UPDATER flg=0x10800000 cmp=com.bbk.updater/.ui.UpdateTempActivity}
+      mActivityComponent=com.bbk.updater/.ui.UpdateTempActivity
+      rootWasReset=false mNeverRelinquishIdentity=true mReuseTask=false mLockTaskAuth=LOCK_TASK_AUTH_PINNABLE
+      Activities=[ActivityRecord{8696ed9 u0 com.bbk.updater/.ui.UpdateActivity t5950 d0 f}}]
+      askedCompatMode=false inRecents=true isAvailable=true
+      taskId=5950 rootTaskId=5950
+      hasChildPipActivity=false
+      mHasBeenVisible=true
+      mResizeMode=RESIZE_MODE_UNRESIZEABLE mSupportsPictureInPicture=false isResizeable=true
+      lastActiveTime=79578199 (inactive for 0s)
+      * Hist #0: ActivityRecord{8696ed9 u0 com.bbk.updater/.ui.UpdateActivity t5950 d0 f}}
+          packageName=com.bbk.updater processName=com.bbk.updater
+          launchedFromUid=10128 launchedFromPackage=com.bbk.updater launchedFromFeature=null userId=0
+          app=ProcessRecord{4b3eebc 25038:com.bbk.updater/u0a128}
+          Intent { act=com.vivo.action.ACTION_START_UPDATEACTIVITY typ=application/zip flg=0x10800000 pkg=com.bbk.updater cmp=com.bbk.updater/.ui.UpdateActivity }
+          rootOfTask=true task=Task{2352a8d #5950 type=standard A=10128:com.bbk.updater U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+          taskAffinity=10128:com.bbk.updater
+          mActivityComponent=com.bbk.updater/.ui.UpdateActivity
+          baseDir=/system/app/Updater/Updater.apk
+          dataDir=/data/user/0/com.bbk.updater
+          stateNotNeeded=false componentSpecified=false mActivityType=standard
+          compat={280dpi} labelRes=0x7f0f003b icon=0x7f08018e theme=0x7f100308
+          mLastReportedConfigurations:
+            mGlobalConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8694 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+            mOverrideConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0} s.1 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+          CurrentConfiguration={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0} s.1 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+          taskDescription: label="null" icon=null iconResource=/0 iconFilename=null primaryColor=ff222222
+            backgroundColor=ff000000 statusBarColor=0 navigationBarColor=ff000001
+           backgroundColorFloating=ff000000
+          launchFailed=false launchCount=1 lastLaunchTime=-1m35s234ms
+          mHaveState=false mIcicle=null
+          state=STOPPING stopped=false delayedResume=false finishing=true
+          keysPaused=false inHistory=true idle=true mStartingWindowState=STARTING_WINDOW_NOT_SHOWN
+          occludesParent=false noDisplay=false immersive=false launchMode=2
+          frozenBeforeDestroy=false forceNewConfig=false
+          mActivityType=standard
+          windows=[Window{a261729 u0 com.bbk.updater/com.bbk.updater.ui.UpdateActivity}]
+          windowType=2 hasVisible=true
+          mOccludesParent=true
+          mOrientation=SCREEN_ORIENTATION_PORTRAIT
+          mVisibleRequested=false mVisible=false mClientVisible=true reportedDrawn=true reportedVisible=true
+          mNumInterestingWindows=1 mNumDrawnWindows=1 allDrawn=true lastAllDrawn=true)
+          startingData=null firstWindowDrawn=true mIsExiting=false
+          nowVisible=true lastVisibleTime=-1m34s198ms
+          resizeMode=RESIZE_MODE_UNRESIZEABLE
+          mLastReportedMultiWindowMode=false mLastReportedPictureInPictureMode=false
+          maxAspectRatio=2.3
+          supportsSizeChanges=SIZE_CHANGES_UNSUPPORTED_METADATA
+          configChanges=0xd83
+          neverSandboxDisplayApis=false
+          alwaysSandboxDisplayApis=false
+          areBoundsLetterboxed=false
+
+  RootTask #1: type=home mode=fullscreen
+  isSleeping=false
+  mBounds=Rect(0, 0 - 0, 0)
+  mCreatedByOrganizer=false
+    * Task{55a6e23 #7 type=home I=com.bbk.launcher2/.Launcher U=0 rootTaskId=1 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+      mBounds=Rect(0, 0 - 0, 0)
+      mMinWidth=-1 mMinHeight=-1
+      userId=0 effectiveUid=u0a144 mCallingUid=0 mUserSetupComplete=true mCallingPackage=null mCallingFeatureId=null
+      intent={act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10800100 cmp=com.bbk.launcher2/.Launcher}
+      mActivityComponent=com.bbk.launcher2/.Launcher
+      autoRemoveRecents=false isPersistable=false activityType=2
+      rootWasReset=false mNeverRelinquishIdentity=true mReuseTask=false mLockTaskAuth=LOCK_TASK_AUTH_PINNABLE
+      Activities=[ActivityRecord{97c9bb4 u0 com.bbk.launcher2/.Launcher t7 d0}]
+      askedCompatMode=false inRecents=true isAvailable=true
+      taskId=7 rootTaskId=1
+      hasChildPipActivity=false
+      mHasBeenVisible=true
+      mResizeMode=RESIZE_MODE_RESIZEABLE mSupportsPictureInPicture=false isResizeable=true
+      lastActiveTime=79476421 (inactive for 102s)
+      * Hist #0: ActivityRecord{97c9bb4 u0 com.bbk.launcher2/.Launcher t7 d0}
+          packageName=com.bbk.launcher2 processName=com.bbk.launcher2
+          launchedFromUid=0 launchedFromPackage=null launchedFromFeature=null userId=0
+          app=ProcessRecord{8ae9a44 2716:com.bbk.launcher2/u0a144}
+          Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10800100 cmp=com.bbk.launcher2/.Launcher }
+          rootOfTask=true task=Task{55a6e23 #7 type=home I=com.bbk.launcher2/.Launcher U=0 rootTaskId=1 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+          taskAffinity=null
+          mActivityComponent=com.bbk.launcher2/.Launcher
+          baseDir=/data/app/~~ydTniq9ObVIPyhXFw1gyhQ==/com.bbk.launcher2-HRKKCUmAgnEDLJlcBM-BbQ==/base.apk
+          dataDir=/data/user_de/0/com.bbk.launcher2
+          stateNotNeeded=true componentSpecified=false mActivityType=home
+          compat={280dpi} labelRes=0x7f11043d icon=0x7f080317 theme=0x7f120159
+          mLastReportedConfigurations:
+            mGlobalConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.5745 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+            mOverrideConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=home mAlwaysOnTop=undefined mRotation=ROTATION_0} s.101 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+          CurrentConfiguration={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=home mAlwaysOnTop=undefined mRotation=ROTATION_0} s.133 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+          RequestedOverrideConfiguration={0.0 ?mcc?mnc ?localeList ?layoutDir ?swdp ?wdp ?hdp ?density ?lsize ?long ?ldr ?wideColorGamut ?orien ?uimode ?night ?touch ?keyb/?/? ?nav/? winConfig={ mBounds=Rect(0, 0 - 0, 0) mAppBounds=null mMaxBounds=Rect(0, 0 - 0, 0) mWindowingMode=undefined mDisplayWindowingMode=undefined mActivityType=home mAlwaysOnTop=undefined mRotation=undefined} ?fontWeightAdjustment themeId=0 themeParameter=0 nightModeLevel = -1}
+          taskDescription: label="null" icon=null iconResource=/0 iconFilename=null primaryColor=ff222222
+            backgroundColor=ff000000 statusBarColor=0 navigationBarColor=1000000
+           backgroundColorFloating=ff000000
+          launchFailed=false launchCount=0 lastLaunchTime=-11h50m20s679ms
+          mHaveState=true mIcicle=Bundle[mParcelledData.dataSize=22868]
+          state=STOPPED stopped=true delayedResume=false finishing=false
+          keysPaused=false inHistory=true idle=true mStartingWindowState=STARTING_WINDOW_NOT_SHOWN
+          occludesParent=true noDisplay=false immersive=false launchMode=2
+          frozenBeforeDestroy=false forceNewConfig=false
+          mActivityType=home
+          windows=[Window{5f941aa u0 com.bbk.launcher2/com.bbk.launcher2.Launcher}]
+          windowType=2 hasVisible=true
+          mOccludesParent=true
+          mOrientation=SCREEN_ORIENTATION_PORTRAIT
+          mVisibleRequested=false mVisible=false mClientVisible=false reportedDrawn=false reportedVisible=false
+          mAppStopped=true
+          mNumInterestingWindows=1 mNumDrawnWindows=1 allDrawn=true lastAllDrawn=true)
+          startingData=null firstWindowDrawn=true mIsExiting=false
+          nowVisible=false lastVisibleTime=-1m43s70ms
+          resizeMode=RESIZE_MODE_RESIZEABLE
+          mLastReportedMultiWindowMode=false mLastReportedPictureInPictureMode=false
+          supportsSizeChanges=SIZE_CHANGES_UNSUPPORTED_METADATA
+          configChanges=0x2ff3
+          neverSandboxDisplayApis=false
+          alwaysSandboxDisplayApis=false
+          areBoundsLetterboxed=false
+
+  RootTask #5922: type=standard mode=fullscreen
+  isSleeping=false
+  mBounds=Rect(0, 0 - 0, 0)
+  mCreatedByOrganizer=false
+    mLastPausedActivity: ActivityRecord{a088fea u0 com.tencent.mobileqq/.activity.SplashActivity t5922 d0}
+    * Task{a7ac2db #5922 type=standard A=10254:com.tencent.mobileqq U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+      mBounds=Rect(0, 0 - 0, 0)
+      mMinWidth=-1 mMinHeight=-1
+      userId=0 effectiveUid=u0a254 mCallingUid=u0a144 mUserSetupComplete=true mCallingPackage=com.bbk.launcher2 mCallingFeatureId=null
+      affinity=10254:com.tencent.mobileqq
+      intent={act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x30200000 cmp=com.tencent.mobileqq/.activity.SplashActivity}
+      mActivityComponent=com.tencent.mobileqq/.activity.SplashActivity
+      autoRemoveRecents=false isPersistable=true activityType=1
+      rootWasReset=true mNeverRelinquishIdentity=true mReuseTask=false mLockTaskAuth=LOCK_TASK_AUTH_PINNABLE
+      Activities=[ActivityRecord{a088fea u0 com.tencent.mobileqq/.activity.SplashActivity t5922 d0}]
+      askedCompatMode=false inRecents=true isAvailable=true
+      mRootProcess=ProcessRecord{e8aa645 14805:com.tencent.mobileqq/u0a254}
+      taskId=5922 rootTaskId=5922
+      hasChildPipActivity=false
+      mHasBeenVisible=true
+      mResizeMode=RESIZE_MODE_RESIZEABLE mSupportsPictureInPicture=false isResizeable=true
+      lastActiveTime=79475378 (inactive for 103s)
+      * Hist #0: ActivityRecord{a088fea u0 com.tencent.mobileqq/.activity.SplashActivity t5922 d0}
+          packageName=com.tencent.mobileqq processName=com.tencent.mobileqq
+          launchedFromUid=10144 launchedFromPackage=com.bbk.launcher2 launchedFromFeature=null userId=0
+          app=ProcessRecord{e8aa645 14805:com.tencent.mobileqq/u0a254}
+          Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x30200000 cmp=com.tencent.mobileqq/.activity.SplashActivity bnds=[41,471][185,639] }
+          rootOfTask=true task=Task{a7ac2db #5922 type=standard A=10254:com.tencent.mobileqq U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+          taskAffinity=10254:com.tencent.mobileqq
+          mActivityComponent=com.tencent.mobileqq/.activity.SplashActivity
+          baseDir=/data/app/~~Xk6naxOWR8zlELQWY0bccA==/com.tencent.mobileqq-OAIUkezofqhYL-CaH3W0HQ==/base.apk
+          dataDir=/data/user/0/com.tencent.mobileqq
+          stateNotNeeded=false componentSpecified=false mActivityType=standard
+          compat={280dpi} labelRes=0x7f120660 icon=0x7f081e69 theme=0x7f1301f4
+          mLastReportedConfigurations:
+            mGlobalConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8609 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+            mOverrideConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0} s.7 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+          CurrentConfiguration={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0} s.9 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+          taskDescription: label="null" icon=null iconResource=/0 iconFilename=null primaryColor=ff222222
+            backgroundColor=ff000000 statusBarColor=0 navigationBarColor=0
+           backgroundColorFloating=ff000000
+          launchFailed=false launchCount=0 lastLaunchTime=-1h37m7s421ms
+          mHaveState=true mIcicle=Bundle[mParcelledData.dataSize=4088]
+          state=STOPPED stopped=true delayedResume=false finishing=false
+          keysPaused=false inHistory=true idle=true mStartingWindowState=STARTING_WINDOW_REMOVED
+          occludesParent=true noDisplay=false immersive=false launchMode=1
+          frozenBeforeDestroy=false forceNewConfig=false
+          mActivityType=standard
+          windows=[Window{b0ac82f u0 com.tencent.mobileqq/com.tencent.mobileqq.activity.SplashActivity}]
+          windowType=2 hasVisible=true
+          mOccludesParent=true
+          mOrientation=SCREEN_ORIENTATION_PORTRAIT
+          mVisibleRequested=false mVisible=false mClientVisible=false reportedDrawn=false reportedVisible=false
+          mAppStopped=true
+          mNumInterestingWindows=1 mNumDrawnWindows=1 allDrawn=true lastAllDrawn=true)
+          startingData=null firstWindowDrawn=true mIsExiting=false
+          nowVisible=false lastVisibleTime=-1m53s642ms
+          resizeMode=RESIZE_MODE_RESIZEABLE
+          mLastReportedMultiWindowMode=false mLastReportedPictureInPictureMode=false
+          supportsSizeChanges=SIZE_CHANGES_UNSUPPORTED_METADATA
+          configChanges=0x40000da7
+          neverSandboxDisplayApis=false
+          alwaysSandboxDisplayApis=false
+          areBoundsLetterboxed=false
+
+  RootTask #5935: type=standard mode=fullscreen
+  isSleeping=false
+  mBounds=Rect(0, 0 - 0, 0)
+  mCreatedByOrganizer=false
+    mLastPausedActivity: ActivityRecord{46dd25c u0 com.openai.chatgpt/.MainActivity t5935 d0}
+    * Task{802c965 #5935 type=standard A=10301:com.openai.chatgpt U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+      mBounds=Rect(0, 0 - 0, 0)
+      mMinWidth=-1 mMinHeight=-1
+      userId=0 effectiveUid=u0a301 mCallingUid=u0a144 mUserSetupComplete=true mCallingPackage=com.bbk.launcher2 mCallingFeatureId=null
+      affinity=10301:com.openai.chatgpt
+      intent={act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x30200000 cmp=com.openai.chatgpt/.MainActivity}
+      mActivityComponent=com.openai.chatgpt/.MainActivity
+      autoRemoveRecents=false isPersistable=true activityType=1
+      rootWasReset=true mNeverRelinquishIdentity=true mReuseTask=false mLockTaskAuth=LOCK_TASK_AUTH_PINNABLE
+      Activities=[ActivityRecord{46dd25c u0 com.openai.chatgpt/.MainActivity t5935 d0}]
+      askedCompatMode=false inRecents=true isAvailable=true
+      mRootProcess=ProcessRecord{c85f42e 10283:com.openai.chatgpt/u0a301}
+      taskId=5935 rootTaskId=5935
+      hasChildPipActivity=false
+      mHasBeenVisible=true
+      mResizeMode=RESIZE_MODE_RESIZEABLE mSupportsPictureInPicture=false isResizeable=true
+      lastActiveTime=79463809 (inactive for 114s)
+      * Hist #0: ActivityRecord{46dd25c u0 com.openai.chatgpt/.MainActivity t5935 d0}
+          packageName=com.openai.chatgpt processName=com.openai.chatgpt
+          launchedFromUid=10144 launchedFromPackage=com.bbk.launcher2 launchedFromFeature=null userId=0
+          app=ProcessRecord{c85f42e 10283:com.openai.chatgpt/u0a301}
+          Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x30200000 cmp=com.openai.chatgpt/.MainActivity bnds=[533,471][677,639] }
+          rootOfTask=true task=Task{802c965 #5935 type=standard A=10301:com.openai.chatgpt U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+          taskAffinity=10301:com.openai.chatgpt
+          mActivityComponent=com.openai.chatgpt/.MainActivity
+          baseDir=/data/app/~~JVXJyFbY1FWOJ44IY03CjQ==/com.openai.chatgpt-fht2MhNxljVeNYdvkBgk5g==/base.apk
+          dataDir=/data/user/0/com.openai.chatgpt
+          splitDir=[/data/app/~~JVXJyFbY1FWOJ44IY03CjQ==/com.openai.chatgpt-fht2MhNxljVeNYdvkBgk5g==/split_config.arm64_v8a.apk, /data/app/~~JVXJyFbY1FWOJ44IY03CjQ==/com.openai.chatgpt-fht2MhNxljVeNYdvkBgk5g==/split_config.xhdpi.apk, /data/app/~~JVXJyFbY1FWOJ44IY03CjQ==/com.openai.chatgpt-fht2MhNxljVeNYdvkBgk5g==/split_config.zh.apk]
+          stateNotNeeded=false componentSpecified=false mActivityType=standard
+          compat={280dpi} labelRes=0x7f1300b2 icon=0x7f100000 theme=0x7f1402fb
+          mLastReportedConfigurations:
+            mGlobalConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port night finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8694 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+            mOverrideConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port night finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0} s.6 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+          CurrentConfiguration={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port night finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0} s.6 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+          RequestedOverrideConfiguration={0.0 ?mcc?mnc ?localeList ?layoutDir ?swdp ?wdp ?hdp ?density ?lsize ?long ?ldr ?wideColorGamut ?orien ?uimode night ?touch ?keyb/?/? ?nav/? winConfig={ mBounds=Rect(0, 0 - 0, 0) mAppBounds=null mMaxBounds=Rect(0, 0 - 0, 0) mWindowingMode=undefined mDisplayWindowingMode=undefined mActivityType=undefined mAlwaysOnTop=undefined mRotation=undefined} ?fontWeightAdjustment themeId=0 themeParameter=0 nightModeLevel = -1}
+          taskDescription: label="null" icon=null iconResource=/0 iconFilename=null primaryColor=ff191c1e
+            backgroundColor=ff303030 statusBarColor=0 navigationBarColor=0
+           backgroundColorFloating=ff424242
+          launchFailed=false launchCount=0 lastLaunchTime=-21m31s984ms
+          mHaveState=true mIcicle=Bundle[mParcelledData.dataSize=36548]
+          state=STOPPED stopped=true delayedResume=false finishing=false
+          keysPaused=false inHistory=true idle=true mStartingWindowState=STARTING_WINDOW_REMOVED
+          occludesParent=true noDisplay=false immersive=false launchMode=1
+          frozenBeforeDestroy=false forceNewConfig=false
+          mActivityType=standard
+          windows=[Window{9fb9bfa u0 com.openai.chatgpt/com.openai.chatgpt.MainActivity}]
+          windowType=2 hasVisible=true
+          mOccludesParent=true
+          mOrientation=SCREEN_ORIENTATION_UNSPECIFIED
+          mVisibleRequested=false mVisible=false mClientVisible=false reportedDrawn=false reportedVisible=false
+          mAppStopped=true
+          mNumInterestingWindows=1 mNumDrawnWindows=1 allDrawn=true lastAllDrawn=true)
+          startingData=null firstWindowDrawn=true mIsExiting=false
+          nowVisible=false lastVisibleTime=-2m54s660ms
+          resizeMode=RESIZE_MODE_RESIZEABLE
+          mLastReportedMultiWindowMode=false mLastReportedPictureInPictureMode=false
+          supportsSizeChanges=SIZE_CHANGES_UNSUPPORTED_METADATA
+          configChanges=0x3
+          neverSandboxDisplayApis=false
+          alwaysSandboxDisplayApis=false
+          areBoundsLetterboxed=false
+
+  RootTask #5947: type=standard mode=fullscreen
+  isSleeping=false
+  mBounds=Rect(0, 0 - 0, 0)
+  mCreatedByOrganizer=false
+    mLastPausedActivity: ActivityRecord{5f2931a u0 tv.danmaku.bili/.MainActivityV2 t5947 d0}
+    * Task{136be4b #5947 type=standard A=10250:tv.danmaku.bili U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+      mBounds=Rect(0, 0 - 0, 0)
+      mMinWidth=-1 mMinHeight=-1
+      userId=0 effectiveUid=u0a250 mCallingUid=u0a144 mUserSetupComplete=true mCallingPackage=com.bbk.launcher2 mCallingFeatureId=null
+      affinity=10250:tv.danmaku.bili
+      intent={act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x30200000 cmp=tv.danmaku.bili/.MainActivityV2}
+      mActivityComponent=tv.danmaku.bili/.MainActivityV2
+      autoRemoveRecents=false isPersistable=true activityType=1
+      rootWasReset=true mNeverRelinquishIdentity=true mReuseTask=false mLockTaskAuth=LOCK_TASK_AUTH_PINNABLE
+      Activities=[ActivityRecord{5f2931a u0 tv.danmaku.bili/.MainActivityV2 t5947 d0}]
+      askedCompatMode=false inRecents=true isAvailable=true
+      mRootProcess=ProcessRecord{b4c1028 17971:tv.danmaku.bili/u0a250}
+      taskId=5947 rootTaskId=5947
+      hasChildPipActivity=false
+      mHasBeenVisible=true
+      mResizeMode=RESIZE_MODE_RESIZEABLE mSupportsPictureInPicture=false isResizeable=true
+      lastActiveTime=79213215 (inactive for 365s)
+      * Hist #0: ActivityRecord{5f2931a u0 tv.danmaku.bili/.MainActivityV2 t5947 d0}
+          packageName=tv.danmaku.bili processName=tv.danmaku.bili
+          launchedFromUid=10144 launchedFromPackage=com.bbk.launcher2 launchedFromFeature=null userId=0
+          app=ProcessRecord{b4c1028 17971:tv.danmaku.bili/u0a250}
+          Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x30200000 cmp=tv.danmaku.bili/.MainActivityV2 bnds=[41,635][349,803] }
+          rootOfTask=true task=Task{136be4b #5947 type=standard A=10250:tv.danmaku.bili U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+          taskAffinity=10250:tv.danmaku.bili
+          mActivityComponent=tv.danmaku.bili/.MainActivityV2
+          baseDir=/data/app/~~bFSwoGqvj72DbsX7__B95g==/tv.danmaku.bili-b7iAnH7JzyZDYgYNnVp9xg==/base.apk
+          dataDir=/data/user/0/tv.danmaku.bili
+          stateNotNeeded=false componentSpecified=false mActivityType=standard
+          compat={280dpi} labelRes=0x7f110313 icon=0x7f0e0058 theme=0x7f120078
+          mLastReportedConfigurations:
+            mGlobalConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8694 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+            mOverrideConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0} s.1 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+          CurrentConfiguration={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0} s.1 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+          taskDescription: label="null" icon=null iconResource=/0 iconFilename=null primaryColor=ffffffff
+            backgroundColor=fffafafa statusBarColor=0 navigationBarColor=ffffffff
+           backgroundColorFloating=ffffffff
+          launchFailed=false launchCount=0 lastLaunchTime=-9m3s468ms
+          mHaveState=true mIcicle=Bundle[mParcelledData.dataSize=40112]
+          state=STOPPED stopped=true delayedResume=false finishing=false
+          keysPaused=false inHistory=true idle=true mStartingWindowState=STARTING_WINDOW_REMOVED
+          occludesParent=true noDisplay=false immersive=false launchMode=1
+          frozenBeforeDestroy=false forceNewConfig=false
+          mActivityType=standard
+          windows=[Window{13a2e84 u0 tv.danmaku.bili/tv.danmaku.bili.MainActivityV2}]
+          windowType=2 hasVisible=true
+          mOccludesParent=true
+          mOrientation=SCREEN_ORIENTATION_PORTRAIT
+          mVisibleRequested=false mVisible=false mClientVisible=false reportedDrawn=false reportedVisible=false
+          mAppStopped=true
+          mNumInterestingWindows=1 mNumDrawnWindows=1 allDrawn=true lastAllDrawn=true)
+          startingData=null firstWindowDrawn=true mIsExiting=false
+          nowVisible=false lastVisibleTime=-6m31s119ms
+          resizeMode=RESIZE_MODE_RESIZEABLE
+          mLastReportedMultiWindowMode=false mLastReportedPictureInPictureMode=false
+          supportsSizeChanges=SIZE_CHANGES_UNSUPPORTED_METADATA
+          configChanges=0xf87
+          neverSandboxDisplayApis=false
+          alwaysSandboxDisplayApis=false
+          areBoundsLetterboxed=false
+
+  RootTask #5933: type=standard mode=fullscreen
+  isSleeping=false
+  mBounds=Rect(0, 0 - 0, 0)
+  mCreatedByOrganizer=false
+    mLastPausedActivity: ActivityRecord{444a8c6 u0 com.follow.clash/.MainActivity t5933 d0}
+    * Task{bcc6087 #5933 type=standard A=10258:com.follow.clash U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+      mBounds=Rect(0, 0 - 0, 0)
+      mMinWidth=-1 mMinHeight=-1
+      userId=0 effectiveUid=u0a258 mCallingUid=u0a144 mUserSetupComplete=true mCallingPackage=com.bbk.launcher2 mCallingFeatureId=null
+      affinity=10258:com.follow.clash
+      intent={act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x30200000 cmp=com.follow.clash/.MainActivity}
+      mActivityComponent=com.follow.clash/.MainActivity
+      autoRemoveRecents=false isPersistable=true activityType=1
+      rootWasReset=true mNeverRelinquishIdentity=true mReuseTask=false mLockTaskAuth=LOCK_TASK_AUTH_PINNABLE
+      Activities=[ActivityRecord{444a8c6 u0 com.follow.clash/.MainActivity t5933 d0}]
+      askedCompatMode=false inRecents=true isAvailable=true
+      mRootProcess=ProcessRecord{6272238 9302:com.follow.clash/u0a258}
+      taskId=5933 rootTaskId=5933
+      hasChildPipActivity=false
+      mHasBeenVisible=true
+      mResizeMode=RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION mSupportsPictureInPicture=false isResizeable=true
+      lastActiveTime=78311670 (inactive for 1266s)
+      * Hist #0: ActivityRecord{444a8c6 u0 com.follow.clash/.MainActivity t5933 d0}
+          packageName=com.follow.clash processName=com.follow.clash
+          launchedFromUid=10144 launchedFromPackage=com.bbk.launcher2 launchedFromFeature=null userId=0
+          app=ProcessRecord{6272238 9302:com.follow.clash/u0a258}
+          Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x30200000 cmp=com.follow.clash/.MainActivity bnds=[205,799][349,967] }
+          rootOfTask=true task=Task{bcc6087 #5933 type=standard A=10258:com.follow.clash U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+          taskAffinity=10258:com.follow.clash
+          mActivityComponent=com.follow.clash/.MainActivity
+          baseDir=/data/app/~~Pl2oVrwsQMrqCkOAvNSUnA==/com.follow.clash-VD1wNaMfI1x_Qd0ikLq_Aw==/base.apk
+          dataDir=/data/user/0/com.follow.clash
+          stateNotNeeded=false componentSpecified=false mActivityType=standard
+          compat={280dpi} labelRes=0x7f10001c icon=0x7f0d0001 theme=0x7f110119
+          mLastReportedConfigurations:
+            mGlobalConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8361 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+            mOverrideConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0} s.1 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+          CurrentConfiguration={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0} s.5 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+          taskDescription: label="FlClash" icon=null iconResource=com.follow.clash/0 iconFilename=null primaryColor=ff004d6a
+            backgroundColor=ffffffff statusBarColor=0 navigationBarColor=0
+           backgroundColorFloating=ffffffff
+          launchFailed=false launchCount=0 lastLaunchTime=-48m29s18ms
+          mHaveState=true mIcicle=Bundle[mParcelledData.dataSize=956]
+          state=STOPPED stopped=true delayedResume=false finishing=false
+          keysPaused=false inHistory=true idle=true mStartingWindowState=STARTING_WINDOW_REMOVED
+          occludesParent=true noDisplay=false immersive=false launchMode=1
+          frozenBeforeDestroy=false forceNewConfig=false
+          mActivityType=standard
+          windows=[Window{f977871 u0 com.follow.clash/com.follow.clash.MainActivity}]
+          windowType=2 hasVisible=true
+          mOccludesParent=true
+          mOrientation=SCREEN_ORIENTATION_UNSPECIFIED
+          mVisibleRequested=false mVisible=false mClientVisible=false reportedDrawn=false reportedVisible=false
+          mAppStopped=true
+          mNumInterestingWindows=1 mNumDrawnWindows=1 allDrawn=true lastAllDrawn=true)
+          startingData=null firstWindowDrawn=true mIsExiting=false
+          nowVisible=false lastVisibleTime=-21m9s69ms
+          resizeMode=RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION
+          mLastReportedMultiWindowMode=false mLastReportedPictureInPictureMode=false
+          supportsSizeChanges=SIZE_CHANGES_UNSUPPORTED_METADATA
+          configChanges=0x40003fb7
+          neverSandboxDisplayApis=false
+          alwaysSandboxDisplayApis=false
+          areBoundsLetterboxed=false
+
+  RootTask #2: type=undefined mode=fullscreen
+  isSleeping=false
+  mBounds=Rect(0, 0 - 0, 0)
+  mCreatedByOrganizer=true
+
+  RootTask #6: type=undefined mode=split-screen-secondary
+  isSleeping=false
+  mBounds=Rect(0, 832 - 720, 1600)
+  mCreatedByOrganizer=true
+
+  RootTask #5: type=undefined mode=split-screen-primary
+  isSleeping=false
+  mBounds=Rect(0, 0 - 720, 828)
+  mCreatedByOrganizer=true
+
+  RootTask #3: type=undefined mode=multi-window
+  isSleeping=false
+  mBounds=Rect(0, 0 - 0, 0)
+  mCreatedByOrganizer=true
+
+  RootTask #4: type=undefined mode=multi-window
+  isSleeping=false
+  mBounds=Rect(0, 0 - 0, 0)
+  mCreatedByOrganizer=true
+
+  RootTask #5808: type=standard mode=fullscreen
+  isSleeping=false
+  mBounds=Rect(0, 0 - 0, 0)
+  mCreatedByOrganizer=false
+    mLastPausedActivity: ActivityRecord{23d16f2 u0 com.vivo.smartmultiwindow/.minilauncher2.Launcher t5808 d0}
+    * Task{22cb143 #5808 type=standard A=1000:com.vivo.smartmultiwindow U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+      mBounds=Rect(0, 0 - 0, 0)
+      mMinWidth=-1 mMinHeight=-1
+      userId=0 effectiveUid=1000 mCallingUid=1000 mUserSetupComplete=true mCallingPackage=com.vivo.smartmultiwindow mCallingFeatureId=null
+      affinity=1000:com.vivo.smartmultiwindow
+      intent={flg=0x10800000 cmp=com.vivo.smartmultiwindow/.minilauncher2.Launcher}
+      mActivityComponent=com.vivo.smartmultiwindow/.minilauncher2.Launcher
+      rootWasReset=false mNeverRelinquishIdentity=true mReuseTask=false mLockTaskAuth=LOCK_TASK_AUTH_PINNABLE
+      Activities=[ActivityRecord{23d16f2 u0 com.vivo.smartmultiwindow/.minilauncher2.Launcher t5808 d0}]
+      askedCompatMode=false inRecents=true isAvailable=true
+      taskId=5808 rootTaskId=5808
+      hasChildPipActivity=false
+      mHasBeenVisible=true
+      mResizeMode=RESIZE_MODE_RESIZEABLE mSupportsPictureInPicture=false isResizeable=true
+      lastActiveTime=46490337 (inactive for 33088s)
+      * Hist #0: ActivityRecord{23d16f2 u0 com.vivo.smartmultiwindow/.minilauncher2.Launcher t5808 d0}
+          packageName=com.vivo.smartmultiwindow processName=com.vivo.smartmultiwindow
+          launchedFromUid=1000 launchedFromPackage=com.vivo.smartmultiwindow launchedFromFeature=null userId=0
+          app=ProcessRecord{a77e53 2366:com.vivo.smartmultiwindow/1000}
+          Intent { flg=0x10800000 cmp=com.vivo.smartmultiwindow/.minilauncher2.Launcher }
+          rootOfTask=true task=Task{22cb143 #5808 type=standard A=1000:com.vivo.smartmultiwindow U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+          taskAffinity=1000:com.vivo.smartmultiwindow
+          mActivityComponent=com.vivo.smartmultiwindow/.minilauncher2.Launcher
+          baseDir=/system/app/VivoSmartMultiWindow/VivoSmartMultiWindow.apk
+          dataDir=/data/user_de/0/com.vivo.smartmultiwindow
+          stateNotNeeded=true componentSpecified=false mActivityType=standard
+          compat={280dpi} labelRes=0x7f0f0027 icon=0x7f080104 theme=0x1030006
+          mLastReportedConfigurations:
+            mGlobalConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.2962 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+            mOverrideConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw221dp w411dp h439dp 280dpi smll port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 831 - 720, 1600) mAppBounds=Rect(0, 831 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=split-screen-secondary mDisplayWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0} s.45 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+          CurrentConfiguration={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0} s.107 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+          taskDescription: label="null" icon=null iconResource=/0 iconFilename=null primaryColor=ff222222
+            backgroundColor=ff000000 statusBarColor=ff000000 navigationBarColor=ffa4aeb1
+           backgroundColorFloating=ff000000
+          launchFailed=false launchCount=0 lastLaunchTime=-6h55m52s328ms
+          mHaveState=true mIcicle=Bundle[mParcelledData.dataSize=1896]
+          state=STOPPED stopped=true delayedResume=false finishing=false
+          keysPaused=false inHistory=true idle=true mStartingWindowState=STARTING_WINDOW_NOT_SHOWN
+          occludesParent=true noDisplay=false immersive=false launchMode=3
+          frozenBeforeDestroy=false forceNewConfig=false
+          mActivityType=standard
+          windows=[Window{536f35b u0 com.vivo.smartmultiwindow/com.vivo.smartmultiwindow.minilauncher2.Launcher}]
+          windowType=2 hasVisible=true
+          mOccludesParent=true
+          mOrientation=SCREEN_ORIENTATION_BEHIND
+          mVisibleRequested=false mVisible=false mClientVisible=false reportedDrawn=false reportedVisible=false
+          mAppStopped=true
+          mNumInterestingWindows=1 mNumDrawnWindows=1 allDrawn=true lastAllDrawn=true)
+          startingData=null firstWindowDrawn=true mIsExiting=false
+          nowVisible=false lastVisibleTime=-6h55m51s898ms
+          resizeMode=RESIZE_MODE_RESIZEABLE
+          mLastReportedMultiWindowMode=false mLastReportedPictureInPictureMode=false
+          supportsSizeChanges=SIZE_CHANGES_UNSUPPORTED_METADATA
+          configChanges=0xf83
+          neverSandboxDisplayApis=false
+          alwaysSandboxDisplayApis=false
+          areBoundsLetterboxed=false
+
+  Resumed activities in task display areas (from top to bottom):
+    Resumed: ActivityRecord{636ab32 u0 com.termux/.app.TermuxActivity t5936 d0}
+
+Display #90000 (activities from top to bottom):
+
+  Activities waiting to stop:
+    Task{2352a8d #5950 type=standard A=10128:com.bbk.updater U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+      Stop #0: ActivityRecord{8696ed9 u0 com.bbk.updater/.ui.UpdateActivity t5950 d0 f}}
+
+  ResumedActivity: ActivityRecord{636ab32 u0 com.termux/.app.TermuxActivity t5936 d0}
+
+ActivityTaskSupervisor state:
+  topDisplayFocusedRootTask=Task{cb6d77a #5936 type=standard A=10321:com.termux U=0 displayId=0 visible=true mode=fullscreen translucent=false sz=1}
+  mLastOrientationSource=WindowedMagnification:0:31@44493154
+  deepestLastOrientationSource=ActivityRecord{636ab32 u0 com.termux/.app.TermuxActivity t5936 d0}
+  overrideConfig={0.90005 460mcc2mnc [zh_CN] ldltr sw411dp w411dp h876dp 280dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 43 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8694 fontWeightAdjustment=0 themeId=50 themeParameter=-71589352825182270 nightModeLevel = -1}
+  Display: mDisplayId=0 rootTasks=13
+    init=720x1600 320dpi base=720x1600 280dpi cur=720x1600 app=720x1557 rng=720x654-1557x1534
+    deferred=false mLayoutNeeded=false mTouchExcludeRegion=SkRegion((0,0,720,1600))
+
+  mLayoutSeq=66849
+  mCurrentFocus=Window{d376aeb u0 com.termux/com.termux.app.TermuxActivity}
+  mFocusedApp=ActivityRecord{636ab32 u0 com.termux/.app.TermuxActivity t5936 d0}
+
+  displayId=0
+  mWallpaperTarget=null
+  mLastWallpaperX=0.0 mLastWallpaperY=0.5
+
+  mSystemGestureExclusion=SkRegion()
+
+  Display areas in top down Z order:
+    * Leaf:36:36
+    * HideDisplayCutout:32:35
+      * OneHanded:32:35
+        * FullscreenMagnification:33:35
+          * Leaf:33:35
+        * Leaf:32:32
+    * WindowedMagnification:0:31
+      * HideDisplayCutout:26:31
+        * OneHanded:26:31
+          * FullscreenMagnification:29:31
+            * Leaf:29:31
+          * Leaf:28:28
+          * FullscreenMagnification:26:27
+            * Leaf:26:27
+      * Leaf:24:25
+      * HideDisplayCutout:20:23
+        * OneHanded:20:23
+          * FullscreenMagnification:20:23
+            * Leaf:20:23
+      * OneHanded:19:19
+        * FullscreenMagnification:19:19
+          * Leaf:19:19
+      * HideDisplayCutout:18:18
+        * OneHanded:18:18
+          * FullscreenMagnification:18:18
+            * Leaf:18:18
+      * OneHanded:17:17
+        * FullscreenMagnification:17:17
+          * Leaf:17:17
+      * HideDisplayCutout:0:16
+        * OneHanded:2:16
+          * ImePlaceholder:15:16
+            * ImeContainer
+          * FullscreenMagnification:2:14
+            * Leaf:3:14
+            * DefaultTaskDisplayArea
+        * OneHandedBackgroundPanel:0:1
+          * OneHanded:0:1
+            * FullscreenMagnification:0:1
+              * Leaf:0:1
+
+  Task display areas in top down Z order:
+    TaskDisplayArea DefaultTaskDisplayArea
+      mPreferredTopFocusableRootTask=Task{cb6d77a #5936 type=standard A=10321:com.termux U=0 displayId=0 visible=true mode=fullscreen translucent=false sz=1}
+      mLastFocusedRootTask=Task{cb6d77a #5936 type=standard A=10321:com.termux U=0 displayId=0 visible=true mode=fullscreen translucent=false sz=1}
+      Application tokens in top down Z order:
+      * Task{cb6d77a #5936 type=standard A=10321:com.termux U=0 displayId=0 visible=true mode=fullscreen translucent=false sz=1}
+        ContainerAnimator:
+          mLeash=Surface(name=Surface(name=Task=5936)/@0xf6a8c91 - animation-leash of app_transition)/@0x14c5a0a mAnimationType=app_transition
+          Animation: com.android.server.wm.LocalAnimationAdapter@844106b
+            android.view.animation.AnimationSet@fbdc7c8
+        bounds=[0,0][720,1600]
+        * ActivityRecord{636ab32 u0 com.termux/.app.TermuxActivity t5936 d0}
+      * Task{2352a8d #5950 type=standard A=10128:com.bbk.updater U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+        ContainerAnimator:
+          mLeash=Surface(name=Surface(name=Task=5950)/@0x6161c99 - animation-leash of app_transition)/@0xb0128f1 mAnimationType=app_transition
+          Animation: com.android.server.wm.LocalAnimationAdapter@35d3061
+            android.view.animation.AnimationSet@f715786
+        bounds=[0,0][720,1600]
+        * ActivityRecord{8696ed9 u0 com.bbk.updater/.ui.UpdateActivity t5950 d0 f}}
+      * Task{8aba100 #1 type=home ?? U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+        bounds=[0,0][720,1600]
+        * Task{55a6e23 #7 type=home I=com.bbk.launcher2/.Launcher U=0 rootTaskId=1 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+          bounds=[0,0][720,1600]
+          * ActivityRecord{97c9bb4 u0 com.bbk.launcher2/.Launcher t7 d0}
+      * Task{a7ac2db #5922 type=standard A=10254:com.tencent.mobileqq U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+        bounds=[0,0][720,1600]
+        * ActivityRecord{a088fea u0 com.tencent.mobileqq/.activity.SplashActivity t5922 d0}
+      * Task{802c965 #5935 type=standard A=10301:com.openai.chatgpt U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+        bounds=[0,0][720,1600]
+        * ActivityRecord{46dd25c u0 com.openai.chatgpt/.MainActivity t5935 d0}
+      * Task{136be4b #5947 type=standard A=10250:tv.danmaku.bili U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+        bounds=[0,0][720,1600]
+        * ActivityRecord{5f2931a u0 tv.danmaku.bili/.MainActivityV2 t5947 d0}
+      * Task{bcc6087 #5933 type=standard A=10258:com.follow.clash U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+        bounds=[0,0][720,1600]
+        * ActivityRecord{444a8c6 u0 com.follow.clash/.MainActivity t5933 d0}
+      * Task{a5f6bbf #2 type=undefined ?? U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=0}
+        bounds=[0,0][720,1600]
+      * Task{cd9ff9b #6 type=undefined ?? U=0 displayId=0 visible=false mode=split-screen-secondary translucent=true sz=0}
+        bounds=[0,832][720,1600]
+      * Task{d1fc7aa #5 type=undefined ?? U=0 displayId=0 visible=false mode=split-screen-primary translucent=true sz=0}
+        bounds=[0,0][720,828]
+      * Task{bde99ea #3 type=undefined ?? U=0 displayId=0 visible=false mode=multi-window translucent=true sz=0}
+        bounds=[0,0][720,1600]
+      * Task{72913b7 #4 type=undefined ?? U=0 displayId=0 visible=false mode=multi-window translucent=true sz=0}
+        bounds=[0,0][720,1600]
+      * Task{22cb143 #5808 type=standard A=1000:com.vivo.smartmultiwindow U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+        bounds=[0,0][720,1600]
+        * ActivityRecord{23d16f2 u0 com.vivo.smartmultiwindow/.minilauncher2.Launcher t5808 d0}
+
+  mScreenRotationAnimation:
+    mSurface=null mWidth=1600 mHeight=720
+    mEnteringBlackFrame=null
+    mCurRotation=0 mOriginalRotation=1
+    mOriginalWidth=1600 mOriginalHeight=720
+    mStarted=true mAnimRunning=false mFinishAnimReady=true mFinishAnimStartTime=-1
+    mRotateExitAnimation=null {alpha=1.0 matrix=[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}
+    mRotateEnterAnimation=null {alpha=1.0 matrix=[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}
+    mSnapshotInitialMatrix=[0.0, -1.0, 720.0][1.0, 0.0, 0.0][0.0, 0.0, 1.0]
+    mForceDefaultOrientation=false
+  rootHomeTask=Task=1
+  rootSplitScreenPrimaryTask=Task=5
+
+  PinnedTaskController
+    mIsImeShowing=false
+    mImeHeight=0
+    mAspectRatio=-1.0
+    mMinAspectRatio=0.41841003
+    mMaxAspectRatio=2.39
+    mActions=[]
+
+  DisplayFrames w=720 h=1600 r=0
+
+  DisplayPolicy
+    mCarDockEnablesAccelerometer=true mDeskDockEnablesAccelerometer=true
+    mDockMode=EXTRA_DOCK_STATE_UNDOCKED mLidState=LID_ABSENT
+    mAwake=true mScreenOnEarly=true mScreenOnFully=true
+    mKeyguardDrawComplete=true mWindowManagerDrawComplete=true
+    mHdmiPlugged=false
+    mLastBehavior=SHOW_TRANSIENT_BARS_BY_SWIPE
+    mShowingDream=false mDreamingLockscreen=false
+    mStatusBar=Window{com.android.systemui:3949069 u0 StatusBar}
+    mExpandedPanel=Window{com.android.systemui:ec079af u0 NotificationShade}
+    isKeyguardShowing=false
+    mFocusedWindow=Window{d376aeb u0 com.termux/com.termux.app.TermuxActivity}
+    mTopFullscreenOpaqueWindowState=Window{d376aeb u0 com.termux/com.termux.app.TermuxActivity}
+    mTopFullscreenOpaqueOrDimmingWindowState=Window{d376aeb u0 com.termux/com.termux.app.TermuxActivity}
+    mTopIsFullscreen=false
+    mForceStatusBar=false mAllowLockscreenWhenOn=false
+    mRemoteInsetsControllerControlsSystemBars=false
+    mVivoHasNavBar=false
+    mVivoForceHideNavBar=false
+    Looper state:
+      Looper (android.ui, tid 19) {1ab5eec}
+        Now dispatching: null
+        (Total messages: 0, polling=true, quitting=false)
+
+  DisplayRotation
+    mCurrentAppOrientation=SCREEN_ORIENTATION_UNSPECIFIED
+    mLastOrientation=-1
+    mRotation=0 mDeferredRotationPauseCount=0
+    mLandscapeRotation=ROTATION_90 mSeascapeRotation=ROTATION_270
+    mPortraitRotation=ROTATION_0 mUpsideDownRotation=ROTATION_180
+    mSupportAutoRotation=true
+    WindowOrientationListener
+      mEnabled=true
+      mCurrentRotation=ROTATION_0
+      mSensorType=null
+      mSensor={Sensor name="WINDOW_ORIENTATION", vendor="VIVO", version=1, type=66537, maxRange=3.0, resolution=1.0, power=0.001, minDelay=0}
+      mRate=2
+      AccelSensorJudge
+        mProposedRotation=-1
+        mPredictedRotation=-1
+        mLastFilteredX=0.0
+        mLastFilteredY=0.0
+        mLastFilteredZ=0.0
+        mLastFilteredTimestampNanos=-9223372036854775808 (-9.2232923E12ms ago)
+        mTiltHistory={last: NaN}
+        mFlat=false
+        mSwinging=false
+        mAccelerating=false
+        mOverhead=false
+        mTouched=false
+        mTiltToleranceConfig=[[-25, 70], [-25, 65], [-25, 60], [-25, 65]]
+
+    mCarDockRotation=-1 mDeskDockRotation=-1
+    mUserRotationMode=USER_ROTATION_FREE mUserRotation=ROTATION_0 mCameraRotationMode=0 mAllowAllRotations=false
+    mDemoHdmiRotation=ROTATION_90 mDemoHdmiRotationLock=false mUndockedHdmiRotation=-1
+    mLidOpenRotation=-1
+    mFixedToUserRotation=false
+
+  InputConsumers:
+    name=recents_animation_input_consumer pid=2716 user=UserHandle{0}
+
+  WindowInsetsStateController
+    InsetsState
+      mDisplayFrame=Rect(0, 0 - 720, 1600)
+      mDisplayCutout=DisplayCutout{insets=Rect(0, 43 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(277, 0 - 443, 43), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=720 displayHeight=1600 density={2.0} cutoutSpec={M -83,0 L 83, 0 L 22, 43 L -22, 43 Z} rotation={0} scale={1.0}}}}
+      mRoundedCorners=RoundedCorners{[RoundedCorner{position=TopLeft, radius=67, center=Point(67, 67)}, RoundedCorner{position=TopRight, radius=67, center=Point(653, 67)}, RoundedCorner{position=BottomRight, radius=67, center=Point(653, 1533)}, RoundedCorner{position=BottomLeft, radius=67, center=Point(67, 1533)}]}
+      mPrivacyIndicatorBounds=PrivacyIndicatorBounds {static bounds=Rect(559, 0 - 703, 58) rotation=0}
+        InsetsSource type=ITYPE_STATUS_BAR frame=[0,0][720,66] visible=true
+        InsetsSource type=ITYPE_LEFT_GESTURES frame=[0,0][0,0] visible=true
+        InsetsSource type=ITYPE_RIGHT_GESTURES frame=[0,0][0,0] visible=true
+        InsetsSource type=ITYPE_TOP_MANDATORY_GESTURES frame=[0,0][720,90] visible=true
+        InsetsSource type=ITYPE_LEFT_DISPLAY_CUTOUT frame=[0,0][-2147483648,1600] visible=true
+        InsetsSource type=ITYPE_TOP_DISPLAY_CUTOUT frame=[0,0][720,43] visible=true
+        InsetsSource type=ITYPE_RIGHT_DISPLAY_CUTOUT frame=[2147483647,0][720,1600] visible=true
+        InsetsSource type=ITYPE_BOTTOM_DISPLAY_CUTOUT frame=[0,2147483647][720,1600] visible=true
+        InsetsSource type=ITYPE_TOP_TAPPABLE_ELEMENT frame=[0,0][720,66] visible=true
+        InsetsSource type=ITYPE_IME frame=[0,0][0,0] visibleFrame=[0,1600][720,1600] visible=false
+    Control map:
+      ITYPE_IME -> Window{a261729 u0 com.bbk.updater/com.bbk.updater.ui.UpdateActivity}
+      ITYPE_STATUS_BAR -> Window{d376aeb u0 com.termux/com.termux.app.TermuxActivity}
+    InsetsSourceProviders:
+      ImeInsetsSourceProvider
+        mSource=InsetsSource type=ITYPE_IME frame=[0,0][0,0] visibleFrame=[0,1600][720,1600] visible=false
+        mControl=InsetsSourceControl type=ITYPE_IME mLeash=Surface(name=Surface(name=5adc234 InputMethod)/@0xbdc05d2 - animation-leash of insets_animation)/@0x3914847 mSurfacePosition=Point(0, 66) mInsetsHint=Insets{left=0, top=0, right=0, bottom=0} mSkipAnimationOnce=false
+        mIsLeashReadyForDispatching=true mImeOverrideFrame=[0,0][0,0]
+        mWin=Window{com.vivo.ai.ime:5adc234 u0 InputMethod}
+        mAdapter=ControlAdapter mCapturedLeash=Surface(name=Surface(name=5adc234 InputMethod)/@0xbdc05d2 - animation-leash of insets_animation)/@0x3914847
+        mControlTarget=Window{a261729 u0 com.bbk.updater/com.bbk.updater.ui.UpdateActivity}
+        mImeShowing=false
+      InsetsSourceProvider
+        mSource=InsetsSource type=ITYPE_TOP_TAPPABLE_ELEMENT frame=[0,0][720,66] visible=true
+        mIsLeashReadyForDispatching=true mImeOverrideFrame=[0,0][0,0]
+        mWin=Window{com.android.systemui:3949069 u0 StatusBar}
+      InsetsSourceProvider
+        mSource=InsetsSource type=ITYPE_TOP_MANDATORY_GESTURES frame=[0,0][720,90] visible=true
+        mIsLeashReadyForDispatching=true mImeOverrideFrame=[0,0][0,0]
+        mWin=Window{com.android.systemui:3949069 u0 StatusBar}
+      InsetsSourceProvider
+        mSource=InsetsSource type=ITYPE_RIGHT_GESTURES frame=[0,0][0,0] visible=true
+        mIsLeashReadyForDispatching=true mImeOverrideFrame=[0,0][0,0]
+      InsetsSourceProvider
+        mSource=InsetsSource type=ITYPE_LEFT_GESTURES frame=[0,0][0,0] visible=true
+        mIsLeashReadyForDispatching=true mImeOverrideFrame=[0,0][0,0]
+      InsetsSourceProvider
+        mSource=InsetsSource type=ITYPE_STATUS_BAR frame=[0,0][720,66] visible=true
+        mControl=InsetsSourceControl type=ITYPE_STATUS_BAR mLeash=Surface(name=Surface(name=3949069 StatusBar)/@0xd025ea6 - animation-leash of insets_animation)/@0x6cb9874 mSurfacePosition=Point(0, 0) mInsetsHint=Insets{left=0, top=66, right=0, bottom=0} mSkipAnimationOnce=false
+        mIsLeashReadyForDispatching=true mImeOverrideFrame=[0,0][0,0]
+        mWin=Window{com.android.systemui:3949069 u0 StatusBar}
+        mAdapter=ControlAdapter mCapturedLeash=Surface(name=Surface(name=3949069 StatusBar)/@0xd025ea6 - animation-leash of insets_animation)/@0x6cb9874
+        mControlTarget=Window{d376aeb u0 com.termux/com.termux.app.TermuxActivity}
+  overrideConfig={0.0 ?mcc?mnc ?localeList ?layoutDir sw411dp w411dp h914dp 280dpi nrml long port ?uimode ?night -touch -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 0 - 720, 1600) mMaxBounds=Rect(0, 0 - 720, 1600) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} ?fontWeightAdjustment themeId=0 themeParameter=0 nightModeLevel = -1}
+  Display: mDisplayId=90000 rootTasks=0
+    init=720x1600 280dpi cur=720x1600 app=720x1600 rng=720x720-1600x1600
+    deferred=false mLayoutNeeded=false mTouchExcludeRegion=SkRegion()
+
+  mLayoutSeq=1286
+  mCurrentFocus=null
+  mFocusedApp=null
+
+  displayId=90000
+  mWallpaperTarget=null
+  mLastWallpaperX=-1.0 mLastWallpaperY=-1.0
+
+  Display areas in top down Z order:
+    * Leaf:36:36
+    * FullscreenMagnification:33:35
+      * Leaf:33:35
+    * Leaf:32:32
+    * WindowedMagnification:0:31
+      * FullscreenMagnification:29:31
+        * Leaf:29:31
+      * Leaf:28:28
+      * FullscreenMagnification:26:27
+        * Leaf:26:27
+      * Leaf:24:25
+      * FullscreenMagnification:17:23
+        * Leaf:17:23
+      * ImePlaceholder:15:16
+        * ImeContainer
+      * FullscreenMagnification:0:14
+        * Leaf:3:14
+        * DefaultTaskDisplayArea
+        * Leaf:0:1
+
+  Task display areas in top down Z order:
+    TaskDisplayArea DefaultTaskDisplayArea
+      Application tokens in top down Z order:
+
+  no ScreenRotationAnimation 
+
+
+  PinnedTaskController
+    mIsImeShowing=false
+    mImeHeight=0
+    mAspectRatio=-1.0
+    mMinAspectRatio=0.41841003
+    mMaxAspectRatio=2.39
+    mActions=[]
+
+  DisplayFrames w=720 h=1600 r=0
+
+  DisplayPolicy
+    mCarDockEnablesAccelerometer=true mDeskDockEnablesAccelerometer=true
+    mDockMode=EXTRA_DOCK_STATE_UNDOCKED mLidState=LID_ABSENT
+    mAwake=true mScreenOnEarly=true mScreenOnFully=true
+    mKeyguardDrawComplete=false mWindowManagerDrawComplete=false
+    mHdmiPlugged=false
+    mShowingDream=false mDreamingLockscreen=false
+    isKeyguardShowing=false
+    mTopIsFullscreen=false
+    mForceStatusBar=false mAllowLockscreenWhenOn=false
+    mRemoteInsetsControllerControlsSystemBars=false
+    mVivoHasNavBar=false
+    mVivoForceHideNavBar=false
+    Looper state:
+      Looper (android.ui, tid 19) {1ab5eec}
+        Now dispatching: null
+        (Total messages: 0, polling=true, quitting=false)
+
+  DisplayRotation
+    mCurrentAppOrientation=SCREEN_ORIENTATION_UNSPECIFIED
+    mLastOrientation=-1
+    mRotation=0 mDeferredRotationPauseCount=0
+    mLandscapeRotation=ROTATION_90 mSeascapeRotation=ROTATION_270
+    mPortraitRotation=ROTATION_0 mUpsideDownRotation=ROTATION_180
+    mSupportAutoRotation=true
+
+    mCarDockRotation=-1 mDeskDockRotation=-1
+    mUserRotationMode=USER_ROTATION_FREE mUserRotation=ROTATION_0 mCameraRotationMode=0 mAllowAllRotations=unknown
+    mDemoHdmiRotation=ROTATION_90 mDemoHdmiRotationLock=false mUndockedHdmiRotation=-1
+    mLidOpenRotation=-1
+    mFixedToUserRotation=false
+
+
+  WindowInsetsStateController
+    InsetsState
+      mDisplayFrame=Rect(0, 0 - 720, 1600)
+      mDisplayCutout=DisplayCutout{insets=Rect(0, 0 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=0 displayHeight=0 density={0.0} cutoutSpec={} rotation={0} scale={0.0}}}}
+      mRoundedCorners=RoundedCorners{[RoundedCorner{position=TopLeft, radius=0, center=Point(0, 0)}, RoundedCorner{position=TopRight, radius=0, center=Point(0, 0)}, RoundedCorner{position=BottomRight, radius=0, center=Point(0, 0)}, RoundedCorner{position=BottomLeft, radius=0, center=Point(0, 0)}]}
+      mPrivacyIndicatorBounds=PrivacyIndicatorBounds {static bounds=null rotation=0}
+        InsetsSource type=ITYPE_IME frame=[0,0][0,0] visible=false
+    Control map:
+    InsetsSourceProviders:
+      ImeInsetsSourceProvider
+        mSource=InsetsSource type=ITYPE_IME frame=[0,0][0,0] visible=false
+        mIsLeashReadyForDispatching=false mImeOverrideFrame=[0,0][0,0]
+        mImeShowing=false
+
+  KeyguardController:
+    mKeyguardShowing=false
+    mAodShowing=false
+    mKeyguardGoingAway=false
+    Occluded=false DismissingKeyguardActivity=null TurnScreenOnActivity=null at display=0
+    Occluded=false DismissingKeyguardActivity=null TurnScreenOnActivity=null at display=90000
+    mDismissalRequested=false
+
+  LockTaskController:
+    mLockTaskModeState=NONE
+    mLockTaskModeTasks=
+    mLockTaskPackages (userId:packages)=
+      u0:[]
+
+  mCurTaskIdForUser={0=5950}
+  mUserRootTaskInFront={}
+  mVisibilityTransactionDepth=0
+  isHomeRecentsComponent=true
+
+  TaskOrganizerController:
+      android.window.ITaskOrganizer$Stub$Proxy@397fd4a uid=10044:
+        (fullscreen) Task{8aba100 #1 type=home ?? U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+        (fullscreen) Task{a5f6bbf #2 type=undefined ?? U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=0}
+        (multi-window) Task{bde99ea #3 type=undefined ?? U=0 displayId=0 visible=false mode=multi-window translucent=true sz=0}
+        (multi-window) Task{72913b7 #4 type=undefined ?? U=0 displayId=0 visible=false mode=multi-window translucent=true sz=0}
+        (split-screen-primary) Task{d1fc7aa #5 type=undefined ?? U=0 displayId=0 visible=false mode=split-screen-primary translucent=true sz=0}
+        (split-screen-secondary) Task{cd9ff9b #6 type=undefined ?? U=0 displayId=0 visible=false mode=split-screen-secondary translucent=true sz=0}
+        (fullscreen) Task{22cb143 #5808 type=standard A=1000:com.vivo.smartmultiwindow U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+        (fullscreen) Task{a7ac2db #5922 type=standard A=10254:com.tencent.mobileqq U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+        (fullscreen) Task{bcc6087 #5933 type=standard A=10258:com.follow.clash U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+        (fullscreen) Task{802c965 #5935 type=standard A=10301:com.openai.chatgpt U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+        (fullscreen) Task{cb6d77a #5936 type=standard A=10321:com.termux U=0 displayId=0 visible=true mode=fullscreen translucent=false sz=1}
+        (fullscreen) Task{136be4b #5947 type=standard A=10250:tv.danmaku.bili U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+        (fullscreen) Task{2352a8d #5950 type=standard A=10128:com.bbk.updater U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+
+  VisibleActivityProcess:[ ProcessRecord{b13b05b 13194:com.termux/u0a321}]
+  NumNonAppVisibleWindowByUid:[ 10270:1 10044:1 1000:3]

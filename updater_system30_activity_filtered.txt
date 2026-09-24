@@ -1,0 +1,46 @@
+7:    mResumedActivity: ActivityRecord{636ab32 u0 com.termux/.app.TermuxActivity t5936 d0}
+8:    mLastPausedActivity: ActivityRecord{636ab32 u0 com.termux/.app.TermuxActivity t5936 d0}
+47:          state=RESUMED stopped=false delayedResume=false finishing=false
+56:          mVisibleRequested=true mVisible=true mClientVisible=true reportedDrawn=true reportedVisible=false
+73:    mLastPausedActivity: ActivityRecord{8696ed9 u0 com.bbk.updater/.ui.UpdateActivity t5950 d0 f}}
+74:    * Task{2352a8d #5950 type=standard A=10128:com.bbk.updater U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+78:      affinity=10128:com.bbk.updater
+79:      intent={act=com.vivo.action.ACTION_SYSTEM_UPDATER flg=0x10800000 cmp=com.bbk.updater/.ui.UpdateTempActivity}
+80:      mActivityComponent=com.bbk.updater/.ui.UpdateTempActivity
+82:      Activities=[ActivityRecord{8696ed9 u0 com.bbk.updater/.ui.UpdateActivity t5950 d0 f}}]
+89:      * Hist #0: ActivityRecord{8696ed9 u0 com.bbk.updater/.ui.UpdateActivity t5950 d0 f}}
+90:          packageName=com.bbk.updater processName=com.bbk.updater
+91:          launchedFromUid=10128 launchedFromPackage=com.bbk.updater launchedFromFeature=null userId=0
+92:          app=ProcessRecord{4b3eebc 25038:com.bbk.updater/u0a128}
+93:          Intent { act=com.vivo.action.ACTION_START_UPDATEACTIVITY typ=application/zip flg=0x10800000 pkg=com.bbk.updater cmp=com.bbk.updater/.ui.UpdateActivity }
+94:          rootOfTask=true task=Task{2352a8d #5950 type=standard A=10128:com.bbk.updater U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+95:          taskAffinity=10128:com.bbk.updater
+96:          mActivityComponent=com.bbk.updater/.ui.UpdateActivity
+98:          dataDir=/data/user/0/com.bbk.updater
+110:          state=STOPPING stopped=false delayedResume=false finishing=true
+115:          windows=[Window{a261729 u0 com.bbk.updater/com.bbk.updater.ui.UpdateActivity}]
+119:          mVisibleRequested=false mVisible=false mClientVisible=true reportedDrawn=true reportedVisible=true
+173:          state=STOPPED stopped=true delayedResume=false finishing=false
+182:          mVisibleRequested=false mVisible=false mClientVisible=false reportedDrawn=false reportedVisible=false
+199:    mLastPausedActivity: ActivityRecord{a088fea u0 com.tencent.mobileqq/.activity.SplashActivity t5922 d0}
+238:          state=STOPPED stopped=true delayedResume=false finishing=false
+247:          mVisibleRequested=false mVisible=false mClientVisible=false reportedDrawn=false reportedVisible=false
+264:    mLastPausedActivity: ActivityRecord{46dd25c u0 com.openai.chatgpt/.MainActivity t5935 d0}
+305:          state=STOPPED stopped=true delayedResume=false finishing=false
+314:          mVisibleRequested=false mVisible=false mClientVisible=false reportedDrawn=false reportedVisible=false
+331:    mLastPausedActivity: ActivityRecord{5f2931a u0 tv.danmaku.bili/.MainActivityV2 t5947 d0}
+370:          state=STOPPED stopped=true delayedResume=false finishing=false
+379:          mVisibleRequested=false mVisible=false mClientVisible=false reportedDrawn=false reportedVisible=false
+396:    mLastPausedActivity: ActivityRecord{444a8c6 u0 com.follow.clash/.MainActivity t5933 d0}
+435:          state=STOPPED stopped=true delayedResume=false finishing=false
+444:          mVisibleRequested=false mVisible=false mClientVisible=false reportedDrawn=false reportedVisible=false
+486:    mLastPausedActivity: ActivityRecord{23d16f2 u0 com.vivo.smartmultiwindow/.minilauncher2.Launcher t5808 d0}
+523:          state=STOPPED stopped=true delayedResume=false finishing=false
+532:          mVisibleRequested=false mVisible=false mClientVisible=false reportedDrawn=false reportedVisible=false
+551:    Task{2352a8d #5950 type=standard A=10128:com.bbk.updater U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+552:      Stop #0: ActivityRecord{8696ed9 u0 com.bbk.updater/.ui.UpdateActivity t5950 d0 f}}
+629:      * Task{2352a8d #5950 type=standard A=10128:com.bbk.updater U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
+635:        * ActivityRecord{8696ed9 u0 com.bbk.updater/.ui.UpdateActivity t5950 d0 f}}
+768:      ITYPE_IME -> Window{a261729 u0 com.bbk.updater/com.bbk.updater.ui.UpdateActivity}
+777:        mControlTarget=Window{a261729 u0 com.bbk.updater/com.bbk.updater.ui.UpdateActivity}
+931:        (fullscreen) Task{2352a8d #5950 type=standard A=10128:com.bbk.updater U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=1}
