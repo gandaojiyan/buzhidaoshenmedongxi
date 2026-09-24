@@ -1,0 +1,220 @@
+package com.bbk.updater.utils;
+
+import android.content.Context;
+import android.os.Build;
+import android.text.TextUtils;
+import com.bbk.account.base.constant.RequestParamConstants;
+import com.bbk.updater.a.a;
+import com.bbk.updater.countrycode.b;
+import com.bbk.updater.utils.PrefsUtils;
+import com.vivo.ic.dm.Constants;
+import com.vivo.updaterbaseframe.utils.BaseFrameUtils;
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.Inet4Address;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.SocketTimeoutException;
+import java.net.URI;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import org.json.JSONObject;
+
+/* JADX INFO: loaded from: classes.dex */
+public class HttpUtils {
+    public static final String AGREEMENT_ACTION = "data/agreeLogs.do";
+    public static final String COUNTRY_CODE = VersionUtils.getCountryRegion();
+    public static final String DEGRADE_API = "degrade/updateEffectTime";
+    public static final String ERROR_CONNECT_TO_SERVER = "no_connected";
+    public static final String METHOD_ENCODE = "UTF-8";
+    private static final String SERVER_ADDRESS_EX_KEY = "Updater_ServerAddressEx_key";
+    public static final String TAG = "Updater/utils/HttpUtils";
+    private static final String UPDATE_REQUEST_API = "vgc/v2/getVgcAndPatch.do?";
+    private static final String UPDATE_REQUEST_PROTOCOL_VERSION = "1.0";
+
+    public static class RequestType {
+        public static final String REQUEST_TYPE_GET = "GET";
+        public static final String REQUEST_TYPE_POST = "POST";
+    }
+
+    public static String getServerAddress(String str, Context context) {
+        return UToolsUtils.getServerAddress(a.a(context, COUNTRY_CODE), str, SERVER_ADDRESS_EX_KEY);
+    }
+
+    public static String getBaseCommonUrl(Context context) {
+        return getBaseCommonUrl(context, false);
+    }
+
+    public static String getBaseCommonUrl(Context context, boolean z) {
+        HashMap map = new HashMap();
+        map.put(RequestParamConstants.PARAM_KEY_MODEL_NUMBER, VersionUtils.getModelRo());
+        String updateModel = VersionUtils.getUpdateModel();
+        if (!TextUtils.isEmpty(updateModel)) {
+            map.put("dModel", updateModel);
+        }
+        map.put(RequestParamConstants.PARAM_KEY_MIEI, VersionUtils.getIMEI(context));
+        if (APIVersionUtils.isPad()) {
+            map.put("snp", VersionUtils.getSn());
+        } else {
+            map.put("s_n", VersionUtils.getSnLastFive());
+        }
+        map.put("dType", VersionUtils.getDeviceType());
+        map.put("version", VersionUtils.composeVersionString());
+        map.put("public_model", VersionUtils.getPublicModel());
+        map.put("cy", VersionUtils.getCountryRegion());
+        map.put("cu", VersionUtils.getCustomizeComercial());
+        map.put("vgcSwVer", VersionUtils.getVgcSoftVersion());
+        map.put("vgcCu", VersionUtils.getVgcOrDevicePolicyCustomize(context));
+        map.put("hasVgc", Integer.valueOf(VersionUtils.iSVgc() ? 1 : 0));
+        int cuFlag = VersionUtils.getCuFlag();
+        if (cuFlag != -1) {
+            map.put("cuFlag", Integer.valueOf(cuFlag));
+        }
+        map.put("elapsedtime", VersionUtils.getElapsedTime());
+        map.put("st1", VersionUtils.getSim1InsertTime(context));
+        map.put("st2", VersionUtils.getSim2InsertTime(context));
+        if (!z) {
+            map.put("emmcid", VersionUtils.getEmmcId());
+        }
+        map.put("fullVer", VersionUtils.getFullVersion());
+        if (b.a()) {
+            map.put("scy", b.c(context));
+        }
+        map.put("si", VersionUtils.getPropCountryRegionSim());
+        map.put("ne", VersionUtils.getPropCountryRegionNet());
+        map.put("ch", VersionUtils.getPropCountryRegionUserChoose());
+        if (com.bbk.updaterdsassistant.b.a.g(context)) {
+            map.put("oem", VersionUtils.getOEM());
+            map.put("sdkVersion", Integer.valueOf(Build.VERSION.SDK_INT));
+            map.put("romVersion", VersionUtils.getROMVersion());
+            map.put("oemProjects", VersionUtils.getOEMProjects());
+            map.put("battery", Integer.valueOf(CommonUtils.getElectricQuantity(context)));
+            map.put("occurTime", CommonUtils.getCurrentTime());
+            map.put("verName", CommonUtils.getPackageVersionName(context));
+            map.put(RequestParamConstants.PARAM_KEY_VERSION_CODE_KEY, Integer.valueOf(CommonUtils.getPackageVersionCode(context)));
+        }
+        map.put("sf", VersionUtils.getSimInsertNum(context));
+        map.put("sn1", VersionUtils.getSim1OperatorName(context));
+        map.put("sn2", VersionUtils.getSim2OperatorName(context));
+        map.put("nt", VersionUtils.getConnectionType(context));
+        map.put("sm1", VersionUtils.getSim1Type(context));
+        map.put("sm2", VersionUtils.getSim2Type(context));
+        map.put("srm1", VersionUtils.getSim1NetState(context));
+        map.put("srm2", VersionUtils.getSim2NetState(context));
+        map.put("gn", VersionUtils.getGN());
+        map.put("newActiveVer", CommonUtils.getCheckedVersion(context, "ota_pacakge", true));
+        map.put("newPassiveVer", CommonUtils.getCheckedVersion(context, "ota_pacakge", false));
+        map.put("vgcNewActiveVer", CommonUtils.getCheckedVersion(context, "vgc_package", true));
+        map.put("vgcNewPassiveVer", CommonUtils.getCheckedVersion(context, "vgc_package", false));
+        try {
+            StringBuilder sb = new StringBuilder();
+            for (String str : map.keySet()) {
+                Object obj = map.get(str);
+                sb.append("&");
+                sb.append(str);
+                sb.append("=");
+                if (obj == null) {
+                    obj = "null";
+                }
+                sb.append(URLEncoder.encode(String.valueOf(obj), "UTF-8"));
+            }
+            return sb.substring(1);
+        } catch (UnsupportedEncodingException e) {
+            LogUtils.e(TAG, "get base common url excetpion " + e);
+            return null;
+        }
+    }
+
+    public static String getBaseUrl(Context context) {
+        return getBaseUrl(context, false);
+    }
+
+    public static String getBaseUrl(Context context, boolean z) {
+        String str = ((getBaseCommonUrl(context, z) + getEncoderString("hwVer", VersionUtils.getHardwareVersion())) + getEncoderString("swVer", VersionUtils.getSoftVersion())) + getEncoderString("language", CommonUtils.getLanguage());
+        if (ConstantsUtils.ISEXPORT) {
+            return str;
+        }
+        return ((str + getEncoderString("ms", VersionUtils.getDefaultDataPhoneId(context))) + getEncoderString("mtype", VersionUtils.getEntry())) + getEncoderString("radiotype", VersionUtils.getRadioType());
+    }
+
+    public static String getBetaBaseParams(Context context) {
+        StringBuilder sb = new StringBuilder();
+        try {
+            sb.append("model=");
+            sb.append(URLEncoder.encode(VersionUtils.getModelRo(), "UTF-8"));
+            sb.append("&hwVer=");
+            sb.append(URLEncoder.encode(VersionUtils.getHardwareVersion(), "UTF-8"));
+            sb.append("&swVer=");
+            sb.append(URLEncoder.encode(VersionUtils.getSoftVersion(), "UTF-8"));
+            sb.append("&cy=");
+            sb.append(URLEncoder.encode(VersionUtils.getCountryRegion(), "UTF-8"));
+            sb.append("&cu=");
+            sb.append(URLEncoder.encode(VersionUtils.getCustomizeComercial(), "UTF-8"));
+            sb.append("&vgcCu=");
+            sb.append(URLEncoder.encode(VersionUtils.getVgcOrDevicePolicyCustomize(context), "UTF-8"));
+            sb.append("&imei=");
+            sb.append(URLEncoder.encode(VersionUtils.getIMEI(context), "UTF-8"));
+        } catch (Exception e) {
+            LogUtils.i(TAG, "getBetaBaseParams error. " + e.toString());
+        }
+        return sb.toString();
+    }
+
+    public static String getDegradeParams(Context context) {
+        return "jvq_param=" + SecurityUtils.encryptUrlParams(context, getBetaBaseParams(context));
+    }
+
+    public static String getEncoderString(String str, String str2, Object obj) {
+        try {
+            return str + "&" + str2 + "=" + URLEncoder.encode(String.valueOf(obj), "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            LogUtils.e(TAG, "get encoder string exception " + e);
+            return str;
+        }
+    }
+
+    public static String getEncoderString(String str, Object obj) {
+        return getEncoderString("", str, obj);
+    }
+
+    public static String getEncoderString(String str) {
+        try {
+            return URLEncoder.encode(String.valueOf(str), "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            LogUtils.e(TAG, "get encoder string exception " + e);
+            return "";
+        }
+    }
+
+    public static String getUpdateRequestUrl(Context context) {
+        return getServerAddress(UPDATE_REQUEST_API, context);
+    }
+
+    public static String getUpdateRequestParams(Context context, boolean z, boolean z2, BaseFrameUtils.CheckTrigeType checkTrigeType, boolean z3) {
+        String str = ((("" + getBaseUrl(context)) + getEncoderString("isMan", String.valueOf(!z ? 1 : 0))) + getEncoderString("isFull", Integer.valueOf(z2 ? 1 : 0))) + getEncoderString("protocalversion", "1.0");
+        if (z2 && com.bbk.updater.install.a.a.a()) {
+            str = str + getEncoderString("disDownable", Integer.valueOf(z3 ? 1 : 0));
+        }
+        if (!com.bbk.updater.b.b()) {
+            str = (str + getEncoderString("checkTrige", checkTrigeType)) + getEncoderString("isstlifeover", Boolean.valueOf(CommonUtils.isStLifeOver()));
+        }
+        if (ConstantsUtils.ISEXPORT) {
+            str = str + getEncoderString("countrycode", VersionUtils.getCountryRegion());
+        }
+        String strEncryptUrlParams = SecurityUtils.encryptUrlParams(context, str);
+        if (strEncryptUrlParams != null && !strEncryptUrlParams.contains("EncryptException")) {
+            return "jvq_param=" + strEncryptUrlParams;
+        }
+        return getSimpleParams(context) + strEncryptUrlParams;
+    }
+
+    public static String getDlRequestParams(Context context, String str, String str2, boolean z, String str3, boolean z2, long j, boolean z3) {
+        int iIndexOf;
+        String str4 = "" + getBaseUrl(context);
+        if (str != null && str.contains("?") && (iIndexOf = str.indexOf("?")) > 0 && iIndexOf < str.length()) {

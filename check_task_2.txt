@@ -1,0 +1,326 @@
+                z = false;
+            }
+            if (vgcUpdateInfo != null) {
+                PrefsUtils.deleteVgcUpdateInfo(this.f158a, true);
+                z2 = z;
+                z3 = true;
+            } else {
+                z2 = z;
+                z3 = false;
+            }
+        }
+        if (c() || (updateInfo2 == null && vgcUpdateInfo2 == null)) {
+            z4 = false;
+            z5 = false;
+        } else {
+            LogUtils.i("Updater/StrategyFactory", "13");
+            if (updateInfo2 != null) {
+                PrefsUtils.deleteUpdateInfo(this.f158a, false);
+                z6 = true;
+            } else {
+                z6 = false;
+            }
+            if (vgcUpdateInfo2 != null) {
+                PrefsUtils.deleteVgcUpdateInfo(this.f158a, false);
+                z4 = z6;
+                z5 = true;
+            } else {
+                z4 = z6;
+                z5 = false;
+            }
+        }
+        LogUtils.i("Updater/BaseCheckUpdateTask", "onNoPackageInServer");
+        a(true, !this.b, z2, z3, z4, z5);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0068  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    private void c(com.vivo.updaterbaseframe.a.c r11, com.vivo.updaterbaseframe.a.c r12) {
+        /*
+            r10 = this;
+            r0 = 0
+            r1 = 1
+            if (r11 == 0) goto L34
+            boolean r2 = r11.isActivePackage()
+            if (r2 == 0) goto L1d
+            com.bbk.updater.bean.UpdateInfo r2 = r10.g
+            if (r2 == 0) goto L32
+            java.lang.String r2 = r2.getVersion()
+            java.lang.String r3 = r11.getVersion()
+            boolean r2 = r2.equals(r3)
+            if (r2 == 0) goto L32
+            goto L2f
+        L1d:
+            com.bbk.updater.bean.UpdateInfo r2 = r10.h
+            if (r2 == 0) goto L32
+            java.lang.String r2 = r2.getVersion()
+            java.lang.String r3 = r11.getVersion()
+            boolean r2 = r2.equals(r3)
+            if (r2 == 0) goto L32
+        L2f:
+            r8 = r0
+            r6 = r1
+            goto L36
+        L32:
+            r6 = r1
+            goto L35
+        L34:
+            r6 = r0
+        L35:
+            r8 = r6
+        L36:
+            if (r12 == 0) goto L68
+            boolean r2 = r12.isActivePackage()
+            if (r2 == 0) goto L51
+            com.bbk.updater.bean.VgcUpdateInfo r2 = r10.i
+            if (r2 == 0) goto L66
+            java.lang.String r2 = r2.getVersion()
+            java.lang.String r3 = r12.getVersion()
+            boolean r2 = r2.equals(r3)
+            if (r2 == 0) goto L66
+            goto L63
+        L51:
+            com.bbk.updater.bean.VgcUpdateInfo r2 = r10.j
+            if (r2 == 0) goto L66
+            java.lang.String r2 = r2.getVersion()
+            java.lang.String r3 = r12.getVersion()
+            boolean r2 = r2.equals(r3)
+            if (r2 == 0) goto L66
+        L63:
+            r9 = r0
+            r7 = r1
+            goto L6a
+        L66:
+            r7 = r1
+            goto L69
+        L68:
+            r7 = r0
+        L69:
+            r9 = r7
+        L6a:
+            r3 = r10
+            r4 = r11
+            r5 = r12
+            r3.a(r4, r5, r6, r7, r8, r9)
+            return
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.bbk.updater.check.a.a.c(com.vivo.updaterbaseframe.a.c, com.vivo.updaterbaseframe.a.c):void");
+    }
+
+    private boolean a(c... cVarArr) {
+        boolean z;
+        int length = cVarArr.length;
+        int i = 0;
+        while (true) {
+            if (i >= length) {
+                z = true;
+                break;
+            }
+            c cVar = cVarArr[i];
+            if (cVar != null && !PrefsUtils.putUpdateInfo(this.f158a, cVar)) {
+                z = false;
+                break;
+            }
+            i++;
+        }
+        if (z) {
+            return true;
+        }
+        if (!c()) {
+            try {
+                CommonUtils.showSpaceManagerDialog(this.f158a, ConstantsUtils.OutOfSpace.DATA_SPACE, this.f158a.getResources().getString(R.string.space_manager_tips_check));
+            } catch (ActivityNotFoundException unused) {
+                CommonUtils.postToast(this.f158a, R.string.data_out_of_space, 0);
+            }
+        }
+        LogUtils.d("Updater/BaseCheckUpdateTask", "===========checkResult return false\r\n");
+        return false;
+    }
+
+    private void a(boolean z, boolean z2, boolean z3, boolean z4, boolean z5, boolean z6) {
+        boolean z7;
+        boolean z8;
+        com.bbk.updater.download.a aVarA = com.bbk.updater.download.a.a(this.f158a);
+        int iC = aVarA.c();
+        int iD = aVarA.d();
+        boolean zA = aVarA.a(iC);
+        boolean zD = aVarA.d(iC);
+        boolean zA2 = aVarA.a(iD);
+        boolean zD2 = aVarA.d(iD);
+        boolean z9 = aVarA.v() == null;
+        boolean z10 = aVarA.u() == null;
+        LogUtils.d("Updater/BaseCheckUpdateTask", "fota dl status: " + iC + ",fota info is null ?: " + z9 + ", vgc dl status: " + iD + ", vgc info is null ? " + z10);
+        if ((zA || zD) && z9 && !CommonUtils.isUpdating()) {
+            LogUtils.d("Updater/BaseCheckUpdateTask", "ota current downloaded is not latest, delete it");
+            aVarA.w();
+            aVarA.k("ota_pacakge");
+            z7 = true;
+        } else {
+            z7 = false;
+        }
+        if ((zA2 || zD2) && z10 && !CommonUtils.isUpdating()) {
+            LogUtils.d("Updater/BaseCheckUpdateTask", "vgc current downloaded is not latest, delete it");
+            aVarA.i("vgc_package");
+            aVarA.k("vgc_package");
+            z8 = true;
+        } else {
+            z8 = false;
+        }
+        if (z) {
+            this.f.onNoActivePackageExists(c(), z3, z4, iC, z7, iD, z8);
+        }
+        if (z2) {
+            this.f.onNoPassivePackageExists(z5, z6, iC, z7, iD, z8);
+        }
+    }
+
+    private void a(boolean z, boolean z2, boolean z3, boolean z4) {
+        boolean z5;
+        com.bbk.updater.download.a aVarA = com.bbk.updater.download.a.a(this.f158a);
+        int iC = aVarA.c();
+        int iD = aVarA.d();
+        boolean zA = aVarA.a(iC);
+        boolean zD = aVarA.d(iC);
+        boolean zA2 = aVarA.a(iD);
+        boolean zD2 = aVarA.d(iD);
+        boolean z6 = false;
+        boolean z7 = aVarA.v() == null;
+        boolean z8 = aVarA.u() == null;
+        LogUtils.d("Updater/BaseCheckUpdateTask", "fota dl status: " + iC + ",fota info is null ?: " + z7 + ", vgc dl status: " + iD + ", vgc info is null ? " + z8);
+        if ((zA || zD) && z7 && !CommonUtils.isUpdating()) {
+            LogUtils.d("Updater/BaseCheckUpdateTask", "ota current downloaded is not latest, delete it");
+            aVarA.w();
+            aVarA.k("ota_pacakge");
+            z5 = true;
+        } else {
+            z5 = false;
+        }
+        if ((zA2 || zD2) && z8 && !CommonUtils.isUpdating()) {
+            LogUtils.d("Updater/BaseCheckUpdateTask", "vgc current downloaded is not latest, delete it");
+            aVarA.i("vgc_package");
+            aVarA.k("vgc_package");
+            z6 = true;
+        }
+        this.f.onPackageDeleteWhenNewChecked(z, z2, z3, z4, iC, z5, iD, z6);
+    }
+
+    private void a(c cVar, c cVar2, boolean z, boolean z2, boolean z3, boolean z4) {
+        boolean z5;
+        com.bbk.updater.download.a aVarA = com.bbk.updater.download.a.a(this.f158a);
+        int iC = aVarA.c();
+        int iD = aVarA.d();
+        boolean zA = aVarA.a(iC);
+        boolean zD = aVarA.d(iC);
+        boolean zA2 = aVarA.a(iD);
+        boolean zD2 = aVarA.d(iD);
+        boolean z6 = false;
+        if (!z) {
+            if (this.g != null) {
+                PrefsUtils.deleteUpdateInfo(this.f158a, true);
+            }
+            if (!c() && !a() && this.h != null) {
+                PrefsUtils.deleteUpdateInfo(this.f158a, false);
+            }
+        }
+        if (!z2) {
+            if (this.i != null) {
+                PrefsUtils.deleteVgcUpdateInfo(this.f158a, true);
+            }
+            if (!c() && !a() && this.j != null) {
+                PrefsUtils.deleteVgcUpdateInfo(this.f158a, false);
+            }
+        }
+        boolean z7 = aVarA.v() == null;
+        boolean z8 = aVarA.u() == null;
+        LogUtils.d("Updater/BaseCheckUpdateTask", "fota dl status: " + iC + ",fota info is null ?: " + z7 + ", vgc dl status: " + iD + ", vgc info is null ? " + z8);
+        if ((zA || zD) && z7 && !CommonUtils.isUpdating()) {
+            LogUtils.d("Updater/BaseCheckUpdateTask", "ota current downloaded is not latest, delete it");
+            aVarA.w();
+            aVarA.k("ota_pacakge");
+            z5 = true;
+        } else {
+            z5 = false;
+        }
+        if ((zA2 || zD2) && z8 && !CommonUtils.isUpdating()) {
+            LogUtils.d("Updater/BaseCheckUpdateTask", "vgc current downloaded is not latest, delete it");
+            aVarA.i("vgc_package");
+            aVarA.k("vgc_package");
+            z6 = true;
+        }
+        if ((!z && z5) || (!z2 && z6)) {
+            aVarA.a("ota_pacakge", "vgc_package");
+            aVarA.k("ota_pacakge");
+            aVarA.k("vgc_package");
+            this.f.onDownloadDelete();
+        }
+        this.f.onNewUpdatePackageChecked(cVar, cVar2, z, z2, z3, z4, c(), aVarA.e(iC, iD));
+    }
+
+    private void e(UpdateCheckResultInfo updateCheckResultInfo) {
+        UpdateCheckResultInfo.DataBean data;
+        if (updateCheckResultInfo == null || (data = updateCheckResultInfo.getData()) == null || data.getExt() == null) {
+            return;
+        }
+        String areaCy = data.getExt().getAreaCy();
+        String strB = com.bbk.updater.countrycode.b.b();
+        LogUtils.i("Updater/BaseCheckUpdateTask", "localAreaCode: " + strB + " ,info: " + areaCy);
+        if ((TextUtils.isEmpty(areaCy) && TextUtils.isEmpty(strB)) || TextUtils.equals(strB, areaCy)) {
+            return;
+        }
+        com.bbk.updater.countrycode.b.a(this.f158a, areaCy);
+    }
+
+    private void e() {
+        String str;
+        HashMap<String, String> mapA;
+        String str2 = "";
+        if ((this instanceof b) && BaseFrameUtils.CheckTrigeType.MANUL == this.m) {
+            boolean zIsUpdating = CommonUtils.isUpdating(this.f158a);
+            String strH = com.bbk.updater.install.a.a.h(this.f158a);
+            String str3 = ConstantsUtils.RECOVERY_PATH + "/last_update_flag";
+            boolean zExists = new File(str3).exists();
+            LogUtils.d("Updater/BaseCheckUpdateTask", "dealWithBootCompleteDelay: lastOTAType = " + strH + " isRecoveryLogFileExist = " + zExists + " isUpdating = " + zIsUpdating);
+            if (TextUtils.equals(strH, "AB")) {
+                int iL = com.bbk.updater.install.abinstall.b.a(this.f158a).l();
+                AbUpdateInfo abUpdateInfoG = com.bbk.updater.install.abinstall.b.a(this.f158a).g();
+                if (abUpdateInfoG == null || iL != 2) {
+                    return;
+                }
+                if (BaseFrameUtils.PackageType.OTA_FOTA.toString().equals(abUpdateInfoG.getPackageType())) {
+                    PrefsUtils.putBoolean(this.f158a, PrefsUtils.Updating.KEY_UPDATE_FAILED_FOR_BINARY_ERROR, true);
+                    return;
+                }
+                return;
+            }
+            if (TextUtils.equals(strH, "RECOVERY") && zExists && zIsUpdating) {
+                try {
+                    mapA = BootCompleteReceiver.a(str3);
+                    str = mapA.get("status");
+                } catch (Exception e) {
+                    e = e;
+                    str = "";
+                }
+                try {
+                    str2 = mapA.get("vgcstatus");
+                } catch (Exception e2) {
+                    e = e2;
+                    LogUtils.e("Updater/BaseCheckUpdateTask", "dealWithBootCompleteDelay: DataCollection read " + str3, e);
+                }
+                if (TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
+                    return;
+                }
+                if (BaseFrameUtils.PackageType.OTA_FOTA.toString().equals(com.bbk.updater.install.a.a.a(this.f158a))) {
+                    Context context = this.f158a;
+                    if (str != null) {
+                        str2 = str;
+                    }
+                    PrefsUtils.putBoolean(context, PrefsUtils.Updating.KEY_UPDATE_FAILED_FOR_BINARY_ERROR, CommonUtils.isFullBecauseUpdateFailed(str2));
+                }
+            }
+        }
+    }
+}

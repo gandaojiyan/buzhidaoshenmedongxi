@@ -1,0 +1,18 @@
+updater_src/sources/com/bbk/updater/remote/h.java:92:            strA = SecurityUtils.encryptUrlParams(context, string);
+updater_src/sources/com/bbk/updater/remote/h.java:98:            return "jvq_param=" + strA;
+updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:11:public class SecurityUtils {
+updater_src/sources/com/bbk/updater/utils/SecurityUtils.java:36:    public static String encryptUrlParams(Context context, String str) {
+updater_src/sources/com/bbk/updater/utils/HttpUtils.java:170:        return "jvq_param=" + SecurityUtils.encryptUrlParams(context, getBetaBaseParams(context));
+updater_src/sources/com/bbk/updater/utils/HttpUtils.java:210:        String strEncryptUrlParams = SecurityUtils.encryptUrlParams(context, str);
+updater_src/sources/com/bbk/updater/utils/HttpUtils.java:211:        if (strEncryptUrlParams != null && !strEncryptUrlParams.contains("EncryptException")) {
+updater_src/sources/com/bbk/updater/utils/HttpUtils.java:212:            return "jvq_param=" + strEncryptUrlParams;
+updater_src/sources/com/bbk/updater/utils/HttpUtils.java:214:        return getSimpleParams(context) + strEncryptUrlParams;
+updater_src/sources/com/bbk/updater/utils/HttpUtils.java:235:        String strEncryptUrlParams = SecurityUtils.encryptUrlParams(context, str7);
+updater_src/sources/com/bbk/updater/utils/HttpUtils.java:236:        if (strEncryptUrlParams != null && !strEncryptUrlParams.contains("EncryptException")) {
+updater_src/sources/com/bbk/updater/utils/HttpUtils.java:237:            return "jvq_param=" + strEncryptUrlParams;
+updater_src/sources/com/bbk/updater/utils/HttpUtils.java:239:        return getSimpleParams(context) + strEncryptUrlParams;
+updater_src/sources/com/bbk/updater/cota/b.java:115:        return "jvq_param=" + SecurityUtils.encryptUrlParams(context, sb.substring(1, sb.length()));
+updater_src/sources/com/bbk/updater/countrycode/b.java:23:        return "jvq_param=" + SecurityUtils.encryptUrlParams(context, "" + HttpUtils.getBaseCommonUrl(context));
+updater_src/sources/com/bbk/updater/countrycode/c.java:39:        String strEncryptUrlParams = SecurityUtils.encryptUrlParams(this.f166a, str + HttpUtils.getEncoderString("version", VersionUtils.composeVersionString()));
+updater_src/sources/com/bbk/updater/countrycode/c.java:41:            strEncryptUrlParams = strEncryptUrlParams + HttpUtils.getEncoderString("countrycode", VersionUtils.getCountryRegion());
+updater_src/sources/com/bbk/updater/countrycode/c.java:43:        c("jvq_param=" + strEncryptUrlParams);

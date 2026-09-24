@@ -1,0 +1,127 @@
+package com.bbk.updater.utils;
+
+import android.os.Build;
+import android.text.TextUtils;
+import com.bbk.account.base.constant.CallbackCode;
+import com.bbk.updater.b;
+import com.vivo.updaterbaseframe.c.a;
+
+/* JADX INFO: loaded from: classes.dex */
+public class UToolsUtils {
+    private static final boolean IS_ENG = Build.TYPE.equals("eng");
+    private static final String PROP_DEBUG = "persist.sys.u.debug";
+    private static final String PROP_DEBUG_ALLOW_FULL_UPGRADE = "persist.sys.u.full.upgrade";
+    private static final String PROP_DEBUG_COMPOSE_VERSION = "persist.sys.u.full.version";
+    private static final String PROP_DEBUG_CONFIG_SIMULATE = "persist.sys.u.config.simulate";
+    private static final String PROP_DEBUG_CONFIG_SIMULATE_URI = "persist.sys.u.config.simulate_uri";
+    private static final String PROP_DEBUG_DATA_STATISTICS = "persist.sys.u.data.statistics";
+    private static final String PROP_DEBUG_DOWNLOAD_FAIL_URL = "persist.sys.u.dl.fail";
+    private static final String PROP_DEBUG_EMMCID = "persist.sys.u.emmcid";
+    private static final String PROP_DEBUG_HARDWARE_VERSION = "persist.sys.u.hardware.version";
+    private static final String PROP_DEBUG_IMEI = "persist.sys.u.imei";
+    private static final String PROP_DEBUG_MODEL = "persist.sys.u.model";
+    private static final String PROP_DEBUG_SERVER_ADDRESS = "persist.sys.u.server.addr";
+    private static final String PROP_DEBUG_TIME_SET_LISTENER_SWITCH = "persist.sys.u.timeset.switch";
+    private static final String PROP_DEBUG_VERSION = "persist.sys.u.version";
+
+    private static String getProxyValue(String str, String str2) {
+        String str3 = VersionUtils.get(str);
+        return (!checkDeMode() || TextUtils.isEmpty(str3)) ? str2 : str3;
+    }
+
+    private static int getProxyValue(String str, int i) {
+        String str2 = VersionUtils.get(str);
+        return (!checkDeMode() || TextUtils.isEmpty(str2)) ? i : Integer.valueOf(str2).intValue();
+    }
+
+    private static boolean getProxyValue(String str, boolean z) {
+        String str2 = VersionUtils.get(str);
+        return (!checkDeMode() || TextUtils.isEmpty(str2)) ? z : Boolean.valueOf(str2).booleanValue();
+    }
+
+    public static boolean checkDeMode() {
+        return !b.b() && (IS_ENG || CallbackCode.MSG_TRUE.equals(VersionUtils.get(PROP_DEBUG, "false")));
+    }
+
+    public static String getServerAddress(String str, String str2, String str3) {
+        return getProxyValue(PROP_DEBUG_SERVER_ADDRESS, "https://" + a.a().a(str3, str) + "/") + str2;
+    }
+
+    public static boolean timeSetOnCheck() {
+        return getProxyValue(PROP_DEBUG_TIME_SET_LISTENER_SWITCH, false);
+    }
+
+    public static String getSoftVersion(String str) {
+        return getProxyValue(PROP_DEBUG_VERSION, str);
+    }
+
+    public static String getImeiValue(String str, String str2, boolean z) {
+        if (!z) {
+            return !TextUtils.isEmpty(str) ? str : str2;
+        }
+        if (TextUtils.isEmpty(str)) {
+            str = str2;
+        }
+        return getProxyValue(PROP_DEBUG_IMEI, str);
+    }
+
+    public static String getSnValue(String str) {
+        return getProxyValue(PROP_DEBUG_IMEI, str);
+    }
+
+    public static String getDownloadUrl(String str) {
+        return getProxyValue(PROP_DEBUG_DOWNLOAD_FAIL_URL, str);
+    }
+
+    public static String getComposeVersion(String str) {
+        return getProxyValue(PROP_DEBUG_COMPOSE_VERSION, str);
+    }
+
+    public static boolean checkSystemBroken(boolean z) {
+        return getProxyValue(PROP_DEBUG_ALLOW_FULL_UPGRADE, true) && z;
+    }
+
+    public static String getEmmcidValue(String str) {
+        return getProxyValue(PROP_DEBUG_EMMCID, str);
+    }
+
+    public static boolean getDsData() {
+        return getProxyValue(PROP_DEBUG_DATA_STATISTICS, false);
+    }
+
+    public static boolean isConfigDebug() {
+        return getProxyValue(PROP_DEBUG_CONFIG_SIMULATE, false);
+    }
+
+    public static String getHardVersion(String str) {
+        return getProxyValue(PROP_DEBUG_HARDWARE_VERSION, str);
+    }
+
+    public static String getModeRoValue(String str) {
+        return getProxyValue(PROP_DEBUG_MODEL, str);
+    }
+
+    public static String checkVgcActive(String str) {
+        return getProxyValue("persist.u.vgc.active", str);
+    }
+
+    public static String getVgcSoftVersion(String str) {
+        return getProxyValue("persist.u.vgc.version", str);
+    }
+
+    public static String getVgcCustomize(String str) {
+        return getProxyValue("persist.u.vgc.customize", str);
+    }
+
+    public static int getAbInstallT1(int i) {
+        return getProxyValue("persist.u.abinstall.t1", i);
+    }
+
+    public static int getAbInstallT2(int i) {
+        return getProxyValue("persist.u.abinstall.t2", i);
+    }
+
+    public static int getAbInstallT3(int i) {
+        return getProxyValue("persist.u.abinstall.t3", i);
+    }
+}

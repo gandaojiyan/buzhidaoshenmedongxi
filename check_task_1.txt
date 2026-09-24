@@ -1,0 +1,240 @@
+package com.bbk.updater.check.a;
+
+import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.os.AsyncTask;
+import android.text.TextUtils;
+import com.bbk.updater.R;
+import com.bbk.updater.bean.UpdateCheckResultInfo;
+import com.bbk.updater.bean.UpdateInfo;
+import com.bbk.updater.bean.VgcUpdateInfo;
+import com.bbk.updater.receiver.BootCompleteReceiver;
+import com.bbk.updater.remote.abinstall.AbUpdateInfo;
+import com.bbk.updater.utils.CheckResultUtils;
+import com.bbk.updater.utils.CommonUtils;
+import com.bbk.updater.utils.ConstantsUtils;
+import com.bbk.updater.utils.HttpUtils;
+import com.bbk.updater.utils.IOUtils;
+import com.bbk.updater.utils.LogUtils;
+import com.bbk.updater.utils.PrefsUtils;
+import com.bbk.updater.utils.VersionUtils;
+import com.vivo.updaterbaseframe.a.c;
+import com.vivo.updaterbaseframe.strategy.StrategyFactory;
+import com.vivo.updaterbaseframe.utils.BaseFrameUtils;
+import java.io.File;
+import java.util.HashMap;
+
+/* JADX INFO: compiled from: BaseCheckUpdateTask.java */
+/* JADX INFO: loaded from: classes.dex */
+public class a extends AsyncTask<Void, Integer, UpdateCheckResultInfo> implements DialogInterface.OnCancelListener {
+
+    /* JADX INFO: renamed from: a, reason: collision with root package name */
+    protected Context f158a;
+    private String e;
+    private StrategyFactory f;
+    private UpdateInfo g;
+    private UpdateInfo h;
+    private VgcUpdateInfo i;
+    private VgcUpdateInfo j;
+    private boolean b = false;
+    private boolean c = false;
+    private int d = 8;
+    private boolean k = false;
+    private boolean l = false;
+    private BaseFrameUtils.CheckTrigeType m = BaseFrameUtils.CheckTrigeType.OTHER;
+    private boolean n = false;
+
+    protected void a(int i) {
+    }
+
+    public a(Context context) {
+        this.f158a = context.getApplicationContext();
+        this.f = StrategyFactory.getInstance(context);
+        this.g = PrefsUtils.getUpdateInfo(context, true);
+        this.h = PrefsUtils.getUpdateInfo(context, false);
+        this.i = PrefsUtils.getVgcUpdateInfo(context, true);
+        this.j = PrefsUtils.getVgcUpdateInfo(context, false);
+    }
+
+    public void a(boolean z) {
+        this.k = z;
+    }
+
+    protected boolean a() {
+        return this.k;
+    }
+
+    public BaseFrameUtils.CheckTrigeType b() {
+        return this.m;
+    }
+
+    public void a(BaseFrameUtils.CheckTrigeType checkTrigeType) {
+        this.m = checkTrigeType;
+    }
+
+    public void b(boolean z) {
+        this.b = z;
+    }
+
+    boolean c() {
+        return this.b;
+    }
+
+    protected void c(boolean z) {
+        this.c = z;
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0039  */
+    @Override // android.os.AsyncTask
+    /* JADX INFO: renamed from: a */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public com.bbk.updater.bean.UpdateCheckResultInfo doInBackground(java.lang.Void... r8) throws java.lang.Throwable {
+        /*
+            Method dump skipped, instruction units count: 264
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.bbk.updater.check.a.a.doInBackground(java.lang.Void[]):com.bbk.updater.bean.UpdateCheckResultInfo");
+    }
+
+    private void a(UpdateCheckResultInfo updateCheckResultInfo, String str) {
+        if (updateCheckResultInfo == null) {
+            this.d = 2;
+            this.e = ConstantsUtils.CheckRecord.CHECK_RESULT_RUQUEST_ERROR;
+        } else {
+            this.d = 2;
+            this.e = ConstantsUtils.CheckRecord.CHECK_RESULT_E;
+        }
+    }
+
+    private void b(UpdateCheckResultInfo updateCheckResultInfo) throws Throwable {
+        if (updateCheckResultInfo.getRetcode() == 210) {
+            this.d = 8;
+            this.e = ConstantsUtils.CheckRecord.CHECK_RESULT_N;
+            return;
+        }
+        if (updateCheckResultInfo.getRetcode() == 0) {
+            if (updateCheckResultInfo.getFotaUpdateInfo() != null || updateCheckResultInfo.getVgcUpdateInfo() != null) {
+                this.d = 1024;
+                this.e = ConstantsUtils.CheckRecord.CHECK_RESULT_SUCCEED;
+                if (ConstantsUtils.ISEXPORT && !com.bbk.updater.b.a()) {
+                    e(updateCheckResultInfo);
+                }
+                c(updateCheckResultInfo);
+                return;
+            }
+            this.d = 2;
+            this.e = ConstantsUtils.CheckRecord.CHECK_RESULT_PARSE_ERROR;
+        }
+    }
+
+    private void c(UpdateCheckResultInfo updateCheckResultInfo) throws Throwable {
+        if (updateCheckResultInfo == null) {
+            LogUtils.e("Updater/BaseCheckUpdateTask", "<crossUp> checkResultInfo is null");
+            return;
+        }
+        UpdateInfo fotaUpdateInfo = updateCheckResultInfo.getFotaUpdateInfo();
+        if (fotaUpdateInfo == null) {
+            LogUtils.e("Updater/BaseCheckUpdateTask", "<crossUp> updateInfo is null");
+            return;
+        }
+        String bannerPath = CommonUtils.getBannerPath(this.f158a);
+        IOUtils.deleteFileImpl(new File(bannerPath));
+        if (!CommonUtils.isOsUp(fotaUpdateInfo.getCrossVersion())) {
+            LogUtils.e("Updater/BaseCheckUpdateTask", "<crossUp> is not osUp");
+            return;
+        }
+        HttpUtils.downloadFile(fotaUpdateInfo.getBannerPath(), bannerPath, "<crossUp>");
+    }
+
+    private boolean d(UpdateCheckResultInfo updateCheckResultInfo) {
+        if (updateCheckResultInfo.getFotaUpdateInfo() == null || updateCheckResultInfo.getFotaUpdateInfo().getVersion() == null || !"1".equals(VersionUtils.get("persist.vivo.systemunlock.version", "0"))) {
+            return false;
+        }
+        String version = updateCheckResultInfo.getFotaUpdateInfo().getVersion();
+        String string = PrefsUtils.getString(this.f158a, PrefsUtils.Other.KEY_UPDATE_SUCCESS_VERSION, "");
+        boolean zEquals = version.equals(string);
+        LogUtils.i("Updater/BaseCheckUpdateTask", "isVersionSame " + zEquals + " checkVersion " + version + " successVersion " + string);
+        return zEquals && CheckResultUtils.isFullUpgrade(updateCheckResultInfo.getFotaUpdateInfo()) && CommonUtils.isSystemBroken(this.f158a);
+    }
+
+    private String d() {
+        return HttpUtils.getUpdateRequestUrl(this.f158a);
+    }
+
+    @Override // android.os.AsyncTask
+    protected void onPreExecute() {
+        super.onPreExecute();
+        this.f.onTaskPreExecute("FOTA", this.m.toString());
+        this.f.onCheckStart(c(), this.m.toString());
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // android.os.AsyncTask
+    /* JADX INFO: renamed from: a */
+    public void onPostExecute(UpdateCheckResultInfo updateCheckResultInfo) {
+        super.onPostExecute(updateCheckResultInfo);
+        UpdateInfo fotaUpdateInfo = updateCheckResultInfo != null ? updateCheckResultInfo.getFotaUpdateInfo() : null;
+        VgcUpdateInfo vgcUpdateInfo = updateCheckResultInfo != null ? updateCheckResultInfo.getVgcUpdateInfo() : null;
+        a(fotaUpdateInfo, vgcUpdateInfo);
+        a(this.d);
+        this.f.onCheckEnd(this.d, c(), this.g, this.h, this.i, this.j, fotaUpdateInfo, vgcUpdateInfo, this.e, this.m);
+    }
+
+    @Override // android.content.DialogInterface.OnCancelListener
+    public void onCancel(DialogInterface dialogInterface) {
+        if (getStatus() != AsyncTask.Status.FINISHED) {
+            cancel(true);
+        }
+    }
+
+    private boolean a(c cVar, c cVar2) {
+        if (this.d == 8) {
+            a(this.g, this.h, this.i, this.j);
+            return true;
+        }
+        if (cVar == null && cVar2 == null) {
+            LogUtils.e("Updater/BaseCheckUpdateTask", "checkResult result info is null");
+            return false;
+        }
+        if (!a(cVar, cVar2)) {
+            return false;
+        }
+        b(cVar, cVar2);
+        return true;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0120  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    private void b(com.vivo.updaterbaseframe.a.c r11, com.vivo.updaterbaseframe.a.c r12) {
+        /*
+            Method dump skipped, instruction units count: 324
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.bbk.updater.check.a.a.b(com.vivo.updaterbaseframe.a.c, com.vivo.updaterbaseframe.a.c):void");
+    }
+
+    private void a(UpdateInfo updateInfo, UpdateInfo updateInfo2, VgcUpdateInfo vgcUpdateInfo, VgcUpdateInfo vgcUpdateInfo2) {
+        boolean z;
+        boolean z2;
+        boolean z3;
+        boolean z4;
+        boolean z5;
+        boolean z6;
+        if (updateInfo == null && vgcUpdateInfo == null) {
+            z2 = false;
+            z3 = false;
+        } else {
+            LogUtils.i("Updater/StrategyFactory", "11");
+            if (updateInfo != null) {
+                PrefsUtils.deleteUpdateInfo(this.f158a, true);
+                z = true;
+            } else {

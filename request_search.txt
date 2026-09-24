@@ -1,0 +1,5 @@
+updater_src/sources/com/bbk/updater/utils/HttpUtils.java:38:    private static final String UPDATE_REQUEST_API = "vgc/v2/getVgcAndPatch.do?";
+updater_src/sources/com/bbk/updater/utils/HttpUtils.java:195:    public static String getUpdateRequestUrl(Context context) {
+updater_src/sources/com/bbk/updater/utils/HttpUtils.java:196:        return getServerAddress(UPDATE_REQUEST_API, context);
+updater_src/sources/com/bbk/updater/utils/HttpUtils.java:199:    public static String getUpdateRequestParams(Context context, boolean z, boolean z2, BaseFrameUtils.CheckTrigeType checkTrigeType, boolean z3) {
+updater_src/sources/com/bbk/updater/check/a/a.java:166:        return HttpUtils.getUpdateRequestUrl(this.f158a);
