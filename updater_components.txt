@@ -1,0 +1,176 @@
+===== ACTIVITY =====
+123:        <activity
+145:        <activity
+164:        <activity
+179:        <activity
+192:        <activity
+204:        <activity
+219:        <activity
+228:        <activity
+237:        <activity
+245:        <activity
+262:        <activity
+279:        <activity
+292:        <activity
+305:        <activity
+314:        <activity
+319:        <activity
+611:        <activity
+
+===== SERVICE =====
+569:        <service
+572:        <service
+584:        <service
+588:        <service
+597:        <service
+607:        <service
+
+===== RECEIVER =====
+411:        <receiver
+421:        <receiver
+429:        <receiver
+437:        <receiver
+445:        <receiver
+455:        <receiver
+463:        <receiver
+470:        <receiver
+512:        <receiver
+524:        <receiver
+532:        <receiver
+540:        <receiver
+547:        <receiver
+565:        <receiver
+
+===== PROVIDER =====
+366:        <provider
+370:        <provider
+376:        <provider
+381:        <provider
+393:        <provider
+402:        <provider
+616:        <provider
+
+===== INTENT FILTER =====
+131:            <intent-filter>
+132:                <action android:name="com.vivo.action.ACTION_SYSTEM_UPDATER"/>
+133:                <category android:name="android.intent.category.DEFAULT"/>
+135:            <intent-filter android:priority="-100">
+136:                <action android:name="com.android.settings.action.EXTRA_SETTINGS"/>
+154:            <intent-filter>
+155:                <action android:name="com.vivo.action.ACTION_START_UPDATEACTIVITY"/>
+156:                <category android:name="android.intent.category.DEFAULT"/>
+157:                <data android:mimeType="application/zip"/>
+159:            <intent-filter>
+160:                <action android:name="com.bbk.updater.action.START_UPDATERACTIVITY"/>
+161:                <category android:name="android.intent.category.DEFAULT"/>
+174:            <intent-filter>
+175:                <action android:name="com.vivo.action.ACTION_SYSTEM_UPDATER_SETTINGS"/>
+176:                <category android:name="android.intent.category.DEFAULT"/>
+187:            <intent-filter>
+188:                <action android:name="com.vivo.action.ACTION_SYSTEM_UPDATER_PACKAGE_COPY"/>
+189:                <category android:name="android.intent.category.DEFAULT"/>
+214:            <intent-filter>
+215:                <action android:name="com.vivo.action.OPEN_LOCAL_UPGRADE_ACTIVITY"/>
+216:                <category android:name="android.intent.category.DEFAULT"/>
+254:            <intent-filter>
+255:                <action android:name="android.intent.action.VIEW"/>
+256:                <category android:name="android.intent.category.DEFAULT"/>
+257:                <data
+271:            <intent-filter>
+272:                <action android:name="android.intent.action.VIEW"/>
+273:                <category android:name="android.intent.category.DEFAULT"/>
+274:                <data
+287:            <intent-filter>
+288:                <action android:name="com.bbk.updater.public_beta_activity"/>
+289:                <category android:name="android.intent.category.DEFAULT"/>
+300:            <intent-filter>
+301:                <action android:name="com.bbk.updater.closed_beta_activity"/>
+302:                <category android:name="android.intent.category.DEFAULT"/>
+389:            <intent-filter>
+390:                <action android:name="android.content.action.SEARCH_INDEXABLES_PROVIDER"/>
+415:            <intent-filter android:priority="1000">
+416:                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED"/>
+417:                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+418:                <action android:name="com.vivo.updater.action.SHUT_DOWN"/>
+424:            <intent-filter>
+425:                <action android:name="bbk.receiver.action.SYSTEM_UPDATE"/>
+426:                <category android:name="android.intent.category.DEFAULT"/>
+433:            <intent-filter>
+434:                <action android:name="com.vivo.updater.download.status.change"/>
+441:            <intent-filter android:priority="1000">
+442:                <action android:name="com.bbk.updater.action.NETWORK_CHANGE"/>
+449:            <intent-filter>
+450:                <action android:name="new.com.vivo.updater.action.SCREEN_ON"/>
+451:                <action android:name="new.com.vivo.updater.action.SCREEN_OFF"/>
+452:                <action android:name="com.vivo.updater.action.USER_PRESENT"/>
+458:            <intent-filter>
+459:                <action android:name="com.bbk.updater.action.INSTALL"/>
+460:                <action android:name="com.bbk.updater.SYSTEM_UPDATE_STATE"/>
+466:            <intent-filter>
+467:                <action android:name="bbk.start.UpdateActivity"/>
+474:            <intent-filter>
+475:                <action android:name="com.vivo.updater.silent_install"/>
+476:                <action android:name="com.vivo.updater.cancel_silent_install"/>
+477:                <action android:name="com.vivo.updater.action.POWER_CONNECT"/>
+478:                <action android:name="com.vivo.updater.action.AUTO_DOWNLOAD"/>
+479:                <action android:name="com.vivo.updater.action.UPDATE_ALARM"/>
+480:                <action android:name="com.vivo.updater.action.INSTALL_ALARM"/>
+481:                <action android:name="com.vivo.updater.action.POPPED_DIALOG"/>
+482:                <action android:name="com.vivo.bbk.action.show.setup.tips"/>
+483:                <action android:name="new.com.bbk.updater.action.AUTO_CHECK"/>
+484:                <action android:name="com.bbk.updater.action.CHECK_INSTANTLY"/>
+485:                <action android:name="com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"/>
+486:                <action android:name="com.vivo.updater.pushservice.RECEIVE"/>
+487:                <action android:name="new.com.vivo.updater.install_tonight"/>
+488:                <action android:name="new.com.vivo.updater.set_install_plan"/>
+489:                <action android:name="com.vivo.updater.cancal_install_plan"/>
+490:                <action android:name="com.vivo.updater.alarm.action.CHARGED_TRIGGER"/>
+491:                <action android:name="com.vivo.updater.alarm.action.LOCKED_TRIGGER"/>
+492:                <action android:name="com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"/>
+493:                <action android:name="com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"/>
+494:                <action android:name="new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"/>
+495:                <action android:name="com.bbk.updater.dialog.action"/>
+496:                <action android:name="com.bbk.updater.action.AUTO_CHECK_HOURLY"/>
+497:                <action android:name="com.bbk.updater.data_statistics_test"/>
+498:                <action android:name="com.bbk.updater.action.TIME_SET_CHECK"/>
+499:                <action android:name="com.vivo.updater.RECOVERY_EXISTING_PLAN"/>
+500:                <action android:name="com.bbk.updater.system.broken"/>
+501:                <action android:name="com.bbk.updater.action.dialog.DOWNLOAD"/>
+502:                <action android:name="com.bbk.updater.action.notification.DOWNLOAD"/>
+503:                <action android:name="com.bbk.updater.action.NOTIFICATION_DELETE"/>
+504:                <action android:name="com.bbk.updater.selfupgrade_install_check"/>
+505:                <action android:name="com.bbk.updater.selfupgrade_download_check"/>
+506:                <action android:name="com.bbk.updater.aciton.dialog.summary.clicked"/>
+507:                <action android:name="com.vivo.updater.demo_video_install"/>
+508:                <action android:name="com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"/>
+509:                <action android:name="com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"/>
+516:            <intent-filter>
+517:                <action android:name="com.bbk.updater.AB_INSTALL_NOTI_REBOOT_NOW_CLICK"/>
+518:                <action android:name="com.bbk.updater.AB_INSTALL_NOTI_REBOOT_NIGHT_CLICK"/>
+519:                <action android:name="com.bbk.updater.action.notification.INSTALL"/>
+520:                <action android:name="com.bbk.updater_AB_INSTALL_RESUME_INSTALL_CLICK"/>
+521:                <action android:name="com.bbk.updater.AB_PACKAGE_DELETE"/>
+527:            <intent-filter>
+528:                <action android:name="com.vivo.daemonService.unifiedconfig.update_finish_broadcast_Updater"/>
+529:                <action android:name="com.bbk.updater.unifiedconfig.update_finish_broadcast_Updater_simulate"/>
+535:            <intent-filter>
+536:                <action android:name="vivo.intent.action.COTA_ACTIVATE_SUC"/>
+537:                <action android:name="vivo.intent.action.COTA_CUST_TYPE_CHANGE"/>
+543:            <intent-filter>
+544:                <action android:name="com.vivo.pushservice.action.RECEIVE"/>
+552:            <intent-filter>
+553:                <action android:name="new.com.vivo.updater.update_install_freq"/>
+554:                <action android:name="new.com.vivo.updater.action.CANCEL_REMIND"/>
+555:                <action android:name="new.com.vivo.updater.recover_install_plan"/>
+556:                <action android:name="new.com.vivo.updater.config_alarm"/>
+557:                <action android:name="new.com.vivo.updater.action.SET_INTELLIGENT_INSTALL_CHECK_TIME"/>
+558:                <action android:name="new.com.vivo.updater.action.CANCEL_INTELLIGENT_INSTALL"/>
+559:                <action android:name="android.intent.action.TIME_SET"/>
+560:                <action android:name="com.bbk.updater.SAL_AUTO_POLL"/>
+561:                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED"/>
+562:                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+593:            <intent-filter>
+594:                <action android:name="new.com.vivo.daemonService.UpdateTipsService"/>
+602:            <intent-filter>
+603:                <action android:name="com.bbk.updater.remote"/>
+604:                <action android:name="com.vivo.updater.remote"/>

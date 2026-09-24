@@ -1,0 +1,262 @@
+1:Activity Resolver Table:
+4:        afe226 com.bbk.updater/.ui.UpdateActivity filter 12f0e67
+5:          Action: "com.vivo.action.ACTION_START_UPDATEACTIVITY"
+11:        afe226 com.bbk.updater/.ui.UpdateActivity filter 12f0e67
+12:          Action: "com.vivo.action.ACTION_START_UPDATEACTIVITY"
+18:        9a5635f com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity filter a2c71ac
+19:          Action: "android.intent.action.VIEW"
+23:        696fe75 com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionTempActivity filter 3502e0a
+24:          Action: "android.intent.action.VIEW"
+29:  Non-Data Actions:
+31:        b142a03 com.bbk.updater/com.bbk.local.activity.PackageCopyActivity filter db4fd80
+35:        33bb48b com.bbk.updater/.ui.UpdateTempActivity filter 7eac181
+38:      com.vivo.action.OPEN_LOCAL_UPGRADE_ACTIVITY:
+39:        c4d1fb9 com.bbk.updater/com.bbk.local.activity.LocalUpgradeActivity filter e970ffe
+40:          Action: "com.vivo.action.OPEN_LOCAL_UPGRADE_ACTIVITY"
+43:        33bb48b com.bbk.updater/.ui.UpdateTempActivity filter ff06968
+47:        a00f4bd com.bbk.updater/.ui.SettingsActivity filter 427fab2
+50:      com.bbk.updater.action.START_UPDATERACTIVITY:
+51:        afe226 com.bbk.updater/.ui.UpdateActivity filter 216b414
+52:          Action: "com.bbk.updater.action.START_UPDATERACTIVITY"
+54:      com.bbk.updater.public_beta_activity:
+55:        ce6d67b com.bbk.updater/com.bbk.trialversion.publicbeta.activity.PublicBetaActivity filter 1c4fc98
+56:          Action: "com.bbk.updater.public_beta_activity"
+58:      com.bbk.updater.closed_beta_activity:
+59:        b660cf1 com.bbk.updater/com.bbk.trialversion.closedbeta.activity.ClosedBetaActivity filter 5cb20d6
+60:          Action: "com.bbk.updater.closed_beta_activity"
+64:      com.vivo.action.ACTION_START_UPDATEACTIVITY:
+65:        afe226 com.bbk.updater/.ui.UpdateActivity filter 12f0e67
+66:          Action: "com.vivo.action.ACTION_START_UPDATEACTIVITY"
+70:Receiver Resolver Table:
+71:  Non-Data Actions:
+73:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+85:          Action: "com.vivo.updater.pushservice.RECEIVE"
+110:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+122:          Action: "com.vivo.updater.pushservice.RECEIVE"
+147:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+159:          Action: "com.vivo.updater.pushservice.RECEIVE"
+184:        a26e5e3 com.bbk.updater/.cota.CotaStatusChangeReceiver filter d2d3be0
+188:        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+195:          Action: "android.intent.action.TIME_SET"
+197:          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+198:          Action: "android.intent.action.BOOT_COMPLETED"
+200:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+212:          Action: "com.vivo.updater.pushservice.RECEIVE"
+236:      bbk.receiver.action.SYSTEM_UPDATE:
+237:        43d872d com.bbk.updater/.receiver.UpdateReceiver filter 7307462
+238:          Action: "bbk.receiver.action.SYSTEM_UPDATE"
+241:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+253:          Action: "com.vivo.updater.pushservice.RECEIVE"
+278:        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+285:          Action: "android.intent.action.TIME_SET"
+287:          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+288:          Action: "android.intent.action.BOOT_COMPLETED"
+290:        7025f57 com.bbk.updater/.receiver.BootCompleteReceiver filter 9594a44
+291:          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+292:          Action: "android.intent.action.BOOT_COMPLETED"
+296:        6a56ee5 com.bbk.updater/.receiver.InstallReceiver filter 6582dba
+300:        5986929 com.bbk.updater/.receiver.NetworkReceiver filter a574ae
+304:        d83cc47 com.bbk.updater/.install.NotificationReceiver filter f45cc74
+311:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+323:          Action: "com.vivo.updater.pushservice.RECEIVE"
+348:        8e399f3 com.bbk.updater/.receiver.DownloadReceiver filter 6c2c6b0
+351:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+363:          Action: "com.vivo.updater.pushservice.RECEIVE"
+388:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+400:          Action: "com.vivo.updater.pushservice.RECEIVE"
+425:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+437:          Action: "com.vivo.updater.pushservice.RECEIVE"
+462:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+474:          Action: "com.vivo.updater.pushservice.RECEIVE"
+499:        c93e24f com.bbk.updater/.receiver.ScreenActionRecorder filter 2059ddc
+504:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+516:          Action: "com.vivo.updater.pushservice.RECEIVE"
+541:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+553:          Action: "com.vivo.updater.pushservice.RECEIVE"
+578:        c93e24f com.bbk.updater/.receiver.ScreenActionRecorder filter 2059ddc
+582:      com.vivo.daemonService.unifiedconfig.update_finish_broadcast_Updater:
+583:        abb959d com.bbk.updater/.receiver.ConfigEngineReceiver filter de2ba12
+584:          Action: "com.vivo.daemonService.unifiedconfig.update_finish_broadcast_Updater"
+587:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+599:          Action: "com.vivo.updater.pushservice.RECEIVE"
+623:      android.intent.action.LOCKED_BOOT_COMPLETED:
+624:        7025f57 com.bbk.updater/.receiver.BootCompleteReceiver filter 9594a44
+625:          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+626:          Action: "android.intent.action.BOOT_COMPLETED"
+629:        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+636:          Action: "android.intent.action.TIME_SET"
+638:          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+639:          Action: "android.intent.action.BOOT_COMPLETED"
+641:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+653:          Action: "com.vivo.updater.pushservice.RECEIVE"
+678:        d83cc47 com.bbk.updater/.install.NotificationReceiver filter f45cc74
+685:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+697:          Action: "com.vivo.updater.pushservice.RECEIVE"
+722:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+734:          Action: "com.vivo.updater.pushservice.RECEIVE"
+759:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+771:          Action: "com.vivo.updater.pushservice.RECEIVE"
+796:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+808:          Action: "com.vivo.updater.pushservice.RECEIVE"
+832:      bbk.start.UpdateActivity:
+833:        956546b com.bbk.updater/.receiver.compatibleReceivers filter d3cbbc8
+834:          Action: "bbk.start.UpdateActivity"
+836:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+848:          Action: "com.vivo.updater.pushservice.RECEIVE"
+873:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+885:          Action: "com.vivo.updater.pushservice.RECEIVE"
+909:      com.vivo.pushservice.action.RECEIVE:
+910:        3c0ee99 com.bbk.updater/.receiver.PushServiceReceiver filter 52e655e
+911:          Action: "com.vivo.pushservice.action.RECEIVE"
+913:        c93e24f com.bbk.updater/.receiver.ScreenActionRecorder filter 2059ddc
+918:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+930:          Action: "com.vivo.updater.pushservice.RECEIVE"
+955:        abb959d com.bbk.updater/.receiver.ConfigEngineReceiver filter de2ba12
+956:          Action: "com.vivo.daemonService.unifiedconfig.update_finish_broadcast_Updater"
+959:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+971:          Action: "com.vivo.updater.pushservice.RECEIVE"
+996:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+1008:          Action: "com.vivo.updater.pushservice.RECEIVE"
+1033:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+1045:          Action: "com.vivo.updater.pushservice.RECEIVE"
+1070:        a26e5e3 com.bbk.updater/.cota.CotaStatusChangeReceiver filter d2d3be0
+1073:      android.intent.action.TIME_SET:
+1074:        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+1081:          Action: "android.intent.action.TIME_SET"
+1083:          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+1084:          Action: "android.intent.action.BOOT_COMPLETED"
+1085:      com.vivo.updater.pushservice.RECEIVE:
+1086:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+1098:          Action: "com.vivo.updater.pushservice.RECEIVE"
+1123:        6a56ee5 com.bbk.updater/.receiver.InstallReceiver filter 6582dba
+1127:        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+1134:          Action: "android.intent.action.TIME_SET"
+1136:          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+1137:          Action: "android.intent.action.BOOT_COMPLETED"
+1138:      android.intent.action.BOOT_COMPLETED:
+1139:        7025f57 com.bbk.updater/.receiver.BootCompleteReceiver filter 9594a44
+1140:          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+1141:          Action: "android.intent.action.BOOT_COMPLETED"
+1144:        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+1151:          Action: "android.intent.action.TIME_SET"
+1153:          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+1154:          Action: "android.intent.action.BOOT_COMPLETED"
+1156:        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+1163:          Action: "android.intent.action.TIME_SET"
+1165:          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+1166:          Action: "android.intent.action.BOOT_COMPLETED"
+1168:        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+1175:          Action: "android.intent.action.TIME_SET"
+1177:          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+1178:          Action: "android.intent.action.BOOT_COMPLETED"
+1180:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+1192:          Action: "com.vivo.updater.pushservice.RECEIVE"
+1217:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+1229:          Action: "com.vivo.updater.pushservice.RECEIVE"
+1254:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+1266:          Action: "com.vivo.updater.pushservice.RECEIVE"
+1291:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+1303:          Action: "com.vivo.updater.pushservice.RECEIVE"
+1328:        d83cc47 com.bbk.updater/.install.NotificationReceiver filter f45cc74
+1335:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+1347:          Action: "com.vivo.updater.pushservice.RECEIVE"
+1372:        d83cc47 com.bbk.updater/.install.NotificationReceiver filter f45cc74
+1379:        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+1386:          Action: "android.intent.action.TIME_SET"
+1388:          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+1389:          Action: "android.intent.action.BOOT_COMPLETED"
+1391:        d83cc47 com.bbk.updater/.install.NotificationReceiver filter f45cc74
+1398:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+1410:          Action: "com.vivo.updater.pushservice.RECEIVE"
+1435:        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+1442:          Action: "android.intent.action.TIME_SET"
+1444:          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+1445:          Action: "android.intent.action.BOOT_COMPLETED"
+1447:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+1459:          Action: "com.vivo.updater.pushservice.RECEIVE"
+1484:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+1496:          Action: "com.vivo.updater.pushservice.RECEIVE"
+1521:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+1533:          Action: "com.vivo.updater.pushservice.RECEIVE"
+1558:        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+1570:          Action: "com.vivo.updater.pushservice.RECEIVE"
+1595:Service Resolver Table:
+1596:  Non-Data Actions:
+1597:      new.com.vivo.daemonService.UpdateTipsService:
+1598:        592e5b com.bbk.updater/.remote.UpdateTipsService filter 77aa6f8 permission com.bbk.updater.permission.UpdateTipsService
+1599:          Action: "new.com.vivo.daemonService.UpdateTipsService"
+1601:        9e8d7d1 com.bbk.updater/.remote.RemoteService filter 68bc236 permission com.bbk.updater.permission.USE_COMPONENT
+1605:        9e8d7d1 com.bbk.updater/.remote.RemoteService filter 68bc236 permission com.bbk.updater.permission.USE_COMPONENT
+1609:Provider Resolver Table:
+1610:  Non-Data Actions:
+1611:      android.content.action.SEARCH_INDEXABLES_PROVIDER:
+1612:        228db55 com.bbk.updater/.search.UpdaterSearchIndexablesProvider filter 6f7796a
+1613:          Action: "android.content.action.SEARCH_INDEXABLES_PROVIDER"
+1618:  Permission [com.bbk.updater.permisssion.LOCAL_UPGRADE_ACTIVITY] (7db46c6):
+1621:    perm=PermissionInfo{f3a0931 com.bbk.updater.permisssion.LOCAL_UPGRADE_ACTIVITY}
+1624:  Permission [com.bbk.updater.permission.DownloadReceiver] (b11a687):
+1627:    perm=PermissionInfo{f335597 com.bbk.updater.permission.DownloadReceiver}
+1636:  Permission [com.bbk.updater.permission.NetWorkReceiver] (bb499dd):
+1639:    perm=PermissionInfo{3cdb433 com.bbk.updater.permission.NetWorkReceiver}
+1654:  Permission [com.bbk.updater.permission.UpdateTipsService] (f9c3d20):
+1657:    perm=PermissionInfo{244b725 com.bbk.updater.permission.UpdateTipsService}
+1659:Registered ContentProviders:
+1660:  com.bbk.updater/.provider.RemoteContentProvider:
+1661:    Provider{2ad70fa com.bbk.updater/.provider.RemoteContentProvider}
+1662:  com.bbk.updater/com.vivo.tipssdk.data.TipsProvider:
+1663:    Provider{7a176ab com.bbk.updater/com.vivo.tipssdk.data.TipsProvider}
+1664:  com.bbk.updater/com.vivo.upgrade.library.provider.FileProvider:
+1665:    Provider{529d108 com.bbk.updater/com.vivo.upgrade.library.provider.FileProvider}
+1666:  com.bbk.updater/androidx.core.content.FileProvider:
+1667:    Provider{4aea0a1 com.bbk.updater/androidx.core.content.FileProvider}
+1668:  com.bbk.updater/.search.UpdaterSearchIndexablesProvider:
+1669:    Provider{228db55 com.bbk.updater/.search.UpdaterSearchIndexablesProvider}
+1670:  com.bbk.updater/.provider.InstallAndShutdownJusticeProvider:
+1671:    Provider{d1a2c6 com.bbk.updater/.provider.InstallAndShutdownJusticeProvider}
+1672:  com.bbk.updater/com.vivo.ic.dm.DownloadProvider:
+1673:    Provider{3fed287 com.bbk.updater/com.vivo.ic.dm.DownloadProvider}
+1675:ContentProvider Authorities:
+1676:  [com.bbk.updater.provider]:
+1677:    Provider{d1a2c6 com.bbk.updater/.provider.InstallAndShutdownJusticeProvider}
+1680:    Provider{529d108 com.bbk.updater/com.vivo.upgrade.library.provider.FileProvider}
+1682:  [com.bbk.updater.os11.fileprovider]:
+1683:    Provider{4aea0a1 com.bbk.updater/androidx.core.content.FileProvider}
+1686:    Provider{228db55 com.bbk.updater/.search.UpdaterSearchIndexablesProvider}
+1689:    Provider{3fed287 com.bbk.updater/com.vivo.ic.dm.DownloadProvider}
+1692:    Provider{2ad70fa com.bbk.updater/.provider.RemoteContentProvider}
+1694:  [com.bbk.updater.sdk.FileProvider]:
+1695:    Provider{7a176ab com.bbk.updater/com.vivo.tipssdk.data.TipsProvider}
+1733:      com.bbk.updater.permisssion.LOCAL_UPGRADE_ACTIVITY: prot=signature|privileged, INSTALLED
+1736:      com.bbk.updater.permission.UpdateTipsService: prot=signature|privileged, INSTALLED
+1737:      com.bbk.updater.permission.DownloadReceiver: prot=signature|privileged, INSTALLED
+1738:      com.bbk.updater.permission.NetWorkReceiver: prot=signature|privileged, INSTALLED
+1764:      android.permission.SET_ACTIVITY_WATCHER
+1768:      com.vivo.abe.permission.unifiedconfig.provider
+1769:      android.permission.FOREGROUND_SERVICE
+1770:      com.vivo.basemanager.START_ACTIVITY
+1783:      com.vivo.abe.permission.configlist_provider
+1784:      com.bbk.updater.permission.UpdateTipsService
+1785:      com.bbk.updater.permission.DownloadReceiver
+1786:      com.bbk.updater.permission.NetWorkReceiver
+1788:      com.vivo.cota.service.access
+1790:      com.android.BBKClock.permission.READ_ALARM_PROVIDER
+1791:      com.vivo.abe.permission.action.openhpactivity
+1799:      com.vivo.Tips.permission.LOAD_DATA_ACTIVITY
+1800:      com.vivo.permissionmanager.activity.privacysettings
+1801:      com.iqoo.secure.permission.START_PRIVACY_ACTIVITY
+1821:      com.vivo.abe.permission.unifiedconfig.provider: granted=true
+1822:      com.bbk.updater.permission.DownloadReceiver: granted=true
+1823:      android.permission.FOREGROUND_SERVICE: granted=true
+1825:      com.vivo.permissionmanager.activity.privacysettings: granted=true
+1836:      com.bbk.updater.permission.NetWorkReceiver: granted=true
+1841:      android.permission.SET_ACTIVITY_WATCHER: granted=true
+1847:      com.android.BBKClock.permission.READ_ALARM_PROVIDER: granted=true
+1854:      com.vivo.abe.permission.action.openhpactivity: granted=true
+1858:      com.iqoo.secure.permission.START_PRIVACY_ACTIVITY: granted=true
+1859:      com.bbk.updater.permission.UpdateTipsService: granted=true
+1861:      com.vivo.abe.permission.configlist_provider: granted=true
+1868:      com.vivo.cota.service.access: granted=true
+1881:        com.bbk.updater.receiver.ScreenActionRecorder
+1891:      [com.vivo.vivokaraoke,com.mediatek.atci.service,com.iqoo.powersaving,com.vivo.faceui,com.android.wallpaperbackup,com.android.keychain,com.vivo.sps,com.bbk.facewake,com.vivo.abe,com.vivo.smartmultiwindow,com.vivo.vtouch,com.wapi.wapicertmanager,com.vivo.upslide,com.vivo.setupwizard,com.vivo.contentcatcher,com.vivo.fuzzylocationmanager,com.android.localtransport,com.vivo.pem,com.vivo.vibrator4d,com.vivo.assistant,com.android.inputdevices,com.vivo.multinlp,com.vivo.permissionmanager,com.vivo.doubleinstance,com.vivo.globalanimation,com.android.BBKCrontab,com.vivo.vms,com.vivo.daemonService,com.vivo.dr,com.android.bbklog,com.android.providers.settings,com.mediatek,com.vivo.networkstate,com.android.settings,com.vivo.appfilter,com.mobile.cos.iroaming,com.android.networkstack.inprocess,com.android.server.telecom,com.mediatek.location.lppe.main,com.vivo.epm,com.android.location.fused,com.vivo.vdfs,com.vivo.car.networking,com.vivo.fingerprintengineer,com.android.dynsystem,com.vivo.faceunlock,com.vivo.aiengine,com.vivo.smartshot,com.iqoo.aftersale.engineermode,com.vivo.audiofx,com.vivo.gamewatch,com.vivo.fuelsummary,com.vivo.smartunlock,com.vivo.minscreen,com.vivo.voicewakeup,com.android.networkstack.tethering.inprocess,com.bbk.SuperPowerSave,com.trustonic.teeservice,com.vivo.connbase,com.vivo.floatingball,android,com.vivo.fingerprint,com.vivo.fingerprintui,com.vivo.gamecube]:
+1895:      com.vivo.pushservice:
+1898:        [com.vivo.vivokaraoke,com.mediatek.atci.service,com.iqoo.powersaving,com.vivo.faceui,com.android.wallpaperbackup,com.android.keychain,com.vivo.sps,com.bbk.facewake,com.vivo.abe,com.vivo.smartmultiwindow,com.vivo.vtouch,com.wapi.wapicertmanager,com.vivo.upslide,com.vivo.setupwizard,com.vivo.contentcatcher,com.vivo.fuzzylocationmanager,com.android.localtransport,com.vivo.pem,com.vivo.vibrator4d,com.vivo.assistant,com.android.inputdevices,com.vivo.multinlp,com.vivo.permissionmanager,com.vivo.doubleinstance,com.vivo.globalanimation,com.android.BBKCrontab,com.vivo.vms,com.vivo.daemonService,com.vivo.dr,com.android.bbklog,com.android.providers.settings,com.mediatek,com.vivo.networkstate,com.android.settings,com.vivo.appfilter,com.mobile.cos.iroaming,com.android.networkstack.inprocess,com.android.server.telecom,com.mediatek.location.lppe.main,com.vivo.epm,com.android.location.fused,com.vivo.vdfs,com.vivo.car.networking,com.vivo.fingerprintengineer,com.android.dynsystem,com.vivo.faceunlock,com.vivo.aiengine,com.vivo.smartshot,com.iqoo.aftersale.engineermode,com.vivo.audiofx,com.vivo.gamewatch,com.vivo.fuelsummary,com.vivo.smartunlock,com.vivo.minscreen,com.vivo.voicewakeup,com.android.networkstack.tethering.inprocess,com.bbk.SuperPowerSave,com.trustonic.teeservice,com.vivo.connbase,com.vivo.floatingball,android,com.vivo.fingerprint,com.vivo.fingerprintui,com.vivo.gamecube]

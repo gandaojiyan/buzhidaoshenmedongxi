@@ -1,0 +1,1981 @@
+Activity Resolver Table:
+  Full MIME Types:
+      application/zip:
+        afe226 com.bbk.updater/.ui.UpdateActivity filter 12f0e67
+          Action: "com.vivo.action.ACTION_START_UPDATEACTIVITY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "application/zip"
+
+  Base MIME Types:
+      application:
+        afe226 com.bbk.updater/.ui.UpdateActivity filter 12f0e67
+          Action: "com.vivo.action.ACTION_START_UPDATEACTIVITY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "application/zip"
+
+  Schemes:
+      updater:
+        9a5635f com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity filter a2c71ac
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "updater"
+          Authority: "trialversion.closed.beta": -1
+        696fe75 com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionTempActivity filter 3502e0a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "updater"
+          Authority: "trial_version": -1
+
+  Non-Data Actions:
+      com.vivo.action.ACTION_SYSTEM_UPDATER_PACKAGE_COPY:
+        b142a03 com.bbk.updater/com.bbk.local.activity.PackageCopyActivity filter db4fd80
+          Action: "com.vivo.action.ACTION_SYSTEM_UPDATER_PACKAGE_COPY"
+          Category: "android.intent.category.DEFAULT"
+      com.android.settings.action.EXTRA_SETTINGS:
+        33bb48b com.bbk.updater/.ui.UpdateTempActivity filter 7eac181
+          Action: "com.android.settings.action.EXTRA_SETTINGS"
+          mPriority=-100, mOrder=0, mHasStaticPartialTypes=false, mHasDynamicPartialTypes=false
+      com.vivo.action.OPEN_LOCAL_UPGRADE_ACTIVITY:
+        c4d1fb9 com.bbk.updater/com.bbk.local.activity.LocalUpgradeActivity filter e970ffe
+          Action: "com.vivo.action.OPEN_LOCAL_UPGRADE_ACTIVITY"
+          Category: "android.intent.category.DEFAULT"
+      com.vivo.action.ACTION_SYSTEM_UPDATER:
+        33bb48b com.bbk.updater/.ui.UpdateTempActivity filter ff06968
+          Action: "com.vivo.action.ACTION_SYSTEM_UPDATER"
+          Category: "android.intent.category.DEFAULT"
+      com.vivo.action.ACTION_SYSTEM_UPDATER_SETTINGS:
+        a00f4bd com.bbk.updater/.ui.SettingsActivity filter 427fab2
+          Action: "com.vivo.action.ACTION_SYSTEM_UPDATER_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+      com.bbk.updater.action.START_UPDATERACTIVITY:
+        afe226 com.bbk.updater/.ui.UpdateActivity filter 216b414
+          Action: "com.bbk.updater.action.START_UPDATERACTIVITY"
+          Category: "android.intent.category.DEFAULT"
+      com.bbk.updater.public_beta_activity:
+        ce6d67b com.bbk.updater/com.bbk.trialversion.publicbeta.activity.PublicBetaActivity filter 1c4fc98
+          Action: "com.bbk.updater.public_beta_activity"
+          Category: "android.intent.category.DEFAULT"
+      com.bbk.updater.closed_beta_activity:
+        b660cf1 com.bbk.updater/com.bbk.trialversion.closedbeta.activity.ClosedBetaActivity filter 5cb20d6
+          Action: "com.bbk.updater.closed_beta_activity"
+          Category: "android.intent.category.DEFAULT"
+
+  MIME Typed Actions:
+      com.vivo.action.ACTION_START_UPDATEACTIVITY:
+        afe226 com.bbk.updater/.ui.UpdateActivity filter 12f0e67
+          Action: "com.vivo.action.ACTION_START_UPDATEACTIVITY"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "application/zip"
+
+Receiver Resolver Table:
+  Non-Data Actions:
+      com.bbk.updater.dialog.action:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.vivo.updater.cancel_silent_install:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      vivo.intent.action.COTA_ACTIVATE_SUC:
+        a26e5e3 com.bbk.updater/.cota.CotaStatusChangeReceiver filter d2d3be0
+          Action: "vivo.intent.action.COTA_ACTIVATE_SUC"
+          Action: "vivo.intent.action.COTA_CUST_TYPE_CHANGE"
+      new.com.vivo.updater.recover_install_plan:
+        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+          Action: "new.com.vivo.updater.update_install_freq"
+          Action: "new.com.vivo.updater.action.CANCEL_REMIND"
+          Action: "new.com.vivo.updater.recover_install_plan"
+          Action: "new.com.vivo.updater.config_alarm"
+          Action: "new.com.vivo.updater.action.SET_INTELLIGENT_INSTALL_CHECK_TIME"
+          Action: "new.com.vivo.updater.action.CANCEL_INTELLIGENT_INSTALL"
+          Action: "android.intent.action.TIME_SET"
+          Action: "com.bbk.updater.SAL_AUTO_POLL"
+          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+          Action: "android.intent.action.BOOT_COMPLETED"
+      com.vivo.updater.action.UPDATE_ALARM:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      bbk.receiver.action.SYSTEM_UPDATE:
+        43d872d com.bbk.updater/.receiver.UpdateReceiver filter 7307462
+          Action: "bbk.receiver.action.SYSTEM_UPDATE"
+          Category: "android.intent.category.DEFAULT"
+      com.vivo.updater.demo_video_install:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.bbk.updater.SAL_AUTO_POLL:
+        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+          Action: "new.com.vivo.updater.update_install_freq"
+          Action: "new.com.vivo.updater.action.CANCEL_REMIND"
+          Action: "new.com.vivo.updater.recover_install_plan"
+          Action: "new.com.vivo.updater.config_alarm"
+          Action: "new.com.vivo.updater.action.SET_INTELLIGENT_INSTALL_CHECK_TIME"
+          Action: "new.com.vivo.updater.action.CANCEL_INTELLIGENT_INSTALL"
+          Action: "android.intent.action.TIME_SET"
+          Action: "com.bbk.updater.SAL_AUTO_POLL"
+          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+          Action: "android.intent.action.BOOT_COMPLETED"
+      com.vivo.updater.action.SHUT_DOWN:
+        7025f57 com.bbk.updater/.receiver.BootCompleteReceiver filter 9594a44
+          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "com.vivo.updater.action.SHUT_DOWN"
+          mPriority=1000, mOrder=0, mHasStaticPartialTypes=false, mHasDynamicPartialTypes=false
+      com.bbk.updater.SYSTEM_UPDATE_STATE:
+        6a56ee5 com.bbk.updater/.receiver.InstallReceiver filter 6582dba
+          Action: "com.bbk.updater.action.INSTALL"
+          Action: "com.bbk.updater.SYSTEM_UPDATE_STATE"
+      com.bbk.updater.action.NETWORK_CHANGE:
+        5986929 com.bbk.updater/.receiver.NetworkReceiver filter a574ae
+          Action: "com.bbk.updater.action.NETWORK_CHANGE"
+          mPriority=1000, mOrder=0, mHasStaticPartialTypes=false, mHasDynamicPartialTypes=false
+      com.bbk.updater.AB_PACKAGE_DELETE:
+        d83cc47 com.bbk.updater/.install.NotificationReceiver filter f45cc74
+          Action: "com.bbk.updater.AB_INSTALL_NOTI_REBOOT_NOW_CLICK"
+          Action: "com.bbk.updater.AB_INSTALL_NOTI_REBOOT_NIGHT_CLICK"
+          Action: "com.bbk.updater.action.notification.INSTALL"
+          Action: "com.bbk.updater_AB_INSTALL_RESUME_INSTALL_CLICK"
+          Action: "com.bbk.updater.AB_PACKAGE_DELETE"
+      com.vivo.updater.action.INSTALL_ALARM:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.vivo.updater.download.status.change:
+        8e399f3 com.bbk.updater/.receiver.DownloadReceiver filter 6c2c6b0
+          Action: "com.vivo.updater.download.status.change"
+      com.vivo.bbk.action.show.setup.tips:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      new.com.bbk.updater.action.AUTO_CHECK:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.bbk.updater.system.broken:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      new.com.vivo.updater.action.SCREEN_OFF:
+        c93e24f com.bbk.updater/.receiver.ScreenActionRecorder filter 2059ddc
+          Action: "new.com.vivo.updater.action.SCREEN_ON"
+          Action: "new.com.vivo.updater.action.SCREEN_OFF"
+          Action: "com.vivo.updater.action.USER_PRESENT"
+      com.vivo.updater.alarm.action.LOCKED_TRIGGER:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.bbk.updater.data_statistics_test:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.vivo.updater.action.USER_PRESENT:
+        c93e24f com.bbk.updater/.receiver.ScreenActionRecorder filter 2059ddc
+          Action: "new.com.vivo.updater.action.SCREEN_ON"
+          Action: "new.com.vivo.updater.action.SCREEN_OFF"
+          Action: "com.vivo.updater.action.USER_PRESENT"
+      com.vivo.daemonService.unifiedconfig.update_finish_broadcast_Updater:
+        abb959d com.bbk.updater/.receiver.ConfigEngineReceiver filter de2ba12
+          Action: "com.vivo.daemonService.unifiedconfig.update_finish_broadcast_Updater"
+          Action: "com.bbk.updater.unifiedconfig.update_finish_broadcast_Updater_simulate"
+      com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      android.intent.action.LOCKED_BOOT_COMPLETED:
+        7025f57 com.bbk.updater/.receiver.BootCompleteReceiver filter 9594a44
+          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "com.vivo.updater.action.SHUT_DOWN"
+          mPriority=1000, mOrder=0, mHasStaticPartialTypes=false, mHasDynamicPartialTypes=false
+        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+          Action: "new.com.vivo.updater.update_install_freq"
+          Action: "new.com.vivo.updater.action.CANCEL_REMIND"
+          Action: "new.com.vivo.updater.recover_install_plan"
+          Action: "new.com.vivo.updater.config_alarm"
+          Action: "new.com.vivo.updater.action.SET_INTELLIGENT_INSTALL_CHECK_TIME"
+          Action: "new.com.vivo.updater.action.CANCEL_INTELLIGENT_INSTALL"
+          Action: "android.intent.action.TIME_SET"
+          Action: "com.bbk.updater.SAL_AUTO_POLL"
+          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+          Action: "android.intent.action.BOOT_COMPLETED"
+      com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.bbk.updater.AB_INSTALL_NOTI_REBOOT_NOW_CLICK:
+        d83cc47 com.bbk.updater/.install.NotificationReceiver filter f45cc74
+          Action: "com.bbk.updater.AB_INSTALL_NOTI_REBOOT_NOW_CLICK"
+          Action: "com.bbk.updater.AB_INSTALL_NOTI_REBOOT_NIGHT_CLICK"
+          Action: "com.bbk.updater.action.notification.INSTALL"
+          Action: "com.bbk.updater_AB_INSTALL_RESUME_INSTALL_CLICK"
+          Action: "com.bbk.updater.AB_PACKAGE_DELETE"
+      com.vivo.updater.action.POWER_CONNECT:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.vivo.updater.alarm.action.CHARGED_TRIGGER:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      new.com.vivo.updater.set_install_plan:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.vivo.updater.action.AUTO_DOWNLOAD:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      bbk.start.UpdateActivity:
+        956546b com.bbk.updater/.receiver.compatibleReceivers filter d3cbbc8
+          Action: "bbk.start.UpdateActivity"
+      com.bbk.updater.action.CHECK_INSTANTLY:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.vivo.pushservice.action.RECEIVE:
+        3c0ee99 com.bbk.updater/.receiver.PushServiceReceiver filter 52e655e
+          Action: "com.vivo.pushservice.action.RECEIVE"
+      new.com.vivo.updater.action.SCREEN_ON:
+        c93e24f com.bbk.updater/.receiver.ScreenActionRecorder filter 2059ddc
+          Action: "new.com.vivo.updater.action.SCREEN_ON"
+          Action: "new.com.vivo.updater.action.SCREEN_OFF"
+          Action: "com.vivo.updater.action.USER_PRESENT"
+      com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.bbk.updater.unifiedconfig.update_finish_broadcast_Updater_simulate:
+        abb959d com.bbk.updater/.receiver.ConfigEngineReceiver filter de2ba12
+          Action: "com.vivo.daemonService.unifiedconfig.update_finish_broadcast_Updater"
+          Action: "com.bbk.updater.unifiedconfig.update_finish_broadcast_Updater_simulate"
+      com.bbk.updater.action.dialog.DOWNLOAD:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.bbk.updater.selfupgrade_install_check:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.bbk.updater.action.AUTO_CHECK_HOURLY:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      vivo.intent.action.COTA_CUST_TYPE_CHANGE:
+        a26e5e3 com.bbk.updater/.cota.CotaStatusChangeReceiver filter d2d3be0
+          Action: "vivo.intent.action.COTA_ACTIVATE_SUC"
+          Action: "vivo.intent.action.COTA_CUST_TYPE_CHANGE"
+      android.intent.action.TIME_SET:
+        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+          Action: "new.com.vivo.updater.update_install_freq"
+          Action: "new.com.vivo.updater.action.CANCEL_REMIND"
+          Action: "new.com.vivo.updater.recover_install_plan"
+          Action: "new.com.vivo.updater.config_alarm"
+          Action: "new.com.vivo.updater.action.SET_INTELLIGENT_INSTALL_CHECK_TIME"
+          Action: "new.com.vivo.updater.action.CANCEL_INTELLIGENT_INSTALL"
+          Action: "android.intent.action.TIME_SET"
+          Action: "com.bbk.updater.SAL_AUTO_POLL"
+          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+          Action: "android.intent.action.BOOT_COMPLETED"
+      com.vivo.updater.pushservice.RECEIVE:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.bbk.updater.action.INSTALL:
+        6a56ee5 com.bbk.updater/.receiver.InstallReceiver filter 6582dba
+          Action: "com.bbk.updater.action.INSTALL"
+          Action: "com.bbk.updater.SYSTEM_UPDATE_STATE"
+      new.com.vivo.updater.action.SET_INTELLIGENT_INSTALL_CHECK_TIME:
+        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+          Action: "new.com.vivo.updater.update_install_freq"
+          Action: "new.com.vivo.updater.action.CANCEL_REMIND"
+          Action: "new.com.vivo.updater.recover_install_plan"
+          Action: "new.com.vivo.updater.config_alarm"
+          Action: "new.com.vivo.updater.action.SET_INTELLIGENT_INSTALL_CHECK_TIME"
+          Action: "new.com.vivo.updater.action.CANCEL_INTELLIGENT_INSTALL"
+          Action: "android.intent.action.TIME_SET"
+          Action: "com.bbk.updater.SAL_AUTO_POLL"
+          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+          Action: "android.intent.action.BOOT_COMPLETED"
+      android.intent.action.BOOT_COMPLETED:
+        7025f57 com.bbk.updater/.receiver.BootCompleteReceiver filter 9594a44
+          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "com.vivo.updater.action.SHUT_DOWN"
+          mPriority=1000, mOrder=0, mHasStaticPartialTypes=false, mHasDynamicPartialTypes=false
+        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+          Action: "new.com.vivo.updater.update_install_freq"
+          Action: "new.com.vivo.updater.action.CANCEL_REMIND"
+          Action: "new.com.vivo.updater.recover_install_plan"
+          Action: "new.com.vivo.updater.config_alarm"
+          Action: "new.com.vivo.updater.action.SET_INTELLIGENT_INSTALL_CHECK_TIME"
+          Action: "new.com.vivo.updater.action.CANCEL_INTELLIGENT_INSTALL"
+          Action: "android.intent.action.TIME_SET"
+          Action: "com.bbk.updater.SAL_AUTO_POLL"
+          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+          Action: "android.intent.action.BOOT_COMPLETED"
+      new.com.vivo.updater.action.CANCEL_INTELLIGENT_INSTALL:
+        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+          Action: "new.com.vivo.updater.update_install_freq"
+          Action: "new.com.vivo.updater.action.CANCEL_REMIND"
+          Action: "new.com.vivo.updater.recover_install_plan"
+          Action: "new.com.vivo.updater.config_alarm"
+          Action: "new.com.vivo.updater.action.SET_INTELLIGENT_INSTALL_CHECK_TIME"
+          Action: "new.com.vivo.updater.action.CANCEL_INTELLIGENT_INSTALL"
+          Action: "android.intent.action.TIME_SET"
+          Action: "com.bbk.updater.SAL_AUTO_POLL"
+          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+          Action: "android.intent.action.BOOT_COMPLETED"
+      new.com.vivo.updater.config_alarm:
+        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+          Action: "new.com.vivo.updater.update_install_freq"
+          Action: "new.com.vivo.updater.action.CANCEL_REMIND"
+          Action: "new.com.vivo.updater.recover_install_plan"
+          Action: "new.com.vivo.updater.config_alarm"
+          Action: "new.com.vivo.updater.action.SET_INTELLIGENT_INSTALL_CHECK_TIME"
+          Action: "new.com.vivo.updater.action.CANCEL_INTELLIGENT_INSTALL"
+          Action: "android.intent.action.TIME_SET"
+          Action: "com.bbk.updater.SAL_AUTO_POLL"
+          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+          Action: "android.intent.action.BOOT_COMPLETED"
+      com.vivo.updater.silent_install:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.vivo.updater.cancal_install_plan:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.bbk.updater.action.TIME_SET_CHECK:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.vivo.updater.RECOVERY_EXISTING_PLAN:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.bbk.updater.action.notification.INSTALL:
+        d83cc47 com.bbk.updater/.install.NotificationReceiver filter f45cc74
+          Action: "com.bbk.updater.AB_INSTALL_NOTI_REBOOT_NOW_CLICK"
+          Action: "com.bbk.updater.AB_INSTALL_NOTI_REBOOT_NIGHT_CLICK"
+          Action: "com.bbk.updater.action.notification.INSTALL"
+          Action: "com.bbk.updater_AB_INSTALL_RESUME_INSTALL_CLICK"
+          Action: "com.bbk.updater.AB_PACKAGE_DELETE"
+      com.bbk.updater.selfupgrade_download_check:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.bbk.updater.AB_INSTALL_NOTI_REBOOT_NIGHT_CLICK:
+        d83cc47 com.bbk.updater/.install.NotificationReceiver filter f45cc74
+          Action: "com.bbk.updater.AB_INSTALL_NOTI_REBOOT_NOW_CLICK"
+          Action: "com.bbk.updater.AB_INSTALL_NOTI_REBOOT_NIGHT_CLICK"
+          Action: "com.bbk.updater.action.notification.INSTALL"
+          Action: "com.bbk.updater_AB_INSTALL_RESUME_INSTALL_CLICK"
+          Action: "com.bbk.updater.AB_PACKAGE_DELETE"
+      new.com.vivo.updater.update_install_freq:
+        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+          Action: "new.com.vivo.updater.update_install_freq"
+          Action: "new.com.vivo.updater.action.CANCEL_REMIND"
+          Action: "new.com.vivo.updater.recover_install_plan"
+          Action: "new.com.vivo.updater.config_alarm"
+          Action: "new.com.vivo.updater.action.SET_INTELLIGENT_INSTALL_CHECK_TIME"
+          Action: "new.com.vivo.updater.action.CANCEL_INTELLIGENT_INSTALL"
+          Action: "android.intent.action.TIME_SET"
+          Action: "com.bbk.updater.SAL_AUTO_POLL"
+          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+          Action: "android.intent.action.BOOT_COMPLETED"
+      com.bbk.updater_AB_INSTALL_RESUME_INSTALL_CLICK:
+        d83cc47 com.bbk.updater/.install.NotificationReceiver filter f45cc74
+          Action: "com.bbk.updater.AB_INSTALL_NOTI_REBOOT_NOW_CLICK"
+          Action: "com.bbk.updater.AB_INSTALL_NOTI_REBOOT_NIGHT_CLICK"
+          Action: "com.bbk.updater.action.notification.INSTALL"
+          Action: "com.bbk.updater_AB_INSTALL_RESUME_INSTALL_CLICK"
+          Action: "com.bbk.updater.AB_PACKAGE_DELETE"
+      com.bbk.updater.aciton.dialog.summary.clicked:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      new.com.vivo.updater.action.CANCEL_REMIND:
+        c57fd3f com.bbk.updater/.remote.RefreshTimerReceiver filter e5a360c
+          Action: "new.com.vivo.updater.update_install_freq"
+          Action: "new.com.vivo.updater.action.CANCEL_REMIND"
+          Action: "new.com.vivo.updater.recover_install_plan"
+          Action: "new.com.vivo.updater.config_alarm"
+          Action: "new.com.vivo.updater.action.SET_INTELLIGENT_INSTALL_CHECK_TIME"
+          Action: "new.com.vivo.updater.action.CANCEL_INTELLIGENT_INSTALL"
+          Action: "android.intent.action.TIME_SET"
+          Action: "com.bbk.updater.SAL_AUTO_POLL"
+          Action: "android.intent.action.LOCKED_BOOT_COMPLETED"
+          Action: "android.intent.action.BOOT_COMPLETED"
+      com.bbk.updater.action.notification.DOWNLOAD:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.bbk.updater.action.NOTIFICATION_DELETE:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      new.com.vivo.updater.install_tonight:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+      com.vivo.updater.action.POPPED_DIALOG:
+        8c31461 com.bbk.updater/.receiver.AllReceivers filter f4b6b86
+          Action: "com.vivo.updater.silent_install"
+          Action: "com.vivo.updater.cancel_silent_install"
+          Action: "com.vivo.updater.action.POWER_CONNECT"
+          Action: "com.vivo.updater.action.AUTO_DOWNLOAD"
+          Action: "com.vivo.updater.action.UPDATE_ALARM"
+          Action: "com.vivo.updater.action.INSTALL_ALARM"
+          Action: "com.vivo.updater.action.POPPED_DIALOG"
+          Action: "com.vivo.bbk.action.show.setup.tips"
+          Action: "new.com.bbk.updater.action.AUTO_CHECK"
+          Action: "com.bbk.updater.action.CHECK_INSTANTLY"
+          Action: "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+          Action: "com.vivo.updater.pushservice.RECEIVE"
+          Action: "new.com.vivo.updater.install_tonight"
+          Action: "new.com.vivo.updater.set_install_plan"
+          Action: "com.vivo.updater.cancal_install_plan"
+          Action: "com.vivo.updater.alarm.action.CHARGED_TRIGGER"
+          Action: "com.vivo.updater.alarm.action.LOCKED_TRIGGER"
+          Action: "com.vivo.updater.action.SET_INTELLIGENT_INSTALL_PLAN"
+          Action: "com.vivo.updater.action.EXECUTE_INTELLIGENT_INSTALL"
+          Action: "new.com.bbk.updater.action.SET_INTELLIGENT_INSTALL_PLAN_INSTANTLY"
+          Action: "com.bbk.updater.dialog.action"
+          Action: "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+          Action: "com.bbk.updater.data_statistics_test"
+          Action: "com.bbk.updater.action.TIME_SET_CHECK"
+          Action: "com.vivo.updater.RECOVERY_EXISTING_PLAN"
+          Action: "com.bbk.updater.system.broken"
+          Action: "com.bbk.updater.action.dialog.DOWNLOAD"
+          Action: "com.bbk.updater.action.notification.DOWNLOAD"
+          Action: "com.bbk.updater.action.NOTIFICATION_DELETE"
+          Action: "com.bbk.updater.selfupgrade_install_check"
+          Action: "com.bbk.updater.selfupgrade_download_check"
+          Action: "com.bbk.updater.aciton.dialog.summary.clicked"
+          Action: "com.vivo.updater.demo_video_install"
+          Action: "com.vivo.updater.action.POLICY_MANAGER_STATE_CHANGED"
+          Action: "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT"
+
+Service Resolver Table:
+  Non-Data Actions:
+      new.com.vivo.daemonService.UpdateTipsService:
+        592e5b com.bbk.updater/.remote.UpdateTipsService filter 77aa6f8 permission com.bbk.updater.permission.UpdateTipsService
+          Action: "new.com.vivo.daemonService.UpdateTipsService"
+      com.vivo.updater.remote:
+        9e8d7d1 com.bbk.updater/.remote.RemoteService filter 68bc236 permission com.bbk.updater.permission.USE_COMPONENT
+          Action: "com.bbk.updater.remote"
+          Action: "com.vivo.updater.remote"
+      com.bbk.updater.remote:
+        9e8d7d1 com.bbk.updater/.remote.RemoteService filter 68bc236 permission com.bbk.updater.permission.USE_COMPONENT
+          Action: "com.bbk.updater.remote"
+          Action: "com.vivo.updater.remote"
+
+Provider Resolver Table:
+  Non-Data Actions:
+      android.content.action.SEARCH_INDEXABLES_PROVIDER:
+        228db55 com.bbk.updater/.search.UpdaterSearchIndexablesProvider filter 6f7796a
+          Action: "android.content.action.SEARCH_INDEXABLES_PROVIDER"
+
+Domain verification status:
+
+Permissions:
+  Permission [com.bbk.updater.permisssion.LOCAL_UPGRADE_ACTIVITY] (7db46c6):
+    sourcePackage=com.bbk.updater
+    uid=10128 gids=[] type=0 prot=signature|privileged
+    perm=PermissionInfo{f3a0931 com.bbk.updater.permisssion.LOCAL_UPGRADE_ACTIVITY}
+
+Permissions:
+  Permission [com.bbk.updater.permission.DownloadReceiver] (b11a687):
+    sourcePackage=com.bbk.updater
+    uid=10128 gids=[] type=0 prot=signature|privileged
+    perm=PermissionInfo{f335597 com.bbk.updater.permission.DownloadReceiver}
+
+Permissions:
+  Permission [com.bbk.updater.permission.USE_COMPONENT] (aab39b4):
+    sourcePackage=com.bbk.updater
+    uid=10128 gids=[] type=0 prot=signature|privileged
+    perm=PermissionInfo{8f5076d com.bbk.updater.permission.USE_COMPONENT}
+
+Permissions:
+  Permission [com.bbk.updater.permission.NetWorkReceiver] (bb499dd):
+    sourcePackage=com.bbk.updater
+    uid=10128 gids=[] type=0 prot=signature|privileged
+    perm=PermissionInfo{3cdb433 com.bbk.updater.permission.NetWorkReceiver}
+
+Permissions:
+  Permission [com.bbk.updater.permission.ScreenActionRecorder] (b50952):
+    sourcePackage=com.bbk.updater
+    uid=10128 gids=[] type=0 prot=signature|privileged
+    perm=PermissionInfo{fe7ad69 com.bbk.updater.permission.ScreenActionRecorder}
+
+Permissions:
+  Permission [com.bbk.updater.permission.TRIAL_VERSION] (d582423):
+    sourcePackage=com.bbk.updater
+    uid=10128 gids=[] type=0 prot=signature|privileged
+    perm=PermissionInfo{6a5608f com.bbk.updater.permission.TRIAL_VERSION}
+
+Permissions:
+  Permission [com.bbk.updater.permission.UpdateTipsService] (f9c3d20):
+    sourcePackage=com.bbk.updater
+    uid=10128 gids=[] type=0 prot=signature|privileged
+    perm=PermissionInfo{244b725 com.bbk.updater.permission.UpdateTipsService}
+
+Registered ContentProviders:
+  com.bbk.updater/.provider.RemoteContentProvider:
+    Provider{2ad70fa com.bbk.updater/.provider.RemoteContentProvider}
+  com.bbk.updater/com.vivo.tipssdk.data.TipsProvider:
+    Provider{7a176ab com.bbk.updater/com.vivo.tipssdk.data.TipsProvider}
+  com.bbk.updater/com.vivo.upgrade.library.provider.FileProvider:
+    Provider{529d108 com.bbk.updater/com.vivo.upgrade.library.provider.FileProvider}
+  com.bbk.updater/androidx.core.content.FileProvider:
+    Provider{4aea0a1 com.bbk.updater/androidx.core.content.FileProvider}
+  com.bbk.updater/.search.UpdaterSearchIndexablesProvider:
+    Provider{228db55 com.bbk.updater/.search.UpdaterSearchIndexablesProvider}
+  com.bbk.updater/.provider.InstallAndShutdownJusticeProvider:
+    Provider{d1a2c6 com.bbk.updater/.provider.InstallAndShutdownJusticeProvider}
+  com.bbk.updater/com.vivo.ic.dm.DownloadProvider:
+    Provider{3fed287 com.bbk.updater/com.vivo.ic.dm.DownloadProvider}
+
+ContentProvider Authorities:
+  [com.bbk.updater.provider]:
+    Provider{d1a2c6 com.bbk.updater/.provider.InstallAndShutdownJusticeProvider}
+      applicationInfo=ApplicationInfo{6e5f6d9 com.bbk.updater}
+  [com.bbk.updater.upgrade]:
+    Provider{529d108 com.bbk.updater/com.vivo.upgrade.library.provider.FileProvider}
+      applicationInfo=ApplicationInfo{5f6689e com.bbk.updater}
+  [com.bbk.updater.os11.fileprovider]:
+    Provider{4aea0a1 com.bbk.updater/androidx.core.content.FileProvider}
+      applicationInfo=ApplicationInfo{5fedf7f com.bbk.updater}
+  [com.bbk.updater]:
+    Provider{228db55 com.bbk.updater/.search.UpdaterSearchIndexablesProvider}
+      applicationInfo=ApplicationInfo{d80b4c com.bbk.updater}
+  [com.bbk.updater.ICDM]:
+    Provider{3fed287 com.bbk.updater/com.vivo.ic.dm.DownloadProvider}
+      applicationInfo=ApplicationInfo{8362795 com.bbk.updater}
+  [com.vivo.updater.remote]:
+    Provider{2ad70fa com.bbk.updater/.provider.RemoteContentProvider}
+      applicationInfo=ApplicationInfo{15c70aa com.bbk.updater}
+  [com.bbk.updater.sdk.FileProvider]:
+    Provider{7a176ab com.bbk.updater/com.vivo.tipssdk.data.TipsProvider}
+      applicationInfo=ApplicationInfo{c2bf49b com.bbk.updater}
+
+Key Set Manager:
+  [com.bbk.updater]
+      Signing KeySets: 3
+
+Packages:
+  Package [com.bbk.updater] (1e58b7f):
+    userId=10128
+    pkg=Package{277474c com.bbk.updater}
+    codePath=/system/app/Updater
+    resourcePath=/system/app/Updater
+    legacyNativeLibraryDir=/system/app/Updater/lib
+    extractNativeLibs=false
+    primaryCpuAbi=arm64-v8a
+    secondaryCpuAbi=null
+    cpuAbiOverride=null
+    versionCode=904090407 minSdk=29 targetSdk=31
+    minExtensionVersions=[]
+    versionName=4.9.4.7
+    usesNonSdkApi=false
+    splits=[base]
+    apkSigningVersion=3
+    applicationInfo=PackageImpl{277474c com.bbk.updater}
+    flags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_UNRESIZEABLE ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_REQUEST_LEGACY_EXTERNAL_STORAGE DIRECT_BOOT_AWARE PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    forceQueryable=false
+    queriesPackages=[]
+    dataDir=/data/user/0/com.bbk.updater
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    timeStamp=2009-01-01 08:00:00
+    firstInstallTime=2009-01-01 08:00:00
+    lastUpdateTime=2009-01-01 08:00:00
+    signatures=PackageSignatures{54ab395 version:3, signatures:[cd97f879], past signatures:[]}
+    installPermissionsFixed=false
+    pkgFlags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA ]
+    declared permissions:
+      com.bbk.updater.permisssion.LOCAL_UPGRADE_ACTIVITY: prot=signature|privileged, INSTALLED
+      com.bbk.updater.permission.USE_COMPONENT: prot=signature|privileged, INSTALLED
+      com.bbk.updater.permission.TRIAL_VERSION: prot=signature|privileged, INSTALLED
+      com.bbk.updater.permission.UpdateTipsService: prot=signature|privileged, INSTALLED
+      com.bbk.updater.permission.DownloadReceiver: prot=signature|privileged, INSTALLED
+      com.bbk.updater.permission.NetWorkReceiver: prot=signature|privileged, INSTALLED
+      com.bbk.updater.permission.ScreenActionRecorder: prot=signature|privileged, INSTALLED
+    requested permissions:
+      android.permission.ACCESS_DOWNLOAD_MANAGER
+      android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.INTERNET
+      android.permission.READ_PRIVILEGED_PHONE_STATE
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.RECEIVE_BOOT_COMPLETED
+      android.permission.ACCESS_ALL_DOWNLOADS
+      android.permission.WRITE_SETTINGS
+      android.permission.REAL_GET_TASKS
+      android.permission.GET_TASKS
+      android.permission.READ_EXTERNAL_STORAGE
+      android.permission.READ_MEDIA_STORAGE
+      android.permission.WRITE_MEDIA_STORAGE
+      android.permission.RECOVERY
+      android.permission.WAKE_LOCK
+      com.bbk.account.permission.READ_ACCOUNTINFO
+      android.permission.VIBRATE
+      android.permission.SYSTEM_ALERT_WINDOW
+      android.permission.READ_CALENDAR
+      android.permission.INTERNAL_SYSTEM_WINDOW
+      android.permission.EXPAND_STATUS_BAR
+      android.permission.SET_ACTIVITY_WATCHER
+      android.permission.INTERACT_ACROSS_USERS
+      android.permission.INTERACT_ACROSS_USERS_FULL
+      android.permission.MANAGE_USERS
+      com.vivo.abe.permission.unifiedconfig.provider
+      android.permission.FOREGROUND_SERVICE
+      com.vivo.basemanager.START_ACTIVITY
+      android.permission.MANAGE_EXTERNAL_STORAGE
+      android.permission.QUERY_ALL_PACKAGES
+      android.permission.INSTALL_SELF_UPDATES
+      android.permission.REQUEST_INSTALL_PACKAGES
+      android.permission.ACCESS_CACHE_FILESYSTEM
+      android.permission.REBOOT
+      android.permission.SHUTDOWN
+      android.permission.UPDATE_DEVICE_STATS
+      android.permission.CONNECTIVITY_INTERNAL
+      android.permission.READ_NETWORK_USAGE_HISTORY
+      android.permission.WRITE_SECURE_SETTINGS
+      android.permission.MANAGE_USB
+      com.vivo.abe.permission.configlist_provider
+      com.bbk.updater.permission.UpdateTipsService
+      com.bbk.updater.permission.DownloadReceiver
+      com.bbk.updater.permission.NetWorkReceiver
+      com.bbk.updater.permission.ScreenActionRecorder
+      com.vivo.cota.service.access
+      com.vivo.abe.permission.user.conset.record
+      com.android.BBKClock.permission.READ_ALARM_PROVIDER
+      com.vivo.abe.permission.action.openhpactivity
+      com.bbk.updater.permission.USE_COMPONENT
+      com.bbk.updater.permission.TRIAL_VERSION
+      android.permission.GET_ACCOUNTS
+      android.permission.MANAGE_ACCOUNTS
+      android.permission.AUTHENTICATE_ACCOUNTS
+      android.permission.READ_PHONE_STATE
+      android.permission.BLUETOOTH
+      com.vivo.Tips.permission.LOAD_DATA_ACTIVITY
+      com.vivo.permissionmanager.activity.privacysettings
+      com.iqoo.secure.permission.START_PRIVACY_ACTIVITY
+      com.bbk.launcher2.permission.JUMP_ORIGIN
+      com.bbk.launcher2.permission.ENTER_VIRTUAL_SYSTEM
+      com.vivo.xspace.permission.ENTER_VERIFY_PAGE
+      com.vivo.agent.permission.VOICE_RECOGNITION
+      com.vivo.smartshot.permission.SETTINGS_MENU
+      com.vivo.vtouch.permission.ANALYSE
+      android.permission.smartmultiwindow.SMARTMULTIWINDOW_OP
+      com.vivo.agent.permission.VIVO_TRANSLATOR
+    install permissions:
+      android.permission.REAL_GET_TASKS: granted=true
+      android.permission.ACCESS_CACHE_FILESYSTEM: granted=true
+      android.permission.WRITE_SETTINGS: granted=true
+      android.permission.RECOVERY: granted=true
+      android.permission.MANAGE_EXTERNAL_STORAGE: granted=true
+      com.bbk.launcher2.permission.JUMP_ORIGIN: granted=true
+      android.permission.MANAGE_ACCOUNTS: granted=true
+      android.permission.SYSTEM_ALERT_WINDOW: granted=true
+      android.permission.SHUTDOWN: granted=true
+      android.permission.INTERNAL_SYSTEM_WINDOW: granted=true
+      com.vivo.abe.permission.unifiedconfig.provider: granted=true
+      com.bbk.updater.permission.DownloadReceiver: granted=true
+      android.permission.FOREGROUND_SERVICE: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      com.vivo.permissionmanager.activity.privacysettings: granted=true
+      com.vivo.xspace.permission.ENTER_VERIFY_PAGE: granted=true
+      android.permission.EXPAND_STATUS_BAR: granted=true
+      com.vivo.agent.permission.VOICE_RECOGNITION: granted=true
+      android.permission.BLUETOOTH: granted=true
+      com.bbk.updater.permission.USE_COMPONENT: granted=true
+      android.permission.WRITE_MEDIA_STORAGE: granted=true
+      android.permission.GET_TASKS: granted=true
+      android.permission.AUTHENTICATE_ACCOUNTS: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.UPDATE_DEVICE_STATS: granted=true
+      com.bbk.updater.permission.NetWorkReceiver: granted=true
+      android.permission.MANAGE_USB: granted=true
+      android.permission.ACCESS_ALL_DOWNLOADS: granted=true
+      android.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      android.permission.WRITE_SECURE_SETTINGS: granted=true
+      android.permission.SET_ACTIVITY_WATCHER: granted=true
+      com.bbk.updater.permission.ScreenActionRecorder: granted=true
+      android.permission.READ_PRIVILEGED_PHONE_STATE: granted=true
+      android.permission.ACCESS_DOWNLOAD_MANAGER: granted=true
+      com.bbk.updater.permission.TRIAL_VERSION: granted=true
+      android.permission.MANAGE_USERS: granted=true
+      com.android.BBKClock.permission.READ_ALARM_PROVIDER: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.INTERACT_ACROSS_USERS: granted=true
+      android.permission.smartmultiwindow.SMARTMULTIWINDOW_OP: granted=true
+      android.permission.READ_NETWORK_USAGE_HISTORY: granted=true
+      android.permission.INSTALL_SELF_UPDATES: granted=true
+      com.vivo.smartshot.permission.SETTINGS_MENU: granted=true
+      com.vivo.abe.permission.action.openhpactivity: granted=true
+      com.vivo.vtouch.permission.ANALYSE: granted=true
+      android.permission.REBOOT: granted=true
+      com.bbk.account.permission.READ_ACCOUNTINFO: granted=true
+      com.iqoo.secure.permission.START_PRIVACY_ACTIVITY: granted=true
+      com.bbk.updater.permission.UpdateTipsService: granted=true
+      android.permission.CONNECTIVITY_INTERNAL: granted=true
+      com.vivo.abe.permission.configlist_provider: granted=true
+      android.permission.VIBRATE: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      com.vivo.abe.permission.user.conset.record: granted=true
+      android.permission.REQUEST_INSTALL_PACKAGES: granted=true
+      android.permission.QUERY_ALL_PACKAGES: granted=true
+      com.vivo.agent.permission.VIVO_TRANSLATOR: granted=true
+      com.vivo.cota.service.access: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED: granted=true
+      com.bbk.launcher2.permission.ENTER_VIRTUAL_SYSTEM: granted=true
+    User 0: ceDataInode=6720 installed=true hidden=false vHidden=1 suspended=false distractionFlags=0 stopped=true notLaunched=false enabled=0 instant=false virtual=false
+      gids=[2001, 3002, 3003, 3007, 3006]
+      runtime permissions:
+        android.permission.READ_CALENDAR: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED]
+        android.permission.READ_EXTERNAL_STORAGE: granted=true, flags=[ GRANTED_BY_DEFAULT|RESTRICTION_SYSTEM_EXEMPT|RESTRICTION_UPGRADE_EXEMPT]
+        android.permission.READ_PHONE_STATE: granted=true, flags=[ GRANTED_BY_DEFAULT]
+        android.permission.GET_ACCOUNTS: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED]
+        android.permission.WRITE_EXTERNAL_STORAGE: granted=true, flags=[ GRANTED_BY_DEFAULT|RESTRICTION_SYSTEM_EXEMPT|RESTRICTION_UPGRADE_EXEMPT]
+      disabledComponents:
+        com.bbk.updater.receiver.ScreenActionRecorder
+
+Queries:
+  system apps queryable: false
+  forceQueryable:
+    com.bbk.updater
+  queries via package name:
+  queries via intent:
+  queryable via interaction:
+    User 0:
+      [com.vivo.vivokaraoke,com.mediatek.atci.service,com.iqoo.powersaving,com.vivo.faceui,com.android.wallpaperbackup,com.android.keychain,com.vivo.sps,com.bbk.facewake,com.vivo.abe,com.vivo.smartmultiwindow,com.vivo.vtouch,com.wapi.wapicertmanager,com.vivo.upslide,com.vivo.setupwizard,com.vivo.contentcatcher,com.vivo.fuzzylocationmanager,com.android.localtransport,com.vivo.pem,com.vivo.vibrator4d,com.vivo.assistant,com.android.inputdevices,com.vivo.multinlp,com.vivo.permissionmanager,com.vivo.doubleinstance,com.vivo.globalanimation,com.android.BBKCrontab,com.vivo.vms,com.vivo.daemonService,com.vivo.dr,com.android.bbklog,com.android.providers.settings,com.mediatek,com.vivo.networkstate,com.android.settings,com.vivo.appfilter,com.mobile.cos.iroaming,com.android.networkstack.inprocess,com.android.server.telecom,com.mediatek.location.lppe.main,com.vivo.epm,com.android.location.fused,com.vivo.vdfs,com.vivo.car.networking,com.vivo.fingerprintengineer,com.android.dynsystem,com.vivo.faceunlock,com.vivo.aiengine,com.vivo.smartshot,com.iqoo.aftersale.engineermode,com.vivo.audiofx,com.vivo.gamewatch,com.vivo.fuelsummary,com.vivo.smartunlock,com.vivo.minscreen,com.vivo.voicewakeup,com.android.networkstack.tethering.inprocess,com.bbk.SuperPowerSave,com.trustonic.teeservice,com.vivo.connbase,com.vivo.floatingball,android,com.vivo.fingerprint,com.vivo.fingerprintui,com.vivo.gamecube]:
+        com.bbk.updater
+      com.vivo.ai.ime:
+        com.bbk.updater
+      com.vivo.pushservice:
+        com.bbk.updater
+      com.bbk.updater:
+        [com.vivo.vivokaraoke,com.mediatek.atci.service,com.iqoo.powersaving,com.vivo.faceui,com.android.wallpaperbackup,com.android.keychain,com.vivo.sps,com.bbk.facewake,com.vivo.abe,com.vivo.smartmultiwindow,com.vivo.vtouch,com.wapi.wapicertmanager,com.vivo.upslide,com.vivo.setupwizard,com.vivo.contentcatcher,com.vivo.fuzzylocationmanager,com.android.localtransport,com.vivo.pem,com.vivo.vibrator4d,com.vivo.assistant,com.android.inputdevices,com.vivo.multinlp,com.vivo.permissionmanager,com.vivo.doubleinstance,com.vivo.globalanimation,com.android.BBKCrontab,com.vivo.vms,com.vivo.daemonService,com.vivo.dr,com.android.bbklog,com.android.providers.settings,com.mediatek,com.vivo.networkstate,com.android.settings,com.vivo.appfilter,com.mobile.cos.iroaming,com.android.networkstack.inprocess,com.android.server.telecom,com.mediatek.location.lppe.main,com.vivo.epm,com.android.location.fused,com.vivo.vdfs,com.vivo.car.networking,com.vivo.fingerprintengineer,com.android.dynsystem,com.vivo.faceunlock,com.vivo.aiengine,com.vivo.smartshot,com.iqoo.aftersale.engineermode,com.vivo.audiofx,com.vivo.gamewatch,com.vivo.fuelsummary,com.vivo.smartunlock,com.vivo.minscreen,com.vivo.voicewakeup,com.android.networkstack.tethering.inprocess,com.bbk.SuperPowerSave,com.trustonic.teeservice,com.vivo.connbase,com.vivo.floatingball,android,com.vivo.fingerprint,com.vivo.fingerprintui,com.vivo.gamecube]
+  queryable via uses-library:
+
+Package Changes:
+  Sequence number=48
+  User 0:
+    seq=5, package=com.google.android.gms
+    seq=6, package=com.bbk.updater
+    seq=7, package=io.github.long36708.vivoupdater
+    seq=9, package=com.android.vending
+    seq=10, package=com.vivo.wallet
+    seq=11, package=com.whxinna.userplatform
+    seq=23, package=com.miHoYo.hkrpg
+    seq=24, package=com.google.android.webview
+    seq=26, package=com.netease.x19
+    seq=27, package=com.android.chrome
+    seq=28, package=io.anuke.mindustry
+    seq=30, package=com.twitter.android
+    seq=31, package=com.azure.authenticator
+    seq=32, package=com.discord
+    seq=33, package=com.kuaishou.nebula
+    seq=34, package=com.openai.chatgpt
+    seq=36, package=com.deepseek.chat
+    seq=38, package=com.eg.android.AlipayGphone
+    seq=39, package=cmb.pb
+    seq=40, package=com.zzw.october
+    seq=41, package=com.qiekj.user
+    seq=42, package=com.sina.weibo
+    seq=43, package=com.tencent.qqmusic
+    seq=44, package=tv.danmaku.bili
+    seq=45, package=com.xunmeng.pinduoduo
+    seq=46, package=com.microsoft.emmx
+    seq=47, package=com.tencent.mobileqq
+
+
+Dexopt state:
+  [com.bbk.updater]
+    path: /system/app/Updater/Updater.apk
+      arm64: [status=verify] [reason=prebuilt]
+
+
+Compiler stats:
+  [com.bbk.updater]
+     Updater.apk - 2027
+Snapshot statistics
+   Unrecorded-hits: 15491  Cork-level: 0
+   Summary stats               TotBlds     TotUsed     TotCork     BigBlds    ShortLvd     TotTime     MaxTime
+          0:51         now           0           0           0           0           0           0           0
+          1:51        0:51           0           0           0           0           0           0           0
+          2:51        1:51           0           0           0           0           0           0           0
+          3:51        2:51           0           0           0           0           0           0           0
+          4:51        3:51           0           0           0           0           0           0           0
+          5:51        4:51           3       17531           0           0           0           2           1
+          6:51        5:51           2       32211           0           0           0           1           1
+          7:51        6:51           0           0           0           0           0           0           0
+          8:51        7:51           0           0           0           0           0           0           0
+          9:51        8:51           6       35489           0           0           1           5           2
+      14:42:01         now        1034     4727762           0          27         110        1522          50
+
+   Build times                  <= 1ms      <= 2ms      <= 5ms     <= 10ms     <= 20ms     <= 50ms    <= 100ms     > 100ms
+          0:51         now           0           0           0           0           0           0           0           0
+          1:51        0:51           0           0           0           0           0           0           0           0
+          2:51        1:51           0           0           0           0           0           0           0           0
+          3:51        2:51           0           0           0           0           0           0           0           0
+          4:51        3:51           0           0           0           0           0           0           0           0
+          5:51        4:51           3           0           0           0           0           0           0           0
+          6:51        5:51           2           0           0           0           0           0           0           0
+          7:51        6:51           0           0           0           0           0           0           0           0
+          8:51        7:51           0           0           0           0           0           0           0           0
+          9:51        8:51           5           1           0           0           0           0           0           0
+      14:42:01         now         903          56          28          21          20           6           0           0
+
+   Use counters                   <= 1        <= 2        <= 5       <= 10       <= 20       <= 50      <= 100       > 100
+          0:51         now           0           0           0           0           0           0           0           0
+          1:51        0:51           0           0           0           0           0           0           0           0
+          2:51        1:51           0           0           0           0           0           0           0           0
+          3:51        2:51           0           0           0           0           0           0           0           0
+          4:51        3:51           0           0           0           0           0           0           0           0
+          5:51        4:51           0           0           0           0           0           0           0           3
+          6:51        5:51           0           0           0           0           0           0           1           1
+          7:51        6:51           0           0           0           0           0           0           0           0
+          8:51        7:51           0           0           0           0           0           0           0           0
+          9:51        8:51           1           0           0           1           0           0           0           4
+      14:42:01         now          90           7          12          19          30          66          72         737

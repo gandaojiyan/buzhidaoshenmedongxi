@@ -1,0 +1,3 @@
+  * ServiceRecord{255dcb3 u0 com.vivo.daemonService/.updater.daemon.UpdaterDaemonService}
+    intent={pkg=com.vivo.daemonService cmp=com.vivo.daemonService/.updater.daemon.UpdaterDaemonService}
+    infoAllowStartForeground=[callingPackage: com.vivo.daemonService; callingUid: 1000; uidState: PER ; intent: Intent { pkg=com.vivo.daemonService cmp=com.vivo.daemonService/.updater.daemon.UpdaterDaemonService }; code:PROC_STATE_PERSISTENT; tempAllowListReason:<,reasonCode:SYSTEM_ALLOW_LISTED,duration:9223372036854775807,callingUid:-1>; targetSdkVersion:29; callerTargetSdkVersion:29; startForegroundCount:0; bindFromPackage:null]
