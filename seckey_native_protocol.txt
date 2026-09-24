@@ -1,0 +1,101 @@
+===== NativeRequest =====
+package com.vivo.seckeysdk.utils;
+
+/* JADX INFO: loaded from: classes.dex */
+public class NativeRequest {
+    private int operateType = 0;
+    private int encryptType = 0;
+    private byte[] data = null;
+    private int keyVersion = 0;
+
+    public int getKeyVersion() {
+        return this.keyVersion;
+    }
+
+    public void setKeyVersion(int i) {
+        this.keyVersion = i;
+    }
+
+    public int getOperateType() {
+        return this.operateType;
+    }
+
+    public void setOperateType(int i) {
+        this.operateType = i;
+    }
+
+    public int getEncryptType() {
+        return this.encryptType;
+    }
+
+    public void setEncryptType(int i) {
+        this.encryptType = i;
+    }
+
+    public byte[] getData() {
+        return this.data;
+    }
+
+    public void setData(byte[] bArr) {
+        this.data = bArr;
+    }
+}
+
+===== NativeResponse =====
+package com.vivo.seckeysdk.utils;
+
+/* JADX INFO: loaded from: classes.dex */
+public class NativeResponse {
+    private int err;
+    private int keyVersion;
+    private byte[] output;
+    private byte[] pubicKeyHash;
+
+    public int getErr() {
+        return this.err;
+    }
+
+    public void setErr(int i) {
+        this.err = i;
+    }
+
+    public byte[] getOutput() {
+        return this.output;
+    }
+
+    public void setOutput(byte[] bArr) {
+        if (bArr == null || bArr.length == 0) {
+            k.a("SecurityKey", "output is null");
+        }
+        this.output = bArr;
+    }
+
+    public int getKeyVersion() {
+        return this.keyVersion;
+    }
+
+    public void setKeyVersion(int i) {
+        this.keyVersion = i;
+    }
+
+    public byte[] getPubicKeyHash() {
+        return this.pubicKeyHash;
+    }
+
+    public void setPubicKeyHash(byte[] bArr) {
+        this.pubicKeyHash = bArr;
+    }
+
+    public String toString() {
+        String str = ("err:" + this.err + ";") + "key version:" + this.keyVersion + ";";
+        byte[] bArr = this.output;
+        if (bArr != null && bArr.length != 0) {
+            str = str + "output:" + new String(this.output) + ";";
+        }
+        byte[] bArr2 = this.pubicKeyHash;
+        if (bArr2 == null || bArr2.length == 0) {
+            return str;
+        }
+        return str + "pubicKeyHash:" + new String(this.pubicKeyHash) + ";";
+    }
+}

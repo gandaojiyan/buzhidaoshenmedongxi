@@ -1,0 +1,501 @@
+package com.vivo.seckeysdk.utils;
+
+import com.vivo.seckeysdk.utils.SDKCipherNative;
+import java.security.SecureRandom;
+import java.util.Arrays;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+/* JADX INFO: compiled from: SDKCipher.java */
+/* JADX INFO: loaded from: classes.dex */
+public final class f implements a {
+    private static volatile f b;
+
+    /* JADX INFO: renamed from: a, reason: collision with root package name */
+    private i f934a = null;
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final boolean a(boolean z) {
+        return false;
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final boolean d() throws SecurityKeyException {
+        return false;
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final boolean f() {
+        return false;
+    }
+
+    private f() {
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00e0 A[Catch: all -> 0x00e7, TRY_LEAVE, TryCatch #0 {, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000b, B:11:0x0028, B:14:0x0032, B:16:0x0038, B:33:0x00e0, B:17:0x0041, B:19:0x0051, B:20:0x005a, B:22:0x0075, B:23:0x008d, B:26:0x0099, B:28:0x00c0, B:29:0x00c8, B:30:0x00d6), top: B:42:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00e4  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public static synchronized com.vivo.seckeysdk.utils.f a(android.content.Context r6) {
+        /*
+            Method dump skipped, instruction units count: 234
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.utils.f.a(android.content.Context):com.vivo.seckeysdk.utils.f");
+    }
+
+    private void a() {
+        if (this.f934a.c() == 4 || this.f934a.c() == 1 || this.f934a.c() == 3) {
+            if (d(1) == 1) {
+                this.f934a.d("jnisgmain@" + this.f934a.e());
+                return;
+            }
+            this.f934a.d("jnisgmain_v2@" + this.f934a.e());
+            return;
+        }
+        i iVar = this.f934a;
+        iVar.d(iVar.e());
+    }
+
+    /* JADX WARN: Not initialized variable reg: 5, insn: 0x0042: MOVE (r4 I:??[OBJECT, ARRAY]) = (r5 I:??[OBJECT, ARRAY]), block:B:28:0x0041 */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0045 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:116:? A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0078 A[Catch: IOException -> 0x007c, TRY_ENTER, TRY_LEAVE, TryCatch #21 {IOException -> 0x007c, blocks: (B:51:0x0078, B:65:0x0093, B:74:0x00a5), top: B:98:0x005c }] */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x006e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:54:0x007d -> B:94:0x00a8). Please report as a decompilation issue!!! */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    private static java.lang.String g() throws java.lang.Throwable {
+        /*
+            Method dump skipped, instruction units count: 309
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.utils.f.g():java.lang.String");
+    }
+
+    private boolean a(int i, int i2, int i3, NativeResponse nativeResponse) {
+        if (nativeResponse != null) {
+            if (i2 != 21322) {
+                h.a(this.f934a.b(), i, i3, i2, nativeResponse.getErr());
+            }
+            if (nativeResponse.getErr() == 0) {
+                return false;
+            }
+            k.d("SecurityKey", "Actiontype " + h.a(i2) + "error: " + nativeResponse.getErr());
+            return i3 < 2;
+        }
+        if (i2 != 21322) {
+            h.a(this.f934a.b(), i, i3, i2, 1000);
+        }
+        k.d("SecurityKey", "Actiontype " + h.a(i2) + "return null");
+        return i3 < 2;
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final byte[] a(byte[] bArr) throws SecurityKeyException {
+        return a(bArr, 5, this.f934a.a(1));
+    }
+
+    public final byte[] a(byte[] bArr, int i) throws SecurityKeyException {
+        return a(bArr, 5, i);
+    }
+
+    private byte[] a(byte[] bArr, int i, int i2) throws SecurityKeyException {
+        NativeResponse nativeResponseExecute;
+        i();
+        NativeRequest nativeRequest = new NativeRequest();
+        nativeRequest.setOperateType(SDKCipherNative.OperateType.ENCRYPT.ordinal());
+        nativeRequest.setEncryptType(SDKCipherNative.EncryptType.AES.ordinal());
+        nativeRequest.setData(bArr);
+        nativeRequest.setKeyVersion(i2);
+        int i3 = 0;
+        do {
+            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+            i3++;
+        } while (a(4, 21312, i3, nativeResponseExecute));
+        if (nativeResponseExecute.getErr() != 0) {
+            k.d("SecurityKey", "aesEncrypt fail:" + nativeResponseExecute.getErr());
+            throw new SecurityKeyException(nativeResponseExecute.getErr());
+        }
+        if (nativeResponseExecute.getOutput() == null) {
+            k.d("SecurityKey", "aesEncrypt output is null");
+            throw new SecurityKeyException("unknown error!", -1000);
+        }
+        return new ProtocolPackage(this.f934a.c(nativeResponseExecute.getKeyVersion()), nativeResponseExecute.getKeyVersion(), i, nativeResponseExecute.getOutput()).getbytes();
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final byte[] a(byte[] bArr, String str) throws JSONException, SecurityKeyException {
+        int i = 5;
+        try {
+            JSONObject jSONObject = new JSONObject(str);
+            if (jSONObject.has("encryptionType")) {
+                i = jSONObject.getInt("encryptionType");
+            }
+        } catch (JSONException e) {
+            k.a("SecurityKey", "Error: " + e.getMessage(), e);
+        }
+        return a(bArr, i, this.f934a.a(1));
+    }
+
+    private static void i() throws SecurityKeyException {
+        if (SDKCipherNative.isLoadSoOK) {
+            return;
+        }
+        k.d("SecurityKey", "SDKCipherNative libvivoseckey.so is load failed, please check!");
+        throw new SecurityKeyException("libvivoseckey.so is load failed,please check!", SecurityKeyException.SK_ERROR_LOAD_SO_FAILED);
+    }
+
+    private static byte[] j() {
+        byte[] bArr = new byte[16];
+        new SecureRandom().nextBytes(bArr);
+        return bArr;
+    }
+
+    public final byte[] g(byte[] bArr) throws SecurityKeyException {
+        NativeResponse nativeResponseExecute;
+        i();
+        NativeRequest nativeRequest = new NativeRequest();
+        nativeRequest.setOperateType(SDKCipherNative.OperateType.ENCRYPT.ordinal());
+        nativeRequest.setEncryptType(SDKCipherNative.EncryptType.AES_FIXED.ordinal());
+        byte[] bArrJ = j();
+        byte[] bArr2 = new byte[bArr.length + 16];
+        int i = 0;
+        System.arraycopy(bArrJ, 0, bArr2, 0, 16);
+        System.arraycopy(bArr, 0, bArr2, 16, bArr.length);
+        nativeRequest.setData(bArr2);
+        do {
+            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+            i++;
+        } while (a(6, 21312, i, nativeResponseExecute));
+        if (nativeResponseExecute.getErr() != 0) {
+            k.d("SecurityKey", "aesEncryptByFixed fail:" + nativeResponseExecute.getErr());
+            throw new SecurityKeyException(nativeResponseExecute.getErr());
+        }
+        if (nativeResponseExecute.getOutput() == null) {
+            k.d("SecurityKey", "aesEncryptByFixed output is null");
+            throw new SecurityKeyException("unknown error!", -1000);
+        }
+        d dVar = new d("fixedKey@" + this.f934a.e(), 1, 16, nativeResponseExecute.getOutput());
+        dVar.a(bArrJ);
+        return dVar.d();
+    }
+
+    public final byte[] h(byte[] bArr) throws SecurityKeyException {
+        NativeResponse nativeResponseExecute;
+        i();
+        d dVarB = d.b(bArr);
+        byte[] bArrA = dVarB.a();
+        new String(bArrA);
+        if (bArrA.length <= 15) {
+            throw new SecurityKeyException("aes decrypt error", -10);
+        }
+        NativeRequest nativeRequest = new NativeRequest();
+        nativeRequest.setOperateType(SDKCipherNative.OperateType.DECRYPT.ordinal());
+        nativeRequest.setEncryptType(SDKCipherNative.EncryptType.AES_FIXED.ordinal());
+        nativeRequest.setKeyVersion(dVarB.b());
+        byte[] bArrC = dVarB.c();
+        byte[] bArr2 = new byte[bArrA.length + bArrC.length];
+        int i = 0;
+        System.arraycopy(bArrA, 0, bArr2, 0, bArrA.length);
+        System.arraycopy(bArrC, 0, bArr2, bArrA.length, bArrC.length);
+        nativeRequest.setData(bArr2);
+        do {
+            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+            i++;
+        } while (a(6, 21313, i, nativeResponseExecute));
+        if (nativeResponseExecute.getErr() != 0) {
+            k.d("SecurityKey", "aesDecrypt fail:" + nativeResponseExecute.getErr());
+            throw new SecurityKeyException(nativeResponseExecute.getErr());
+        }
+        if (nativeResponseExecute.getOutput() == null) {
+            k.d("SecurityKey", "aesDecrypt output is null");
+            throw new SecurityKeyException("unknown error!", -1000);
+        }
+        return nativeResponseExecute.getOutput();
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final byte[] b(byte[] bArr) throws SecurityKeyException {
+        NativeResponse nativeResponseExecute;
+        i();
+        ProtocolPackage protocolPackageBuildProtocolPackage = ProtocolPackage.buildProtocolPackage(bArr);
+        int type = protocolPackageBuildProtocolPackage.getType();
+        if (type != 5 && type != 3 && type != 4 && type != 17 && type != 15) {
+            k.d("SecurityKey", "aesDecrypt decrypt type " + type + " is not supported");
+            throw new SecurityKeyException("encrypt type of data is not supported", 154);
+        }
+        int iA = this.f934a.a(1);
+        if (protocolPackageBuildProtocolPackage.getKeyVersion() > iA) {
+            k.d("SecurityKey", "aesDecrypt  not supported for pkg.KeyVersion(" + protocolPackageBuildProtocolPackage.getKeyVersion() + ") > sdk_currentKeyVersion(" + iA + ")");
+            throw new SecurityKeyException("decrypt  keyversion  of the data is greater than the currently supported version", SecurityKeyException.SK_ERROR_UNSUPPORTED_DECRYPT_KEYVERION_VERSION);
+        }
+        NativeRequest nativeRequest = new NativeRequest();
+        nativeRequest.setOperateType(SDKCipherNative.OperateType.DECRYPT.ordinal());
+        nativeRequest.setEncryptType(SDKCipherNative.EncryptType.AES.ordinal());
+        nativeRequest.setKeyVersion(protocolPackageBuildProtocolPackage.getKeyVersion());
+        nativeRequest.setData(protocolPackageBuildProtocolPackage.getData());
+        int i = 0;
+        do {
+            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+            i++;
+        } while (a(4, 21313, i, nativeResponseExecute));
+        if (nativeResponseExecute.getErr() != 0) {
+            k.d("SecurityKey", "aesDecrypt fail:" + nativeResponseExecute.getErr());
+            throw new SecurityKeyException(nativeResponseExecute.getErr());
+        }
+        if (nativeResponseExecute.getOutput() == null) {
+            k.d("SecurityKey", "aesDecrypt output is null");
+            throw new SecurityKeyException("unknown error!", -1000);
+        }
+        return nativeResponseExecute.getOutput();
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final byte[] c(byte[] bArr) throws SecurityKeyException {
+        return b(bArr, this.f934a.a(2));
+    }
+
+    public final byte[] b(byte[] bArr, int i) throws SecurityKeyException {
+        NativeResponse nativeResponseExecute;
+        i();
+        NativeRequest nativeRequest = new NativeRequest();
+        nativeRequest.setOperateType(SDKCipherNative.OperateType.ENCRYPT.ordinal());
+        nativeRequest.setEncryptType(SDKCipherNative.EncryptType.RSA.ordinal());
+        nativeRequest.setData(bArr);
+        nativeRequest.setKeyVersion(i);
+        int i2 = 0;
+        do {
+            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+            i2++;
+        } while (a(4, 21314, i2, nativeResponseExecute));
+        if (nativeResponseExecute.getErr() != 0) {
+            k.d("SecurityKey", "rsaEncrypt fail:" + nativeResponseExecute.getErr());
+            throw new SecurityKeyException(nativeResponseExecute.getErr());
+        }
+        if (nativeResponseExecute.getOutput() == null) {
+            k.d("SecurityKey", "rsaEncrypt output is null");
+            throw new SecurityKeyException("unknown error!", -1000);
+        }
+        return new ProtocolPackage(this.f934a.c(nativeResponseExecute.getKeyVersion()), nativeResponseExecute.getKeyVersion(), 7, nativeResponseExecute.getOutput()).getbytes();
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final byte[] b(byte[] bArr, String str) throws SecurityKeyException {
+        return c(bArr);
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final byte[] d(byte[] bArr) throws SecurityKeyException {
+        NativeResponse nativeResponseExecute;
+        i();
+        ProtocolPackage protocolPackageBuildProtocolPackage = ProtocolPackage.buildProtocolPackage(bArr);
+        int iA = this.f934a.a(2);
+        if (protocolPackageBuildProtocolPackage.getKeyVersion() > iA) {
+            k.d("SecurityKey", "rsaDecrypt  not supported for pkg.KeyVersion(" + protocolPackageBuildProtocolPackage.getKeyVersion() + ") > sdk_currentKeyVersion(" + iA + ")");
+            throw new SecurityKeyException("decrypt  keyversion  of the data is greater than the currently supported version", SecurityKeyException.SK_ERROR_UNSUPPORTED_DECRYPT_KEYVERION_VERSION);
+        }
+        NativeRequest nativeRequest = new NativeRequest();
+        nativeRequest.setOperateType(SDKCipherNative.OperateType.DECRYPT.ordinal());
+        nativeRequest.setEncryptType(SDKCipherNative.EncryptType.RSA.ordinal());
+        nativeRequest.setKeyVersion(protocolPackageBuildProtocolPackage.getKeyVersion());
+        nativeRequest.setData(protocolPackageBuildProtocolPackage.getData());
+        int i = 0;
+        do {
+            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+            i++;
+        } while (a(4, 21315, i, nativeResponseExecute));
+        if (nativeResponseExecute.getErr() != 0) {
+            k.d("SecurityKey", "rsaDecrypt fail:" + nativeResponseExecute.getErr());
+            throw new SecurityKeyException(nativeResponseExecute.getErr());
+        }
+        if (nativeResponseExecute.getOutput() == null) {
+            k.d("SecurityKey", "rsaDecrypt output is null");
+            throw new SecurityKeyException("unknown error!", -1000);
+        }
+        return nativeResponseExecute.getOutput();
+    }
+
+    private byte[] b(byte[] bArr, int i, int i2) throws SecurityKeyException {
+        NativeResponse nativeResponseExecute;
+        i();
+        NativeRequest nativeRequest = new NativeRequest();
+        nativeRequest.setOperateType(SDKCipherNative.OperateType.ENCRYPT.ordinal());
+        nativeRequest.setEncryptType(SDKCipherNative.EncryptType.AES.ordinal());
+        nativeRequest.setData(bArr);
+        nativeRequest.setKeyVersion(i);
+        int i3 = 0;
+        do {
+            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+            i3++;
+        } while (a(4, i2, i3, nativeResponseExecute));
+        if (nativeResponseExecute.getErr() != 0) {
+            k.d("SecurityKey", "aesEncrypt fail:" + nativeResponseExecute.getErr());
+            throw new SecurityKeyException(nativeResponseExecute.getErr());
+        }
+        if (nativeResponseExecute.getOutput() == null) {
+            k.d("SecurityKey", "aesEncrypt output is null");
+            throw new SecurityKeyException("unknown error!", -1000);
+        }
+        return new ProtocolPackage(this.f934a.c(nativeResponseExecute.getKeyVersion()), nativeResponseExecute.getKeyVersion(), 17, nativeResponseExecute.getOutput()).getbytes();
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final byte[] e(byte[] bArr) throws SecurityKeyException {
+        return b(g.a(bArr).getBytes(), this.f934a.a(1), 21321);
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final boolean a(byte[] bArr, byte[] bArr2) throws SecurityKeyException {
+        String strA = g.a(bArr);
+        ProtocolPackage protocolPackageBuildProtocolPackage = ProtocolPackage.buildProtocolPackage(bArr2);
+        int keyVersion = protocolPackageBuildProtocolPackage.getKeyVersion();
+        return Arrays.equals(ProtocolPackage.buildProtocolPackage(b(strA.getBytes(), keyVersion, 21322)).getCipherData(), protocolPackageBuildProtocolPackage.getCipherData());
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final byte[] f(byte[] bArr) throws SecurityKeyException {
+        return c(bArr, this.f934a.a(2));
+    }
+
+    public final byte[] c(byte[] bArr, int i) throws SecurityKeyException {
+        NativeResponse nativeResponseExecute;
+        i();
+        NativeRequest nativeRequest = new NativeRequest();
+        nativeRequest.setOperateType(SDKCipherNative.OperateType.SIGN.ordinal());
+        int i2 = 0;
+        nativeRequest.setEncryptType(0);
+        nativeRequest.setData(bArr);
+        nativeRequest.setKeyVersion(i);
+        do {
+            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+            i2++;
+        } while (a(4, 21316, i2, nativeResponseExecute));
+        if (nativeResponseExecute.getErr() != 0) {
+            k.d("SecurityKey", "sign fail:" + nativeResponseExecute.getErr());
+            throw new SecurityKeyException(nativeResponseExecute.getErr());
+        }
+        if (nativeResponseExecute.getOutput() == null) {
+            k.d("SecurityKey", "sign output is null");
+            throw new SecurityKeyException("unknown error!", -1000);
+        }
+        return new ProtocolPackage(this.f934a.c(nativeResponseExecute.getKeyVersion()), nativeResponseExecute.getKeyVersion(), 9, nativeResponseExecute.getOutput()).getbytes();
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final byte[] c(byte[] bArr, String str) throws SecurityKeyException {
+        return f(bArr);
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final boolean b(byte[] bArr, byte[] bArr2) throws SecurityKeyException {
+        NativeResponse nativeResponseExecute;
+        i();
+        ProtocolPackage protocolPackageBuildProtocolPackage = ProtocolPackage.buildProtocolPackage(bArr2);
+        int iA = this.f934a.a(4);
+        if (protocolPackageBuildProtocolPackage.getKeyVersion() > iA) {
+            k.d("SecurityKey", "signatureVerify  not supported for pkg.KeyVersion(" + protocolPackageBuildProtocolPackage.getKeyVersion() + ") > sdk_currentKeyVersion(" + iA + ")");
+            throw new SecurityKeyException("decrypt  keyversion  of the data is greater than the currently supported version", SecurityKeyException.SK_ERROR_UNSUPPORTED_DECRYPT_KEYVERION_VERSION);
+        }
+        NativeRequest nativeRequest = new NativeRequest();
+        nativeRequest.setOperateType(SDKCipherNative.OperateType.VERIFY.ordinal());
+        nativeRequest.setEncryptType(0);
+        nativeRequest.setKeyVersion(protocolPackageBuildProtocolPackage.getKeyVersion());
+        byte[] bArr3 = new byte[bArr.length + protocolPackageBuildProtocolPackage.getData().length];
+        System.arraycopy(bArr, 0, bArr3, 0, bArr.length);
+        System.arraycopy(protocolPackageBuildProtocolPackage.getData(), 0, bArr3, bArr.length, protocolPackageBuildProtocolPackage.getData().length);
+        nativeRequest.setData(bArr3);
+        int i = 0;
+        do {
+            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+            i++;
+        } while (a(4, 21317, i, nativeResponseExecute));
+        if (nativeResponseExecute.getErr() == 0) {
+            return true;
+        }
+        k.d("SecurityKey", "sign fail:" + nativeResponseExecute.getErr());
+        return false;
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final String c() {
+        return this.f934a.a();
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final int d(int i) {
+        return this.f934a.a(i);
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final int b() {
+        return this.f934a.c();
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final boolean c(int i) {
+        if (i == 3 || i == 4) {
+            a();
+            return true;
+        }
+        k.d("SecurityKey", "setCipherMode not supported:".concat(String.valueOf(i)));
+        return false;
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final byte[] f(int i) throws SecurityKeyException {
+        int iA;
+        i();
+        if (i == 5) {
+            iA = this.f934a.a(1);
+        } else if (i == 6 || i == 10) {
+            iA = this.f934a.a(2);
+        } else {
+            switch (i) {
+                case 15:
+                    iA = this.f934a.a(1);
+                    break;
+                case 16:
+                    iA = 1;
+                    break;
+                case 17:
+                    iA = this.f934a.a(1);
+                    break;
+                default:
+                    iA = 0;
+                    break;
+            }
+        }
+        if (i == 16) {
+            d dVar = new d("fixedKey@" + this.f934a.e(), 1, i, null);
+            dVar.a(j());
+            return dVar.e();
+        }
+        return new ProtocolPackage(this.f934a.f(), iA, i, null).getHeaderbytes();
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final byte[] e(int i) throws SecurityKeyException {
+        k.d("SecurityKey", "exportKey not supported");
+        throw new SecurityKeyException("operate mode not match", 152);
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final String h() {
+        return this.f934a.f();
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final String e() throws SecurityKeyException {
+        throw new SecurityKeyException("Not Supported.", 601);
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public final boolean b(String str) throws SecurityKeyException {
+        throw new SecurityKeyException("Not Supported.", 601);
+    }
+}

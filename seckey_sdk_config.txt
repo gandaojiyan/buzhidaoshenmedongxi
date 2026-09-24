@@ -1,0 +1,224 @@
+package com.vivo.seckeysdk.utils;
+
+import android.text.TextUtils;
+import java.util.HashMap;
+import java.util.Map;
+
+/* JADX INFO: loaded from: classes.dex */
+public class SDKCipherConfig {
+    private static boolean isAntiFrida = false;
+    private static boolean isAntiInject = false;
+    private static boolean isAntiNativeDebug = false;
+    private static boolean isAntiSmaliDebug = false;
+    private static boolean isAntiSubstrate = true;
+    private static boolean isAntiXposed = true;
+    private static boolean isExitWhenSignVerifyFail = true;
+    private static boolean isOpenDarkPoint = true;
+    public static Map<String, Object> userConfigs = new HashMap();
+    public static int cacheResponseMaxTime = 1440;
+    public static boolean cacheUpdateKeyResponse = true;
+    public static int soEncryptMaxLen = 10485760;
+    private static int currentProtectionMode = ProtectionThreadMode.NONE.ordinal();
+
+    public enum ProtectionThreadMode {
+        NONE,
+        SDK_PROTECTION,
+        APP_PROTECTION,
+        END
+    }
+
+    public static int getCurrentProtectionMode() {
+        return currentProtectionMode;
+    }
+
+    public static void setCurrentProtectionMode(int i) {
+        userConfigs.put("setCurrentProtectionMode", Integer.valueOf(i));
+        currentProtectionMode = i;
+    }
+
+    public static int getSoEncryptMaxLen() {
+        return soEncryptMaxLen;
+    }
+
+    public static void setSoEncryptMaxLen(int i) {
+        soEncryptMaxLen = i;
+    }
+
+    public static int getCacheResponseMaxTime() {
+        return cacheResponseMaxTime;
+    }
+
+    public static void setCacheResponseMaxTime(int i) {
+        cacheResponseMaxTime = i;
+    }
+
+    public static boolean isCacheUpdateKeyResponse() {
+        return cacheUpdateKeyResponse;
+    }
+
+    public static void setCacheUpdateKeyResponse(boolean z) {
+        cacheUpdateKeyResponse = z;
+    }
+
+    public static boolean isAntiXposed() {
+        return isAntiXposed;
+    }
+
+    public static void setAntiXposed(boolean z) {
+        userConfigs.put("setAntiXposed", Boolean.valueOf(z));
+        isAntiXposed = z;
+    }
+
+    public static boolean isAntiSubstrate() {
+        return isAntiSubstrate;
+    }
+
+    public static void setAntiSubstrate(boolean z) {
+        userConfigs.put("setAntiSubstrate", Boolean.valueOf(z));
+        isAntiSubstrate = z;
+    }
+
+    public static boolean isAntiInject() {
+        return isAntiInject;
+    }
+
+    public static void setAntiInject(boolean z) {
+        userConfigs.put("setAntiInject", Boolean.valueOf(z));
+        isAntiInject = z;
+    }
+
+    public static boolean isAntiSmaliDebug() {
+        return isAntiSmaliDebug;
+    }
+
+    public static void setAntiSmaliDebug(boolean z) {
+        userConfigs.put("setAntiSmaliDebug", Boolean.valueOf(z));
+        isAntiSmaliDebug = z;
+    }
+
+    public static boolean isAntiNativeDebug() {
+        return isAntiNativeDebug;
+    }
+
+    public static void setAntiNativeDebug(boolean z) {
+        userConfigs.put("setAntiNativeDebug", Boolean.valueOf(z));
+        isAntiNativeDebug = z;
+    }
+
+    public static boolean isAntiFrida() {
+        return isAntiFrida;
+    }
+
+    public static void setAntiFrida(boolean z) {
+        userConfigs.put("setAntiFrida", Boolean.valueOf(z));
+        isAntiFrida = z;
+    }
+
+    public static boolean isOpenDarkPoint() {
+        return isOpenDarkPoint;
+    }
+
+    public static void setOpenDarkPoint(boolean z) {
+        userConfigs.put("setOpenDarkPoint", Boolean.valueOf(z));
+        isOpenDarkPoint = z;
+    }
+
+    public static boolean isExitWhenSignVerifyFail() {
+        return isExitWhenSignVerifyFail;
+    }
+
+    public static void setExitWhenSignVerifyFail(boolean z) {
+        userConfigs.put("setExitWhenSignVerifyFail", Boolean.valueOf(z));
+        isExitWhenSignVerifyFail = z;
+    }
+
+    public static void setSecurityMode(String str, int i) {
+        if (i == -1) {
+            if (TextUtils.isEmpty(str) || !str.equals("Close")) {
+                return;
+            }
+            if (userConfigs.get("setAntiSubstrate") == null) {
+                setAntiSubstrate(false);
+            }
+            if (userConfigs.get("setExitWhenSignVerifyFail") == null) {
+                setExitWhenSignVerifyFail(false);
+            }
+            if (userConfigs.get("setOpenDarkPoint") == null) {
+                setOpenDarkPoint(false);
+            }
+            if (userConfigs.get("setAntiXposed") == null) {
+                setAntiXposed(false);
+            }
+            if (userConfigs.get("setAntiFrida") == null) {
+                setAntiFrida(false);
+            }
+            if (userConfigs.get("setAntiSmaliDebug") == null) {
+                setAntiSmaliDebug(false);
+            }
+            if (userConfigs.get("setAntiNativeDebug") == null) {
+                setAntiNativeDebug(false);
+            }
+            if (userConfigs.get("setAntiInject") != null) {
+                return;
+            }
+        } else {
+            if (userConfigs.get("setAntiSubstrate") == null) {
+                if ((i & 2) == 2) {
+                    setAntiSubstrate(true);
+                } else {
+                    setAntiSubstrate(false);
+                }
+            }
+            if (userConfigs.get("setExitWhenSignVerifyFail") == null) {
+                if ((i & 128) == 128) {
+                    setExitWhenSignVerifyFail(true);
+                } else {
+                    setExitWhenSignVerifyFail(false);
+                }
+            }
+            if (userConfigs.get("setOpenDarkPoint") == null) {
+                if ((i & 64) == 64) {
+                    setOpenDarkPoint(true);
+                } else {
+                    setOpenDarkPoint(false);
+                }
+            }
+            if (userConfigs.get("setAntiXposed") == null) {
+                if ((i & 1) == 1) {
+                    setAntiXposed(true);
+                } else {
+                    setAntiXposed(false);
+                }
+            }
+            if (userConfigs.get("setAntiFrida") == null) {
+                if ((i & 32) == 32) {
+                    setAntiFrida(true);
+                } else {
+                    setAntiFrida(false);
+                }
+            }
+            if (userConfigs.get("setAntiSmaliDebug") == null) {
+                if ((i & 8) == 8) {
+                    setAntiSmaliDebug(true);
+                } else {
+                    setAntiSmaliDebug(false);
+                }
+            }
+            if (userConfigs.get("setAntiNativeDebug") == null) {
+                if ((i & 16) == 16) {
+                    setAntiNativeDebug(true);
+                } else {
+                    setAntiNativeDebug(false);
+                }
+            }
+            if (userConfigs.get("setAntiInject") != null) {
+                return;
+            }
+            if ((i & 4) == 4) {
+                setAntiInject(true);
+                return;
+            }
+        }
+        setAntiInject(false);
+    }
+}
