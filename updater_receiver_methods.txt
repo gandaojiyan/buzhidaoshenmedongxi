@@ -1,0 +1,127 @@
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/abinstall/UpdateManager.java:33:import vivo.app.epm.ExceptionReceiver;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/abinstall/UpdateManager.java:610:            aVar.a(ExceptionReceiver.KEY_REASON);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/download/UpdateDownloadManager.java:1251:            public void onReceive(Context context2, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/download/UpdateDownloadManager.java:1252:                LogUtils.i(UpdateDownloadManager.TAG, "mWifiVerfyReceiver onReceiver");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/RefreshTimerReceiver.java:17:    public void onReceive(Context context, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/c.java:101:            public void onReceive(Context context2, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/c.java:120:            public void onReceive(Context context2, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/c.java:141:            public void onReceive(Context context2, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/c.java:160:            public void onReceive(Context context2, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/c.java:176:            public void onReceive(Context context2, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/c.java:195:            public void onReceive(Context context2, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/c.java:210:        b.a(this.b, "new.com.bbk.updater.action.AUTO_CHECK", (long) (e.c * 12 * Math.random()), e.c * 12);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/ConstantsUtils.java:95:        public static final String AUTO_CHECK_TRIGER = "auto_triger";
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/PrefsUtils.java:23:        public static final String KEY_AUTO_CHECK_IS_FINISHED = "auto_check_is_finished";
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/PrefsUtils.java:28:        public static final String KEY_LAST_SHOW_OPEN_AUTO_UPGRADE_PACKAGE_TIME = "time_stamp_of_last_show_open_auto_checked_upgrade_package";
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/PrefsUtils.java:30:        public static final String KEY_OPEN_AUTO_CHECK_UPGRADE_PACKAGE_NO_MORE_PROMPT = "open_auto_check_upgrade_package_no_more_prompt";
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/PrefsUtils.java:469:        public static final String AUTO_CHECK_DELAY_TIMES = "auto_check_delay_times";
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/PopDialogUtils.java:56:    public static final String DIALOG_TRIGGER_AUTO_CHECKED = "dialog_trigger_auto_checked";
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/rx/event/CheckEvent.java:9:    public static final int AUTO_CHECKED_NEW_INFO = 32;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/R.java:3816:        public static final int open_auto_check_upgrade = 0x7f0c0087;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/R.java:3960:        public static final int auto_check_upgrade_package = 0x7f0f0040;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/R.java:3961:        public static final int auto_check_upgrade_package_summary = 0x7f0f0041;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/R.java:4004:        public static final int close_auto_check_upgrade_package = 0x7f0f006c;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/R.java:4244:        public static final int open_auto_check_upgrade = 0x7f0f015c;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/R.java:4245:        public static final int open_auto_check_upgrade_summary = 0x7f0f015d;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/R.java:4246:        public static final int open_auto_download_with_no_auto_check_upgrade = 0x7f0f015e;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/selfupgrade/SelfUpgradeStrategy.java:161:        registerStaticBroadcast("com.bbk.updater.action.AUTO_CHECK_HOURLY");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/selfupgrade/SelfUpgradeStrategy.java:202:            java.lang.String r0 = "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/dialogcontent/NormalContentViewRom13.java:306:                        public void onReceivedError(WebView webView2, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/dialogcontent/NormalContentViewRom13.java:307:                            LogUtils.e(NormalContentViewRom13.TAG, "<crossUp> onReceivedError:" + ((Object) webResourceError.getDescription()));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:424:        public void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:425:            super.onReceivedError(webView, webResourceRequest, webResourceError);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:428:            LogUtils.i(LogView.TAG, "onReceivedError: " + errorCode + "  des:" + ((Object) webResourceError.getDescription()));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/customfragment/CustomSettingsFragment.java:46:        this.mAutoCheckUpgrade = findPreference(SettingsFragment.KEY_AUTO_CHECK_UPGRADE);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/customfragment/CustomSettingsFragment.java:54:        this.mAutoCheckExplain = findPreference(SettingsFragment.KEY_AUTO_CHECK_UPGRADE_EXPLAIN);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogLinkActivity.java:95:        public void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogLinkActivity.java:96:            super.onReceivedError(webView, webResourceRequest, webResourceError);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogLinkActivity.java:97:            LogUtils.i(LogLinkActivity.TAG, "onReceivedError: " + webResourceError.getErrorCode() + "  des:" + ((Object) webResourceError.getDescription()));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/SettingsFragment.java:51:    private static final int DIALOG_CLOSE_AUTO_CHECK_UPGRADE = 5;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/SettingsFragment.java:53:    private static final int DIALOG_OPEN_AUTO_DOWNLOAD_WITH_NO_AUTO_CHECK_UPGRADE = 6;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/SettingsFragment.java:54:    public static final String KEY_AUTO_CHECK_UPGRADE = "auto_check_upgrade";
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/SettingsFragment.java:55:    public static final String KEY_AUTO_CHECK_UPGRADE_EXPLAIN = "auto_check_upgrade_explain";
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/SettingsFragment.java:240:            arrayList.add(SettingsFragment.KEY_AUTO_CHECK_UPGRADE);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/SettingsFragment.java:352:                this.mAutoCheckUpgrade.setSummary(context.getResources().getString(R.string.auto_check_upgrade_package_summary));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/SettingsFragment.java:358:                this.mAutoCheckUpgrade.setSummary(context.getResources().getString(R.string.auto_check_upgrade_package_summary));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/SettingsFragment.java:364:                ReflectUtils.invokeSingleParamMethod(this.mAutoCheckUpgrade, "setSummaryEx", "java.lang.CharSequence", getResources().getString(R.string.auto_check_upgrade_package_summary));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/SettingsFragment.java:370:            removePreference(KEY_AUTO_CHECK_UPGRADE);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/SettingsFragment.java:382:            removePreference(KEY_AUTO_CHECK_UPGRADE);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/SettingsFragment.java:384:            addPreference(KEY_AUTO_CHECK_UPGRADE);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/SettingsFragment.java:676:                    this.mDialogCloseAutoCheckUpgrade = newDialogBuilder(this.mActivity).setTitle(R.string.warning).setMessage(R.string.close_auto_check_upgrade_package).setNegativeButton(R.string.yes, new DialogInterface.OnClickListener() { // from class: com.bbk.updater.ui.fragment.SettingsFragment.16
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/SettingsFragment.java:679:                            CommonUtils.putIntIntoSettings(SettingsFragment.this.mActivity, "updater_auto_check_upgrade_checked", 0);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/SettingsFragment.java:708:                    this.mDialogOpenAutoDownloadWithNoAutoCheckUpgrade = newDialogBuilder(this.mActivity).setTitle(R.string.warning).setMessage(R.string.open_auto_download_with_no_auto_check_upgrade).setPositiveButton(R.string.smart_install_switch_open, new DialogInterface.OnClickListener() { // from class: com.bbk.updater.ui.fragment.SettingsFragment.20
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/SettingsFragment.java:711:                            CommonUtils.putIntIntoSettings(SettingsFragment.this.mActivity, "updater_auto_check_upgrade_checked", 1);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdateActivity.java:63:    public static final int DIALOG_OPEN_AUTO_CHECK_UPGRADE = 1005;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdateActivity.java:121:                    Settings.Global.putInt(UpdateActivity.this.getContentResolver(), "updater_auto_check_upgrade_checked", 1);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdateActivity.java:226:            PrefsUtils.putBoolean(UpdateActivity.this, PrefsUtils.Check.KEY_OPEN_AUTO_CHECK_UPGRADE_PACKAGE_NO_MORE_PROMPT, false);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdateActivity.java:232:            PrefsUtils.putBoolean(UpdateActivity.this, PrefsUtils.Check.KEY_OPEN_AUTO_CHECK_UPGRADE_PACKAGE_NO_MORE_PROMPT, z);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdateActivity.java:507:                View viewInflate = View.inflate(this, R.layout.open_auto_check_upgrade, null);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdateActivity.java:510:                textView.setText(R.string.open_auto_check_upgrade_summary);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdateActivity.java:511:                this.mDialogOpenAutoCheckUpgrade = newAlertBuilder(this).setTitle(R.string.open_auto_check_upgrade).setView(viewInflate).setPositiveButton(R.string.smart_install_switch_open, this.mClickListener).setNegativeButton(R.string.no, this.mClickListener).setOnCancelListener(this.mCancelListener).create();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdateActivity.java:517:                this.mDialogUseDataCheckUpgrade = newAlertBuilder(this).setTitle(R.string.using_data_network_check_upgrade_package).setMessage(R.string.auto_check_upgrade_package_summary).setPositiveButton(R.string.smart_install_switch_open, this.mClickListener).setNegativeButton(R.string.no, this.mClickListener).create();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdateActivity.java:681:            public void onReceive(Context context2, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:137:                public void onReceivedError(WebView webView2, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:138:                    super.onReceivedError(webView2, webResourceRequest, webResourceError);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:140:                    LogUtils.i(LogActivity.TAG, "onReceivedError: " + errorCode);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdatePresenter.java:1181:        boolean z = PrefsUtils.getBoolean(this.mContext, PrefsUtils.Check.KEY_OPEN_AUTO_CHECK_UPGRADE_PACKAGE_NO_MORE_PROMPT, false);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/cota/CotaStatusChangeReceiver.java:15:    public void onReceive(Context context, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/cota/CotaStatusChangeReceiver.java:17:        LogUtils.i("CotaStatusChangeReceive", "onReceive:  action = " + actionOfIntent);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/cota/CotaStandardStrategy.java:15:        registerStaticBroadcast("new.com.bbk.updater.action.AUTO_CHECK");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/cota/CotaStandardStrategy.java:22:        if (((str.hashCode() == -1304811859 && str.equals("new.com.bbk.updater.action.AUTO_CHECK")) ? (byte) 0 : (byte) -1) == 0) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/NotificationReceiver.java:9:public class NotificationReceiver extends BroadcastReceiver {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/NotificationReceiver.java:11:    public void onReceive(Context context, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/strategy/SmartInstallStrategy.java:32:        registerStaticBroadcast("new.com.bbk.updater.action.AUTO_CHECK");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/strategy/SmartInstallStrategy.java:124:                    if (str.equals("new.com.bbk.updater.action.AUTO_CHECK")) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/InstallService.java:616:                    new UpdateReceiver().onReceive(InstallService.this.mContext, intent);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/ConfigEngineReceiver.java:11:    public void onReceive(Context context, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/AllReceivers.java:10:public class AllReceivers extends BroadcastReceiver {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/AllReceivers.java:12:    public void onReceive(final Context context, final Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/compatibleReceivers.java:13:    public void onReceive(final Context context, final Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/NetworkReceiver.java:14:    public void onReceive(final Context context, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/InstallReceiver.java:17:    public void onReceive(Context context, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/DownloadReceiver.java:17:    public void onReceive(Context context, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/PushServiceReceiver.java:55:    public void onReceiveRegId(Context context, String str) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/BootCompleteReceiver.java:29:    public void onReceive(Context context, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/UpdateReceiver.java:20:import vivo.app.epm.ExceptionReceiver;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/UpdateReceiver.java:23:public class UpdateReceiver extends BroadcastReceiver {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/UpdateReceiver.java:25:    public void onReceive(Context context, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/UpdateReceiver.java:45:            intent2.putExtra(ExceptionReceiver.KEY_REASON, "copy");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/ScreenActionRecorder.java:26:    public void onReceive(Context context, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/induce/c.java:67:                this.f190a.a(context, updateInfo, cVar, "auto_checked");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/induce/c.java:71:                this.b.a(context, updateInfo, cVar, PopDialogUtils.DIALOG_TRIGGER_AUTO_CHECKED, crossVersion);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/induce/c.java:75:                this.f190a.a(context, updateInfo, "auto_checked");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/induce/c.java:78:                this.b.a(context, updateInfo, PopDialogUtils.DIALOG_TRIGGER_AUTO_CHECKED, crossVersion, zA);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/induce/c.java:98:                this.f190a.a(context, updateInfo, "auto_checked");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/induce/c.java:102:                    this.b.a(context, updateInfo, PopDialogUtils.DIALOG_TRIGGER_AUTO_CHECKED, crossVersion, zA);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/induce/c.java:119:            this.f190a.a(context, updateInfo, cVar, "auto_checked");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/induce/c.java:121:            this.b.a(context, updateInfo, cVar, PopDialogUtils.DIALOG_TRIGGER_AUTO_CHECKED, crossVersion);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/induce/b.java:49:        if (zIsConfig && (TextUtils.equals(str, PopDialogUtils.DIALOG_TRIGGER_USER_PRESENT) || TextUtils.equals(str, PopDialogUtils.DIALOG_TRIGGER_AUTO_CHECKED))) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/induce/a.java:26:import vivo.app.epm.ExceptionReceiver;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/induce/a.java:220:        aVar.a(ExceptionReceiver.KEY_REASON);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/countrycode/CountryCodeStrategy.java:13:        registerStaticBroadcast("new.com.bbk.updater.action.AUTO_CHECK");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/countrycode/CountryCodeStrategy.java:14:        registerStaticBroadcast("com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/countrycode/CountryCodeStrategy.java:43:            java.lang.String r0 = "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST"
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/countrycode/CountryCodeStrategy.java:49:            java.lang.String r0 = "new.com.bbk.updater.action.AUTO_CHECK"
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/AppFeature.java:51:import vivo.app.epm.ExceptionReceiver;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/AppFeature.java:196:            public void onReceive(Context context, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/AppFeature.java:197:                if (intent == null || TextUtils.isEmpty(intent.getStringExtra(ExceptionReceiver.KEY_REASON))) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/AppFeature.java:200:                String stringExtra = intent.getStringExtra(ExceptionReceiver.KEY_REASON);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/AppFeature.java:270:            public void onReceive(Context context, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/AppFeature.java:271:                LogUtils.i("Updater/Application", "onReceive: " + intent.getAction());
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:27:        registerStaticBroadcast("new.com.bbk.updater.action.AUTO_CHECK");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:28:        registerStaticBroadcast("com.bbk.updater.action.CHECK_INSTANTLY");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:30:        registerStaticBroadcast("com.bbk.updater.action.AUTO_CHECK_HOURLY");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:35:        registerStaticBroadcast("com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:40:            onStaticBroadCastReceive("com.bbk.updater.action.CHECK_INSTANTLY", null);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:138:        PrefsUtils.putBoolean(getContext(), PrefsUtils.Check.KEY_AUTO_CHECK_IS_FINISHED, z);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:142:        return PrefsUtils.getBoolean(getContext(), PrefsUtils.Check.KEY_AUTO_CHECK_IS_FINISHED, true);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:289:        CommonUtils.setAlarmClock(getContext(), "com.bbk.updater.action.AUTO_CHECK_HOURLY", (long) ((Math.random() * 60.0d * 30.0d) + 10800.0d), false);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:293:        CommonUtils.setAlarmClock(getContext(), "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST", 60L, false);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/codemanagement/ComponentManagerStrategy.java:20:        registerStaticBroadcast("com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/codemanagement/ComponentManagerStrategy.java:27:        if (((str.hashCode() == -160188857 && str.equals("com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST")) ? (byte) 0 : (byte) -1) == 0) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/strategy/OtherStrategy.java:44:        registerStaticBroadcast("new.com.bbk.updater.action.AUTO_CHECK");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/strategy/OtherStrategy.java:45:        registerStaticBroadcast("com.bbk.updater.action.AUTO_CHECK_HOURLY");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/strategy/OtherStrategy.java:316:            public void onReceive(Context context, Intent intent) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/strategy/OtherStrategy.java:350:            java.lang.String r0 = "com.bbk.updater.action.AUTO_CHECK_HOURLY"
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/strategy/OtherStrategy.java:356:            java.lang.String r0 = "new.com.bbk.updater.action.AUTO_CHECK"
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/strategy/CommonInstallStrategy.java:65:                b = !str.equals("com.bbk.updater.action.AUTO_CHECK_HOURLY") ? (byte) -1 : (byte) 2;

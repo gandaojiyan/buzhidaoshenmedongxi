@@ -1,0 +1,77 @@
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/UpdateTipsService.java:808:        }.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/LightCountDownLatch.java:29:            this.priorityThread.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/UiUtils.java:103:        duration.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/UiUtils.java:159:        duration.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/SimpleScheduler.java:19:            handlerThread.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/CommonUtils.java:2124:            zExecute = callBack.execute();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/PopDialogUtils.java:970:        }.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/DownloadingBallView.java:83:                this.mScaleAnim[i].start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/RectView13.java:142:        animatorSet.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/VerticalProgressDialog.java:52:    public void onStart() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/VerticalProgressDialog.java:53:        super.onStart();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:429:                this.mBallCircleAnimator.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:469:                this.mBallCircleAnimator.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:626:                valueAnimator.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/DownloadProgressButton.java:548:                this.mProgressAnimator.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/DownloadProgressButton.java:772:        this.animatorSet.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/DownloadProgressButton.java:857:        this.withoutAnimatorSet.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/DownloadProgressButton.java:984:        this.buttonAnimatorSet.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/DownloadProgressButton.java:988:        this.textAnimatorSet.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/DownloadProgressButton.java:1091:        valueAnimatorOfFloat.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:80:        void loadStart();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:188:            onLoadLogStart();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:313:    private void onLoadLogStart() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:317:            onLogLoadListener.loadStart();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/NetworkExceptionView.java:183:            animatedVectorDrawable.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:322:            public void loadStart() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:562:        valueAnimatorOfFloat.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:707:        animatorSet.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:996:        this.mPlayer.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:1050:            public void loadStart() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:1206:        valueAnimatorOfFloat.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdateActivity.java:435:        duration.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdatePresenter.java:498:                        public boolean execute() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdatePresenter.java:569:                                public boolean execute() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdatePresenter.java:649:                                    public boolean execute() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/b/a.java:25:        f154a.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/b/b.java:19:        f156a.start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/config/CallBack.java:5:    boolean execute();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/cota/a.java:27:    protected void onPreExecute() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/cota/a.java:28:        super.onPreExecute();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/strategy/EnhancedUpdateStrategy.java:238:                        public boolean execute() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/InstallService.java:88:        adaptForForeGroundServiceStart();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/InstallService.java:92:    private void adaptForForeGroundServiceStart() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/UpdateReceiver.java:71:        new a(context, new File(stringExtra), version, booleanExtra || booleanExtra2, booleanExtra3, booleanExtra4, booleanExtra5, booleanExtra6, stringExtra2, booleanExtra7, stringExtra3).start();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/countrycode/a.java:17:    protected void onPreExecute() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/countrycode/a.java:18:        super.onPreExecute();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/countrycode/c.java:22:    protected void onPreExecute() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:28:/* JADX INFO: compiled from: BaseCheckUpdateTask.java */
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:137:            LogUtils.e("Updater/BaseCheckUpdateTask", "<crossUp> checkResultInfo is null");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:142:            LogUtils.e("Updater/BaseCheckUpdateTask", "<crossUp> updateInfo is null");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:148:            LogUtils.e("Updater/BaseCheckUpdateTask", "<crossUp> is not osUp");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:161:        LogUtils.i("Updater/BaseCheckUpdateTask", "isVersionSame " + zEquals + " checkVersion " + version + " successVersion " + string);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:170:    protected void onPreExecute() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:171:        super.onPreExecute();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:201:            LogUtils.e("Updater/BaseCheckUpdateTask", "checkResult result info is null");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:272:        LogUtils.i("Updater/BaseCheckUpdateTask", "onNoPackageInServer");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:380:        LogUtils.d("Updater/BaseCheckUpdateTask", "===========checkResult return false\r\n");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:396:        LogUtils.d("Updater/BaseCheckUpdateTask", "fota dl status: " + iC + ",fota info is null ?: " + z9 + ", vgc dl status: " + iD + ", vgc info is null ? " + z10);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:398:            LogUtils.d("Updater/BaseCheckUpdateTask", "ota current downloaded is not latest, delete it");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:406:            LogUtils.d("Updater/BaseCheckUpdateTask", "vgc current downloaded is not latest, delete it");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:433:        LogUtils.d("Updater/BaseCheckUpdateTask", "fota dl status: " + iC + ",fota info is null ?: " + z7 + ", vgc dl status: " + iD + ", vgc info is null ? " + z8);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:435:            LogUtils.d("Updater/BaseCheckUpdateTask", "ota current downloaded is not latest, delete it");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:443:            LogUtils.d("Updater/BaseCheckUpdateTask", "vgc current downloaded is not latest, delete it");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:479:        LogUtils.d("Updater/BaseCheckUpdateTask", "fota dl status: " + iC + ",fota info is null ?: " + z7 + ", vgc dl status: " + iD + ", vgc info is null ? " + z8);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:481:            LogUtils.d("Updater/BaseCheckUpdateTask", "ota current downloaded is not latest, delete it");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:489:            LogUtils.d("Updater/BaseCheckUpdateTask", "vgc current downloaded is not latest, delete it");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:510:        LogUtils.i("Updater/BaseCheckUpdateTask", "localAreaCode: " + strB + " ,info: " + areaCy);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:526:            LogUtils.d("Updater/BaseCheckUpdateTask", "dealWithBootCompleteDelay: lastOTAType = " + strH + " isRecoveryLogFileExist = " + zExists + " isUpdating = " + zIsUpdating);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:551:                    LogUtils.e("Updater/BaseCheckUpdateTask", "dealWithBootCompleteDelay: DataCollection read " + str3, e);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/b.java:21:    protected void onPreExecute() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/b.java:22:        super.onPreExecute();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/download/a/a.java:21:    protected void onPreExecute() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/download/a/a.java:22:        super.onPreExecute();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/download/a/b.java:33:    protected void onPreExecute() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/download/a/b.java:34:        super.onPreExecute();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/download/strategy/DownloadStrategy.java:223:                    public boolean execute() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/strategy/CommonInstallStrategy.java:124:                public boolean execute() {
