@@ -1,0 +1,9 @@
+--------- beginning of main
+09-24 21:45:51.319 23115 23115 E webview_servic: Not starting debugger since process cannot load the jdwp agent.
+09-24 21:46:05.952 23240 23240 E appproc : checkAndSetEnv get_baksize open file /data/dalvik-cache/classpath failed , error(Permission denied)
+09-24 21:46:05.953 23240 23240 E appproc : checkAndSetEnv write_classpathbak open file failed:Permission denied
+09-24 21:46:05.953 23240 23240 E appproc : checkAndSetEnv get_baksize open file /data/dalvik-cache/classpath2 failed , error(Permission denied)
+09-24 21:46:05.953 23240 23240 E appproc : checkAndSetEnv write_classpathbak open file failed:Permission denied
+09-24 21:46:05.953 23240 23240 E appproc : checkAndSetEnv get_baksize open file /data/dalvik-cache/classpath3 failed , error(Permission denied)
+09-24 21:46:05.953 23240 23240 E appproc : checkAndSetEnv write_classpathbak open file failed:Permission denied
+09-24 21:46:05.953 23240 23240 E appproc : checkAndSetEnv get_baksize open file /data/dalvik-cache/classpath4 failed , error(No such file or directory)
