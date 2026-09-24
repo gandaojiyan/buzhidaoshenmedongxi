@@ -1,0 +1,104 @@
+package com.vivo.seckeysdk.utils;
+
+import android.content.Context;
+import android.text.TextUtils;
+
+/* JADX INFO: compiled from: SecurityKeyConfigure.java */
+/* JADX INFO: loaded from: classes.dex */
+public final class i {
+
+    /* JADX INFO: renamed from: a, reason: collision with root package name */
+    private String f936a;
+    private Context b;
+    private int c = 4;
+    private String d;
+    private String e;
+    private String f;
+    private int g;
+    private String h;
+
+    public final String a() {
+        return this.f936a;
+    }
+
+    public final void a(String str) {
+        this.f936a = str;
+    }
+
+    public final Context b() {
+        return this.b;
+    }
+
+    public final void a(Context context) {
+        this.b = context;
+    }
+
+    public final int c() {
+        return this.c;
+    }
+
+    public final void d() {
+        this.c = 4;
+    }
+
+    public final void b(String str) {
+        this.d = str;
+    }
+
+    public final String e() {
+        return this.e;
+    }
+
+    public final void c(String str) {
+        this.e = str;
+        this.f = str;
+        if (str != null && !TextUtils.isEmpty(str)) {
+            int iLastIndexOf = str.lastIndexOf(46);
+            if (iLastIndexOf != -1) {
+                this.f = str.substring(iLastIndexOf + 1);
+            }
+        } else {
+            this.f = "unknown";
+        }
+        if (this.f.length() > 16) {
+            this.f = this.f.substring(0, 15);
+        }
+    }
+
+    public final int a(int i) {
+        int i2;
+        if (i == 1) {
+            i2 = this.g;
+        } else if (i == 2) {
+            i2 = this.g >> 8;
+        } else {
+            if (i != 4) {
+                return 0;
+            }
+            i2 = this.g >> 16;
+        }
+        return i2 & 255;
+    }
+
+    public final void b(int i) {
+        this.g = i;
+    }
+
+    public final String f() {
+        return this.h;
+    }
+
+    final String c(int i) {
+        if (i == 1) {
+            return "jnisgmain@" + this.e;
+        }
+        if (i == 2) {
+            return "jnisgmain_v2@" + this.e;
+        }
+        return this.h;
+    }
+
+    public final void d(String str) {
+        this.h = str;
+    }
+}

@@ -1,0 +1,142 @@
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/NativeRequest.java:4:public class NativeRequest {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/NativeResponse.java:4:public class NativeResponse {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SDKCipherNative.java:9:public class SDKCipherNative {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SDKCipherNative.java:35:    public static native NativeResponse execute(NativeRequest nativeRequest);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SDKCipherNative.java:44:            System.loadLibrary("vivoseckey");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SDKCipherNative.java:56:                    File file = new File(str, "libvivoseckey.so");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SDKCipherNative.java:61:                        k.d("SecurityKey", "found libvivoseckey.so < 100KB, please check! so_sha256=" + g.a(file) + ",fileLen=" + file.length() + ",soFile=" + file.getAbsolutePath());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SDKCipherNative.java:70:        new Thread(new Runnable() { // from class: com.vivo.seckeysdk.utils.SDKCipherNative.1
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SDKCipherNative.java:77:                            File file = new File(str.trim(), "libvivoseckey.so");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:3:import com.vivo.seckeysdk.utils.SDKCipherNative;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:80:    private boolean a(int i, int i2, int i3, NativeResponse nativeResponse) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:81:        if (nativeResponse != null) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:83:                h.a(this.f934a.b(), i, i3, i2, nativeResponse.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:85:            if (nativeResponse.getErr() == 0) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:88:            k.d("SecurityKey", "Actiontype " + h.a(i2) + "error: " + nativeResponse.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:108:        NativeResponse nativeResponseExecute;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:110:        NativeRequest nativeRequest = new NativeRequest();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:111:        nativeRequest.setOperateType(SDKCipherNative.OperateType.ENCRYPT.ordinal());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:112:        nativeRequest.setEncryptType(SDKCipherNative.EncryptType.AES.ordinal());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:113:        nativeRequest.setData(bArr);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:114:        nativeRequest.setKeyVersion(i2);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:117:            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:119:        } while (a(4, 21312, i3, nativeResponseExecute));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:120:        if (nativeResponseExecute.getErr() != 0) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:121:            k.d("SecurityKey", "aesEncrypt fail:" + nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:122:            throw new SecurityKeyException(nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:124:        if (nativeResponseExecute.getOutput() == null) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:128:        return new ProtocolPackage(this.f934a.c(nativeResponseExecute.getKeyVersion()), nativeResponseExecute.getKeyVersion(), i, nativeResponseExecute.getOutput()).getbytes();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:146:        if (SDKCipherNative.isLoadSoOK) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:149:        k.d("SecurityKey", "SDKCipherNative libvivoseckey.so is load failed, please check!");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:150:        throw new SecurityKeyException("libvivoseckey.so is load failed,please check!", SecurityKeyException.SK_ERROR_LOAD_SO_FAILED);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:160:        NativeResponse nativeResponseExecute;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:162:        NativeRequest nativeRequest = new NativeRequest();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:163:        nativeRequest.setOperateType(SDKCipherNative.OperateType.ENCRYPT.ordinal());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:164:        nativeRequest.setEncryptType(SDKCipherNative.EncryptType.AES_FIXED.ordinal());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:170:        nativeRequest.setData(bArr2);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:172:            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:174:        } while (a(6, 21312, i, nativeResponseExecute));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:175:        if (nativeResponseExecute.getErr() != 0) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:176:            k.d("SecurityKey", "aesEncryptByFixed fail:" + nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:177:            throw new SecurityKeyException(nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:179:        if (nativeResponseExecute.getOutput() == null) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:183:        d dVar = new d("fixedKey@" + this.f934a.e(), 1, 16, nativeResponseExecute.getOutput());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:189:        NativeResponse nativeResponseExecute;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:197:        NativeRequest nativeRequest = new NativeRequest();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:198:        nativeRequest.setOperateType(SDKCipherNative.OperateType.DECRYPT.ordinal());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:199:        nativeRequest.setEncryptType(SDKCipherNative.EncryptType.AES_FIXED.ordinal());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:200:        nativeRequest.setKeyVersion(dVarB.b());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:206:        nativeRequest.setData(bArr2);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:208:            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:210:        } while (a(6, 21313, i, nativeResponseExecute));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:211:        if (nativeResponseExecute.getErr() != 0) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:212:            k.d("SecurityKey", "aesDecrypt fail:" + nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:213:            throw new SecurityKeyException(nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:215:        if (nativeResponseExecute.getOutput() == null) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:219:        return nativeResponseExecute.getOutput();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:224:        NativeResponse nativeResponseExecute;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:237:        NativeRequest nativeRequest = new NativeRequest();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:238:        nativeRequest.setOperateType(SDKCipherNative.OperateType.DECRYPT.ordinal());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:239:        nativeRequest.setEncryptType(SDKCipherNative.EncryptType.AES.ordinal());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:240:        nativeRequest.setKeyVersion(protocolPackageBuildProtocolPackage.getKeyVersion());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:241:        nativeRequest.setData(protocolPackageBuildProtocolPackage.getData());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:244:            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:246:        } while (a(4, 21313, i, nativeResponseExecute));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:247:        if (nativeResponseExecute.getErr() != 0) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:248:            k.d("SecurityKey", "aesDecrypt fail:" + nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:249:            throw new SecurityKeyException(nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:251:        if (nativeResponseExecute.getOutput() == null) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:255:        return nativeResponseExecute.getOutput();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:264:        NativeResponse nativeResponseExecute;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:266:        NativeRequest nativeRequest = new NativeRequest();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:267:        nativeRequest.setOperateType(SDKCipherNative.OperateType.ENCRYPT.ordinal());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:268:        nativeRequest.setEncryptType(SDKCipherNative.EncryptType.RSA.ordinal());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:269:        nativeRequest.setData(bArr);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:270:        nativeRequest.setKeyVersion(i);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:273:            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:275:        } while (a(4, 21314, i2, nativeResponseExecute));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:276:        if (nativeResponseExecute.getErr() != 0) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:277:            k.d("SecurityKey", "rsaEncrypt fail:" + nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:278:            throw new SecurityKeyException(nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:280:        if (nativeResponseExecute.getOutput() == null) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:284:        return new ProtocolPackage(this.f934a.c(nativeResponseExecute.getKeyVersion()), nativeResponseExecute.getKeyVersion(), 7, nativeResponseExecute.getOutput()).getbytes();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:294:        NativeResponse nativeResponseExecute;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:302:        NativeRequest nativeRequest = new NativeRequest();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:303:        nativeRequest.setOperateType(SDKCipherNative.OperateType.DECRYPT.ordinal());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:304:        nativeRequest.setEncryptType(SDKCipherNative.EncryptType.RSA.ordinal());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:305:        nativeRequest.setKeyVersion(protocolPackageBuildProtocolPackage.getKeyVersion());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:306:        nativeRequest.setData(protocolPackageBuildProtocolPackage.getData());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:309:            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:311:        } while (a(4, 21315, i, nativeResponseExecute));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:312:        if (nativeResponseExecute.getErr() != 0) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:313:            k.d("SecurityKey", "rsaDecrypt fail:" + nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:314:            throw new SecurityKeyException(nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:316:        if (nativeResponseExecute.getOutput() == null) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:320:        return nativeResponseExecute.getOutput();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:324:        NativeResponse nativeResponseExecute;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:326:        NativeRequest nativeRequest = new NativeRequest();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:327:        nativeRequest.setOperateType(SDKCipherNative.OperateType.ENCRYPT.ordinal());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:328:        nativeRequest.setEncryptType(SDKCipherNative.EncryptType.AES.ordinal());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:329:        nativeRequest.setData(bArr);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:330:        nativeRequest.setKeyVersion(i);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:333:            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:335:        } while (a(4, i2, i3, nativeResponseExecute));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:336:        if (nativeResponseExecute.getErr() != 0) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:337:            k.d("SecurityKey", "aesEncrypt fail:" + nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:338:            throw new SecurityKeyException(nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:340:        if (nativeResponseExecute.getOutput() == null) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:344:        return new ProtocolPackage(this.f934a.c(nativeResponseExecute.getKeyVersion()), nativeResponseExecute.getKeyVersion(), 17, nativeResponseExecute.getOutput()).getbytes();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:366:        NativeResponse nativeResponseExecute;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:368:        NativeRequest nativeRequest = new NativeRequest();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:369:        nativeRequest.setOperateType(SDKCipherNative.OperateType.SIGN.ordinal());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:371:        nativeRequest.setEncryptType(0);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:372:        nativeRequest.setData(bArr);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:373:        nativeRequest.setKeyVersion(i);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:375:            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:377:        } while (a(4, 21316, i2, nativeResponseExecute));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:378:        if (nativeResponseExecute.getErr() != 0) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:379:            k.d("SecurityKey", "sign fail:" + nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:380:            throw new SecurityKeyException(nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:382:        if (nativeResponseExecute.getOutput() == null) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:386:        return new ProtocolPackage(this.f934a.c(nativeResponseExecute.getKeyVersion()), nativeResponseExecute.getKeyVersion(), 9, nativeResponseExecute.getOutput()).getbytes();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:396:        NativeResponse nativeResponseExecute;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:404:        NativeRequest nativeRequest = new NativeRequest();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:405:        nativeRequest.setOperateType(SDKCipherNative.OperateType.VERIFY.ordinal());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:406:        nativeRequest.setEncryptType(0);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:407:        nativeRequest.setKeyVersion(protocolPackageBuildProtocolPackage.getKeyVersion());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:411:        nativeRequest.setData(bArr3);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:414:            nativeResponseExecute = SDKCipherNative.execute(nativeRequest);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:416:        } while (a(4, 21317, i, nativeResponseExecute));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:417:        if (nativeResponseExecute.getErr() == 0) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:420:        k.d("SecurityKey", "sign fail:" + nativeResponseExecute.getErr());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:11:import com.vivo.seckeysdk.utils.SDKCipherNative;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:227:        SDKCipherNative.notice();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:262:                SDKCipherNative.notice();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:280:                SDKCipherNative.notice();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:628:                    SDKCipherNative.notice();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:675:                    SDKCipherNative.notice();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:722:                    SDKCipherNative.notice();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1085:        SDKCipherNative.notice();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1106:        SDKCipherNative.notice();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1223:        SDKCipherNative.notice();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/md5/Wave.java:20:            System.loadLibrary("vivo_account_wave");

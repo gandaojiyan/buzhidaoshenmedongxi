@@ -1,0 +1,90 @@
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/a/i.java:5:public final class i {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:268:            vivoSecurityKeyResult = new VivoSecurityKeyResult(vivoSecurityKeyResult2.resultCode, vivoSecurityKeyResult2.operateData, vivoSecurityKeyResult2.keyVersion, vivoSecurityKeyResult2.uniqueId, vivoSecurityKeyResult2.publicKeyHash, vivoSecurityKeyResult2.needUpdateKey);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/SecurityKeyProxy.java:271:            vivoSecurityKeyResult = new VivoSecurityKeyResult(vivoSecurityKeyResult3.resultCode, vivoSecurityKeyResult3.operateData, vivoSecurityKeyResult3.keyVersion, vivoSecurityKeyResult3.uniqueId, vivoSecurityKeyResult3.publicKeyHash, vivoSecurityKeyResult3.needUpdateKey);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:141:                this.f924a.a(2);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:252:            vivoSecurityKeyResultA = this.f924a.a().a(2);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:495:                vivoSecurityKeyResultA = this.f924a.a().a(protocolPackageBuildProtocolPackage.getCipherMode(), protocolPackageBuildProtocolPackage.getKeyVersion(), protocolPackageBuildProtocolPackage.getData());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:610:                vivoSecurityKeyResultB = this.f924a.a().b(protocolPackageBuildProtocolPackage.getCipherMode(), protocolPackageBuildProtocolPackage.getKeyVersion(), protocolPackageBuildProtocolPackage.getData());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:802:                vivoSecurityKeyResultC = this.f924a.a().c(protocolPackageBuildProtocolPackage.getCipherMode(), protocolPackageBuildProtocolPackage.getKeyVersion(), bArr3);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:911:        if (protocolPackage.getCipherMode() == 2 && protocolPackage.getCipherMode() == 2 && protocolPackage.getKeyVersion() != a(this.g, i2)) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:912:            k.c("SecurityKey", this.f924a, str + " key version is not match current:" + this.f924a.b(i2) + " target:" + protocolPackage.getKeyVersion());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:913:            k.c("SecurityKey", this.f924a, str + " Please check env info. machine's env:" + ProtocolPackage.kv2EnvStr(this.f924a.b(i2)) + ". but cipher's env:" + ProtocolPackage.kv2EnvStr(protocolPackage.getKeyVersion()));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:921:            if (protocolPackage.getKeyVersion() == a(this.g, i2)) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:937:        if (SecurityKeyException.keyVersionNotMatched(i3)) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/NativeRequest.java:8:    private int keyVersion = 0;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/NativeRequest.java:10:    public int getKeyVersion() {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/NativeRequest.java:11:        return this.keyVersion;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/NativeRequest.java:14:    public void setKeyVersion(int i) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/NativeRequest.java:15:        this.keyVersion = i;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/i.java:8:public final class i {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityKeyException.java:104:    public static boolean keyVersionNotMatched(int i) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/SecurityKeyException.java:159:        return i == 600 || i == 101 || keyVersionNotMatched(i);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/NativeResponse.java:6:    private int keyVersion;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/NativeResponse.java:29:    public int getKeyVersion() {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/NativeResponse.java:30:        return this.keyVersion;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/NativeResponse.java:33:    public void setKeyVersion(int i) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/NativeResponse.java:34:        this.keyVersion = i;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/NativeResponse.java:46:        String str = ("err:" + this.err + ";") + "key version:" + this.keyVersion + ";";
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:8:    private int mKeyVersion;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:13:        return (i <= 0 || i > 255) ? "Invalid KeyVersion" : i > 230 ? "Test" : i > 220 ? "Pre" : "Online";
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:20:        this.mKeyVersion = i;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:26:    public int getKeyVersion() {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:27:        return this.mKeyVersion;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:30:    public void setKeyVersion(int i) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:31:        this.mKeyVersion = i;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:60:        stringBuffer.append("ProtocolPackage keyVersion " + this.mKeyVersion + ",");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:65:        stringBuffer.append(kv2EnvStr(this.mKeyVersion));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:70:        com.vivo.seckeysdk.a.a aVarA = com.vivo.seckeysdk.a.d.a(1);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:71:        aVarA.b(this.mKeyVersion);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:80:        com.vivo.seckeysdk.a.a aVarA = com.vivo.seckeysdk.a.d.a(1);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/ProtocolPackage.java:81:        aVarA.b(this.mKeyVersion);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/d.java:46:        stringBuffer.append("ProtocolPackageV3 keyVersion " + this.f933a + ",");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:100:        return a(bArr, 5, this.f934a.a(1));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:114:        nativeRequest.setKeyVersion(i2);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:128:        return new ProtocolPackage(this.f934a.c(nativeResponseExecute.getKeyVersion()), nativeResponseExecute.getKeyVersion(), i, nativeResponseExecute.getOutput()).getbytes();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:142:        return a(bArr, i, this.f934a.a(1));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:200:        nativeRequest.setKeyVersion(dVarB.b());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:232:        int iA = this.f934a.a(1);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:233:        if (protocolPackageBuildProtocolPackage.getKeyVersion() > iA) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:234:            k.d("SecurityKey", "aesDecrypt  not supported for pkg.KeyVersion(" + protocolPackageBuildProtocolPackage.getKeyVersion() + ") > sdk_currentKeyVersion(" + iA + ")");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:235:            throw new SecurityKeyException("decrypt  keyversion  of the data is greater than the currently supported version", SecurityKeyException.SK_ERROR_UNSUPPORTED_DECRYPT_KEYVERION_VERSION);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:240:        nativeRequest.setKeyVersion(protocolPackageBuildProtocolPackage.getKeyVersion());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:260:        return b(bArr, this.f934a.a(2));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:270:        nativeRequest.setKeyVersion(i);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:284:        return new ProtocolPackage(this.f934a.c(nativeResponseExecute.getKeyVersion()), nativeResponseExecute.getKeyVersion(), 7, nativeResponseExecute.getOutput()).getbytes();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:297:        int iA = this.f934a.a(2);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:298:        if (protocolPackageBuildProtocolPackage.getKeyVersion() > iA) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:299:            k.d("SecurityKey", "rsaDecrypt  not supported for pkg.KeyVersion(" + protocolPackageBuildProtocolPackage.getKeyVersion() + ") > sdk_currentKeyVersion(" + iA + ")");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:300:            throw new SecurityKeyException("decrypt  keyversion  of the data is greater than the currently supported version", SecurityKeyException.SK_ERROR_UNSUPPORTED_DECRYPT_KEYVERION_VERSION);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:305:        nativeRequest.setKeyVersion(protocolPackageBuildProtocolPackage.getKeyVersion());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:330:        nativeRequest.setKeyVersion(i);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:344:        return new ProtocolPackage(this.f934a.c(nativeResponseExecute.getKeyVersion()), nativeResponseExecute.getKeyVersion(), 17, nativeResponseExecute.getOutput()).getbytes();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:349:        return b(g.a(bArr).getBytes(), this.f934a.a(1), 21321);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:356:        int keyVersion = protocolPackageBuildProtocolPackage.getKeyVersion();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:357:        return Arrays.equals(ProtocolPackage.buildProtocolPackage(b(strA.getBytes(), keyVersion, 21322)).getCipherData(), protocolPackageBuildProtocolPackage.getCipherData());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:362:        return c(bArr, this.f934a.a(2));
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:373:        nativeRequest.setKeyVersion(i);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:386:        return new ProtocolPackage(this.f934a.c(nativeResponseExecute.getKeyVersion()), nativeResponseExecute.getKeyVersion(), 9, nativeResponseExecute.getOutput()).getbytes();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:399:        int iA = this.f934a.a(4);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:400:        if (protocolPackageBuildProtocolPackage.getKeyVersion() > iA) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:401:            k.d("SecurityKey", "signatureVerify  not supported for pkg.KeyVersion(" + protocolPackageBuildProtocolPackage.getKeyVersion() + ") > sdk_currentKeyVersion(" + iA + ")");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:402:            throw new SecurityKeyException("decrypt  keyversion  of the data is greater than the currently supported version", SecurityKeyException.SK_ERROR_UNSUPPORTED_DECRYPT_KEYVERION_VERSION);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:407:        nativeRequest.setKeyVersion(protocolPackageBuildProtocolPackage.getKeyVersion());
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:454:            iA = this.f934a.a(1);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:456:            iA = this.f934a.a(2);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:460:                    iA = this.f934a.a(1);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:466:                    iA = this.f934a.a(1);
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:227:        SDKCipherNative.notice();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:262:                SDKCipherNative.notice();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:280:                SDKCipherNative.notice();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:617:        if (this.mCipher == this.mSdkCipher || (this.mPlatformCipher != null && protocolPackage.getKeyVersion() > this.mPlatformCipher.b(i))) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:628:                    SDKCipherNative.notice();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:675:                    SDKCipherNative.notice();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:722:                    SDKCipherNative.notice();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1046:    public int getKeyVersion(int i) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1085:        SDKCipherNative.notice();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1106:        SDKCipherNative.notice();
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1138:            int r0 = r3.getKeyVersion(r1)
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1198:            return getTEEKeyVersion(1) == 0 || getTEEKeyVersion(2) == 0 || getTEEKeyVersion(4) == 0;
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1207:    private int getTEEKeyVersion(int i) {
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/SecurityKeyCipher.java:1223:        SDKCipherNative.notice();

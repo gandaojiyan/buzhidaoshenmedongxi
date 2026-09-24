@@ -1,0 +1,23 @@
+===== APK =====
+
+===== jadx 目录 =====
+
+===== /system =====
+/system/priv-app/VivoBrowser/lib/arm64/libvivoseckey.so
+/system/app/BBKAccount/lib/arm/libvivoseckey.so
+/system/app/IqooSecure/lib/arm/libvivoseckey.so
+/system/app/BBKAppStore/lib/arm/libvivoseckey.so
+
+===== /vendor =====
+
+===== /odm =====
+
+===== linker / loaded library =====
+PID=6784
+
+===== package native libraries =====
+package:/system/app/Updater/Updater.apk
+    codePath=/system/app/Updater
+    legacyNativeLibraryDir=/system/app/Updater/lib
+    primaryCpuAbi=arm64-v8a
+    secondaryCpuAbi=null
