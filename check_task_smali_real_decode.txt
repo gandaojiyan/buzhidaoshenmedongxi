@@ -1,0 +1,94 @@
+===== Java =====
+openjdk version "21.0.12" 2026-07-21
+OpenJDK Runtime Environment (build 21.0.12)
+OpenJDK 64-Bit Server VM (build 21.0.12, mixed mode)
+
+===== apktool =====
+/data/data/com.termux/files/usr/bin/apktool
+3.0.3-dirty
+-rwx------. 1 u0_a321 u0_a321 2750 Jul 20 20:51 /data/data/com.termux/files/usr/bin/apktool
+
+===== APK 基本信息 =====
+-rw-------. 1 u0_a321 u0_a321 13M Sep 24 00:05 /data/data/com.termux/files/home/Updater.apk
+ZIP 文件数量: 1371
+DEX 文件:
+   classes.dex
+   classes2.dex
+APK 前 50 个条目:
+   classes.dex
+   classes2.dex
+   res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png
+   res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png
+   res/drawable-ldrtl-xhdpi-v17/abc_spinner_mtrl_am_alpha.9.png
+   res/drawable-ldrtl-xhdpi-v4/currentsoftversion.png
+   res/drawable-xhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png
+   res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_000.png
+   res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_015.png
+   res/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_000.png
+   res/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_015.png
+   res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png
+   res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png
+   res/drawable-xhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png
+   res/drawable-xhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png
+   res/drawable-xhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png
+   res/drawable-xhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png
+   res/drawable-xhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png
+   res/drawable-xhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png
+   res/drawable-xhdpi-v4/abc_ic_menu_share_mtrl_alpha.png
+   res/drawable-xhdpi-v4/abc_ic_star_black_16dp.png
+   res/drawable-xhdpi-v4/abc_ic_star_black_36dp.png
+   res/drawable-xhdpi-v4/abc_ic_star_black_48dp.png
+   res/drawable-xhdpi-v4/abc_ic_star_half_black_16dp.png
+   res/drawable-xhdpi-v4/abc_ic_star_half_black_36dp.png
+   res/drawable-xhdpi-v4/abc_ic_star_half_black_48dp.png
+   res/drawable-xhdpi-v4/abc_list_divider_mtrl_alpha.9.png
+   res/drawable-xhdpi-v4/abc_list_focused_holo.9.png
+   res/drawable-xhdpi-v4/abc_list_longpressed_holo.9.png
+   res/drawable-xhdpi-v4/abc_list_pressed_holo_dark.9.png
+   res/drawable-xhdpi-v4/abc_list_pressed_holo_light.9.png
+   res/drawable-xhdpi-v4/abc_list_selector_disabled_holo_dark.9.png
+   res/drawable-xhdpi-v4/abc_list_selector_disabled_holo_light.9.png
+   res/drawable-xhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png
+   res/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png
+   res/drawable-xhdpi-v4/abc_scrubber_control_off_mtrl_alpha.png
+   res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png
+   res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png
+   res/drawable-xhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png
+   res/drawable-xhdpi-v4/abc_scrubber_track_mtrl_alpha.9.png
+   res/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png
+   res/drawable-xhdpi-v4/abc_switch_track_mtrl_alpha.9.png
+   res/drawable-xhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png
+   res/drawable-xhdpi-v4/abc_text_select_handle_left_mtrl_dark.png
+   res/drawable-xhdpi-v4/abc_text_select_handle_left_mtrl_light.png
+   res/drawable-xhdpi-v4/abc_text_select_handle_middle_mtrl_dark.png
+   res/drawable-xhdpi-v4/abc_text_select_handle_middle_mtrl_light.png
+   res/drawable-xhdpi-v4/abc_text_select_handle_right_mtrl_dark.png
+   res/drawable-xhdpi-v4/abc_text_select_handle_right_mtrl_light.png
+   res/drawable-xhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png
+
+===== apktool 实际解包 =====
+I: Using Apktool 3.0.3-dirty on Updater.apk with 8 threads
+I: Loading resource table...
+I: Baksmaling classes2.dex...
+I: Baksmaling classes.dex...
+I: Decoding value resources...
+I: Loading resource table from file: /data/data/com.termux/files/home/.local/share/apktool/framework/1.apk
+Could not find framework resources for package ID 3.
+You must install proper framework files, see project website for more info.
+APKTOOL_EXIT_CODE=1
+
+===== 解包目录 =====
+/data/data/com.termux/files/home/updater_smali
+/data/data/com.termux/files/home/updater_smali/smali
+/data/data/com.termux/files/home/updater_smali/smali/a
+/data/data/com.termux/files/home/updater_smali/smali/android
+/data/data/com.termux/files/home/updater_smali/smali/androidx
+/data/data/com.termux/files/home/updater_smali/smali_classes2
+/data/data/com.termux/files/home/updater_smali/smali_classes2/rx
+/data/data/com.termux/files/home/updater_smali/smali_classes2/vivo
+
+===== 所有 smali 目录 =====
+/data/data/com.termux/files/home/updater_smali/smali
+/data/data/com.termux/files/home/updater_smali/smali_classes2
+
+===== BaseCheckUpdateTask =====
