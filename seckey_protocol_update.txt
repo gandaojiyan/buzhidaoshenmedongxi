@@ -1,0 +1,1596 @@
+===== SecurityLevelProtocolPackage.java =====
+package com.vivo.seckeysdk.utils;
+
+import android.content.Context;
+import android.util.Base64;
+import com.vivo.seckeysdk.SecurityKeyCipher;
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.zip.CRC32;
+
+/* JADX INFO: loaded from: classes.dex */
+public final class SecurityLevelProtocolPackage {
+
+    /* JADX INFO: renamed from: a, reason: collision with root package name */
+    public static String f931a = "forConstructor";
+    public static String b = "forMethod";
+    private static HashMap<String, SecurityLevelProtocolPackage> o = new HashMap<>();
+    String c = "UTF-8";
+    private boolean d;
+    private byte[] e;
+    private Context f;
+    private int g;
+    private int h;
+    private String i;
+    private String j;
+    private String k;
+    private String l;
+    private byte[] m;
+    private byte[] n;
+
+    public enum ProtectionThreadMode {
+        NONE,
+        SDK_PROTECTION,
+        APP_PROTECTION,
+        END
+    }
+
+    public static String a(int i) {
+        return i != 0 ? i != 1 ? i != 2 ? "UNKNOWN" : "APP_PROTECTION" : "SDK_PROTECTION" : "NONE";
+    }
+
+    public static int a(Context context, String str) {
+        try {
+            SecurityLevelProtocolPackage securityLevelProtocolPackageC = o.get(str);
+            if (securityLevelProtocolPackageC == null) {
+                securityLevelProtocolPackageC = c(context, str);
+                o.put(str, securityLevelProtocolPackageC);
+            }
+            int i = securityLevelProtocolPackageC.h;
+            k.b("SecurityKey", "resetVivoCipher buildProtocolPackageForMethod cipherMode=" + i + ",mode=" + SecurityKeyCipher.modeToString(i));
+            return i;
+        } catch (SecurityKeyException e) {
+            k.a("SecurityKey", "Error: " + e.getMessage(), e);
+            return 4;
+        }
+    }
+
+    public static SecurityLevelProtocolPackage b(Context context, String str) throws SecurityKeyException {
+        try {
+            return a(context, Base64.decode(str, 3), f931a);
+        } catch (IllegalArgumentException e) {
+            k.a("SecurityKey", "Error: " + e.getMessage(), e);
+            throw new SecurityKeyException(e.getMessage(), -1000);
+        }
+    }
+
+    private static SecurityLevelProtocolPackage c(Context context, String str) throws SecurityKeyException {
+        try {
+            return a(context, Base64.decode(str, 3), b);
+        } catch (IllegalArgumentException e) {
+            k.a("SecurityKey", "Error: " + e.getMessage(), e);
+            throw new SecurityKeyException(e.getMessage(), -1000);
+        }
+    }
+
+    private static SecurityLevelProtocolPackage a(Context context, byte[] bArr, String str) throws SecurityKeyException {
+        return new SecurityLevelProtocolPackage(context, bArr, str);
+    }
+
+    private SecurityLevelProtocolPackage(Context context, byte[] bArr, String str) throws SecurityKeyException {
+        this.d = true;
+        this.e = null;
+        this.i = "";
+        this.j = "";
+        this.k = "";
+        this.l = "";
+        this.m = new byte[0];
+        this.n = new byte[0];
+        if (bArr == null || bArr.length == 0) {
+            throw new SecurityKeyException("Entry body must not be empty", 1000);
+        }
+        this.f = context;
+        this.e = bArr;
+        this.d = true;
+        byte[] bArr2 = new byte[4];
+        System.arraycopy(bArr, 0, bArr2, 0, 4);
+        int iA = com.vivo.seckeysdk.a.g.a(bArr2);
+        if (iA <= 0) {
+            throw new SecurityKeyException("Illegal header length:".concat(String.valueOf(iA)), SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+        }
+        byte[] bArr3 = this.e;
+        if (bArr3.length < iA) {
+            throw new SecurityKeyException("Header length great than entry length,entry length:" + this.e.length + ",header length:" + iA, SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+        }
+        if (this.d) {
+            if (bArr3 == null) {
+                throw new SecurityKeyException("The haeder bytes must not be empty", SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+            }
+            byte[] bArr4 = new byte[8];
+            byte[] bArr5 = new byte[bArr3.length - 12];
+            System.arraycopy(bArr3, 4, bArr4, 0, 8);
+            byte[] bArr6 = this.e;
+            System.arraycopy(bArr6, 12, bArr5, 0, bArr6.length - 12);
+            long jB = com.vivo.seckeysdk.a.g.b(bArr4);
+            CRC32 crc32 = new CRC32();
+            crc32.update(bArr5);
+            long value = crc32.getValue();
+            if (jB != value) {
+                throw new SecurityKeyException("头数据校验不成功，头部校验和为：" + jB + ",计算校验和为：" + value, 1000);
+            }
+        }
+        try {
+            byte[] bArr7 = new byte[2];
+            System.arraycopy(this.e, 12, bArr7, 0, 2);
+            int iA2 = com.vivo.seckeysdk.a.g.a(bArr7);
+            if (iA2 != 1) {
+                throw new SecurityKeyException("Unsupported version of:" + iA2 + " for this Header + " + getClass(), SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+            }
+            this.g = iA2;
+            byte[] bArr8 = this.e;
+            if (bArr8.length < 17) {
+                throw new SecurityKeyException("crypto header problem", 150);
+            }
+            byte[] bArr9 = new byte[4];
+            System.arraycopy(bArr8, 14, bArr9, 0, 4);
+            this.h = Integer.valueOf(com.vivo.seckeysdk.a.g.a(bArr9)).intValue();
+            Integer numValueOf = Integer.valueOf(com.vivo.seckeysdk.a.g.a(new byte[]{bArr8[18]}));
+            byte[] bArr10 = new byte[numValueOf.intValue()];
+            if (bArr8.length < numValueOf.intValue() + 18) {
+                throw new SecurityKeyException("crypto header problem", 150);
+            }
+            System.arraycopy(bArr8, 19, bArr10, 0, numValueOf.intValue());
+            String str2 = new String(bArr10, this.c);
+            if (!str.equals(str2)) {
+                throw new SecurityKeyException("Unsupported tag=" + str2 + " for this Header + " + getClass(), SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+            }
+            this.i = str2;
+            Integer numValueOf2 = Integer.valueOf(com.vivo.seckeysdk.a.g.a(new byte[]{bArr8[numValueOf.intValue() + 19]}));
+            byte[] bArr11 = new byte[numValueOf2.intValue()];
+            if (bArr8.length < numValueOf2.intValue() + 19) {
+                throw new SecurityKeyException("crypto header problem", 150);
+            }
+            System.arraycopy(bArr8, numValueOf.intValue() + 20, bArr11, 0, numValueOf2.intValue());
+            String str3 = new String(bArr11, this.c);
+            String packageName = this.f.getPackageName();
+            if (!packageName.equals(str3)) {
+                throw new SecurityKeyException("Unsupported protocol_packageName of:" + str3 + " for this Header + " + getClass() + ",expected to be app_packageName=" + packageName + ", but " + str3, SecurityKeyException.SK_ERROR_CRYPTO_ENTRY_PARSE_FAILED);
+            }
+            this.j = str3;
+            Integer numValueOf3 = Integer.valueOf(com.vivo.seckeysdk.a.g.a(new byte[]{bArr8[numValueOf.intValue() + 20 + numValueOf2.intValue()]}));
+            byte[] bArr12 = new byte[numValueOf3.intValue()];
+            if (bArr8.length < numValueOf.intValue() + 21 + numValueOf2.intValue() + numValueOf3.intValue()) {
+                throw new SecurityKeyException("crypto header problem", 150);
+            }
+            System.arraycopy(bArr8, numValueOf.intValue() + 21 + numValueOf2.intValue(), bArr12, 0, numValueOf3.intValue());
+            this.k = new String(bArr12, this.c);
+            int iIntValue = numValueOf.intValue() + 21 + numValueOf2.intValue() + numValueOf3.intValue();
+            if (iIntValue < bArr8.length) {
+                Integer numValueOf4 = Integer.valueOf(com.vivo.seckeysdk.a.g.a(new byte[]{bArr8[iIntValue]}));
+                byte[] bArr13 = new byte[numValueOf4.intValue()];
+                if (bArr8.length < numValueOf.intValue() + 21 + numValueOf2.intValue() + numValueOf3.intValue() + numValueOf4.intValue()) {
+                    throw new SecurityKeyException("crypto header problem", 150);
+                }
+                System.arraycopy(bArr8, numValueOf.intValue() + 22 + numValueOf2.intValue() + numValueOf3.intValue(), bArr13, 0, numValueOf4.intValue());
+                this.l = new String(bArr13, this.c);
+                int iIntValue2 = numValueOf.intValue() + 22 + numValueOf2.intValue() + numValueOf3.intValue() + numValueOf4.intValue();
+                if (iIntValue2 < bArr8.length) {
+                    Integer numValueOf5 = Integer.valueOf(com.vivo.seckeysdk.a.g.a(new byte[]{bArr8[iIntValue2]}));
+                    byte[] bArr14 = new byte[numValueOf5.intValue()];
+                    if (bArr8.length < numValueOf.intValue() + 22 + numValueOf2.intValue() + numValueOf3.intValue() + numValueOf4.intValue() + numValueOf5.intValue()) {
+                        throw new SecurityKeyException("crypto header problem", 150);
+                    }
+                    System.arraycopy(bArr8, numValueOf.intValue() + 23 + numValueOf2.intValue() + numValueOf3.intValue() + numValueOf4.intValue(), bArr14, 0, numValueOf5.intValue());
+                    this.m = bArr14;
+                    if (numValueOf.intValue() + 23 + numValueOf2.intValue() + numValueOf3.intValue() + numValueOf4.intValue() + numValueOf5.intValue() < bArr8.length) {
+                        Integer numValueOf6 = Integer.valueOf(com.vivo.seckeysdk.a.g.a(new byte[]{bArr8[numValueOf.intValue() + 23 + numValueOf2.intValue() + numValueOf3.intValue() + numValueOf4.intValue() + numValueOf5.intValue()]}));
+                        byte[] bArr15 = new byte[numValueOf6.intValue()];
+                        if (bArr8.length < numValueOf.intValue() + 23 + numValueOf2.intValue() + numValueOf3.intValue() + numValueOf4.intValue() + numValueOf5.intValue() + numValueOf6.intValue()) {
+                            throw new SecurityKeyException("crypto header problem", 150);
+                        }
+                        System.arraycopy(bArr8, numValueOf.intValue() + 24 + numValueOf2.intValue() + numValueOf3.intValue() + numValueOf4.intValue() + numValueOf5.intValue(), bArr15, 0, numValueOf6.intValue());
+                        this.n = bArr15;
+                    }
+                }
+            }
+        } catch (UnsupportedEncodingException e) {
+            k.a("SecurityKey", "Error: " + e.getMessage(), e);
+        }
+    }
+
+    public final int a() {
+        return this.h;
+    }
+
+    public final String b() {
+        return this.l;
+    }
+
+    public final byte[] c() {
+        return this.m;
+    }
+}
+
+===== utils/c.java =====
+package com.vivo.seckeysdk.utils;
+
+import android.text.TextUtils;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+/* JADX INFO: compiled from: HttpHelper.java */
+/* JADX INFO: loaded from: classes.dex */
+public final class c {
+    public static String a(String str) {
+        if (TextUtils.isEmpty(str) || !str.contains("?")) {
+            return null;
+        }
+        return str.split("[?]")[0];
+    }
+
+    public static Map<String, String> a(Map<String, String> map) {
+        HashMap map2 = new HashMap();
+        if (map != null && map.size() > 0) {
+            for (String str : map.keySet()) {
+                String str2 = map.get(str);
+                if (str2 != null && !str2.equals("") && !str.equalsIgnoreCase("jvq_sign")) {
+                    map2.put(str, str2);
+                }
+            }
+        }
+        return map2;
+    }
+
+    public static String a(Map<String, String> map, boolean z, boolean z2) throws UnsupportedEncodingException {
+        ArrayList arrayList = new ArrayList(map.keySet());
+        if (z) {
+            Collections.sort(arrayList);
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < arrayList.size(); i++) {
+            String strEncode = (String) arrayList.get(i);
+            String strEncode2 = map.get(strEncode);
+            if (!TextUtils.isEmpty(strEncode)) {
+                strEncode = URLEncoder.encode(strEncode, "utf-8");
+            }
+            if (!TextUtils.isEmpty(strEncode2)) {
+                strEncode2 = URLEncoder.encode(strEncode2, "utf-8");
+            }
+            if (i == arrayList.size() - 1) {
+                sb.append(strEncode);
+                sb.append("=");
+                sb.append(strEncode2);
+            } else {
+                sb.append(strEncode);
+                sb.append("=");
+                sb.append(strEncode2);
+                sb.append("&");
+            }
+        }
+        String string = sb.toString();
+        return z2 ? URLEncoder.encode(string, "utf-8") : string;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v3, types: [boolean] */
+    public static Map<String, String> b(String str) throws Throwable {
+        Scanner scanner;
+        String[] strArrSplit;
+        LinkedHashMap linkedHashMap = new LinkedHashMap();
+        if (TextUtils.isEmpty(str)) {
+            return linkedHashMap;
+        }
+        Scanner scanner2 = 0;
+        String str2 = (str.contains("?") && (strArrSplit = str.split("[?]")) != null && 2 == strArrSplit.length) ? strArrSplit[1] : null;
+        ?? IsEmpty = TextUtils.isEmpty(str2);
+        try {
+            if (IsEmpty != 0) {
+                return linkedHashMap;
+            }
+            try {
+                scanner = new Scanner(str2);
+                try {
+                    scanner.useDelimiter("&");
+                    while (scanner.hasNext()) {
+                        String[] strArrSplit2 = scanner.next().split("=", 2);
+                        if (strArrSplit2.length > 2) {
+                            throw new SecurityKeyException("bad parameter", 1000);
+                        }
+                        String str3 = strArrSplit2[0];
+                        String str4 = strArrSplit2.length == 1 ? "" : strArrSplit2[1];
+                        if (linkedHashMap.containsKey(str3)) {
+                            throw new SecurityKeyException("contain same key", 1000);
+                        }
+                        linkedHashMap.put(str3, str4);
+                    }
+                    scanner.close();
+                    return linkedHashMap;
+                } catch (Exception e) {
+                    e = e;
+                    k.d("SecurityKey", "parseRequestParam" + e.getMessage());
+                    if (scanner != null) {
+                        scanner.close();
+                    }
+                    return null;
+                }
+            } catch (Exception e2) {
+                e = e2;
+                scanner = null;
+            } catch (Throwable th) {
+                th = th;
+                if (scanner2 != 0) {
+                    scanner2.close();
+                }
+                throw th;
+            }
+        } catch (Throwable th2) {
+            th = th2;
+            scanner2 = IsEmpty;
+        }
+    }
+}
+
+===== platform/c.java =====
+package com.vivo.seckeysdk.platform;
+
+import android.content.Context;
+import android.text.TextUtils;
+import com.bbk.updater.utils.LightCountDownLatch;
+import com.vivo.seckeysdk.platform.utils.VivoSecurityKeyResult;
+import com.vivo.seckeysdk.utils.ProtocolPackage;
+import com.vivo.seckeysdk.utils.SDKCipherConfig;
+import com.vivo.seckeysdk.utils.SecurityKeyException;
+import com.vivo.seckeysdk.utils.g;
+import com.vivo.seckeysdk.utils.h;
+import com.vivo.seckeysdk.utils.k;
+import java.net.URLEncoder;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+/* JADX INFO: compiled from: PlatformCipher.java */
+/* JADX INFO: loaded from: classes.dex */
+public class c implements a {
+    private static volatile Map<String, c> e = new HashMap();
+    private static int i = -1;
+
+    /* JADX INFO: renamed from: a, reason: collision with root package name */
+    protected com.vivo.seckeysdk.platform.utils.a f924a;
+    protected boolean b;
+    protected boolean c;
+    protected boolean d;
+    private int f;
+    private int g;
+    private int h;
+
+    private static int a(int i2, int i3) {
+        int i4;
+        if (i3 == 1) {
+            return i2 & 255;
+        }
+        if (i3 == 2) {
+            i4 = i2 >> 8;
+        } else {
+            if (i3 != 4) {
+                return 0;
+            }
+            i4 = i2 >> 16;
+        }
+        return i4 & 255;
+    }
+
+    private static boolean i(int i2) {
+        return i2 == 162 || i2 == 157 || i2 == 161 || i2 == 163 || i2 == 156 || i2 == 166 || i2 == 167 || i2 == 164 || i2 == 168 || i2 == 169 || i2 == 170 || i2 == 171 || i2 == 172 || i2 == 165;
+    }
+
+    private c(Context context) {
+        com.vivo.seckeysdk.platform.utils.a aVar = new com.vivo.seckeysdk.platform.utils.a();
+        this.f924a = aVar;
+        this.b = false;
+        this.c = true;
+        this.f = 0;
+        this.g = 0;
+        this.d = false;
+        this.h = 7;
+        aVar.a(context);
+        this.f924a.d(1);
+        if (!c(context)) {
+            this.f924a.c(context.getPackageName());
+            this.f924a.a().a(context, (String) null);
+        }
+        k.a("SecurityKey", this.f924a, "Create new PlatformCipher");
+    }
+
+    public static c a(Context context) {
+        return b(context);
+    }
+
+    private static synchronized c b(Context context) {
+        if (context == null) {
+            k.d("SecurityKey", "getInstance context inputed is null");
+            return null;
+        }
+        if (c(context)) {
+            k.d("SecurityKey", "getInstance moduleName inputed is null");
+            return null;
+        }
+        String packageName = c(context) ? null : context.getPackageName();
+        if (packageName != null && !TextUtils.isEmpty(packageName)) {
+            if (e.containsKey(packageName)) {
+                return e.get(packageName);
+            }
+            c cVar = new c(context);
+            e.put(packageName, cVar);
+            try {
+                cVar.b(true);
+                cVar.b = true;
+            } catch (Exception e2) {
+                k.a("SecurityKey", "PlatformCipher init fail,Error: " + e2.getMessage(), e2);
+            }
+            return cVar;
+        }
+        k.d("SecurityKey", "getInstance package name is null or empty");
+        return null;
+    }
+
+    private static boolean c(Context context) {
+        return context.getPackageName().equals("android");
+    }
+
+    private int i() {
+        int i2 = this.f924a.b(1) != 0 ? 0 : 1;
+        if (this.f924a.b(2) == 0) {
+            i2 |= 2;
+        }
+        return this.f924a.b(4) == 0 ? i2 | 4 : i2;
+    }
+
+    private synchronized boolean g(int i2) throws SecurityKeyException {
+        boolean zA;
+        if (!this.b) {
+            b(true);
+        }
+        if (!f()) {
+            return this.f924a.b(i2) != 0;
+        }
+        if ((this.f924a.d() == 2 || this.f924a.i() == 3) && this.f924a.b(i2) != 0) {
+            return true;
+        }
+        long jCurrentTimeMillis = System.currentTimeMillis();
+        int i3 = i();
+        if (this.f924a.d() == 2) {
+            k.c("SecurityKey", this.f924a, "Try to get key " + i2 + "again");
+            this.f924a.a(jCurrentTimeMillis);
+            return a(i3, false);
+        }
+        if (this.f924a.j() == 1 && this.f924a.i() == 1 && this.f924a.d() == 3 && jCurrentTimeMillis - this.f924a.k() > 28800000) {
+            k.a("SecurityKey", this.f924a, "Auto try to get keyType " + i2 + " again");
+            try {
+                this.f924a.a(2);
+                b(false);
+                zA = a(i(), false);
+            } catch (SecurityKeyException e2) {
+                if (!i(e2.getErrorCode())) {
+                    this.f924a.e(2);
+                }
+                zA = false;
+            }
+            if (!zA) {
+                this.f924a.a(jCurrentTimeMillis);
+                this.f924a.a(3);
+                b(false);
+            }
+        }
+        return true;
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public boolean c(int i2) throws SecurityKeyException {
+        k.b("SecurityKey", this.f924a, "switch mode of cipher to ".concat(String.valueOf(i2)));
+        this.f924a.d(i2);
+        if (i2 == 1) {
+            this.f924a.a(a() ? 2 : 3);
+        } else {
+            this.f924a.a(i2);
+        }
+        return b(false);
+    }
+
+    private boolean j() {
+        k.b("SecurityKey", this.f924a, "PlatformCipher internal switch mode of cipher to 3");
+        if (this.f924a.i() != 1) {
+            k.d("SecurityKey", this.f924a, "Current mode is not auto");
+            return false;
+        }
+        this.f924a.a(3);
+        try {
+            return b(false);
+        } catch (SecurityKeyException e2) {
+            k.a("SecurityKey", "Error: " + e2.getMessage(), e2);
+            return false;
+        }
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public int b() {
+        try {
+            if (this.f924a.d() == 2 && this.f924a.i() == 1 && !g(1) && !g(2) && !g(4)) {
+                j();
+            }
+        } catch (SecurityKeyException e2) {
+            k.a("SecurityKey", this.f924a, "isKeyReady Fail. Error: " + e2.getMessage(), e2);
+            j();
+        }
+        return this.f924a.d();
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public int d(int i2) {
+        try {
+            if (this.f924a.d() == 2 && this.f924a.i() == 1 && !g(i2)) {
+                j();
+            }
+        } catch (SecurityKeyException e2) {
+            k.a("SecurityKey", this.f924a, "isKeyReady Fail. Error: " + e2.getMessage(), e2);
+            j();
+        }
+        return this.f924a.b(i2);
+    }
+
+    private boolean h(int i2) {
+        if (this.f924a.d() != 2) {
+            return false;
+        }
+        return i2 < 0 || i(i2);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x003e A[Catch: all -> 0x017d, TryCatch #0 {, blocks: (B:3:0x0001, B:5:0x0028, B:9:0x0036, B:12:0x003e, B:15:0x0048, B:17:0x0050, B:26:0x0067, B:28:0x006b, B:30:0x0075, B:32:0x0080, B:34:0x0091, B:36:0x009d, B:38:0x00a3, B:39:0x00a8, B:41:0x00b5, B:43:0x00d0, B:42:0x00c5, B:31:0x007b, B:46:0x00e3, B:47:0x012f, B:48:0x0130, B:49:0x017c, B:20:0x0058, B:7:0x002f), top: B:53:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0060  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0067 A[Catch: all -> 0x017d, TryCatch #0 {, blocks: (B:3:0x0001, B:5:0x0028, B:9:0x0036, B:12:0x003e, B:15:0x0048, B:17:0x0050, B:26:0x0067, B:28:0x006b, B:30:0x0075, B:32:0x0080, B:34:0x0091, B:36:0x009d, B:38:0x00a3, B:39:0x00a8, B:41:0x00b5, B:43:0x00d0, B:42:0x00c5, B:31:0x007b, B:46:0x00e3, B:47:0x012f, B:48:0x0130, B:49:0x017c, B:20:0x0058, B:7:0x002f), top: B:53:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0130 A[Catch: all -> 0x017d, TryCatch #0 {, blocks: (B:3:0x0001, B:5:0x0028, B:9:0x0036, B:12:0x003e, B:15:0x0048, B:17:0x0050, B:26:0x0067, B:28:0x006b, B:30:0x0075, B:32:0x0080, B:34:0x0091, B:36:0x009d, B:38:0x00a3, B:39:0x00a8, B:41:0x00b5, B:43:0x00d0, B:42:0x00c5, B:31:0x007b, B:46:0x00e3, B:47:0x012f, B:48:0x0130, B:49:0x017c, B:20:0x0058, B:7:0x002f), top: B:53:0x0001 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    private synchronized boolean b(boolean r8) throws com.vivo.seckeysdk.utils.SecurityKeyException {
+        /*
+            Method dump skipped, instruction units count: 384
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.platform.c.b(boolean):boolean");
+    }
+
+    private VivoSecurityKeyResult k() {
+        VivoSecurityKeyResult vivoSecurityKeyResultA;
+        int i2 = 0;
+        do {
+            vivoSecurityKeyResultA = this.f924a.a().a(3);
+            if (vivoSecurityKeyResultA != null && vivoSecurityKeyResultA.f927a == 0) {
+                this.f = vivoSecurityKeyResultA.c;
+            }
+            i2++;
+        } while (a(21310, i2, vivoSecurityKeyResultA));
+        return vivoSecurityKeyResultA;
+    }
+
+    private VivoSecurityKeyResult l() {
+        VivoSecurityKeyResult vivoSecurityKeyResultA;
+        int i2 = 0;
+        do {
+            vivoSecurityKeyResultA = this.f924a.a().a(2);
+            if (vivoSecurityKeyResultA != null && vivoSecurityKeyResultA.f927a == 0) {
+                this.g = vivoSecurityKeyResultA.c;
+                if (!TextUtils.isEmpty(vivoSecurityKeyResultA.d)) {
+                    this.d = true;
+                    this.f924a.e(vivoSecurityKeyResultA.d);
+                }
+            }
+            i2++;
+        } while (a(21310, i2, vivoSecurityKeyResultA));
+        return vivoSecurityKeyResultA;
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public String c() {
+        if (!this.b) {
+            k.d("SecurityKey", this.f924a, "security key cipher is not available while g");
+            return "Unknown";
+        }
+        return this.f924a.b();
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public boolean d() throws SecurityKeyException {
+        k.a("SecurityKey", this.f924a, "Update all key");
+        return a(7, false);
+    }
+
+    private byte[] a(int i2, String str, boolean z) throws SecurityKeyException {
+        byte[] bArrB;
+        long jCurrentTimeMillis = System.currentTimeMillis();
+        int i3 = 0;
+        while (true) {
+            i3++;
+            try {
+                bArrB = b(i2, str, z);
+                break;
+            } catch (SecurityKeyException e2) {
+                h.a(this.f924a, i3, e2.getErrorCode(), e2.getMessage());
+                k.d("SecurityKey", this.f924a, "update key network occur exception:" + e2.getErrorCode());
+                if (!i(e2.getErrorCode()) || i3 == 2) {
+                    if (i(e2.getErrorCode())) {
+                        this.f924a.e(1);
+                    }
+                    throw e2;
+                }
+                if (i3 > 2) {
+                    bArrB = null;
+                    break;
+                }
+            } catch (Exception e3) {
+                h.a(this.f924a, i3, 21311, 1000);
+                k.a("SecurityKey", this.f924a, "update key network occur Error:" + e3.getMessage(), e3);
+                throw new SecurityKeyException("update key fail", 171);
+            }
+        }
+        k.b("SecurityKey", this.f924a, "Get key from server consume time: " + (System.currentTimeMillis() - jCurrentTimeMillis));
+        if (bArrB != null) {
+            return bArrB;
+        }
+        k.d("SecurityKey", this.f924a, "update key network keyData is null");
+        throw new SecurityKeyException("update key fail", 172);
+    }
+
+    private byte[] b(int i2, String str, boolean z) throws SecurityKeyException {
+        FutureTask futureTask = new FutureTask(new com.vivo.seckeysdk.platform.utils.b(this.f924a, k(i2), str, z, SDKCipherConfig.cacheUpdateKeyResponse, SDKCipherConfig.cacheResponseMaxTime));
+        new Thread(futureTask).start();
+        try {
+            com.vivo.seckeysdk.platform.utils.c cVar = (com.vivo.seckeysdk.platform.utils.c) futureTask.get(LightCountDownLatch.TIME_OUT, TimeUnit.MILLISECONDS);
+            if (cVar == null) {
+                k.d("SecurityKey", this.f924a, "update key network return null");
+                throw new SecurityKeyException("update key fail", 1000);
+            }
+            if (!cVar.a()) {
+                if (cVar.c() != null) {
+                    k.d("SecurityKey", this.f924a, "update key network occur exception");
+                    throw cVar.c();
+                }
+                k.d("SecurityKey", this.f924a, "update key network occur unkown error");
+                throw new SecurityKeyException("update key fail", 1000);
+            }
+            if (cVar.b() != null) {
+                return cVar.b();
+            }
+            k.d("SecurityKey", this.f924a, "update key network keys is null");
+            throw new SecurityKeyException("update key fail", 1000);
+        } catch (TimeoutException e2) {
+            k.a("SecurityKey", this.f924a, "update key network timeout:" + e2.getMessage(), e2);
+            throw new SecurityKeyException("update key time out", 161);
+        } catch (Exception e3) {
+            k.a("SecurityKey", this.f924a, "update key network error:" + e3.getMessage(), e3);
+            throw new SecurityKeyException("update key fail", 1000);
+        }
+    }
+
+    private synchronized boolean a(int i2, boolean z) throws SecurityKeyException {
+        k.b("SecurityKey", this.f924a, "Update key " + i2 + ", autoUpdateKey " + this.c);
+        if (!com.vivo.seckeysdk.platform.utils.b.a(this.f924a.c())) {
+            k.d("SecurityKey", this.f924a, "Not Allowed to Update key from F machine");
+            return false;
+        }
+        if (!this.d) {
+            k.d("SecurityKey", this.f924a, "Update key fail: device is not supported tee");
+            return false;
+        }
+        if (!g.a(this.f924a.c())) {
+            k.d("SecurityKey", "updateKey network is not Available");
+            throw new SecurityKeyException("network is not Available", 157);
+        }
+        return h(a(i2, (String) null, z));
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public byte[] a(byte[] bArr) throws SecurityKeyException {
+        try {
+            g(bArr);
+            return a(bArr, this.f924a.d(), 5);
+        } catch (SecurityKeyException e2) {
+            if (this.h(e2.getErrorCode()) && this.j()) {
+                k.c("SecurityKey", this.f924a, "Aes Encrypt Auto Switch to Soft Mode");
+                this.g(bArr);
+                return this.a(bArr, this.f924a.d(), 5);
+            }
+            throw e2;
+        }
+    }
+
+    @Override // com.vivo.seckeysdk.platform.a
+    public int a(int i2) {
+        return a(this.g, i2);
+    }
+
+    @Override // com.vivo.seckeysdk.platform.a
+    public int b(int i2) {
+        return a(this.f, i2);
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public byte[] a(byte[] bArr, String str) throws SecurityKeyException, JSONException {
+        g(bArr);
+        int iD = this.f924a.d();
+        int i2 = 5;
+        try {
+            JSONObject jSONObject = new JSONObject(str);
+            if (jSONObject.has("cipherMode")) {
+                iD = jSONObject.getInt("cipherMode");
+            }
+            if (jSONObject.has("encryptionType")) {
+                i2 = jSONObject.getInt("encryptionType");
+            }
+        } catch (JSONException e2) {
+            k.a("SecurityKey", "Error: " + e2.getMessage(), e2);
+        }
+        try {
+            return a(bArr, iD, i2);
+        } catch (SecurityKeyException e3) {
+            if (this.h(e3.getErrorCode()) && this.j()) {
+                k.c("SecurityKey", this.f924a, "Aes Encrypt Auto Switch to Soft Mode");
+                return this.a(bArr, 3, i2);
+            }
+            throw e3;
+        }
+    }
+
+    private void g(byte[] bArr) throws SecurityKeyException {
+        long jCurrentTimeMillis = System.currentTimeMillis();
+        if (!g(1)) {
+            k.d("SecurityKey", this.f924a, "security key cipher is not available while aE");
+            throw new SecurityKeyException("not available!", 101);
+        }
+        if (jCurrentTimeMillis > this.f924a.l() && jCurrentTimeMillis - this.f924a.l() < 20) {
+            try {
+                Thread.sleep(20 - (jCurrentTimeMillis - this.f924a.l()));
+            } catch (InterruptedException e2) {
+                k.a("SecurityKey", "Error: " + e2.getMessage(), e2);
+            }
+        }
+        if (bArr == null) {
+            k.d("SecurityKey", this.f924a, "aesEncrypt input data is null");
+            throw new SecurityKeyException("invalid input params!", 102);
+        }
+        if (bArr.length <= 204800) {
+            return;
+        }
+        k.d("SecurityKey", this.f924a, "aesEncrypt input data length " + bArr.length + " max length:204800");
+        throw new SecurityKeyException("input length > 200k", 120);
+    }
+
+    private byte[] a(byte[] bArr, int i2, int i3) throws SecurityKeyException {
+        VivoSecurityKeyResult vivoSecurityKeyResultA;
+        long jCurrentTimeMillis = System.currentTimeMillis();
+        String strJ = j(i2);
+        int i4 = 0;
+        do {
+            vivoSecurityKeyResultA = this.f924a.a().a(i2, bArr);
+            i4++;
+        } while (a(21312, i4, vivoSecurityKeyResultA));
+        if (vivoSecurityKeyResultA != null) {
+            if (vivoSecurityKeyResultA.f927a == 0) {
+                if (vivoSecurityKeyResultA.b != null) {
+                    byte[] bArr2 = new ProtocolPackage(strJ, vivoSecurityKeyResultA.c, i3, vivoSecurityKeyResultA.b).getbytes();
+                    k.b("SecurityKey", this.f924a, "aesEncrypt consume time: " + (System.currentTimeMillis() - jCurrentTimeMillis));
+                    this.f924a.b(System.currentTimeMillis());
+                    return bArr2;
+                }
+                k.d("SecurityKey", this.f924a, "aesEncrypt operateData is null ");
+                throw new SecurityKeyException("aes encrypt error", 1000);
+            }
+            k.d("SecurityKey", this.f924a, "aesEncrypt error: " + vivoSecurityKeyResultA.f927a);
+            throw new SecurityKeyException("aes encrypt error", vivoSecurityKeyResultA.f927a);
+        }
+        k.d("SecurityKey", this.f924a, "aesEncrypt result is null");
+        throw new SecurityKeyException("aes encrypt error", 1000);
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public byte[] b(byte[] bArr) throws SecurityKeyException {
+        VivoSecurityKeyResult vivoSecurityKeyResultA;
+        long jCurrentTimeMillis = System.currentTimeMillis();
+        if (bArr == null) {
+            k.d("SecurityKey", this.f924a, "aesDecrypt input data is null");
+            throw new SecurityKeyException("invalid input params!", 102);
+        }
+        if (!g(1)) {
+            k.d("SecurityKey", this.f924a, "security key cipher is not available while aD");
+            throw new SecurityKeyException("not available!", 101);
+        }
+        if (jCurrentTimeMillis > this.f924a.l() && jCurrentTimeMillis - this.f924a.l() < 20) {
+            try {
+                Thread.sleep(20 - (jCurrentTimeMillis - this.f924a.l()));
+            } catch (InterruptedException e2) {
+                k.a("SecurityKey", "Error: " + e2.getMessage(), e2);
+            }
+        }
+        ProtocolPackage protocolPackageBuildProtocolPackage = ProtocolPackage.buildProtocolPackage(bArr);
+        if (protocolPackageBuildProtocolPackage.getData().length > 204816) {
+            k.d("SecurityKey", this.f924a, "aesDecrypt input data length " + protocolPackageBuildProtocolPackage.getData().length + " max length:204816");
+            throw new SecurityKeyException("input length > 200k + 16", 121);
+        }
+        a(protocolPackageBuildProtocolPackage, 1, "aesDecrypt");
+        int i2 = 0;
+        if (5 == protocolPackageBuildProtocolPackage.getType()) {
+            do {
+                vivoSecurityKeyResultA = this.f924a.a().a(protocolPackageBuildProtocolPackage.getCipherMode(), protocolPackageBuildProtocolPackage.getKeyVersion(), protocolPackageBuildProtocolPackage.getData());
+                i2++;
+            } while (a(21313, i2, vivoSecurityKeyResultA));
+            if (vivoSecurityKeyResultA != null) {
+                if (vivoSecurityKeyResultA.f927a == 0) {
+                    if (vivoSecurityKeyResultA.b != null) {
+                        byte[] bArr2 = vivoSecurityKeyResultA.b;
+                        k.b("SecurityKey", this.f924a, "aesDecrypt consume time: " + (System.currentTimeMillis() - jCurrentTimeMillis));
+                        this.f924a.b(System.currentTimeMillis());
+                        return bArr2;
+                    }
+                    k.d("SecurityKey", this.f924a, "aesDecrypt operateData is null");
+                    throw new SecurityKeyException("aes decrypt error", 1000);
+                }
+                a(vivoSecurityKeyResultA, protocolPackageBuildProtocolPackage, 1, "aesDecrypt");
+                throw new SecurityKeyException("aes decrypt error", vivoSecurityKeyResultA.f927a);
+            }
+            k.d("SecurityKey", this.f924a, "aesDecrypt result is null");
+            throw new SecurityKeyException("aes decrypt error", 1000);
+        }
+        k.d("SecurityKey", this.f924a, "aesDecrypt decrypt type " + protocolPackageBuildProtocolPackage.getType() + " is not supported");
+        throw new SecurityKeyException("encrypt type of data is not supported", 154);
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public byte[] c(byte[] bArr) throws SecurityKeyException {
+        try {
+            return a(bArr, this.f924a.d());
+        } catch (SecurityKeyException e2) {
+            if (this.h(e2.getErrorCode()) && this.j()) {
+                k.c("SecurityKey", this.f924a, "rsa Encrypt Auto Switch to Soft Mode");
+                return this.a(bArr, this.f924a.d());
+            }
+            throw e2;
+        }
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public byte[] b(byte[] bArr, String str) throws SecurityKeyException {
+        int iD = this.f924a.d();
+        try {
+            iD = new JSONObject(str).getInt("cipherMode");
+        } catch (JSONException e2) {
+            k.a("SecurityKey", "Error: " + e2.getMessage(), e2);
+        }
+        try {
+            return a(bArr, iD);
+        } catch (SecurityKeyException e3) {
+            if (this.h(e3.getErrorCode()) && this.j()) {
+                k.c("SecurityKey", this.f924a, "rsa Encrypt Auto Switch to Soft Mode");
+                return this.a(bArr, 3);
+            }
+            throw e3;
+        }
+    }
+
+    private byte[] a(byte[] bArr, int i2) throws SecurityKeyException {
+        VivoSecurityKeyResult vivoSecurityKeyResultB;
+        long jCurrentTimeMillis = System.currentTimeMillis();
+        String strJ = j(i2);
+        if (bArr == null) {
+            k.d("SecurityKey", this.f924a, "rsaEncrypt input data is null");
+            throw new SecurityKeyException("invalid input params!", 102);
+        }
+        if (bArr.length > 245) {
+            k.d("SecurityKey", this.f924a, "rsaEncrypt input data length:" + bArr.length + "max length:245");
+            throw new SecurityKeyException("input length > 245", 130);
+        }
+        if (!g(4)) {
+            k.d("SecurityKey", this.f924a, "security key cipher is not available while rE");
+            throw new SecurityKeyException("not available!", 101);
+        }
+        int i3 = 0;
+        do {
+            vivoSecurityKeyResultB = this.f924a.a().b(i2, bArr);
+            i3++;
+        } while (a(21314, i3, vivoSecurityKeyResultB));
+        if (vivoSecurityKeyResultB != null) {
+            if (vivoSecurityKeyResultB.f927a == 0) {
+                if (vivoSecurityKeyResultB.b != null) {
+                    byte[] bArr2 = new ProtocolPackage(strJ, vivoSecurityKeyResultB.c, 7, vivoSecurityKeyResultB.b).getbytes();
+                    k.b("SecurityKey", this.f924a, "rsaEncrypt consume time: " + (System.currentTimeMillis() - jCurrentTimeMillis));
+                    return bArr2;
+                }
+                k.d("SecurityKey", this.f924a, "rsaEncrypt operateData is null");
+                throw new SecurityKeyException("rsa encrypt error", 1000);
+            }
+            k.d("SecurityKey", this.f924a, "rsaEncrypt error:" + vivoSecurityKeyResultB.f927a);
+            throw new SecurityKeyException("rsa encrypt error", vivoSecurityKeyResultB.f927a);
+        }
+        k.d("SecurityKey", this.f924a, "rsaEncrypt result is null");
+        throw new SecurityKeyException("rsa encrypt error", 1000);
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public byte[] d(byte[] bArr) throws SecurityKeyException {
+        VivoSecurityKeyResult vivoSecurityKeyResultB;
+        long jCurrentTimeMillis = System.currentTimeMillis();
+        if (bArr == null) {
+            k.d("SecurityKey", this.f924a, "rsaDecrypt input data is null");
+            throw new SecurityKeyException("invalid input params!", 102);
+        }
+        if (!g(2)) {
+            k.d("SecurityKey", this.f924a, "security key cipher is not available rD");
+            throw new SecurityKeyException("not available!", 101);
+        }
+        ProtocolPackage protocolPackageBuildProtocolPackage = ProtocolPackage.buildProtocolPackage(bArr);
+        if (protocolPackageBuildProtocolPackage.getData().length > 256) {
+            k.d("SecurityKey", this.f924a, "rsaDecrypt input data length:" + protocolPackageBuildProtocolPackage.getData().length + " max length:256");
+            throw new SecurityKeyException("input length > 256", 131);
+        }
+        a(protocolPackageBuildProtocolPackage, 2, "rsaDecrypt");
+        if (6 == protocolPackageBuildProtocolPackage.getType() || 7 == protocolPackageBuildProtocolPackage.getType()) {
+            int i2 = 0;
+            do {
+                vivoSecurityKeyResultB = this.f924a.a().b(protocolPackageBuildProtocolPackage.getCipherMode(), protocolPackageBuildProtocolPackage.getKeyVersion(), protocolPackageBuildProtocolPackage.getData());
+                i2++;
+            } while (a(21315, i2, vivoSecurityKeyResultB));
+            if (vivoSecurityKeyResultB != null) {
+                if (vivoSecurityKeyResultB.f927a == 0) {
+                    if (vivoSecurityKeyResultB.b != null) {
+                        byte[] bArr2 = vivoSecurityKeyResultB.b;
+                        k.b("SecurityKey", this.f924a, "rsaDecrypt consume time: " + (System.currentTimeMillis() - jCurrentTimeMillis));
+                        return bArr2;
+                    }
+                    k.d("SecurityKey", this.f924a, "rsaDecrypt operateData is null");
+                    throw new SecurityKeyException("rsa decrypt error", 1000);
+                }
+                a(vivoSecurityKeyResultB, protocolPackageBuildProtocolPackage, 2, "rsaDecrypt");
+                throw new SecurityKeyException("rsa decrypt error", vivoSecurityKeyResultB.f927a);
+            }
+            k.d("SecurityKey", this.f924a, "rsaDecrypt result is null");
+            throw new SecurityKeyException("rsa decrypt error", 1000);
+        }
+        k.d("SecurityKey", this.f924a, "rsaDecrypt decrypt type " + protocolPackageBuildProtocolPackage.getType() + " is not supported");
+        throw new SecurityKeyException("encrypt type of data is not supported", 154);
+    }
+
+    private byte[] b(byte[] bArr, int i2, int i3) throws SecurityKeyException {
+        VivoSecurityKeyResult vivoSecurityKeyResultA;
+        long jCurrentTimeMillis = System.currentTimeMillis();
+        String strJ = j(i2);
+        int i4 = 0;
+        do {
+            vivoSecurityKeyResultA = this.f924a.a().a(i2, bArr);
+            i4++;
+        } while (a(i3, i4, vivoSecurityKeyResultA));
+        if (vivoSecurityKeyResultA != null) {
+            if (vivoSecurityKeyResultA.f927a == 0) {
+                if (vivoSecurityKeyResultA.b != null) {
+                    byte[] bArr2 = new ProtocolPackage(strJ, vivoSecurityKeyResultA.c, 17, vivoSecurityKeyResultA.b).getbytes();
+                    k.b("SecurityKey", this.f924a, "signFastImpl consume time: " + (System.currentTimeMillis() - jCurrentTimeMillis));
+                    this.f924a.b(System.currentTimeMillis());
+                    return bArr2;
+                }
+                k.d("SecurityKey", this.f924a, "signFastImpl operateData is null ");
+                throw new SecurityKeyException("aes encrypt error", 1000);
+            }
+            k.d("SecurityKey", this.f924a, "signFastImpl error: " + vivoSecurityKeyResultA.f927a);
+            throw new SecurityKeyException("aes encrypt error", vivoSecurityKeyResultA.f927a);
+        }
+        k.d("SecurityKey", this.f924a, "signFastImpl result is null");
+        throw new SecurityKeyException("aes encrypt error", 1000);
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public byte[] e(byte[] bArr) throws SecurityKeyException {
+        try {
+            g(bArr);
+            return b(g.a(bArr).getBytes(), this.f924a.d(), 21321);
+        } catch (SecurityKeyException e2) {
+            if (this.h(e2.getErrorCode()) && this.j()) {
+                k.c("SecurityKey", this.f924a, "Aes Encrypt Auto Switch to Soft Mode");
+                this.g(bArr);
+                return this.b(g.a(bArr).getBytes(), this.f924a.d(), 21321);
+            }
+            throw e2;
+        }
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public boolean a(byte[] bArr, byte[] bArr2) throws SecurityKeyException {
+        byte[] bArrB;
+        try {
+            g(bArr);
+            bArrB = b(g.a(bArr).getBytes(), this.f924a.d(), 21322);
+        } catch (SecurityKeyException e2) {
+            if (this.h(e2.getErrorCode()) && this.j()) {
+                k.c("SecurityKey", this.f924a, "Aes Encrypt Auto Switch to Soft Mode");
+                this.g(bArr);
+                bArrB = this.b(g.a(bArr).getBytes(), this.f924a.d(), 21322);
+            } else {
+                throw e2;
+            }
+        }
+        ProtocolPackage protocolPackageBuildProtocolPackage = ProtocolPackage.buildProtocolPackage(bArrB);
+        return Arrays.equals(protocolPackageBuildProtocolPackage.getCipherData(), ProtocolPackage.buildProtocolPackage(bArr2).getCipherData());
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public byte[] f(byte[] bArr) throws SecurityKeyException {
+        try {
+            return b(bArr, this.f924a.d());
+        } catch (SecurityKeyException e2) {
+            if (this.h(e2.getErrorCode()) && this.j()) {
+                k.c("SecurityKey", this.f924a, "Sign Auto Switch to Soft Mode");
+                return this.b(bArr, this.f924a.d());
+            }
+            throw e2;
+        }
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public byte[] c(byte[] bArr, String str) throws SecurityKeyException {
+        int iD = this.f924a.d();
+        try {
+            iD = new JSONObject(str).getInt("cipherMode");
+        } catch (JSONException e2) {
+            k.a("SecurityKey", "Error: " + e2.getMessage(), e2);
+        }
+        try {
+            return b(bArr, iD);
+        } catch (SecurityKeyException e3) {
+            if (this.h(e3.getErrorCode()) && this.j()) {
+                k.c("SecurityKey", this.f924a, "Sign Auto Switch to Soft Mode");
+                return this.b(bArr, 3);
+            }
+            throw e3;
+        }
+    }
+
+    private String j(int i2) {
+        if (i2 == 2) {
+            return this.f924a.f();
+        }
+        if (a(this.f, 1) >= 2) {
+            return "jnisgmain_v2@" + this.f924a.f();
+        }
+        return "jnisgmain@" + this.f924a.f();
+    }
+
+    private byte[] b(byte[] bArr, int i2) throws SecurityKeyException {
+        VivoSecurityKeyResult vivoSecurityKeyResultC;
+        long jCurrentTimeMillis = System.currentTimeMillis();
+        String strJ = j(i2);
+        if (bArr == null) {
+            k.d("SecurityKey", this.f924a, "sign input data is null");
+            throw new SecurityKeyException("invalid input params!", 102);
+        }
+        if (bArr.length > 204800) {
+            k.d("SecurityKey", this.f924a, "sign input data length " + bArr.length + " max length:204800");
+            throw new SecurityKeyException("input length > 200k", 140);
+        }
+        if (!g(2)) {
+            k.d("SecurityKey", this.f924a, "security key cipher is not available while s");
+            throw new SecurityKeyException("not available!", 101);
+        }
+        int i3 = 0;
+        do {
+            vivoSecurityKeyResultC = this.f924a.a().c(i2, bArr);
+            i3++;
+        } while (a(21316, i3, vivoSecurityKeyResultC));
+        if (vivoSecurityKeyResultC != null) {
+            if (vivoSecurityKeyResultC.f927a == 0) {
+                if (vivoSecurityKeyResultC.b != null) {
+                    byte[] bArr2 = new ProtocolPackage(strJ, vivoSecurityKeyResultC.c, 9, vivoSecurityKeyResultC.b).getbytes();
+                    k.b("SecurityKey", this.f924a, "sign consume time: " + (System.currentTimeMillis() - jCurrentTimeMillis));
+                    return bArr2;
+                }
+                k.d("SecurityKey", this.f924a, "sign operateData is null");
+                throw new SecurityKeyException("sk sign error:", 1000);
+            }
+            k.d("SecurityKey", this.f924a, "sign error: " + vivoSecurityKeyResultC.f927a);
+            throw new SecurityKeyException("sk sign error:", vivoSecurityKeyResultC.f927a);
+        }
+        k.d("SecurityKey", this.f924a, "sign result is null");
+        throw new SecurityKeyException("sk sign error:", 1000);
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public boolean b(byte[] bArr, byte[] bArr2) throws SecurityKeyException {
+        VivoSecurityKeyResult vivoSecurityKeyResultC;
+        long jCurrentTimeMillis = System.currentTimeMillis();
+        if (bArr == null || bArr2 == null) {
+            k.d("SecurityKey", this.f924a, "signatureVerify input data is null");
+            throw new SecurityKeyException("invalid input params!", 102);
+        }
+        if (bArr.length > 204800) {
+            k.d("SecurityKey", this.f924a, "signatureVerify input data length " + bArr.length + " max length:204800");
+            throw new SecurityKeyException("input length > 200k", 141);
+        }
+        if (!g(4)) {
+            k.d("SecurityKey", this.f924a, "security key cipher is not available while v");
+            throw new SecurityKeyException("not available!", 101);
+        }
+        ProtocolPackage protocolPackageBuildProtocolPackage = ProtocolPackage.buildProtocolPackage(bArr2);
+        if (protocolPackageBuildProtocolPackage.getData().length != 256) {
+            k.d("SecurityKey", this.f924a, "signatureVerify length: " + protocolPackageBuildProtocolPackage.getData().length + " must equals 256");
+            throw new SecurityKeyException("sign length != 256", 142);
+        }
+        a(protocolPackageBuildProtocolPackage, 4, "signatureVerify");
+        if (10 == protocolPackageBuildProtocolPackage.getType() || 9 == protocolPackageBuildProtocolPackage.getType()) {
+            byte[] bArr3 = new byte[bArr.length + protocolPackageBuildProtocolPackage.getData().length];
+            int i2 = 0;
+            System.arraycopy(bArr, 0, bArr3, 0, bArr.length);
+            System.arraycopy(protocolPackageBuildProtocolPackage.getData(), 0, bArr3, bArr.length, protocolPackageBuildProtocolPackage.getData().length);
+            do {
+                vivoSecurityKeyResultC = this.f924a.a().c(protocolPackageBuildProtocolPackage.getCipherMode(), protocolPackageBuildProtocolPackage.getKeyVersion(), bArr3);
+                i2++;
+            } while (a(21317, i2, vivoSecurityKeyResultC));
+            if (vivoSecurityKeyResultC != null) {
+                if (vivoSecurityKeyResultC.f927a != 0) {
+                    a(vivoSecurityKeyResultC, protocolPackageBuildProtocolPackage, 4, "signatureVerify");
+                    throw new SecurityKeyException("sign verify error ", vivoSecurityKeyResultC.f927a);
+                }
+                k.b("SecurityKey", this.f924a, "signatureVerify consume time: " + (System.currentTimeMillis() - jCurrentTimeMillis));
+                return true;
+            }
+            k.d("SecurityKey", this.f924a, "signatureVerify result is null");
+            throw new SecurityKeyException("unknown error!", 1000);
+        }
+        k.d("SecurityKey", this.f924a, "signatureVerify decrypt type " + protocolPackageBuildProtocolPackage.getType() + "is not supported");
+        throw new SecurityKeyException("encrypt type of data is not supported", 154);
+    }
+
+    private static boolean m() {
+        try {
+            Class.forName("com.vivo.services.cipher.SecurityKeyCipher").getDeclaredMethod("exportKey", Integer.TYPE).setAccessible(true);
+            return true;
+        } catch (ClassNotFoundException | NoSuchMethodException | Exception unused) {
+            return false;
+        }
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public byte[] e(int i2) throws SecurityKeyException {
+        VivoSecurityKeyResult vivoSecurityKeyResultA;
+        long jCurrentTimeMillis = System.currentTimeMillis();
+        byte[] bArr = null;
+        if (!m()) {
+            k.d("SecurityKey", this.f924a, "exportKey interface not exist");
+            return null;
+        }
+        if (!g(1)) {
+            k.d("SecurityKey", this.f924a, "security key cipher is not available while e");
+            throw new SecurityKeyException("not available!", 101);
+        }
+        if (this.f924a.d() != 2) {
+            k.d("SecurityKey", this.f924a, "Not support key exported");
+            throw new SecurityKeyException("not available!", 101);
+        }
+        int i3 = 0;
+        do {
+            vivoSecurityKeyResultA = this.f924a.a().a(this.f924a.d(), i2);
+            i3++;
+        } while (a(21319, i3, vivoSecurityKeyResultA));
+        if (vivoSecurityKeyResultA != null) {
+            if (vivoSecurityKeyResultA.f927a == 0) {
+                if (vivoSecurityKeyResultA.b != null) {
+                    bArr = vivoSecurityKeyResultA.b;
+                } else {
+                    k.d("SecurityKey", this.f924a, "exportKey operateData is null");
+                    throw new SecurityKeyException("security storage read error", 1000);
+                }
+            } else {
+                k.d("SecurityKey", this.f924a, "exportKey error: " + vivoSecurityKeyResultA.f927a);
+                if (vivoSecurityKeyResultA.f927a != -16 && vivoSecurityKeyResultA.f927a != -26) {
+                    throw new SecurityKeyException("security storage read error", vivoSecurityKeyResultA.f927a);
+                }
+            }
+            k.a("SecurityKey", this.f924a, "exportKey consume time: " + (System.currentTimeMillis() - jCurrentTimeMillis));
+            return bArr;
+        }
+        k.d("SecurityKey", this.f924a, "exportKey result is null");
+        throw new SecurityKeyException("security storage read error", 1000);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0016  */
+    @Override // com.vivo.seckeysdk.utils.a
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public byte[] f(int r4) throws com.vivo.seckeysdk.utils.SecurityKeyException {
+        /*
+            r3 = this;
+            r0 = 5
+            r1 = 2
+            r2 = 1
+            if (r4 == r0) goto L16
+            r0 = 6
+            if (r4 == r0) goto L17
+            r0 = 10
+            if (r4 == r0) goto L17
+            r0 = 15
+            if (r4 == r0) goto L16
+            r0 = 17
+            if (r4 == r0) goto L16
+            r1 = 0
+            goto L17
+        L16:
+            r1 = r2
+        L17:
+            int r0 = r3.d(r1)
+            com.vivo.seckeysdk.utils.ProtocolPackage r1 = new com.vivo.seckeysdk.utils.ProtocolPackage
+            com.vivo.seckeysdk.platform.utils.a r3 = r3.f924a
+            java.lang.String r3 = r3.h()
+            r2 = 0
+            r1.<init>(r3, r0, r4, r2)
+            byte[] r3 = r1.getHeaderbytes()
+            return r3
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.platform.c.f(int):byte[]");
+    }
+
+    private void a(ProtocolPackage protocolPackage, int i2, String str) throws SecurityKeyException {
+        if (protocolPackage.getCipherMode() == 2 && protocolPackage.getCipherMode() == 2 && protocolPackage.getKeyVersion() != a(this.g, i2)) {
+            k.c("SecurityKey", this.f924a, str + " key version is not match current:" + this.f924a.b(i2) + " target:" + protocolPackage.getKeyVersion());
+            k.c("SecurityKey", this.f924a, str + " Please check env info. machine's env:" + ProtocolPackage.kv2EnvStr(this.f924a.b(i2)) + ". but cipher's env:" + ProtocolPackage.kv2EnvStr(protocolPackage.getKeyVersion()));
+            if (!f()) {
+                throw new SecurityKeyException("security key not match", 153);
+            }
+            if (!a(i2, true)) {
+                k.d("SecurityKey", this.f924a, str + " update key fail");
+                throw new SecurityKeyException("update key fail", 155);
+            }
+            if (protocolPackage.getKeyVersion() == a(this.g, i2)) {
+                return;
+            }
+            k.d("SecurityKey", this.f924a, str + " key version still not match after sync key with server");
+            throw new SecurityKeyException("security key not match", 153);
+        }
+    }
+
+    private void a(VivoSecurityKeyResult vivoSecurityKeyResult, ProtocolPackage protocolPackage, int i2, String str) throws SecurityKeyException {
+        if (vivoSecurityKeyResult == null) {
+            return;
+        }
+        int i3 = vivoSecurityKeyResult.f927a;
+        StringBuilder sb = new StringBuilder(str);
+        sb.append(" error: ");
+        sb.append(i3);
+        if (SecurityKeyException.keyVersionNotMatched(i3)) {
+            sb.append(" Please check env info ");
+            sb.append(l(i2));
+            if (protocolPackage != null) {
+                sb.append(protocolPackage.toString());
+            }
+        }
+        k.d("SecurityKey", this.f924a, sb.toString());
+    }
+
+    private boolean h(byte[] bArr) throws SecurityKeyException {
+        VivoSecurityKeyResult vivoSecurityKeyResultD;
+        if (bArr == null || bArr.length < 32) {
+            k.d("SecurityKey", this.f924a, "storeKey: input keyData error");
+            throw new SecurityKeyException("update key fail", 103);
+        }
+        int i2 = 0;
+        long jCurrentTimeMillis = System.currentTimeMillis();
+        do {
+            vivoSecurityKeyResultD = this.f924a.a().d(2, this.h, bArr);
+            i2++;
+        } while (a(21311, i2, vivoSecurityKeyResultD));
+        if (vivoSecurityKeyResultD != null) {
+            if (vivoSecurityKeyResultD.f927a == 0) {
+                b(true);
+                k.b("SecurityKey", this.f924a, "Save Key consume time: " + (System.currentTimeMillis() - jCurrentTimeMillis));
+                return true;
+            }
+            k.d("SecurityKey", this.f924a, "updateKeyV2 error: " + vivoSecurityKeyResultD.f927a);
+            this.f924a.e(2);
+            throw new SecurityKeyException("update key fail", vivoSecurityKeyResultD.f927a);
+        }
+        k.d("SecurityKey", this.f924a, "updateKeyV2 return null");
+        throw new SecurityKeyException("update key fail", 1000);
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public boolean b(String str) throws SecurityKeyException {
+        if (TextUtils.isEmpty(str)) {
+            return false;
+        }
+        return h(com.vivo.seckeysdk.utils.b.a(str));
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public String e() {
+        return k(this.h);
+    }
+
+    private String k(int i2) {
+        if (!TextUtils.isEmpty(this.f924a.m()) && !TextUtils.isEmpty(this.f924a.f())) {
+            if ((i2 > 0 && i2 <= 7) && !TextUtils.isEmpty(this.f924a.e())) {
+                HashMap map = new HashMap();
+                map.put("uid", this.f924a.m());
+                map.put("kt", this.f924a.f());
+                map.put("ktp", String.valueOf(i2));
+                map.put("pkh", this.f924a.e());
+                map.put("cc", com.vivo.seckeysdk.platform.utils.b.b(this.f924a.c()));
+                StringBuffer stringBuffer = new StringBuffer();
+                try {
+                    for (Map.Entry entry : map.entrySet()) {
+                        stringBuffer.append((String) entry.getKey());
+                        stringBuffer.append("=");
+                        stringBuffer.append(URLEncoder.encode((String) entry.getValue(), "utf-8"));
+                        stringBuffer.append("&");
+                    }
+                    stringBuffer.deleteCharAt(stringBuffer.length() - 1);
+                    return stringBuffer.toString();
+                } catch (Exception e2) {
+                    k.a("SecurityKey", this.f924a, "Build request data Error: " + e2.getMessage(), e2);
+                    return null;
+                }
+            }
+        }
+        k.d("SecurityKey", this.f924a, "Request(update key) params: id=" + this.f924a.b() + ";packageName=" + this.f924a.h() + ";keyType=" + i2 + ";appSignHash=" + this.f924a.e());
+        return null;
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public boolean a(boolean z) {
+        k.b("SecurityKey", this.f924a, "setAutoUpdateKey  ".concat(String.valueOf(z)));
+        this.c = z;
+        return z;
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public boolean f() {
+        return this.c;
+    }
+
+    public static boolean g() {
+        int i2 = i;
+        if (i2 != -1) {
+            return i2 == 1;
+        }
+        boolean zN = n();
+        if (zN) {
+            i = 1;
+        } else {
+            i = 0;
+        }
+        return zN;
+    }
+
+    private static boolean n() {
+        try {
+            Class.forName("com.vivo.services.cipher.SecurityKeyCipher");
+            return true;
+        } catch (Exception e2) {
+            k.a("SecurityKey", "PlatformCipher Exception:" + e2.getMessage(), e2);
+            return false;
+        }
+    }
+
+    @Override // com.vivo.seckeysdk.utils.a
+    public String h() {
+        return this.f924a.h();
+    }
+
+    private String l(int i2) {
+        int iD = d(i2);
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("{device kt= " + i2 + ", kv=" + iD);
+        stringBuffer.append(", mode= ");
+        int iB = b();
+        stringBuffer.append(iB);
+        if (iB == 3) {
+            stringBuffer.append("-Soft");
+        } else if (iB == 2) {
+            stringBuffer.append("-TEE, env= ");
+            stringBuffer.append(ProtocolPackage.kv2EnvStr(d(i2)));
+        }
+        stringBuffer.append("}");
+        return stringBuffer.toString();
+    }
+
+    @Override // com.vivo.seckeysdk.platform.a
+    public boolean a(String str) throws SecurityKeyException {
+        if (TextUtils.isEmpty(str)) {
+            k.d("SecurityKey", "updateKeyFromBusinessServer url4GET is empty");
+            throw new SecurityKeyException("Invalied url", 602);
+        }
+        if (!this.d) {
+            k.d("SecurityKey", this.f924a, "Update key fail: device is not supported tee");
+            return false;
+        }
+        if (!g.a(this.f924a.c())) {
+            k.d("SecurityKey", "updateKeyFromBusinessServer network is not Available");
+            throw new SecurityKeyException("network is not Available", 157);
+        }
+        k.b("SecurityKey", this.f924a, "Platform.updateKeyFromBusinessServer enter");
+        return h(a(0, str, false));
+    }
+
+    @Override // com.vivo.seckeysdk.platform.a
+    public boolean a() {
+        return this.d;
+    }
+
+    private boolean a(int i2, int i3, VivoSecurityKeyResult vivoSecurityKeyResult) {
+        if (vivoSecurityKeyResult != null) {
+            if (i2 != 21322) {
+                h.a(this.f924a, i3, i2, vivoSecurityKeyResult.f927a);
+            }
+            if (vivoSecurityKeyResult.f927a != 0) {
+                k.d("SecurityKey", this.f924a, "Actiontype " + h.a(i2) + "error: " + vivoSecurityKeyResult.f927a);
+                return i3 < 2;
+            }
+        } else {
+            if (i2 != 21322) {
+                h.a(this.f924a, i3, i2, 1000);
+            }
+            k.d("SecurityKey", this.f924a, "Actiontype " + h.a(i2) + "return null");
+            if (i3 < 2) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+===== SDKCipherNative.java =====
+package com.vivo.seckeysdk.utils;
+
+import android.content.Context;
+import android.content.pm.Signature;
+import android.text.TextUtils;
+import java.io.File;
+
+/* JADX INFO: loaded from: classes.dex */
+public class SDKCipherNative {
+    public static boolean initClass = false;
+    public static boolean isLoadSoOK = true;
+
+    public enum EncryptType {
+        NONE,
+        AES,
+        RSA,
+        AES_FIXED,
+        END
+    }
+
+    public enum OperateType {
+        NONE,
+        ENCRYPT,
+        DECRYPT,
+        SIGN,
+        VERIFY,
+        UPDATE,
+        UPDATE_WITH_NAME,
+        GET_UNIQUE_ID,
+        WRITE_SFS,
+        READ_SFS,
+        END
+    }
+
+    public static native NativeResponse execute(NativeRequest nativeRequest);
+
+    public static native boolean init(Context context);
+
+    public static native boolean notice();
+
+    static {
+        try {
+            startGetSoLoadInfoThread();
+            System.loadLibrary("vivoseckey");
+            isLoadSoOK = true;
+        } catch (Throwable th) {
+            isLoadSoOK = false;
+            k.a("SecurityKey", "Error: " + th.getMessage(), th);
+            g.a(th.getMessage());
+            if (th instanceof UnsatisfiedLinkError) {
+                throw th;
+            }
+            String[] strArrA = g.a();
+            if (strArrA != null) {
+                for (String str : strArrA) {
+                    File file = new File(str, "libvivoseckey.so");
+                    if (file.exists()) {
+                        if (file.length() >= 102400) {
+                            return;
+                        }
+                        k.d("SecurityKey", "found libvivoseckey.so < 100KB, please check! so_sha256=" + g.a(file) + ",fileLen=" + file.length() + ",soFile=" + file.getAbsolutePath());
+                        throw th;
+                    }
+                }
+            }
+        }
+    }
+
+    private static void startGetSoLoadInfoThread() {
+        new Thread(new Runnable() { // from class: com.vivo.seckeysdk.utils.SDKCipherNative.1
+            @Override // java.lang.Runnable
+            public final void run() {
+                try {
+                    String[] strArrA = g.a();
+                    if (strArrA != null) {
+                        for (String str : strArrA) {
+                            File file = new File(str.trim(), "libvivoseckey.so");
+                            if (file.exists()) {
+                                k.b("SecurityKey", "so_sha256=" + g.a(file) + ",len=" + file.length() + ",soFile=" + file.getAbsolutePath());
+                                return;
+                            }
+                            k.b("SecurityKey", "soFile=" + file.getAbsolutePath() + " not exist");
+                        }
+                    }
+                } catch (Throwable th) {
+                    k.a("SecurityKey", "Error: " + th.getMessage(), th);
+                }
+            }
+        }).start();
+    }
+
+    public static Signature[] collectCert(String str) {
+        try {
+            if (!TextUtils.isEmpty(str) && str.endsWith(".apk") && new File(str).exists()) {
+                return g.b(str);
+            }
+            return null;
+        } catch (Throwable th) {
+            k.a("SecurityKey", "Error: " + th.getMessage(), th);
+            return null;
+        }
+    }
+
+    public static String getSubstrateEntry(Context context, String str) {
+        try {
+            if (!TextUtils.isEmpty(str) && context != null && new File(str).exists()) {
+                return g.a(context, str);
+            }
+            return "";
+        } catch (Throwable th) {
+            k.a("SecurityKey", "Error: " + th.getMessage(), th);
+            return "";
+        }
+    }
+
+    public static void cData(Context context, int i) {
+        try {
+            h.a(context, 7, 99, 21320, i);
+            k.b("SecurityKey", "java cData end");
+        } catch (Throwable th) {
+            k.a("SecurityKey", "Error: " + th.getMessage(), th);
+        }
+    }
+}
+===== 找出所有 JADX 未反编译方法 =====
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/b.java:59:        Code decompiled incorrectly, please refer to instructions dump.
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/b.java:67:        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.utils.b.a(java.lang.String):byte[]");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:38:        Code decompiled incorrectly, please refer to instructions dump.
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:46:        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.utils.f.a(android.content.Context):com.vivo.seckeysdk.utils.f");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:69:        Code decompiled incorrectly, please refer to instructions dump.
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/f.java:77:        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.utils.f.g():java.lang.String");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/h.java:68:        Code decompiled incorrectly, please refer to instructions dump.
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/utils/h.java:76:        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.utils.h.a(android.content.Context, int, int, int, int, java.lang.String):void");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:224:        Code decompiled incorrectly, please refer to instructions dump.
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:232:        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.platform.c.b(boolean):boolean");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:875:        Code decompiled incorrectly, please refer to instructions dump.
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/c.java:907:        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.platform.c.f(int):byte[]");
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:238:        Code decompiled incorrectly, please refer to instructions dump.
+/data/data/com.termux/files/home/updater_src/sources/com/vivo/seckeysdk/platform/utils/b.java:246:        throw new UnsupportedOperationException("Method not decompiled: com.vivo.seckeysdk.platform.utils.b.a(java.lang.String, byte[], boolean):java.lang.String");
