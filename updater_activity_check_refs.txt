@@ -1,0 +1,26 @@
+52:    public static final String ACTION = "com.bbk.updater.action.START_UPDATERACTIVITY";
+77:    private UpdatePresenter mUpdatePresenter;
+239:    protected void onCreate(Bundle bundle) {
+240:        LogUtils.i(TAG, "onCreate");
+241:        super.onCreate(bundle);
+265:                if (UpdateActivity.this.mUpdatePresenter == null) {
+266:                    UpdateActivity.this.mUpdatePresenter = new UpdatePresenter();
+269:                    UpdateActivity.this.mUpdatePresenter.setFromTrialVersion(UpdateActivity.this.getIntent().getBooleanExtra("isTrialVersion", false));
+270:                    UpdateActivity.this.mUpdatePresenter.setFromNotice(booleanExtra2 || booleanExtra);
+272:                        UpdateActivity.this.mUpdatePresenter.attachView((UpdateView) UpdateActivity.this.mUpdateFragment13);
+274:                        UpdateActivity.this.mUpdatePresenter.attachView((UpdateView) UpdateActivity.this.mUpdateFragment);
+283:    protected void onResume() {
+284:        LogUtils.i(TAG, "onResume");
+285:        super.onResume();
+289:        UpdatePresenter updatePresenter = this.mUpdatePresenter;
+291:            updatePresenter.onResume();
+300:        UpdatePresenter updatePresenter = this.mUpdatePresenter;
+326:        UpdatePresenter updatePresenter = this.mUpdatePresenter;
+341:    protected void onNewIntent(Intent intent) {
+342:        LogUtils.i(TAG, "onNewIntent" + this.mUpdatePresenter);
+343:        super.onNewIntent(intent);
+344:        if (this.mUpdatePresenter == null) {
+349:            this.mUpdatePresenter.setFromTrialVersion(true);
+351:            this.mUpdatePresenter.setFromTrialVersion(false);
+424:            public void onAnimationStart(Animator animator) {
+425:                super.onAnimationStart(animator);

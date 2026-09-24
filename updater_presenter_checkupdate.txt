@@ -1,0 +1,141 @@
+        this.mUseDataCheckChanged = typeChangeEvent.getType() == 1;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void refreshUpdateInfo(UpdateInfo updateInfo, VgcUpdateInfo vgcUpdateInfo) {
+        this.mFotaUpdateInfo = updateInfo;
+        this.mVgcUpdateInfo = vgcUpdateInfo;
+        if (updateInfo != null) {
+            m10getMvpView().recordCrossVersion(this.mFotaUpdateInfo.getCrossVersion(), this.mFotaUpdateInfo.getStyleColor());
+        }
+        m10getMvpView().recordOSVersion(VersionUtils.getOsAlias());
+        m10getMvpView().recordTotalSize(getTotalLength());
+        UpdateInfo updateInfo2 = this.mFotaUpdateInfo;
+        String version = updateInfo2 != null ? updateInfo2.getVersion() : null;
+        UpdateView mvpView = m10getMvpView();
+        VgcUpdateInfo vgcUpdateInfo2 = this.mVgcUpdateInfo;
+        String version2 = vgcUpdateInfo2 != null ? vgcUpdateInfo2.getVersion() : null;
+        VgcUpdateInfo vgcUpdateInfo3 = this.mVgcUpdateInfo;
+        mvpView.recordVersion(VersionUtils.getVersionSplice(version, version2, vgcUpdateInfo3 != null ? vgcUpdateInfo3.getVersionShow() : null), version);
+    }
+
+    public void refreshLogContent(UpdateInfo updateInfo, VgcUpdateInfo vgcUpdateInfo) {
+        m10getMvpView().showUpdateLog(WebHelper.getInstance(this.mContext).getLogHtmlPathAndCacheIt(updateInfo, vgcUpdateInfo));
+        m10getMvpView().recordIsFullPackage(isNeedToShowBrokenTips(updateInfo, vgcUpdateInfo));
+    }
+
+    public long getTotalLength() {
+        return CommonUtils.getTotalPackageLength(this.mFotaUpdateInfo, this.mVgcUpdateInfo).longValue();
+    }
+
+    private void fetchUpdateInfo() {
+        LogUtils.i(TAG, "Fetch update info!");
+        int i = AnonymousClass12.$SwitchMap$com$bbk$updater$utils$ConstantsUtils$NetWorkType[this.mPreNetworkType.ordinal()];
+        if (i != 1) {
+            if (i == 2) {
+                m10getMvpView().showOneDialog(1001);
+                m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_DISABLED);
+                return;
+            }
+        } else if (com.bbk.vgc.a.a.a().a(this.mContext)) {
+            m10getMvpView().showOneDialog(1013);
+            m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_ROAMING_FORBID_UPDATE);
+            return;
+        }
+        checkUpdate();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:18:0x002d  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    private boolean isNeedToShowBrokenTips(com.bbk.updater.bean.UpdateInfo r4, com.bbk.updater.bean.VgcUpdateInfo r5) {
+        /*
+            r3 = this;
+            android.content.Context r3 = r3.mContext
+            boolean r3 = com.bbk.updater.utils.CommonUtils.isSystemBroken(r3)
+            r0 = 1
+            if (r3 == 0) goto L2d
+            if (r4 != 0) goto Ld
+            if (r5 == 0) goto L2d
+        Ld:
+            r3 = 0
+            int r1 = com.bbk.updater.utils.CommonUtils.checkPackageAvailableType(r4, r5)
+            if (r1 == r0) goto L20
+            r2 = 3
+            if (r1 != r2) goto L18
+            goto L20
+        L18:
+            r4 = 2
+            if (r1 != r4) goto L24
+            java.lang.String r3 = r5.getType()
+            goto L24
+        L20:
+            java.lang.String r3 = r4.getType()
+        L24:
+            java.lang.String r4 = "full"
+            boolean r3 = r4.equals(r3)
+            if (r3 == 0) goto L2d
+            goto L2e
+        L2d:
+            r0 = 0
+        L2e:
+            java.lang.StringBuilder r3 = new java.lang.StringBuilder
+            r3.<init>()
+            java.lang.String r4 = "isNeedToShowBrokenTips "
+            r3.append(r4)
+            r3.append(r0)
+            java.lang.String r3 = r3.toString()
+            java.lang.String r4 = "Updater/UpdatePresenter"
+            com.bbk.updater.utils.LogUtils.i(r4, r3)
+            return r0
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.bbk.updater.ui.UpdatePresenter.isNeedToShowBrokenTips(com.bbk.updater.bean.UpdateInfo, com.bbk.updater.bean.VgcUpdateInfo):boolean");
+    }
+
+    private void checkUpdate() {
+        long j = PrefsUtils.getLong(this.mContext, PrefsUtils.Check.KEY_LAST_SHOW_OPEN_AUTO_UPGRADE_PACKAGE_TIME, -1L);
+        boolean zCheckTimeBetweenOneAndSevenDay = j == -1 ? true : CommonUtils.checkTimeBetweenOneAndSevenDay(j);
+        int iA = com.bbk.vgc.a.a.a().a(0);
+        int iB = com.bbk.vgc.a.a.a().b(this.mContext, 1);
+        boolean z = PrefsUtils.getBoolean(this.mContext, PrefsUtils.Check.KEY_OPEN_AUTO_CHECK_UPGRADE_PACKAGE_NO_MORE_PROMPT, false);
+        if (iA == 1 && iB != 1 && !z && zCheckTimeBetweenOneAndSevenDay && !this.mShowedOpenAutoCheck) {
+            this.mShowedOpenAutoCheck = true;
+            m10getMvpView().showOneDialog(1005);
+            return;
+        }
+        int iB2 = com.bbk.vgc.a.a.a().b(0);
+        int iC = com.bbk.vgc.a.a.a().c(this.mContext, 1);
+        if (iB2 == 1 && iC != 1 && CommonUtils.getNetworkConnectType(this.mContext).equals(ConstantsUtils.NetWorkType.MOBILE)) {
+            m10getMvpView().showOneDialog(1006);
+            return;
+        }
+        b bVar = new b(this.mContext.getApplicationContext());
+        this.mCheckUpdateTask = bVar;
+        bVar.a(BaseFrameUtils.CheckTrigeType.MANUL);
+        this.mCheckUpdateTask.execute(new Void[0]);
+    }
+
+    private void checkUpdateForDESysDTag() {
+        b bVar = new b(this.mContext.getApplicationContext());
+        this.mCheckUpdateTask = bVar;
+        bVar.execute(new Void[0]);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0057  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    private boolean isReadyForDownload() {
+        /*
+            r6 = this;
+            com.bbk.updater.bean.UpdateInfo r0 = r6.mFotaUpdateInfo
+            r1 = 1
+            r2 = 0
+            if (r0 != 0) goto L1c
+            com.bbk.updater.bean.VgcUpdateInfo r0 = r6.mVgcUpdateInfo
+            if (r0 != 0) goto L1c
+            android.content.Context r0 = r6.mContext
+            r1 = 2131689663(0x7f0f00bf, float:1.9008348E38)

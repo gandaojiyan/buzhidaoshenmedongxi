@@ -1,0 +1,33 @@
+1:package com.bbk.updater.check.strategy;
+6:import com.bbk.updater.check.a.b;
+27:        registerStaticBroadcast("new.com.bbk.updater.action.AUTO_CHECK");
+28:        registerStaticBroadcast("com.bbk.updater.action.CHECK_INSTANTLY");
+29:        registerStaticBroadcast("com.bbk.updater.auto.check");
+30:        registerStaticBroadcast("com.bbk.updater.action.AUTO_CHECK_HOURLY");
+35:        registerStaticBroadcast("com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST");
+40:            onStaticBroadCastReceive("com.bbk.updater.action.CHECK_INSTANTLY", null);
+48:        setAutocheckAlarmAfterBoot();
+56:        SimpleScheduler.runOnMainThread(new Runnable() { // from class: com.bbk.updater.check.strategy.UpdateCheckStrategy.1
+59:                UpdateCheckStrategy.this.startAutoCheck(true, BaseFrameUtils.CheckTrigeType.NETWORK_CHANGED);
+67:        startAutoCheck(false, BaseFrameUtils.CheckTrigeType.COTA_TYPE_CHANGE);
+78:    public boolean onCheckEnd(int i, boolean z, c cVar, c cVar2, c cVar3, c cVar4, c cVar5, c cVar6, String str, BaseFrameUtils.CheckTrigeType checkTrigeType) {
+82:        return super.onCheckEnd(i, z, cVar, cVar2, cVar3, cVar4, cVar5, cVar6, str, checkTrigeType);
+112:            if (key != null && key.startsWith(PrefsUtils.Other.KEY_LOG_NOTE_FILE_SIZE)) {
+129:    public boolean onStaticBroadCastReceive(java.lang.String r4, android.content.Intent r5) {
+134:        throw new UnsupportedOperationException("Method not decompiled: com.bbk.updater.check.strategy.UpdateCheckStrategy.onStaticBroadCastReceive(java.lang.String, android.content.Intent):boolean");
+138:        PrefsUtils.putBoolean(getContext(), PrefsUtils.Check.KEY_AUTO_CHECK_IS_FINISHED, z);
+142:        return PrefsUtils.getBoolean(getContext(), PrefsUtils.Check.KEY_AUTO_CHECK_IS_FINISHED, true);
+162:            java.lang.String r8 = "time_stamp_of_last_check"
+203:            java.lang.String r10 = "Is it time to check? "
+210:        throw new UnsupportedOperationException("Method not decompiled: com.bbk.updater.check.strategy.UpdateCheckStrategy.isTimeToAutoCheck(com.vivo.updaterbaseframe.utils.BaseFrameUtils$CheckTrigeType):boolean");
+214:    public void startAutoCheck(boolean z, BaseFrameUtils.CheckTrigeType checkTrigeType) {
+216:            LogUtils.i("Updater/strategy/UpdateCheckStrategy", "Forbid checking! reason:roaming");
+225:        LogUtils.i("Updater/strategy/UpdateCheckStrategy", "AutoCheck Trige arrival, trigeType: " + checkTrigeType + ", elaplseTime: " + jElapsedRealtime);
+236:        if (!z || isTimeToAutoCheck(checkTrigeType)) {
+238:            bVar.a(checkTrigeType);
+246:    private boolean needInterceptAutoCheck(BaseFrameUtils.CheckTrigeType checkTrigeType) {
+247:        LogUtils.i("Updater/strategy/UpdateCheckStrategy", "auto check type: " + checkTrigeType);
+251:        return checkTrigeType == BaseFrameUtils.CheckTrigeType.NETWORK_CHANGED || checkTrigeType == BaseFrameUtils.CheckTrigeType.REGULAR_ALARM || checkTrigeType == BaseFrameUtils.CheckTrigeType.HOURLY_ALARM || checkTrigeType == BaseFrameUtils.CheckTrigeType.POWER_CONNECTED || checkTrigeType == BaseFrameUtils.CheckTrigeType.TIME_SET;
+289:        CommonUtils.setAlarmClock(getContext(), "com.bbk.updater.action.AUTO_CHECK_HOURLY", (long) ((Math.random() * 60.0d * 30.0d) + 10800.0d), false);
+292:    private void setAutocheckAlarmAfterBoot() {
+293:        CommonUtils.setAlarmClock(getContext(), "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST", 60L, false);
