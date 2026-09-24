@@ -1,0 +1,18 @@
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/UpdateTipsService.java:382:        b bVar = new b(this.d);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdatePresenter.java:1193:        b bVar = new b(this.mContext.getApplicationContext());
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdatePresenter.java:1195:        bVar.a(BaseFrameUtils.CheckTrigeType.MANUL);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdatePresenter.java:1196:        this.mCheckUpdateTask.execute(new Void[0]);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdatePresenter.java:1200:        b bVar = new b(this.mContext.getApplicationContext());
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdatePresenter.java:1202:        bVar.execute(new Void[0]);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/cota/CotaStandardStrategy.java:29:                    new a(getContext()).execute(new Void[0]);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/abinstall/b.java:49:            g = new b(context.getApplicationContext());
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/induce/b.java:31:        private static final b f189a = new b();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/countrycode/CountryCodeStrategy.java:85:            new a(getContext()).execute(new Void[0]);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/countrycode/CountryCodeStrategy.java:111:                    new c(getContext()).execute(new Void[0]);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:521:        if ((this instanceof b) && BaseFrameUtils.CheckTrigeType.MANUL == this.m) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:237:            b bVar = new b(getContext());
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:240:            bVar.execute(new Void[0]);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:251:        return checkTrigeType == BaseFrameUtils.CheckTrigeType.NETWORK_CHANGED || checkTrigeType == BaseFrameUtils.CheckTrigeType.REGULAR_ALARM || checkTrigeType == BaseFrameUtils.CheckTrigeType.HOURLY_ALARM || checkTrigeType == BaseFrameUtils.CheckTrigeType.POWER_CONNECTED || checkTrigeType == BaseFrameUtils.CheckTrigeType.TIME_SET;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/download/strategy/AutoDownloadStrategy.java:236:            new com.bbk.updater.download.a.a(this.b).execute(new Void[0]);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/download/strategy/DownloadStrategy.java:626:            b bVar = new b(getContext(), updateInfoV, vgcUpdateInfoU);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/download/strategy/DownloadStrategy.java:628:            bVar.execute(new Void[0]);

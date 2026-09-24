@@ -1,0 +1,275 @@
+===== UpdatePresenter 60-150 =====
+    private UpdateInfo mFotaUpdateInfo;
+    private boolean mFromNotice;
+    private boolean mFromTrialVersion;
+    private AlertDialog mIncompatibleWarning;
+    private boolean mIsResumeDownload;
+    private com.bbk.updater.download.a.b mPrepareDownloadCheckTask;
+    private VgcUpdateInfo mVgcUpdateInfo;
+    private com.bbk.updater.install.abinstall.b sAbUpdateManager;
+    private com.bbk.updater.download.a sDownloadInfoManager;
+    private ConstantsUtils.NetWorkType mPreNetworkType = ConstantsUtils.NetWorkType.NULL;
+    private boolean isPreNetRoamingForbid = false;
+    private int mFotaDownloadStatus = -1;
+    private int mVgcDownloadStatus = -1;
+    private float mDownloadProgress = -1.0f;
+    private int mResumeNet = -1;
+    private boolean mUseDataCheckChanged = false;
+    private boolean mShowedOpenAutoCheck = false;
+
+    @Override // com.vivo.updaterbaseframe.b.a
+    public void attachView(UpdateView updateView) {
+        super.attachView(updateView);
+        RxBus.a().a(this);
+        Context context = updateView.getContext();
+        this.mContext = context;
+        this.mActivity = (Activity) context;
+        this.sDownloadInfoManager = com.bbk.updater.download.a.a(context);
+        this.sAbUpdateManager = com.bbk.updater.install.abinstall.b.a(this.mContext);
+        this.mPreNetworkType = CommonUtils.getNetworkConnectType(this.mContext);
+        if (!this.mFromTrialVersion) {
+            init();
+        } else {
+            trailCheck();
+        }
+    }
+
+    @Override // com.vivo.updaterbaseframe.b.a
+    public void detachView() {
+        super.detachView();
+        cancelTask(this.mCheckUpdateTask, this.mPrepareDownloadCheckTask);
+        RxBus.a().b(this);
+    }
+
+    @Override // com.vivo.updaterbaseframe.b.a
+    public void onResume() {
+        super.onResume();
+        this.mIncompatibleWarning = null;
+        ConstantsUtils.NetWorkType networkConnectType = CommonUtils.getNetworkConnectType(this.mContext);
+        boolean z = true;
+        boolean z2 = networkConnectType == ConstantsUtils.NetWorkType.MOBILE && com.bbk.vgc.a.a.a().a(this.mContext);
+        if (this.mFromTrialVersion && this.mFotaUpdateInfo == null && this.mVgcUpdateInfo == null) {
+            if (z2) {
+                if (m10getMvpView() == null) {
+                    return;
+                }
+                m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_ROAMING_FORBID_UPDATE);
+                return;
+            }
+            trailCheck();
+            return;
+        }
+        boolean z3 = this.isPreNetRoamingForbid && !z2;
+        ConstantsUtils.NetWorkType netWorkType = this.mPreNetworkType;
+        if ((!(networkConnectType != netWorkType && netWorkType == ConstantsUtils.NetWorkType.NULL) || z2) && !z3) {
+            z = false;
+        }
+        if ((z || this.mUseDataCheckChanged) && this.mFotaUpdateInfo == null && this.mVgcUpdateInfo == null) {
+            if (VersionUtils.iSVgc()) {
+                com.bbk.updater.download.a.a(this.mContext).a("ota_pacakge", "vgc_package");
+            } else {
+                com.bbk.updater.download.a.a(this.mContext).w();
+            }
+            if (!z2) {
+                checkUpdate();
+            }
+        }
+        this.isPreNetRoamingForbid = z2;
+        this.mPreNetworkType = networkConnectType;
+        this.mUseDataCheckChanged = false;
+        if (networkConnectType != ConstantsUtils.NetWorkType.NULL) {
+            m10getMvpView().dismissOneDialog(1001);
+        }
+    }
+
+    private void trailCheck() {
+        LogUtils.d(TAG, "ifTrailCheck");
+        if (m10getMvpView() == null) {
+            return;
+        }
+        m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.CHECKING);
+        com.bbk.trialversion.b.a().a(this.mContext, "touch", new com.bbk.trialversion.trialversion.a.a.a() { // from class: com.bbk.updater.ui.UpdatePresenter.1
+            @Override // com.bbk.trialversion.trialversion.a.a.a
+
+===== UpdatePresenter 1030-1210 =====
+        if (eventId == 64) {
+            LogUtils.i(TAG, "CheckEvent: CHECKED_LOG_LOAD_SUCCEED");
+            refreshUI(DownloadControllerView.DownloadControllerStatus.TO_INSTALL, DownloadIndicatorView.DownloadIndicatorStatus.DOWNLOAD_SUCCEED);
+            com.bbk.updater.c.b.k(this.mContext.getApplicationContext());
+            return;
+        }
+        if (eventId == 128 || eventId == 256) {
+            refreshUI(DownloadControllerView.DownloadControllerStatus.TO_DOWNLOAD, DownloadIndicatorView.DownloadIndicatorStatus.CANNOT_CONNECT_SERVER);
+            return;
+        }
+        if (eventId == 512) {
+            networkNoticeBeforeDownload(false);
+            return;
+        }
+        if (eventId != 4096) {
+            if (eventId != 8192) {
+                return;
+            }
+            m10getMvpView().changeToNoVersion();
+            m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_DISABLED);
+            return;
+        }
+        boolean zIsDataNetTypeCheck = checkEvent.isDataNetTypeCheck();
+        LogUtils.i(TAG, "onCheckEvent isNetChecked = " + zIsDataNetTypeCheck);
+        if (zIsDataNetTypeCheck) {
+            if (com.bbk.vgc.a.a.a().c(this.mContext, 1) != 1 && CommonUtils.getNetworkConnectType(this.mContext).equals(ConstantsUtils.NetWorkType.MOBILE)) {
+                m10getMvpView().showOneDialog(1006);
+                return;
+            } else {
+                checkUpdateForDESysDTag();
+                return;
+            }
+        }
+        checkUpdateForDESysDTag();
+    }
+
+    @RxBus.a(a = RxBus.RunningThreadType.mainThread)
+    private void onCotaStatusChangeEvent(CotaStatusChangeEvent cotaStatusChangeEvent) {
+        LogUtils.i(TAG, "onCotaStatusChangeEvent, changeId = " + cotaStatusChangeEvent.getEventId());
+        if (cotaStatusChangeEvent.getEventId() != 1) {
+            return;
+        }
+        m10getMvpView().resetCotaView();
+    }
+
+    @RxBus.a(a = RxBus.RunningThreadType.mainThread)
+    private void onTypeChangeEvent(TypeChangeEvent typeChangeEvent) {
+        if (typeChangeEvent.getEventId() != 1) {
+            return;
+        }
+        this.mUseDataCheckChanged = typeChangeEvent.getType() == 1;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void refreshUpdateInfo(UpdateInfo updateInfo, VgcUpdateInfo vgcUpdateInfo) {
+        this.mFotaUpdateInfo = updateInfo;
+        this.mVgcUpdateInfo = vgcUpdateInfo;
+        if (updateInfo != null) {
+            m10getMvpView().recordCrossVersion(this.mFotaUpdateInfo.getCrossVersion(), this.mFotaUpdateInfo.getStyleColor());
+        }
+        m10getMvpView().recordOSVersion(VersionUtils.getOsAlias());
+        m10getMvpView().recordTotalSize(getTotalLength());
+        UpdateInfo updateInfo2 = this.mFotaUpdateInfo;
+        String version = updateInfo2 != null ? updateInfo2.getVersion() : null;
+        UpdateView mvpView = m10getMvpView();
+        VgcUpdateInfo vgcUpdateInfo2 = this.mVgcUpdateInfo;
+        String version2 = vgcUpdateInfo2 != null ? vgcUpdateInfo2.getVersion() : null;
+        VgcUpdateInfo vgcUpdateInfo3 = this.mVgcUpdateInfo;
+        mvpView.recordVersion(VersionUtils.getVersionSplice(version, version2, vgcUpdateInfo3 != null ? vgcUpdateInfo3.getVersionShow() : null), version);
+    }
+
+    public void refreshLogContent(UpdateInfo updateInfo, VgcUpdateInfo vgcUpdateInfo) {
+        m10getMvpView().showUpdateLog(WebHelper.getInstance(this.mContext).getLogHtmlPathAndCacheIt(updateInfo, vgcUpdateInfo));
+        m10getMvpView().recordIsFullPackage(isNeedToShowBrokenTips(updateInfo, vgcUpdateInfo));
+    }
+
+    public long getTotalLength() {
+        return CommonUtils.getTotalPackageLength(this.mFotaUpdateInfo, this.mVgcUpdateInfo).longValue();
+    }
+
+    private void fetchUpdateInfo() {
+        LogUtils.i(TAG, "Fetch update info!");
+        int i = AnonymousClass12.$SwitchMap$com$bbk$updater$utils$ConstantsUtils$NetWorkType[this.mPreNetworkType.ordinal()];
+        if (i != 1) {
+            if (i == 2) {
+                m10getMvpView().showOneDialog(1001);
+                m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_DISABLED);
+                return;
+            }
+        } else if (com.bbk.vgc.a.a.a().a(this.mContext)) {
+            m10getMvpView().showOneDialog(1013);
+            m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_ROAMING_FORBID_UPDATE);
+            return;
+        }
+        checkUpdate();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:18:0x002d  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    private boolean isNeedToShowBrokenTips(com.bbk.updater.bean.UpdateInfo r4, com.bbk.updater.bean.VgcUpdateInfo r5) {
+        /*
+            r3 = this;
+            android.content.Context r3 = r3.mContext
+            boolean r3 = com.bbk.updater.utils.CommonUtils.isSystemBroken(r3)
+            r0 = 1
+            if (r3 == 0) goto L2d
+            if (r4 != 0) goto Ld
+            if (r5 == 0) goto L2d
+        Ld:
+            r3 = 0
+            int r1 = com.bbk.updater.utils.CommonUtils.checkPackageAvailableType(r4, r5)
+            if (r1 == r0) goto L20
+            r2 = 3
+            if (r1 != r2) goto L18
+            goto L20
+        L18:
+            r4 = 2
+            if (r1 != r4) goto L24
+            java.lang.String r3 = r5.getType()
+            goto L24
+        L20:
+            java.lang.String r3 = r4.getType()
+        L24:
+            java.lang.String r4 = "full"
+            boolean r3 = r4.equals(r3)
+            if (r3 == 0) goto L2d
+            goto L2e
+        L2d:
+            r0 = 0
+        L2e:
+            java.lang.StringBuilder r3 = new java.lang.StringBuilder
+            r3.<init>()
+            java.lang.String r4 = "isNeedToShowBrokenTips "
+            r3.append(r4)
+            r3.append(r0)
+            java.lang.String r3 = r3.toString()
+            java.lang.String r4 = "Updater/UpdatePresenter"
+            com.bbk.updater.utils.LogUtils.i(r4, r3)
+            return r0
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.bbk.updater.ui.UpdatePresenter.isNeedToShowBrokenTips(com.bbk.updater.bean.UpdateInfo, com.bbk.updater.bean.VgcUpdateInfo):boolean");
+    }
+
+    private void checkUpdate() {
+        long j = PrefsUtils.getLong(this.mContext, PrefsUtils.Check.KEY_LAST_SHOW_OPEN_AUTO_UPGRADE_PACKAGE_TIME, -1L);
+        boolean zCheckTimeBetweenOneAndSevenDay = j == -1 ? true : CommonUtils.checkTimeBetweenOneAndSevenDay(j);
+        int iA = com.bbk.vgc.a.a.a().a(0);
+        int iB = com.bbk.vgc.a.a.a().b(this.mContext, 1);
+        boolean z = PrefsUtils.getBoolean(this.mContext, PrefsUtils.Check.KEY_OPEN_AUTO_CHECK_UPGRADE_PACKAGE_NO_MORE_PROMPT, false);
+        if (iA == 1 && iB != 1 && !z && zCheckTimeBetweenOneAndSevenDay && !this.mShowedOpenAutoCheck) {
+            this.mShowedOpenAutoCheck = true;
+            m10getMvpView().showOneDialog(1005);
+            return;
+        }
+        int iB2 = com.bbk.vgc.a.a.a().b(0);
+        int iC = com.bbk.vgc.a.a.a().c(this.mContext, 1);
+        if (iB2 == 1 && iC != 1 && CommonUtils.getNetworkConnectType(this.mContext).equals(ConstantsUtils.NetWorkType.MOBILE)) {
+            m10getMvpView().showOneDialog(1006);
+            return;
+        }
+        b bVar = new b(this.mContext.getApplicationContext());
+        this.mCheckUpdateTask = bVar;
+        bVar.a(BaseFrameUtils.CheckTrigeType.MANUL);
+        this.mCheckUpdateTask.execute(new Void[0]);
+    }
+
+    private void checkUpdateForDESysDTag() {
+        b bVar = new b(this.mContext.getApplicationContext());
+        this.mCheckUpdateTask = bVar;
+        bVar.execute(new Void[0]);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0057  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    private boolean isReadyForDownload() {

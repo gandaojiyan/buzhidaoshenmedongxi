@@ -1,0 +1,182 @@
+114-                if (!StringUtils.stringContains(key, versionSplice) && !StringUtils.stringContains(key, versionSplice2) && !StringUtils.stringContains(key, softVersion) && !StringUtils.stringContains(key, vgcSoftVersion)) {
+115-                    PrefsUtils.removePrefs(getContext(), key);
+116-                }
+117-            }
+118-        }
+119-        PrefsUtils.putLongApply(getContext(), PrefsUtils.Other.KEY_LOG_NOTE_FILE_SIZE + versionSplice, reservedStorage + jLongValue);
+120-    }
+121-
+122-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+123-    /* JADX WARN: Removed duplicated region for block: B:41:0x009f  */
+124-    @Override // com.vivo.updaterbaseframe.strategy.a
+125-    /*
+126-        Code decompiled incorrectly, please refer to instructions dump.
+127-        To view partially-correct add '--show-bad-code' argument
+128-    */
+129-    public boolean onStaticBroadCastReceive(java.lang.String r4, android.content.Intent r5) {
+130-        /*
+131-            Method dump skipped, instruction units count: 336
+132-            To view this dump add '--comments-level debug' option
+133-        */
+134:        throw new UnsupportedOperationException("Method not decompiled: com.bbk.updater.check.strategy.UpdateCheckStrategy.onStaticBroadCastReceive(java.lang.String, android.content.Intent):boolean");
+135-    }
+136-
+137-    private void traceAutoCheckCycle(boolean z) {
+138-        PrefsUtils.putBoolean(getContext(), PrefsUtils.Check.KEY_AUTO_CHECK_IS_FINISHED, z);
+139-    }
+140-
+141-    private boolean isAutoCheckRealFinished() {
+142-        return PrefsUtils.getBoolean(getContext(), PrefsUtils.Check.KEY_AUTO_CHECK_IS_FINISHED, true);
+143-    }
+144-
+145-    /* JADX WARN: Removed duplicated region for block: B:12:0x0055  */
+146-    /*
+147-        Code decompiled incorrectly, please refer to instructions dump.
+148-        To view partially-correct add '--show-bad-code' argument
+149-    */
+150-    private boolean isTimeToAutoCheck(com.vivo.updaterbaseframe.utils.BaseFrameUtils.CheckTrigeType r10) {
+151-        /*
+152-            r9 = this;
+153-            android.content.Context r0 = r9.getContext()
+154-            boolean r0 = com.bbk.updater.utils.CommonUtils.isNetworkConnect(r0)
+155-            r1 = 1
+156-            java.lang.String r2 = "Updater/strategy/UpdateCheckStrategy"
+157-            r3 = 0
+158-            if (r0 == 0) goto L55
+159-            long r4 = java.lang.System.currentTimeMillis()
+160-            android.content.Context r0 = r9.getContext()
+161-            r6 = 0
+162-            java.lang.String r8 = "time_stamp_of_last_check"
+163-            long r6 = com.bbk.updater.utils.PrefsUtils.getLong(r0, r8, r6)
+164-            long r4 = r4 - r6
+165-            java.lang.StringBuilder r0 = new java.lang.StringBuilder
+166-            r0.<init>()
+167-            java.lang.String r6 = "Network is connected, interval is "
+168-            r0.append(r6)
+169-            r0.append(r4)
+170-            java.lang.String r0 = r0.toString()
+171-            com.bbk.updater.utils.LogUtils.i(r2, r0)
+172-            android.content.Context r0 = r9.getContext()
+173-            boolean r0 = com.bbk.updater.utils.CommonUtils.isNetworkWifi(r0)
+174-            if (r0 == 0) goto L49
+175-            long r4 = java.lang.Math.abs(r4)
+176-            r6 = 10800000(0xa4cb80, double:5.335909E-317)
+177-            int r0 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1))
+178-            if (r0 < 0) goto L55
+179-            goto L56
+180-        L49:
+181-            long r4 = java.lang.Math.abs(r4)
+182-            r6 = 21600000(0x1499700, double:1.0671818E-316)
+183-            int r0 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1))
+184-            if (r0 < 0) goto L55
+185-            goto L56
+186-        L55:
+187-            r1 = r3
+188-        L56:
+189-            if (r1 == 0) goto L6e
+190-            boolean r10 = r9.needInterceptAutoCheck(r10)
+191-            if (r10 == 0) goto L6e
+192-            com.bbk.updater.config.Configs$UpdateCheckConfig r10 = com.bbk.updater.config.Configs.UpdateCheckConfig
+193-            long r4 = java.lang.System.currentTimeMillis()
+194-            boolean r10 = r10.isDelayUpdateCheck(r4)
+195-            if (r10 == 0) goto L6e
+196-            r9.setDelayCheck()
+197-            goto L6f
+198-        L6e:
+199-            r3 = r1
+200-        L6f:
+201-            java.lang.StringBuilder r9 = new java.lang.StringBuilder
+202-            r9.<init>()
+203-            java.lang.String r10 = "Is it time to check? "
+204-            r9.append(r10)
+205-            r9.append(r3)
+206-            java.lang.String r9 = r9.toString()
+207-            com.bbk.updater.utils.LogUtils.i(r2, r9)
+208-            return r3
+209-        */
+210-        throw new UnsupportedOperationException("Method not decompiled: com.bbk.updater.check.strategy.UpdateCheckStrategy.isTimeToAutoCheck(com.vivo.updaterbaseframe.utils.BaseFrameUtils$CheckTrigeType):boolean");
+211-    }
+212-
+213-    /* JADX INFO: Access modifiers changed from: private */
+214-    public void startAutoCheck(boolean z, BaseFrameUtils.CheckTrigeType checkTrigeType) {
+215-        if (CommonUtils.isForbidUseNetForRoaming(getContext())) {
+216-            LogUtils.i("Updater/strategy/UpdateCheckStrategy", "Forbid checking! reason:roaming");
+217-            return;
+218-        }
+219-        if (CommonUtils.isUpdating()) {
+220-            LogUtils.i("Updater/strategy/UpdateCheckStrategy", "updating !!!");
+221-            return;
+222-        }
+223-        boolean zIsNetworkConnect = CommonUtils.isNetworkConnect(getContext());
+224-        long jElapsedRealtime = SystemClock.elapsedRealtime();
+225-        LogUtils.i("Updater/strategy/UpdateCheckStrategy", "AutoCheck Trige arrival, trigeType: " + checkTrigeType + ", elaplseTime: " + jElapsedRealtime);
+226-        com.bbk.updaterdsassistant.b.a.a(getContext(), PrefsUtils.Check.KEY_AUTOCHECK_TRIGER_TIMES);
+227-        if (!zIsNetworkConnect || jElapsedRealtime <= ConstantsUtils.ONE_MINUTE_TIME) {
+228-            if (zIsNetworkConnect) {
+229-                com.bbk.updaterdsassistant.b.a.a(getContext(), PrefsUtils.Check.KEY_CANNOT_AUTOCHECK_DUE_BOOT);
+230-                return;
+231-            } else {
+232-                com.bbk.updaterdsassistant.b.a.a(getContext(), PrefsUtils.Check.KEY_CANNOT_AUTOCHECK_DUE_NET);
+233-                return;
+234-            }
+235-        }
+236-        if (!z || isTimeToAutoCheck(checkTrigeType)) {
+237-            b bVar = new b(getContext());
+238-            bVar.a(checkTrigeType);
+239-            bVar.b(true);
+240-            bVar.execute(new Void[0]);
+241-            return;
+242-        }
+243-        com.bbk.updaterdsassistant.b.a.a(getContext(), PrefsUtils.Check.KEY_CANNOT_AUTOCHECK_DUE_TIME);
+244-    }
+245-
+246-    private boolean needInterceptAutoCheck(BaseFrameUtils.CheckTrigeType checkTrigeType) {
+247-        LogUtils.i("Updater/strategy/UpdateCheckStrategy", "auto check type: " + checkTrigeType);
+248-        if (ConstantsUtils.ISEXPORT || APIVersionUtils.isPad()) {
+249-            return false;
+250-        }
+251-        return checkTrigeType == BaseFrameUtils.CheckTrigeType.NETWORK_CHANGED || checkTrigeType == BaseFrameUtils.CheckTrigeType.REGULAR_ALARM || checkTrigeType == BaseFrameUtils.CheckTrigeType.HOURLY_ALARM || checkTrigeType == BaseFrameUtils.CheckTrigeType.POWER_CONNECTED || checkTrigeType == BaseFrameUtils.CheckTrigeType.TIME_SET;
+252-    }
+253-
+254-    private boolean isInDelayCheckScope() {
+255-        long jAbs = Math.abs(System.currentTimeMillis() - PrefsUtils.getLong(getContext(), PrefsUtils.Check.KEY_LAST_TIME_SET_DELAY_CHECK, 0L));
+256-        LogUtils.d("Updater/strategy/UpdateCheckStrategy", "delayCheckIntervalTime h: " + (jAbs / ConstantsUtils.ONE_HOUR_TIME));
+257-        return jAbs < (Configs.UpdateCheckConfig.getBlockTime() * 10) * 1000;
+258-    }
+259-
+260-    private synchronized void setDelayCheck() {
+261-        long blockTime;
+262-        if (isInDelayCheckScope()) {
+263-            return;
+264-        }
+265-        String imei = VersionUtils.getIMEI(getContext());
+266-        long jRandom = (long) (Math.random() * 10.0d * 512.0d);
+267-        try {
+268-            blockTime = Configs.UpdateCheckConfig.getBlockTime();
+269-        } catch (Exception e) {
+270-            LogUtils.i("Updater/strategy/UpdateCheckStrategy", "updateCheckDelay exception：" + e.toString());
+271-        }
+272-        if (Character.isDigit(imei.charAt(imei.length() - 1))) {
+273-            int iCharAt = imei.charAt(imei.length() - 1) - '0';
+274-            jRandom = (long) ((((long) iCharAt) * blockTime) + (Math.random() * blockTime));
+275-            long j = jRandom;
+276-            LogUtils.i("Updater/strategy/UpdateCheckStrategy", "setDelayCheck intervalTime: " + j);
+277-            CommonUtils.setAlarmClock(getContext(), "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT", j, false, true);
+278-            PrefsUtils.putLong(getContext(), PrefsUtils.Check.KEY_LAST_TIME_SET_DELAY_CHECK, System.currentTimeMillis());
+279-            return;
+280-        }
+281-        long j2 = jRandom;
+282-        LogUtils.i("Updater/strategy/UpdateCheckStrategy", "setDelayCheck intervalTime: " + j2);
+283-        CommonUtils.setAlarmClock(getContext(), "com.bbk.updater.action.UPDATE_CHECK_CONFIG_EFFECT", j2, false, true);
+284-        PrefsUtils.putLong(getContext(), PrefsUtils.Check.KEY_LAST_TIME_SET_DELAY_CHECK, System.currentTimeMillis());
+285-        return;
+286-    }
+287-
+288-    private void setHourlyCheckAlarm() {
+289-        CommonUtils.setAlarmClock(getContext(), "com.bbk.updater.action.AUTO_CHECK_HOURLY", (long) ((Math.random() * 60.0d * 30.0d) + 10800.0d), false);
+290-    }
+291-
+292-    private void setAutocheckAlarmAfterBoot() {
+293-        CommonUtils.setAlarmClock(getContext(), "com.bbk.updater.action.AUTO_CHECK_BOOT_FIRST", 60L, false);
+294-    }
+295-}

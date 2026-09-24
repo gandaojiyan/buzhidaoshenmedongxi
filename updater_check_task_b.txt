@@ -1,0 +1,64 @@
+package com.bbk.updater.check.a;
+
+import android.content.Context;
+import com.bbk.updater.bean.UpdateCheckResultInfo;
+import com.bbk.updater.rx.event.CheckEvent;
+import com.bbk.updater.rx.event.TaskLifeCycleEvent;
+import com.bbk.updater.utils.CheckResultUtils;
+import com.bbk.updater.utils.LogUtils;
+import com.vivo.updaterbaseframe.rx.RxBus;
+
+/* JADX INFO: compiled from: CheckUpdateTask.java */
+/* JADX INFO: loaded from: classes.dex */
+public class b extends a {
+    private static boolean b = false;
+
+    public b(Context context) {
+        super(context);
+    }
+
+    @Override // com.bbk.updater.check.a.a, android.os.AsyncTask
+    protected void onPreExecute() {
+        super.onPreExecute();
+        if (c() && b) {
+            cancel(true);
+            return;
+        }
+        b = true;
+        LogUtils.eventLog("CheckUpdateTask start trigger " + b());
+        RxBus.a().c(new TaskLifeCycleEvent(b.class, TaskLifeCycleEvent.LifeCycle.onPreExecute));
+        if (c()) {
+            return;
+        }
+        RxBus.a().c(new CheckEvent(1));
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // com.bbk.updater.check.a.a, android.os.AsyncTask
+    /* JADX INFO: renamed from: a, reason: merged with bridge method [inline-methods] */
+    public void onPostExecute(UpdateCheckResultInfo updateCheckResultInfo) {
+        super.onPostExecute(updateCheckResultInfo);
+        b = false;
+        if (!c() && CheckResultUtils.isNewInfoChecked(updateCheckResultInfo)) {
+            RxBus.a().c(new CheckEvent(16, updateCheckResultInfo.getFotaUpdateInfo(), updateCheckResultInfo.getVgcUpdateInfo()));
+        }
+        RxBus.a().c(new TaskLifeCycleEvent(b.class, TaskLifeCycleEvent.LifeCycle.onPostExecute));
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // com.bbk.updater.check.a.a, android.os.AsyncTask
+    /* JADX INFO: renamed from: a, reason: merged with bridge method [inline-methods] */
+    public UpdateCheckResultInfo doInBackground(Void... voidArr) {
+        RxBus.a().c(new TaskLifeCycleEvent(b.class, TaskLifeCycleEvent.LifeCycle.doInBackground));
+        return super.doInBackground(voidArr);
+    }
+
+    @Override // com.bbk.updater.check.a.a
+    protected void a(int i) {
+        super.a(i);
+        if (i == 1024 || c()) {
+            return;
+        }
+        RxBus.a().c(new CheckEvent(i));
+    }
+}

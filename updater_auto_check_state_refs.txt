@@ -1,0 +1,7 @@
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/PrefsUtils.java:23:        public static final String KEY_AUTO_CHECK_IS_FINISHED = "auto_check_is_finished";
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:39:        if (!isAutoCheckRealFinished()) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:80:            traceAutoCheckCycle(true);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:137:    private void traceAutoCheckCycle(boolean z) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:138:        PrefsUtils.putBoolean(getContext(), PrefsUtils.Check.KEY_AUTO_CHECK_IS_FINISHED, z);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:141:    private boolean isAutoCheckRealFinished() {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:142:        return PrefsUtils.getBoolean(getContext(), PrefsUtils.Check.KEY_AUTO_CHECK_IS_FINISHED, true);
