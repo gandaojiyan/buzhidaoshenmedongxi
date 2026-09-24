@@ -1,0 +1,35 @@
+UpdateTempActivity.java:20:        finish();
+UpdateActivity.java:91:                    UpdateActivity.this.finish();
+UpdateActivity.java:283:    protected void onResume() {
+UpdateActivity.java:284:        LogUtils.i(TAG, "onResume");
+UpdateActivity.java:285:        super.onResume();
+UpdateActivity.java:291:            updatePresenter.onResume();
+UpdateActivity.java:335:    public void finish() {
+UpdateActivity.java:336:        super.finish();
+UpdateActivity.java:688:                    UpdateActivity.this.finish();
+UpdatePresenter.java:103:    public void onResume() {
+UpdatePresenter.java:104:        super.onResume();
+UpdatePresenter.java:132:                checkUpdate();
+UpdatePresenter.java:212:        int iCheckShowInfoType = checkShowInfoType(availableFotaInfo, availableVgcInfo);
+UpdatePresenter.java:330:            fetchUpdateInfo();
+UpdatePresenter.java:901:                    fetchUpdateInfo();
+UpdatePresenter.java:1059:                checkUpdateForDESysDTag();
+UpdatePresenter.java:1063:        checkUpdateForDESysDTag();
+UpdatePresenter.java:1110:    private void fetchUpdateInfo() {
+UpdatePresenter.java:1124:        checkUpdate();
+UpdatePresenter.java:1176:    private void checkUpdate() {
+UpdatePresenter.java:1199:    private void checkUpdateForDESysDTag() {
+UpdatePresenter.java:1504:    private int checkShowInfoType(UpdateInfo updateInfo, VgcUpdateInfo vgcUpdateInfo) {
+UpdatePresenter.java:1514:        LogUtils.d(TAG, "checkShowInfoType > isFotaDownloadStart : " + z + ", isVgcDownloadStart : " + z2);
+UpdatePresenter.java:1515:        LogUtils.d(TAG, "checkShowInfoType > isFotaDownloadHang : " + z3 + ", isVgcDownloadHang : " + z4);
+UpdateCheckStrategy.java:26:    public boolean onAppFeaterSetUp() {
+UpdateCheckStrategy.java:28:        registerStaticBroadcast("com.bbk.updater.action.CHECK_INSTANTLY");
+UpdateCheckStrategy.java:40:            onStaticBroadCastReceive("com.bbk.updater.action.CHECK_INSTANTLY", null);
+UpdateCheckStrategy.java:43:        return super.onAppFeaterSetUp();
+UpdateCheckStrategy.java:59:                UpdateCheckStrategy.this.startAutoCheck(true, BaseFrameUtils.CheckTrigeType.NETWORK_CHANGED);
+UpdateCheckStrategy.java:67:        startAutoCheck(false, BaseFrameUtils.CheckTrigeType.COTA_TYPE_CHANGE);
+UpdateCheckStrategy.java:150:    private boolean isTimeToAutoCheck(com.vivo.updaterbaseframe.utils.BaseFrameUtils.CheckTrigeType r10) {
+UpdateCheckStrategy.java:210:        throw new UnsupportedOperationException("Method not decompiled: com.bbk.updater.check.strategy.UpdateCheckStrategy.isTimeToAutoCheck(com.vivo.updaterbaseframe.utils.BaseFrameUtils$CheckTrigeType):boolean");
+UpdateCheckStrategy.java:214:    public void startAutoCheck(boolean z, BaseFrameUtils.CheckTrigeType checkTrigeType) {
+UpdateCheckStrategy.java:236:        if (!z || isTimeToAutoCheck(checkTrigeType)) {
+AppFeature.java:146:        strategyFactory.onAppFeaterSetUp();
