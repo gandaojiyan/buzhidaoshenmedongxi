@@ -1,0 +1,51 @@
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/LogUtils.java:7:public class LogUtils {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/LogUtils.java:11:    private static final String TAG = "Updater/LogUtils";
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/DownloadThread.java:4:import java.io.FileOutputStream;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/DownloadThread.java:71:                        FileOutputStream fileOutputStream = new FileOutputStream(str);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/DownloadThread.java:80:                                    fileOutputStream.write(bArr, 0, i);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/DownloadThread.java:84:                                r5 = fileOutputStream;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/DownloadThread.java:106:                                r5 = fileOutputStream;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/DownloadThread.java:132:                            fileOutputStream.close();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/VersionUtils.java:376:            com.bbk.updater.utils.LogUtils.e(r0, r3)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/PrefsUtils.java:348:        for (Map.Entry<String, ?> entry : getAll(context, Prefs.LOG_INFO).entrySet()) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/PrefsUtils.java:352:                    removePrefs(context, entry.getKey(), Prefs.LOG_INFO);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/PrefsUtils.java:356:                    removePrefs(context, entry.getKey(), Prefs.LOG_INFO);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/CommonUtils.java:472:            com.bbk.updater.utils.LogUtils.i(r7, r2)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/CommonUtils.java:1209:            com.bbk.updater.utils.LogUtils.d(r0, r6)     // Catch: java.lang.Throwable -> L5c
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/CommonUtils.java:1219:            com.bbk.updater.utils.LogUtils.d(r0, r5)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/CommonUtils.java:1405:            com.bbk.updater.utils.LogUtils.d(r3, r2)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:11:import java.io.FileOutputStream;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:13:import java.io.FileWriter;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:86:        FileWriter fileWriter;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:92:        FileWriter fileWriter2 = null;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:95:                fileWriter = new FileWriter(str, z);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:103:            fileWriter.write(str2);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:104:            CommonUtils.closeStream(fileWriter);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:107:            fileWriter2 = fileWriter;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:109:            CommonUtils.closeStream(fileWriter2);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:112:            fileWriter2 = fileWriter;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:113:            CommonUtils.closeStream(fileWriter2);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:195:        FileOutputStream fileOutputStream;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:202:                fileOutputStream = new FileOutputStream(str2);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:210:                        fileOutputStream.write(bArr, 0, i);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:223:                        CommonUtils.closeStream(fileOutputStream);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:230:                    CommonUtils.closeStream(fileOutputStream);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:235:                fileOutputStream = null;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:238:                fileOutputStream = null;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:242:            fileOutputStream = null;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:245:            fileOutputStream = null;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:247:        CommonUtils.closeStream(fileOutputStream);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:395:            java.io.FileOutputStream r4 = new java.io.FileOutputStream     // Catch: java.lang.Throwable -> L48
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:494:                        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(getRealFileName(str, zipEntryNextElement.getName())));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:611:                    FileOutputStream fileOutputStream = new FileOutputStream(getRealFileName(str2, str));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:620:                                fileOutputStream.write(bArr, 0, i);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:623:                                closeable = fileOutputStream;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:636:                                closeable = fileOutputStream;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:642:                        CommonUtils.closeStream(fileOutputStream);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/HttpUtils.java:529:        com.bbk.updater.utils.LogUtils.e(com.bbk.updater.utils.HttpUtils.TAG, r9 + " close os:\n" + r7.getMessage());
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/WebHelper.java:21:import java.io.FileOutputStream;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/WebHelper.java:540:                        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(getRealFileName(str, zipEntryNextElement.getName())));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/WebHelper.java:688:        String string = PrefsUtils.getString(this.mContext, getLogKey(str, strMatchLanguage), "", PrefsUtils.Prefs.LOG_INFO);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/WebHelper.java:701:                    PrefsUtils.putString(this.mContext, getLogKey(str, strMatchLanguage), json, PrefsUtils.Prefs.LOG_INFO);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/PopDialogUtils.java:42:public class PopDialogUtils {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/PopDialogUtils.java:62:    private static final String TAG = "Updater/utils/PopDialogUtils";

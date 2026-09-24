@@ -1,0 +1,212 @@
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/download/DownloadNotificationChannels.java:7:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/download/UpdateDownloadManager.java:23:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/remote/h.java:16:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/VersionUtils.java:376:            com.bbk.updater.utils.LogUtils.e(r0, r3)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/PrefsUtils.java:348:        for (Map.Entry<String, ?> entry : getAll(context, Prefs.LOG_INFO).entrySet()) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/PrefsUtils.java:352:                    removePrefs(context, entry.getKey(), Prefs.LOG_INFO);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/PrefsUtils.java:356:                    removePrefs(context, entry.getKey(), Prefs.LOG_INFO);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/CommonUtils.java:82:    public static final String UPDATER_DIRECTORY_AB = "/data/ota_package";
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/CommonUtils.java:83:    public static final String UPDATER_DIRECTORY_FBE_IN_DATA = "/data/vivo-updater/com.bbk.updater";
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/CommonUtils.java:84:    public static final String UPDATER_DIRECTORY_FBE_ROOT = "/data/vivo-updater";
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/CommonUtils.java:472:            com.bbk.updater.utils.LogUtils.i(r7, r2)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/CommonUtils.java:715:            return "/data/user/0/com.bbk.updater/app_LogCache/";
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/CommonUtils.java:1209:            com.bbk.updater.utils.LogUtils.d(r0, r6)     // Catch: java.lang.Throwable -> L5c
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/CommonUtils.java:1219:            com.bbk.updater.utils.LogUtils.d(r0, r5)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/CommonUtils.java:1329:            str2 = isFBE() ? "/data/user_de/0/com.bbk.updater/app_VgcLogCache/" : "/data/user/0/com.bbk.updater/app_VgcLogCache/";
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/CommonUtils.java:1332:            str2 = isFBE() ? "/data/user_de/0/com.bbk.updater/app_LogCache/" : "/data/user/0/com.bbk.updater/app_LogCache/";
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/CommonUtils.java:1378:        return file != null ? file.getAbsolutePath() : isFBE() ? "/data/user_de/0/com.bbk.updater" : "/data/user/0/com.bbk.updater";
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/CommonUtils.java:1405:            com.bbk.updater.utils.LogUtils.d(r3, r2)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/CommonUtils.java:2206:        return context.getApplicationContext().getFilesDir() + ConstantsUtils.BANNER_NAME;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/IOUtils.java:28:        return context.getFilesDir().getAbsolutePath();
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/HttpUtils.java:529:        com.bbk.updater.utils.LogUtils.e(com.bbk.updater.utils.HttpUtils.TAG, r9 + " close os:\n" + r7.getMessage());
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/WebHelper.java:688:        String string = PrefsUtils.getString(this.mContext, getLogKey(str, strMatchLanguage), "", PrefsUtils.Prefs.LOG_INFO);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/utils/WebHelper.java:701:                    PrefsUtils.putString(this.mContext, getLogKey(str, strMatchLanguage), json, PrefsUtils.Prefs.LOG_INFO);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/selfupgrade/b.java:10:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/selfupgrade/SelfUpgradeStrategy.java:7:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/selfupgrade/SelfUpgradeStrategy.java:183:            com.bbk.updater.utils.LogUtils.i(r1, r0)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/dialogcontent/TimeSelectDialogMessageView.java:15:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/dialogcontent/NormalContentViewRom13.java:29:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/dialogcontent/NormalContentView.java:30:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/ConfigUpgradeView.java:9:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogScrollView.java:12:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogScrollView.java:56:        this.mHandler = new Handler() { // from class: com.bbk.updater.ui.widget.LogScrollView.1
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/ScrollTimePicker.java:22:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:29:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:147:        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, a.C0008a.Logo);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:158:            this.mLogoNameLeft = typedArrayObtainStyledAttributes.getDimension(8, resources.getDimension(R.dimen.logo_name_left));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:159:            this.mLogoNameTop = typedArrayObtainStyledAttributes.getDimension(9, resources.getDimension(R.dimen.logo_name_top));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:160:            this.mLogoForIqooLeft = typedArrayObtainStyledAttributes.getDimension(6, resources.getDimension(R.dimen.logo_for_iqoo_left));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:161:            this.mLogoForIqooTop = typedArrayObtainStyledAttributes.getDimension(7, resources.getDimension(R.dimen.logo_for_iqoo_top));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:184:        if (this.mIsPad && (i == R.drawable.logo_idle || i == R.drawable.logo_os11 || i == R.drawable.logo_os11_small)) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:185:            return getBitmapFromVectorDrawable(R.drawable.logo_os11_pad);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:329:            this.mIdleLogoBitmap = this.mIsPad ? getBitmapFromVectorDrawable(R.drawable.logo_os11_pad) : getBitmap(R.drawable.logo_idle, i, i2);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:336:                bitmap = getBitmapFromVectorDrawable(R.drawable.logo_os11_pad);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:338:                bitmap = getBitmap(this.mStatus != 1 ? R.drawable.logo_os11_small : R.drawable.logo_os11, this.mWidth, this.mHeight);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:342:            this.mLogoBitmap = this.mIsPad ? getBitmapFromVectorDrawable(R.drawable.logo_os11_pad) : getBitmap(R.drawable.logo_os11_iqoo, i, i2);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:343:            this.mLogoForIqooBitmap = this.mIsPad ? getBitmapFromVectorDrawable(R.drawable.logo_os11_pad) : getBitmap(R.drawable.logo_os11_for_iqoo, i, i2);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:350:        this.mLogoNameBitmap = getBitmapFromVectorDrawable(R.drawable.logo_os11_name);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:406:            this.mBallCircleAnimator.addListener(new AnimatorListenerAdapter() { // from class: com.bbk.updater.ui.widget.Logo.1
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:451:            this.mBallCircleAnimator.addListener(new AnimatorListenerAdapter() { // from class: com.bbk.updater.ui.widget.Logo.2
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:486:                    bitmap = getBitmapFromVectorDrawable(R.drawable.logo_os11_pad);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:488:                    bitmap = getBitmap(this.mIsIqoo ? R.drawable.logo_os11_iqoo : R.drawable.logo_os11, this.mWidth, this.mHeight);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:496:            this.mRingScaleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.bbk.updater.ui.widget.Logo.3
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:516:            this.mRingScaleAnimator.addListener(new AnimatorListenerAdapter() { // from class: com.bbk.updater.ui.widget.Logo.4
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:529:                            bitmap2 = Logo.this.getBitmapFromVectorDrawable(R.drawable.logo_os11_pad);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:532:                            bitmap2 = logo3.getBitmap(R.drawable.logo_os11_small, logo3.mWidth, Logo.this.mHeight);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:554:            this.mBallCircleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.bbk.updater.ui.widget.Logo.5
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:568:            this.mBallCircleAnimator.addListener(new AnimatorListenerAdapter() { // from class: com.bbk.updater.ui.widget.Logo.6
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:594:                this.mDisAppearAlphaAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.bbk.updater.ui.widget.Logo.7
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/Logo.java:609:                this.mAppearAlphaAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.bbk.updater.ui.widget.Logo.8
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/CheckIndicatorView.java:16:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/DownloadIndicatorView.java:15:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/DownloadControllerView.java:28:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/DownloadProgressButton.java:30:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:27:import com.bbk.updater.ui.LogLinkActivity;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:32:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:60:    private String mLogPath;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:114:        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, a.C0008a.LogView);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:172:        return this.mLogPath;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:180:            this.mLogPath = str;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:205:        viewInflate.findViewById(R.id.log_wrap_layout).setMinimumHeight((int) this.mMinHeight);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:206:        ((LinearLayout) this.mLogContentViewLayout.findViewById(R.id.log_content_layout)).setPadding(this.mContentPaddingStart, this.mContentPaddingTop, this.mContentPaddingEnd, this.mContentPaddingBottom);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:231:        this.mLogExplain = (TextView) this.mLogContentViewLayout.findViewById(R.id.log_explain);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:236:        this.mLogContent = (FrameLayout) this.mLogContentViewLayout.findViewById(R.id.log_content);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:269:        logScrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() { // from class: com.bbk.updater.ui.widget.LogView.1
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:305:            view.findViewById(R.id.log_wrap_layout).setMinimumHeight((int) this.mMinHeight);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:327:            textView.setTextColor(this.mContext.getColor(R.color.log_content_color));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:342:        this.mLogPath = null;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:355:        AnimatorListenerAdapter animatorListenerAdapter = new AnimatorListenerAdapter() { // from class: com.bbk.updater.ui.widget.LogView.2
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/LogView.java:467:        if (view == null || (linearLayout = (LinearLayout) view.findViewById(R.id.log_content_layout)) == null) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/widget/CoolTextView.java:19:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogLinkActivity.java:16:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogLinkActivity.java:64:        this.mWebView = (WebView) findViewById(R.id.log_link_webView);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogLinkActivity.java:67:        networkExceptionView.setRefreshClickListener(new View.OnClickListener() { // from class: com.bbk.updater.ui.LogLinkActivity.1
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/SettingsFragment.java:36:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/SettingsFragment.java:523:            com.bbk.updater.utils.LogUtils.i(r6, r0)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:27:import com.bbk.updater.ui.widget.LogView;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:28:import com.bbk.updater.ui.widget.Logo;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:33:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:108:        this.mLogoVersionLayout = (RelativeLayout) this.mRoot.findViewById(R.id.logo_version_layout);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:115:                    this.mFosLogo.setImageResource(R.drawable.logo_iqoo_ui);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:117:                    this.mFosLogo.setImageResource(R.drawable.logo_iqoo_monster);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:134:        this.mLogView = (LogView) this.mRoot.findViewById(R.id.log_view);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:135:        final float dimension = safeGetResources().getDimension(R.dimen.logo_max_scroll_y);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:140:            this.mLogView.setLogViewScrollListener(new LogView.LogViewScrollListener() { // from class: com.bbk.updater.ui.fragment.UpdateFragment.2
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:141:                @Override // com.bbk.updater.ui.widget.LogView.LogViewScrollListener
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:192:            dimension = safeGetResources().getDimension(R.dimen.logview_margin_top);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:193:            dimension2 = safeGetResources().getDimension(R.dimen.logo_margin_top_minus);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:195:            dimension = safeGetResources().getDimension(R.dimen.logview_margin_top_back_screen);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:196:            dimension2 = safeGetResources().getDimension(R.dimen.logo_margin_top_minus_back_screen);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:237:        layoutParams7.leftMargin = (int) safeGetResources().getDimension(R.dimen.logview_left_margin);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:238:        layoutParams7.rightMargin = (int) safeGetResources().getDimension(R.dimen.logview_right_margin);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:239:        this.mLogView.setWebViewMinHeight((displayMetrics.heightPixels - dimension) + safeGetResources().getDimension(R.dimen.logview_padding_top));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:321:            @Override // com.bbk.updater.ui.widget.LogView.OnLogLoadListener
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:329:            @Override // com.bbk.updater.ui.widget.LogView.OnLogLoadListener
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment.java:340:            @Override // com.bbk.updater.ui.widget.LogView.OnLogLoadListener
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:41:import com.bbk.updater.ui.widget.LogView;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:47:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:409:            this.mLogView = (LogView) this.mInfoLayout.findViewById(R.id.log_view);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:433:            this.mLogView.setLogViewScrollListener(new LogView.LogViewScrollListener() { // from class: com.bbk.updater.ui.fragment.UpdateFragment13.2
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:434:                @Override // com.bbk.updater.ui.widget.LogView.LogViewScrollListener
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:677:        final float dimension16 = safeGetResources().getDimension(R.dimen.log_view_origin_translation_y_rom13);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:934:                        this.mLogView.setLogContentPaddingTop(getDimensById(R.dimen.log_view_margin_top_rom13));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:1049:            @Override // com.bbk.updater.ui.widget.LogView.OnLogLoadListener
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:1055:            @Override // com.bbk.updater.ui.widget.LogView.OnLogLoadListener
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:1069:            @Override // com.bbk.updater.ui.widget.LogView.OnLogLoadListener
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdateActivity.java:44:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:32:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:49:    private String mLogPath;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:65:        this.mWebViewContainer = (FrameLayout) findViewById(R.id.logwebforactivity);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:83:            this.mTextTitle.setTextColor(getResources().getColor(R.color.log_title_color_rom13, null));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:117:            this.mWebView.setWebViewClient(new WebViewClient() { // from class: com.bbk.updater.ui.LogActivity.1
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:148:                        UiUtils.appearView(new AnimatorListenerAdapter() { // from class: com.bbk.updater.ui.LogActivity.1.1
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:176:            this.mWebView.setWebChromeClient(new WebChromeClient() { // from class: com.bbk.updater.ui.LogActivity.2
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:192:        String str = this.mLogPath;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:214:                intent.setClassName("com.vivo.cota", "com.vivo.cota.update.LogDetailActivity");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:226:        Observable.just(0).observeOn(Schedulers.io()).map(new Func1<Integer, Boolean>() { // from class: com.bbk.updater.ui.LogActivity.4
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:231:        }).observeOn(AndroidSchedulers.mainThread()).doOnNext(new Action1<Boolean>() { // from class: com.bbk.updater.ui.LogActivity.3
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:257:        Observable.just(0).observeOn(Schedulers.io()).map(new Func1<Integer, Boolean>() { // from class: com.bbk.updater.ui.LogActivity.10
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:262:        }).doOnNext(new Action1<Boolean>() { // from class: com.bbk.updater.ui.LogActivity.9
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:269:        }).observeOn(AndroidSchedulers.mainThread()).filter(new Func1<Boolean, Boolean>() { // from class: com.bbk.updater.ui.LogActivity.8
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:287:        }).observeOn(Schedulers.io()).doOnNext(new Action1<Boolean>() { // from class: com.bbk.updater.ui.LogActivity.7
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:290:                if (TextUtils.isEmpty(LogActivity.this.mLogPath)) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:292:                    logActivity.mLogPath = WebHelper.getInstance(logActivity).getVersionLogOnlineUrl(VersionUtils.getVersionSplice(VersionUtils.getSoftVersion(), VersionUtils.getVgcSoftVersion()));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:295:        }).filter(new Func1<Boolean, Boolean>() { // from class: com.bbk.updater.ui.LogActivity.6
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:298:                if (TextUtils.isEmpty(LogActivity.this.mLogPath)) {
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:301:                return Boolean.valueOf(!TextUtils.isEmpty(LogActivity.this.mLogPath));
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/LogActivity.java:303:        }).observeOn(AndroidSchedulers.mainThread()).doOnNext(new Action1<Boolean>() { // from class: com.bbk.updater.ui.LogActivity.5
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdatePresenter.java:32:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdatePresenter.java:1170:            com.bbk.updater.utils.LogUtils.i(r4, r3)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/ui/UpdatePresenter.java:1260:            com.bbk.updater.utils.LogUtils.i(r0, r2)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/a.java:1714:        public static final int[] ActionBar = {R.attr.background, R.attr.backgroundSplit, R.attr.backgroundStacked, R.attr.contentInsetEnd, R.attr.contentInsetEndWithActions, R.attr.contentInsetLeft, R.attr.contentInsetRight, R.attr.contentInsetStart, R.attr.contentInsetStartWithNavigation, R.attr.customNavigationLayout, R.attr.displayOptions, R.attr.divider, R.attr.elevation, R.attr.height, R.attr.hideOnContentScroll, R.attr.homeAsUpIndicator, R.attr.homeLayout, R.attr.icon, R.attr.indeterminateProgressStyle, R.attr.itemPadding, R.attr.logo, R.attr.navigationMode, R.attr.popupTheme, R.attr.progressBarPadding, R.attr.progressBarStyle, R.attr.subtitle, R.attr.subtitleTextStyle, R.attr.title, R.attr.titleTextStyle};
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/a.java:1793:        public static final int[] Logo = {R.attr.ballColor, R.attr.ballColorForIqoo, R.attr.ballFinalRadius, R.attr.ballOriginCenterX, R.attr.ballOriginCenterY, R.attr.ballOriginRadius, R.attr.logoForIqooLeft, R.attr.logoForIqooTop, R.attr.logoNameLeft, R.attr.logoNameTop, R.attr.ringFinalCenterX, R.attr.ringFinalCenterY, R.attr.ringFinalDegree, R.attr.ringFinalRadius, R.attr.ringOriginCenterX, R.attr.ringOriginCenterY, R.attr.ringOriginRadius};
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/a.java:1865:        public static final int[] Toolbar = {android.R.attr.gravity, android.R.attr.minHeight, R.attr.buttonGravity, R.attr.collapseContentDescription, R.attr.collapseIcon, R.attr.contentInsetEnd, R.attr.contentInsetEndWithActions, R.attr.contentInsetLeft, R.attr.contentInsetRight, R.attr.contentInsetStart, R.attr.contentInsetStartWithNavigation, R.attr.logo, R.attr.logoDescription, R.attr.maxButtonHeight, R.attr.menu, R.attr.navigationContentDescription, R.attr.navigationIcon, R.attr.popupTheme, R.attr.subtitle, R.attr.subtitleTextAppearance, R.attr.subtitleTextColor, R.attr.title, R.attr.titleMargin, R.attr.titleMarginBottom, R.attr.titleMarginEnd, R.attr.titleMarginStart, R.attr.titleMarginTop, R.attr.titleMargins, R.attr.titleTextAppearance, R.attr.titleTextColor};
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/bean/UpdateLogInfo.java:33:        return this.logHead;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/bean/UpdateLogInfo.java:37:        this.logHead = str;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/bean/UpdateLogInfo.java:75:        sb.append("\nlogHead:" + this.logHead);
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/bean/VgcUpdateInfo.java:37:        this.logVer = i;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/bean/VgcUpdateInfo.java:41:        return this.logVer;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/bean/UpdateInfo.java:136:        return this.logVer;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/bean/UpdateInfo.java:140:        this.logVer = i;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/bean/UpdateExtInfo.java:5:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/config/Reason.java:5:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/config/ConfigEngine.java:12:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/config/Configs.java:14:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/cota/b.java:10:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/cota/CotaView.java:16:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/cota/CotaStatusChangeReceiver.java:8:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/cota/a.java:9:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/cota/CotaStandardStrategy.java:7:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/c/a.java:5:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/c/b.java:17:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/abinstall/UpdateParser.java:5:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/abinstall/b.java:16:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/abinstall/b.java:298:                    com.bbk.updater.utils.LogUtils.d(r0, r3)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/abinstall/b.java:337:                    com.bbk.updater.utils.LogUtils.d(r0, r5)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/abinstall/b.java:346:                    com.bbk.updater.utils.LogUtils.d(r0, r5)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/strategy/UpdateByOtherAppStrategy.java:4:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/strategy/ShutdownAndUpdateStrategy.java:6:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/strategy/DemoProductStrategy.java:12:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/strategy/SmartInstallStrategy.java:18:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/strategy/EnhancedUpdateStrategy.java:20:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/strategy/BaseUpdateStrategy.java:32:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/a/a.java:16:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/install/InstallService.java:33:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/NetworkReceiver.java:7:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/InstallReceiver.java:10:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/DownloadReceiver.java:11:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/PushServiceReceiver.java:19:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/BootCompleteReceiver.java:13:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/UpdateReceiver.java:13:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/UpdateReceiver.java:52:            stringExtra = stringExtra.replace(CommonUtils.getInternalSdPath(), "/data/media/0");
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/receiver/ScreenActionRecorder.java:8:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/induce/NotificationUtils.java:24:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/induce/c.java:12:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/induce/b.java:11:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/induce/a.java:20:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/countrycode/d.java:9:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/countrycode/b.java:7:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/countrycode/c.java:9:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/countrycode/CountryCodeStrategy.java:6:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/countrycode/CountryCodeStrategy.java:34:            com.bbk.updater.utils.LogUtils.i(r1, r0)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/AppFeature.java:41:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/a.java:19:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/a/b.java:8:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:11:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:171:            com.bbk.updater.utils.LogUtils.i(r2, r0)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:207:            com.bbk.updater.utils.LogUtils.i(r2, r9)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/download/a/a.java:6:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/download/a/b.java:11:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/download/b/a.java:10:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/download/a.java:24:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/download/strategy/AutoDownloadStrategy.java:19:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/download/strategy/AutoDownloadStrategy.java:64:            com.bbk.updater.utils.LogUtils.d(r1, r0)
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/download/strategy/DownloadStrategy.java:30:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/codemanagement/a.java:10:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/codemanagement/ComponentManagerStrategy.java:9:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/provider/RemoteContentProvider.java:7:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/provider/InstallAndShutdownJusticeProvider.java:20:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/strategy/RedNoticeStrategy.java:10:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/strategy/OtherStrategy.java:21:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/strategy/PrivacyTermsStrategy.java:18:import com.bbk.updater.utils.LogUtils;
+/data/data/com.termux/files/home/updater_src/sources/com/bbk/updater/strategy/CommonInstallStrategy.java:24:import com.bbk.updater.utils.LogUtils;

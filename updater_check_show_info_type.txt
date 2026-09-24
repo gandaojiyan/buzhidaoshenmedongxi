@@ -1,0 +1,174 @@
+202-        UpdateInfo availableFotaInfo = CommonUtils.getAvailableFotaInfo(this.mContext, true);
+203-        VgcUpdateInfo availableVgcInfo = CommonUtils.getAvailableVgcInfo(this.mContext, true);
+204-        int iC = this.sDownloadInfoManager.c();
+205-        int iD = this.sDownloadInfoManager.d();
+206-        StringBuilder sb = new StringBuilder();
+207-        sb.append("fota info: ");
+208-        sb.append(availableFotaInfo == null ? "null" : availableFotaInfo.getVersion());
+209-        sb.append("; vgc info: ");
+210-        sb.append(availableVgcInfo != null ? availableVgcInfo.getVersion() : "null");
+211-        LogUtils.i(TAG, sb.toString());
+212:        int iCheckShowInfoType = checkShowInfoType(availableFotaInfo, availableVgcInfo);
+213-        if (iCheckShowInfoType != 0) {
+214-            if (iCheckShowInfoType == 1) {
+215-                LogUtils.i(TAG, "Exist update info, and download started!");
+216-                if (!com.bbk.updater.download.b.a.b(iC)) {
+217-                    availableFotaInfo = null;
+218-                }
+219-                if (!com.bbk.updater.download.b.a.b(iD)) {
+220-                    availableVgcInfo = null;
+221-                }
+222-                refreshUpdateInfo(availableFotaInfo, availableVgcInfo);
+223-                refreshLogContent(this.mFotaUpdateInfo, this.mVgcUpdateInfo);
+224-                m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.LOAD_SUCCEED);
+225-                if (checkIfDownloadSucceed(availableFotaInfo, availableVgcInfo, iC, iD)) {
+226-                    boolean zIsOnInstallorPreInstall = UpdateStatusManager.getInstance().isOnInstallorPreInstall();
+227-                    LogUtils.d(TAG, "init checkIfDownloadSucceed = " + this.sAbUpdateManager.g() + ", isOnInstallPre=" + zIsOnInstallorPreInstall);
+228-                    if (com.bbk.updater.install.a.a.a(this.mFotaUpdateInfo, this.mVgcUpdateInfo) && this.sAbUpdateManager.d() && BaseFrameUtils.PackageType.OTA_FOTA.toString().equals(this.sAbUpdateManager.e())) {
+229-                        int iF = this.sAbUpdateManager.f();
+230-                        LogUtils.d(TAG, "installStatus=" + iF);
+231-                        if (6 == iF || 5 == iF) {
+232-                            refreshUI(DownloadControllerView.DownloadControllerStatus.INSTALL_SUCCEED, DownloadIndicatorView.DownloadIndicatorStatus.INSTALL_SUCCEED);
+233-                        } else if (3 == iF) {
+234-                            refreshUI(DownloadControllerView.DownloadControllerStatus.INSTALL_PAUSED, DownloadIndicatorView.DownloadIndicatorStatus.INSTALL_PAUSED);
+235-                        } else if (7 == iF) {
+236-                            refreshUI(DownloadControllerView.DownloadControllerStatus.VERIFYING_PAUSED, DownloadIndicatorView.DownloadIndicatorStatus.VERIFYING_PAUSED);
+237-                        } else if (2 == iF) {
+238-                            refreshUI(DownloadControllerView.DownloadControllerStatus.ON_INSTALL, DownloadIndicatorView.DownloadIndicatorStatus.ON_INSTALL);
+239-                            m10getMvpView().refreshProgress(this.sAbUpdateManager.h());
+240-                        } else if (4 == iF) {
+241-                            refreshUI(DownloadControllerView.DownloadControllerStatus.ON_AB_INSTALL_VERIFYING, DownloadIndicatorView.DownloadIndicatorStatus.ON_AB_FINALIZING);
+242-                            m10getMvpView().refreshProgress(this.sAbUpdateManager.h());
+243-                        }
+244-                    } else if (com.bbk.updater.install.a.a.a(this.mFotaUpdateInfo, this.mVgcUpdateInfo) && zIsOnInstallorPreInstall) {
+245-                        refreshUI(DownloadControllerView.DownloadControllerStatus.ON_INSTALL, DownloadIndicatorView.DownloadIndicatorStatus.ON_INSTALL);
+246-                        m10getMvpView().refreshProgress(0.0f);
+247-                    } else {
+248-                        refreshUI(DownloadControllerView.DownloadControllerStatus.TO_INSTALL, DownloadIndicatorView.DownloadIndicatorStatus.DOWNLOAD_SUCCEED);
+249-                    }
+250-                } else {
+251-                    if (this.sDownloadInfoManager.b(iC) || this.sDownloadInfoManager.b(iD)) {
+252-                        refreshUI(DownloadControllerView.DownloadControllerStatus.PAUSED, DownloadIndicatorView.DownloadIndicatorStatus.DOWNLOAD_PAUSED);
+253-                    } else if (this.sDownloadInfoManager.c(iC) || this.sDownloadInfoManager.c(iD)) {
+254-                        refreshUI(DownloadControllerView.DownloadControllerStatus.RUNNING, DownloadIndicatorView.DownloadIndicatorStatus.DOWNLOAD_RUNNING);
+255-                    }
+256-                    if (this.sDownloadInfoManager.a(iC) && !this.sDownloadInfoManager.d(iC)) {
+257-                        this.sDownloadInfoManager.c("ota_pacakge");
+258-                    }
+259-                    if (this.sDownloadInfoManager.a(iD) && !this.sDownloadInfoManager.d(iD)) {
+260-                        this.sDownloadInfoManager.c("vgc_package");
+261-                    }
+262-                }
+263-            } else if (iCheckShowInfoType == 2) {
+264-                m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.LOAD_SUCCEED);
+265-                if (availableVgcInfo != null && !availableVgcInfo.isEnhance() && !com.vivo.updaterassistant.a.a(availableVgcInfo) && availableFotaInfo != null && (availableFotaInfo.isEnhancedDownload() || com.vivo.updaterassistant.a.a(availableFotaInfo))) {
+266-                    LogUtils.i(TAG, "Exist update info,fota is f and on download, show fota only");
+267-                    availableVgcInfo = null;
+268-                }
+269-                int i = AnonymousClass12.$SwitchMap$com$bbk$updater$utils$ConstantsUtils$NetWorkType[this.mPreNetworkType.ordinal()];
+270-                if (i != 1) {
+271-                    if (i == 2) {
+272-                        m10getMvpView().showOneDialog(1001);
+273-                        m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_DISABLED);
+274-                        return;
+275-                    }
+276-                } else if (com.bbk.vgc.a.a.a().a(this.mContext)) {
+277-                    m10getMvpView().showOneDialog(1013);
+278-                    m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_ROAMING_FORBID_UPDATE);
+279-                    return;
+280-                }
+281-                refreshUpdateInfo(availableFotaInfo, availableVgcInfo);
+282-                refreshLogContent(this.mFotaUpdateInfo, this.mVgcUpdateInfo);
+283-                refreshUI(DownloadControllerView.DownloadControllerStatus.TO_DOWNLOAD, DownloadIndicatorView.DownloadIndicatorStatus.TO_DOWNLOAD);
+284-            } else if (iCheckShowInfoType == 3) {
+285-                m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.LOAD_SUCCEED);
+286-                if (availableFotaInfo != null && !availableFotaInfo.isEnhancedDownload() && !com.vivo.updaterassistant.a.a(availableFotaInfo) && availableVgcInfo != null && (availableVgcInfo.isEnhance() || com.vivo.updaterassistant.a.a(availableVgcInfo))) {
+287-                    LogUtils.i(TAG, "Exist update info,vgc is f and on download, show vgc only");
+288-                    availableFotaInfo = null;
+289-                }
+290-                int i2 = AnonymousClass12.$SwitchMap$com$bbk$updater$utils$ConstantsUtils$NetWorkType[this.mPreNetworkType.ordinal()];
+291-                if (i2 != 1) {
+292-                    if (i2 == 2) {
+293-                        m10getMvpView().showOneDialog(1001);
+294-                        m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_DISABLED);
+295-                        return;
+296-                    }
+297-                } else if (com.bbk.vgc.a.a.a().a(this.mContext)) {
+298-                    m10getMvpView().showOneDialog(1013);
+299-                    m10getMvpView().setCheckIndicatorStatus(CheckIndicatorView.CheckIndicatorStatus.NETWORK_ROAMING_FORBID_UPDATE);
+300-                    return;
+301-                }
+302-                refreshUpdateInfo(availableFotaInfo, availableVgcInfo);
+303-                refreshLogContent(this.mFotaUpdateInfo, this.mVgcUpdateInfo);
+304-                refreshUI(DownloadControllerView.DownloadControllerStatus.TO_DOWNLOAD, DownloadIndicatorView.DownloadIndicatorStatus.TO_DOWNLOAD);
+305-            }
+306-        } else if (this.mFromNotice && (availableFotaInfo != null || availableVgcInfo != null)) {
+307-            LogUtils.i(TAG, "Exist update info, and start from Notification!");
+308-            int iCheckPackageAvailableType = CommonUtils.checkPackageAvailableType(availableFotaInfo, availableVgcInfo);
+309-            if (iCheckPackageAvailableType == 1) {
+310-                availableVgcInfo = null;
+311-            } else if (iCheckPackageAvailableType == 2) {
+312-                availableFotaInfo = null;
+--
+1494-                    if (z) {
+1495-                        StrategyFactory.getInstance(UpdatePresenter.this.mContext).onPrivacyTermsChecked(list, 1);
+1496-                    } else {
+1497-                        StrategyFactory.getInstance(UpdatePresenter.this.mContext).onPrivacyTermsChecked(list, 2);
+1498-                    }
+1499-                }
+1500-            });
+1501-        }
+1502-    }
+1503-
+1504:    private int checkShowInfoType(UpdateInfo updateInfo, VgcUpdateInfo vgcUpdateInfo) {
+1505-        if (!VersionUtils.iSVgc()) {
+1506-            return (!this.sDownloadInfoManager.n() || updateInfo == null) ? 0 : 1;
+1507-        }
+1508-        int iL = this.sDownloadInfoManager.l();
+1509-        int iM = this.sDownloadInfoManager.m();
+1510-        boolean z = updateInfo != null && this.sDownloadInfoManager.a(iL);
+1511-        boolean z2 = vgcUpdateInfo != null && this.sDownloadInfoManager.a(iM);
+1512-        boolean z3 = updateInfo != null && this.sDownloadInfoManager.p("ota_pacakge");
+1513-        boolean z4 = vgcUpdateInfo != null && this.sDownloadInfoManager.p("vgc_package");
+1514-        LogUtils.d(TAG, "checkShowInfoType > isFotaDownloadStart : " + z + ", isVgcDownloadStart : " + z2);
+1515-        LogUtils.d(TAG, "checkShowInfoType > isFotaDownloadHang : " + z3 + ", isVgcDownloadHang : " + z4);
+1516-        if (!z && !z2) {
+1517-            return 0;
+1518-        }
+1519-        if (z && z2) {
+1520-            return 1;
+1521-        }
+1522-        if (z) {
+1523-            return z3 ? 2 : 1;
+1524-        }
+1525-        if (z2) {
+1526-            return z4 ? 3 : 1;
+1527-        }
+1528-        return 0;
+1529-    }
+1530-
+1531-    private boolean checkIfDownloadSucceed(UpdateInfo updateInfo, VgcUpdateInfo vgcUpdateInfo, int i, int i2) {
+1532-        if (updateInfo != null && vgcUpdateInfo != null) {
+1533-            return this.sDownloadInfoManager.d(i) && this.sDownloadInfoManager.d(i2);
+1534-        }
+1535-        if (updateInfo != null) {
+1536-            return this.sDownloadInfoManager.d(i);
+1537-        }
+1538-        if (vgcUpdateInfo != null) {
+1539-            return this.sDownloadInfoManager.d(i2);
+1540-        }
+1541-        return false;
+1542-    }
+1543-
+1544-    public void setFromTrialVersion(boolean z) {
+1545-        this.mFromTrialVersion = z;
+1546-    }
+1547-
+1548-    public boolean getFromTrialVersion() {
+1549-        return this.mFromTrialVersion;
+1550-    }
+1551-
+1552-    public void setFromNotice(boolean z) {
+1553-        this.mFromNotice = z;
+1554-    }
+1555-}

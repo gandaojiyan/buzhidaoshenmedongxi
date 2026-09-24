@@ -1,0 +1,81 @@
+package com.bbk.updater.utils;
+
+import android.content.Context;
+import vivo.a.a;
+
+/* JADX INFO: loaded from: classes.dex */
+public class LogUtils {
+    private static final String ENCYPT_STRING_LOG_EXTRA_TAG = "<--Updater-EnStr-->";
+    private static final String ENCYPT_URL_LOG_EXTRA_TAG = "<--Updater-EnUrl-->";
+    private static final String EVENT_LOG_TAG = "Updater/EventLogs";
+    private static final String TAG = "Updater/LogUtils";
+
+    public static void debug(String str, String str2) {
+        if (UToolsUtils.checkDeMode()) {
+            a.b(str, str2);
+        }
+    }
+
+    public static void d(String str, String str2) {
+        a.b(str, str2);
+    }
+
+    public static void e(String str, String str2) {
+        a.e(str, str2);
+    }
+
+    public static void e(String str, String str2, Throwable th) {
+        a.e(str, str2, th);
+    }
+
+    public static void v(String str, String str2) {
+        a.a(str, str2);
+    }
+
+    public static void w(String str, String str2) {
+        a.d(str, str2);
+    }
+
+    public static void i(String str, String str2) {
+        a.c(str, str2);
+    }
+
+    public static void i(String str, String str2, Throwable th) {
+        a.c(str, str2, th);
+    }
+
+    public static void eventLog(String str) {
+        a.c(EVENT_LOG_TAG, str);
+    }
+
+    public static void check(boolean z, String str) {
+        if (z) {
+            return;
+        }
+        w("Updater", str);
+    }
+
+    public static void encryptStringLog(Context context, String str, String str2, Object obj) {
+        String strValueOf = String.valueOf(obj);
+        if (strValueOf == null || strValueOf.isEmpty()) {
+            strValueOf = "null";
+        }
+        if (UToolsUtils.checkDeMode()) {
+            a.b(str, str2 + strValueOf);
+            return;
+        }
+        a.b(str, str2 + ENCYPT_STRING_LOG_EXTRA_TAG + SecurityUtils.encryptString(context, strValueOf));
+    }
+
+    public static void encryptUrlLog(Context context, String str, String str2, Object obj) {
+        String strValueOf = String.valueOf(obj);
+        if (strValueOf == null || strValueOf.isEmpty()) {
+            strValueOf = "null";
+        }
+        if (UToolsUtils.checkDeMode()) {
+            a.b(str, str2 + strValueOf);
+            return;
+        }
+        a.b(str, str2 + ENCYPT_STRING_LOG_EXTRA_TAG + SecurityUtils.encryptUrl(context, strValueOf));
+    }
+}
