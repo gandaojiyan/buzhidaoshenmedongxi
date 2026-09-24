@@ -1,0 +1,301 @@
+09-23 23:44:29.464   721   721 I auditd  : type=1400 audit(0.0:116): avc: denied { read write } for comm="boot_logo_updat" name="boot_mode" dev="sysfs" ino=7453 scontext=u:r:boot_logo_updater:s0 tcontext=u:object_r:sysfs_boot_mode:s0 tclass=file permissive=0
+09-23 23:44:29.464     1     1 I auditd  : type=1107 audit(0.0:117): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc: denied { set } for property=vendor.sys.boot.reason pid=721 uid=0 gid=1003 scontext=u:r:boot_logo_updater:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=property_service permissive=0'
+09-23 23:44:29.464   482   482 I auditd  : type=1400 audit(0.0:118): avc: denied { getattr } for comm="logd.writer" scontext=u:r:logd:s0 tcontext=u:r:boot_logo_updater:s0 tclass=process permissive=0
+09-23 23:44:29.464   721   721 I auditd  : type=1400 audit(0.0:119): avc: denied { getattr } for comm="boot_logo_updat" path="/dev/kmsg" dev="tmpfs" ino=9 scontext=u:r:boot_logo_updater:s0 tcontext=u:object_r:kmsg_device:s0 tclass=chr_file permissive=0
+09-23 23:44:29.464   721   721 I auditd  : type=1400 audit(0.0:120): avc: denied { read } for comm="boot_logo_updat" name="cmdline" dev="proc" ino=4026532231 scontext=u:r:boot_logo_updater:s0 tcontext=u:object_r:proc_cmdline:s0 tclass=file permissive=0
+09-23 23:44:29.464   721   721 I auditd  : type=1400 audit(0.0:121): avc: denied { search } for comm="boot_logo_updat" name="android" dev="sysfs" ino=96 scontext=u:r:boot_logo_updater:s0 tcontext=u:object_r:sysfs_dt_firmware_android:s0 tclass=dir permissive=0
+09-23 23:44:29.464   721   721 I auditd  : type=1400 audit(0.0:122): avc: denied { search } for comm="boot_logo_updat" name="android" dev="sysfs" ino=96 scontext=u:r:boot_logo_updater:s0 tcontext=u:object_r:sysfs_dt_firmware_android:s0 tclass=dir permissive=0
+09-23 23:44:29.464   721   721 I auditd  : type=1400 audit(0.0:123): avc: denied { read } for comm="boot_logo_updat" name="cmdline" dev="proc" ino=4026532231 scontext=u:r:boot_logo_updater:s0 tcontext=u:object_r:proc_cmdline:s0 tclass=file permissive=0
+09-23 23:44:29.464   721   721 I auditd  : type=1400 audit(0.0:124): avc: denied { search } for comm="boot_logo_updat" name="android" dev="sysfs" ino=96 scontext=u:r:boot_logo_updater:s0 tcontext=u:object_r:sysfs_dt_firmware_android:s0 tclass=dir permissive=0
+09-23 23:46:08.902  1308  1401 I am_proc_start: [0,4006,10128,com.bbk.updater,broadcast,{com.bbk.updater/com.bbk.updater.receiver.BootCompleteReceiver}]
+09-23 23:46:08.993  1308  2766 I am_proc_bound: [0,4006,com.bbk.updater]
+09-23 23:46:09.542  1308  1401 I am_proc_start: [0,4059,10128,com.bbk.updater:remote,content provider,{com.bbk.updater/com.bbk.updater.provider.RemoteContentProvider}]
+09-23 23:46:09.627  1308  1321 I am_proc_bound: [0,4059,com.bbk.updater:remote]
+09-23 23:46:09.716  4006  4006 I auditd  : type=1400 audit(0.0:4911): avc: denied { search } for comm="pool-3-thread-3" name="mmcblk0" dev="sysfs" ino=43571 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:sysfs_devices_block:s0 tclass=dir permissive=0 app=com.bbk.updater
+09-23 23:46:09.924  4006  4006 I auditd  : type=1400 audit(0.0:4912): avc: denied { read } for comm="updater-data-wo" name="u:object_r:vendor_camera_mtk_prop:s0" dev="tmpfs" ino=8712 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:vendor_camera_mtk_prop:s0 tclass=file permissive=0 app=com.bbk.updater
+09-23 23:46:23.047  1308  1369 I am_pss  : [4059,10128,com.bbk.updater:remote,10327040,6115328,0,117223424,2,10,6]
+09-23 23:46:23.082  1308  1369 I am_pss  : [4006,10128,com.bbk.updater,15194112,10887168,0,123351040,2,19,7]
+09-23 23:46:35.053  7161  7199 I service_manager_slow: [30,vgc_service]
+09-23 23:46:37.782  3847  3847 I sysui_multi_action: [757,830,758,4,833,0,854,com.bbk.updater/com.bbk.updater.ui.UpdateTempActivity,1089,0]
+09-23 23:46:37.876  1308  1322 I wm_create_activity: [0,200373804,5799,com.bbk.updater/.ui.UpdateTempActivity,NULL,NULL,NULL,8388608]
+09-23 23:46:37.925  1308  1921 I wm_restart_activity: [0,200373804,5799,com.bbk.updater/.ui.UpdateTempActivity]
+09-23 23:46:37.929  1308  1921 I wm_set_resumed_activity: [0,com.bbk.updater/.ui.UpdateTempActivity,minimalResumeActivityLocked]
+09-23 23:46:38.037  1308  5022 I wm_create_activity: [0,214115898,5800,com.bbk.updater/.ui.UpdateActivity,com.vivo.action.ACTION_START_UPDATEACTIVITY,application/zip,NULL,276824064]
+09-23 23:46:38.052  1308  5022 I wm_pause_activity: [0,200373804,com.bbk.updater/.ui.UpdateTempActivity,userLeaving=true,pauseBackTasks]
+09-23 23:46:38.106  1308  4198 I wm_finish_activity: [0,200373804,5799,com.bbk.updater/.ui.UpdateTempActivity,app-request]
+09-23 23:46:38.106  4006  4006 I wm_on_create_called: [200373804,com.bbk.updater.ui.UpdateTempActivity,performCreate]
+09-23 23:46:38.185  1308  1354 I wm_add_to_stopping: [0,200373804,com.bbk.updater/.ui.UpdateTempActivity,completeFinishing]
+09-23 23:46:38.217  1308  1354 I wm_restart_activity: [0,214115898,5800,com.bbk.updater/.ui.UpdateActivity]
+09-23 23:46:38.218  1308  1354 I wm_set_resumed_activity: [0,com.bbk.updater/.ui.UpdateActivity,minimalResumeActivityLocked]
+09-23 23:46:38.331  1308  1354 I wm_destroy_activity: [0,200373804,5799,com.bbk.updater/.ui.UpdateTempActivity,finish-imm:idle]
+09-23 23:46:38.731  1308  1401 I am_proc_start: [0,8020,10128,com.bbk.updater.search,content provider,{com.bbk.updater/com.bbk.updater.search.UpdaterSearchIndexablesProvider}]
+09-23 23:46:38.915  1308  1800 I am_proc_bound: [0,8020,com.bbk.updater.search]
+09-23 23:46:39.985  1308  1369 I am_pss  : [4059,10128,com.bbk.updater:remote,8992768,6004736,2048,116801536,0,10,8]
+09-23 23:46:40.978  1308  2603 I am_proc_died: [0,8020,com.bbk.updater.search,200,3]
+09-23 23:46:42.662  1308  5029 I wm_failed_to_pause: [0,200373804,com.bbk.updater/.ui.UpdateTempActivity,(none)]
+09-23 23:46:42.902  4006  4006 I wm_on_create_called: [214115898,com.bbk.updater.ui.UpdateActivity,performCreate]
+09-23 23:46:43.232  4006  4006 I wm_on_start_called: [214115898,com.bbk.updater.ui.UpdateActivity,handleStartActivity]
+09-23 23:46:43.239  4006  4006 I wm_on_resume_called: [214115898,com.bbk.updater.ui.UpdateActivity,RESUME_ACTIVITY]
+09-23 23:46:43.368  1308  1355 I input_focus: [Focus request d439e80 com.bbk.updater/com.bbk.updater.ui.UpdateActivity,reason=UpdateInputWindows]
+09-23 23:46:43.776  4006  4006 I wm_on_destroy_called: [200373804,com.bbk.updater.ui.UpdateTempActivity,performDestroy]
+09-23 23:46:43.818  4006  4006 I wm_on_top_resumed_gained_called: [214115898,com.bbk.updater.ui.UpdateActivity,topStateChangedWhenResumed]
+09-23 23:46:43.827  1308  1687 I input_focus: [Focus entering d439e80 com.bbk.updater/com.bbk.updater.ui.UpdateActivity (server),reason=Window became focusable. Previous reason: NOT_VISIBLE]
+09-23 23:46:43.960  1308  1687 I input_interaction: Interaction with: d439e80 com.bbk.updater/com.bbk.updater.ui.UpdateActivity (server), PointerEventDispatcher0 (server), 
+09-23 23:46:45.103  1308  1354 I wm_destroy_activity: [0,214115898,5800,com.bbk.updater/.ui.UpdateActivity,finish-imm:idle]
+09-23 23:46:44.604  4006  4006 I auditd  : type=1400 audit(0.0:5020): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-23 23:46:45.177  4006  4006 I wm_on_stop_called: [214115898,com.bbk.updater.ui.UpdateActivity,LIFECYCLER_STOP_ACTIVITY]
+09-23 23:46:45.266  4006  4006 I wm_on_destroy_called: [214115898,com.bbk.updater.ui.UpdateActivity,performDestroy]
+09-23 23:46:44.147  1308  1351 I sysui_multi_action: [319,4957,321,4915,322,6004,325,135,757,761,758,8,759,1,806,com.bbk.updater,871,com.bbk.updater.ui.UpdateActivity,904,com.bbk.updater,905,0,1320,4,1321,1]
+09-23 23:46:44.156  1308  1351 I wm_activity_launch_time: [0,214115898,com.bbk.updater/.ui.UpdateActivity,6004]
+09-23 23:46:45.385  1308  2767 I wm_task_removed: [5800,removeChild:removeChild last r=ActivityRecord{cc3263a u0 com.bbk.updater/.ui.UpdateActivity t-1 d-1 f}} in t=Task{f9922eb #5800 type=standard A=10128:com.bbk.updater U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=0}]
+09-23 23:46:44.299  1308  2779 I wm_finish_activity: [0,214115898,5800,com.bbk.updater/.ui.UpdateActivity,app-request]
+09-23 23:46:44.362  1308  2779 I wm_pause_activity: [0,214115898,com.bbk.updater/.ui.UpdateActivity,userLeaving=false,finish]
+09-23 23:46:44.425  1308  1687 I input_focus: [Focus leaving d439e80 com.bbk.updater/com.bbk.updater.ui.UpdateActivity (server),reason=NO_WINDOW]
+09-23 23:46:44.454  4006  4006 I wm_on_top_resumed_lost_called: [214115898,com.bbk.updater.ui.UpdateActivity,topStateChangedWhenResumed]
+09-23 23:46:44.457  4006  4006 I wm_on_paused_called: [214115898,com.bbk.updater.ui.UpdateActivity,performPause]
+09-23 23:46:51.144  2395  2552 I sysui_multi_action: [757,395,758,4,806,com.bbk.updater]
+09-23 23:46:51.148  2395  2552 I sysui_multi_action: [757,395,758,4,806,com.google.android.configupdater]
+09-23 23:47:26.461  1308  1401 I am_proc_start: [0,12591,10159,com.google.android.configupdater,broadcast,{com.google.android.configupdater/com.google.android.configupdater.MainReceiver}]
+09-23 23:47:26.520  1308  5230 I am_proc_bound: [0,12591,com.google.android.configupdater]
+09-23 23:47:50.689  1308  1369 I am_pss  : [12591,10159,com.google.android.configupdater,5130240,4444160,44032,98213888,0,19,6]
+09-23 23:48:08.424  1308  1369 I am_pss  : [12591,10159,com.google.android.configupdater,5081088,4419584,41984,98152448,0,19,6]
+09-23 23:48:09.702  1308  1401 I am_proc_start: [0,14894,10158,com.android.vending:instant_app_installer,broadcast,{com.android.vending/com.google.android.finsky.instantapps.PhenotypeUpdateReceiver}]
+09-23 23:48:12.388  4059  4059 I auditd  : type=1400 audit(0.0:5504): avc: denied { search } for comm="updater-data-wo" name="mmcblk0" dev="sysfs" ino=43571 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:sysfs_devices_block:s0 tclass=dir permissive=0 app=com.bbk.updater
+09-23 23:51:46.101  1308  1369 I am_pss  : [4059,10128,com.bbk.updater:remote,10698752,7938048,1731584,107556864,0,10,6]
+09-24 00:13:17.544  3847  3847 I sysui_multi_action: [757,830,758,4,833,0,854,com.bbk.updater/com.bbk.updater.ui.UpdateTempActivity,1089,0]
+09-24 00:13:17.575  1308  1921 I wm_create_activity: [0,163763401,5799,com.bbk.updater/.ui.UpdateTempActivity,NULL,NULL,NULL,8388608]
+09-24 00:13:17.607  1308  1401 I am_proc_start: [0,27662,10128,com.bbk.updater,pre-top-activity,{com.bbk.updater/com.bbk.updater.ui.UpdateTempActivity}]
+09-24 00:13:17.636  1308  2780 I am_proc_bound: [0,27662,com.bbk.updater]
+09-24 00:13:17.648  1308  2780 I wm_restart_activity: [0,163763401,5799,com.bbk.updater/.ui.UpdateTempActivity]
+09-24 00:13:17.649  1308  2780 I wm_set_resumed_activity: [0,com.bbk.updater/.ui.UpdateTempActivity,minimalResumeActivityLocked]
+09-24 00:13:17.840 27662 27662 I auditd  : type=1400 audit(0.0:8939): avc: denied { search } for comm="pool-3-thread-3" name="mmcblk0" dev="sysfs" ino=43571 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:sysfs_devices_block:s0 tclass=dir permissive=0 app=com.bbk.updater
+09-24 00:13:17.865  1308  2065 I wm_create_activity: [0,256455146,5812,com.bbk.updater/.ui.UpdateActivity,com.vivo.action.ACTION_START_UPDATEACTIVITY,application/zip,NULL,276824064]
+09-24 00:13:17.868  1308  2065 I wm_pause_activity: [0,163763401,com.bbk.updater/.ui.UpdateTempActivity,userLeaving=true,pauseBackTasks]
+09-24 00:13:17.886  1308  4704 I wm_finish_activity: [0,163763401,5799,com.bbk.updater/.ui.UpdateTempActivity,app-request]
+09-24 00:13:17.886 27662 27662 I wm_on_create_called: [163763401,com.bbk.updater.ui.UpdateTempActivity,performCreate]
+09-24 00:13:17.917  1308  4928 I wm_add_to_stopping: [0,163763401,com.bbk.updater/.ui.UpdateTempActivity,completeFinishing]
+09-24 00:13:17.920  1308  4928 I wm_restart_activity: [0,256455146,5812,com.bbk.updater/.ui.UpdateActivity]
+09-24 00:13:17.921  1308  4928 I wm_set_resumed_activity: [0,com.bbk.updater/.ui.UpdateActivity,minimalResumeActivityLocked]
+09-24 00:13:17.937  1308  1354 I wm_destroy_activity: [0,163763401,5799,com.bbk.updater/.ui.UpdateTempActivity,finish-imm:idle]
+09-24 00:13:18.025 27662 27662 I wm_on_create_called: [256455146,com.bbk.updater.ui.UpdateActivity,performCreate]
+09-24 00:13:18.144 27662 27662 I wm_on_start_called: [256455146,com.bbk.updater.ui.UpdateActivity,handleStartActivity]
+09-24 00:13:18.149 27662 27662 I wm_on_resume_called: [256455146,com.bbk.updater.ui.UpdateActivity,RESUME_ACTIVITY]
+09-24 00:13:18.225  1308  1355 I input_focus: [Focus request 5eb7152 com.bbk.updater/com.bbk.updater.ui.UpdateActivity,reason=UpdateInputWindows]
+09-24 00:13:18.338 27662 27662 I wm_on_top_resumed_gained_called: [256455146,com.bbk.updater.ui.UpdateActivity,topStateChangedWhenResumed]
+09-24 00:13:18.338 27662 27662 I wm_on_destroy_called: [163763401,com.bbk.updater.ui.UpdateTempActivity,performDestroy]
+09-24 00:13:18.377  1308  1687 I input_focus: [Focus entering 5eb7152 com.bbk.updater/com.bbk.updater.ui.UpdateActivity (server),reason=Window became focusable. Previous reason: NOT_VISIBLE]
+09-24 00:13:18.388  1308  1351 I sysui_multi_action: [319,411,321,394,322,825,325,1735,757,761,758,7,759,1,806,com.bbk.updater,871,com.bbk.updater.ui.UpdateActivity,904,com.bbk.updater,905,0,945,98,1320,4,1321,1]
+09-24 00:13:18.390  1308  1351 I wm_activity_launch_time: [0,256455146,com.bbk.updater/.ui.UpdateActivity,825]
+09-24 00:13:18.888 27662 27662 I auditd  : type=1400 audit(0.0:8940): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 00:13:18.888 27662 27662 I auditd  : type=1400 audit(0.0:8941): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 00:13:18.920 27662 27662 I auditd  : type=1400 audit(0.0:8942): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 00:13:18.920 27662 27662 I auditd  : type=1400 audit(0.0:8943): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 00:13:18.952 27662 27662 I auditd  : type=1400 audit(0.0:8944): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 00:13:18.952 27662 27662 I auditd  : type=1400 audit(0.0:8945): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 00:13:18.984 27662 27662 I auditd  : type=1400 audit(0.0:8946): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 00:13:19.811  1308  1687 I input_interaction: Interaction with: 5eb7152 com.bbk.updater/com.bbk.updater.ui.UpdateActivity (server), u0_SmartMultiWindowGesture (server), music-swipe (server), swipe-up (server), card-swipe (server), PointerEventDispatcher0 (server), input_hook_com.vivo.agent (server), 
+09-24 00:13:19.930  1308  4507 I wm_set_resumed_activity: [0,com.bbk.updater/.ui.UpdateActivity,positionChildAt]
+09-24 00:13:19.930  1308  4507 I wm_create_activity: [0,263428090,5812,com.bbk.updater/.ui.SettingsActivity,NULL,NULL,NULL,8388608]
+09-24 00:13:19.934  1308  4507 I wm_pause_activity: [0,256455146,com.bbk.updater/.ui.UpdateActivity,userLeaving=true,resumeTopActivityInnerLocked]
+09-24 00:13:19.957 27662 27662 I wm_on_top_resumed_lost_called: [256455146,com.bbk.updater.ui.UpdateActivity,topStateChangedWhenResumed]
+09-24 00:13:19.960 27662 27662 I wm_on_paused_called: [256455146,com.bbk.updater.ui.UpdateActivity,performPause]
+09-24 00:13:19.970  1308  2239 I wm_add_to_stopping: [0,256455146,com.bbk.updater/.ui.UpdateActivity,makeInvisible]
+09-24 00:13:19.972  1308  2239 I wm_restart_activity: [0,263428090,5812,com.bbk.updater/.ui.SettingsActivity]
+09-24 00:13:19.974  1308  2239 I wm_set_resumed_activity: [0,com.bbk.updater/.ui.SettingsActivity,minimalResumeActivityLocked]
+09-24 00:13:19.995  1308  1687 I input_focus: [Focus leaving 5eb7152 com.bbk.updater/com.bbk.updater.ui.UpdateActivity (server),reason=NO_WINDOW]
+09-24 00:13:20.071 27662 27662 I wm_on_create_called: [263428090,com.bbk.updater.ui.SettingsActivity,performCreate]
+09-24 00:13:20.081 27662 27662 I wm_on_start_called: [263428090,com.bbk.updater.ui.SettingsActivity,handleStartActivity]
+09-24 00:13:20.082 27662 27662 I wm_on_resume_called: [263428090,com.bbk.updater.ui.SettingsActivity,RESUME_ACTIVITY]
+09-24 00:13:20.154  1308  1355 I input_focus: [Focus request 90be2e4 com.bbk.updater/com.bbk.updater.ui.SettingsActivity,reason=UpdateInputWindows]
+09-24 00:13:20.219 27662 27662 I wm_on_top_resumed_gained_called: [263428090,com.bbk.updater.ui.SettingsActivity,topStateChangedWhenResumed]
+09-24 00:13:20.260  1308  1351 I wm_activity_launch_time: [0,263428090,com.bbk.updater/.ui.SettingsActivity,322]
+09-24 00:13:20.262  1308  1687 I input_focus: [Focus entering 90be2e4 com.bbk.updater/com.bbk.updater.ui.SettingsActivity (server),reason=Window became focusable. Previous reason: NOT_VISIBLE]
+09-24 00:13:20.619  1308  1354 I wm_stop_activity: [0,256455146,com.bbk.updater/.ui.UpdateActivity]
+09-24 00:13:20.635 27662 27662 I wm_on_stop_called: [256455146,com.bbk.updater.ui.UpdateActivity,STOP_ACTIVITY_ITEM]
+09-24 00:13:21.080  1308  1687 I input_interaction: Interaction with: 90be2e4 com.bbk.updater/com.bbk.updater.ui.SettingsActivity (server), u0_SmartMultiWindowGesture (server), music-swipe (server), swipe-up (server), card-swipe (server), PointerEventDispatcher0 (server), input_hook_com.vivo.agent (server), 
+09-24 00:13:21.218  1308  4198 I wm_set_resumed_activity: [0,com.bbk.updater/.ui.SettingsActivity,positionChildAt]
+09-24 00:13:21.218  1308  4198 I wm_create_activity: [0,103612304,5812,com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity,NULL,NULL,NULL,8388608]
+09-24 00:13:21.220  1308  4198 I wm_pause_activity: [0,263428090,com.bbk.updater/.ui.SettingsActivity,userLeaving=true,resumeTopActivityInnerLocked]
+09-24 00:13:21.225 27662 27662 I wm_on_top_resumed_lost_called: [263428090,com.bbk.updater.ui.SettingsActivity,topStateChangedWhenResumed]
+09-24 00:13:21.227 27662 27662 I wm_on_paused_called: [263428090,com.bbk.updater.ui.SettingsActivity,performPause]
+09-24 00:13:21.230  1308  4704 I wm_add_to_stopping: [0,263428090,com.bbk.updater/.ui.SettingsActivity,makeInvisible]
+09-24 00:13:21.232  1308  4704 I wm_restart_activity: [0,103612304,5812,com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity]
+09-24 00:13:21.235  1308  4704 I wm_set_resumed_activity: [0,com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity,minimalResumeActivityLocked]
+09-24 00:13:21.247  1308  1687 I input_focus: [Focus leaving 90be2e4 com.bbk.updater/com.bbk.updater.ui.SettingsActivity (server),reason=NO_WINDOW]
+09-24 00:13:21.463  1308  1355 I input_focus: [Focus request 5610b9f com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity,reason=UpdateInputWindows]
+09-24 00:13:21.511  1308  1351 I wm_activity_launch_time: [0,103612304,com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity,295]
+09-24 00:13:21.529  1308  1687 I input_focus: [Focus entering 5610b9f com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity (server),reason=Window became focusable. Previous reason: NOT_VISIBLE]
+09-24 00:13:21.881  1308  1354 I wm_stop_activity: [0,263428090,com.bbk.updater/.ui.SettingsActivity]
+09-24 00:13:21.905 27662 27662 I wm_on_stop_called: [263428090,com.bbk.updater.ui.SettingsActivity,STOP_ACTIVITY_ITEM]
+09-24 00:13:22.414  1308  1687 I input_interaction: Interaction with: 5610b9f com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity (server), u0_SmartMultiWindowGesture (server), music-swipe (server), swipe-up (server), card-swipe (server), PointerEventDispatcher0 (server), input_hook_com.vivo.agent (server), 
+09-24 00:13:25.055  1308  1687 I input_interaction: Interaction with: 5610b9f com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity (server), 
+09-24 00:13:25.059  1308  1687 I input_interaction: Interaction with: 5610b9f com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity (server), u0_SmartMultiWindowGesture (server), music-swipe (server), swipe-up (server), card-swipe (server), PointerEventDispatcher0 (server), input_hook_com.vivo.agent (server), 
+09-24 00:13:25.080 27662 27662 I view_enqueue_input_event: [Motion - Cancel,com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity]
+09-24 00:13:25.351  1308  1687 I input_focus: [Focus leaving 5610b9f com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity (server),reason=NOT_FOCUSABLE]
+09-24 00:13:25.779  1308  4704 I wm_pause_activity: [0,103612304,com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity,userLeaving=true,pauseBackTasks]
+09-24 00:13:25.781  1308  4704 I wm_add_to_stopping: [0,103612304,com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity,makeInvisible]
+09-24 00:13:25.835  1308  1354 I wm_stop_activity: [0,103612304,com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity]
+09-24 07:07:50.668 19094 19094 I sysui_multi_action: [757,830,758,4,833,0,854,com.bbk.updater/com.bbk.updater.ui.UpdateTempActivity,1089,0]
+09-24 07:07:50.717  1308  5401 I wm_create_activity: [0,212357040,5827,com.bbk.updater/.ui.UpdateTempActivity,NULL,NULL,NULL,8388608]
+09-24 07:07:50.737  1308  4198 I wm_restart_activity: [0,212357040,5827,com.bbk.updater/.ui.UpdateTempActivity]
+09-24 07:07:50.739  1308  4198 I wm_set_resumed_activity: [0,com.bbk.updater/.ui.UpdateTempActivity,minimalResumeActivityLocked]
+09-24 07:07:50.842  1308  2065 I wm_create_activity: [0,203094634,5828,com.bbk.updater/.ui.UpdateActivity,com.vivo.action.ACTION_START_UPDATEACTIVITY,application/zip,NULL,276824064]
+09-24 07:07:50.843  1308  2065 I wm_pause_activity: [0,212357040,com.bbk.updater/.ui.UpdateTempActivity,userLeaving=true,pauseBackTasks]
+09-24 07:07:50.849  1308  2065 I wm_finish_activity: [0,212357040,5827,com.bbk.updater/.ui.UpdateTempActivity,app-request]
+09-24 07:07:50.849 18807 18807 I wm_on_create_called: [212357040,com.bbk.updater.ui.UpdateTempActivity,performCreate]
+09-24 07:07:50.872  1308  1321 I wm_add_to_stopping: [0,212357040,com.bbk.updater/.ui.UpdateTempActivity,completeFinishing]
+09-24 07:07:50.881  1308  1321 I wm_restart_activity: [0,203094634,5828,com.bbk.updater/.ui.UpdateActivity]
+09-24 07:07:50.883  1308  1321 I wm_set_resumed_activity: [0,com.bbk.updater/.ui.UpdateActivity,minimalResumeActivityLocked]
+09-24 07:07:50.894  1308  1354 I wm_destroy_activity: [0,212357040,5827,com.bbk.updater/.ui.UpdateTempActivity,finish-imm:idle]
+09-24 07:07:50.989 18807 18807 I wm_on_create_called: [203094634,com.bbk.updater.ui.UpdateActivity,performCreate]
+09-24 07:07:51.100 18807 18807 I wm_on_start_called: [203094634,com.bbk.updater.ui.UpdateActivity,handleStartActivity]
+09-24 07:07:51.103 18807 18807 I wm_on_resume_called: [203094634,com.bbk.updater.ui.UpdateActivity,RESUME_ACTIVITY]
+09-24 07:07:51.141  1308  1355 I input_focus: [Focus request 1709f9c com.bbk.updater/com.bbk.updater.ui.UpdateActivity,reason=UpdateInputWindows]
+09-24 07:07:51.222 18807 18807 I wm_on_top_resumed_gained_called: [203094634,com.bbk.updater.ui.UpdateActivity,topStateChangedWhenResumed]
+09-24 07:07:51.222 18807 18807 I wm_on_destroy_called: [212357040,com.bbk.updater.ui.UpdateTempActivity,performDestroy]
+09-24 07:07:51.235  1308  1687 I input_focus: [Focus entering 1709f9c com.bbk.updater/com.bbk.updater.ui.UpdateActivity (server),reason=Window became focusable. Previous reason: NOT_VISIBLE]
+09-24 07:07:51.245  1308  1351 I sysui_multi_action: [319,263,321,246,322,559,325,8732,757,761,758,8,759,1,806,com.bbk.updater,871,com.bbk.updater.ui.UpdateActivity,904,com.bbk.updater,905,0,1320,4,1321,1]
+09-24 07:07:51.245  1308  1351 I wm_activity_launch_time: [0,203094634,com.bbk.updater/.ui.UpdateActivity,559]
+09-24 07:07:51.462 18807 18807 I auditd  : type=1400 audit(0.0:29292): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:07:51.462 18807 18807 I auditd  : type=1400 audit(0.0:29293): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:07:51.478 18807 18807 I auditd  : type=1400 audit(0.0:29294): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:07:51.478 18807 18807 I auditd  : type=1400 audit(0.0:29295): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:07:51.494 18807 18807 I auditd  : type=1400 audit(0.0:29296): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:07:51.494 18807 18807 I auditd  : type=1400 audit(0.0:29297): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:07:51.510 18807 18807 I auditd  : type=1400 audit(0.0:29298): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:07:51.510 18807 18807 I auditd  : type=1400 audit(0.0:29299): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:07:52.553  1308  1687 I input_interaction: Interaction with: 1709f9c com.bbk.updater/com.bbk.updater.ui.UpdateActivity (server), u0_SmartMultiWindowGesture (server), music-swipe (server), swipe-up (server), card-swipe (server), PointerEventDispatcher0 (server), input_hook_com.vivo.agent (server), 
+09-24 07:07:52.647  1308  1321 I wm_set_resumed_activity: [0,com.bbk.updater/.ui.UpdateActivity,positionChildAt]
+09-24 07:07:52.648  1308  1321 I wm_create_activity: [0,126683103,5828,com.bbk.updater/.ui.SettingsActivity,NULL,NULL,NULL,8388608]
+09-24 07:07:52.650  1308  1321 I wm_pause_activity: [0,203094634,com.bbk.updater/.ui.UpdateActivity,userLeaving=true,resumeTopActivityInnerLocked]
+09-24 07:07:52.656 18807 18807 I wm_on_top_resumed_lost_called: [203094634,com.bbk.updater.ui.UpdateActivity,topStateChangedWhenResumed]
+09-24 07:07:52.658 18807 18807 I wm_on_paused_called: [203094634,com.bbk.updater.ui.UpdateActivity,performPause]
+09-24 07:07:52.662  1308  4198 I wm_add_to_stopping: [0,203094634,com.bbk.updater/.ui.UpdateActivity,makeInvisible]
+09-24 07:07:52.664  1308  4198 I wm_restart_activity: [0,126683103,5828,com.bbk.updater/.ui.SettingsActivity]
+09-24 07:07:52.666  1308  4198 I wm_set_resumed_activity: [0,com.bbk.updater/.ui.SettingsActivity,minimalResumeActivityLocked]
+09-24 07:07:52.687  1308  1687 I input_focus: [Focus leaving 1709f9c com.bbk.updater/com.bbk.updater.ui.UpdateActivity (server),reason=NO_WINDOW]
+09-24 07:07:52.713 18807 18807 I wm_on_create_called: [126683103,com.bbk.updater.ui.SettingsActivity,performCreate]
+09-24 07:07:52.719 18807 18807 I wm_on_start_called: [126683103,com.bbk.updater.ui.SettingsActivity,handleStartActivity]
+09-24 07:07:52.720 18807 18807 I wm_on_resume_called: [126683103,com.bbk.updater.ui.SettingsActivity,RESUME_ACTIVITY]
+09-24 07:07:52.744  1308  1355 I input_focus: [Focus request 7657c8a com.bbk.updater/com.bbk.updater.ui.SettingsActivity,reason=UpdateInputWindows]
+09-24 07:07:52.754 18807 18807 I wm_on_top_resumed_gained_called: [126683103,com.bbk.updater.ui.SettingsActivity,topStateChangedWhenResumed]
+09-24 07:07:52.764  1308  1351 I wm_activity_launch_time: [0,126683103,com.bbk.updater/.ui.SettingsActivity,120]
+09-24 07:07:52.772  1308  1687 I input_focus: [Focus entering 7657c8a com.bbk.updater/com.bbk.updater.ui.SettingsActivity (server),reason=setFocusedWindow]
+09-24 07:07:53.130  1308  1354 I wm_stop_activity: [0,203094634,com.bbk.updater/.ui.UpdateActivity]
+09-24 07:07:53.145 18807 18807 I wm_on_stop_called: [203094634,com.bbk.updater.ui.UpdateActivity,STOP_ACTIVITY_ITEM]
+09-24 07:07:53.606  1308  1687 I input_interaction: Interaction with: 7657c8a com.bbk.updater/com.bbk.updater.ui.SettingsActivity (server), u0_SmartMultiWindowGesture (server), music-swipe (server), swipe-up (server), card-swipe (server), PointerEventDispatcher0 (server), input_hook_com.vivo.agent (server), 
+09-24 07:07:53.785  1308  2065 I wm_set_resumed_activity: [0,com.bbk.updater/.ui.SettingsActivity,positionChildAt]
+09-24 07:07:53.785  1308  2065 I wm_create_activity: [0,191469649,5828,com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity,NULL,NULL,NULL,8388608]
+09-24 07:07:53.787  1308  2065 I wm_pause_activity: [0,126683103,com.bbk.updater/.ui.SettingsActivity,userLeaving=true,resumeTopActivityInnerLocked]
+09-24 07:07:53.794 18807 18807 I wm_on_top_resumed_lost_called: [126683103,com.bbk.updater.ui.SettingsActivity,topStateChangedWhenResumed]
+09-24 07:07:53.797 18807 18807 I wm_on_paused_called: [126683103,com.bbk.updater.ui.SettingsActivity,performPause]
+09-24 07:07:53.800  1308  1321 I wm_add_to_stopping: [0,126683103,com.bbk.updater/.ui.SettingsActivity,makeInvisible]
+09-24 07:07:53.802  1308  1321 I wm_restart_activity: [0,191469649,5828,com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity]
+09-24 07:07:53.804  1308  1321 I wm_set_resumed_activity: [0,com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity,minimalResumeActivityLocked]
+09-24 07:07:53.823  1308  1687 I input_focus: [Focus leaving 7657c8a com.bbk.updater/com.bbk.updater.ui.SettingsActivity (server),reason=NO_WINDOW]
+09-24 07:07:53.971  1308  1355 I input_focus: [Focus request e9baa42 com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity,reason=UpdateInputWindows]
+09-24 07:07:54.012  1308  1351 I wm_activity_launch_time: [0,191469649,com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity,238]
+09-24 07:07:54.024  1308  1687 I input_focus: [Focus entering e9baa42 com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity (server),reason=Window became focusable. Previous reason: NOT_VISIBLE]
+09-24 07:07:54.377  1308  1354 I wm_stop_activity: [0,126683103,com.bbk.updater/.ui.SettingsActivity]
+09-24 07:07:54.390 18807 18807 I wm_on_stop_called: [126683103,com.bbk.updater.ui.SettingsActivity,STOP_ACTIVITY_ITEM]
+09-24 07:07:54.759  1308  1687 I input_interaction: Interaction with: e9baa42 com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity (server), u0_SmartMultiWindowGesture (server), music-swipe (server), swipe-up (server), card-swipe (server), PointerEventDispatcher0 (server), input_hook_com.vivo.agent (server), 
+09-24 07:07:57.750  1308  1687 I input_interaction: Interaction with: e9baa42 com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity (server), PointerEventDispatcher0 (server), input_hook_com.vivo.agent (server), 
+09-24 07:07:57.758  1308  1922 I wm_finish_activity: [0,191469649,5828,com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity,app-request]
+09-24 07:07:57.759  1308  1922 I wm_pause_activity: [0,191469649,com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity,userLeaving=false,finish]
+09-24 07:07:57.766  1308  1922 I wm_add_to_stopping: [0,191469649,com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity,completeFinishing]
+09-24 07:07:57.769  1308  1922 I wm_set_resumed_activity: [0,com.bbk.updater/.ui.SettingsActivity,resumeTopActivityInnerLocked]
+09-24 07:07:57.771  1308  1922 I wm_resume_activity: [0,126683103,5828,com.bbk.updater/.ui.SettingsActivity]
+09-24 07:07:57.776 18807 18807 I wm_on_restart_called: [126683103,com.bbk.updater.ui.SettingsActivity,performRestartActivity]
+09-24 07:07:57.776 18807 18807 I wm_on_start_called: [126683103,com.bbk.updater.ui.SettingsActivity,handleStartActivity]
+09-24 07:07:57.777 18807 18807 I wm_on_resume_called: [126683103,com.bbk.updater.ui.SettingsActivity,RESUME_ACTIVITY]
+09-24 07:07:57.777 18807 18807 I wm_on_top_resumed_gained_called: [126683103,com.bbk.updater.ui.SettingsActivity,topWhenResuming]
+09-24 07:07:57.781  1308  1687 I input_focus: [Focus leaving e9baa42 com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity (server),reason=NO_WINDOW]
+09-24 07:07:57.799  1308  1355 I input_focus: [Focus request 7657c8a com.bbk.updater/com.bbk.updater.ui.SettingsActivity,reason=UpdateInputWindows]
+09-24 07:07:57.831  1308  1687 I input_focus: [Focus entering 7657c8a com.bbk.updater/com.bbk.updater.ui.SettingsActivity (server),reason=Window became focusable. Previous reason: NOT_VISIBLE]
+09-24 07:07:58.070  1308  1354 I wm_destroy_activity: [0,191469649,5828,com.bbk.updater/com.bbk.trialversion.trialversion.activity.TrialVersionActivity,finish-imm:idle]
+09-24 07:07:58.516  1308  1687 I input_interaction: Interaction with: 7657c8a com.bbk.updater/com.bbk.updater.ui.SettingsActivity (server), PointerEventDispatcher0 (server), input_hook_com.vivo.agent (server), 
+09-24 07:07:58.522  1308  5022 I wm_finish_activity: [0,126683103,5828,com.bbk.updater/.ui.SettingsActivity,app-request]
+09-24 07:07:58.524  1308  5022 I wm_pause_activity: [0,126683103,com.bbk.updater/.ui.SettingsActivity,userLeaving=false,finish]
+09-24 07:07:58.527 18807 18807 I wm_on_top_resumed_lost_called: [126683103,com.bbk.updater.ui.SettingsActivity,topStateChangedWhenResumed]
+09-24 07:07:58.528 18807 18807 I wm_on_paused_called: [126683103,com.bbk.updater.ui.SettingsActivity,performPause]
+09-24 07:07:58.528  1308  5022 I wm_add_to_stopping: [0,126683103,com.bbk.updater/.ui.SettingsActivity,completeFinishing]
+09-24 07:07:58.532  1308  5022 I wm_set_resumed_activity: [0,com.bbk.updater/.ui.UpdateActivity,resumeTopActivityInnerLocked]
+09-24 07:07:58.533  1308  5022 I wm_resume_activity: [0,203094634,5828,com.bbk.updater/.ui.UpdateActivity]
+09-24 07:07:58.538 18807 18807 I wm_on_restart_called: [203094634,com.bbk.updater.ui.UpdateActivity,performRestartActivity]
+09-24 07:07:58.538 18807 18807 I wm_on_start_called: [203094634,com.bbk.updater.ui.UpdateActivity,handleStartActivity]
+09-24 07:07:58.542 18807 18807 I wm_on_resume_called: [203094634,com.bbk.updater.ui.UpdateActivity,RESUME_ACTIVITY]
+09-24 07:07:58.542 18807 18807 I wm_on_top_resumed_gained_called: [203094634,com.bbk.updater.ui.UpdateActivity,topWhenResuming]
+09-24 07:07:58.550  1308  1687 I input_focus: [Focus leaving 7657c8a com.bbk.updater/com.bbk.updater.ui.SettingsActivity (server),reason=NO_WINDOW]
+09-24 07:07:58.553  1308  1355 I input_focus: [Focus request 1709f9c com.bbk.updater/com.bbk.updater.ui.UpdateActivity,reason=UpdateInputWindows]
+09-24 07:07:58.550 18807 18807 I auditd  : type=1400 audit(0.0:29338): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:07:58.550 18807 18807 I auditd  : type=1400 audit(0.0:29339): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:07:58.574 18807 18807 I auditd  : type=1400 audit(0.0:29340): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:07:58.574 18807 18807 I auditd  : type=1400 audit(0.0:29341): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:07:58.583  1308  1687 I input_focus: [Focus entering 1709f9c com.bbk.updater/com.bbk.updater.ui.UpdateActivity (server),reason=Window became focusable. Previous reason: NOT_VISIBLE]
+09-24 07:07:58.590 18807 18807 I auditd  : type=1400 audit(0.0:29342): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:07:58.822  1308  1354 I wm_destroy_activity: [0,126683103,5828,com.bbk.updater/.ui.SettingsActivity,finish-imm:idle]
+09-24 07:07:58.831 18807 18807 I wm_on_stop_called: [126683103,com.bbk.updater.ui.SettingsActivity,LIFECYCLER_STOP_ACTIVITY]
+09-24 07:07:58.831 18807 18807 I wm_on_destroy_called: [126683103,com.bbk.updater.ui.SettingsActivity,performDestroy]
+09-24 07:08:00.407  1308  1687 I input_interaction: Interaction with: 1709f9c com.bbk.updater/com.bbk.updater.ui.UpdateActivity (server), PointerEventDispatcher0 (server), input_hook_com.vivo.agent (server), 
+09-24 07:08:00.414  1308  1321 I wm_finish_activity: [0,203094634,5828,com.bbk.updater/.ui.UpdateActivity,app-request]
+09-24 07:08:00.433  1308  1321 I wm_pause_activity: [0,203094634,com.bbk.updater/.ui.UpdateActivity,userLeaving=false,finish]
+09-24 07:08:00.444 18807 18807 I wm_on_top_resumed_lost_called: [203094634,com.bbk.updater.ui.UpdateActivity,topStateChangedWhenResumed]
+09-24 07:08:00.451 18807 18807 I wm_on_paused_called: [203094634,com.bbk.updater.ui.UpdateActivity,performPause]
+09-24 07:08:00.453  1308  1321 I wm_add_to_stopping: [0,203094634,com.bbk.updater/.ui.UpdateActivity,completeFinishing]
+09-24 07:08:00.458  1308  1687 I input_focus: [Focus leaving 1709f9c com.bbk.updater/com.bbk.updater.ui.UpdateActivity (server),reason=NO_WINDOW]
+09-24 07:08:00.804  1308  1354 I wm_destroy_activity: [0,203094634,5828,com.bbk.updater/.ui.UpdateActivity,finish-imm:idle]
+09-24 07:08:00.828 18807 18807 I wm_on_stop_called: [203094634,com.bbk.updater.ui.UpdateActivity,LIFECYCLER_STOP_ACTIVITY]
+09-24 07:08:00.859 18807 18807 I wm_on_destroy_called: [203094634,com.bbk.updater.ui.UpdateActivity,performDestroy]
+09-24 07:08:00.870  1308  5022 I wm_task_removed: [5828,removeChild:removeChild last r=ActivityRecord{c1afa6a u0 com.bbk.updater/.ui.UpdateActivity t-1 d-1 f}} in t=Task{7c51b5b #5828 type=standard A=10128:com.bbk.updater U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=0}]
+09-24 07:08:01.334 19094 19094 I sysui_multi_action: [757,830,758,4,833,0,854,com.bbk.updater/com.bbk.updater.ui.UpdateTempActivity,1089,0]
+09-24 07:08:01.341  1308  5022 I wm_create_activity: [0,252452720,5827,com.bbk.updater/.ui.UpdateTempActivity,NULL,NULL,NULL,8388608]
+09-24 07:08:01.357  1308  5022 I wm_restart_activity: [0,252452720,5827,com.bbk.updater/.ui.UpdateTempActivity]
+09-24 07:08:01.359  1308  5022 I wm_set_resumed_activity: [0,com.bbk.updater/.ui.UpdateTempActivity,minimalResumeActivityLocked]
+09-24 07:08:01.388  1308  4198 I wm_create_activity: [0,70502708,5829,com.bbk.updater/.ui.UpdateActivity,com.vivo.action.ACTION_START_UPDATEACTIVITY,application/zip,NULL,276824064]
+09-24 07:08:01.389  1308  4198 I wm_pause_activity: [0,252452720,com.bbk.updater/.ui.UpdateTempActivity,userLeaving=true,pauseBackTasks]
+09-24 07:08:01.396  1308  1321 I wm_finish_activity: [0,252452720,5827,com.bbk.updater/.ui.UpdateTempActivity,app-request]
+09-24 07:08:01.397 18807 18807 I wm_on_create_called: [252452720,com.bbk.updater.ui.UpdateTempActivity,performCreate]
+09-24 07:08:01.406  1308  1321 I wm_add_to_stopping: [0,252452720,com.bbk.updater/.ui.UpdateTempActivity,completeFinishing]
+09-24 07:08:01.409  1308  1321 I wm_restart_activity: [0,70502708,5829,com.bbk.updater/.ui.UpdateActivity]
+09-24 07:08:01.410  1308  1321 I wm_set_resumed_activity: [0,com.bbk.updater/.ui.UpdateActivity,minimalResumeActivityLocked]
+09-24 07:08:01.415  1308  1354 I wm_destroy_activity: [0,252452720,5827,com.bbk.updater/.ui.UpdateTempActivity,finish-imm:idle]
+09-24 07:08:01.442 18807 18807 I wm_on_create_called: [70502708,com.bbk.updater.ui.UpdateActivity,performCreate]
+09-24 07:08:01.499 18807 18807 I wm_on_start_called: [70502708,com.bbk.updater.ui.UpdateActivity,handleStartActivity]
+09-24 07:08:01.502 18807 18807 I wm_on_resume_called: [70502708,com.bbk.updater.ui.UpdateActivity,RESUME_ACTIVITY]
+09-24 07:08:01.511 18807 18807 I wm_on_top_resumed_gained_called: [70502708,com.bbk.updater.ui.UpdateActivity,topStateChangedWhenResumed]
+09-24 07:08:01.511 18807 18807 I wm_on_destroy_called: [252452720,com.bbk.updater.ui.UpdateTempActivity,performDestroy]
+09-24 07:08:01.530  1308  1355 I input_focus: [Focus request 83ad9c9 com.bbk.updater/com.bbk.updater.ui.UpdateActivity,reason=UpdateInputWindows]
+09-24 07:08:01.568  1308  1351 I sysui_multi_action: [319,121,321,104,322,216,325,8742,757,761,758,8,759,1,806,com.bbk.updater,871,com.bbk.updater.ui.UpdateActivity,904,com.bbk.updater,905,0,1320,4,1321,1]
+09-24 07:08:01.569  1308  1351 I wm_activity_launch_time: [0,70502708,com.bbk.updater/.ui.UpdateActivity,216]
+09-24 07:08:01.573  1308  1687 I input_focus: [Focus entering 83ad9c9 com.bbk.updater/com.bbk.updater.ui.UpdateActivity (server),reason=Window became focusable. Previous reason: NOT_VISIBLE]
+09-24 07:08:01.666 18807 18807 I auditd  : type=1400 audit(0.0:29384): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:08:01.666 18807 18807 I auditd  : type=1400 audit(0.0:29385): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:08:01.678 18807 18807 I auditd  : type=1400 audit(0.0:29386): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:08:01.682 18807 18807 I auditd  : type=1400 audit(0.0:29387): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:08:01.730 18807 18807 I auditd  : type=1400 audit(0.0:29388): avc: denied { getattr } for comm="RenderThread" name="dmabuf:" dev="dmabuf" ino=1 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=filesystem permissive=0 app=com.bbk.updater
+09-24 07:08:02.589  1308  1687 I input_interaction: Interaction with: 83ad9c9 com.bbk.updater/com.bbk.updater.ui.UpdateActivity (server), PointerEventDispatcher0 (server), input_hook_com.vivo.agent (server), 
+09-24 07:08:02.595  1308  1321 I wm_finish_activity: [0,70502708,5829,com.bbk.updater/.ui.UpdateActivity,app-request]
+09-24 07:08:02.608  1308  1321 I wm_pause_activity: [0,70502708,com.bbk.updater/.ui.UpdateActivity,userLeaving=false,finish]
+09-24 07:08:02.614 18807 18807 I wm_on_top_resumed_lost_called: [70502708,com.bbk.updater.ui.UpdateActivity,topStateChangedWhenResumed]
+09-24 07:08:02.618 18807 18807 I wm_on_paused_called: [70502708,com.bbk.updater.ui.UpdateActivity,performPause]
+09-24 07:08:02.619  1308  1321 I wm_add_to_stopping: [0,70502708,com.bbk.updater/.ui.UpdateActivity,completeFinishing]
+09-24 07:08:02.625  1308  1687 I input_focus: [Focus leaving 83ad9c9 com.bbk.updater/com.bbk.updater.ui.UpdateActivity (server),reason=NO_WINDOW]
+09-24 07:08:02.959  1308  1354 I wm_destroy_activity: [0,70502708,5829,com.bbk.updater/.ui.UpdateActivity,finish-imm:idle]
+09-24 07:08:02.980 18807 18807 I wm_on_stop_called: [70502708,com.bbk.updater.ui.UpdateActivity,LIFECYCLER_STOP_ACTIVITY]
+09-24 07:08:03.000 18807 18807 I wm_on_destroy_called: [70502708,com.bbk.updater.ui.UpdateActivity,performDestroy]
+09-24 07:08:03.016  1308  4198 I wm_task_removed: [5829,removeChild:removeChild last r=ActivityRecord{433c934 u0 com.bbk.updater/.ui.UpdateActivity t-1 d-1 f}} in t=Task{392b35d #5829 type=standard A=10128:com.bbk.updater U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=0}]
+09-24 12:49:55.228  1308  1355 I wm_task_removed: [5860,removeChild:removeChild last r=ActivityRecord{78f33b u0 io.github.long36708.vivoupdater/io.github.long36708.updater.MainActivity t-1 d-1 f}} in t=Task{83dba58 #5860 type=standard A=10195:io.github.long36708.vivoupdater U=0 displayId=0 visible=false mode=fullscreen translucent=true sz=0}]
+09-24 15:44:41.309  1308  2779 I am_proc_bound: [0,10809,com.bbk.updater:remote]
+09-24 19:50:04.881  4059  4059 I auditd  : type=1400 audit(0.0:291241): avc: granted { execute } for comm="[GT]HotPool#7" path="/data/data/com.tencent.mm/MicroMsg/AFFUDRPath/resource/udr/biz/ilinkres_55e88e46/libwcwss/d0775caed341bb6a5e7290900d62f134.udr" dev="dm-10" ino=1159080 scontext=u:r:untrusted_app:s0:c252,c256,c512,c768 tcontext=u:object_r:app_data_file:s0:c252,c256,c512,c768 tclass=file app=com.bbk.updater
+09-24 19:50:04.929  4059  4059 I auditd  : type=1400 audit(0.0:291242): avc: granted { execute } for comm="[GT]HotPool#7" path="/data/data/com.tencent.mm/MicroMsg/AFFUDRPath/resource/udr/biz/ilinkres_55e88e46/libmmwcwss_v8_14/ca9c5fafc3635be4fcb22b5194e6b89a.udr" dev="dm-10" ino=1159006 scontext=u:r:untrusted_app:s0:c252,c256,c512,c768 tcontext=u:object_r:app_data_file:s0:c252,c256,c512,c768 tclass=file app=com.bbk.updater
+09-24 21:16:26.633 13194 21879 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+09-24 21:16:26.634 13194 21879 D ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+09-24 21:16:26.636 13194 21879 D ReflectedParamUpdater: extent() != 1 for single value type: input.buffers.allocator-ids.values
+09-24 21:16:26.637 13194 21879 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.allocator-ids.values
+09-24 21:16:26.637 13194 21879 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+09-24 21:16:26.637 13194 21879 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values
+09-24 21:16:26.637 13194 21879 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.pool-ids.values
+09-24 21:16:26.922  1308  1354 I wm_destroy_activity: [0,73491211,5939,com.bbk.updater/.ui.UpdateActivity,finish-imm:idle]
+09-24 21:16:26.967 21636 21636 I wm_on_stop_called: [73491211,com.bbk.updater.ui.UpdateActivity,LIFECYCLER_STOP_ACTIVITY]
+09-24 21:16:26.969  1308  4394 D BatteryStatsService: notePemString  noteWhich: 49,arg1: -2, arg2: -1, arg3: 21636, arg4: 31, name: com.bbk.updater
+09-24 21:16:26.975  1308  4394 D BatteryStatsService: notePemString  noteWhich: 49,arg1: -1, arg2: -1, arg3: 21636, arg4: 31, name: com.bbk.updater
