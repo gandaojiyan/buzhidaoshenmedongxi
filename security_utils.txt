@@ -1,0 +1,100 @@
+package com.bbk.updater.utils;
+
+import android.content.Context;
+import android.util.Base64;
+import com.bbk.updater.AppFeature;
+import com.vivo.seckeysdk.SecurityKeyCipher;
+import com.vivo.seckeysdk.utils.SecurityKeyException;
+import java.net.URLDecoder;
+
+/* JADX INFO: loaded from: classes.dex */
+public class SecurityUtils {
+    private static final String CLIENT_TOKEN = "AAAAdQAAAAAHnRn6AAEAAAAEDmZvckNvbnN0cnVjdG9yD2NvbS5iYmsudXBkYXRlchBTamhJaWZUVmVwcjhBSmM4BUNsb3NlK3sicHJvdGVjdGlvblRocmVhZE1vZGUiOjAsInNlY3VyaXR5TW9kZSI6MH0A";
+    private static final String CODING_UTF8 = "UTF-8";
+    private static final String TAG = "Updater/SecurityUtils";
+    private static SecurityKeyCipher sSecurityKeyCipher;
+
+    public static SecurityKeyCipher getSecurityKeyCipher(Context context) {
+        if (sSecurityKeyCipher == null) {
+            sSecurityKeyCipher = SecurityKeyCipher.getInstance(context, CLIENT_TOKEN);
+        }
+        return sSecurityKeyCipher;
+    }
+
+    public static String encryptUrl(Context context, String str) {
+        try {
+            return getSecurityKeyCipher(context).toSecurityUrl(str, 1);
+        } catch (SecurityKeyException e) {
+            LogUtils.e(TAG, "encryptUrl fail", e);
+            return "";
+        } catch (Exception e2) {
+            LogUtils.e(TAG, "encryptUrl fail", e2);
+            return "";
+        }
+    }
+
+    public static String encryptUrlParams(Context context, String str) {
+        try {
+            return Base64.encodeToString(getSecurityKeyCipher(context).aesEncrypt(str.getBytes("UTF-8")), 10);
+        } catch (SecurityKeyException e) {
+            return HttpUtils.getEncoderString("EncryptException", e.getMessage());
+        } catch (Exception e2) {
+            return HttpUtils.getEncoderString("EncryptException", e2.getMessage());
+        }
+    }
+
+    public static String decryptResponse(Context context, String str) {
+        try {
+            str = URLDecoder.decode(str, "UTF-8");
+            return getSecurityKeyCipher(AppFeature.a()).decryptResponse(str);
+        } catch (SecurityKeyException e) {
+            LogUtils.e(TAG, "decryptResponse", e);
+            return str;
+        } catch (Exception e2) {
+            LogUtils.e(TAG, "decryptResponse", e2);
+            return str;
+        }
+    }
+
+    public static String encryptString(Context context, String str) {
+        try {
+            return getSecurityKeyCipher(context).aesEncryptToString(str.getBytes("UTF-8"));
+        } catch (SecurityKeyException e) {
+            LogUtils.e(TAG, "security encrypt failed", e);
+            return "";
+        } catch (Exception e2) {
+            LogUtils.e(TAG, "security encrypt failed", e2);
+            return "";
+        }
+    }
+
+    public static String decryptString(Context context, String str) {
+        try {
+            return new String(getSecurityKeyCipher(context).aesDecryptString(str), "UTF-8");
+        } catch (SecurityKeyException e) {
+            LogUtils.e(TAG, "Security decrypt failed", e);
+            return str;
+        } catch (Exception e2) {
+            LogUtils.e(TAG, "Security decrypt failed", e2);
+            return str;
+        }
+    }
+
+    public static String aesEncryptByFixed(Context context, String str) {
+        try {
+            return Base64.encodeToString(getSecurityKeyCipher(context).aesEncryptByFixed(str.getBytes()), 11);
+        } catch (Exception e) {
+            LogUtils.e(TAG, "Security fix decrypt failed", e);
+            return null;
+        }
+    }
+
+    public static String aesDecryptByFixed(Context context, String str) {
+        try {
+            return new String(getSecurityKeyCipher(context).aesDecryptByFixed(Base64.decode(str, 11)));
+        } catch (Exception e) {
+            LogUtils.e(TAG, "Security fix decrypt failed", e);
+            return null;
+        }
+    }
+}
