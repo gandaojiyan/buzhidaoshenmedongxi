@@ -1,0 +1,20 @@
+===== 时间 =====
+Thu Sep 24 22:16:36 CST 2026
+
+===== apktool =====
+/data/data/com.termux/files/usr/bin/apktool
+3.0.3-dirty
+
+===== 上一次解包日志 =====
+
+===== 解包目录 =====
+没有 ~/updater_smali
+
+===== APK =====
+-rw-------. 1 u0_a321 u0_a321 13M Sep 24 00:05 /data/data/com.termux/files/home/Updater.apk
+The program file is not installed. Install it by executing:
+ pkg install file
+
+===== DEX =====
+
+===== updater_smali 文件 =====
