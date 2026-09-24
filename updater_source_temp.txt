@@ -1,0 +1,21 @@
+./sources/com/bbk/local/activity/PackageCopyActivity.java:43:    public static final String ACTION = "com.vivo.action.ACTION_SYSTEM_UPDATER_PACKAGE_COPY";
+./sources/com/bbk/updater/ui/UpdateTempActivity.java:9:public class UpdateTempActivity extends Activity {
+./sources/com/bbk/updater/ui/UpdateTempActivity.java:10:    private static final String START_FROM_SETTINGS = "com.vivo.action.ACTION_START_UPDATEACTIVITY";
+./sources/com/bbk/updater/ui/UpdateTempActivity.java:11:    private static final String TAG = "Updater/UpdateTempActivity";
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:77:            eVar.intentAction = "com.vivo.action.ACTION_SYSTEM_UPDATER_SETTINGS";
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:117:                cVar2.intentAction = "com.vivo.action.ACTION_SYSTEM_UPDATER_SETTINGS";
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:130:                cVar3.intentAction = "com.vivo.action.ACTION_SYSTEM_UPDATER_SETTINGS";
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:141:                cVar.className = "com.bbk.updater.ui.UpdateTempActivity";
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:142:                cVar.intentAction = "com.vivo.action.ACTION_SYSTEM_UPDATER";
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:151:                    cVar4.className = "com.bbk.updater.ui.UpdateTempActivity";
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:152:                    cVar4.intentAction = "com.vivo.action.ACTION_SYSTEM_UPDATER";
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:158:                map2.put("com.bbk.updater.ui.UpdateTempActivitysettings", "com.bbk.updater.ui.fragment.SettingsFragment");
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:159:                map.put("com.bbk.updater.ui.UpdateTempActivitysettings", 1);
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:164:                cVar5.className = "com.bbk.updater.ui.UpdateTempActivity";
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:165:                cVar5.intentAction = "com.vivo.action.ACTION_SYSTEM_UPDATER";
+./sources/com/bbk/updaterdsassistant/strategy/DSStrategy.java:816:                boolean z = "com.vivo.action.ACTION_START_UPDATEACTIVITY".equals(CommonUtils.getActionOfIntent(intent)) || UpdateActivity.ACTION.equals(CommonUtils.getActionOfIntent(intent));
+./resources/AndroidManifest.xml:126:            android:name="com.bbk.updater.ui.UpdateTempActivity"
+./resources/AndroidManifest.xml:132:                <action android:name="com.vivo.action.ACTION_SYSTEM_UPDATER"/>
+./resources/AndroidManifest.xml:155:                <action android:name="com.vivo.action.ACTION_START_UPDATEACTIVITY"/>
+./resources/AndroidManifest.xml:175:                <action android:name="com.vivo.action.ACTION_SYSTEM_UPDATER_SETTINGS"/>
+./resources/AndroidManifest.xml:188:                <action android:name="com.vivo.action.ACTION_SYSTEM_UPDATER_PACKAGE_COPY"/>

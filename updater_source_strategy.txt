@@ -1,0 +1,76 @@
+./sources/com/bbk/local/strategy/PackageCopyStrategy.java:19:    public boolean onAppFeaterSetUp() {
+./sources/com/bbk/local/strategy/PackageCopyStrategy.java:21:        return super.onAppFeaterSetUp();
+./sources/com/bbk/trialversion/closedbeta/presenter/ClosedBetaPresenter.java:298:        Intent intent = new Intent("com.bbk.updater.action.CHECK_INSTANTLY");
+./sources/com/bbk/trialversion/publicbeta/presenter/PublicBetaPresenter.java:272:        Intent intent = new Intent("com.bbk.updater.action.CHECK_INSTANTLY");
+./sources/com/bbk/updater/selfupgrade/SelfUpgradeStrategy.java:144:    public boolean onAppFeaterSetUp() {
+./sources/com/bbk/updater/selfupgrade/SelfUpgradeStrategy.java:164:        return super.onAppFeaterSetUp();
+./sources/com/bbk/updater/cota/CotaStandardStrategy.java:14:    public boolean onAppFeaterSetUp() {
+./sources/com/bbk/updater/cota/CotaStandardStrategy.java:16:        return super.onAppFeaterSetUp();
+./sources/com/bbk/updater/install/strategy/DemoProductStrategy.java:25:    public boolean onAppFeaterSetUp() {
+./sources/com/bbk/updater/install/strategy/DemoProductStrategy.java:29:        return super.onAppFeaterSetUp();
+./sources/com/bbk/updater/install/strategy/SmartInstallStrategy.java:29:    public boolean onAppFeaterSetUp() {
+./sources/com/bbk/updater/install/strategy/SmartInstallStrategy.java:42:        return super.onAppFeaterSetUp();
+./sources/com/bbk/updater/install/strategy/SmartInstallStrategy.java:46:    public boolean onCheckEnd(int i, boolean z, c cVar, c cVar2, c cVar3, c cVar4, c cVar5, c cVar6, String str, BaseFrameUtils.CheckTrigeType checkTrigeType) {
+./sources/com/bbk/updater/install/strategy/SmartInstallStrategy.java:68:        return super.onCheckEnd(i, z, cVar, cVar2, cVar3, cVar4, cVar5, cVar6, str, checkTrigeType);
+./sources/com/bbk/updater/install/strategy/EnhancedUpdateStrategy.java:32:    public boolean onAppFeaterSetUp() {
+./sources/com/bbk/updater/install/strategy/EnhancedUpdateStrategy.java:37:        return super.onAppFeaterSetUp();
+./sources/com/bbk/updater/install/strategy/EnhancedUpdateStrategy.java:41:    public boolean onCheckEnd(int i, boolean z, c cVar, c cVar2, c cVar3, c cVar4, c cVar5, c cVar6, String str, BaseFrameUtils.CheckTrigeType checkTrigeType) {
+./sources/com/bbk/updater/install/strategy/EnhancedUpdateStrategy.java:43:        return super.onCheckEnd(i, z, cVar, cVar2, cVar3, cVar4, cVar5, cVar6, str, checkTrigeType);
+./sources/com/bbk/updater/install/strategy/BaseUpdateStrategy.java:53:    public boolean onAppFeaterSetUp() {
+./sources/com/bbk/updater/install/strategy/BaseUpdateStrategy.java:63:        return super.onAppFeaterSetUp();
+./sources/com/bbk/updater/countrycode/CountryCodeStrategy.java:12:    public boolean onAppFeaterSetUp() {
+./sources/com/bbk/updater/countrycode/CountryCodeStrategy.java:15:        return super.onAppFeaterSetUp();
+./sources/com/bbk/updater/AppFeature.java:146:        strategyFactory.onAppFeaterSetUp();
+./sources/com/bbk/updater/check/a/a.java:173:        this.f.onCheckStart(c(), this.m.toString());
+./sources/com/bbk/updater/check/a/a.java:185:        this.f.onCheckEnd(this.d, c(), this.g, this.h, this.i, this.j, fotaUpdateInfo, vgcUpdateInfo, this.e, this.m);
+./sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:24:public class UpdateCheckStrategy extends a {
+./sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:26:    public boolean onAppFeaterSetUp() {
+./sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:28:        registerStaticBroadcast("com.bbk.updater.action.CHECK_INSTANTLY");
+./sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:40:            onStaticBroadCastReceive("com.bbk.updater.action.CHECK_INSTANTLY", null);
+./sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:43:        return super.onAppFeaterSetUp();
+./sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:59:                UpdateCheckStrategy.this.startAutoCheck(true, BaseFrameUtils.CheckTrigeType.NETWORK_CHANGED);
+./sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:67:        startAutoCheck(false, BaseFrameUtils.CheckTrigeType.COTA_TYPE_CHANGE);
+./sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:72:    public boolean onCheckStart(boolean z, String str) {
+./sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:74:        return super.onCheckStart(z, str);
+./sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:78:    public boolean onCheckEnd(int i, boolean z, c cVar, c cVar2, c cVar3, c cVar4, c cVar5, c cVar6, String str, BaseFrameUtils.CheckTrigeType checkTrigeType) {
+./sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:82:        return super.onCheckEnd(i, z, cVar, cVar2, cVar3, cVar4, cVar5, cVar6, str, checkTrigeType);
+./sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:150:    private boolean isTimeToAutoCheck(com.vivo.updaterbaseframe.utils.BaseFrameUtils.CheckTrigeType r10) {
+./sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:210:        throw new UnsupportedOperationException("Method not decompiled: com.bbk.updater.check.strategy.UpdateCheckStrategy.isTimeToAutoCheck(com.vivo.updaterbaseframe.utils.BaseFrameUtils$CheckTrigeType):boolean");
+./sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:214:    public void startAutoCheck(boolean z, BaseFrameUtils.CheckTrigeType checkTrigeType) {
+./sources/com/bbk/updater/check/strategy/UpdateCheckStrategy.java:236:        if (!z || isTimeToAutoCheck(checkTrigeType)) {
+./sources/com/bbk/updater/download/strategy/AutoDownloadStrategy.java:36:    public boolean onAppFeaterSetUp() {
+./sources/com/bbk/updater/download/strategy/AutoDownloadStrategy.java:43:        return super.onAppFeaterSetUp();
+./sources/com/bbk/updater/download/strategy/DownloadStrategy.java:50:    public boolean onAppFeaterSetUp() {
+./sources/com/bbk/updater/download/strategy/DownloadStrategy.java:57:        return super.onAppFeaterSetUp();
+./sources/com/bbk/updater/codemanagement/ComponentManagerStrategy.java:19:    public boolean onAppFeaterSetUp() {
+./sources/com/bbk/updater/codemanagement/ComponentManagerStrategy.java:21:        return super.onAppFeaterSetUp();
+./sources/com/bbk/updater/strategy/RedNoticeStrategy.java:21:    public boolean onAppFeaterSetUp() {
+./sources/com/bbk/updater/strategy/RedNoticeStrategy.java:23:        return super.onAppFeaterSetUp();
+./sources/com/bbk/updater/strategy/OtherStrategy.java:42:    public boolean onAppFeaterSetUp() {
+./sources/com/bbk/updater/strategy/OtherStrategy.java:53:        return super.onAppFeaterSetUp();
+./sources/com/bbk/updater/strategy/OtherStrategy.java:245:    public boolean onCheckEnd(int i, boolean z, c cVar, c cVar2, c cVar3, c cVar4, c cVar5, c cVar6, String str, BaseFrameUtils.CheckTrigeType checkTrigeType) {
+./sources/com/bbk/updater/strategy/OtherStrategy.java:248:        return super.onCheckEnd(i, z, cVar, cVar2, cVar3, cVar4, cVar5, cVar6, str, checkTrigeType);
+./sources/com/bbk/updater/strategy/CommonInstallStrategy.java:47:    public boolean onAppFeaterSetUp() {
+./sources/com/bbk/updater/strategy/CommonInstallStrategy.java:52:        return super.onAppFeaterSetUp();
+./sources/com/bbk/updaterdsassistant/strategy/DSStrategy.java:57:    public boolean onAppFeaterSetUp() {
+./sources/com/bbk/updaterdsassistant/strategy/DSStrategy.java:67:        return super.onAppFeaterSetUp();
+./sources/com/bbk/updaterdsassistant/strategy/DSStrategy.java:423:    public boolean onCheckEnd(int r14, boolean r15, com.vivo.updaterbaseframe.a.c r16, com.vivo.updaterbaseframe.a.c r17, com.vivo.updaterbaseframe.a.c r18, com.vivo.updaterbaseframe.a.c r19, com.vivo.updaterbaseframe.a.c r20, com.vivo.updaterbaseframe.a.c r21, java.lang.String r22, com.vivo.updaterbaseframe.utils.BaseFrameUtils.CheckTrigeType r23) {
+./sources/com/bbk/updaterdsassistant/strategy/DSStrategy.java:428:        throw new UnsupportedOperationException("Method not decompiled: com.bbk.updaterdsassistant.strategy.DSStrategy.onCheckEnd(int, boolean, com.vivo.updaterbaseframe.a.c, com.vivo.updaterbaseframe.a.c, com.vivo.updaterbaseframe.a.c, com.vivo.updaterbaseframe.a.c, com.vivo.updaterbaseframe.a.c, com.vivo.updaterbaseframe.a.c, java.lang.String, com.vivo.updaterbaseframe.utils.BaseFrameUtils$CheckTrigeType):boolean");
+./sources/com/vivo/updaterbaseframe/strategy/a.java:32:    public boolean onAppFeaterSetUp() {
+./sources/com/vivo/updaterbaseframe/strategy/a.java:40:    public boolean onCheckEnd(int i, boolean z, c cVar, c cVar2, c cVar3, c cVar4, c cVar5, c cVar6, String str, BaseFrameUtils.CheckTrigeType checkTrigeType) {
+./sources/com/vivo/updaterbaseframe/strategy/a.java:44:    public boolean onCheckStart(boolean z, String str) {
+./sources/com/vivo/updaterbaseframe/strategy/StrategyFactory.java:234:    public boolean onAppFeaterSetUp() {
+./sources/com/vivo/updaterbaseframe/strategy/StrategyFactory.java:235:        com.vivo.updaterbaseframe.utils.a.a("onAppFeaterSetUp");
+./sources/com/vivo/updaterbaseframe/strategy/StrategyFactory.java:238:            if (aVarA != null && aVarA.onAppFeaterSetUp() && bVar.b()) {
+./sources/com/vivo/updaterbaseframe/strategy/StrategyFactory.java:242:        return super.onAppFeaterSetUp();
+./sources/com/vivo/updaterbaseframe/strategy/StrategyFactory.java:246:    public boolean onCheckStart(boolean z, String str) {
+./sources/com/vivo/updaterbaseframe/strategy/StrategyFactory.java:247:        com.vivo.updaterbaseframe.utils.a.a("onCheckstart");
+./sources/com/vivo/updaterbaseframe/strategy/StrategyFactory.java:250:            if (aVarA != null && aVarA.onCheckStart(z, str) && bVar.b()) {
+./sources/com/vivo/updaterbaseframe/strategy/StrategyFactory.java:254:        return super.onCheckStart(z, str);
+./sources/com/vivo/updaterbaseframe/strategy/StrategyFactory.java:258:    public boolean onCheckEnd(int i, boolean z, c cVar, c cVar2, c cVar3, c cVar4, c cVar5, c cVar6, String str, BaseFrameUtils.CheckTrigeType checkTrigeType) {
+./sources/com/vivo/updaterbaseframe/strategy/StrategyFactory.java:259:        com.vivo.updaterbaseframe.utils.a.a("onCheckEnd");
+./sources/com/vivo/updaterbaseframe/strategy/StrategyFactory.java:262:            if (aVarA != null && aVarA.onCheckEnd(i, z, cVar, cVar2, cVar3, cVar4, cVar5, cVar6, str, checkTrigeType) && bVar.b()) {
+./sources/com/vivo/updaterbaseframe/strategy/StrategyFactory.java:266:        return super.onCheckEnd(i, z, cVar, cVar2, cVar3, cVar4, cVar5, cVar6, str, checkTrigeType);
+./sources/com/vivo/updaterassistant/strategy/Assistant4Strategy.java:24:    public boolean onAppFeaterSetUp() {
+./sources/com/vivo/updaterassistant/strategy/Assistant4Strategy.java:26:        return super.onAppFeaterSetUp();
+./resources/AndroidManifest.xml:484:                <action android:name="com.bbk.updater.action.CHECK_INSTANTLY"/>

@@ -1,0 +1,40 @@
+./sources/androidx/recyclerview/widget/RecyclerView.java:5018:        public void attachView(View view, int i, LayoutParams layoutParams) {
+./sources/androidx/recyclerview/widget/RecyclerView.java:5028:        public void attachView(View view, int i) {
+./sources/androidx/recyclerview/widget/RecyclerView.java:5029:            attachView(view, i, (LayoutParams) view.getLayoutParams());
+./sources/androidx/recyclerview/widget/RecyclerView.java:5032:        public void attachView(View view) {
+./sources/androidx/recyclerview/widget/RecyclerView.java:5033:            attachView(view, -1);
+./sources/androidx/recyclerview/widget/RecyclerView.java:5046:            attachView(childAt, i2);
+./sources/com/bbk/local/presenter/PackageCopyPresenter.java:23:    public void attachView(IPackageCopyContract.a aVar) {
+./sources/com/bbk/local/presenter/PackageCopyPresenter.java:24:        super.attachView(aVar);
+./sources/com/bbk/mvp/base/BaseMVPPresenter.java:14:    public void attachView(V v) {
+./sources/com/bbk/mvp/base/BaseMVPPresenter.java:15:        super.attachView((b) v);
+./sources/com/bbk/mvp/base/BaseMVPActivity.java:18:            t.attachView(this);
+./sources/com/bbk/trialversion/closedbeta/presenter/ClosedBetaPresenter.java:29:    public void attachView(IClosedBetaContract.a aVar) {
+./sources/com/bbk/trialversion/closedbeta/presenter/ClosedBetaPresenter.java:30:        super.attachView(aVar);
+./sources/com/bbk/trialversion/closedbeta/presenter/ExamPresenter.java:46:    public void attachView(IExamContract.a aVar) {
+./sources/com/bbk/trialversion/closedbeta/presenter/ExamPresenter.java:47:        super.attachView(aVar);
+./sources/com/bbk/trialversion/publicbeta/presenter/PublicBetaPresenter.java:25:    public void attachView(IPublicBetaContract.a aVar) {
+./sources/com/bbk/trialversion/publicbeta/presenter/PublicBetaPresenter.java:26:        super.attachView(aVar);
+./sources/com/bbk/trialversion/trialversion/presenter/TrialVersionPresenter.java:38:    public void attachView(ITrialVersionContract.a aVar) {
+./sources/com/bbk/trialversion/trialversion/presenter/TrialVersionPresenter.java:39:        super.attachView(aVar);
+./sources/com/bbk/updater/ui/UpdateActivity.java:266:                    UpdateActivity.this.mUpdatePresenter = new UpdatePresenter();
+./sources/com/bbk/updater/ui/UpdateActivity.java:272:                        UpdateActivity.this.mUpdatePresenter.attachView((UpdateView) UpdateActivity.this.mUpdateFragment13);
+./sources/com/bbk/updater/ui/UpdateActivity.java:274:                        UpdateActivity.this.mUpdatePresenter.attachView((UpdateView) UpdateActivity.this.mUpdateFragment);
+./sources/com/bbk/updater/ui/UpdatePresenter.java:54:public class UpdatePresenter extends a<UpdateView> {
+./sources/com/bbk/updater/ui/UpdatePresenter.java:79:    public void attachView(UpdateView updateView) {
+./sources/com/bbk/updater/ui/UpdatePresenter.java:80:        super.attachView(updateView);
+./sources/com/bbk/updater/ui/UpdatePresenter.java:132:                checkUpdate();
+./sources/com/bbk/updater/ui/UpdatePresenter.java:212:        int iCheckShowInfoType = checkShowInfoType(availableFotaInfo, availableVgcInfo);
+./sources/com/bbk/updater/ui/UpdatePresenter.java:213:        if (iCheckShowInfoType != 0) {
+./sources/com/bbk/updater/ui/UpdatePresenter.java:214:            if (iCheckShowInfoType == 1) {
+./sources/com/bbk/updater/ui/UpdatePresenter.java:263:            } else if (iCheckShowInfoType == 2) {
+./sources/com/bbk/updater/ui/UpdatePresenter.java:284:            } else if (iCheckShowInfoType == 3) {
+./sources/com/bbk/updater/ui/UpdatePresenter.java:330:            fetchUpdateInfo();
+./sources/com/bbk/updater/ui/UpdatePresenter.java:901:                    fetchUpdateInfo();
+./sources/com/bbk/updater/ui/UpdatePresenter.java:1110:    private void fetchUpdateInfo() {
+./sources/com/bbk/updater/ui/UpdatePresenter.java:1124:        checkUpdate();
+./sources/com/bbk/updater/ui/UpdatePresenter.java:1176:    private void checkUpdate() {
+./sources/com/bbk/updater/ui/UpdatePresenter.java:1504:    private int checkShowInfoType(UpdateInfo updateInfo, VgcUpdateInfo vgcUpdateInfo) {
+./sources/com/bbk/updater/ui/UpdatePresenter.java:1514:        LogUtils.d(TAG, "checkShowInfoType > isFotaDownloadStart : " + z + ", isVgcDownloadStart : " + z2);
+./sources/com/bbk/updater/ui/UpdatePresenter.java:1515:        LogUtils.d(TAG, "checkShowInfoType > isFotaDownloadHang : " + z3 + ", isVgcDownloadHang : " + z4);
+./sources/com/vivo/updaterbaseframe/b/a.java:29:    public void attachView(V v) {

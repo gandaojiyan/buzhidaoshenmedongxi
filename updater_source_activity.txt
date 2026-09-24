@@ -1,0 +1,775 @@
+./sources/androidx/appcompat/widget/AppCompatHintHelper.java:10:    static InputConnection onCreateInputConnection(InputConnection inputConnection, EditorInfo editorInfo, View view) {
+./sources/androidx/appcompat/widget/AppCompatTextView.java:252:    public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
+./sources/androidx/appcompat/widget/AppCompatTextView.java:253:        return AppCompatHintHelper.onCreateInputConnection(super.onCreateInputConnection(editorInfo), editorInfo, this);
+./sources/androidx/appcompat/widget/ShareActionProvider.java:51:    public View onCreateActionView() {
+./sources/androidx/appcompat/widget/SearchView.java:1262:        public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
+./sources/androidx/appcompat/widget/SearchView.java:1263:            InputConnection inputConnectionOnCreateInputConnection = super.onCreateInputConnection(editorInfo);
+./sources/androidx/appcompat/widget/SearchView.java:1268:            return inputConnectionOnCreateInputConnection;
+./sources/androidx/appcompat/widget/AppCompatEditText.java:129:    public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
+./sources/androidx/appcompat/widget/AppCompatEditText.java:130:        return AppCompatHintHelper.onCreateInputConnection(super.onCreateInputConnection(editorInfo), editorInfo, this);
+./sources/androidx/appcompat/widget/AppCompatCheckedTextView.java:62:    public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
+./sources/androidx/appcompat/widget/AppCompatCheckedTextView.java:63:        return AppCompatHintHelper.onCreateInputConnection(super.onCreateInputConnection(editorInfo), editorInfo, this);
+./sources/androidx/appcompat/widget/SwitchCompat.java:907:    protected int[] onCreateDrawableState(int i) {
+./sources/androidx/appcompat/widget/SwitchCompat.java:908:        int[] iArrOnCreateDrawableState = super.onCreateDrawableState(i + 1);
+./sources/androidx/appcompat/widget/SwitchCompat.java:910:            mergeDrawableStates(iArrOnCreateDrawableState, CHECKED_STATE_SET);
+./sources/androidx/appcompat/widget/SwitchCompat.java:912:        return iArrOnCreateDrawableState;
+./sources/androidx/appcompat/widget/AppCompatMultiAutoCompleteTextView.java:126:    public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
+./sources/androidx/appcompat/widget/AppCompatMultiAutoCompleteTextView.java:127:        return AppCompatHintHelper.onCreateInputConnection(super.onCreateInputConnection(editorInfo), editorInfo, this);
+./sources/androidx/appcompat/widget/AppCompatAutoCompleteTextView.java:128:    public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
+./sources/androidx/appcompat/widget/AppCompatAutoCompleteTextView.java:129:        return AppCompatHintHelper.onCreateInputConnection(super.onCreateInputConnection(editorInfo), editorInfo, this);
+./sources/androidx/appcompat/widget/ActionBarContextView.java:208:                actionMode.finish();
+./sources/androidx/appcompat/app/ActionBar.java:187:    void onDestroy() {
+./sources/androidx/appcompat/app/AppCompatDialog.java:47:        delegate.onCreate(null);
+./sources/androidx/appcompat/app/AppCompatDialog.java:61:    protected void onCreate(Bundle bundle) {
+./sources/androidx/appcompat/app/AppCompatDialog.java:63:        super.onCreate(bundle);
+./sources/androidx/appcompat/app/AppCompatDialog.java:64:        getDelegate().onCreate(bundle);
+./sources/androidx/appcompat/app/AppCompatDialog.java:117:        getDelegate().onDestroy();
+./sources/androidx/appcompat/app/AlertDialog.java:111:    protected void onCreate(Bundle bundle) {
+./sources/androidx/appcompat/app/AlertDialog.java:112:        super.onCreate(bundle);
+./sources/androidx/appcompat/app/AppCompatDialogFragment.java:10:    public Dialog onCreateDialog(Bundle bundle) {
+./sources/androidx/appcompat/app/AppCompatDelegate.java:82:    public abstract void onCreate(Bundle bundle);
+./sources/androidx/appcompat/app/AppCompatDelegate.java:84:    public abstract void onDestroy();
+./sources/androidx/appcompat/app/AppCompatActivity.java:82:    protected void onCreate(Bundle bundle) {
+./sources/androidx/appcompat/app/AppCompatActivity.java:85:        delegate.onCreate(bundle);
+./sources/androidx/appcompat/app/AppCompatActivity.java:86:        super.onCreate(bundle);
+./sources/androidx/appcompat/app/AppCompatActivity.java:179:    protected void onDestroy() {
+./sources/androidx/appcompat/app/AppCompatActivity.java:180:        super.onDestroy();
+./sources/androidx/appcompat/app/AppCompatActivity.java:181:        getDelegate().onDestroy();
+./sources/androidx/appcompat/app/AppCompatActivity.java:208:    public void onCreateSupportNavigateUpTaskStack(TaskStackBuilder taskStackBuilder) {
+./sources/androidx/appcompat/app/AppCompatActivity.java:219:            onCreateSupportNavigateUpTaskStack(taskStackBuilderCreate);
+./sources/androidx/appcompat/app/AppCompatActivity.java:226:                finish();
+./sources/androidx/appcompat/app/ToolbarActionBar.java:410:            if (!this.mWindowCallback.onCreatePanelMenu(0, menu) || !this.mWindowCallback.onPreparePanel(0, null, menu)) {
+./sources/androidx/appcompat/app/ToolbarActionBar.java:439:    void onDestroy() {
+./sources/androidx/appcompat/app/ToolbarActionBar.java:481:        public View onCreatePanelView(int i) {
+./sources/androidx/appcompat/app/ToolbarActionBar.java:485:            return super.onCreatePanelView(i);
+./sources/androidx/appcompat/app/WindowDecorActionBar.java:262:            callback.onDestroyActionMode(this.mDeferredDestroyActionMode);
+./sources/androidx/appcompat/app/WindowDecorActionBar.java:462:            actionModeImpl.finish();
+./sources/androidx/appcompat/app/WindowDecorActionBar.java:467:        if (!actionModeImpl2.dispatchOnCreate()) {
+./sources/androidx/appcompat/app/WindowDecorActionBar.java:907:        public void finish() {
+./sources/androidx/appcompat/app/WindowDecorActionBar.java:915:                this.mCallback.onDestroyActionMode(this);
+./sources/androidx/appcompat/app/WindowDecorActionBar.java:938:        public boolean dispatchOnCreate() {
+./sources/androidx/appcompat/app/WindowDecorActionBar.java:941:                return this.mCallback.onCreateActionMode(this, this.mMenu);
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:265:            Configuration configurationCreateOverrideConfigurationForDayNight = createOverrideConfigurationForDayNight(context, iMapNightMode, configuration.equals(configuration2) ? null : generateConfigDelta(configuration, configuration2));
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:267:            contextThemeWrapper.applyOverrideConfiguration(configurationCreateOverrideConfigurationForDayNight);
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:292:    public void onCreate(Bundle bundle) {
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:360:                supportActionBar.onDestroy();
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:469:    public void onDestroy() {
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:514:            r0.onDestroy()
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:519:        throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.app.AppCompatDelegateImpl.onDestroy():void");
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:871:            actionMode.finish();
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:903:            actionMode.finish();
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:984:                if (callback.onCreateActionMode(standaloneActionMode, standaloneActionMode.getMenu())) {
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:1057:            actionMode.finish();
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:1190:    public final View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:1195:    public View onCreateView(String str, Context context, AttributeSet attributeSet) {
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:1196:        return onCreateView(null, str, context, attributeSet);
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:1380:            panelFeatureState.createdPanelView = windowCallback.onCreatePanelView(panelFeatureState.featureId);
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:1398:                if (!windowCallback.onCreatePanelMenu(panelFeatureState.featureId, panelFeatureState.menu)) {
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:2034:        public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:2035:            return this.mWrapped.onCreateActionMode(actionMode, menu);
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:2050:        public void onDestroyActionMode(ActionMode actionMode) {
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:2051:            this.mWrapped.onDestroyActionMode(actionMode);
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:2362:        public boolean onCreatePanelMenu(int i, Menu menu) {
+./sources/androidx/appcompat/app/AppCompatDelegateImpl.java:2364:                return super.onCreatePanelMenu(i, menu);
+./sources/androidx/appcompat/view/ActionMode.java:16:        boolean onCreateActionMode(ActionMode actionMode, Menu menu);
+./sources/androidx/appcompat/view/ActionMode.java:18:        void onDestroyActionMode(ActionMode actionMode);
+./sources/androidx/appcompat/view/ActionMode.java:23:    public abstract void finish();
+./sources/androidx/appcompat/view/WindowCallbackWrapper.java:58:    public View onCreatePanelView(int i) {
+./sources/androidx/appcompat/view/WindowCallbackWrapper.java:59:        return this.mWrapped.onCreatePanelView(i);
+./sources/androidx/appcompat/view/WindowCallbackWrapper.java:63:    public boolean onCreatePanelMenu(int i, Menu menu) {
+./sources/androidx/appcompat/view/WindowCallbackWrapper.java:64:        return this.mWrapped.onCreatePanelMenu(i, menu);
+./sources/androidx/appcompat/view/menu/MenuItemWrapperICS.java:403:        public View onCreateActionView() {
+./sources/androidx/appcompat/view/menu/MenuItemWrapperICS.java:404:            return this.mInner.onCreateActionView();
+./sources/androidx/appcompat/view/menu/MenuItemWrapperICS.java:431:        public View onCreateActionView(MenuItem menuItem) {
+./sources/androidx/appcompat/view/menu/MenuItemWrapperICS.java:432:            return this.mInner.onCreateActionView(menuItem);
+./sources/androidx/appcompat/view/menu/MenuItemImpl.java:592:        View viewOnCreateActionView = actionProvider.onCreateActionView(this);
+./sources/androidx/appcompat/view/menu/MenuItemImpl.java:593:        this.mActionView = viewOnCreateActionView;
+./sources/androidx/appcompat/view/menu/MenuItemImpl.java:594:        return viewOnCreateActionView;
+./sources/androidx/appcompat/view/menu/MenuItemImpl.java:672:            this.mActionView = actionProvider.onCreateActionView(this);
+./sources/androidx/appcompat/view/SupportActionModeWrapper.java:53:    public void finish() {
+./sources/androidx/appcompat/view/SupportActionModeWrapper.java:54:        this.mWrappedObject.finish();
+./sources/androidx/appcompat/view/SupportActionModeWrapper.java:124:        public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+./sources/androidx/appcompat/view/SupportActionModeWrapper.java:125:            return this.mWrappedCallback.onCreateActionMode(getActionModeWrapper(actionMode), getMenuWrapper(menu));
+./sources/androidx/appcompat/view/SupportActionModeWrapper.java:139:        public void onDestroyActionMode(ActionMode actionMode) {
+./sources/androidx/appcompat/view/SupportActionModeWrapper.java:140:            this.mWrappedCallback.onDestroyActionMode(getActionModeWrapper(actionMode));
+./sources/androidx/appcompat/view/StandaloneActionMode.java:84:    public void finish() {
+./sources/androidx/appcompat/view/StandaloneActionMode.java:90:        this.mCallback.onDestroyActionMode(this);
+./sources/androidx/activity/ComponentActivity.java:90:    protected void onCreate(Bundle bundle) {
+./sources/androidx/activity/ComponentActivity.java:91:        super.onCreate(bundle);
+./sources/androidx/activity/ComponentActivity.java:144:            throw new IllegalStateException("Your activity is not yet attached to the Application instance. You can't request ViewModel before onCreate call.");
+./sources/androidx/activity/ComponentActivity.java:161:            throw new IllegalStateException("Your activity is not yet attached to the Application instance. You can't request ViewModel before onCreate call.");
+./sources/androidx/core/app/JobIntentService.java:300:    public void onCreate() {
+./sources/androidx/core/app/JobIntentService.java:301:        super.onCreate();
+./sources/androidx/core/app/JobIntentService.java:338:    public void onDestroy() {
+./sources/androidx/core/app/JobIntentService.java:339:        super.onDestroy();
+./sources/androidx/core/app/NavUtils.java:40:        activity.finish();
+./sources/androidx/core/app/SharedElementCallback.java:106:    public View onCreateSnapshotView(Context context, Parcelable parcelable) {
+./sources/androidx/core/app/ActivityCompat.java:80:            activity.finish();
+./sources/androidx/core/app/ActivityCompat.java:88:            activity.finish();
+./sources/androidx/core/app/ActivityCompat.java:225:        public View onCreateSnapshotView(Context context, Parcelable parcelable) {
+./sources/androidx/core/app/ActivityCompat.java:226:            return this.mCallback.onCreateSnapshotView(context, parcelable);
+./sources/androidx/core/app/ComponentActivity.java:29:    protected void onCreate(Bundle bundle) {
+./sources/androidx/core/app/ComponentActivity.java:30:        super.onCreate(bundle);
+./sources/androidx/core/content/FileProvider.java:47:    public boolean onCreate() {
+./sources/androidx/core/graphics/drawable/IconCompat.java:288:        Icon iconCreateWithBitmap;
+./sources/androidx/core/graphics/drawable/IconCompat.java:296:                iconCreateWithBitmap = Icon.createWithBitmap((Bitmap) this.mObj1);
+./sources/androidx/core/graphics/drawable/IconCompat.java:299:                iconCreateWithBitmap = Icon.createWithResource(getResPackage(), this.mInt1);
+./sources/androidx/core/graphics/drawable/IconCompat.java:302:                iconCreateWithBitmap = Icon.createWithData((byte[]) this.mObj1, this.mInt1, this.mInt2);
+./sources/androidx/core/graphics/drawable/IconCompat.java:305:                iconCreateWithBitmap = Icon.createWithContentUri((String) this.mObj1);
+./sources/androidx/core/graphics/drawable/IconCompat.java:309:                    iconCreateWithBitmap = Icon.createWithAdaptiveBitmap((Bitmap) this.mObj1);
+./sources/androidx/core/graphics/drawable/IconCompat.java:311:                    iconCreateWithBitmap = Icon.createWithBitmap(createLegacyIconFromAdaptiveIcon((Bitmap) this.mObj1, false));
+./sources/androidx/core/graphics/drawable/IconCompat.java:323:                    iconCreateWithBitmap = Icon.createWithAdaptiveBitmap(BitmapFactory.decodeStream(uriInputStream));
+./sources/androidx/core/graphics/drawable/IconCompat.java:325:                    iconCreateWithBitmap = Icon.createWithBitmap(createLegacyIconFromAdaptiveIcon(BitmapFactory.decodeStream(uriInputStream), false));
+./sources/androidx/core/graphics/drawable/IconCompat.java:332:            iconCreateWithBitmap.setTintList(colorStateList);
+./sources/androidx/core/graphics/drawable/IconCompat.java:336:            iconCreateWithBitmap.setTintMode(mode);
+./sources/androidx/core/graphics/drawable/IconCompat.java:338:        return iconCreateWithBitmap;
+./sources/androidx/core/view/ActionProvider.java:32:    public abstract View onCreateActionView();
+./sources/androidx/core/view/ActionProvider.java:53:    public View onCreateActionView(MenuItem menuItem) {
+./sources/androidx/core/view/ActionProvider.java:54:        return onCreateActionView();
+./sources/androidx/core/view/LayoutInflaterFactory.java:10:    View onCreateView(View view, String str, Context context, AttributeSet attributeSet);
+./sources/androidx/core/view/LayoutInflaterCompat.java:25:        public View onCreateView(String str, Context context, AttributeSet attributeSet) {
+./sources/androidx/core/view/LayoutInflaterCompat.java:26:            return this.mDelegateFactory.onCreateView(null, str, context, attributeSet);
+./sources/androidx/core/view/LayoutInflaterCompat.java:30:        public View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
+./sources/androidx/core/view/LayoutInflaterCompat.java:31:            return this.mDelegateFactory.onCreateView(view, str, context, attributeSet);
+./sources/androidx/core/widget/EdgeEffectCompat.java:28:    public void finish() {
+./sources/androidx/core/widget/EdgeEffectCompat.java:29:        this.mEdgeEffect.finish();
+./sources/androidx/core/widget/TextViewCompat.java:302:        public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+./sources/androidx/core/widget/TextViewCompat.java:303:            return this.mCallback.onCreateActionMode(actionMode, menu);
+./sources/androidx/core/widget/TextViewCompat.java:318:        public void onDestroyActionMode(ActionMode actionMode) {
+./sources/androidx/core/widget/TextViewCompat.java:319:            this.mCallback.onDestroyActionMode(actionMode);
+./sources/androidx/lifecycle/FullLifecycleObserver.java:5:    void onCreate(LifecycleOwner lifecycleOwner);
+./sources/androidx/lifecycle/FullLifecycleObserver.java:7:    void onDestroy(LifecycleOwner lifecycleOwner);
+./sources/androidx/lifecycle/FullLifecycleObserver.java:9:    void onPause(LifecycleOwner lifecycleOwner);
+./sources/androidx/lifecycle/FullLifecycleObserver.java:11:    void onResume(LifecycleOwner lifecycleOwner);
+./sources/androidx/lifecycle/FullLifecycleObserverAdapter.java:57:                this.mFullLifecycleObserver.onCreate(lifecycleOwner);
+./sources/androidx/lifecycle/FullLifecycleObserverAdapter.java:63:                this.mFullLifecycleObserver.onResume(lifecycleOwner);
+./sources/androidx/lifecycle/FullLifecycleObserverAdapter.java:66:                this.mFullLifecycleObserver.onPause(lifecycleOwner);
+./sources/androidx/lifecycle/FullLifecycleObserverAdapter.java:72:                this.mFullLifecycleObserver.onDestroy(lifecycleOwner);
+./sources/androidx/lifecycle/ReportFragment.java:17:        void onCreate();
+./sources/androidx/lifecycle/ReportFragment.java:19:        void onResume();
+./sources/androidx/lifecycle/ReportFragment.java:53:            activityInitializationListener.onCreate();
+./sources/androidx/lifecycle/ReportFragment.java:65:            activityInitializationListener.onResume();
+./sources/androidx/lifecycle/ReportFragment.java:84:    public void onResume() {
+./sources/androidx/lifecycle/ReportFragment.java:85:        super.onResume();
+./sources/androidx/lifecycle/ReportFragment.java:91:    public void onPause() {
+./sources/androidx/lifecycle/ReportFragment.java:92:        super.onPause();
+./sources/androidx/lifecycle/ReportFragment.java:103:    public void onDestroy() {
+./sources/androidx/lifecycle/ReportFragment.java:104:        super.onDestroy();
+./sources/androidx/fragment/app/Fragment.java:51:public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuListener, HasDefaultViewModelProviderFactory, LifecycleOwner, ViewModelStoreOwner, SavedStateRegistryOwner {
+./sources/androidx/fragment/app/Fragment.java:125:    public Animation onCreateAnimation(int i, boolean z, int i2) {
+./sources/androidx/fragment/app/Fragment.java:129:    public Animator onCreateAnimator(int i, boolean z, int i2) {
+./sources/androidx/fragment/app/Fragment.java:133:    public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater) {
+./sources/androidx/fragment/app/Fragment.java:136:    public void onDestroyOptionsMenu() {
+./sources/androidx/fragment/app/Fragment.java:180:        throw new IllegalStateException("Can't access the Fragment View's LifecycleOwner when getView() is null i.e., before onCreateView() or after onDestroyView()");
+./sources/androidx/fragment/app/Fragment.java:766:    public void onCreate(Bundle bundle) {
+./sources/androidx/fragment/app/Fragment.java:784:    public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+./sources/androidx/fragment/app/Fragment.java:801:        throw new IllegalStateException("Fragment " + this + " did not return a View from onCreateView() or this was called before onCreateView().");
+./sources/androidx/fragment/app/Fragment.java:816:    public void onResume() {
+./sources/androidx/fragment/app/Fragment.java:825:    public void onPause() {
+./sources/androidx/fragment/app/Fragment.java:838:    public void onDestroyView() {
+./sources/androidx/fragment/app/Fragment.java:842:    public void onDestroy() {
+./sources/androidx/fragment/app/Fragment.java:869:    @Override // android.view.View.OnCreateContextMenuListener
+./sources/androidx/fragment/app/Fragment.java:870:    public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+./sources/androidx/fragment/app/Fragment.java:871:        requireActivity().onCreateContextMenu(contextMenu, view, contextMenuInfo);
+./sources/androidx/fragment/app/Fragment.java:875:        view.setOnCreateContextMenuListener(this);
+./sources/androidx/fragment/app/Fragment.java:879:        view.setOnCreateContextMenuListener(null);
+./sources/androidx/fragment/app/Fragment.java:1173:        onCreate(bundle);
+./sources/androidx/fragment/app/Fragment.java:1176:            throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onCreate()");
+./sources/androidx/fragment/app/Fragment.java:1185:        View viewOnCreateView = onCreateView(layoutInflater, viewGroup, bundle);
+./sources/androidx/fragment/app/Fragment.java:1186:        this.mView = viewOnCreateView;
+./sources/androidx/fragment/app/Fragment.java:1187:        if (viewOnCreateView != null) {
+./sources/androidx/fragment/app/Fragment.java:1192:                throw new IllegalStateException("Called getViewLifecycleOwner() but onCreateView() returned null");
+./sources/androidx/fragment/app/Fragment.java:1230:        onResume();
+./sources/androidx/fragment/app/Fragment.java:1232:            throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onResume()");
+./sources/androidx/fragment/app/Fragment.java:1282:            onCreateOptionsMenu(menu, menuInflater);
+./sources/androidx/fragment/app/Fragment.java:1340:        onPause();
+./sources/androidx/fragment/app/Fragment.java:1344:        throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onPause()");
+./sources/androidx/fragment/app/Fragment.java:1369:        onDestroyView();
+./sources/androidx/fragment/app/Fragment.java:1371:            throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onDestroyView()");
+./sources/androidx/fragment/app/Fragment.java:1383:        onDestroy();
+./sources/androidx/fragment/app/Fragment.java:1387:        throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onDestroy()");
+./sources/androidx/fragment/app/ListFragment.java:50:    public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+./sources/androidx/fragment/app/ListFragment.java:82:    public void onDestroyView() {
+./sources/androidx/fragment/app/ListFragment.java:90:        super.onDestroyView();
+./sources/androidx/fragment/app/FragmentManager.java:1669:                    fragment2.onDestroyOptionsMenu();
+./sources/androidx/fragment/app/FragmentTransitionCompat21.java:122:            public void onTransitionPause(Transition transition) {
+./sources/androidx/fragment/app/FragmentTransitionCompat21.java:126:            public void onTransitionResume(Transition transition) {
+./sources/androidx/fragment/app/FragmentTransitionCompat21.java:181:            public void onTransitionPause(Transition transition) {
+./sources/androidx/fragment/app/FragmentTransitionCompat21.java:185:            public void onTransitionResume(Transition transition) {
+./sources/androidx/fragment/app/FragmentTransitionCompat21.java:219:            public void onTransitionPause(Transition transition) {
+./sources/androidx/fragment/app/FragmentTransitionCompat21.java:223:            public void onTransitionResume(Transition transition) {
+./sources/androidx/fragment/app/DialogFragment.java:198:    public void onCreate(Bundle bundle) {
+./sources/androidx/fragment/app/DialogFragment.java:199:        super.onCreate(bundle);
+./sources/androidx/fragment/app/DialogFragment.java:219:            Dialog dialogOnCreateDialog = onCreateDialog(bundle);
+./sources/androidx/fragment/app/DialogFragment.java:220:            this.mDialog = dialogOnCreateDialog;
+./sources/androidx/fragment/app/DialogFragment.java:221:            setupDialog(dialogOnCreateDialog, this.mStyle);
+./sources/androidx/fragment/app/DialogFragment.java:243:    public Dialog onCreateDialog(Bundle bundle) {
+./sources/androidx/fragment/app/DialogFragment.java:332:    public void onDestroyView() {
+./sources/androidx/fragment/app/DialogFragment.java:333:        super.onDestroyView();
+./sources/androidx/fragment/app/FragmentAnim.java:37:        Animation animationOnCreateAnimation = fragment.onCreateAnimation(nextTransition, z, nextAnim);
+./sources/androidx/fragment/app/FragmentAnim.java:38:        if (animationOnCreateAnimation != null) {
+./sources/androidx/fragment/app/FragmentAnim.java:39:            return new AnimationOrAnimator(animationOnCreateAnimation);
+./sources/androidx/fragment/app/FragmentAnim.java:41:        Animator animatorOnCreateAnimator = fragment.onCreateAnimator(nextTransition, z, nextAnim);
+./sources/androidx/fragment/app/FragmentAnim.java:42:        if (animatorOnCreateAnimator != null) {
+./sources/androidx/fragment/app/FragmentAnim.java:43:            return new AnimationOrAnimator(animatorOnCreateAnimator);
+./sources/androidx/fragment/app/FragmentLayoutInflaterFactory.java:21:    public View onCreateView(String str, Context context, AttributeSet attributeSet) {
+./sources/androidx/fragment/app/FragmentLayoutInflaterFactory.java:22:        return onCreateView(null, str, context, attributeSet);
+./sources/androidx/fragment/app/FragmentLayoutInflaterFactory.java:26:    public View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
+./sources/androidx/fragment/app/FragmentLayoutInflaterFactory.java:56:            Log.v(TAG, "onCreateView: id=0x" + Integer.toHexString(resourceId) + " fname=" + attributeValue + " existing=" + fragmentFindFragmentById);
+./sources/androidx/fragment/app/FragmentActivity.java:130:    protected void onCreate(Bundle bundle) {
+./sources/androidx/fragment/app/FragmentActivity.java:152:        super.onCreate(bundle);
+./sources/androidx/fragment/app/FragmentActivity.java:158:    public boolean onCreatePanelMenu(int i, Menu menu) {
+./sources/androidx/fragment/app/FragmentActivity.java:160:            return this.mFragments.dispatchCreateOptionsMenu(menu, getMenuInflater()) | super.onCreatePanelMenu(i, menu);
+./sources/androidx/fragment/app/FragmentActivity.java:162:        return super.onCreatePanelMenu(i, menu);
+./sources/androidx/fragment/app/FragmentActivity.java:166:    public View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
+./sources/androidx/fragment/app/FragmentActivity.java:167:        View viewDispatchFragmentsOnCreateView = dispatchFragmentsOnCreateView(view, str, context, attributeSet);
+./sources/androidx/fragment/app/FragmentActivity.java:168:        return viewDispatchFragmentsOnCreateView == null ? super.onCreateView(view, str, context, attributeSet) : viewDispatchFragmentsOnCreateView;
+./sources/androidx/fragment/app/FragmentActivity.java:172:    public View onCreateView(String str, Context context, AttributeSet attributeSet) {
+./sources/androidx/fragment/app/FragmentActivity.java:173:        View viewDispatchFragmentsOnCreateView = dispatchFragmentsOnCreateView(null, str, context, attributeSet);
+./sources/androidx/fragment/app/FragmentActivity.java:174:        return viewDispatchFragmentsOnCreateView == null ? super.onCreateView(str, context, attributeSet) : viewDispatchFragmentsOnCreateView;
+./sources/androidx/fragment/app/FragmentActivity.java:177:    final View dispatchFragmentsOnCreateView(View view, String str, Context context, AttributeSet attributeSet) {
+./sources/androidx/fragment/app/FragmentActivity.java:178:        return this.mFragments.onCreateView(view, str, context, attributeSet);
+./sources/androidx/fragment/app/FragmentActivity.java:182:    protected void onDestroy() {
+./sources/androidx/fragment/app/FragmentActivity.java:183:        super.onDestroy();
+./sources/androidx/fragment/app/FragmentActivity.java:217:    protected void onPause() {
+./sources/androidx/fragment/app/FragmentActivity.java:218:        super.onPause();
+./sources/androidx/fragment/app/FragmentActivity.java:225:    protected void onNewIntent(Intent intent) {
+./sources/androidx/fragment/app/FragmentActivity.java:226:        super.onNewIntent(intent);
+./sources/androidx/fragment/app/FragmentActivity.java:236:    protected void onResume() {
+./sources/androidx/fragment/app/FragmentActivity.java:237:        super.onResume();
+./sources/androidx/fragment/app/FragmentActivity.java:246:        onResumeFragments();
+./sources/androidx/fragment/app/FragmentActivity.java:249:    protected void onResumeFragments() {
+./sources/androidx/fragment/app/FragmentController.java:96:    public View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
+./sources/androidx/fragment/app/FragmentController.java:97:        return this.mHost.mFragmentManager.getLayoutInflaterFactory().onCreateView(view, str, context, attributeSet);
+./sources/androidx/print/PrintHelper.java:51:        void onFinish();
+./sources/androidx/print/PrintHelper.java:138:        public void onFinish() {
+./sources/androidx/print/PrintHelper.java:141:                onPrintFinishCallback.onFinish();
+./sources/androidx/print/PrintHelper.java:262:        public void onFinish() {
+./sources/androidx/print/PrintHelper.java:263:            super.onFinish();
+./sources/androidx/print/PrintHelper.java:271:                onPrintFinishCallback.onFinish();
+./sources/androidx/recyclerview/widget/RecyclerView.java:4341:        public abstract VH onCreateViewHolder(ViewGroup viewGroup, int i);
+./sources/androidx/recyclerview/widget/RecyclerView.java:4366:                VH vh = (VH) onCreateViewHolder(viewGroup, i);
+./sources/androidx/loader/content/ModernAsyncTask.java:219:    void finish(Result result) {
+./sources/androidx/loader/content/ModernAsyncTask.java:249:                asyncTaskResult.mTask.finish(asyncTaskResult.mData[0]);
+./sources/androidx/loader/app/LoaderManagerImpl.java:318:            Loader<D> loaderOnCreateLoader = loaderCallbacks.onCreateLoader(i, bundle);
+./sources/androidx/loader/app/LoaderManagerImpl.java:319:            if (loaderOnCreateLoader == null) {
+./sources/androidx/loader/app/LoaderManagerImpl.java:320:                throw new IllegalArgumentException("Object returned from onCreateLoader must not be null");
+./sources/androidx/loader/app/LoaderManagerImpl.java:322:            if (loaderOnCreateLoader.getClass().isMemberClass() && !Modifier.isStatic(loaderOnCreateLoader.getClass().getModifiers())) {
+./sources/androidx/loader/app/LoaderManagerImpl.java:323:                throw new IllegalArgumentException("Object returned from onCreateLoader must not be a non-static inner member class: " + loaderOnCreateLoader);
+./sources/androidx/loader/app/LoaderManagerImpl.java:325:            LoaderInfo loaderInfo = new LoaderInfo(i, bundle, loaderOnCreateLoader, loader);
+./sources/androidx/loader/app/LoaderManager.java:14:        Loader<D> onCreateLoader(int i, Bundle bundle);
+./sources/androidx/transition/AnimatorUtils.java:12:        void onAnimationPause(Animator animator);
+./sources/androidx/transition/AnimatorUtils.java:14:        void onAnimationResume(Animator animator);
+./sources/androidx/transition/AnimatorUtils.java:34:                    ((AnimatorPauseListenerCompat) animatorListener).onAnimationPause(animator);
+./sources/androidx/transition/AnimatorUtils.java:51:                    ((AnimatorPauseListenerCompat) animatorListener).onAnimationResume(animator);
+./sources/androidx/transition/Visibility.java:254:        public void onAnimationPause(Animator animator) {
+./sources/androidx/transition/Visibility.java:262:        public void onAnimationResume(Animator animator) {
+./sources/androidx/transition/Visibility.java:286:        public void onTransitionPause(Transition transition) {
+./sources/androidx/transition/Visibility.java:291:        public void onTransitionResume(Transition transition) {
+./sources/androidx/transition/Transition.java:101:        void onTransitionPause(Transition transition);
+./sources/androidx/transition/Transition.java:103:        void onTransitionResume(Transition transition);
+./sources/androidx/transition/Transition.java:850:                ((TransitionListener) arrayList2.get(i2)).onTransitionPause(this);
+./sources/androidx/transition/Transition.java:873:                        ((TransitionListener) arrayList2.get(i2)).onTransitionResume(this);
+./sources/androidx/transition/TransitionListenerAdapter.java:16:    public void onTransitionPause(Transition transition) {
+./sources/androidx/transition/TransitionListenerAdapter.java:20:    public void onTransitionResume(Transition transition) {
+./sources/androidx/transition/TranslationAnimationCreator.java:58:        public void onTransitionPause(Transition transition) {
+./sources/androidx/transition/TranslationAnimationCreator.java:62:        public void onTransitionResume(Transition transition) {
+./sources/androidx/transition/TranslationAnimationCreator.java:94:        public void onAnimationPause(Animator animator) {
+./sources/androidx/transition/TranslationAnimationCreator.java:102:        public void onAnimationResume(Animator animator) {
+./sources/androidx/transition/FragmentTransitionSupport.java:117:            public void onTransitionPause(Transition transition) {
+./sources/androidx/transition/FragmentTransitionSupport.java:121:            public void onTransitionResume(Transition transition) {
+./sources/androidx/transition/ChangeBounds.java:330:                    public void onTransitionPause(Transition transition) {
+./sources/androidx/transition/ChangeBounds.java:335:                    public void onTransitionResume(Transition transition) {
+./sources/androidx/transition/ChangeTransform.java:205:            public void onAnimationPause(Animator animator) {
+./sources/androidx/transition/ChangeTransform.java:210:            public void onAnimationResume(Animator animator) {
+./sources/androidx/transition/ChangeTransform.java:386:        public void onTransitionPause(Transition transition) {
+./sources/androidx/transition/ChangeTransform.java:391:        public void onTransitionResume(Transition transition) {
+./sources/androidx/savedstate/SavedStateRegistry.java:33:            throw new IllegalStateException("You can consumeRestoredStateForKey only after super.onCreate of corresponding component");
+./sources/androidx/viewpager/widget/ViewPager.java:1571:            this.mLeftEdge.finish();
+./sources/androidx/viewpager/widget/ViewPager.java:1572:            this.mRightEdge.finish();
+./sources/androidx/viewpager2/adapter/FragmentStateAdapter.java:86:    public final FragmentViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+./sources/androidx/preference/Preference.java:315:        view.setOnCreateContextMenuListener(zIsCopyingEnabled ? this.mOnCopyListener : null);
+./sources/androidx/preference/Preference.java:1072:    private static class OnPreferenceCopyListener implements MenuItem.OnMenuItemClickListener, View.OnCreateContextMenuListener {
+./sources/androidx/preference/Preference.java:1079:        @Override // android.view.View.OnCreateContextMenuListener
+./sources/androidx/preference/Preference.java:1080:        public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+./sources/androidx/preference/PreferenceDialogFragment.java:59:    public void onCreate(Bundle bundle) {
+./sources/androidx/preference/PreferenceDialogFragment.java:60:        super.onCreate(bundle);
+./sources/androidx/preference/PreferenceDialogFragment.java:113:    public Dialog onCreateDialog(Bundle bundle) {
+./sources/androidx/preference/PreferenceDialogFragment.java:117:        View viewOnCreateDialogView = onCreateDialogView(activity);
+./sources/androidx/preference/PreferenceDialogFragment.java:118:        if (viewOnCreateDialogView != null) {
+./sources/androidx/preference/PreferenceDialogFragment.java:119:            onBindDialogView(viewOnCreateDialogView);
+./sources/androidx/preference/PreferenceDialogFragment.java:120:            negativeButton.setView(viewOnCreateDialogView);
+./sources/androidx/preference/PreferenceDialogFragment.java:145:    protected View onCreateDialogView(Context context) {
+./sources/androidx/preference/EditTextPreferenceDialogFragment.java:33:    public void onCreate(Bundle bundle) {
+./sources/androidx/preference/EditTextPreferenceDialogFragment.java:34:        super.onCreate(bundle);
+./sources/androidx/preference/ListPreferenceDialogFragment.java:31:    public void onCreate(Bundle bundle) {
+./sources/androidx/preference/ListPreferenceDialogFragment.java:32:        super.onCreate(bundle);
+./sources/androidx/preference/MultiSelectListPreferenceDialogFragment.java:36:    public void onCreate(Bundle bundle) {
+./sources/androidx/preference/MultiSelectListPreferenceDialogFragment.java:37:        super.onCreate(bundle);
+./sources/androidx/preference/PreferenceInflater.java:142:    protected Preference onCreateItem(String str, AttributeSet attributeSet) throws ClassNotFoundException {
+./sources/androidx/preference/PreferenceInflater.java:149:                return onCreateItem(str, attributeSet);
+./sources/androidx/preference/PreferenceDialogFragmentCompat.java:49:    public void onCreate(Bundle bundle) {
+./sources/androidx/preference/PreferenceDialogFragmentCompat.java:50:        super.onCreate(bundle);
+./sources/androidx/preference/PreferenceDialogFragmentCompat.java:103:    public Dialog onCreateDialog(Bundle bundle) {
+./sources/androidx/preference/PreferenceDialogFragmentCompat.java:107:        View viewOnCreateDialogView = onCreateDialogView(activity);
+./sources/androidx/preference/PreferenceDialogFragmentCompat.java:108:        if (viewOnCreateDialogView != null) {
+./sources/androidx/preference/PreferenceDialogFragmentCompat.java:109:            onBindDialogView(viewOnCreateDialogView);
+./sources/androidx/preference/PreferenceDialogFragmentCompat.java:110:            negativeButton.setView(viewOnCreateDialogView);
+./sources/androidx/preference/PreferenceDialogFragmentCompat.java:133:    protected View onCreateDialogView(Context context) {
+./sources/androidx/preference/EditTextPreferenceDialogFragmentCompat.java:27:    public void onCreate(Bundle bundle) {
+./sources/androidx/preference/EditTextPreferenceDialogFragmentCompat.java:28:        super.onCreate(bundle);
+./sources/androidx/preference/ListPreferenceDialogFragmentCompat.java:25:    public void onCreate(Bundle bundle) {
+./sources/androidx/preference/ListPreferenceDialogFragmentCompat.java:26:        super.onCreate(bundle);
+./sources/androidx/preference/MultiSelectListPreferenceDialogFragmentCompat.java:30:    public void onCreate(Bundle bundle) {
+./sources/androidx/preference/MultiSelectListPreferenceDialogFragmentCompat.java:31:        super.onCreate(bundle);
+./sources/androidx/preference/PreferenceGroupAdapter.java:230:    public PreferenceViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+./sources/androidx/preference/PreferenceFragment.java:78:    public abstract void onCreatePreferences(Bundle bundle, String str);
+./sources/androidx/preference/PreferenceFragment.java:84:    public void onCreate(Bundle bundle) {
+./sources/androidx/preference/PreferenceFragment.java:85:        super.onCreate(bundle);
+./sources/androidx/preference/PreferenceFragment.java:96:        onCreatePreferences(bundle, getArguments() != null ? getArguments().getString("androidx.preference.PreferenceFragmentCompat.PREFERENCE_ROOT") : null);
+./sources/androidx/preference/PreferenceFragment.java:100:    public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+./sources/androidx/preference/PreferenceFragment.java:114:        RecyclerView recyclerViewOnCreateRecyclerView = onCreateRecyclerView(layoutInflaterCloneInContext, viewGroup2, bundle);
+./sources/androidx/preference/PreferenceFragment.java:115:        if (recyclerViewOnCreateRecyclerView == null) {
+./sources/androidx/preference/PreferenceFragment.java:118:        this.mList = recyclerViewOnCreateRecyclerView;
+./sources/androidx/preference/PreferenceFragment.java:119:        recyclerViewOnCreateRecyclerView.addItemDecoration(this.mDividerDecoration);
+./sources/androidx/preference/PreferenceFragment.java:176:    public void onDestroyView() {
+./sources/androidx/preference/PreferenceFragment.java:183:        super.onDestroyView();
+./sources/androidx/preference/PreferenceFragment.java:272:            throw new RuntimeException("This should be called after super.onCreate.");
+./sources/androidx/preference/PreferenceFragment.java:286:            getListView().setAdapter(onCreateAdapter(preferenceScreen));
+./sources/androidx/preference/PreferenceFragment.java:306:    public RecyclerView onCreateRecyclerView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+./sources/androidx/preference/PreferenceFragment.java:312:        recyclerView2.setLayoutManager(onCreateLayoutManager());
+./sources/androidx/preference/PreferenceFragment.java:318:    public RecyclerView.LayoutManager onCreateLayoutManager() {
+./sources/androidx/preference/PreferenceFragment.java:323:    protected RecyclerView.Adapter onCreateAdapter(PreferenceScreen preferenceScreen) {
+./sources/androidx/preference/PreferenceFragmentCompat.java:73:    public abstract void onCreatePreferences(Bundle bundle, String str);
+./sources/androidx/preference/PreferenceFragmentCompat.java:79:    public void onCreate(Bundle bundle) {
+./sources/androidx/preference/PreferenceFragmentCompat.java:80:        super.onCreate(bundle);
+./sources/androidx/preference/PreferenceFragmentCompat.java:91:        onCreatePreferences(bundle, getArguments() != null ? getArguments().getString("androidx.preference.PreferenceFragmentCompat.PREFERENCE_ROOT") : null);
+./sources/androidx/preference/PreferenceFragmentCompat.java:95:    public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+./sources/androidx/preference/PreferenceFragmentCompat.java:109:        RecyclerView recyclerViewOnCreateRecyclerView = onCreateRecyclerView(layoutInflaterCloneInContext, viewGroup2, bundle);
+./sources/androidx/preference/PreferenceFragmentCompat.java:110:        if (recyclerViewOnCreateRecyclerView == null) {
+./sources/androidx/preference/PreferenceFragmentCompat.java:113:        this.mList = recyclerViewOnCreateRecyclerView;
+./sources/androidx/preference/PreferenceFragmentCompat.java:114:        recyclerViewOnCreateRecyclerView.addItemDecoration(this.mDividerDecoration);
+./sources/androidx/preference/PreferenceFragmentCompat.java:169:    public void onDestroyView() {
+./sources/androidx/preference/PreferenceFragmentCompat.java:176:        super.onDestroyView();
+./sources/androidx/preference/PreferenceFragmentCompat.java:270:            throw new RuntimeException("This should be called after super.onCreate.");
+./sources/androidx/preference/PreferenceFragmentCompat.java:284:            getListView().setAdapter(onCreateAdapter(preferenceScreen));
+./sources/androidx/preference/PreferenceFragmentCompat.java:303:    public RecyclerView onCreateRecyclerView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+./sources/androidx/preference/PreferenceFragmentCompat.java:309:        recyclerView2.setLayoutManager(onCreateLayoutManager());
+./sources/androidx/preference/PreferenceFragmentCompat.java:314:    public RecyclerView.LayoutManager onCreateLayoutManager() {
+./sources/androidx/preference/PreferenceFragmentCompat.java:318:    protected RecyclerView.Adapter onCreateAdapter(PreferenceScreen preferenceScreen) {
+./sources/com/bbk/local/activity/PackageCopyActivity.java:68:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/local/activity/PackageCopyActivity.java:70:        super.onCreate(bundle);
+./sources/com/bbk/local/activity/PackageCopyActivity.java:112:    protected void onResume() {
+./sources/com/bbk/local/activity/PackageCopyActivity.java:113:        super.onResume();
+./sources/com/bbk/local/activity/PackageCopyActivity.java:116:        LogUtils.i(TAG, "onResume");
+./sources/com/bbk/local/activity/PackageCopyActivity.java:138:    protected void onPause() {
+./sources/com/bbk/local/activity/PackageCopyActivity.java:139:        super.onPause();
+./sources/com/bbk/local/activity/PackageCopyActivity.java:142:        LogUtils.i(TAG, "onPause");
+./sources/com/bbk/local/activity/PackageCopyActivity.java:146:    protected void onDestroy() {
+./sources/com/bbk/local/activity/PackageCopyActivity.java:147:        super.onDestroy();
+./sources/com/bbk/local/activity/PackageCopyActivity.java:148:        LogUtils.i(TAG, "onDestroy");
+./sources/com/bbk/local/activity/PackageCopyActivity.java:161:        finish();
+./sources/com/bbk/local/activity/PackageCopyActivity.java:280:            finish();
+./sources/com/bbk/local/activity/PackageCopyActivity.java:455:                    PackageCopyActivity.this.finish();
+./sources/com/bbk/local/activity/LocalUpgradeActivity.java:117:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/local/activity/LocalUpgradeActivity.java:118:        super.onCreate(bundle);
+./sources/com/bbk/local/activity/LocalUpgradeActivity.java:122:        LogUtils.d(TAG, "====onCreate!");
+./sources/com/bbk/local/activity/LocalUpgradeActivity.java:127:    protected void onResume() {
+./sources/com/bbk/local/activity/LocalUpgradeActivity.java:128:        super.onResume();
+./sources/com/bbk/local/activity/LocalUpgradeActivity.java:129:        LogUtils.d(TAG, "====onResume start!");
+./sources/com/bbk/local/activity/LocalUpgradeActivity.java:145:        LogUtils.d(TAG, "====onResume!");
+./sources/com/bbk/local/activity/LocalUpgradeActivity.java:149:    protected void onPause() {
+./sources/com/bbk/local/activity/LocalUpgradeActivity.java:150:        super.onPause();
+./sources/com/bbk/local/activity/LocalUpgradeActivity.java:152:        LogUtils.d(TAG, "====onPause!");
+./sources/com/bbk/local/activity/LocalUpgradeActivity.java:612:                                LocalUpgradeActivity.this.finish();
+./sources/com/bbk/local/activity/LocalUpgradeActivity.java:642:                        LocalUpgradeActivity.this.finish();
+./sources/com/bbk/local/activity/LocalUpgradeActivity.java:734:    protected void onDestroy() {
+./sources/com/bbk/local/activity/LocalUpgradeActivity.java:735:        super.onDestroy();
+./sources/com/bbk/local/activity/LocalUpgradeActivity.java:736:        LogUtils.d(TAG, "====onDestroy!");
+./sources/com/bbk/local/service/PackageCopyService.java:48:    public void onCreate() {
+./sources/com/bbk/local/service/PackageCopyService.java:49:        super.onCreate();
+./sources/com/bbk/local/service/PackageCopyService.java:118:    public void onDestroy() {
+./sources/com/bbk/local/service/PackageCopyService.java:119:        super.onDestroy();
+./sources/com/bbk/local/service/PackageCopyService.java:120:        LogUtils.i("Updater/PackageCopyService", "onDestroy");
+./sources/com/bbk/local/service/a.java:645:            public void onFinish() {
+./sources/com/bbk/mvp/base/BaseActivity.java:17:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/mvp/base/BaseActivity.java:21:        super.onCreate(bundle);
+./sources/com/bbk/mvp/base/BaseActivity.java:29:    protected void onDestroy() {
+./sources/com/bbk/mvp/base/BaseActivity.java:30:        super.onDestroy();
+./sources/com/bbk/mvp/base/BaseMVPActivity.java:14:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/mvp/base/BaseMVPActivity.java:20:        super.onCreate(bundle);
+./sources/com/bbk/mvp/base/BaseMVPActivity.java:24:    protected void onDestroy() {
+./sources/com/bbk/mvp/base/BaseMVPActivity.java:29:        super.onDestroy();
+./sources/com/bbk/mvp/base/CustomBaseActivity.java:27:                    CustomBaseActivity.this.finish();
+./sources/com/bbk/mvp/base/CustomBaseActivity.java:41:                    CustomBaseActivity.this.finish();
+./sources/com/bbk/trialversion/closedbeta/activity/CustomClosedBetaActivity.java:25:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/trialversion/closedbeta/activity/CustomClosedBetaActivity.java:32:        super.onCreate(bundle);
+./sources/com/bbk/trialversion/closedbeta/activity/ClosedBetaActivity.java:224:    protected void onNewIntent(Intent intent) {
+./sources/com/bbk/trialversion/closedbeta/activity/ClosedBetaActivity.java:225:        super.onNewIntent(intent);
+./sources/com/bbk/trialversion/closedbeta/activity/ExamActivity.java:62:    protected void onDestroy() {
+./sources/com/bbk/trialversion/closedbeta/activity/ExamActivity.java:68:        super.onDestroy();
+./sources/com/bbk/trialversion/closedbeta/activity/ExamActivity.java:195:                    ExamActivity.this.finish();
+./sources/com/bbk/trialversion/closedbeta/activity/ExamActivity.java:209:    protected void onResume() {
+./sources/com/bbk/trialversion/closedbeta/activity/ExamActivity.java:210:        super.onResume();
+./sources/com/bbk/trialversion/closedbeta/activity/ExamActivity.java:287:                    ExamActivity.this.finish();
+./sources/com/bbk/trialversion/closedbeta/activity/ExamActivity.java:292:                    ExamActivity.this.finish();
+./sources/com/bbk/trialversion/closedbeta/activity/ExamActivity.java:305:                    ExamActivity.this.finish();
+./sources/com/bbk/trialversion/closedbeta/activity/ExamActivity.java:310:                    ExamActivity.this.finish();
+./sources/com/bbk/trialversion/closedbeta/activity/ExamActivity.java:364:    public void finish() {
+./sources/com/bbk/trialversion/closedbeta/activity/ExamActivity.java:366:        super.finish();
+./sources/com/bbk/trialversion/publicbeta/activity/CustomPublicBetaActivity.java:23:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/trialversion/publicbeta/activity/CustomPublicBetaActivity.java:30:        super.onCreate(bundle);
+./sources/com/bbk/trialversion/publicbeta/activity/PublicBetaActivity.java:245:    protected void onNewIntent(Intent intent) {
+./sources/com/bbk/trialversion/publicbeta/activity/PublicBetaActivity.java:246:        super.onNewIntent(intent);
+./sources/com/bbk/trialversion/trialversion/fragment/TrialDisclaimerListFragment.java:11:    public void onCreate(Bundle bundle) {
+./sources/com/bbk/trialversion/trialversion/fragment/TrialDisclaimerListFragment.java:12:        super.onCreate(bundle);
+./sources/com/bbk/trialversion/trialversion/activity/TrialDisclaimerListActivity.java:10:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/trialversion/trialversion/activity/TrialDisclaimerListActivity.java:11:        super.onCreate(bundle);
+./sources/com/bbk/trialversion/trialversion/activity/TrialVersionTempActivity.java:16:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/trialversion/trialversion/activity/TrialVersionTempActivity.java:17:        super.onCreate(bundle);
+./sources/com/bbk/trialversion/trialversion/activity/TrialVersionTempActivity.java:25:        finish();
+./sources/com/bbk/trialversion/trialversion/activity/TrialDisclaimerActivity.java:59:            finish();
+./sources/com/bbk/trialversion/trialversion/activity/TrialVersionActivity.java:254:    protected void onResume() {
+./sources/com/bbk/trialversion/trialversion/activity/TrialVersionActivity.java:255:        super.onResume();
+./sources/com/bbk/trialversion/trialversion/activity/TrialVersionActivity.java:440:                    TrialVersionActivity.this.finish();
+./sources/com/bbk/trialversion/trialversion/activity/TrialVersionActivity.java:505:                    TrialVersionActivity.this.finish();
+./sources/com/bbk/trialversion/trialversion/activity/TrialVersionActivity.java:511:                    TrialVersionActivity.this.finish();
+./sources/com/bbk/trialversion/trialversion/activity/TrialVersionPrivacyConfirmActivity.java:56:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/trialversion/trialversion/activity/TrialVersionPrivacyConfirmActivity.java:63:        super.onCreate(bundle);
+./sources/com/bbk/trialversion/trialversion/activity/TrialVersionPrivacyConfirmActivity.java:131:                    finish();
+./sources/com/bbk/trialversion/trialversion/activity/TrialVersionPrivacyConfirmActivity.java:139:                finish();
+./sources/com/bbk/a.java:25:                activity.finish();
+./sources/com/bbk/updater/remote/RemoteService.java:25:    public void onCreate() {
+./sources/com/bbk/updater/remote/RemoteService.java:26:        super.onCreate();
+./sources/com/bbk/updater/remote/RemoteService.java:27:        f.d("Updater/remote/RemoteService", "RemoteService onCreate");
+./sources/com/bbk/updater/remote/UpdateTipsService.java:103:    public void onCreate() {
+./sources/com/bbk/updater/remote/UpdateTipsService.java:104:        super.onCreate();
+./sources/com/bbk/updater/remote/UpdateTipsService.java:193:    public void onDestroy() {
+./sources/com/bbk/updater/remote/UpdateTipsService.java:194:        super.onDestroy();
+./sources/com/bbk/updater/remote/UpdateTipsService.java:195:        f.d("Updater/remote/UpdateTipsService", "onDestroy");
+./sources/com/bbk/updater/remote/UpdateTipsService.java:794:            public void onFinish() {
+./sources/com/bbk/updater/utils/PrefsUtils.java:332:                Gson gsonCreate = gsonBuilder.create();
+./sources/com/bbk/updater/utils/PrefsUtils.java:334:                    return putString(context, cVar.isActivePackage() ? "active_package_info" : "passivity_package_info", gsonCreate.toJson(cVar, UpdateInfo.class), Prefs.UPDATE_INFO);
+./sources/com/bbk/updater/utils/PrefsUtils.java:339:                return putString(context, cVar.isActivePackage() ? "vgc_active_package_info" : "vgc_passivity_package_info", gsonCreate.toJson(cVar, VgcUpdateInfo.class), Prefs.UPDATE_INFO);
+./sources/com/bbk/updater/utils/PopDialogUtils.java:959:            public void onFinish() {
+./sources/com/bbk/updater/search/UpdaterSearchIndexablesProvider.java:19:    public boolean onCreate() {
+./sources/com/bbk/updater/ui/widget/VerticalProgressDialog.java:31:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/updater/ui/widget/VerticalProgressDialog.java:48:        super.onCreate(bundle);
+./sources/com/bbk/updater/ui/widget/LogView.java:132:    public void onResume() {
+./sources/com/bbk/updater/ui/widget/LogView.java:135:            noScrollWebView.onResume();
+./sources/com/bbk/updater/ui/widget/LogView.java:139:    public void onPause() {
+./sources/com/bbk/updater/ui/widget/LogView.java:142:            noScrollWebView.onPause();
+./sources/com/bbk/updater/ui/widget/LogView.java:146:    public void onDestroy() {
+./sources/com/bbk/updater/ui/widget/LogView.java:147:        onDestroy(true);
+./sources/com/bbk/updater/ui/widget/LogView.java:150:    public void onDestroy(boolean z) {
+./sources/com/bbk/updater/ui/widget/LogView.java:336:                onDestroy(false);
+./sources/com/bbk/updater/ui/widget/LogView.java:341:        onDestroy();
+./sources/com/bbk/updater/ui/baseactivity/BaseActivity.java:12:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/updater/ui/baseactivity/BaseActivity.java:16:        super.onCreate(bundle);
+./sources/com/bbk/updater/ui/baseactivity/BaseActivity.java:21:    protected void onDestroy() {
+./sources/com/bbk/updater/ui/baseactivity/BaseActivity.java:22:        super.onDestroy();
+./sources/com/bbk/updater/ui/customactivity/CustomLogActivity.java:21:                CustomLogActivity.this.finish();
+./sources/com/bbk/updater/ui/customactivity/CustomSettingsActivity.java:17:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/updater/ui/customactivity/CustomSettingsActivity.java:18:        super.onCreate(bundle);
+./sources/com/bbk/updater/ui/customactivity/CustomSettingsActivity.java:23:    protected void onDestroy() {
+./sources/com/bbk/updater/ui/customactivity/CustomSettingsActivity.java:24:        super.onDestroy();
+./sources/com/bbk/updater/ui/customactivity/CustomSettingsActivity.java:36:                CustomSettingsActivity.this.finish();
+./sources/com/bbk/updater/ui/customactivity/CustomSettingsActivity.java:66:                    CustomSettingsActivity.this.finish();
+./sources/com/bbk/updater/ui/customactivity/CustomSettingsActivity.java:74:                    CustomSettingsActivity.this.finish();
+./sources/com/bbk/updater/ui/customactivity/CustomLocalUpgradeActivity.java:26:                    CustomLocalUpgradeActivity.this.finish();
+./sources/com/bbk/updater/ui/customactivity/CustomLocalUpgradeActivity.java:34:                    CustomLocalUpgradeActivity.this.finish();
+./sources/com/bbk/updater/ui/customactivity/CustomUpdateActivity.java:22:public class CustomUpdateActivity extends BaseActivity {
+./sources/com/bbk/updater/ui/customactivity/CustomUpdateActivity.java:47:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/updater/ui/customactivity/CustomUpdateActivity.java:48:        super.onCreate(bundle);
+./sources/com/bbk/updater/ui/SettingsActivity.java:12:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/updater/ui/SettingsActivity.java:13:        super.onCreate(bundle);
+./sources/com/bbk/updater/ui/UpdateTempActivity.java:10:    private static final String START_FROM_SETTINGS = "com.vivo.action.ACTION_START_UPDATEACTIVITY";
+./sources/com/bbk/updater/ui/UpdateTempActivity.java:14:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/updater/ui/UpdateTempActivity.java:15:        super.onCreate(bundle);
+./sources/com/bbk/updater/ui/UpdateTempActivity.java:20:        finish();
+./sources/com/bbk/updater/ui/UpdateView.java:49:        onCreated,
+./sources/com/bbk/updater/ui/UpdateView.java:50:        onResumed,
+./sources/com/bbk/updater/ui/UpdateView.java:51:        onPaused,
+./sources/com/bbk/updater/ui/UpdateView.java:53:        onDestroyed;
+./sources/com/bbk/updater/ui/adapter/AppListAdapter.java:36:    public VH onCreateViewHolder(ViewGroup viewGroup, int i) {
+./sources/com/bbk/updater/ui/LogLinkActivity.java:55:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/updater/ui/LogLinkActivity.java:56:        super.onCreate(bundle);
+./sources/com/bbk/updater/ui/LogLinkActivity.java:154:    protected void onResume() {
+./sources/com/bbk/updater/ui/LogLinkActivity.java:155:        super.onResume();
+./sources/com/bbk/updater/ui/LogLinkActivity.java:159:            webView.onResume();
+./sources/com/bbk/updater/ui/LogLinkActivity.java:164:    protected void onPause() {
+./sources/com/bbk/updater/ui/LogLinkActivity.java:165:        super.onPause();
+./sources/com/bbk/updater/ui/LogLinkActivity.java:169:            webView.onPause();
+./sources/com/bbk/updater/ui/LogLinkActivity.java:183:    public void onDestroy() {
+./sources/com/bbk/updater/ui/LogLinkActivity.java:184:        super.onDestroy();
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:281:    public void onCreate(Bundle bundle) {
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:282:        super.onCreate(bundle);
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:404:    public void onResume() {
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:405:        super.onResume();
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:406:        LogUtils.d(TAG, "onResume: " + this.mConfigUpgradePreference);
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:845:    public void onDestroy() {
+./sources/com/bbk/updater/ui/fragment/SettingsFragment.java:846:        super.onDestroy();
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:84:    public void onCreate(Bundle bundle) {
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:85:        super.onCreate(bundle);
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:86:        LogUtils.i(TAG, "onCreate");
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:91:    public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:92:        LogUtils.i(TAG, "onCreateView");
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:267:    public void onPause() {
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:268:        super.onPause();
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:269:        LogUtils.i(TAG, "onPause");
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:274:        this.mLogView.onPause();
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:278:    public void onResume() {
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:279:        super.onResume();
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:280:        LogUtils.i(TAG, "onResume");
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:285:        this.mLogView.onResume();
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:289:    public void onDestroy() {
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:290:        super.onDestroy();
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:291:        LogUtils.i(TAG, "onDestroy");
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:296:        this.mLogView.onDestroy();
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:386:                UpdateFragment.this.mLogView.onDestroy();
+./sources/com/bbk/updater/ui/fragment/UpdateFragment.java:522:        this.mActivity.finish();
+./sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:134:    public void onCreate(Bundle bundle) {
+./sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:135:        super.onCreate(bundle);
+./sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:136:        LogUtils.i(TAG, "onCreate");
+./sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:141:    public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+./sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:142:        LogUtils.i(TAG, "onCreateView");
+./sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:973:    public void onPause() {
+./sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:974:        super.onPause();
+./sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:975:        LogUtils.i(TAG, "onPause");
+./sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:985:    public void onResume() {
+./sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:986:        super.onResume();
+./sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:987:        LogUtils.i(TAG, "onResume");
+./sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:1000:    public void onDestroy() {
+./sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:1001:        super.onDestroy();
+./sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:1002:        LogUtils.i(TAG, "onDestroy");
+./sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:1005:            logView.onDestroy();
+./sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:1140:                    UpdateFragment13.this.mLogView.onDestroy();
+./sources/com/bbk/updater/ui/fragment/UpdateFragment13.java:1284:        this.mActivity.finish();
+./sources/com/bbk/updater/ui/UpdateActivity.java:51:public class UpdateActivity extends CustomUpdateActivity {
+./sources/com/bbk/updater/ui/UpdateActivity.java:91:                    UpdateActivity.this.finish();
+./sources/com/bbk/updater/ui/UpdateActivity.java:239:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/updater/ui/UpdateActivity.java:240:        LogUtils.i(TAG, "onCreate");
+./sources/com/bbk/updater/ui/UpdateActivity.java:241:        super.onCreate(bundle);
+./sources/com/bbk/updater/ui/UpdateActivity.java:283:    protected void onResume() {
+./sources/com/bbk/updater/ui/UpdateActivity.java:284:        LogUtils.i(TAG, "onResume");
+./sources/com/bbk/updater/ui/UpdateActivity.java:285:        super.onResume();
+./sources/com/bbk/updater/ui/UpdateActivity.java:291:            updatePresenter.onResume();
+./sources/com/bbk/updater/ui/UpdateActivity.java:296:    protected void onPause() {
+./sources/com/bbk/updater/ui/UpdateActivity.java:297:        LogUtils.i(TAG, "onPause");
+./sources/com/bbk/updater/ui/UpdateActivity.java:298:        super.onPause();
+./sources/com/bbk/updater/ui/UpdateActivity.java:302:            updatePresenter.onPause();
+./sources/com/bbk/updater/ui/UpdateActivity.java:322:    protected void onDestroy() {
+./sources/com/bbk/updater/ui/UpdateActivity.java:323:        LogUtils.i(TAG, "onDestroy");
+./sources/com/bbk/updater/ui/UpdateActivity.java:331:        super.onDestroy();
+./sources/com/bbk/updater/ui/UpdateActivity.java:335:    public void finish() {
+./sources/com/bbk/updater/ui/UpdateActivity.java:336:        super.finish();
+./sources/com/bbk/updater/ui/UpdateActivity.java:341:    protected void onNewIntent(Intent intent) {
+./sources/com/bbk/updater/ui/UpdateActivity.java:342:        LogUtils.i(TAG, "onNewIntent" + this.mUpdatePresenter);
+./sources/com/bbk/updater/ui/UpdateActivity.java:343:        super.onNewIntent(intent);
+./sources/com/bbk/updater/ui/UpdateActivity.java:688:                    UpdateActivity.this.finish();
+./sources/com/bbk/updater/ui/LogActivity.java:61:    protected void onCreate(Bundle bundle) {
+./sources/com/bbk/updater/ui/LogActivity.java:62:        super.onCreate(bundle);
+./sources/com/bbk/updater/ui/LogActivity.java:101:            finish();
+./sources/com/bbk/updater/ui/LogActivity.java:109:                finish();
+./sources/com/bbk/updater/ui/LogActivity.java:173:                    LogActivity.this.finish();
+./sources/com/bbk/updater/ui/LogActivity.java:247:        finish();
+./sources/com/bbk/updater/ui/LogActivity.java:319:    protected void onResume() {
+./sources/com/bbk/updater/ui/LogActivity.java:320:        super.onResume();
+./sources/com/bbk/updater/ui/LogActivity.java:324:            webView.onResume();
+./sources/com/bbk/updater/ui/LogActivity.java:329:    protected void onPause() {
+./sources/com/bbk/updater/ui/LogActivity.java:330:        super.onPause();
+./sources/com/bbk/updater/ui/LogActivity.java:334:            webView.onPause();
+./sources/com/bbk/updater/ui/LogActivity.java:339:    public void onDestroy() {
+./sources/com/bbk/updater/ui/LogActivity.java:340:        super.onDestroy();
+./sources/com/bbk/updater/ui/LogActivity.java:356:        finish();
+./sources/com/bbk/updater/ui/UpdatePresenter.java:103:    public void onResume() {
+./sources/com/bbk/updater/ui/UpdatePresenter.java:104:        super.onResume();
+./sources/com/bbk/updater/ui/UpdatePresenter.java:183:    public void onPause() {
+./sources/com/bbk/updater/ui/UpdatePresenter.java:184:        super.onPause();
+./sources/com/bbk/updater/ui/UpdatePresenter.java:188:    public void onDestroy() {
+./sources/com/bbk/updater/ui/UpdatePresenter.java:189:        super.onDestroy();
+./sources/com/bbk/updater/install/InstallService.java:84:    public void onCreate() {
+./sources/com/bbk/updater/install/InstallService.java:85:        super.onCreate();
+./sources/com/bbk/updater/install/InstallService.java:86:        LogUtils.i(TAG, "InstallService onCreate!");
+./sources/com/bbk/updater/install/InstallService.java:131:    public void onDestroy() {
+./sources/com/bbk/updater/install/InstallService.java:132:        super.onDestroy();
+./sources/com/bbk/updater/install/InstallService.java:137:        LogUtils.i(TAG, "InstallService onDestroy!");
+./sources/com/bbk/updater/AppFeature.java:67:    public void onCreate() {
+./sources/com/bbk/updater/AppFeature.java:68:        super.onCreate();
+./sources/com/bbk/updater/provider/RemoteContentProvider.java:41:    public boolean onCreate() {
+./sources/com/bbk/updater/provider/RemoteContentProvider.java:42:        LogUtils.i("Updater/RemoteContentProvider", "onCreate");
+./sources/com/bbk/updater/provider/InstallAndShutdownJusticeProvider.java:51:    public boolean onCreate() {
+./sources/com/bbk/updaterdsassistant/strategy/DSStrategy.java:816:                boolean z = "com.vivo.action.ACTION_START_UPDATEACTIVITY".equals(CommonUtils.getActionOfIntent(intent)) || UpdateActivity.ACTION.equals(CommonUtils.getActionOfIntent(intent));
+./sources/com/google/android/material/internal/CheckableImageButton.java:80:    public int[] onCreateDrawableState(int i) {
+./sources/com/google/android/material/internal/CheckableImageButton.java:82:            return mergeDrawableStates(super.onCreateDrawableState(i + DRAWABLE_STATE_CHECKED.length), DRAWABLE_STATE_CHECKED);
+./sources/com/google/android/material/internal/CheckableImageButton.java:84:        return super.onCreateDrawableState(i);
+./sources/com/google/android/material/internal/NavigationMenuItemView.java:214:    protected int[] onCreateDrawableState(int i) {
+./sources/com/google/android/material/internal/NavigationMenuItemView.java:215:        int[] iArrOnCreateDrawableState = super.onCreateDrawableState(i + 1);
+./sources/com/google/android/material/internal/NavigationMenuItemView.java:218:            mergeDrawableStates(iArrOnCreateDrawableState, CHECKED_STATE_SET);
+./sources/com/google/android/material/internal/NavigationMenuItemView.java:220:        return iArrOnCreateDrawableState;
+./sources/com/google/android/material/internal/NavigationMenuPresenter.java:410:        public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+./sources/com/google/android/material/bottomnavigation/BottomNavigationItemView.java:313:    public int[] onCreateDrawableState(int i) {
+./sources/com/google/android/material/bottomnavigation/BottomNavigationItemView.java:314:        int[] iArrOnCreateDrawableState = super.onCreateDrawableState(i + 1);
+./sources/com/google/android/material/bottomnavigation/BottomNavigationItemView.java:317:            mergeDrawableStates(iArrOnCreateDrawableState, CHECKED_STATE_SET);
+./sources/com/google/android/material/bottomnavigation/BottomNavigationItemView.java:319:        return iArrOnCreateDrawableState;
+./sources/com/google/android/material/datepicker/DateSelector.java:28:    View onCreateTextInputView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle, CalendarConstraints calendarConstraints, OnSelectionChangedListener<S> onSelectionChangedListener);
+./sources/com/google/android/material/datepicker/MaterialStyledDatePickerDialog.java:51:    protected void onCreate(Bundle bundle) {
+./sources/com/google/android/material/datepicker/MaterialStyledDatePickerDialog.java:52:        super.onCreate(bundle);
+./sources/com/google/android/material/datepicker/MaterialCalendar.java:78:    public void onCreate(Bundle bundle) {
+./sources/com/google/android/material/datepicker/MaterialCalendar.java:79:        super.onCreate(bundle);
+./sources/com/google/android/material/datepicker/MaterialCalendar.java:90:    public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+./sources/com/google/android/material/datepicker/MaterialTextInputPicker.java:38:    public void onCreate(Bundle bundle) {
+./sources/com/google/android/material/datepicker/MaterialTextInputPicker.java:39:        super.onCreate(bundle);
+./sources/com/google/android/material/datepicker/MaterialTextInputPicker.java:49:    public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+./sources/com/google/android/material/datepicker/MaterialTextInputPicker.java:50:        return this.dateSelector.onCreateTextInputView(layoutInflater.cloneInContext(new ContextThemeWrapper(getContext(), this.themeResId)), viewGroup, bundle, this.calendarConstraints, new OnSelectionChangedListener<S>() { // from class: com.google.android.material.datepicker.MaterialTextInputPicker.1
+./sources/com/google/android/material/datepicker/YearGridAdapter.java:33:    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+./sources/com/google/android/material/datepicker/RangeDateSelector.java:147:    public View onCreateTextInputView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle, CalendarConstraints calendarConstraints, final OnSelectionChangedListener<Pair<Long, Long>> onSelectionChangedListener) {
+./sources/com/google/android/material/datepicker/MaterialDatePicker.java:112:    public final void onCreate(Bundle bundle) {
+./sources/com/google/android/material/datepicker/MaterialDatePicker.java:113:        super.onCreate(bundle);
+./sources/com/google/android/material/datepicker/MaterialDatePicker.java:131:    public final Dialog onCreateDialog(Bundle bundle) {
+./sources/com/google/android/material/datepicker/MaterialDatePicker.java:145:    public final View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+./sources/com/google/android/material/datepicker/SingleDateSelector.java:88:    public View onCreateTextInputView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle, CalendarConstraints calendarConstraints, final OnSelectionChangedListener<Long> onSelectionChangedListener) {
+./sources/com/google/android/material/datepicker/MonthsPagerAdapter.java:62:    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+./sources/com/google/android/material/transition/platform/TransitionListenerAdapter.java:16:    public void onTransitionPause(Transition transition) {
+./sources/com/google/android/material/transition/platform/TransitionListenerAdapter.java:20:    public void onTransitionResume(Transition transition) {
+./sources/com/google/android/material/transition/platform/MaterialContainerTransformSharedElementCallback.java:54:    public View onCreateSnapshotView(Context context, Parcelable parcelable) {
+./sources/com/google/android/material/transition/platform/MaterialContainerTransformSharedElementCallback.java:58:        View viewOnCreateSnapshotView = super.onCreateSnapshotView(context, parcelable);
+./sources/com/google/android/material/transition/platform/MaterialContainerTransformSharedElementCallback.java:59:        if (viewOnCreateSnapshotView != null && (weakReference = capturedSharedElement) != null && this.shapeProvider != null && (view = weakReference.get()) != null && (shapeAppearanceModelProvideShape = this.shapeProvider.provideShape(view)) != null) {
+./sources/com/google/android/material/transition/platform/MaterialContainerTransformSharedElementCallback.java:60:            viewOnCreateSnapshotView.setTag(R.id.mtrl_motion_snapshot_view, shapeAppearanceModelProvideShape);
+./sources/com/google/android/material/transition/platform/MaterialContainerTransformSharedElementCallback.java:62:        return viewOnCreateSnapshotView;
+./sources/com/google/android/material/transition/platform/MaterialContainerTransformSharedElementCallback.java:165:                    activity.finish();
+./sources/com/google/android/material/transition/TransitionListenerAdapter.java:16:    public void onTransitionPause(Transition transition) {
+./sources/com/google/android/material/transition/TransitionListenerAdapter.java:20:    public void onTransitionResume(Transition transition) {
+./sources/com/google/android/material/timepicker/MaterialTimePicker.java:83:    public final Dialog onCreateDialog(Bundle bundle) {
+./sources/com/google/android/material/timepicker/MaterialTimePicker.java:103:    public void onCreate(Bundle bundle) {
+./sources/com/google/android/material/timepicker/MaterialTimePicker.java:104:        super.onCreate(bundle);
+./sources/com/google/android/material/timepicker/MaterialTimePicker.java:135:    public final View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+./sources/com/google/android/material/transformation/ExpandableTransformationBehavior.java:15:    protected abstract AnimatorSet onCreateExpandedStateChangeAnimation(View view, View view2, boolean z, boolean z2);
+./sources/com/google/android/material/transformation/ExpandableTransformationBehavior.java:30:        AnimatorSet animatorSetOnCreateExpandedStateChangeAnimation = onCreateExpandedStateChangeAnimation(view, view2, z, z3);
+./sources/com/google/android/material/transformation/ExpandableTransformationBehavior.java:31:        this.currentAnimation = animatorSetOnCreateExpandedStateChangeAnimation;
+./sources/com/google/android/material/transformation/ExpandableTransformationBehavior.java:32:        animatorSetOnCreateExpandedStateChangeAnimation.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.transformation.ExpandableTransformationBehavior.1
+./sources/com/google/android/material/transformation/FabTransformationScrimBehavior.java:51:    protected AnimatorSet onCreateExpandedStateChangeAnimation(View view, final View view2, final boolean z, boolean z2) {
+./sources/com/google/android/material/transformation/FabTransformationBehavior.java:50:    protected abstract FabTransformationSpec onCreateMotionSpec(Context context, boolean z);
+./sources/com/google/android/material/transformation/FabTransformationBehavior.java:87:    protected AnimatorSet onCreateExpandedStateChangeAnimation(final View view, final View view2, final boolean z, boolean z2) {
+./sources/com/google/android/material/transformation/FabTransformationBehavior.java:88:        FabTransformationSpec fabTransformationSpecOnCreateMotionSpec = onCreateMotionSpec(view2.getContext(), z);
+./sources/com/google/android/material/transformation/FabTransformationBehavior.java:96:            createElevationAnimation(view, view2, z, z2, fabTransformationSpecOnCreateMotionSpec, arrayList, arrayList2);
+./sources/com/google/android/material/transformation/FabTransformationBehavior.java:99:        createTranslationAnimation(view, view2, z, z2, fabTransformationSpecOnCreateMotionSpec, arrayList, arrayList2, rectF);
+./sources/com/google/android/material/transformation/FabTransformationBehavior.java:102:        createDependencyTranslationAnimation(view, view2, z, fabTransformationSpecOnCreateMotionSpec, arrayList);
+./sources/com/google/android/material/transformation/FabTransformationBehavior.java:103:        createIconFadeAnimation(view, view2, z, z2, fabTransformationSpecOnCreateMotionSpec, arrayList, arrayList2);
+./sources/com/google/android/material/transformation/FabTransformationBehavior.java:104:        createExpansionAnimation(view, view2, z, z2, fabTransformationSpecOnCreateMotionSpec, fWidth, fHeight, arrayList, arrayList2);
+./sources/com/google/android/material/transformation/FabTransformationBehavior.java:105:        createColorAnimation(view, view2, z, z2, fabTransformationSpecOnCreateMotionSpec, arrayList, arrayList2);
+./sources/com/google/android/material/transformation/FabTransformationBehavior.java:106:        createChildrenFadeAnimation(view, view2, z, z2, fabTransformationSpecOnCreateMotionSpec, arrayList, arrayList2);
+./sources/com/google/android/material/transformation/FabTransformationSheetBehavior.java:30:    protected FabTransformationBehavior.FabTransformationSpec onCreateMotionSpec(Context context, boolean z) {
+./sources/com/google/android/material/appbar/AppBarLayout.java:535:    protected int[] onCreateDrawableState(int i) {
+./sources/com/google/android/material/appbar/AppBarLayout.java:540:        int[] iArrOnCreateDrawableState = super.onCreateDrawableState(i + iArr.length);
+./sources/com/google/android/material/appbar/AppBarLayout.java:545:        return mergeDrawableStates(iArrOnCreateDrawableState, iArr);
+./sources/com/google/android/material/textfield/TextInputEditText.java:62:    public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
+./sources/com/google/android/material/textfield/TextInputEditText.java:63:        InputConnection inputConnectionOnCreateInputConnection = super.onCreateInputConnection(editorInfo);
+./sources/com/google/android/material/textfield/TextInputEditText.java:64:        if (inputConnectionOnCreateInputConnection != null && editorInfo.hintText == null) {
+./sources/com/google/android/material/textfield/TextInputEditText.java:67:        return inputConnectionOnCreateInputConnection;
+./sources/com/google/android/material/bottomsheet/BottomSheetDialog.java:81:    protected void onCreate(Bundle bundle) {
+./sources/com/google/android/material/bottomsheet/BottomSheetDialog.java:82:        super.onCreate(bundle);
+./sources/com/google/android/material/bottomsheet/BottomSheetDialogFragment.java:15:    public Dialog onCreateDialog(Bundle bundle) {
+./sources/com/google/android/material/chip/Chip.java:307:    protected int[] onCreateDrawableState(int i) {
+./sources/com/google/android/material/chip/Chip.java:308:        int[] iArrOnCreateDrawableState = super.onCreateDrawableState(i + 2);
+./sources/com/google/android/material/chip/Chip.java:310:            mergeDrawableStates(iArrOnCreateDrawableState, SELECTED_STATE);
+./sources/com/google/android/material/chip/Chip.java:313:            mergeDrawableStates(iArrOnCreateDrawableState, CHECKABLE_STATE_SET);
+./sources/com/google/android/material/chip/Chip.java:315:        return iArrOnCreateDrawableState;
+./sources/com/google/android/material/card/MaterialCardView.java:294:    protected int[] onCreateDrawableState(int i) {
+./sources/com/google/android/material/card/MaterialCardView.java:295:        int[] iArrOnCreateDrawableState = super.onCreateDrawableState(i + 3);
+./sources/com/google/android/material/card/MaterialCardView.java:297:            mergeDrawableStates(iArrOnCreateDrawableState, CHECKABLE_STATE_SET);
+./sources/com/google/android/material/card/MaterialCardView.java:300:            mergeDrawableStates(iArrOnCreateDrawableState, CHECKED_STATE_SET);
+./sources/com/google/android/material/card/MaterialCardView.java:303:            mergeDrawableStates(iArrOnCreateDrawableState, DRAGGED_STATE_SET);
+./sources/com/google/android/material/card/MaterialCardView.java:305:        return iArrOnCreateDrawableState;
+./sources/com/google/android/material/button/MaterialButton.java:580:    protected int[] onCreateDrawableState(int i) {
+./sources/com/google/android/material/button/MaterialButton.java:581:        int[] iArrOnCreateDrawableState = super.onCreateDrawableState(i + 2);
+./sources/com/google/android/material/button/MaterialButton.java:583:            mergeDrawableStates(iArrOnCreateDrawableState, CHECKABLE_STATE_SET);
+./sources/com/google/android/material/button/MaterialButton.java:586:            mergeDrawableStates(iArrOnCreateDrawableState, CHECKED_STATE_SET);
+./sources/com/google/android/material/button/MaterialButton.java:588:        return iArrOnCreateDrawableState;
+./sources/com/google/protobuf/MessageReflection.java:35:        Object finish();
+./sources/com/google/protobuf/MessageReflection.java:344:        public Object finish() {
+./sources/com/google/protobuf/MessageReflection.java:469:        public Object finish() {
+./sources/com/google/protobuf/MessageReflection.java:470:            throw new UnsupportedOperationException("finish() called on FieldSet object");
+./sources/com/google/protobuf/TextFormat.java:1074:                objValueOf = mergeTargetNewMergeTargetForField.finish();
+./sources/com/vivo/ic/dm/util/KeepAliveService.java:58:    public void onCreate() {
+./sources/com/vivo/ic/dm/util/KeepAliveService.java:59:        super.onCreate();
+./sources/com/vivo/ic/dm/util/KeepAliveService.java:72:    public void onDestroy() {
+./sources/com/vivo/ic/dm/util/KeepAliveService.java:73:        super.onDestroy();
+./sources/com/vivo/ic/dm/database/c.java:21:    public void onCreate(SQLiteDatabase sQLiteDatabase) {
+./sources/com/vivo/ic/dm/database/c.java:22:        VLog.i(f736a, "onCreate");
+./sources/com/vivo/ic/dm/j.java:76:    public void onCreate(SQLiteDatabase sQLiteDatabase) {
+./sources/com/vivo/ic/dm/j.java:157:            r9.onCreate(r10)     // Catch: java.lang.Throwable -> L9a java.lang.Exception -> L9c
+./sources/com/vivo/ic/dm/j.java:176:            r9.onCreate(r10)     // Catch: java.lang.Throwable -> L9a
+./sources/com/vivo/ic/dm/DownloadReceiver.java:42:            this.d.finish();
+./sources/com/vivo/ic/dm/DownloadService.java:187:    public void onCreate() {
+./sources/com/vivo/ic/dm/DownloadService.java:188:        super.onCreate();
+./sources/com/vivo/ic/dm/DownloadService.java:190:        VLog.d(str, "DownloadService onCreate");
+./sources/com/vivo/ic/dm/DownloadService.java:193:        VLog.d(str, "DownloadService onCreate mNotifier:" + this.d);
+./sources/com/vivo/ic/dm/DownloadService.java:204:    public void onDestroy() {
+./sources/com/vivo/ic/dm/DownloadService.java:209:        VLog.v(m, "Service onDestroy");
+./sources/com/vivo/ic/dm/DownloadService.java:211:        super.onDestroy();
+./sources/com/vivo/ic/dm/DownloadProvider.java:232:    public boolean onCreate() {
+./sources/com/vivo/ic/dm/DownloadProvider.java:234:        VLog.i(str, "DownloadProvider onCreate()");
+./sources/com/vivo/playersdk/ui/VivoPlayerView.java:251:    public void onPause() {
+./sources/com/vivo/push/sdk/service/LinkProxyActivity.java:18:    protected void onCreate(Bundle bundle) {
+./sources/com/vivo/push/sdk/service/LinkProxyActivity.java:22:        super.onCreate(bundle);
+./sources/com/vivo/push/sdk/service/LinkProxyActivity.java:25:            r.d("LinkProxyActivity", "enter RequestPermissionsActivity onCreate, intent is null, finish");
+./sources/com/vivo/push/sdk/service/LinkProxyActivity.java:26:            finish();
+./sources/com/vivo/push/sdk/service/LinkProxyActivity.java:40:            r.b("LinkProxyActivity", "enter onCreate error ", th);
+./sources/com/vivo/push/sdk/service/LinkProxyActivity.java:43:        r.d("LinkProxyActivity", hashCode() + " enter onCreate " + packageName);
+./sources/com/vivo/push/sdk/service/LinkProxyActivity.java:78:        finish();
+./sources/com/vivo/push/sdk/service/LinkProxyActivity.java:82:    protected void onDestroy() {
+./sources/com/vivo/push/sdk/service/LinkProxyActivity.java:83:        super.onDestroy();
+./sources/com/vivo/push/sdk/service/CommandService.java:13:    public void onCreate() {
+./sources/com/vivo/push/sdk/service/CommandService.java:14:        r.c("CommandService", getClass().getSimpleName() + " -- oncreate " + getPackageName());
+./sources/com/vivo/push/sdk/service/CommandService.java:15:        super.onCreate();
+./sources/com/vivo/push/sdk/service/CommandService.java:46:    public void onDestroy() {
+./sources/com/vivo/push/sdk/service/CommandService.java:47:        super.onDestroy();
+./sources/com/vivo/tipssdk/view/author/a.java:13:    protected void onCreate(Bundle bundle) {
+./sources/com/vivo/tipssdk/view/author/a.java:14:        super.onCreate(bundle);
+./sources/com/vivo/tipssdk/view/author/TipsDetailActivity.java:305:            TipsDetailActivity.this.finish();
+./sources/com/vivo/tipssdk/view/author/TipsDetailActivity.java:315:            TipsDetailActivity.this.finish();
+./sources/com/vivo/tipssdk/view/author/TipsDetailActivity.java:698:    protected void onCreate(Bundle bundle) {
+./sources/com/vivo/tipssdk/view/author/TipsDetailActivity.java:703:        super.onCreate(bundle);
+./sources/com/vivo/tipssdk/view/author/TipsDetailActivity.java:718:    protected void onDestroy() {
+./sources/com/vivo/tipssdk/view/author/TipsDetailActivity.java:722:        super.onDestroy();
+./sources/com/vivo/tipssdk/view/author/JsInterface.java:32:            activity.finish();
+./sources/com/vivo/tipssdk/a/b.java:145:    protected void onCreate(Bundle bundle) {
+./sources/com/vivo/tipssdk/a/b.java:151:        super.onCreate(bundle);
+./sources/com/vivo/updaterbaseframe/b/a.java:14:    public void onDestroy() {
+./sources/com/vivo/updaterbaseframe/b/a.java:17:    public void onPause() {
+./sources/com/vivo/updaterbaseframe/b/a.java:20:    public void onResume() {
+./sources/com/vivo/upgrade/library/provider/FileProvider.java:37:    public boolean onCreate() {
+./sources/com/vivo/vivoblurview/a.java:38:        Allocation allocationCreateFromBitmap = Allocation.createFromBitmap(this.b, bitmap, Allocation.MipmapControl.MIPMAP_NONE, 1);
+./sources/com/vivo/vivoblurview/a.java:39:        this.d = allocationCreateFromBitmap;
+./sources/com/vivo/vivoblurview/a.java:40:        this.e = Allocation.createTyped(this.b, allocationCreateFromBitmap.getType());
+./sources/com/vivo/vivoblurview/f.java:38:        Allocation allocationCreateFromBitmap = Allocation.createFromBitmap(this.b, bitmap, Allocation.MipmapControl.MIPMAP_NONE, 1);
+./sources/com/vivo/vivoblurview/f.java:39:        this.d = allocationCreateFromBitmap;
+./sources/com/vivo/vivoblurview/f.java:40:        this.e = Allocation.createTyped(this.b, allocationCreateFromBitmap.getType());
+./sources/com/vivo/vivoblurview/b.java:38:        Allocation allocationCreateFromBitmap = Allocation.createFromBitmap(this.b, bitmap, Allocation.MipmapControl.MIPMAP_NONE, 1);
+./sources/com/vivo/vivoblurview/b.java:39:        this.d = allocationCreateFromBitmap;
+./sources/com/vivo/vivoblurview/b.java:40:        this.e = Allocation.createTyped(this.b, allocationCreateFromBitmap.getType());
+./sources/org/apache/commons/codec/language/DaitchMokotoffSoundex.java:56:        public void finish() {
+./sources/rx/internal/schedulers/ExecutorScheduler.java:106:            final Subscription subscriptionCreate = Subscriptions.create(new Action0() { // from class: rx.internal.schedulers.ExecutorScheduler.ExecutorSchedulerWorker.1
+./sources/rx/internal/schedulers/ExecutorScheduler.java:121:                        ((ScheduledAction) subscriptionSchedule).add(subscriptionCreate);
+./sources/rx/internal/schedulers/ExecutorScheduler.java:128:                return subscriptionCreate;
+./sources/rx/internal/util/ScalarSynchronousObservable.java:36:        super(hook.onCreate(new JustOnSubscribe(t)));
+./sources/rx/internal/operators/OperatorWindowWithSize.java:63:            Subscription subscriptionCreate = Subscriptions.create(this);
+./sources/rx/internal/operators/OperatorWindowWithSize.java:64:            this.cancel = subscriptionCreate;
+./sources/rx/internal/operators/OperatorWindowWithSize.java:65:            add(subscriptionCreate);
+./sources/rx/internal/operators/OperatorWindowWithSize.java:145:            Subscription subscriptionCreate = Subscriptions.create(this);
+./sources/rx/internal/operators/OperatorWindowWithSize.java:146:            this.cancel = subscriptionCreate;
+./sources/rx/internal/operators/OperatorWindowWithSize.java:147:            add(subscriptionCreate);
+./sources/rx/internal/operators/OperatorWindowWithSize.java:249:            Subscription subscriptionCreate = Subscriptions.create(this);
+./sources/rx/internal/operators/OperatorWindowWithSize.java:250:            this.cancel = subscriptionCreate;
+./sources/rx/internal/operators/OperatorWindowWithSize.java:251:            add(subscriptionCreate);
+./sources/rx/plugins/RxJavaObservableExecutionHook.java:8:    public <T> Observable.OnSubscribe<T> onCreate(Observable.OnSubscribe<T> onSubscribe) {
+./sources/rx/plugins/RxJavaSingleExecutionHook.java:9:    public <T> Single.OnSubscribe<T> onCreate(Single.OnSubscribe<T> onSubscribe) {
+./sources/rx/plugins/RxJavaCompletableExecutionHook.java:7:    public Completable.CompletableOnSubscribe onCreate(Completable.CompletableOnSubscribe completableOnSubscribe) {
+./sources/rx/Completable.java:652:        this.onSubscribe = HOOK.onCreate(completableOnSubscribe);
+./sources/rx/Single.java:91:        return new Single<>(hook.onCreate(onSubscribe));
+./sources/rx/Observable.java:176:        return new Observable<>(hook.onCreate(onSubscribe));
+./sources/rx/Observable.java:180:        return new Observable<>(hook.onCreate(syncOnSubscribe));
+./sources/rx/Observable.java:184:        return new Observable<>(hook.onCreate(asyncOnSubscribe));
+./sources/rx/Observable.java:1189:    public final Observable<T> onExceptionResumeNext(Observable<? extends T> observable) {
+./resources/AndroidManifest.xml:155:                <action android:name="com.vivo.action.ACTION_START_UPDATEACTIVITY"/>
