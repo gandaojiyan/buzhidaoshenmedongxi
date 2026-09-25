@@ -1,0 +1,315 @@
+.method protected varargs a([Ljava/lang/Void;)Lcom/bbk/updater/bean/UpdateCheckResultInfo;
+    .registers 9
+
+    .line 123
+    invoke-direct {p0}, Lcom/bbk/updater/check/a/a;->d()Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 124
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    const-string v1, "Updater/BaseCheckUpdateTask"
+
+    if-eqz v0, :cond_1a
+
+    const-string p1, "url build wrong !"
+
+    .line 125
+    invoke-static {v1, p1}, Lcom/bbk/updater/utils/LogUtils;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    const/4 p1, 0x2
+
+    .line 126
+    iput p1, p0, Lcom/bbk/updater/check/a/a;->d:I
+
+    const-string p1, "url_null"
+
+    .line 127
+    iput-object p1, p0, Lcom/bbk/updater/check/a/a;->e:Ljava/lang/String;
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    .line 130
+    :cond_1a
+    invoke-direct {p0}, Lcom/bbk/updater/check/a/a;->e()V
+
+    .line 131
+    iget-object v0, p0, Lcom/bbk/updater/check/a/a;->a:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/bbk/updater/utils/CommonUtils;->isSystemBroken(Landroid/content/Context;)Z
+
+    move-result v0
+
+    .line 132
+    invoke-static {}, Lcom/bbk/updater/install/a/a;->a()Z
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
+
+    if-eqz v2, :cond_60
+
+    .line 133
+    iget-object v0, p0, Lcom/bbk/updater/check/a/a;->a:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/bbk/updater/install/a/a;->j(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v2, "full"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3b
+
+    :cond_39
+    :goto_39
+    move v0, v4
+
+    goto :goto_60
+
+    .line 136
+    :cond_3b
+    iget-object v0, p0, Lcom/bbk/updater/check/a/a;->a:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/bbk/updater/install/a/a;->j(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v2, "incre"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_50
+
+    .line 137
+    iget-object v0, p0, Lcom/bbk/updater/check/a/a;->a:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/bbk/updater/utils/CommonUtils;->isSystemBroken(Landroid/content/Context;)Z
+
+    move-result v0
+
+    goto :goto_60
+
+    .line 139
+    :cond_50
+    iget-object v0, p0, Lcom/bbk/updater/check/a/a;->a:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/bbk/updater/utils/CommonUtils;->isSystemBroken(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_39
+
+    invoke-static {}, Lcom/bbk/updater/install/a/a;->d()Z
+
+    move-result v0
+
+    if-nez v0, :cond_5f
+
+    goto :goto_39
+
+    :cond_5f
+    move v0, v3
+
+    .line 142
+    :cond_60
+    :goto_60
+    iget-object v2, p0, Lcom/bbk/updater/check/a/a;->a:Landroid/content/Context;
+
+    iget-boolean v5, p0, Lcom/bbk/updater/check/a/a;->b:Z
+
+    if-nez v5, :cond_6a
+
+    iget-boolean v5, p0, Lcom/bbk/updater/check/a/a;->k:Z
+
+    if-eqz v5, :cond_6b
+
+    :cond_6a
+    move v3, v4
+
+    :cond_6b
+    invoke-virtual {p0}, Lcom/bbk/updater/check/a/a;->b()Lcom/vivo/updaterbaseframe/utils/BaseFrameUtils$CheckTrigeType;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcom/bbk/updater/check/a/a;->a:Landroid/content/Context;
+
+    invoke-static {v6}, Lcom/bbk/updater/utils/CommonUtils;->isSystemBroken(Landroid/content/Context;)Z
+
+    move-result v6
+
+    xor-int/2addr v4, v6
+
+    invoke-static {v2, v3, v0, v5, v4}, Lcom/bbk/updater/utils/HttpUtils;->getUpdateRequestParams(Landroid/content/Context;ZZLcom/vivo/updaterbaseframe/utils/BaseFrameUtils$CheckTrigeType;Z)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 143
+    iget-object v2, p0, Lcom/bbk/updater/check/a/a;->a:Landroid/content/Context;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v4, ", "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "check u: "
+
+    invoke-static {v2, v1, v4, v3}, Lcom/bbk/updater/utils/LogUtils;->encryptStringLog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+
+    .line 144
+    iget-object v2, p0, Lcom/bbk/updater/check/a/a;->a:Landroid/content/Context;
+
+    const-string v3, "POST"
+
+    invoke-static {v2, p1, v0, v3}, Lcom/bbk/updater/utils/HttpUtils;->getResponse(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 146
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Get response from server: "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Lcom/bbk/updater/utils/LogUtils;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v0, "no_connected"
+
+    .line 147
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_bf
+
+    .line 148
+    iget-object v0, p0, Lcom/bbk/updater/check/a/a;->a:Landroid/content/Context;
+
+    invoke-static {v0, p1}, Lcom/bbk/updater/utils/SecurityUtils;->decryptResponse(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 150
+    :cond_bf
+    iget-object v0, p0, Lcom/bbk/updater/check/a/a;->a:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/bbk/updater/utils/VersionUtils;->isProhibitedState(Landroid/content/Context;)Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/bbk/updater/check/a/a;->l:Z
+
+    .line 151
+    iget-object v0, p0, Lcom/bbk/updater/check/a/a;->a:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/bbk/updater/utils/CommonUtils;->checkDegradeInfo(Landroid/content/Context;)Z
+
+    move-result v0
+
+    .line 153
+    iget-boolean v1, p0, Lcom/bbk/updater/check/a/a;->l:Z
+
+    const/16 v2, 0xd2
+
+    if-nez v1, :cond_e1
+
+    if-eqz v0, :cond_da
+
+    iget-boolean v0, p0, Lcom/bbk/updater/check/a/a;->b:Z
+
+    if-eqz v0, :cond_da
+
+    goto :goto_e1
+
+    .line 158
+    :cond_da
+    iget-object v0, p0, Lcom/bbk/updater/check/a/a;->a:Landroid/content/Context;
+
+    invoke-static {v0, p1}, Lcom/bbk/updater/utils/CheckResultUtils;->getCheckResultInfoFromJson(Landroid/content/Context;Ljava/lang/String;)Lcom/bbk/updater/bean/UpdateCheckResultInfo;
+
+    move-result-object v0
+
+    goto :goto_e9
+
+    .line 155
+    :cond_e1
+    :goto_e1
+    new-instance v0, Lcom/bbk/updater/bean/UpdateCheckResultInfo;
+
+    invoke-direct {v0}, Lcom/bbk/updater/bean/UpdateCheckResultInfo;-><init>()V
+
+    .line 156
+    invoke-virtual {v0, v2}, Lcom/bbk/updater/bean/UpdateCheckResultInfo;->setRetcode(I)V
+
+    .line 160
+    :goto_e9
+    invoke-static {v0}, Lcom/bbk/updater/utils/CheckResultUtils;->isCheckSucceed(Lcom/bbk/updater/bean/UpdateCheckResultInfo;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_f3
+
+    .line 161
+    invoke-direct {p0, v0, p1}, Lcom/bbk/updater/check/a/a;->a(Lcom/bbk/updater/bean/UpdateCheckResultInfo;Ljava/lang/String;)V
+
+    goto :goto_107
+
+    :cond_f3
+    if-eqz v0, :cond_104
+
+    .line 163
+    invoke-direct {p0, v0}, Lcom/bbk/updater/check/a/a;->d(Lcom/bbk/updater/bean/UpdateCheckResultInfo;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_104
+
+    .line 164
+    new-instance p1, Lcom/bbk/updater/bean/UpdateCheckResultInfo;
+
+    invoke-direct {p1}, Lcom/bbk/updater/bean/UpdateCheckResultInfo;-><init>()V
+
+    .line 165
+    invoke-virtual {p1, v2}, Lcom/bbk/updater/bean/UpdateCheckResultInfo;->setRetcode(I)V
+
+    move-object v0, p1
+
+    .line 167
+    :cond_104
+    invoke-direct {p0, v0}, Lcom/bbk/updater/check/a/a;->b(Lcom/bbk/updater/bean/UpdateCheckResultInfo;)V
+
+    :goto_107
+    return-object v0
+.end method
