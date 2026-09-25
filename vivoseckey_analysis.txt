@@ -1,0 +1,13 @@
+===== paths =====
+
+===== sha256 =====
+
+===== file =====
+
+===== strings =====
+
+========== ./*libvivoseckey.so ==========
+
+===== JNI strings =====
+
+========== ./*libvivoseckey.so ==========
