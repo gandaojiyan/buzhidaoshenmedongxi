@@ -1,0 +1,181 @@
+
+============================================================
+./2__system_app_BBKAccount_lib_arm_libvivoseckey.so
+============================================================
+
+===== ELF =====
+
+===== Program Headers =====
+readelf: warning: './2__system_app_BBKAccount_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not contained within the PT_DYNAMIC segment
+readelf: warning: './2__system_app_BBKAccount_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not at the start of PT_DYNAMIC segment
+
+Elf file type is DYN (Shared object file)
+Entry point 0x0
+There are 5 program headers, starting at offset 52
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  LOAD           0x000000 0x00000000 0x00000000 0x7ca54 0xf6404 R E 0x1000
+  LOAD           0x0f6bc8 0x000f7bc8 0x000f7bc8 0x0656c 0x0f014 RW  0x1000
+  DYNAMIC        0x0fde20 0x000fa4a0 0x000fa4a0 0x000f8 0x000f8 RW  0x4
+  EXIDX          0x0e2a84 0x000e2a84 0x000e2a84 0x05308 0x05308 R   0x4
+  LOAD           0x0fd134 0x00107134 0x00107134 0x00cd4 0x00cd4 R E 0x1000
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     readelf: error: './2__system_app_BBKAccount_lib_arm_libvivoseckey.so': invalid sh_type for string table section [index 1]: expected SHT_STRTAB, but got SHT_NOBITS
+
+===== Dynamic Section =====
+readelf: warning: './2__system_app_BBKAccount_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not contained within the PT_DYNAMIC segment
+readelf: warning: './2__system_app_BBKAccount_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not at the start of PT_DYNAMIC segment
+Dynamic section at offset 0xfde20 contains 7 entries:
+  Tag        Type     Name/Value
+readelf: warning: './2__system_app_BBKAccount_lib_arm_libvivoseckey.so': string table was not found
+  0x00000001 (NEEDED) Shared library: [<?>]
+  0x00000001 (NEEDED) Shared library: [<?>]
+  0x00000001 (NEEDED) Shared library: [<?>]
+  0x00000001 (NEEDED) Shared library: [<?>]
+  0x00000001 (NEEDED) Shared library: [<?>]
+  0x0000000e (SONAME) Library soname: [<?>]
+  0x00000000 (NULL)   0x0
+
+===== Dynamic Symbols =====
+readelf: warning: './2__system_app_BBKAccount_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not contained within the PT_DYNAMIC segment
+readelf: warning: './2__system_app_BBKAccount_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not at the start of PT_DYNAMIC segment
+
+===== All Symbols =====
+readelf: warning: './2__system_app_BBKAccount_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not contained within the PT_DYNAMIC segment
+readelf: warning: './2__system_app_BBKAccount_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not at the start of PT_DYNAMIC segment
+
+===== Strings =====
+   4607 JNI_OnLoad
+   5879 pthread_key_create
+   5a89 _Z22vivo_seckey_2021_07_26v
+   5aa5 _ZNSt8_Rb_treeISsSt4pairIKSsSsESt10_Select1stIS2_ESt4lessISsESaIS2_EE22_M_emplace_hint_uniqueIJRKSt21piecewise_construct_tSt5tupleIJRS1_EESD_IJEEEEESt17_Rb_tree_iteratorIS2_ESt23_Rb_tree_const_iteratorIS2_EDpOT_
+   5c4c _ZNSt8_Rb_treeISsSt4pairIKSsSsESt10_Select1stIS2_ESt4lessISsESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_
+   5cec _ZNSt8_Rb_treeISsSt4pairIKSsSsESt10_Select1stIS2_ESt4lessISsESaIS2_EE24_M_get_insert_unique_posERS1_
+   603a pthread_key_delete
+   791e libvivoseckey.so
+  4eb59 rAES fo
+  7515d aes/
+  75199 KEY!
+  75c97 aes.c
+  fb5b8 xF\nA[F|ZM\[]N[J/soEncryptMaxLen
+
+============================================================
+./3__system_app_IqooSecure_lib_arm_libvivoseckey.so
+============================================================
+
+===== ELF =====
+
+===== Program Headers =====
+readelf: warning: './3__system_app_IqooSecure_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not contained within the PT_DYNAMIC segment
+readelf: warning: './3__system_app_IqooSecure_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not at the start of PT_DYNAMIC segment
+
+Elf file type is DYN (Shared object file)
+Entry point 0x0
+There are 5 program headers, starting at offset 52
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  LOAD           0x000000 0x00000000 0x00000000 0x7f798 0xe23d8 R E 0x1000
+  LOAD           0x0e2c90 0x000e3c90 0x000e3c90 0x048cc 0x0cc9c RW  0x1000
+  DYNAMIC        0x0e8240 0x000e65b0 0x000e65b0 0x000f8 0x000f8 RW  0x4
+  EXIDX          0x0ceb54 0x000ceb54 0x000ceb54 0x053e8 0x053e8 R   0x4
+  LOAD           0x0e755c 0x000f155c 0x000f155c 0x00cd4 0x00cd4 R E 0x1000
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     readelf: error: './3__system_app_IqooSecure_lib_arm_libvivoseckey.so': invalid sh_type for string table section [index 1]: expected SHT_STRTAB, but got SHT_NOBITS
+
+===== Dynamic Section =====
+readelf: warning: './3__system_app_IqooSecure_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not contained within the PT_DYNAMIC segment
+readelf: warning: './3__system_app_IqooSecure_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not at the start of PT_DYNAMIC segment
+Dynamic section at offset 0xe8240 contains 7 entries:
+  Tag        Type     Name/Value
+readelf: warning: './3__system_app_IqooSecure_lib_arm_libvivoseckey.so': string table was not found
+  0x00000001 (NEEDED) Shared library: [<?>]
+  0x00000001 (NEEDED) Shared library: [<?>]
+  0x00000001 (NEEDED) Shared library: [<?>]
+  0x00000001 (NEEDED) Shared library: [<?>]
+  0x00000001 (NEEDED) Shared library: [<?>]
+  0x0000000e (SONAME) Library soname: [<?>]
+  0x00000000 (NULL)   0x0
+
+===== Dynamic Symbols =====
+readelf: warning: './3__system_app_IqooSecure_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not contained within the PT_DYNAMIC segment
+readelf: warning: './3__system_app_IqooSecure_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not at the start of PT_DYNAMIC segment
+
+===== All Symbols =====
+readelf: warning: './3__system_app_IqooSecure_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not contained within the PT_DYNAMIC segment
+readelf: warning: './3__system_app_IqooSecure_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not at the start of PT_DYNAMIC segment
+
+===== Strings =====
+   2c55 JNI_OnLoad
+   3794 pthread_key_create
+   39b5 _Z22vivo_seckey_2020_12_08v
+   3a46 _ZNSt8_Rb_treeISsSt4pairIKSsSsESt10_Select1stIS2_ESt4lessISsESaIS2_EE22_M_emplace_hint_uniqueIJRKSt21piecewise_construct_tSt5tupleIJRS1_EESD_IJEEEEESt17_Rb_tree_iteratorIS2_ESt23_Rb_tree_const_iteratorIS2_EDpOT_
+   3bf6 _ZNSt8_Rb_treeISsSt4pairIKSsSsESt10_Select1stIS2_ESt4lessISsESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_
+   3d77 _ZNSt8_Rb_treeISsSt4pairIKSsSsESt10_Select1stIS2_ESt4lessISsESaIS2_EE24_M_get_insert_unique_posERS1_
+   40ad pthread_key_delete
+   5779 libvivoseckey.so
+  50ba9 AES fo
+  780b8 e/aes/
+  78bf8 Yaes.c
+
+============================================================
+./4__system_app_BBKAppStore_lib_arm_libvivoseckey.so
+============================================================
+
+===== ELF =====
+
+===== Program Headers =====
+readelf: warning: './4__system_app_BBKAppStore_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not contained within the PT_DYNAMIC segment
+readelf: warning: './4__system_app_BBKAppStore_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not at the start of PT_DYNAMIC segment
+
+Elf file type is DYN (Shared object file)
+Entry point 0x0
+There are 4 program headers, starting at offset 52
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  LOAD           0x000000 0x00000000 0x00000000 0x952dc 0x105c48 R E 0x1000
+  LOAD           0x096ae0 0x00107ae0 0x00107ae0 0x04e04 0x0d184 RW  0x1000
+  DYNAMIC        0x09b8f4 0x0010a3f0 0x0010a3f0 0x000f8 0x000f8 RW  0x4
+  EXIDX          0x0f26dc 0x000f26dc 0x000f26dc 0x05420 0x05420 R   0x4
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     readelf: error: './4__system_app_BBKAppStore_lib_arm_libvivoseckey.so': invalid sh_type for string table section [index 1]: expected SHT_STRTAB, but got SHT_NOBITS
+
+===== Dynamic Section =====
+readelf: warning: './4__system_app_BBKAppStore_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not contained within the PT_DYNAMIC segment
+readelf: warning: './4__system_app_BBKAppStore_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not at the start of PT_DYNAMIC segment
+Dynamic section at offset 0x9b8f4 contains 7 entries:
+  Tag        Type     Name/Value
+readelf: warning: './4__system_app_BBKAppStore_lib_arm_libvivoseckey.so': string table was not found
+  0x00000001 (NEEDED) Shared library: [<?>]
+  0x00000001 (NEEDED) Shared library: [<?>]
+  0x00000001 (NEEDED) Shared library: [<?>]
+  0x00000001 (NEEDED) Shared library: [<?>]
+  0x00000001 (NEEDED) Shared library: [<?>]
+  0x0000000e (SONAME) Library soname: [<?>]
+  0x00000000 (NULL)   0x0
+
+===== Dynamic Symbols =====
+readelf: warning: './4__system_app_BBKAppStore_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not contained within the PT_DYNAMIC segment
+readelf: warning: './4__system_app_BBKAppStore_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not at the start of PT_DYNAMIC segment
+
+===== All Symbols =====
+readelf: warning: './4__system_app_BBKAppStore_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not contained within the PT_DYNAMIC segment
+readelf: warning: './4__system_app_BBKAppStore_lib_arm_libvivoseckey.so': SHT_DYNAMIC section with index 3 is not at the start of PT_DYNAMIC segment
+
+===== Strings =====
+   2aa1 JNI_OnLoad
+   35db pthread_key_create
+   367c vivo_seckey_2020_07_06
+   3959 pthread_key_delete
+   5025 libvivoseckey.so
+  8df8c aes/
+  8dfc8 KEY!
+  8eac9 Yaes
