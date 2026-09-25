@@ -1,0 +1,873 @@
+===== SDKCipher init =====
+.method private a()V
+    .registers 4
+
+    .line 121
+    iget-object v0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+
+    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/i;->c()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x4
+
+    if-eq v0, v2, :cond_26
+
+    iget-object v0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+
+    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/i;->c()I
+
+    move-result v0
+
+    if-eq v0, v1, :cond_26
+
+    iget-object v0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+
+    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/i;->c()I
+
+    move-result v0
+
+    const/4 v2, 0x3
+
+    if-ne v0, v2, :cond_1c
+
+    goto :goto_26
+
+    .line 133
+    :cond_1c
+    iget-object p0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+
+    invoke-virtual {p0}, Lcom/vivo/seckeysdk/utils/i;->e()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/vivo/seckeysdk/utils/i;->d(Ljava/lang/String;)V
+
+    return-void
+
+    .line 123
+    :cond_26
+    :goto_26
+    invoke-virtual {p0, v1}, Lcom/vivo/seckeysdk/utils/f;->d(I)I
+
+    move-result v0
+
+    if-ne v0, v1, :cond_46
+
+    .line 126
+    iget-object v0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "jnisgmain@"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+
+    invoke-virtual {p0}, Lcom/vivo/seckeysdk/utils/i;->e()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Lcom/vivo/seckeysdk/utils/i;->d(Ljava/lang/String;)V
+
+    return-void
+
+    .line 129
+    :cond_46
+    iget-object v0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "jnisgmain_v2@"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+
+    invoke-virtual {p0}, Lcom/vivo/seckeysdk/utils/i;->e()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Lcom/vivo/seckeysdk/utils/i;->d(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+===== SDKCipherNative =====
+.class public Lcom/vivo/seckeysdk/utils/SDKCipherNative;
+.super Ljava/lang/Object;
+.source "SDKCipherNative.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;,
+        Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;
+    }
+.end annotation
+
+
+# static fields
+.field public static initClass:Z = false
+
+.field public static isLoadSoOK:Z = true
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 8
+
+    .line 23
+    :try_start_0
+    invoke-static {}, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->startGetSoLoadInfoThread()V
+
+    const-string v0, "vivoseckey"
+
+    .line 24
+    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
+
+    const/4 v0, 0x1
+
+    .line 25
+    sput-boolean v0, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->isLoadSoOK:Z
+    :try_end_b
+    .catchall {:try_start_0 .. :try_end_b} :catchall_c
+
+    return-void
+
+    :catchall_c
+    move-exception v0
+
+    const/4 v1, 0x0
+
+    .line 27
+    sput-boolean v1, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->isLoadSoOK:Z
+
+    .line 28
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "Error: "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "SecurityKey"
+
+    invoke-static {v3, v2, v0}, Lcom/vivo/seckeysdk/utils/k;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 30
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/vivo/seckeysdk/utils/g;->a(Ljava/lang/String;)V
+
+    .line 31
+    instance-of v2, v0, Ljava/lang/UnsatisfiedLinkError;
+
+    if-nez v2, :cond_88
+
+    .line 35
+    invoke-static {}, Lcom/vivo/seckeysdk/utils/g;->a()[Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_87
+
+    .line 38
+    array-length v4, v2
+
+    :goto_39
+    if-ge v1, v4, :cond_87
+
+    aget-object v5, v2, v1
+
+    .line 40
+    new-instance v6, Ljava/io/File;
+
+    const-string v7, "libvivoseckey.so"
+
+    invoke-direct {v6, v5, v7}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 41
+    invoke-virtual {v6}, Ljava/io/File;->exists()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_84
+
+    .line 43
+    invoke-virtual {v6}, Ljava/io/File;->length()J
+
+    move-result-wide v1
+
+    const-wide/32 v4, 0x19000
+
+    cmp-long v1, v1, v4
+
+    if-ltz v1, :cond_56
+
+    goto :goto_87
+
+    .line 46
+    :cond_56
+    invoke-static {v6}, Lcom/vivo/seckeysdk/utils/g;->a(Ljava/io/File;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 47
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v4, "found libvivoseckey.so < 100KB, please check! so_sha256="
+
+    invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ",fileLen="
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/io/File;->length()J
+
+    move-result-wide v4
+
+    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ",soFile="
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v3, v1}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 48
+    throw v0
+
+    :cond_84
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_39
+
+    :cond_87
+    :goto_87
+    return-void
+
+    .line 33
+    :cond_88
+    throw v0
+.end method
+
+.method public constructor <init>()V
+    .registers 1
+
+    .line 15
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static cData(Landroid/content/Context;I)V
+    .registers 6
+
+    const-string v0, "SecurityKey"
+
+    const/4 v1, 0x7
+
+    const/16 v2, 0x63
+
+    const/16 v3, 0x5348
+
+    .line 136
+    :try_start_7
+    invoke-static {p0, v1, v2, v3, p1}, Lcom/vivo/seckeysdk/utils/h;->a(Landroid/content/Context;IIII)V
+
+    const-string p0, "java cData end"
+
+    .line 137
+    invoke-static {v0, p0}, Lcom/vivo/seckeysdk/utils/k;->b(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_f
+    .catchall {:try_start_7 .. :try_end_f} :catchall_10
+
+    return-void
+
+    :catchall_10
+    move-exception p0
+
+    .line 140
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    const-string v1, "Error: "
+
+    invoke-direct {p1, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {v0, p1, p0}, Lcom/vivo/seckeysdk/utils/k;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public static collectCert(Ljava/lang/String;)[Landroid/content/pm/Signature;
+    .registers 4
+
+    const/4 v0, 0x0
+
+    .line 101
+    :try_start_1
+    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_20
+
+    const-string v1, ".apk"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+
+===== keyVersion =====
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-32-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-33-    .line 10
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-34-    iput-object v1, p0, Lcom/vivo/seckeysdk/utils/NativeRequest;->data:[B
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-35-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-36-    .line 11
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-37-    iput v0, p0, Lcom/vivo/seckeysdk/utils/NativeRequest;->keyVersion:I
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-38-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-39-    return-void
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-40-.end method
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-41-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-42-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-43-# virtual methods
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-44-.method public getData()[B
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-45-    .registers 1
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-46-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-47-    .line 42
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-48-    iget-object p0, p0, Lcom/vivo/seckeysdk/utils/NativeRequest;->data:[B
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-49-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-50-    return-object p0
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-51-.end method
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-52-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-53-.method public getEncryptType()I
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-54-    .registers 1
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-55-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-56-    .line 34
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-57-    iget p0, p0, Lcom/vivo/seckeysdk/utils/NativeRequest;->encryptType:I
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-58-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-59-    return p0
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-60-.end method
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-61-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali:62:.method public getKeyVersion()I
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-63-    .registers 1
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-64-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-65-    .line 18
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-66-    iget p0, p0, Lcom/vivo/seckeysdk/utils/NativeRequest;->keyVersion:I
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-67-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-68-    return p0
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-69-.end method
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-70-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-71-.method public getOperateType()I
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-72-    .registers 1
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-73-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-74-    .line 26
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-75-    iget p0, p0, Lcom/vivo/seckeysdk/utils/NativeRequest;->operateType:I
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-76-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-77-    return p0
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-78-.end method
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-79-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-80-.method public setData([B)V
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-81-    .registers 2
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-82-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-83-    .line 46
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-84-    iput-object p1, p0, Lcom/vivo/seckeysdk/utils/NativeRequest;->data:[B
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-85-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-86-    return-void
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-87-.end method
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-88-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-89-.method public setEncryptType(I)V
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-90-    .registers 2
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-91-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-92-    .line 38
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-93-    iput p1, p0, Lcom/vivo/seckeysdk/utils/NativeRequest;->encryptType:I
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-94-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-95-    return-void
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-96-.end method
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-97-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali:98:.method public setKeyVersion(I)V
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-99-    .registers 2
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-100-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-101-    .line 22
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-102-    iput p1, p0, Lcom/vivo/seckeysdk/utils/NativeRequest;->keyVersion:I
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-103-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-104-    return-void
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-105-.end method
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-106-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-107-.method public setOperateType(I)V
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-108-    .registers 2
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-109-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-110-    .line 30
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-111-    iput p1, p0, Lcom/vivo/seckeysdk/utils/NativeRequest;->operateType:I
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-112-
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-113-    return-void
+classes_out/com/vivo/seckeysdk/utils/NativeRequest.smali-114-.end method
+--
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-7-.field private err:I
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-8-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-9-.field private keyVersion:I
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-10-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-11-.field private output:[B
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-12-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-13-.field private pubicKeyHash:[B
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-14-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-15-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-16-# direct methods
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-17-.method public constructor <init>()V
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-18-    .registers 1
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-19-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-20-    .line 13
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-21-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-22-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-23-    return-void
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-24-.end method
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-25-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-26-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-27-# virtual methods
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-28-.method public getErr()I
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-29-    .registers 1
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-30-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-31-    .line 18
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-32-    iget p0, p0, Lcom/vivo/seckeysdk/utils/NativeResponse;->err:I
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-33-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-34-    return p0
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-35-.end method
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-36-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali:37:.method public getKeyVersion()I
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-38-    .registers 1
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-39-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-40-    .line 37
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-41-    iget p0, p0, Lcom/vivo/seckeysdk/utils/NativeResponse;->keyVersion:I
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-42-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-43-    return p0
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-44-.end method
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-45-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-46-.method public getOutput()[B
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-47-    .registers 1
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-48-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-49-    .line 26
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-50-    iget-object p0, p0, Lcom/vivo/seckeysdk/utils/NativeResponse;->output:[B
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-51-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-52-    return-object p0
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-53-.end method
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-54-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-55-.method public getPubicKeyHash()[B
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-56-    .registers 1
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-57-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-58-    .line 45
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-59-    iget-object p0, p0, Lcom/vivo/seckeysdk/utils/NativeResponse;->pubicKeyHash:[B
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-60-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-61-    return-object p0
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-62-.end method
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-63-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-64-.method public setErr(I)V
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-65-    .registers 2
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-66-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-67-    .line 22
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-68-    iput p1, p0, Lcom/vivo/seckeysdk/utils/NativeResponse;->err:I
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-69-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-70-    return-void
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-71-.end method
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-72-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali:73:.method public setKeyVersion(I)V
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-74-    .registers 2
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-75-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-76-    .line 41
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-77-    iput p1, p0, Lcom/vivo/seckeysdk/utils/NativeResponse;->keyVersion:I
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-78-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-79-    return-void
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-80-.end method
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-81-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-82-.method public setOutput([B)V
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-83-    .registers 4
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-84-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-85-    if-eqz p1, :cond_5
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-86-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-87-    .line 30
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-88-    array-length v0, p1
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-89-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-90-    if-nez v0, :cond_c
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-91-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-92-    :cond_5
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-93-    const-string v0, "SecurityKey"
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-94-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-95-    const-string v1, "output is null"
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-96-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-97-    .line 31
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-98-    invoke-static {v0, v1}, Lcom/vivo/seckeysdk/utils/k;->a(Ljava/lang/String;Ljava/lang/String;)V
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-99-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-100-    .line 33
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-101-    :cond_c
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-102-    iput-object p1, p0, Lcom/vivo/seckeysdk/utils/NativeResponse;->output:[B
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-103-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-104-    return-void
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-105-.end method
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-106-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-107-.method public setPubicKeyHash([B)V
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-108-    .registers 2
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-109-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-110-    .line 49
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-111-    iput-object p1, p0, Lcom/vivo/seckeysdk/utils/NativeResponse;->pubicKeyHash:[B
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-112-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-113-    return-void
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-114-.end method
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-115-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-116-.method public toString()Ljava/lang/String;
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-117-    .registers 5
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-118-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-119-    .line 54
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-120-    new-instance v0, Ljava/lang/StringBuilder;
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-121-
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-122-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+classes_out/com/vivo/seckeysdk/utils/NativeResponse.smali-123-
+--
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-249-    invoke-static {v0}, Lcom/vivo/seckeysdk/a/d;->a(I)Lcom/vivo/seckeysdk/a/a;
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-250-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-251-    move-result-object v0
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-252-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-253-    .line 97
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-254-    iget v1, p0, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->mKeyVersion:I
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-255-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-256-    invoke-interface {v0, v1}, Lcom/vivo/seckeysdk/a/a;->b(I)V
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-257-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-258-    .line 99
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-259-    iget v1, p0, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->mType:I
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-260-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-261-    invoke-interface {v0, v1}, Lcom/vivo/seckeysdk/a/a;->a(I)V
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-262-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-263-    .line 101
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-264-    iget-object p0, p0, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->mToken:Ljava/lang/String;
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-265-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-266-    invoke-interface {v0, p0}, Lcom/vivo/seckeysdk/a/a;->a(Ljava/lang/String;)V
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-267-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-268-    .line 103
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-269-    invoke-interface {v0}, Lcom/vivo/seckeysdk/a/a;->h()[B
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-270-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-271-    .line 104
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-272-    invoke-interface {v0}, Lcom/vivo/seckeysdk/a/a;->b()[B
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-273-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-274-    move-result-object p0
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-275-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-276-    return-object p0
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-277-.end method
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-278-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali:279:.method public getKeyVersion()I
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-280-    .registers 1
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-281-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-282-    .line 27
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-283-    iget p0, p0, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->mKeyVersion:I
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-284-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-285-    return p0
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-286-.end method
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-287-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-288-.method public getToken()Ljava/lang/String;
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-289-    .registers 1
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-290-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-291-    .line 51
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-292-    iget-object p0, p0, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->mToken:Ljava/lang/String;
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-293-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-294-    return-object p0
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-295-.end method
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-296-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-297-.method public getType()I
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-298-    .registers 1
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-299-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-300-    .line 35
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-301-    iget p0, p0, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->mType:I
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-302-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-303-    return p0
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-304-.end method
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-305-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-306-.method public getbytes()[B
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-307-    .registers 3
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-308-    .annotation system Ldalvik/annotation/Throws;
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-309-        value = {
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-310-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-311-        }
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-312-    .end annotation
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-313-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-314-    const/4 v0, 0x1
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-315-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-316-    .line 80
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-317-    invoke-static {v0}, Lcom/vivo/seckeysdk/a/d;->a(I)Lcom/vivo/seckeysdk/a/a;
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-318-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-319-    move-result-object v0
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-320-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-321-    .line 82
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-322-    iget v1, p0, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->mKeyVersion:I
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-323-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-324-    invoke-interface {v0, v1}, Lcom/vivo/seckeysdk/a/a;->b(I)V
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-325-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-326-    .line 84
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-327-    iget v1, p0, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->mType:I
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-328-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-329-    invoke-interface {v0, v1}, Lcom/vivo/seckeysdk/a/a;->a(I)V
+--
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-331-    .line 86
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-332-    iget-object v1, p0, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->mData:[B
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-333-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-334-    invoke-interface {v0, v1}, Lcom/vivo/seckeysdk/a/a;->a([B)V
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-335-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-336-    .line 88
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-337-    iget-object p0, p0, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->mToken:Ljava/lang/String;
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-338-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-339-    invoke-interface {v0, p0}, Lcom/vivo/seckeysdk/a/a;->a(Ljava/lang/String;)V
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-340-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-341-    .line 90
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-342-    invoke-interface {v0}, Lcom/vivo/seckeysdk/a/a;->h()[B
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-343-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-344-    .line 91
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-345-    invoke-interface {v0}, Lcom/vivo/seckeysdk/a/a;->a()[B
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-346-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-347-    move-result-object p0
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-348-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-349-    return-object p0
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-350-.end method
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-351-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-352-.method public setData([B)V
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-353-    .registers 2
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-354-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-355-    .line 47
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-356-    iput-object p1, p0, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->mData:[B
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-357-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-358-    return-void
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-359-.end method
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-360-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali:361:.method public setKeyVersion(I)V
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-362-    .registers 2
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-363-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-364-    .line 31
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-365-    iput p1, p0, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->mKeyVersion:I
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-366-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-367-    return-void
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-368-.end method
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-369-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-370-.method public setToken(Ljava/lang/String;)V
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-371-    .registers 2
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-372-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-373-    .line 55
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-374-    iput-object p1, p0, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->mToken:Ljava/lang/String;
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-375-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-376-    return-void
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-377-.end method
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-378-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-379-.method public setType(I)V
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-380-    .registers 2
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-381-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-382-    .line 39
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-383-    iput p1, p0, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->mType:I
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-384-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-385-    return-void
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-386-.end method
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-387-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-388-.method public toString()Ljava/lang/String;
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-389-    .registers 5
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-390-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-391-    .line 59
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-392-    new-instance v0, Ljava/lang/StringBuffer;
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-393-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-394-    invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-395-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-396-    .line 60
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-397-    new-instance v1, Ljava/lang/StringBuilder;
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-398-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-399-    const-string v2, "ProtocolPackage keyVersion "
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-400-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-401-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-402-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-403-    iget v2, p0, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->mKeyVersion:I
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-404-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-405-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-406-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-407-    const-string v2, ","
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-408-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-409-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-410-
+classes_out/com/vivo/seckeysdk/utils/ProtocolPackage.smali-411-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+--
+classes_out/com/vivo/seckeysdk/utils/f.smali-197-    move-result-object v1
+classes_out/com/vivo/seckeysdk/utils/f.smali-198-
+classes_out/com/vivo/seckeysdk/utils/f.smali-199-    invoke-static {p0, v1}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+classes_out/com/vivo/seckeysdk/utils/f.smali-200-
+classes_out/com/vivo/seckeysdk/utils/f.smali-201-    goto :goto_dd
+classes_out/com/vivo/seckeysdk/utils/f.smali-202-
+classes_out/com/vivo/seckeysdk/utils/f.smali-203-    .line 1092
+classes_out/com/vivo/seckeysdk/utils/f.smali-204-    :cond_8d
+classes_out/com/vivo/seckeysdk/utils/f.smali-205-    invoke-static {}, Lcom/vivo/seckeysdk/utils/f;->g()Ljava/lang/String;
+classes_out/com/vivo/seckeysdk/utils/f.smali-206-
+classes_out/com/vivo/seckeysdk/utils/f.smali-207-    move-result-object v4
+classes_out/com/vivo/seckeysdk/utils/f.smali-208-
+classes_out/com/vivo/seckeysdk/utils/f.smali-209-    .line 1093
+classes_out/com/vivo/seckeysdk/utils/f.smali-210-    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+classes_out/com/vivo/seckeysdk/utils/f.smali-211-
+classes_out/com/vivo/seckeysdk/utils/f.smali-212-    move-result v5
+classes_out/com/vivo/seckeysdk/utils/f.smali-213-
+classes_out/com/vivo/seckeysdk/utils/f.smali-214-    if-eqz v5, :cond_99
+classes_out/com/vivo/seckeysdk/utils/f.smali-215-
+classes_out/com/vivo/seckeysdk/utils/f.smali-216-    const-string v4, "Unknown"
+classes_out/com/vivo/seckeysdk/utils/f.smali-217-
+classes_out/com/vivo/seckeysdk/utils/f.smali-218-    .line 1100
+classes_out/com/vivo/seckeysdk/utils/f.smali-219-    :cond_99
+classes_out/com/vivo/seckeysdk/utils/f.smali-220-    iget-object v5, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+classes_out/com/vivo/seckeysdk/utils/f.smali-221-
+classes_out/com/vivo/seckeysdk/utils/f.smali-222-    invoke-virtual {v5, v4}, Lcom/vivo/seckeysdk/utils/i;->a(Ljava/lang/String;)V
+classes_out/com/vivo/seckeysdk/utils/f.smali-223-
+classes_out/com/vivo/seckeysdk/utils/f.smali-224-    .line 1102
+classes_out/com/vivo/seckeysdk/utils/f.smali-225-    iget-object v4, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+classes_out/com/vivo/seckeysdk/utils/f.smali-226-
+classes_out/com/vivo/seckeysdk/utils/f.smali:227:    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getKeyVersion()I
+classes_out/com/vivo/seckeysdk/utils/f.smali-228-
+classes_out/com/vivo/seckeysdk/utils/f.smali-229-    move-result v5
+classes_out/com/vivo/seckeysdk/utils/f.smali-230-
+classes_out/com/vivo/seckeysdk/utils/f.smali-231-    invoke-virtual {v4, v5}, Lcom/vivo/seckeysdk/utils/i;->b(I)V
+classes_out/com/vivo/seckeysdk/utils/f.smali-232-
+classes_out/com/vivo/seckeysdk/utils/f.smali-233-    .line 1104
+classes_out/com/vivo/seckeysdk/utils/f.smali-234-    iget-object v4, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+classes_out/com/vivo/seckeysdk/utils/f.smali-235-
+classes_out/com/vivo/seckeysdk/utils/f.smali-236-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getPubicKeyHash()[B
+classes_out/com/vivo/seckeysdk/utils/f.smali-237-
+classes_out/com/vivo/seckeysdk/utils/f.smali-238-    move-result-object v1
+classes_out/com/vivo/seckeysdk/utils/f.smali-239-
+classes_out/com/vivo/seckeysdk/utils/f.smali-240-    invoke-static {v1}, Lcom/vivo/seckeysdk/utils/b;->a([B)Ljava/lang/String;
+classes_out/com/vivo/seckeysdk/utils/f.smali-241-
+classes_out/com/vivo/seckeysdk/utils/f.smali-242-    move-result-object v1
+classes_out/com/vivo/seckeysdk/utils/f.smali-243-
+classes_out/com/vivo/seckeysdk/utils/f.smali-244-    invoke-virtual {v4, v1}, Lcom/vivo/seckeysdk/utils/i;->b(Ljava/lang/String;)V
+classes_out/com/vivo/seckeysdk/utils/f.smali-245-
+classes_out/com/vivo/seckeysdk/utils/f.smali-246-    .line 1106
+classes_out/com/vivo/seckeysdk/utils/f.smali-247-    iget-object v1, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+classes_out/com/vivo/seckeysdk/utils/f.smali-248-
+classes_out/com/vivo/seckeysdk/utils/f.smali-249-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/i;->b()Landroid/content/Context;
+classes_out/com/vivo/seckeysdk/utils/f.smali-250-
+classes_out/com/vivo/seckeysdk/utils/f.smali-251-    move-result-object v1
+classes_out/com/vivo/seckeysdk/utils/f.smali-252-
+classes_out/com/vivo/seckeysdk/utils/f.smali-253-    invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+classes_out/com/vivo/seckeysdk/utils/f.smali-254-
+classes_out/com/vivo/seckeysdk/utils/f.smali-255-    move-result-object v1
+classes_out/com/vivo/seckeysdk/utils/f.smali-256-
+classes_out/com/vivo/seckeysdk/utils/f.smali-257-    if-nez v1, :cond_c8
+classes_out/com/vivo/seckeysdk/utils/f.smali-258-
+classes_out/com/vivo/seckeysdk/utils/f.smali-259-    const-string p0, "SecurityKey"
+classes_out/com/vivo/seckeysdk/utils/f.smali-260-
+classes_out/com/vivo/seckeysdk/utils/f.smali-261-    const-string v1, "sdk cipher packageName fail"
+classes_out/com/vivo/seckeysdk/utils/f.smali-262-
+classes_out/com/vivo/seckeysdk/utils/f.smali-263-    .line 1108
+classes_out/com/vivo/seckeysdk/utils/f.smali-264-    invoke-static {p0, v1}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+classes_out/com/vivo/seckeysdk/utils/f.smali-265-
+classes_out/com/vivo/seckeysdk/utils/f.smali-266-    goto :goto_dd
+classes_out/com/vivo/seckeysdk/utils/f.smali-267-
+classes_out/com/vivo/seckeysdk/utils/f.smali-268-    .line 1111
+classes_out/com/vivo/seckeysdk/utils/f.smali-269-    :cond_c8
+classes_out/com/vivo/seckeysdk/utils/f.smali-270-    iget-object v3, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+classes_out/com/vivo/seckeysdk/utils/f.smali-271-
+classes_out/com/vivo/seckeysdk/utils/f.smali-272-    invoke-virtual {v3}, Lcom/vivo/seckeysdk/utils/i;->d()V
+classes_out/com/vivo/seckeysdk/utils/f.smali-273-
+classes_out/com/vivo/seckeysdk/utils/f.smali-274-    .line 1112
+classes_out/com/vivo/seckeysdk/utils/f.smali-275-    iget-object v3, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+classes_out/com/vivo/seckeysdk/utils/f.smali-276-
+classes_out/com/vivo/seckeysdk/utils/f.smali-277-    invoke-virtual {v3, v1}, Lcom/vivo/seckeysdk/utils/i;->c(Ljava/lang/String;)V
+--
+classes_out/com/vivo/seckeysdk/utils/f.smali-562-    .line 252
+classes_out/com/vivo/seckeysdk/utils/f.smali-563-    invoke-static {}, Lcom/vivo/seckeysdk/utils/f;->i()V
+classes_out/com/vivo/seckeysdk/utils/f.smali-564-
+classes_out/com/vivo/seckeysdk/utils/f.smali-565-    .line 254
+classes_out/com/vivo/seckeysdk/utils/f.smali-566-    new-instance v0, Lcom/vivo/seckeysdk/utils/NativeRequest;
+classes_out/com/vivo/seckeysdk/utils/f.smali-567-
+classes_out/com/vivo/seckeysdk/utils/f.smali-568-    invoke-direct {v0}, Lcom/vivo/seckeysdk/utils/NativeRequest;-><init>()V
+classes_out/com/vivo/seckeysdk/utils/f.smali-569-
+classes_out/com/vivo/seckeysdk/utils/f.smali-570-    .line 255
+classes_out/com/vivo/seckeysdk/utils/f.smali-571-    sget-object v1, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->ENCRYPT:Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;
+classes_out/com/vivo/seckeysdk/utils/f.smali-572-
+classes_out/com/vivo/seckeysdk/utils/f.smali-573-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->ordinal()I
+classes_out/com/vivo/seckeysdk/utils/f.smali-574-
+classes_out/com/vivo/seckeysdk/utils/f.smali-575-    move-result v1
+classes_out/com/vivo/seckeysdk/utils/f.smali-576-
+classes_out/com/vivo/seckeysdk/utils/f.smali-577-    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setOperateType(I)V
+classes_out/com/vivo/seckeysdk/utils/f.smali-578-
+classes_out/com/vivo/seckeysdk/utils/f.smali-579-    .line 256
+classes_out/com/vivo/seckeysdk/utils/f.smali-580-    sget-object v1, Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;->AES:Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;
+classes_out/com/vivo/seckeysdk/utils/f.smali-581-
+classes_out/com/vivo/seckeysdk/utils/f.smali-582-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;->ordinal()I
+classes_out/com/vivo/seckeysdk/utils/f.smali-583-
+classes_out/com/vivo/seckeysdk/utils/f.smali-584-    move-result v1
+classes_out/com/vivo/seckeysdk/utils/f.smali-585-
+classes_out/com/vivo/seckeysdk/utils/f.smali-586-    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setEncryptType(I)V
+classes_out/com/vivo/seckeysdk/utils/f.smali-587-
+classes_out/com/vivo/seckeysdk/utils/f.smali-588-    .line 257
+classes_out/com/vivo/seckeysdk/utils/f.smali-589-    invoke-virtual {v0, p1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setData([B)V
+classes_out/com/vivo/seckeysdk/utils/f.smali-590-
+classes_out/com/vivo/seckeysdk/utils/f.smali-591-    .line 258
+classes_out/com/vivo/seckeysdk/utils/f.smali:592:    invoke-virtual {v0, p3}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setKeyVersion(I)V
+classes_out/com/vivo/seckeysdk/utils/f.smali-593-
+classes_out/com/vivo/seckeysdk/utils/f.smali-594-    const/4 p1, 0x0
+classes_out/com/vivo/seckeysdk/utils/f.smali-595-
+classes_out/com/vivo/seckeysdk/utils/f.smali-596-    .line 261
+classes_out/com/vivo/seckeysdk/utils/f.smali-597-    :cond_21
+classes_out/com/vivo/seckeysdk/utils/f.smali-598-    invoke-static {v0}, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->execute(Lcom/vivo/seckeysdk/utils/NativeRequest;)Lcom/vivo/seckeysdk/utils/NativeResponse;
+classes_out/com/vivo/seckeysdk/utils/f.smali-599-
+classes_out/com/vivo/seckeysdk/utils/f.smali-600-    move-result-object p3
+classes_out/com/vivo/seckeysdk/utils/f.smali-601-
+classes_out/com/vivo/seckeysdk/utils/f.smali-602-    const/4 v1, 0x4
+classes_out/com/vivo/seckeysdk/utils/f.smali-603-
+classes_out/com/vivo/seckeysdk/utils/f.smali-604-    const/16 v2, 0x5340
+classes_out/com/vivo/seckeysdk/utils/f.smali-605-
+classes_out/com/vivo/seckeysdk/utils/f.smali-606-    add-int/lit8 p1, p1, 0x1
+classes_out/com/vivo/seckeysdk/utils/f.smali-607-
+classes_out/com/vivo/seckeysdk/utils/f.smali-608-    .line 262
+classes_out/com/vivo/seckeysdk/utils/f.smali-609-    invoke-direct {p0, v1, v2, p1, p3}, Lcom/vivo/seckeysdk/utils/f;->a(IIILcom/vivo/seckeysdk/utils/NativeResponse;)Z
+classes_out/com/vivo/seckeysdk/utils/f.smali-610-
+classes_out/com/vivo/seckeysdk/utils/f.smali-611-    move-result v1
+classes_out/com/vivo/seckeysdk/utils/f.smali-612-
+classes_out/com/vivo/seckeysdk/utils/f.smali-613-    if-nez v1, :cond_21
