@@ -1,0 +1,31 @@
+===== original =====
+9fe935d19950fef8597f4f07faba94cc5d26d33e03cb033225e533755d45bdc4  ./1__system_priv-app_VivoBrowser_lib_arm64_libvivoseckey.so
+
+===== repaired =====
+dd627a27827d933695aaeb9e8781c93c8eb0f6d4b2930e75aa3f398fb243d863  ./libvivoseckey_arm64_repaired.so
+
+===== sections =====
+readelf: warning: './libvivoseckey_arm64_repaired.so': SHT_DYNAMIC section with index 3 is not contained within the PT_DYNAMIC segment
+readelf: warning: './libvivoseckey_arm64_repaired.so': SHT_DYNAMIC section with index 3 is not at the start of PT_DYNAMIC segment
+There are 4 section headers, starting at offset 0x995f0:
+
+Section Headers:
+  [Nr] Name              Type            Address          Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            0000000000000000 000000 000000 00      0   0  0
+  [ 1]                   STRTAB          0000000000000000 000000 0996f0 00      0   0  0
+  [ 2]                   STRTAB          0000000000004d80 004d80 002664 00   A  0   0  1
+  [ 3]                   DYNAMIC         0000000000099510 099510 0001e0 10  WA  2   0  8
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  R (retain), y (purecode), p (processor specific)
+
+===== dynsym =====
+readelf: warning: './libvivoseckey_arm64_repaired.so': SHT_DYNAMIC section with index 3 is not contained within the PT_DYNAMIC segment
+readelf: warning: './libvivoseckey_arm64_repaired.so': SHT_DYNAMIC section with index 3 is not at the start of PT_DYNAMIC segment
+
+===== JNI_OnLoad disassembly =====
+
+./libvivoseckey_arm64_repaired.so:	file format elf64-littleaarch64
+llvm-objdump: warning: './libvivoseckey_arm64_repaired.so': no section overlaps the range [0x1b644,0x1bb40) specified by --start-address/--stop-address

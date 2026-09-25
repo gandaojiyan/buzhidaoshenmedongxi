@@ -1,0 +1,3 @@
+
+./libvivoseckey_arm64_repaired.so:	file format elf64-littleaarch64
+llvm-objdump: warning: './libvivoseckey_arm64_repaired.so': no section overlaps the range [0x1b644,0x1bb40) specified by --start-address/--stop-address
