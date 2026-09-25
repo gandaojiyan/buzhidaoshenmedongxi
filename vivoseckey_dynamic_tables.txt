@@ -1,0 +1,22 @@
+===== PT_DYNAMIC =====
+offset = 0x99510
+size   = 0x1e0
+
+file=0x99510 tag=0x1 DT_NEEDED            value=0x25ee
+file=0x99520 tag=0x1 DT_NEEDED            value=0x25f8
+file=0x99530 tag=0x1 DT_NEEDED            value=0x2600
+file=0x99540 tag=0x1 DT_NEEDED            value=0x2608
+file=0x99550 tag=0x1 DT_NEEDED            value=0x2615
+file=0x99560 tag=0xe DT_SONAME            value=0x2653
+file=0x99570 tag=0x0 DT_NULL              value=0x0
+
+===== Important Dynamic Values =====
+DT_STRTAB    = NOT PRESENT
+DT_SYMTAB    = NOT PRESENT
+DT_STRSZ     = NOT PRESENT
+DT_SYMENT    = NOT PRESENT
+DT_HASH      = NOT PRESENT
+DT_JMPREL    = NOT PRESENT
+
+
+===== Check JNI_OnLoad in actual DT_SYMTAB =====
