@@ -1,0 +1,2419 @@
+===== SDKCipher class =====
+.class public final Lcom/vivo/seckeysdk/utils/f;
+.super Ljava/lang/Object;
+.source "SDKCipher.java"
+
+# interfaces
+.implements Lcom/vivo/seckeysdk/utils/a;
+
+
+# static fields
+.field private static volatile b:Lcom/vivo/seckeysdk/utils/f;
+
+
+# instance fields
+.field private a:Lcom/vivo/seckeysdk/utils/i;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 0
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .registers 2
+
+    .line 47
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    .line 43
+    iput-object v0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+
+    return-void
+.end method
+
+.method public static declared-synchronized a(Landroid/content/Context;)Lcom/vivo/seckeysdk/utils/f;
+    .registers 7
+
+    const-class v0, Lcom/vivo/seckeysdk/utils/f;
+
+    monitor-enter v0
+
+    .line 52
+    :try_start_3
+    sget-object v1, Lcom/vivo/seckeysdk/utils/f;->b:Lcom/vivo/seckeysdk/utils/f;
+
+    if-eqz v1, :cond_b
+
+    .line 53
+    sget-object p0, Lcom/vivo/seckeysdk/utils/f;->b:Lcom/vivo/seckeysdk/utils/f;
+    :try_end_9
+    .catchall {:try_start_3 .. :try_end_9} :catchall_e7
+
+    monitor-exit v0
+
+    return-object p0
+
+    .line 55
+    :cond_b
+    :try_start_b
+    new-instance v1, Lcom/vivo/seckeysdk/utils/f;
+
+    invoke-direct {v1}, Lcom/vivo/seckeysdk/utils/f;-><init>()V
+
+    .line 56
+    sput-object v1, Lcom/vivo/seckeysdk/utils/f;->b:Lcom/vivo/seckeysdk/utils/f;
+
+    new-instance v2, Lcom/vivo/seckeysdk/utils/i;
+
+    invoke-direct {v2}, Lcom/vivo/seckeysdk/utils/i;-><init>()V
+
+    iput-object v2, v1, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+
+    .line 57
+    sget-object v1, Lcom/vivo/seckeysdk/utils/f;->b:Lcom/vivo/seckeysdk/utils/f;
+
+    iget-object v1, v1, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+
+    invoke-virtual {v1, p0}, Lcom/vivo/seckeysdk/utils/i;->a(Landroid/content/Context;)V
+
+    .line 59
+    sget-object p0, Lcom/vivo/seckeysdk/utils/f;->b:Lcom/vivo/seckeysdk/utils/f;
+
+    .line 1066
+    iget-object v1, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    if-eqz v1, :cond_d6
+
+    iget-object v1, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+
+    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/i;->b()Landroid/content/Context;
+
+    move-result-object v1
+
+    if-nez v1, :cond_32
+
+    goto/16 :goto_d6
+
+    .line 1071
+    :cond_32
+    sput-boolean v2, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->initClass:Z
+
+    .line 1072
+    sget-boolean v1, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->isLoadSoOK:Z
+
+    if-nez v1, :cond_41
+
+    const-string p0, "SecurityKey"
+
+    const-string v1, "SDKCipherNative libvivoseckey.so is load failed, please check!"
+
+    .line 1074
+    invoke-static {p0, v1}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_de
+
+    .line 1078
+    :cond_41
+    iget-object v1, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+
+    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/i;->b()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->init(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5a
+
+    const-string p0, "SecurityKey"
+
+    const-string v1, "SDKCipherNative init fail!"
+
+    .line 1079
+    invoke-static {p0, v1}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_dd
+
+    .line 1083
+    :cond_5a
+    new-instance v1, Lcom/vivo/seckeysdk/utils/NativeRequest;
+
+    invoke-direct {v1}, Lcom/vivo/seckeysdk/utils/NativeRequest;-><init>()V
+
+    .line 1084
+    sget-object v4, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->GET_UNIQUE_ID:Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;
+
+    invoke-virtual {v4}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->ordinal()I
+
+    move-result v4
+
+    invoke-virtual {v1, v4}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setOperateType(I)V
+
+    .line 1085
+    invoke-virtual {v1, v3}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setEncryptType(I)V
+
+    .line 1086
+    invoke-static {v1}, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->execute(Lcom/vivo/seckeysdk/utils/NativeRequest;)Lcom/vivo/seckeysdk/utils/NativeResponse;
+
+    move-result-object v1
+
+    .line 1087
+    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+
+    move-result v4
+
+    if-eqz v4, :cond_8d
+
+    const-string p0, "SecurityKey"
+
+===== METHODS =====
+18:.method static constructor <clinit>()V
+24:.method private constructor <init>()V
+38:.method public static declared-synchronized a(Landroid/content/Context;)Lcom/vivo/seckeysdk/utils/f;
+324:.method private a()V
+433:.method private a(IIILcom/vivo/seckeysdk/utils/NativeResponse;)Z
+554:.method private a([BII)[B
+712:.method private b([BII)[B
+870:.method private static g()Ljava/lang/String;
+1363:.method private static i()V
+1398:.method private static j()[B
+1418:.method public final a(Z)Z
+1426:.method public final a([B[B)Z
+1483:.method public final a([B)[B
+1510:.method public final a([BI)[B
+1528:.method public final a([BLjava/lang/String;)[B
+1606:.method public final b()I
+1619:.method public final b(Ljava/lang/String;)Z
+1639:.method public final b([B[B)Z
+1829:.method public final b([B)[B
+2090:.method public final b([BI)[B
+2250:.method public final b([BLjava/lang/String;)[B
+2266:.method public final c()Ljava/lang/String;
+2279:.method public final c(I)Z
+2322:.method public final c([B)[B
+2346:.method public final c([BI)[B
+2500:.method public final c([BLjava/lang/String;)[B
+2516:.method public final d(I)I
+2529:.method public final d()Z
+2542:.method public final d([B)[B
+2745:.method public final e()Ljava/lang/String;
+2765:.method public final e(I)[B
+2792:.method public final e([B)[B
+2829:.method public final f()Z
+2837:.method public final f(I)[B
+2995:.method public final f([B)[B
+3019:.method public final g([B)[B
+3205:.method public final h()Ljava/lang/String;
+3218:.method public final h([B)[B
+
+===== AES IMPLEMENTATION =====
+1463-    move-result-object p0
+1464-
+1465-    .line 588
+1466-    invoke-static {p0}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->buildProtocolPackage([B)Lcom/vivo/seckeysdk/utils/ProtocolPackage;
+1467-
+1468-    move-result-object p0
+1469-
+1470-    .line 589
+1471-    invoke-virtual {p0}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getCipherData()[B
+1472-
+1473-    move-result-object p0
+1474-
+1475-    .line 590
+1476-    invoke-static {p0, p2}, Ljava/util/Arrays;->equals([B[B)Z
+1477-
+1478-    move-result p0
+1479-
+1480-    return p0
+1481-.end method
+1482-
+1483:.method public final a([B)[B
+1484-    .registers 4
+1485-    .annotation system Ldalvik/annotation/Throws;
+1486-        value = {
+1487-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+1488-        }
+1489-    .end annotation
+1490-
+1491-    .line 243
+1492-    iget-object v0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+1493-
+1494-    const/4 v1, 0x1
+1495-
+1496-    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/i;->a(I)I
+1497-
+1498-    move-result v0
+1499-
+1500-    const/4 v1, 0x5
+1501-
+1502-    .line 1247
+1503-    invoke-direct {p0, p1, v1, v0}, Lcom/vivo/seckeysdk/utils/f;->a([BII)[B
+1504-
+1505-    move-result-object p0
+1506-
+1507-    return-object p0
+1508-.end method
+1509-
+1510-.method public final a([BI)[B
+1511-    .registers 4
+1512-    .annotation system Ldalvik/annotation/Throws;
+1513-        value = {
+1514-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+1515-        }
+1516-    .end annotation
+1517-
+1518-    const/4 v0, 0x5
+1519-
+1520-    .line 247
+1521-    invoke-direct {p0, p1, v0, p2}, Lcom/vivo/seckeysdk/utils/f;->a([BII)[B
+1522-
+1523-    move-result-object p0
+1524-
+1525-    return-object p0
+1526-.end method
+1527-
+1528-.method public final a([BLjava/lang/String;)[B
+1529-    .registers 6
+1530-    .annotation system Ldalvik/annotation/Throws;
+1531-        value = {
+1532-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+1533-        }
+1534-    .end annotation
+1535-
+1536-    const-string v0, "encryptionType"
+1537-
+1538-    const/4 v1, 0x5
+1539-
+1540-    .line 283
+1541-    :try_start_3
+1542-    new-instance v2, Lorg/json/JSONObject;
+1543-
+1544-    invoke-direct {v2, p2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+1545-
+1546-    .line 284
+1547-    invoke-virtual {v2, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+1548-
+1549-    move-result p2
+1550-
+1551-    if-eqz p2, :cond_2c
+1552-
+1553-    .line 285
+1554-    invoke-virtual {v2, v0}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+1555-
+1556-    move-result p2
+1557-    :try_end_12
+1558-    .catch Lorg/json/JSONException; {:try_start_3 .. :try_end_12} :catch_14
+1559-
+1560-    move v1, p2
+1561-
+1562-    goto :goto_2c
+1563-
+1564-    :catch_14
+1565-    move-exception p2
+1566-
+1567-    .line 288
+1568-    new-instance v0, Ljava/lang/StringBuilder;
+1569-
+1570-    const-string v2, "Error: "
+1571-
+1572-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+1573-
+1574-    invoke-virtual {p2}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
+1575-
+1576-    move-result-object v2
+1577-
+1578-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+1579-
+1580-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+1581-
+1582-    move-result-object v0
+1583-
+1584-    const-string v2, "SecurityKey"
+1585-
+1586-    invoke-static {v2, v0, p2}, Lcom/vivo/seckeysdk/utils/k;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+1587-
+1588-    .line 290
+1589-    :cond_2c
+1590-    :goto_2c
+1591-    iget-object p2, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+1592-
+1593-    const/4 v0, 0x1
+1594-
+1595-    invoke-virtual {p2, v0}, Lcom/vivo/seckeysdk/utils/i;->a(I)I
+1596-
+1597-    move-result p2
+1598-
+1599-    invoke-direct {p0, p1, v1, p2}, Lcom/vivo/seckeysdk/utils/f;->a([BII)[B
+1600-
+1601-    move-result-object p0
+1602-
+1603-    return-object p0
+1604-.end method
+1605-
+1606-.method public final b()I
+1607-    .registers 1
+1608-
+1609-    .line 684
+1610-    iget-object p0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+1611-
+1612-    invoke-virtual {p0}, Lcom/vivo/seckeysdk/utils/i;->c()I
+1613-
+1614-    move-result p0
+1615-
+1616-    return p0
+1617-.end method
+1618-
+1619-.method public final b(Ljava/lang/String;)Z
+1620-    .registers 3
+1621-    .annotation system Ldalvik/annotation/Throws;
+1622-        value = {
+1623-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+1624-        }
+1625-    .end annotation
+1626-
+1627-    .line 756
+1628-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+1629-
+1630-    const-string p1, "Not Supported."
+1631-
+1632-    const/16 v0, 0x259
+1633-
+1634-    invoke-direct {p0, p1, v0}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(Ljava/lang/String;I)V
+1635-
+1636-    throw p0
+1637-.end method
+1638-
+1639-.method public final b([B[B)Z
+1640-    .registers 9
+1641-    .annotation system Ldalvik/annotation/Throws;
+1642-        value = {
+1643-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+1644-        }
+1645-    .end annotation
+1646-
+1647-    .line 634
+1648-    invoke-static {}, Lcom/vivo/seckeysdk/utils/f;->i()V
+1649-
+1650-    .line 637
+1651-    invoke-static {p2}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->buildProtocolPackage([B)Lcom/vivo/seckeysdk/utils/ProtocolPackage;
+1652-
+1653-    move-result-object p2
+1654-
+1655-    .line 639
+1656-    iget-object v0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+1657-
+1658-    const/4 v1, 0x4
+1659-
+1660-    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/i;->a(I)I
+1661-
+1662-    move-result v0
+1663-
+
+===== NATIVE =====
+122-
+123-    .line 1078
+124-    :cond_41
+125-    iget-object v1, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+126-
+127-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/i;->b()Landroid/content/Context;
+128-
+129-    move-result-object v1
+130-
+131-    invoke-virtual {v1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+132-
+133-    move-result-object v1
+134-
+135-    invoke-static {v1}, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->init(Landroid/content/Context;)Z
+136-
+137-    move-result v1
+138-
+139-    if-nez v1, :cond_5a
+140-
+141-    const-string p0, "SecurityKey"
+142-
+143-    const-string v1, "SDKCipherNative init fail!"
+144-
+145-    .line 1079
+146-    invoke-static {p0, v1}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+147-
+148-    goto/16 :goto_dd
+149-
+150-    .line 1083
+151-    :cond_5a
+152:    new-instance v1, Lcom/vivo/seckeysdk/utils/NativeRequest;
+153-
+154:    invoke-direct {v1}, Lcom/vivo/seckeysdk/utils/NativeRequest;-><init>()V
+155-
+156-    .line 1084
+157-    sget-object v4, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->GET_UNIQUE_ID:Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;
+158-
+159-    invoke-virtual {v4}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->ordinal()I
+160-
+161-    move-result v4
+162-
+163:    invoke-virtual {v1, v4}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setOperateType(I)V
+164-
+165-    .line 1085
+166:    invoke-virtual {v1, v3}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setEncryptType(I)V
+167-
+168-    .line 1086
+169:    invoke-static {v1}, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->execute(Lcom/vivo/seckeysdk/utils/NativeRequest;)Lcom/vivo/seckeysdk/utils/NativeResponse;
+170-
+171-    move-result-object v1
+172-
+173-    .line 1087
+174-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+175-
+176-    move-result v4
+177-
+178-    if-eqz v4, :cond_8d
+179-
+180-    const-string p0, "SecurityKey"
+181-
+182-    .line 1088
+183-    new-instance v2, Ljava/lang/StringBuilder;
+184-
+185-    const-string v4, "SDKCipherNative get fail:"
+186-
+187-    invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+188-
+189-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+190-
+191-    move-result v1
+192-
+193-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+194-
+195-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+196-
+197-    move-result-object v1
+198-
+199-    invoke-static {p0, v1}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+200-
+201-    goto :goto_dd
+202-
+203-    .line 1092
+204-    :cond_8d
+205-    invoke-static {}, Lcom/vivo/seckeysdk/utils/f;->g()Ljava/lang/String;
+206-
+207-    move-result-object v4
+208-
+209-    .line 1093
+210-    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+211-
+212-    move-result v5
+213-
+214-    if-eqz v5, :cond_99
+215-
+216-    const-string v4, "Unknown"
+217-
+218-    .line 1100
+219-    :cond_99
+220-    iget-object v5, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+221-
+222-    invoke-virtual {v5, v4}, Lcom/vivo/seckeysdk/utils/i;->a(Ljava/lang/String;)V
+223-
+224-    .line 1102
+225-    iget-object v4, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+226-
+227-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getKeyVersion()I
+228-
+229-    move-result v5
+230-
+231-    invoke-virtual {v4, v5}, Lcom/vivo/seckeysdk/utils/i;->b(I)V
+232-
+233-    .line 1104
+234-    iget-object v4, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+235-
+236-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getPubicKeyHash()[B
+237-
+238-    move-result-object v1
+239-
+240-    invoke-static {v1}, Lcom/vivo/seckeysdk/utils/b;->a([B)Ljava/lang/String;
+241-
+242-    move-result-object v1
+243-
+244-    invoke-virtual {v4, v1}, Lcom/vivo/seckeysdk/utils/i;->b(Ljava/lang/String;)V
+245-
+246-    .line 1106
+247-    iget-object v1, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+248-
+249-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/i;->b()Landroid/content/Context;
+250-
+251-    move-result-object v1
+252-
+253-    invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+254-
+255-    move-result-object v1
+256-
+257-    if-nez v1, :cond_c8
+258-
+259-    const-string p0, "SecurityKey"
+260-
+261-    const-string v1, "sdk cipher packageName fail"
+262-
+263-    .line 1108
+264-    invoke-static {p0, v1}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+265-
+266-    goto :goto_dd
+267-
+268-    .line 1111
+269-    :cond_c8
+270-    iget-object v3, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+271-
+272-    invoke-virtual {v3}, Lcom/vivo/seckeysdk/utils/i;->d()V
+273-
+274-    .line 1112
+275-    iget-object v3, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+276-
+277-    invoke-virtual {v3, v1}, Lcom/vivo/seckeysdk/utils/i;->c(Ljava/lang/String;)V
+278-
+279-    .line 1115
+280-    invoke-direct {p0}, Lcom/vivo/seckeysdk/utils/f;->a()V
+281-
+282-    goto :goto_de
+283-
+284-    :cond_d6
+285-    :goto_d6
+286-    const-string p0, "SecurityKey"
+287-
+288-    const-string v1, "Configure or context is null!"
+289-
+--
+536-    const-string p1, "return null"
+537-
+538-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+539-
+540-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+541-
+542-    move-result-object p0
+543-
+544-    invoke-static {v3, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+545-
+546-    if-ge p3, v1, :cond_6c
+547-
+548-    return v0
+549-
+550-    :cond_6c
+551-    return v5
+552-.end method
+553-
+554-.method private a([BII)[B
+555-    .registers 7
+556-    .annotation system Ldalvik/annotation/Throws;
+557-        value = {
+558-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+559-        }
+560-    .end annotation
+561-
+562-    .line 252
+563-    invoke-static {}, Lcom/vivo/seckeysdk/utils/f;->i()V
+564-
+565-    .line 254
+566:    new-instance v0, Lcom/vivo/seckeysdk/utils/NativeRequest;
+567-
+568:    invoke-direct {v0}, Lcom/vivo/seckeysdk/utils/NativeRequest;-><init>()V
+569-
+570-    .line 255
+571-    sget-object v1, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->ENCRYPT:Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;
+572-
+573-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->ordinal()I
+574-
+575-    move-result v1
+576-
+577:    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setOperateType(I)V
+578-
+579-    .line 256
+580-    sget-object v1, Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;->AES:Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;
+581-
+582-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;->ordinal()I
+583-
+584-    move-result v1
+585-
+586:    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setEncryptType(I)V
+587-
+588-    .line 257
+589:    invoke-virtual {v0, p1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setData([B)V
+590-
+591-    .line 258
+592:    invoke-virtual {v0, p3}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setKeyVersion(I)V
+593-
+594-    const/4 p1, 0x0
+595-
+596-    .line 261
+597-    :cond_21
+598:    invoke-static {v0}, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->execute(Lcom/vivo/seckeysdk/utils/NativeRequest;)Lcom/vivo/seckeysdk/utils/NativeResponse;
+599-
+600-    move-result-object p3
+601-
+602-    const/4 v1, 0x4
+603-
+604-    const/16 v2, 0x5340
+605-
+606-    add-int/lit8 p1, p1, 0x1
+607-
+608-    .line 262
+609-    invoke-direct {p0, v1, v2, p1, p3}, Lcom/vivo/seckeysdk/utils/f;->a(IIILcom/vivo/seckeysdk/utils/NativeResponse;)Z
+610-
+611-    move-result v1
+612-
+613-    if-nez v1, :cond_21
+614-
+615-    .line 263
+616-    invoke-virtual {p3}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+617-
+618-    move-result p1
+619-
+620-    const-string v0, "SecurityKey"
+621-
+622-    if-nez p1, :cond_69
+623-
+624-    .line 267
+625-    invoke-virtual {p3}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getOutput()[B
+626-
+627-    move-result-object p1
+628-
+629-    if-eqz p1, :cond_5a
+630-
+631-    .line 271
+632-    new-instance p1, Lcom/vivo/seckeysdk/utils/ProtocolPackage;
+633-
+634-    iget-object p0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+635-
+636-    invoke-virtual {p3}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getKeyVersion()I
+637-
+638-    move-result v0
+639-
+640-    invoke-virtual {p0, v0}, Lcom/vivo/seckeysdk/utils/i;->c(I)Ljava/lang/String;
+641-
+642-    move-result-object p0
+643-
+644-    .line 272
+645-    invoke-virtual {p3}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getKeyVersion()I
+646-
+647-    move-result v0
+648-
+649-    .line 274
+650-    invoke-virtual {p3}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getOutput()[B
+651-
+652-    move-result-object p3
+653-
+654-    invoke-direct {p1, p0, v0, p2, p3}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;-><init>(Ljava/lang/String;II[B)V
+655-
+656-    .line 276
+657-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getbytes()[B
+658-
+659-    move-result-object p0
+660-
+661-    return-object p0
+662-
+663-    :cond_5a
+664-    const-string p0, "aesEncrypt output is null"
+665-
+666-    .line 268
+667-    invoke-static {v0, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+668-
+669-    .line 269
+670-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+671-
+672-    const/16 p1, -0x3e8
+673-
+674-    const-string p2, "unknown error!"
+675-
+676-    invoke-direct {p0, p2, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(Ljava/lang/String;I)V
+677-
+678-    throw p0
+679-
+680-    .line 264
+681-    :cond_69
+682-    new-instance p0, Ljava/lang/StringBuilder;
+683-
+684-    const-string p1, "aesEncrypt fail:"
+685-
+686-    invoke-direct {p0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+687-
+688-    invoke-virtual {p3}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+689-
+690-    move-result p1
+691-
+692-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+693-
+694-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+695-
+696-    move-result-object p0
+697-
+698-    invoke-static {v0, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+699-
+700-    .line 265
+701-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+702-
+703-    invoke-virtual {p3}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+704-
+705-    move-result p1
+706-
+707-    invoke-direct {p0, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(I)V
+708-
+709-    throw p0
+710-.end method
+711-
+712-.method private b([BII)[B
+713-    .registers 6
+714-    .annotation system Ldalvik/annotation/Throws;
+715-        value = {
+716-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+717-        }
+718-    .end annotation
+719-
+720-    .line 544
+721-    invoke-static {}, Lcom/vivo/seckeysdk/utils/f;->i()V
+722-
+723-    .line 546
+724:    new-instance v0, Lcom/vivo/seckeysdk/utils/NativeRequest;
+725-
+726:    invoke-direct {v0}, Lcom/vivo/seckeysdk/utils/NativeRequest;-><init>()V
+727-
+728-    .line 547
+729-    sget-object v1, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->ENCRYPT:Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;
+730-
+731-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->ordinal()I
+732-
+733-    move-result v1
+734-
+735:    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setOperateType(I)V
+736-
+737-    .line 548
+738-    sget-object v1, Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;->AES:Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;
+739-
+740-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;->ordinal()I
+741-
+742-    move-result v1
+743-
+744:    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setEncryptType(I)V
+745-
+746-    .line 549
+747:    invoke-virtual {v0, p1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setData([B)V
+748-
+749-    .line 550
+750:    invoke-virtual {v0, p2}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setKeyVersion(I)V
+751-
+752-    const/4 p1, 0x0
+753-
+754-    .line 553
+755-    :cond_21
+756:    invoke-static {v0}, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->execute(Lcom/vivo/seckeysdk/utils/NativeRequest;)Lcom/vivo/seckeysdk/utils/NativeResponse;
+757-
+758-    move-result-object p2
+759-
+760-    const/4 v1, 0x4
+761-
+762-    add-int/lit8 p1, p1, 0x1
+763-
+764-    .line 554
+765-    invoke-direct {p0, v1, p3, p1, p2}, Lcom/vivo/seckeysdk/utils/f;->a(IIILcom/vivo/seckeysdk/utils/NativeResponse;)Z
+766-
+767-    move-result v1
+768-
+769-    if-nez v1, :cond_21
+770-
+771-    .line 555
+772-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+773-
+774-    move-result p1
+775-
+776-    const-string p3, "SecurityKey"
+777-
+778-    if-nez p1, :cond_69
+779-
+780-    .line 559
+781-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getOutput()[B
+782-
+783-    move-result-object p1
+784-
+785-    if-eqz p1, :cond_5a
+786-
+787-    .line 563
+788-    new-instance p1, Lcom/vivo/seckeysdk/utils/ProtocolPackage;
+789-
+790-    iget-object p0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+791-
+792-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getKeyVersion()I
+793-
+794-    move-result p3
+795-
+796-    invoke-virtual {p0, p3}, Lcom/vivo/seckeysdk/utils/i;->c(I)Ljava/lang/String;
+797-
+798-    move-result-object p0
+799-
+800-    .line 564
+801-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getKeyVersion()I
+802-
+803-    move-result p3
+804-
+805-    const/16 v0, 0x11
+806-
+807-    .line 566
+808-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getOutput()[B
+809-
+810-    move-result-object p2
+811-
+812-    invoke-direct {p1, p0, p3, v0, p2}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;-><init>(Ljava/lang/String;II[B)V
+813-
+814-    .line 567
+815-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getbytes()[B
+816-
+817-    move-result-object p0
+818-
+819-    return-object p0
+820-
+821-    :cond_5a
+822-    const-string p0, "aesEncrypt output is null"
+823-
+824-    .line 560
+825-    invoke-static {p3, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+826-
+827-    .line 561
+828-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+829-
+830-    const/16 p1, -0x3e8
+831-
+832-    const-string p2, "unknown error!"
+833-
+834-    invoke-direct {p0, p2, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(Ljava/lang/String;I)V
+835-
+836-    throw p0
+837-
+838-    .line 556
+839-    :cond_69
+840-    new-instance p0, Ljava/lang/StringBuilder;
+841-
+842-    const-string p1, "aesEncrypt fail:"
+843-
+844-    invoke-direct {p0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+845-
+846-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+847-
+848-    move-result p1
+849-
+850-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+851-
+852-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+853-
+854-    move-result-object p0
+855-
+856-    invoke-static {p3, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+857-
+858-    .line 557
+859-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+860-
+861-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+862-
+863-    move-result p1
+864-
+865-    invoke-direct {p0, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(I)V
+866-
+867-    throw p0
+868-.end method
+869-
+870-.method private static g()Ljava/lang/String;
+871-    .registers 18
+872-
+873-    const-string v1, "IOException when getDI_2"
+874-
+875-    const-string v2, "IOException when getDI_1"
+876-
+--
+1506-
+1507-    return-object p0
+1508-.end method
+1509-
+1510-.method public final a([BI)[B
+1511-    .registers 4
+1512-    .annotation system Ldalvik/annotation/Throws;
+1513-        value = {
+1514-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+1515-        }
+1516-    .end annotation
+1517-
+1518-    const/4 v0, 0x5
+1519-
+1520-    .line 247
+1521-    invoke-direct {p0, p1, v0, p2}, Lcom/vivo/seckeysdk/utils/f;->a([BII)[B
+1522-
+1523-    move-result-object p0
+1524-
+1525-    return-object p0
+1526-.end method
+1527-
+1528-.method public final a([BLjava/lang/String;)[B
+1529-    .registers 6
+1530-    .annotation system Ldalvik/annotation/Throws;
+1531-        value = {
+1532-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+1533-        }
+1534-    .end annotation
+1535-
+1536:    const-string v0, "encryptionType"
+1537-
+1538-    const/4 v1, 0x5
+1539-
+1540-    .line 283
+1541-    :try_start_3
+1542-    new-instance v2, Lorg/json/JSONObject;
+1543-
+1544-    invoke-direct {v2, p2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+1545-
+1546-    .line 284
+1547-    invoke-virtual {v2, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+1548-
+1549-    move-result p2
+1550-
+1551-    if-eqz p2, :cond_2c
+1552-
+1553-    .line 285
+1554-    invoke-virtual {v2, v0}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+1555-
+1556-    move-result p2
+1557-    :try_end_12
+1558-    .catch Lorg/json/JSONException; {:try_start_3 .. :try_end_12} :catch_14
+1559-
+1560-    move v1, p2
+1561-
+1562-    goto :goto_2c
+1563-
+1564-    :catch_14
+1565-    move-exception p2
+1566-
+1567-    .line 288
+1568-    new-instance v0, Ljava/lang/StringBuilder;
+1569-
+1570-    const-string v2, "Error: "
+1571-
+1572-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+1573-
+1574-    invoke-virtual {p2}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
+1575-
+1576-    move-result-object v2
+1577-
+1578-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+1579-
+1580-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+1581-
+1582-    move-result-object v0
+1583-
+1584-    const-string v2, "SecurityKey"
+1585-
+1586-    invoke-static {v2, v0, p2}, Lcom/vivo/seckeysdk/utils/k;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+1587-
+1588-    .line 290
+1589-    :cond_2c
+1590-    :goto_2c
+1591-    iget-object p2, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+1592-
+1593-    const/4 v0, 0x1
+1594-
+1595-    invoke-virtual {p2, v0}, Lcom/vivo/seckeysdk/utils/i;->a(I)I
+1596-
+1597-    move-result p2
+1598-
+1599-    invoke-direct {p0, p1, v1, p2}, Lcom/vivo/seckeysdk/utils/f;->a([BII)[B
+1600-
+1601-    move-result-object p0
+1602-
+1603-    return-object p0
+1604-.end method
+1605-
+1606-.method public final b()I
+1607-    .registers 1
+1608-
+1609-    .line 684
+1610-    iget-object p0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+1611-
+1612-    invoke-virtual {p0}, Lcom/vivo/seckeysdk/utils/i;->c()I
+1613-
+1614-    move-result p0
+1615-
+1616-    return p0
+1617-.end method
+1618-
+1619-.method public final b(Ljava/lang/String;)Z
+1620-    .registers 3
+1621-    .annotation system Ldalvik/annotation/Throws;
+1622-        value = {
+1623-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+1624-        }
+1625-    .end annotation
+1626-
+1627-    .line 756
+1628-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+1629-
+1630-    const-string p1, "Not Supported."
+1631-
+1632-    const/16 v0, 0x259
+1633-
+1634-    invoke-direct {p0, p1, v0}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(Ljava/lang/String;I)V
+1635-
+1636-    throw p0
+1637-.end method
+1638-
+1639-.method public final b([B[B)Z
+1640-    .registers 9
+1641-    .annotation system Ldalvik/annotation/Throws;
+1642-        value = {
+1643-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+1644-        }
+1645-    .end annotation
+1646-
+1647-    .line 634
+1648-    invoke-static {}, Lcom/vivo/seckeysdk/utils/f;->i()V
+1649-
+1650-    .line 637
+1651-    invoke-static {p2}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->buildProtocolPackage([B)Lcom/vivo/seckeysdk/utils/ProtocolPackage;
+1652-
+1653-    move-result-object p2
+1654-
+1655-    .line 639
+1656-    iget-object v0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+1657-
+1658-    const/4 v1, 0x4
+1659-
+1660-    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/i;->a(I)I
+1661-
+1662-    move-result v0
+1663-
+1664-    .line 640
+1665-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getKeyVersion()I
+1666-
+1667-    move-result v2
+1668-
+1669-    const-string v3, "SecurityKey"
+1670-
+1671-    if-gt v2, v0, :cond_78
+1672-
+1673-    .line 646
+1674:    new-instance v2, Lcom/vivo/seckeysdk/utils/NativeRequest;
+1675-
+1676:    invoke-direct {v2}, Lcom/vivo/seckeysdk/utils/NativeRequest;-><init>()V
+1677-
+1678-    .line 647
+1679-    sget-object v0, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->VERIFY:Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;
+1680-
+1681-    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->ordinal()I
+1682-
+1683-    move-result v0
+1684-
+1685:    invoke-virtual {v2, v0}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setOperateType(I)V
+1686-
+1687-    const/4 v4, 0x0
+1688-
+1689-    .line 648
+1690:    invoke-virtual {v2, v4}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setEncryptType(I)V
+1691-
+1692-    .line 649
+1693-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getKeyVersion()I
+1694-
+1695-    move-result v0
+1696-
+1697:    invoke-virtual {v2, v0}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setKeyVersion(I)V
+1698-
+1699-    .line 650
+1700-    array-length v0, p1
+1701-
+1702-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getData()[B
+1703-
+1704-    move-result-object v5
+1705-
+1706-    array-length v5, v5
+1707-
+1708-    add-int/2addr v0, v5
+1709-
+1710-    new-array v0, v0, [B
+1711-
+1712-    .line 651
+1713-    array-length v5, p1
+1714-
+1715-    invoke-static {p1, v4, v0, v4, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+1716-
+1717-    .line 652
+1718-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getData()[B
+1719-
+1720-    move-result-object v5
+1721-
+1722-    array-length p1, p1
+1723-
+1724-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getData()[B
+1725-
+1726-    move-result-object p2
+1727-
+1728-    array-length p2, p2
+1729-
+1730-    invoke-static {v5, v4, v0, p1, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+1731-
+1732-    .line 653
+1733:    invoke-virtual {v2, v0}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setData([B)V
+1734-
+1735-    move p1, v4
+1736-
+1737-    .line 656
+1738-    :cond_4d
+1739:    invoke-static {v2}, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->execute(Lcom/vivo/seckeysdk/utils/NativeRequest;)Lcom/vivo/seckeysdk/utils/NativeResponse;
+1740-
+1741-    move-result-object p2
+1742-
+1743-    const/16 v0, 0x5345
+1744-
+1745-    const/4 v5, 0x1
+1746-
+1747-    add-int/2addr p1, v5
+1748-
+1749-    .line 657
+1750-    invoke-direct {p0, v1, v0, p1, p2}, Lcom/vivo/seckeysdk/utils/f;->a(IIILcom/vivo/seckeysdk/utils/NativeResponse;)Z
+1751-
+1752-    move-result v0
+1753-
+1754-    if-nez v0, :cond_4d
+1755-
+1756-    .line 658
+1757-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+1758-
+1759-    move-result p0
+1760-
+1761-    if-eqz p0, :cond_77
+1762-
+1763-    .line 659
+1764-    new-instance p0, Ljava/lang/StringBuilder;
+1765-
+1766-    const-string p1, "sign fail:"
+1767-
+1768-    invoke-direct {p0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+1769-
+1770-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+1771-
+1772-    move-result p1
+1773-
+1774-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+1775-
+1776-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+1777-
+1778-    move-result-object p0
+1779-
+1780-    invoke-static {v3, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+1781-
+1782-    return v4
+1783-
+1784-    :cond_77
+1785-    return v5
+1786-
+1787-    .line 642
+1788-    :cond_78
+1789-    new-instance p0, Ljava/lang/StringBuilder;
+1790-
+1791-    const-string p1, "signatureVerify  not supported for pkg.KeyVersion("
+1792-
+1793-    invoke-direct {p0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+1794-
+1795-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getKeyVersion()I
+1796-
+1797-    move-result p1
+1798-
+1799-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+1800-
+1801-    const-string p1, ") > sdk_currentKeyVersion("
+1802-
+1803-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+1804-
+1805-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+1806-
+1807-    const-string p1, ")"
+1808-
+1809-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+1810-
+1811-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+1812-
+1813-    move-result-object p0
+1814-
+1815-    invoke-static {v3, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+1816-
+1817-    .line 643
+1818-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+1819-
+1820-    const/16 p1, 0xb7
+1821-
+1822-    const-string p2, "decrypt  keyversion  of the data is greater than the currently supported version"
+1823-
+1824-    invoke-direct {p0, p2, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(Ljava/lang/String;I)V
+1825-
+1826-    throw p0
+1827-.end method
+1828-
+1829-.method public final b([B)[B
+1830-    .registers 8
+1831-    .annotation system Ldalvik/annotation/Throws;
+1832-        value = {
+1833-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+1834-        }
+1835-    .end annotation
+1836-
+1837-    .line 422
+1838-    invoke-static {}, Lcom/vivo/seckeysdk/utils/f;->i()V
+1839-
+1840-    .line 425
+1841-    invoke-static {p1}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->buildProtocolPackage([B)Lcom/vivo/seckeysdk/utils/ProtocolPackage;
+1842-
+1843-    move-result-object p1
+1844-
+1845-    .line 426
+1846-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getType()I
+1847-
+1848-    move-result v0
+1849-
+1850-    const/4 v1, 0x4
+1851-
+1852-    const-string v2, "SecurityKey"
+1853-
+1854-    const/4 v3, 0x5
+1855-
+1856-    if-eq v0, v3, :cond_3f
+1857-
+1858-    const/4 v3, 0x3
+1859-
+--
+1894-    .line 432
+1895-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+1896-
+1897-    const/16 p1, 0x9a
+1898-
+1899-    const-string v0, "encrypt type of data is not supported"
+1900-
+1901-    invoke-direct {p0, v0, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(Ljava/lang/String;I)V
+1902-
+1903-    throw p0
+1904-
+1905-    .line 435
+1906-    :cond_3f
+1907-    :goto_3f
+1908-    iget-object v0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+1909-
+1910-    const/4 v3, 0x1
+1911-
+1912-    invoke-virtual {v0, v3}, Lcom/vivo/seckeysdk/utils/i;->a(I)I
+1913-
+1914-    move-result v0
+1915-
+1916-    .line 436
+1917-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getKeyVersion()I
+1918-
+1919-    move-result v4
+1920-
+1921-    if-gt v4, v0, :cond_be
+1922-
+1923-    .line 441
+1924:    new-instance v4, Lcom/vivo/seckeysdk/utils/NativeRequest;
+1925-
+1926:    invoke-direct {v4}, Lcom/vivo/seckeysdk/utils/NativeRequest;-><init>()V
+1927-
+1928-    .line 442
+1929-    sget-object v0, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->DECRYPT:Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;
+1930-
+1931-    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->ordinal()I
+1932-
+1933-    move-result v0
+1934-
+1935:    invoke-virtual {v4, v0}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setOperateType(I)V
+1936-
+1937-    .line 443
+1938-    sget-object v0, Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;->AES:Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;
+1939-
+1940-    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;->ordinal()I
+1941-
+1942-    move-result v0
+1943-
+1944:    invoke-virtual {v4, v0}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setEncryptType(I)V
+1945-
+1946-    .line 444
+1947-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getKeyVersion()I
+1948-
+1949-    move-result v0
+1950-
+1951:    invoke-virtual {v4, v0}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setKeyVersion(I)V
+1952-
+1953-    .line 445
+1954-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getData()[B
+1955-
+1956-    move-result-object p1
+1957-
+1958:    invoke-virtual {v4, p1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setData([B)V
+1959-
+1960-    const/4 p1, 0x0
+1961-
+1962-    .line 448
+1963-    :cond_72
+1964:    invoke-static {v4}, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->execute(Lcom/vivo/seckeysdk/utils/NativeRequest;)Lcom/vivo/seckeysdk/utils/NativeResponse;
+1965-
+1966-    move-result-object v0
+1967-
+1968-    const/16 v5, 0x5341
+1969-
+1970-    add-int/2addr p1, v3
+1971-
+1972-    .line 449
+1973-    invoke-direct {p0, v1, v5, p1, v0}, Lcom/vivo/seckeysdk/utils/f;->a(IIILcom/vivo/seckeysdk/utils/NativeResponse;)Z
+1974-
+1975-    move-result v5
+1976-
+1977-    if-nez v5, :cond_72
+1978-
+1979-    .line 450
+1980-    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+1981-
+1982-    move-result p0
+1983-
+1984-    if-nez p0, :cond_9f
+1985-
+1986-    .line 454
+1987-    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getOutput()[B
+1988-
+1989-    move-result-object p0
+1990-
+1991-    if-eqz p0, :cond_90
+1992-
+1993-    .line 458
+1994-    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getOutput()[B
+1995-
+1996-    move-result-object p0
+1997-
+1998-    return-object p0
+1999-
+2000-    :cond_90
+2001-    const-string p0, "aesDecrypt output is null"
+2002-
+2003-    .line 455
+2004-    invoke-static {v2, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+2005-
+2006-    .line 456
+2007-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+2008-
+2009-    const/16 p1, -0x3e8
+2010-
+2011-    const-string v0, "unknown error!"
+2012-
+2013-    invoke-direct {p0, v0, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(Ljava/lang/String;I)V
+2014-
+2015-    throw p0
+2016-
+2017-    .line 451
+2018-    :cond_9f
+2019-    new-instance p0, Ljava/lang/StringBuilder;
+2020-
+2021-    const-string p1, "aesDecrypt fail:"
+2022-
+2023-    invoke-direct {p0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+2024-
+2025-    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+2026-
+2027-    move-result p1
+2028-
+2029-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+2030-
+2031-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+2032-
+2033-    move-result-object p0
+2034-
+2035-    invoke-static {v2, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+2036-
+2037-    .line 452
+2038-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+2039-
+2040-    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+2041-
+2042-    move-result p1
+2043-
+2044-    invoke-direct {p0, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(I)V
+2045-
+2046-    throw p0
+2047-
+2048-    .line 438
+2049-    :cond_be
+2050-    new-instance p0, Ljava/lang/StringBuilder;
+2051-
+2052-    const-string v1, "aesDecrypt  not supported for pkg.KeyVersion("
+2053-
+2054-    invoke-direct {p0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+2055-
+2056-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getKeyVersion()I
+2057-
+2058-    move-result p1
+2059-
+2060-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+2061-
+2062-    const-string p1, ") > sdk_currentKeyVersion("
+2063-
+2064-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+2065-
+2066-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+2067-
+2068-    const-string p1, ")"
+2069-
+2070-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+2071-
+2072-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+2073-
+2074-    move-result-object p0
+2075-
+2076-    invoke-static {v2, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+2077-
+2078-    .line 439
+2079-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+2080-
+2081-    const/16 p1, 0xb7
+2082-
+2083-    const-string v0, "decrypt  keyversion  of the data is greater than the currently supported version"
+2084-
+2085-    invoke-direct {p0, v0, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(Ljava/lang/String;I)V
+2086-
+2087-    throw p0
+2088-.end method
+2089-
+2090-.method public final b([BI)[B
+2091-    .registers 6
+2092-    .annotation system Ldalvik/annotation/Throws;
+2093-        value = {
+2094-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+2095-        }
+2096-    .end annotation
+2097-
+2098-    .line 468
+2099-    invoke-static {}, Lcom/vivo/seckeysdk/utils/f;->i()V
+2100-
+2101-    .line 470
+2102:    new-instance v0, Lcom/vivo/seckeysdk/utils/NativeRequest;
+2103-
+2104:    invoke-direct {v0}, Lcom/vivo/seckeysdk/utils/NativeRequest;-><init>()V
+2105-
+2106-    .line 471
+2107-    sget-object v1, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->ENCRYPT:Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;
+2108-
+2109-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->ordinal()I
+2110-
+2111-    move-result v1
+2112-
+2113:    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setOperateType(I)V
+2114-
+2115-    .line 472
+2116-    sget-object v1, Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;->RSA:Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;
+2117-
+2118-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;->ordinal()I
+2119-
+2120-    move-result v1
+2121-
+2122:    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setEncryptType(I)V
+2123-
+2124-    .line 473
+2125:    invoke-virtual {v0, p1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setData([B)V
+2126-
+2127-    .line 474
+2128:    invoke-virtual {v0, p2}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setKeyVersion(I)V
+2129-
+2130-    const/4 p1, 0x0
+2131-
+2132-    .line 477
+2133-    :cond_21
+2134:    invoke-static {v0}, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->execute(Lcom/vivo/seckeysdk/utils/NativeRequest;)Lcom/vivo/seckeysdk/utils/NativeResponse;
+2135-
+2136-    move-result-object p2
+2137-
+2138-    const/4 v1, 0x4
+2139-
+2140-    const/16 v2, 0x5342
+2141-
+2142-    add-int/lit8 p1, p1, 0x1
+2143-
+2144-    .line 478
+2145-    invoke-direct {p0, v1, v2, p1, p2}, Lcom/vivo/seckeysdk/utils/f;->a(IIILcom/vivo/seckeysdk/utils/NativeResponse;)Z
+2146-
+2147-    move-result v1
+2148-
+2149-    if-nez v1, :cond_21
+2150-
+2151-    .line 479
+2152-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+2153-
+2154-    move-result p1
+2155-
+2156-    const-string v0, "SecurityKey"
+2157-
+2158-    if-nez p1, :cond_6a
+2159-
+2160-    .line 483
+2161-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getOutput()[B
+2162-
+2163-    move-result-object p1
+2164-
+2165-    if-eqz p1, :cond_5b
+2166-
+2167-    .line 487
+2168-    new-instance p1, Lcom/vivo/seckeysdk/utils/ProtocolPackage;
+2169-
+2170-    iget-object p0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+2171-
+2172-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getKeyVersion()I
+2173-
+2174-    move-result v0
+2175-
+2176-    invoke-virtual {p0, v0}, Lcom/vivo/seckeysdk/utils/i;->c(I)Ljava/lang/String;
+2177-
+2178-    move-result-object p0
+2179-
+2180-    .line 488
+2181-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getKeyVersion()I
+2182-
+2183-    move-result v0
+2184-
+2185-    const/4 v1, 0x7
+2186-
+2187-    .line 490
+2188-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getOutput()[B
+2189-
+2190-    move-result-object p2
+2191-
+2192-    invoke-direct {p1, p0, v0, v1, p2}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;-><init>(Ljava/lang/String;II[B)V
+2193-
+2194-    .line 491
+2195-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getbytes()[B
+2196-
+2197-    move-result-object p0
+2198-
+2199-    return-object p0
+2200-
+2201-    :cond_5b
+2202-    const-string p0, "rsaEncrypt output is null"
+2203-
+2204-    .line 484
+2205-    invoke-static {v0, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+2206-
+2207-    .line 485
+2208-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+2209-
+2210-    const/16 p1, -0x3e8
+2211-
+2212-    const-string p2, "unknown error!"
+2213-
+2214-    invoke-direct {p0, p2, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(Ljava/lang/String;I)V
+2215-
+2216-    throw p0
+2217-
+2218-    .line 480
+2219-    :cond_6a
+2220-    new-instance p0, Ljava/lang/StringBuilder;
+2221-
+2222-    const-string p1, "rsaEncrypt fail:"
+2223-
+2224-    invoke-direct {p0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+2225-
+2226-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+2227-
+2228-    move-result p1
+2229-
+2230-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+2231-
+2232-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+2233-
+2234-    move-result-object p0
+2235-
+2236-    invoke-static {v0, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+2237-
+2238-    .line 481
+2239-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+2240-
+2241-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+2242-
+2243-    move-result p1
+2244-
+2245-    invoke-direct {p0, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(I)V
+2246-
+2247-    throw p0
+2248-.end method
+2249-
+2250-.method public final b([BLjava/lang/String;)[B
+2251-    .registers 3
+2252-    .annotation system Ldalvik/annotation/Throws;
+2253-        value = {
+2254-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+--
+2328-    .end annotation
+2329-
+2330-    .line 463
+2331-    iget-object v0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+2332-
+2333-    const/4 v1, 0x2
+2334-
+2335-    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/i;->a(I)I
+2336-
+2337-    move-result v0
+2338-
+2339-    invoke-virtual {p0, p1, v0}, Lcom/vivo/seckeysdk/utils/f;->b([BI)[B
+2340-
+2341-    move-result-object p0
+2342-
+2343-    return-object p0
+2344-.end method
+2345-
+2346-.method public final c([BI)[B
+2347-    .registers 6
+2348-    .annotation system Ldalvik/annotation/Throws;
+2349-        value = {
+2350-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+2351-        }
+2352-    .end annotation
+2353-
+2354-    .line 601
+2355-    invoke-static {}, Lcom/vivo/seckeysdk/utils/f;->i()V
+2356-
+2357-    .line 603
+2358:    new-instance v0, Lcom/vivo/seckeysdk/utils/NativeRequest;
+2359-
+2360:    invoke-direct {v0}, Lcom/vivo/seckeysdk/utils/NativeRequest;-><init>()V
+2361-
+2362-    .line 604
+2363-    sget-object v1, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->SIGN:Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;
+2364-
+2365-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->ordinal()I
+2366-
+2367-    move-result v1
+2368-
+2369:    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setOperateType(I)V
+2370-
+2371-    const/4 v1, 0x0
+2372-
+2373-    .line 605
+2374:    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setEncryptType(I)V
+2375-
+2376-    .line 606
+2377:    invoke-virtual {v0, p1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setData([B)V
+2378-
+2379-    .line 607
+2380:    invoke-virtual {v0, p2}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setKeyVersion(I)V
+2381-
+2382-    .line 610
+2383-    :cond_1b
+2384:    invoke-static {v0}, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->execute(Lcom/vivo/seckeysdk/utils/NativeRequest;)Lcom/vivo/seckeysdk/utils/NativeResponse;
+2385-
+2386-    move-result-object p1
+2387-
+2388-    const/4 p2, 0x4
+2389-
+2390-    const/16 v2, 0x5344
+2391-
+2392-    add-int/lit8 v1, v1, 0x1
+2393-
+2394-    .line 611
+2395-    invoke-direct {p0, p2, v2, v1, p1}, Lcom/vivo/seckeysdk/utils/f;->a(IIILcom/vivo/seckeysdk/utils/NativeResponse;)Z
+2396-
+2397-    move-result p2
+2398-
+2399-    if-nez p2, :cond_1b
+2400-
+2401-    .line 612
+2402-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+2403-
+2404-    move-result p2
+2405-
+2406-    const-string v0, "SecurityKey"
+2407-
+2408-    if-nez p2, :cond_65
+2409-
+2410-    .line 616
+2411-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getOutput()[B
+2412-
+2413-    move-result-object p2
+2414-
+2415-    if-eqz p2, :cond_56
+2416-
+2417-    .line 620
+2418-    new-instance p2, Lcom/vivo/seckeysdk/utils/ProtocolPackage;
+2419-
+2420-    iget-object p0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+2421-
+2422-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getKeyVersion()I
+2423-
+2424-    move-result v0
+2425-
+2426-    invoke-virtual {p0, v0}, Lcom/vivo/seckeysdk/utils/i;->c(I)Ljava/lang/String;
+2427-
+2428-    move-result-object p0
+2429-
+2430-    .line 621
+2431-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getKeyVersion()I
+2432-
+2433-    move-result v0
+2434-
+2435-    const/16 v1, 0x9
+2436-
+2437-    .line 623
+2438-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getOutput()[B
+2439-
+2440-    move-result-object p1
+2441-
+2442-    invoke-direct {p2, p0, v0, v1, p1}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;-><init>(Ljava/lang/String;II[B)V
+2443-
+2444-    .line 624
+2445-    invoke-virtual {p2}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getbytes()[B
+2446-
+2447-    move-result-object p0
+2448-
+2449-    return-object p0
+2450-
+2451-    :cond_56
+2452-    const-string p0, "sign output is null"
+2453-
+2454-    .line 617
+2455-    invoke-static {v0, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+2456-
+2457-    .line 618
+2458-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+2459-
+2460-    const/16 p1, -0x3e8
+2461-
+2462-    const-string p2, "unknown error!"
+2463-
+2464-    invoke-direct {p0, p2, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(Ljava/lang/String;I)V
+2465-
+2466-    throw p0
+2467-
+2468-    .line 613
+2469-    :cond_65
+2470-    new-instance p0, Ljava/lang/StringBuilder;
+2471-
+2472-    const-string p2, "sign fail:"
+2473-
+2474-    invoke-direct {p0, p2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+2475-
+2476-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+2477-
+2478-    move-result p2
+2479-
+2480-    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+2481-
+2482-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+2483-
+2484-    move-result-object p0
+2485-
+2486-    invoke-static {v0, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+2487-
+2488-    .line 614
+2489-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+2490-
+2491-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+2492-
+2493-    move-result p1
+2494-
+2495-    invoke-direct {p0, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(I)V
+2496-
+2497-    throw p0
+2498-.end method
+2499-
+2500-.method public final c([BLjava/lang/String;)[B
+2501-    .registers 3
+2502-    .annotation system Ldalvik/annotation/Throws;
+2503-        value = {
+2504-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+--
+2547-        }
+2548-    .end annotation
+2549-
+2550-    .line 508
+2551-    invoke-static {}, Lcom/vivo/seckeysdk/utils/f;->i()V
+2552-
+2553-    .line 511
+2554-    invoke-static {p1}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->buildProtocolPackage([B)Lcom/vivo/seckeysdk/utils/ProtocolPackage;
+2555-
+2556-    move-result-object p1
+2557-
+2558-    .line 514
+2559-    iget-object v0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+2560-
+2561-    const/4 v1, 0x2
+2562-
+2563-    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/i;->a(I)I
+2564-
+2565-    move-result v0
+2566-
+2567-    .line 515
+2568-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getKeyVersion()I
+2569-
+2570-    move-result v1
+2571-
+2572-    const-string v2, "SecurityKey"
+2573-
+2574-    if-gt v1, v0, :cond_8a
+2575-
+2576-    .line 521
+2577:    new-instance v1, Lcom/vivo/seckeysdk/utils/NativeRequest;
+2578-
+2579:    invoke-direct {v1}, Lcom/vivo/seckeysdk/utils/NativeRequest;-><init>()V
+2580-
+2581-    .line 522
+2582-    sget-object v0, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->DECRYPT:Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;
+2583-
+2584-    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->ordinal()I
+2585-
+2586-    move-result v0
+2587-
+2588:    invoke-virtual {v1, v0}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setOperateType(I)V
+2589-
+2590-    .line 523
+2591-    sget-object v0, Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;->RSA:Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;
+2592-
+2593-    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;->ordinal()I
+2594-
+2595-    move-result v0
+2596-
+2597:    invoke-virtual {v1, v0}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setEncryptType(I)V
+2598-
+2599-    .line 524
+2600-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getKeyVersion()I
+2601-
+2602-    move-result v0
+2603-
+2604:    invoke-virtual {v1, v0}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setKeyVersion(I)V
+2605-
+2606-    .line 525
+2607-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getData()[B
+2608-
+2609-    move-result-object p1
+2610-
+2611:    invoke-virtual {v1, p1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setData([B)V
+2612-
+2613-    const/4 p1, 0x0
+2614-
+2615-    .line 528
+2616-    :cond_3c
+2617:    invoke-static {v1}, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->execute(Lcom/vivo/seckeysdk/utils/NativeRequest;)Lcom/vivo/seckeysdk/utils/NativeResponse;
+2618-
+2619-    move-result-object v0
+2620-
+2621-    const/4 v3, 0x4
+2622-
+2623-    const/16 v4, 0x5343
+2624-
+2625-    add-int/lit8 p1, p1, 0x1
+2626-
+2627-    .line 529
+2628-    invoke-direct {p0, v3, v4, p1, v0}, Lcom/vivo/seckeysdk/utils/f;->a(IIILcom/vivo/seckeysdk/utils/NativeResponse;)Z
+2629-
+2630-    move-result v3
+2631-
+2632-    if-nez v3, :cond_3c
+2633-
+2634-    .line 530
+2635-    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+2636-
+2637-    move-result p0
+2638-
+2639-    if-nez p0, :cond_6b
+2640-
+2641-    .line 534
+2642-    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getOutput()[B
+2643-
+2644-    move-result-object p0
+2645-
+2646-    if-eqz p0, :cond_5c
+2647-
+2648-    .line 538
+2649-    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getOutput()[B
+2650-
+2651-    move-result-object p0
+2652-
+2653-    return-object p0
+2654-
+2655-    :cond_5c
+2656-    const-string p0, "rsaDecrypt output is null"
+2657-
+2658-    .line 535
+2659-    invoke-static {v2, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+2660-
+2661-    .line 536
+2662-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+2663-
+2664-    const/16 p1, -0x3e8
+2665-
+2666-    const-string v0, "unknown error!"
+2667-
+2668-    invoke-direct {p0, v0, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(Ljava/lang/String;I)V
+2669-
+2670-    throw p0
+2671-
+2672-    .line 531
+2673-    :cond_6b
+2674-    new-instance p0, Ljava/lang/StringBuilder;
+2675-
+2676-    const-string p1, "rsaDecrypt fail:"
+2677-
+2678-    invoke-direct {p0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+2679-
+2680-    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+2681-
+2682-    move-result p1
+2683-
+2684-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+2685-
+2686-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+2687-
+2688-    move-result-object p0
+2689-
+2690-    invoke-static {v2, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+2691-
+2692-    .line 532
+2693-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+2694-
+2695-    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+2696-
+2697-    move-result p1
+2698-
+2699-    invoke-direct {p0, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(I)V
+2700-
+2701-    throw p0
+2702-
+2703-    .line 517
+2704-    :cond_8a
+2705-    new-instance p0, Ljava/lang/StringBuilder;
+2706-
+2707-    const-string v1, "rsaDecrypt  not supported for pkg.KeyVersion("
+2708-
+2709-    invoke-direct {p0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+2710-
+2711-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/ProtocolPackage;->getKeyVersion()I
+2712-
+2713-    move-result p1
+2714-
+2715-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+2716-
+2717-    const-string p1, ") > sdk_currentKeyVersion("
+2718-
+2719-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+2720-
+2721-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+2722-
+2723-    const-string p1, ")"
+2724-
+2725-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+2726-
+2727-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+2728-
+2729-    move-result-object p0
+2730-
+2731-    invoke-static {v2, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+2732-
+2733-    .line 518
+2734-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+2735-
+2736-    const/16 p1, 0xb7
+2737-
+--
+3001-    .end annotation
+3002-
+3003-    .line 595
+3004-    iget-object v0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+3005-
+3006-    const/4 v1, 0x2
+3007-
+3008-    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/i;->a(I)I
+3009-
+3010-    move-result v0
+3011-
+3012-    invoke-virtual {p0, p1, v0}, Lcom/vivo/seckeysdk/utils/f;->c([BI)[B
+3013-
+3014-    move-result-object p0
+3015-
+3016-    return-object p0
+3017-.end method
+3018-
+3019-.method public final g([B)[B
+3020-    .registers 9
+3021-    .annotation system Ldalvik/annotation/Throws;
+3022-        value = {
+3023-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+3024-        }
+3025-    .end annotation
+3026-
+3027-    .line 318
+3028-    invoke-static {}, Lcom/vivo/seckeysdk/utils/f;->i()V
+3029-
+3030-    .line 320
+3031:    new-instance v0, Lcom/vivo/seckeysdk/utils/NativeRequest;
+3032-
+3033:    invoke-direct {v0}, Lcom/vivo/seckeysdk/utils/NativeRequest;-><init>()V
+3034-
+3035-    .line 321
+3036-    sget-object v1, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->ENCRYPT:Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;
+3037-
+3038-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->ordinal()I
+3039-
+3040-    move-result v1
+3041-
+3042:    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setOperateType(I)V
+3043-
+3044-    .line 322
+3045-    sget-object v1, Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;->AES_FIXED:Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;
+3046-
+3047-    invoke-virtual {v1}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;->ordinal()I
+3048-
+3049-    move-result v1
+3050-
+3051:    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setEncryptType(I)V
+3052-
+3053-    .line 325
+3054-    invoke-static {}, Lcom/vivo/seckeysdk/utils/f;->j()[B
+3055-
+3056-    move-result-object v1
+3057-
+3058-    .line 329
+3059-    array-length v2, p1
+3060-
+3061-    const/16 v3, 0x10
+3062-
+3063-    add-int/2addr v2, v3
+3064-
+3065-    new-array v2, v2, [B
+3066-
+3067-    const/4 v4, 0x0
+3068-
+3069-    .line 330
+3070-    invoke-static {v1, v4, v2, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+3071-
+3072-    .line 331
+3073-    array-length v5, p1
+3074-
+3075-    invoke-static {p1, v4, v2, v3, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+3076-
+3077-    .line 332
+3078:    invoke-virtual {v0, v2}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setData([B)V
+3079-
+3080-    .line 336
+3081-    :cond_2f
+3082:    invoke-static {v0}, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->execute(Lcom/vivo/seckeysdk/utils/NativeRequest;)Lcom/vivo/seckeysdk/utils/NativeResponse;
+3083-
+3084-    move-result-object p1
+3085-
+3086-    const/4 v2, 0x6
+3087-
+3088-    const/16 v5, 0x5340
+3089-
+3090-    const/4 v6, 0x1
+3091-
+3092-    add-int/2addr v4, v6
+3093-
+3094-    .line 337
+3095-    invoke-direct {p0, v2, v5, v4, p1}, Lcom/vivo/seckeysdk/utils/f;->a(IIILcom/vivo/seckeysdk/utils/NativeResponse;)Z
+3096-
+3097-    move-result v2
+3098-
+3099-    if-nez v2, :cond_2f
+3100-
+3101-    .line 338
+3102-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+3103-
+3104-    move-result v0
+3105-
+3106-    const-string v2, "SecurityKey"
+3107-
+3108-    if-nez v0, :cond_80
+3109-
+3110-    .line 342
+3111-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getOutput()[B
+3112-
+3113-    move-result-object v0
+3114-
+3115-    if-eqz v0, :cond_71
+3116-
+3117-    .line 347
+3118-    new-instance v0, Ljava/lang/StringBuilder;
+3119-
+3120-    const-string v2, "fixedKey@"
+3121-
+3122-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+3123-
+3124-    iget-object p0, p0, Lcom/vivo/seckeysdk/utils/f;->a:Lcom/vivo/seckeysdk/utils/i;
+3125-
+3126-    invoke-virtual {p0}, Lcom/vivo/seckeysdk/utils/i;->e()Ljava/lang/String;
+3127-
+3128-    move-result-object p0
+3129-
+3130-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+3131-
+3132-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+3133-
+3134-    move-result-object p0
+3135-
+3136-    .line 348
+3137-    new-instance v0, Lcom/vivo/seckeysdk/utils/d;
+3138-
+3139-    .line 351
+3140-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getOutput()[B
+3141-
+3142-    move-result-object p1
+3143-
+3144-    invoke-direct {v0, p0, v6, v3, p1}, Lcom/vivo/seckeysdk/utils/d;-><init>(Ljava/lang/String;II[B)V
+3145-
+3146-    .line 354
+3147-    invoke-virtual {v0, v1}, Lcom/vivo/seckeysdk/utils/d;->a([B)V
+3148-
+3149-    .line 362
+3150-    invoke-virtual {v0}, Lcom/vivo/seckeysdk/utils/d;->d()[B
+3151-
+3152-    move-result-object p0
+3153-
+3154-    return-object p0
+3155-
+3156-    :cond_71
+3157-    const-string p0, "aesEncryptByFixed output is null"
+3158-
+3159-    .line 343
+3160-    invoke-static {v2, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+3161-
+3162-    .line 344
+3163-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+3164-
+3165-    const/16 p1, -0x3e8
+3166-
+3167-    const-string v0, "unknown error!"
+3168-
+3169-    invoke-direct {p0, v0, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(Ljava/lang/String;I)V
+3170-
+3171-    throw p0
+3172-
+3173-    .line 339
+3174-    :cond_80
+3175-    new-instance p0, Ljava/lang/StringBuilder;
+3176-
+3177-    const-string v0, "aesEncryptByFixed fail:"
+3178-
+3179-    invoke-direct {p0, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+3180-
+3181-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+3182-
+3183-    move-result v0
+3184-
+3185-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+3186-
+3187-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+3188-
+3189-    move-result-object p0
+3190-
+3191-    invoke-static {v2, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+3192-
+3193-    .line 340
+3194-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+3195-
+3196-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+3197-
+3198-    move-result p1
+3199-
+3200-    invoke-direct {p0, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(I)V
+3201-
+3202-    throw p0
+--
+3222-            Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+3223-        }
+3224-    .end annotation
+3225-
+3226-    .line 373
+3227-    invoke-static {}, Lcom/vivo/seckeysdk/utils/f;->i()V
+3228-
+3229-    .line 376
+3230-    invoke-static {p1}, Lcom/vivo/seckeysdk/utils/d;->b([B)Lcom/vivo/seckeysdk/utils/d;
+3231-
+3232-    move-result-object p1
+3233-
+3234-    .line 378
+3235-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/d;->a()[B
+3236-
+3237-    move-result-object v0
+3238-
+3239-    .line 379
+3240-    new-instance v1, Ljava/lang/String;
+3241-
+3242-    invoke-direct {v1, v0}, Ljava/lang/String;-><init>([B)V
+3243-
+3244-    .line 380
+3245-    array-length v1, v0
+3246-
+3247-    const/16 v2, 0xf
+3248-
+3249-    if-le v1, v2, :cond_99
+3250-
+3251-    .line 393
+3252:    new-instance v1, Lcom/vivo/seckeysdk/utils/NativeRequest;
+3253-
+3254:    invoke-direct {v1}, Lcom/vivo/seckeysdk/utils/NativeRequest;-><init>()V
+3255-
+3256-    .line 394
+3257-    sget-object v2, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->DECRYPT:Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;
+3258-
+3259-    invoke-virtual {v2}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$OperateType;->ordinal()I
+3260-
+3261-    move-result v2
+3262-
+3263:    invoke-virtual {v1, v2}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setOperateType(I)V
+3264-
+3265-    .line 395
+3266-    sget-object v2, Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;->AES_FIXED:Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;
+3267-
+3268-    invoke-virtual {v2}, Lcom/vivo/seckeysdk/utils/SDKCipherNative$EncryptType;->ordinal()I
+3269-
+3270-    move-result v2
+3271-
+3272:    invoke-virtual {v1, v2}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setEncryptType(I)V
+3273-
+3274-    .line 396
+3275-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/d;->b()I
+3276-
+3277-    move-result v2
+3278-
+3279:    invoke-virtual {v1, v2}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setKeyVersion(I)V
+3280-
+3281-    .line 398
+3282-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/d;->c()[B
+3283-
+3284-    move-result-object p1
+3285-
+3286-    .line 399
+3287-    array-length v2, v0
+3288-
+3289-    array-length v3, p1
+3290-
+3291-    add-int/2addr v2, v3
+3292-
+3293-    new-array v2, v2, [B
+3294-
+3295-    .line 400
+3296-    array-length v3, v0
+3297-
+3298-    const/4 v4, 0x0
+3299-
+3300-    invoke-static {v0, v4, v2, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+3301-
+3302-    .line 401
+3303-    array-length v0, v0
+3304-
+3305-    array-length v3, p1
+3306-
+3307-    invoke-static {p1, v4, v2, v0, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+3308-
+3309-    .line 402
+3310:    invoke-virtual {v1, v2}, Lcom/vivo/seckeysdk/utils/NativeRequest;->setData([B)V
+3311-
+3312-    .line 406
+3313-    :cond_49
+3314:    invoke-static {v1}, Lcom/vivo/seckeysdk/utils/SDKCipherNative;->execute(Lcom/vivo/seckeysdk/utils/NativeRequest;)Lcom/vivo/seckeysdk/utils/NativeResponse;
+3315-
+3316-    move-result-object p1
+3317-
+3318-    const/4 v0, 0x6
+3319-
+3320-    const/16 v2, 0x5341
+3321-
+3322-    add-int/lit8 v4, v4, 0x1
+3323-
+3324-    .line 407
+3325-    invoke-direct {p0, v0, v2, v4, p1}, Lcom/vivo/seckeysdk/utils/f;->a(IIILcom/vivo/seckeysdk/utils/NativeResponse;)Z
+3326-
+3327-    move-result v0
+3328-
+3329-    if-nez v0, :cond_49
+3330-
+3331-    .line 408
+3332-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+3333-
+3334-    move-result p0
+3335-
+3336-    const-string v0, "SecurityKey"
+3337-
+3338-    if-nez p0, :cond_7a
+3339-
+3340-    .line 412
+3341-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getOutput()[B
+3342-
+3343-    move-result-object p0
+3344-
+3345-    if-eqz p0, :cond_6b
+3346-
+3347-    .line 416
+3348-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getOutput()[B
+3349-
+3350-    move-result-object p0
+3351-
+3352-    return-object p0
+3353-
+3354-    :cond_6b
+3355-    const-string p0, "aesDecrypt output is null"
+3356-
+3357-    .line 413
+3358-    invoke-static {v0, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+3359-
+3360-    .line 414
+3361-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+3362-
+3363-    const/16 p1, -0x3e8
+3364-
+3365-    const-string v0, "unknown error!"
+3366-
+3367-    invoke-direct {p0, v0, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(Ljava/lang/String;I)V
+3368-
+3369-    throw p0
+3370-
+3371-    .line 409
+3372-    :cond_7a
+3373-    new-instance p0, Ljava/lang/StringBuilder;
+3374-
+3375-    const-string v1, "aesDecrypt fail:"
+3376-
+3377-    invoke-direct {p0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+3378-
+3379-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+3380-
+3381-    move-result v1
+3382-
+3383-    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+3384-
+3385-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+3386-
+3387-    move-result-object p0
+3388-
+3389-    invoke-static {v0, p0}, Lcom/vivo/seckeysdk/utils/k;->d(Ljava/lang/String;Ljava/lang/String;)V
+3390-
+3391-    .line 410
+3392-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+3393-
+3394-    invoke-virtual {p1}, Lcom/vivo/seckeysdk/utils/NativeResponse;->getErr()I
+3395-
+3396-    move-result p1
+3397-
+3398-    invoke-direct {p0, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(I)V
+3399-
+3400-    throw p0
+3401-
+3402-    .line 384
+3403-    :cond_99
+3404-    new-instance p0, Lcom/vivo/seckeysdk/utils/SecurityKeyException;
+3405-
+3406-    const/16 p1, -0xa
+3407-
+3408-    const-string v0, "aes decrypt error"
+3409-
+3410-    invoke-direct {p0, v0, p1}, Lcom/vivo/seckeysdk/utils/SecurityKeyException;-><init>(Ljava/lang/String;I)V
+3411-
+3412-    throw p0
+3413-.end method
