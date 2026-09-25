@@ -1,0 +1,373 @@
+===== repaired ELF =====
+f68dde436f83e3901b1a581514be0e8914e5158a66bd8f49ced01351a287e9b2  ./libvivoseckey_arm64_text_repaired.so
+
+===== sections =====
+readelf: warning: './libvivoseckey_arm64_text_repaired.so': SHT_DYNAMIC section with index 3 is not contained within the PT_DYNAMIC segment
+readelf: warning: './libvivoseckey_arm64_text_repaired.so': SHT_DYNAMIC section with index 3 is not at the start of PT_DYNAMIC segment
+There are 4 section headers, starting at offset 0x995f0:
+
+Section Headers:
+  [Nr] Name              Type            Address          Off    Size   ES Flg Lk Inf Al
+  [ 0] <no-strings>      NULL            0000000000000000 000000 000000 00      0   0  0
+  [ 1] <no-strings>      PROGBITS        0000000000000000 000000 09159c 00  AX  0   0  4
+  [ 2] <no-strings>      STRTAB          0000000000004d80 004d80 002664 00   A  0   0  1
+  [ 3] <no-strings>      DYNAMIC         0000000000099510 099510 0001e0 10  WA  2   0  8
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  R (retain), y (purecode), p (processor specific)
+
+===== JNI_OnLoad disassembly =====
+
+./libvivoseckey_arm64_text_repaired.so:	file format elf64-littleaarch64
+
+Disassembly of section :
+
+0000000000000000 <>:
+   1b644: f8060f72     	str	x18, [x27, #0x60]!
+   1b648: c15a0f0f     	fvdot	za.s[w8, 7, vgx2], { z24.h, z25.h }, z10.h[3]
+   1b64c: 0f04067e     	movi	v30.2s, #0x93
+   1b650: e203e0cf     	<unknown>
+   1b654: 5c83321e     	ldr	d30, 0xfffffffffff21c94
+   1b658: de3448cf     	<unknown>
+   1b65c: 873ec1a8     	<unknown>
+   1b660: 362a6917     	tbz	w23, #0x5, 0x20380
+   1b664: 6eb764a9     	umax	v9.4s, v5.4s, v23.4s
+   1b668: 3704ebd4     	tbnz	w20, #0x0, 0x153e0
+   1b66c: b03df78a     	adrp	x10, 0x7bf0c000
+   1b670: 3157c0d1     	adds	w17, w6, #0x5f0, lsl #12 // =0x5f0000
+   1b674: a6f64241     	<unknown>
+   1b678: 6a9aaae6     	<unknown>
+   1b67c: 6f7c65ea     	sqshlu	v10.2d, v15.2d, #0x3c
+   1b680: 570a9b4a     	<unknown>
+   1b684: 48fd48ce     	<unknown>
+   1b688: d50e8baf     	sys	#0x6, c8, c11, #0x5, x15
+   1b68c: a5c72128     	<unknown>
+   1b690: 022a16bb     	<unknown>
+   1b694: 6ad2e2ff     	<unknown>
+   1b698: caf2c73e     	eon	x30, x25, x18, ror #49
+   1b69c: 57a7be08     	<unknown>
+   1b6a0: 4fe9860f     	<unknown>
+   1b6a4: ca8b3fff     	eor	xzr, xzr, x11, asr #15
+   1b6a8: 8ad2fdfd     	and	x29, x15, x18, ror #63
+   1b6ac: f2d8c1ff     	movk	xzr, #0xc60f, lsl #32
+   1b6b0: f2b8f72a     	movk	x10, #0xc7b9, lsl #16
+   1b6b4: 99f0d9aa     	<unknown>
+   1b6b8: 8a0aef27     	and	x7, x25, x10, lsl #59
+   1b6bc: 6ced4ffb     	ldp	d27, d19, [sp], #-0x130
+   1b6c0: bbb45b9e     	<unknown>
+   1b6c4: 23279418     	<unknown>
+   1b6c8: 75e95ef7     	<unknown>
+   1b6cc: cc1f47cf     	<unknown>
+   1b6d0: a489f2f1     	ldnt1h	{ z17.h }, p4/z, [x23, #-0x7, mul vl]
+   1b6d4: e7affbab     	<unknown>
+   1b6d8: 09712e8b     	<unknown>
+   1b6dc: 8b701f8b     	<unknown>
+   1b6e0: 285f46f1     	ldnp	w17, w17, [x23, #0xf8]
+   1b6e4: c128f1df     	<unknown>
+   1b6e8: 15328ff0     	b	0x4cbf6a8
+   1b6ec: e7440466     	<unknown>
+   1b6f0: 28320079     	stnp	w25, w0, [x3, #-0x70]
+   1b6f4: b7d4d974     	tbnz	x20, #0x3a, 0x15220
+   1b6f8: 611012e7     	<unknown>
+   1b6fc: e12ee286     	<unknown>
+   1b700: b74a6ce6     	tbnz	x6, #0x29, 0x2049c
+   1b704: 0c3047c7     	<unknown>
+   1b708: 1cbfa916     	ldr	s22, 0xfffffffffff9ac28
+   1b70c: d00c7117     	adrp	x23, 0x18e3d000
+   1b710: eca22c66     	sttp	q6, q11, [x3], #-0x3c0
+   1b714: 270821cf     	<unknown>
+   1b718: 07810970     	<unknown>
+   1b71c: 110c3ab7     	add	w23, w21, #0x30e
+   1b720: 4be7895b     	<unknown>
+   1b724: bca58f70     	<unknown>
+   1b728: 8bb65666     	<unknown>
+   1b72c: c52f2b0c     	ldff1sw	{ z12.d }, p2/z, [x24, z15.d, uxtw #2]
+   1b730: 7a7707aa     	<unknown>
+   1b734: b15b05ad     	adds	x13, x13, #0x6c1, lsl #12 // =0x6c1000
+   1b738: 2ad65a97     	orr	w23, w20, w22, ror #22
+   1b73c: ffb45b0c     	<unknown>
+   1b740: 0a78afb7     	<unknown>
+   1b744: 5f365101     	fmls	h1, h8, v6.h[3]
+   1b748: 128a7e3a     	mov	w26, #-0x53f2           // =-21490
+   1b74c: 6f078631     	mvni	v17.8h, #0xf1
+   1b750: 111f022a     	add	w10, w17, #0x7c0
+   1b754: 310de67a     	adds	w26, w19, #0x379
+   1b758: e2e7855b     	<unknown>
+   1b75c: b6ad0c07     	tbz	x7, #0x35, 0x158dc
+   1b760: a8860ee0     	stp	x0, x3, [x23], #0x60
+   1b764: d0af3be8     	adrp	x8, 0xffffffff5e799000
+   1b768: 46b839ff     	<unknown>
+   1b76c: 28a6a4a4     	stp	w4, w9, [x5], #-0xcc
+   1b770: 28361847     	stnp	w7, w6, [x2, #-0x50]
+   1b774: b6a571f6     	tbz	x22, #0x34, 0x165b0
+   1b778: 37641601     	tbnz	w1, #0xc, 0x13a38
+   1b77c: d2dd75d2     	mov	x18, #0xebae00000000    // =259132556836864
+   1b780: 8154c781     	<unknown>
+   1b784: 47813fc0     	<unknown>
+   1b788: be2b7007     	<unknown>
+   1b78c: 84d1256b     	ldff1sh	{ z11.s }, p1/z, [x11, z17.s, sxtw]
+   1b790: 2b57744f     	adds	w15, w2, w23, lsr #29
+   1b794: 5a4c36fc     	<unknown>
+   1b798: 5f1fd2e3     	<unknown>
+   1b79c: be6cf2df     	<unknown>
+   1b7a0: d0cc2765     	adrp	x5, 0xffffffff98509000
+   1b7a4: a5ad2f3f     	ld1rod	{ z31.d }, p3/z, [x25, #-0x60]
+   1b7a8: edd2fcff     	ldtp	q31, q31, [x7, #0x250]!
+   1b7ac: 8df2c09e     	<unknown>
+   1b7b0: f2a3f19a     	movk	x26, #0x1f8c, lsl #16
+   1b7b4: 27f62f4d     	<unknown>
+   1b7b8: 94fd8e8e     	bl	0x3f7f1f0
+   1b7bc: f452b7e3     	<unknown>
+   1b7c0: 95bf5ecc     	bl	0x6ff32f0
+   1b7c4: 95c72f01     	bl	0x71e73c8
+   1b7c8: 7283ff4c     	movk	w12, #0x1ffa
+   1b7cc: 52a01b76     	mov	w22, #0xdb0000          // =14352384
+   1b7d0: 97f13ff6     	bl	0xffffffffffc6b7a8
+   1b7d4: 1019d772     	adr	x18, 0x4f2c0
+   1b7d8: 80b21f7f     	<unknown>
+   1b7dc: c4fed872     	ld1h	{ z18.d }, p6/z, [x3, z30.d, lsl #1]
+   1b7e0: 48b852b8     	<unknown>
+   1b7e4: 8d00729e     	<unknown>
+   1b7e8: 260d307e     	<unknown>
+   1b7ec: 72066a71     	ands	w17, w19, #0xfc1fffff
+   1b7f0: 2e6e831b     	umlal	v27.4s, v24.4h, v14.4h
+   1b7f4: 2306c25a     	<unknown>
+   1b7f8: d3e46e2a     	<unknown>
+   1b7fc: 865a2526     	<unknown>
+   1b800: 0ed6871e     	<unknown>
+   1b804: 29a21ebe     	stp	w30, w7, [x21, #-0xf0]!
+   1b808: 278e0056     	<unknown>
+   1b80c: 666832f9     	<unknown>
+   1b810: bc4f0725     	ldr	s5, [x25], #0xf0
+   1b814: d7953e61     	<unknown>
+   1b818: 3edb8bed     	<unknown>
+   1b81c: 42d5c7c9     	<unknown>
+   1b820: 8b0d707e     	add	x30, x3, x13, lsl #28
+   1b824: 36b006ba     	tbz	w26, #0x16, 0x1b8f8
+   1b828: 8e04579c     	<unknown>
+   1b82c: 160a89d7     	b	0xfffffffff82bdf88
+   1b830: 562860e9     	<unknown>
+   1b834: f847f041     	ldur	x1, [x2, #0x7f]
+   1b838: 09eb07bf     	<unknown>
+   1b83c: 1a97c3f0     	csel	w16, wzr, w23, gt
+   1b840: aa36538a     	orn	x10, x28, x22, lsl #20
+   1b844: ac06d805     	stnp	q5, q22, [x0, #0xd0]
+   1b848: 30165c0a     	adr	x10, 0x483c9
+   1b84c: 3f2c2ff0     	<unknown>
+   1b850: 61365c20     	<unknown>
+   1b854: b8480009     	ldur	w9, [x0, #0x80]
+   1b858: e80f3877     	sttnp	x23, x14, [x3, #0xf0]
+   1b85c: 1002101e     	adr	x30, 0x1fa5c
+   1b860: 1256e886     	<unknown>
+   1b864: 2cb04ee0     	stp	s0, s19, [x23], #-0x80
+   1b868: 212102ce     	<unknown>
+   1b86c: 03d9dfa9     	<unknown>
+   1b870: 5e441691     	<unknown>
+   1b874: b831044f     	<unknown>
+   1b878: a805baa7     	stnp	x7, x14, [x21, #0x58]
+   1b87c: eead007e     	<unknown>
+   1b880: 06de8106     	<unknown>
+   1b884: 2e3a0717     	uhadd	v23.8b, v24.8b, v26.8b
+   1b888: 0fa1201e     	smlal	v30.2d, v0.2s, v1.s[1]
+   1b88c: b126a1b0     	adds	x16, x13, #0x9a8
+   1b890: bba617ee     	<unknown>
+   1b894: beaa5727     	<unknown>
+   1b898: ceadf656     	<unknown>
+   1b89c: 7119b6b6     	subs	w22, w21, #0x66d
+   1b8a0: 85418476     	ld1rsh	{ z22.d }, p1/z, [x3, #0x2]
+   1b8a4: 0a04302f     	and	w15, w1, w4, lsl #12
+   1b8a8: 0e011036     	tbx	v22.8b, { v1.16b }, v1.8b
+   1b8ac: 821edf3d     	<unknown>
+   1b8b0: d6ab812e     	<unknown>
+   1b8b4: 4047661e     	<unknown>
+   1b8b8: 285e8058     	ldnp	w24, w0, [x2, #0xf4]
+   1b8bc: 818a1916     	<unknown>
+   1b8c0: 1c41064e     	ldr	s14, 0x9d988
+   1b8c4: 81873846     	<unknown>
+   1b8c8: b71d7eaf     	tbnz	x15, #0x23, 0x1689c
+   1b8cc: cf066141     	<unknown>
+   1b8d0: 751de7ee     	<unknown>
+   1b8d4: 1b66d17f     	<unknown>
+   1b8d8: 615ace25     	<unknown>
+   1b8dc: a5222106     	ld1row	{ z6.s }, p0/z, [x8, #0x40]
+   1b8e0: 737e7cb7     	<unknown>
+   1b8e4: ae784e70     	<unknown>
+   1b8e8: 0ecf6187     	<unknown>
+   1b8ec: 38ee1cde     	<unknown>
+   1b8f0: 620eb1fe     	<unknown>
+   1b8f4: 3e2ec51e     	<unknown>
+   1b8f8: 5e164e8b     	<unknown>
+   1b8fc: 1a89168e     	csinc	w14, w20, w9, ne
+   1b900: af6aa976     	<unknown>
+   1b904: df3c9e86     	<unknown>
+   1b908: 27639e46     	<unknown>
+   1b90c: c24f070a     	<unknown>
+   1b910: fa0a1054     	<unknown>
+   1b914: c16b0aee     	<unknown>
+   1b918: 025eab91     	<unknown>
+   1b91c: 5f25b732     	<unknown>
+   1b920: 9469cbea     	bl	0x1a8e8c8
+   1b924: 04cf209e     	uminqv	v30.2d, p0, z4.d
+   1b928: e4a21e4a     	st3q	{ z10.q - z12.q }, p7, [x18, x2, lsl #4]
+   1b92c: 2eba58fe     	<unknown>
+   1b930: faa60a48     	<unknown>
+   1b934: 4ffadb5f     	<unknown>
+   1b938: 6b5e2f6b     	subs	w11, w27, w30, lsr #11
+   1b93c: b7f94515     	tbnz	x21, #0x3f, 0x1e1dc
+   1b940: 798c0e6c     	ldrsh	x12, [x19, #0x606]
+   1b944: adf9e347     	ldp	q7, q24, [x26, #-0xd0]!
+   1b948: eda7f8e8     	sttp	q8, q30, [x7, #-0x310]!
+   1b94c: e0c1932f     	ld1d	{za7v.d[w12, 1]}, p4/z, [x25, x1, lsl #3]
+   1b950: d72fbf47     	<unknown>
+   1b954: 0f728cff     	<unknown>
+   1b958: 6f52ba95     	<unknown>
+   1b95c: de8a8990     	<unknown>
+   1b960: b5ea12a6     	cbnz	x6, 0xfffffffffffefbb4
+   1b964: 72b72faa     	movk	w10, #0xb97d, lsl #16
+   1b968: 7072d48b     	adr	x11, 0x1013fb
+   1b96c: 6f8c5747     	<unknown>
+   1b970: 0d020b06     	<unknown>
+   1b974: 709f850b     	adr	x11, 0xfffffffffff5aa17
+   1b978: a7f88d7f     	<unknown>
+   1b97c: e2d8f153     	<unknown>
+   1b980: 70056eaf     	adr	x15, 0x26757
+   1b984: 97aff2cf     	bl	0xfffffffffec184c0
+   1b988: 01e311bf     	<unknown>
+   1b98c: 676b8b71     	<unknown>
+   1b990: 6f2e2d8d     	<unknown>
+   1b994: 17bda0eb     	b	0xfffffffffef83d40
+   1b998: 17c6020f     	b	0xffffffffff19c1d4
+   1b99c: 17f1f7d6     	b	0xffffffffffc998f4
+   1b9a0: d15787b8     	sub	x24, x29, #0x5e1, lsl #12 // =0x5e1000
+   1b9a4: cfbe4f62     	<unknown>
+   1b9a8: 3e92531f     	<unknown>
+   1b9ac: a7f01b77     	<unknown>
+   1b9b0: 070757e8     	<unknown>
+   1b9b4: 76ce4ac1     	<unknown>
+   1b9b8: cf8fb9df     	<unknown>
+   1b9bc: 1612b201     	b	0xfffffffff84c81c0
+   1b9c0: 8627db42     	<unknown>
+   1b9c4: 04e8659f     	<unknown>
+   1b9c8: 5f631271     	<unknown>
+   1b9cc: 4a671f43     	eon	w3, w26, w7, lsr #7
+   1b9d0: a669a7f1     	<unknown>
+   1b9d4: e34c7fe9     	<unknown>
+   1b9d8: 868c52b2     	<unknown>
+   1b9dc: 08cde71f     	ldarb	wzr, [x24]
+   1b9e0: ef8d9f0f     	<unknown>
+   1b9e4: d3ed2f3e     	<unknown>
+   1b9e8: 4e508d9e     	<unknown>
+   1b9ec: 6af09fc7     	<unknown>
+   1b9f0: 07cfee66     	<unknown>
+   1b9f4: 175d4332     	b	0xfffffffffd76c6bc
+   1b9f8: 4a07e930     	<unknown>
+   1b9fc: ef905eb5     	<unknown>
+   1ba00: c0502f9e     	<unknown>
+   1ba04: 1037e836     	adr	x22, 0x8b708
+   1ba08: 4aa88e02     	<unknown>
+   1ba0c: 13ff1e3a     	<unknown>
+   1ba10: 974fd4ff     	bl	0xfffffffffd410e0c
+   1ba14: 7669f05f     	<unknown>
+   1ba18: 8e0786b0     	<unknown>
+   1ba1c: 0d04a5c1     	<unknown>
+   1ba20: 1f37e01f     	fnmsub	s31, s0, s23, s24
+   1ba24: a7e79fc2     	<unknown>
+   1ba28: 6bd10c02     	<unknown>
+   1ba2c: 13426660     	<unknown>
+   1ba30: 0002a6e8     	<unknown>
+   1ba34: 2602b7ef     	<unknown>
+   1ba38: cf6ba508     	<unknown>
+   1ba3c: 05505606     	mov	z6.h, p0/m, #0xffb0     // =65456
+   1ba40: 0130900e     	<unknown>
+   1ba44: 0b028e5e     	<unknown>
+   1ba48: f0cb0eb3     	adrp	x19, 0xffffffff961f2000
+   1ba4c: 672328f1     	<unknown>
+   1ba50: ed37ee77     	sttp	q23, q27, [x19, #-0x110]
+   1ba54: d6907200     	<unknown>
+   1ba58: d7365aea     	<unknown>
+   1ba5c: 6a8ee134     	<unknown>
+   1ba60: c046270e     	<unknown>
+   1ba64: cfd7b4ce     	<unknown>
+   1ba68: c8ff0d9c     	<unknown>
+   1ba6c: fe853205     	<unknown>
+   1ba70: 52b671ed     	mov	w13, #-0x4c710000       // =-1282473984
+   1ba74: 7850904d     	ldurh	w13, [x2, #-0xf7]
+   1ba78: bcb9897e     	<unknown>
+   1ba7c: 58846917     	ldr	x23, 0xfffffffffff2479c
+   1ba80: a9ef07f7     	ldp	x23, x1, [sp, #-0x110]!
+   1ba84: b84c9747     	ldr	w7, [x26], #0xc9
+   1ba88: ef615799     	<unknown>
+   1ba8c: ff116f84     	<unknown>
+   1ba90: 46deb0c3     	<unknown>
+   1ba94: ef97cfb1     	<unknown>
+   1ba98: 1b0b7de8     	mul	w8, w15, w11
+   1ba9c: 8db52e62     	<unknown>
+   1baa0: 7f240d06     	<unknown>
+   1baa4: 0079906f     	<unknown>
+   1baa8: ee0d2b13     	<unknown>
+   1baac: 0f6db891     	sqdmull	v17.4s, v4.4h, v13.h[6]
+   1bab0: ab72d62c     	<unknown>
+   1bab4: edfff56c     	ldtp	q12, q29, [x11, #-0x10]!
+   1bab8: 8e2086b8     	<unknown>
+   1babc: 4410ecf7     	uzpq2	z23.b, z7.b, z16.b
+   1bac0: 71411fd6     	subs	w22, w30, #0x47, lsl #12 // =0x47000
+   1bac4: ff321baf     	<unknown>
+   1bac8: c1042fe1     	smlall	za.s[w9, 0x4:0x7], z31.b, z4.b[3]
+   1bacc: 371e8316     	tbnz	w22, #0x3, 0x18b2c
+   1bad0: ec2a0cf8     	sttnp	q24, q3, [x7, #-0x2c0]
+   1bad4: 3f3d41b7     	<unknown>
+   1bad8: b017ec22     	adrp	x2, 0x2fda0000
+   1badc: 03dd1f37     	<unknown>
+   1bae0: 45cbd771     	sbclt	z17.d, z27.d, z11.d
+   1bae4: 0e6be0b7     	<unknown>
+   1bae8: c30c1fe1     	<unknown>
+   1baec: ec30c727     	sttnp	q7, q17, [x25, #-0x1f0]
+   1baf0: 1eefa6ce     	fccmp	h22, h15, #0xe, ge
+   1baf4: 8c68b09f     	<unknown>
+   1baf8: be4c3e29     	<unknown>
+   1bafc: 3944c1cd     	ldrb	w13, [x14, #0x130]
+   1bb00: 8fb886ef     	<unknown>
+   1bb04: 030ebe2e     	<unknown>
+   1bb08: 9ffa2a2f     	<unknown>
+   1bb0c: d0534a0e     	adrp	x14, 0xa695d000
+   1bb10: f0f746b7     	adrp	x23, 0xffffffffee8f2000
+   1bb14: 0650df07     	<unknown>
+   1bb18: 0f06d02e     	<unknown>
+   1bb1c: 240f8653     	cmpgt	p3.b, p1/z, z18.b, z15.b
+   1bb20: e6bfe657     	<unknown>
+   1bb24: ef17e240     	<unknown>
+   1bb28: 23ef5ea0     	<unknown>
+   1bb2c: 0c4f0717     	<unknown>
+   1bb30: 0f3e3b08     	<unknown>
+   1bb34: cfb4c787     	<unknown>
+   1bb38: e1c16fde     	<unknown>
+   1bb3c: 66c411fe     	<unknown>
+
+===== instruction hits =====
+11:   1b654: 5c83321e     	ldr	d30, 0xfffffffffff21c94
+17:   1b66c: b03df78a     	adrp	x10, 0x7bf0c000
+56:   1b708: 1cbfa916     	ldr	s22, 0xfffffffffff9ac28
+57:   1b70c: d00c7117     	adrp	x23, 0x18e3d000
+61:   1b71c: 110c3ab7     	add	w23, w21, #0x30e
+74:   1b750: 111f022a     	add	w10, w17, #0x7c0
+79:   1b764: d0af3be8     	adrp	x8, 0xffffffff5e799000
+94:   1b7a0: d0cc2765     	adrp	x5, 0xffffffff98509000
+100:   1b7b8: 94fd8e8e     	bl	0x3f7f1f0
+102:   1b7c0: 95bf5ecc     	bl	0x6ff32f0
+103:   1b7c4: 95c72f01     	bl	0x71e73c8
+106:   1b7d0: 97f13ff6     	bl	0xffffffffffc6b7a8
+122:   1b810: bc4f0725     	ldr	s5, [x25], #0xf0
+126:   1b820: 8b0d707e     	add	x30, x3, x13, lsl #28
+151:   1b884: 2e3a0717     	uhadd	v23.8b, v24.8b, v26.8b
+166:   1b8c0: 1c41064e     	ldr	s14, 0x9d988
+190:   1b920: 9469cbea     	bl	0x1a8e8c8
+215:   1b984: 97aff2cf     	bl	0xfffffffffec184c0
+250:   1ba10: 974fd4ff     	bl	0xfffffffffd410e0c
+264:   1ba48: f0cb0eb3     	adrp	x19, 0xffffffff961f2000
+277:   1ba7c: 58846917     	ldr	x23, 0xfffffffffff2479c
+279:   1ba84: b84c9747     	ldr	w7, [x26], #0xc9
+300:   1bad8: b017ec22     	adrp	x2, 0x2fda0000
+313:   1bb0c: d0534a0e     	adrp	x14, 0xa695d000
+314:   1bb10: f0f746b7     	adrp	x23, 0xffffffffee8f2000
