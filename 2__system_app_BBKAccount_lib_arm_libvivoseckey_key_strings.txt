@@ -1,0 +1,9 @@
+   4607 JNI_OnLoad
+   5879 pthread_key_create
+   5a89 _Z22vivo_seckey_2021_07_26v
+   603a pthread_key_delete
+   791e libvivoseckey.so
+  7515d aes/
+  75199 KEY!
+  75c97 aes.c
+  fb5b8 xF\nA[F|ZM\[]N[J/soEncryptMaxLen

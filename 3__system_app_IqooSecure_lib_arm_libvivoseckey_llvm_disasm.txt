@@ -1,0 +1,2 @@
+
+./3__system_app_IqooSecure_lib_arm_libvivoseckey.so:	file format elf32-littlearm
