@@ -1,13 +1,50 @@
 ===== paths =====
+/system/priv-app/VivoBrowser/lib/arm64/libvivoseckey.so
+/system/app/BBKAccount/lib/arm/libvivoseckey.so
+/system/app/IqooSecure/lib/arm/libvivoseckey.so
+/system/app/BBKAppStore/lib/arm/libvivoseckey.so
 
 ===== sha256 =====
+9fe935d19950fef8597f4f07faba94cc5d26d33e03cb033225e533755d45bdc4  ./1__system_priv-app_VivoBrowser_lib_arm64_libvivoseckey.so
+1aa2262f66c661fc82b598b2b3b7f0fa694f7cbbd012f31b2f6c76c17d3ae55f  ./2__system_app_BBKAccount_lib_arm_libvivoseckey.so
+7cce2b725bdbb0e6c111f026f17ea7419278a702f672d6c59ca3893366dcc225  ./3__system_app_IqooSecure_lib_arm_libvivoseckey.so
+0a14bbec127c923776a584fa981ef0ea2abe641d3cc80312ebc464656fa9b8c8  ./4__system_app_BBKAppStore_lib_arm_libvivoseckey.so
 
 ===== file =====
 
 ===== strings =====
 
-========== ./*libvivoseckey.so ==========
+========== ./1__system_priv-app_VivoBrowser_lib_arm64_libvivoseckey.so ==========
+JNI_OnLoad
+libvivoseckey.so
+
+========== ./2__system_app_BBKAccount_lib_arm_libvivoseckey.so ==========
+JNI_OnLoad
+libvivoseckey.so
+rAES fo
+aes/
+aes.c
+xF\nA[F|ZM\[]N[J/soEncryptMaxLen
+
+========== ./3__system_app_IqooSecure_lib_arm_libvivoseckey.so ==========
+JNI_OnLoad
+libvivoseckey.so
+AES fo
+e/aes/
+Yaes.c
+
+========== ./4__system_app_BBKAppStore_lib_arm_libvivoseckey.so ==========
+JNI_OnLoad
+libvivoseckey.so
+aes/
+Yaes
 
 ===== JNI strings =====
 
-========== ./*libvivoseckey.so ==========
+========== ./1__system_priv-app_VivoBrowser_lib_arm64_libvivoseckey.so ==========
+
+========== ./2__system_app_BBKAccount_lib_arm_libvivoseckey.so ==========
+
+========== ./3__system_app_IqooSecure_lib_arm_libvivoseckey.so ==========
+
+========== ./4__system_app_BBKAppStore_lib_arm_libvivoseckey.so ==========

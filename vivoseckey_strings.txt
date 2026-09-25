@@ -1,2 +1,25 @@
 
-========== ./*libvivoseckey.so ==========
+========== ./1__system_priv-app_VivoBrowser_lib_arm64_libvivoseckey.so ==========
+JNI_OnLoad
+libvivoseckey.so
+
+========== ./2__system_app_BBKAccount_lib_arm_libvivoseckey.so ==========
+JNI_OnLoad
+libvivoseckey.so
+rAES fo
+aes/
+aes.c
+xF\nA[F|ZM\[]N[J/soEncryptMaxLen
+
+========== ./3__system_app_IqooSecure_lib_arm_libvivoseckey.so ==========
+JNI_OnLoad
+libvivoseckey.so
+AES fo
+e/aes/
+Yaes.c
+
+========== ./4__system_app_BBKAppStore_lib_arm_libvivoseckey.so ==========
+JNI_OnLoad
+libvivoseckey.so
+aes/
+Yaes

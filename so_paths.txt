@@ -1,0 +1,4 @@
+/system/priv-app/VivoBrowser/lib/arm64/libvivoseckey.so
+/system/app/BBKAccount/lib/arm/libvivoseckey.so
+/system/app/IqooSecure/lib/arm/libvivoseckey.so
+/system/app/BBKAppStore/lib/arm/libvivoseckey.so
