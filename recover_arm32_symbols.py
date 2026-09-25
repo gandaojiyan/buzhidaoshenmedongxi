@@ -205,11 +205,12 @@ def parse(path):
                 p += 4
                 continue
 
-            plausible =
-                is_exec_value(st_value) and
-                st_size < 0x100000 and
-                st_info in (0x10, 0x11, 0x12, 0x20, 0x21, 0x22) and
-                st_shndx < 0x1000
+            plausible = (
+                is_exec_value(st_value)
+                and st_size < 0x100000
+                and st_info in (0x10, 0x11, 0x12, 0x20, 0x21, 0x22)
+                and st_shndx < 0x1000
+            )
 
             if plausible:
                 hits.append(

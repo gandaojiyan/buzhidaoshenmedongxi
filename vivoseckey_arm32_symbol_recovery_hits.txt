@@ -1,0 +1,275 @@
+1-================================================================================
+2:2__system_app_BBKAccount_lib_arm_libvivoseckey.so
+3-================================================================================
+4-size = 0xfdf98
+5-
+6-ELF header:
+7-  phoff     = 0x34
+8-  phnum     = 5
+9-  shoff     = 0xfdef8
+10-  shentsize = 40
+11-  shnum     = 4
+12-  shstrndx  = 1
+13-
+14-Program headers:
+15-  [0] type=0x1 off=0x0 vaddr=0x0 filesz=0x7ca54 memsz=0xf6404 flags=0x5
+16-  [1] type=0x1 off=0xf6bc8 vaddr=0xf7bc8 filesz=0x656c memsz=0xf014 flags=0x6
+17-  [2] type=0x2 off=0xfde20 vaddr=0xfa4a0 filesz=0xf8 memsz=0xf8 flags=0x6
+18-  [3] type=0x70000001 off=0xe2a84 vaddr=0xe2a84 filesz=0x5308 memsz=0x5308 flags=0x4
+19-  [4] type=0x1 off=0xfd134 vaddr=0x107134 filesz=0xcd4 memsz=0xcd4 flags=0x5
+20-
+21-Raw section headers:
+22-  [0] type=0x0 flags=0x0 addr=0x0 off=0x0 size=0x0 link=0 info=0 align=0x0 entsize=0x0
+23-  [1] type=0x8 flags=0x0 addr=0x0 off=0x0 size=0xfdf98 link=0 info=0 align=0x0 entsize=0x0
+24-  [2] type=0x3 flags=0x2 addr=0x453c off=0x453c size=0x33f3 link=0 info=0 align=0x1 entsize=0x0
+25-  [3] type=0x6 flags=0x3 addr=0xfde20 off=0xfde20 size=0xf8 link=2 info=0 align=0x4 entsize=0x8
+26-
+27-Known strings:
+28-  b'JNI_OnLoad\x00':
+29-      file+0x4607
+30:  b'vivo_seckey':
+31-      file+0x5a8d
+32:  b'libvivoseckey.so\x00':
+33-      file+0x791e
+34-
+35:Candidate dynstr for JNI_OnLoad @ 0x4607:
+36-  dynstr start guess = 0x45ea
+37-  strings near guessed dynstr:
+38-    +0x0 -> '120'
+39-    +0x1 -> '20'
+40-    +0x10 -> '25'
+41-    +0x1d -> 'JNI_OnLoad'
+42-    +0x28b -> 'create'
+43-    +0x292 -> 'strlen'
+44-    +0x333 -> 'ead_self'
+45-
+46:Possible Elf32_Sym entries for JNI_OnLoad:
+47-  symbol_file=0x1bc nameoff=0x1d value=0x0 size=0x0 info=0x12 other=0x0 shndx=0
+48:  surrounding symbols:
+49-    0x3c: nameoff=0x0 value=0x0 size=0x7ca54 info=0x4 shndx=15 exec=True name=120
+50-    0x4c: nameoff=0x5 value=0x1000 size=0x1 info=0xc8 shndx=15 exec=True name=121
+51-    0x6c: nameoff=0x6 value=0x1000 size=0x2 info=0x20 shndx=15 exec=True name=21
+52-    0x8c: nameoff=0x6 value=0x4 size=0x70000001 info=0x84 shndx=14 exec=True name=21
+53-    0xac: nameoff=0x4 value=0x4 size=0x1 info=0x34 shndx=15 exec=True name=y121
+54-    0xcc: nameoff=0x5 value=0x1000 size=0x7ff77ffe info=0x78 shndx=0 exec=True name=121
+55-    0xdc: nameoff=0x13a value=0xfd784 size=0xfcdd8 info=0xa4 shndx=0 exec=False name=<empty>
+56-    0xec: nameoff=0x26c value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=e
+57-    0xfc: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=120
+58-    0x10c: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=120
+59-    0x11c: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=120
+60-    0x12c: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=120
+61-    0x13c: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=120
+62-    0x14c: nameoff=0x0 value=0x0 size=0x7379732f info=0x74 shndx=12141 exec=True name=120
+63-    0x16c: nameoff=0x14 value=0x3 size=0x554e47 info=0x55 shndx=56002 exec=True name=126
+64-    0x18c: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=120
+65-    0x19c: nameoff=0x1 value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=20
+66-    0x1ac: nameoff=0x10 value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=25
+67-    0x1bc: nameoff=0x1d value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=JNI_OnLoad
+68-    0x1cc: nameoff=0x2c value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=imeofday
+69-    0x1dc: nameoff=0x33 value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=y
+70-    0x1ec: nameoff=0x44 value=0x0 size=0x0 info=0x11 shndx=0 exec=True name=rint
+71-    0x1fc: nameoff=0x56 value=0xdb7a0 size=0x8 info=0x12 shndx=9 exec=False name=_OnUnload
+72-    0x20c: nameoff=0x6d value=0xdb7a8 size=0x8 info=0x22 shndx=9 exec=False name=xit
+73-    0x21c: nameoff=0x84 value=0x1052f8 size=0x4 info=0x11 shndx=20 exec=False name=0288443912641677469
+74-    0x22c: nameoff=0x88 value=0x10584c size=0x4 info=0x11 shndx=20 exec=False name=443912641677469
+75-    0x23c: nameoff=0x8c value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=12641677469
+76-    0x24c: nameoff=0x91 value=0x105324 size=0x4 info=0x11 shndx=20 exec=False name=677469
+77-    0x25c: nameoff=0x95 value=0x105878 size=0x4 info=0x11 shndx=20 exec=False name=69
+78-    0x26c: nameoff=0x99 value=0x104de8 size=0x4 info=0x11 shndx=20 exec=False name=<empty>
+79-    0x27c: nameoff=0x9e value=0x105338 size=0x4 info=0x11 shndx=20 exec=False name=0
+80-    0x28c: nameoff=0xa3 value=0x104df0 size=0x4 info=0x11 shndx=20 exec=False name=<empty>
+81-    0x29c: nameoff=0xa8 value=0x105340 size=0x4 info=0x11 shndx=20 exec=False name=y73
+82-    0x2ac: nameoff=0xad value=0x104e40 size=0x4 info=0x11 shndx=20 exec=False name=74
+83-    0x2bc: nameoff=0xb2 value=0x105390 size=0x4 info=0x11 shndx=20 exec=False name=5
+84-    0x2cc: nameoff=0xb7 value=0x104e50 size=0x4 info=0x11 shndx=20 exec=False name=<empty>
+85-    0x2dc: nameoff=0xbc value=0x1053a0 size=0x4 info=0x11 shndx=20 exec=False name=x78
+86-    0x2ec: nameoff=0xc1 value=0x104e58 size=0x4 info=0x11 shndx=20 exec=False name=79
+87-    0x2fc: nameoff=0xc6 value=0x1053a8 size=0x4 info=0x11 shndx=20 exec=False name=0
+88-    0x30c: nameoff=0xcb value=0x15b1c size=0x744 info=0x12 shndx=9 exec=True name=<empty>
+89-    0x31c: nameoff=0xd6 value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=4
+90-    0x32c: nameoff=0xe3 value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=<empty>
+91-    0x33c: nameoff=0xf7 value=0x104e84 size=0x4 info=0x11 shndx=20 exec=False name=<empty>
+92-
+93-================================================================================
+94:3__system_app_IqooSecure_lib_arm_libvivoseckey.so
+95-================================================================================
+96-size = 0xe83b8
+97-
+98-ELF header:
+99-  phoff     = 0x34
+100-  phnum     = 5
+101-  shoff     = 0xe8318
+102-  shentsize = 40
+103-  shnum     = 4
+104-  shstrndx  = 1
+105-
+106-Program headers:
+107-  [0] type=0x1 off=0x0 vaddr=0x0 filesz=0x7f798 memsz=0xe23d8 flags=0x5
+108-  [1] type=0x1 off=0xe2c90 vaddr=0xe3c90 filesz=0x48cc memsz=0xcc9c flags=0x6
+109-  [2] type=0x2 off=0xe8240 vaddr=0xe65b0 filesz=0xf8 memsz=0xf8 flags=0x6
+110-  [3] type=0x70000001 off=0xceb54 vaddr=0xceb54 filesz=0x53e8 memsz=0x53e8 flags=0x4
+111-  [4] type=0x1 off=0xe755c vaddr=0xf155c filesz=0xcd4 memsz=0xcd4 flags=0x5
+112-
+113-Raw section headers:
+114-  [0] type=0x0 flags=0x0 addr=0x0 off=0x0 size=0x0 link=0 info=0 align=0x0 entsize=0x0
+115-  [1] type=0x8 flags=0x0 addr=0x0 off=0x0 size=0xe83b8 link=0 info=0 align=0x0 entsize=0x0
+116-  [2] type=0x3 flags=0x2 addr=0x2b9c off=0x2b9c size=0x2bee link=0 info=0 align=0x1 entsize=0x0
+117-  [3] type=0x6 flags=0x3 addr=0xe8240 off=0xe8240 size=0xf8 link=2 info=0 align=0x4 entsize=0x8
+118-
+119-Known strings:
+120-  b'JNI_OnLoad\x00':
+121-      file+0x2c55
+122:  b'vivo_seckey':
+123-      file+0x39b9
+124:  b'libvivoseckey.so\x00':
+125-      file+0x5779
+126-
+127:Candidate dynstr for JNI_OnLoad @ 0x2c55:
+128-  dynstr start guess = 0x2c38
+129-  strings near guessed dynstr:
+130-    +0x0 -> 'aeabi_memset'
+131-    +0x1 -> 'eabi_memset'
+132-    +0x1d -> 'JNI_OnLoad'
+133-    +0x28b -> 'gnu_cxx17__normal_iteratorIPSsSt6vectorISsSaISsEEEESsET_S7_S7_RKT0_St26random_access_iterator_tag'
+134-    +0x292 -> '17__normal_iteratorIPSsSt6vectorISsSaISsEEEESsET_S7_S7_RKT0_St26random_access_iterator_tag'
+135-    +0x333 -> 'ce_back_auxIJRKSsEEEvDpOT_'
+136-    +0xabe -> '6'
+137-
+138:Possible Elf32_Sym entries for JNI_OnLoad:
+139-  symbol_file=0x1bc nameoff=0x1d value=0x0 size=0x0 info=0x12 other=0x0 shndx=0
+140:  surrounding symbols:
+141-    0x3c: nameoff=0x0 value=0x0 size=0x7f798 info=0xd8 shndx=14 exec=True name=aeabi_memset
+142-    0x4c: nameoff=0x5 value=0x1000 size=0x1 info=0x90 shndx=14 exec=True name=_memset
+143-    0x6c: nameoff=0x6 value=0x1000 size=0x2 info=0x40 shndx=14 exec=True name=memset
+144-    0x8c: nameoff=0x6 value=0x4 size=0x70000001 info=0x54 shndx=12 exec=True name=memset
+145-    0xac: nameoff=0x4 value=0x4 size=0x1 info=0x5c shndx=14 exec=True name=i_memset
+146-    0xcc: nameoff=0x5 value=0x1000 size=0x7ff77ffe info=0xcc shndx=0 exec=True name=_memset
+147-    0xdc: nameoff=0x14b value=0xe7ca8 size=0xe73f8 info=0xcc shndx=0 exec=False name=<empty>
+148-    0xec: nameoff=0x22d value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=rISsSaISsEED2Ev
+149-    0xfc: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=aeabi_memset
+150-    0x10c: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=aeabi_memset
+151-    0x11c: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=aeabi_memset
+152-    0x12c: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=aeabi_memset
+153-    0x13c: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=aeabi_memset
+154-    0x14c: nameoff=0x0 value=0x0 size=0x7379732f info=0x74 shndx=12141 exec=True name=aeabi_memset
+155-    0x16c: nameoff=0x14 value=0x3 size=0x554e47 info=0x7b shndx=33219 exec=True name=<empty>
+156-    0x18c: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=aeabi_memset
+157-    0x19c: nameoff=0x1 value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=eabi_memset
+158-    0x1ac: nameoff=0x10 value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=<empty>
+159-    0x1bc: nameoff=0x1d value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=JNI_OnLoad
+160-    0x1cc: nameoff=0x2c value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=imeofday
+161-    0x1dc: nameoff=0x33 value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=y
+162-    0x1ec: nameoff=0x44 value=0x0 size=0x0 info=0x11 shndx=0 exec=True name=rint
+163-    0x1fc: nameoff=0x56 value=0xc73d4 size=0x8 info=0x12 shndx=9 exec=False name=xit
+164-    0x20c: nameoff=0x6d value=0xef594 size=0x4 info=0x11 shndx=20 exec=False name=22904
+165-    0x21c: nameoff=0x71 value=0xef75c size=0x4 info=0x11 shndx=20 exec=False name=4
+166-    0x22c: nameoff=0x75 value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=y
+167-    0x23c: nameoff=0x7a value=0xef5b0 size=0x4 info=0x11 shndx=20 exec=False name=<empty>
+168-    0x24c: nameoff=0x7e value=0xef778 size=0x4 info=0x11 shndx=20 exec=False name=<empty>
+169-    0x25c: nameoff=0x82 value=0xef5c0 size=0x4 info=0x11 shndx=20 exec=False name=<empty>
+170-    0x26c: nameoff=0x86 value=0xef788 size=0x4 info=0x11 shndx=20 exec=False name=<empty>
+171-    0x27c: nameoff=0x8a value=0xef5c8 size=0x4 info=0x11 shndx=20 exec=False name=<empty>
+172-    0x28c: nameoff=0x8e value=0xef790 size=0x4 info=0x11 shndx=20 exec=False name=<empty>
+173-    0x29c: nameoff=0x92 value=0xef5d4 size=0x4 info=0x11 shndx=20 exec=False name=<empty>
+174-    0x2ac: nameoff=0x96 value=0xef79c size=0x4 info=0x11 shndx=20 exec=False name=<empty>
+175-    0x2bc: nameoff=0x9a value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=<empty>
+176-    0x2cc: nameoff=0xa9 value=0xef5dc size=0x4 info=0x11 shndx=20 exec=False name=scall
+177-    0x2dc: nameoff=0xad value=0xef7a4 size=0x4 info=0x11 shndx=20 exec=False name=l
+178-    0x2ec: nameoff=0xb1 value=0xef5e4 size=0x4 info=0x11 shndx=20 exec=False name=errno
+179-    0x2fc: nameoff=0xb5 value=0xef7ac size=0x4 info=0x11 shndx=20 exec=False name=o
+180-    0x30c: nameoff=0xb9 value=0x12e1d size=0x430 info=0x12 shndx=9 exec=True name=hread_attr_destroy
+181-    0x31c: nameoff=0xc4 value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=destroy
+182-    0x32c: nameoff=0xd1 value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=ad_attr_init
+183-    0x33c: nameoff=0xe5 value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=_create
+184-
+185-================================================================================
+186:4__system_app_BBKAppStore_lib_arm_libvivoseckey.so
+187-================================================================================
+188-size = 0x9b9ec
+189-
+190-ELF header:
+191-  phoff     = 0x34
+192-  phnum     = 4
+193-  shoff     = 0x9b94c
+194-  shentsize = 40
+195-  shnum     = 4
+196-  shstrndx  = 1
+197-
+198-Program headers:
+199-  [0] type=0x1 off=0x0 vaddr=0x0 filesz=0x952dc memsz=0x105c48 flags=0x5
+200-  [1] type=0x1 off=0x96ae0 vaddr=0x107ae0 filesz=0x4e04 memsz=0xd184 flags=0x6
+201-  [2] type=0x2 off=0x9b8f4 vaddr=0x10a3f0 filesz=0xf8 memsz=0xf8 flags=0x6
+202-  [3] type=0x70000001 off=0xf26dc vaddr=0xf26dc filesz=0x5420 memsz=0x5420 flags=0x4
+203-
+204-Raw section headers:
+205-  [0] type=0x0 flags=0x0 addr=0x0 off=0x0 size=0x0 link=0 info=0 align=0x0 entsize=0x0
+206-  [1] type=0x8 flags=0x0 addr=0x0 off=0x0 size=0x9b9ec link=0 info=0 align=0x0 entsize=0x0
+207-  [2] type=0x3 flags=0x2 addr=0x29cc off=0x29cc size=0x266a link=0 info=0 align=0x1 entsize=0x0
+208-  [3] type=0x6 flags=0x3 addr=0x9b8f4 off=0x9b8f4 size=0xf8 link=2 info=0 align=0x4 entsize=0x8
+209-
+210-Known strings:
+211-  b'JNI_OnLoad\x00':
+212-      file+0x2aa1
+213:  b'vivo_seckey':
+214-      file+0x367c
+215:  b'libvivoseckey.so\x00':
+216-      file+0x5025
+217-
+218:Candidate dynstr for JNI_OnLoad @ 0x2aa1:
+219-  dynstr start guess = 0x2a84
+220-  strings near guessed dynstr:
+221-    +0x0 -> 'aeabi_memset'
+222-    +0x1 -> 'eabi_memset'
+223-    +0x1d -> 'JNI_OnLoad'
+224-    +0x28b -> '_destroyIPSsEEvT_S3_'
+225-    +0x292 -> 'yIPSsEEvT_S3_'
+226-    +0x333 -> 'torISsSaISsEE9push_backERKSs'
+227-
+228:Possible Elf32_Sym entries for JNI_OnLoad:
+229-  symbol_file=0x1bc nameoff=0x1d value=0x0 size=0x0 info=0x12 other=0x0 shndx=0
+230:  surrounding symbols:
+231-    0x3c: nameoff=0x0 value=0x0 size=0x952dc info=0x48 shndx=16 exec=True name=aeabi_memset
+232-    0x4c: nameoff=0x5 value=0x1000 size=0x1 info=0xe0 shndx=9 exec=True name=_memset
+233-    0x6c: nameoff=0x6 value=0x1000 size=0x2 info=0xf4 shndx=9 exec=True name=memset
+234-    0x8c: nameoff=0x6 value=0x4 size=0x70000001 info=0xdc shndx=15 exec=True name=memset
+235-    0xac: nameoff=0x4 value=0x4 size=0x7ff77ffe info=0xdc shndx=0 exec=True name=i_memset
+236-    0xbc: nameoff=0x13e value=0x10be74 size=0x10b408 info=0x7c shndx=0 exec=False name=bi_uidiv
+237-    0xcc: nameoff=0x29c value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=S3_
+238-    0xdc: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=aeabi_memset
+239-    0xec: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=aeabi_memset
+240-    0xfc: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=aeabi_memset
+241-    0x10c: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=aeabi_memset
+242-    0x11c: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=aeabi_memset
+243-    0x12c: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=aeabi_memset
+244-    0x13c: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=aeabi_memset
+245-    0x14c: nameoff=0x0 value=0x0 size=0x7379732f info=0x74 shndx=12141 exec=True name=aeabi_memset
+246-    0x16c: nameoff=0x14 value=0x3 size=0x554e47 info=0xae shndx=11447 exec=True name=<empty>
+247-    0x18c: nameoff=0x0 value=0x0 size=0x0 info=0x0 shndx=0 exec=True name=aeabi_memset
+248-    0x19c: nameoff=0x1 value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=eabi_memset
+249-    0x1ac: nameoff=0x10 value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=<empty>
+250-    0x1bc: nameoff=0x1d value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=JNI_OnLoad
+251-    0x1cc: nameoff=0x2c value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=imeofday
+252-    0x1dc: nameoff=0x33 value=0x0 size=0x0 info=0x11 shndx=0 exec=True name=y
+253-    0x1ec: nameoff=0x45 value=0x11342c size=0x4 info=0x11 shndx=20 exec=False name=d_log_print
+254-    0x1fc: nameoff=0x47 value=0x1135d8 size=0x4 info=0x11 shndx=20 exec=False name=log_print
+255-    0x20c: nameoff=0x49 value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=g_print
+256-    0x21c: nameoff=0x5a value=0xeafbc size=0x8 info=0x12 shndx=9 exec=False name=ll
+257-    0x22c: nameoff=0x71 value=0x11355c size=0x4 info=0x11 shndx=20 exec=False name=<empty>
+258-    0x23c: nameoff=0x75 value=0x113708 size=0x4 info=0x11 shndx=20 exec=False name=<empty>
+259-    0x24c: nameoff=0x79 value=0x113564 size=0x4 info=0x11 shndx=20 exec=False name=rrno
+260-    0x25c: nameoff=0x7d value=0x113710 size=0x4 info=0x11 shndx=20 exec=False name=<empty>
+261-    0x26c: nameoff=0x81 value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=call
+262-    0x27c: nameoff=0x86 value=0x113578 size=0x4 info=0x11 shndx=20 exec=False name=pthread_attr_destroy
+263-    0x28c: nameoff=0x8a value=0x113724 size=0x4 info=0x11 shndx=20 exec=False name=ead_attr_destroy
+264-    0x29c: nameoff=0x8e value=0x113580 size=0x4 info=0x11 shndx=20 exec=False name=attr_destroy
+265-    0x2ac: nameoff=0x92 value=0x11372c size=0x4 info=0x11 shndx=20 exec=False name=_destroy
+266-    0x2bc: nameoff=0x96 value=0x113588 size=0x4 info=0x11 shndx=20 exec=False name=troy
+267-    0x2cc: nameoff=0x9a value=0x113734 size=0x4 info=0x11 shndx=20 exec=False name=<empty>
+268-    0x2dc: nameoff=0x9e value=0x113590 size=0x4 info=0x11 shndx=20 exec=False name=read_attr_setdetachstate
+269-    0x2ec: nameoff=0xa2 value=0x11373c size=0x4 info=0x11 shndx=20 exec=False name=_attr_setdetachstate
+270-    0x2fc: nameoff=0xa6 value=0x113598 size=0x4 info=0x11 shndx=20 exec=False name=r_setdetachstate
+271-    0x30c: nameoff=0xaa value=0x113748 size=0x4 info=0x11 shndx=20 exec=False name=tdetachstate
+272-    0x31c: nameoff=0xae value=0x1135a4 size=0x4 info=0x11 shndx=20 exec=False name=achstate
+273-    0x32c: nameoff=0xb2 value=0x113750 size=0x4 info=0x11 shndx=20 exec=False name=tate
+274-    0x33c: nameoff=0xb6 value=0x0 size=0x0 info=0x12 shndx=0 exec=True name=<empty>
+275-
