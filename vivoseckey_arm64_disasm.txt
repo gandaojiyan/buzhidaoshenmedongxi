@@ -1,0 +1,2 @@
+
+./1__system_priv-app_VivoBrowser_lib_arm64_libvivoseckey.so:	file format elf64-littleaarch64
